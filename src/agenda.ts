@@ -59,17 +59,27 @@ export function finestra(avui: string) {
   };
 }
 
-type ActeSocrata = {
-  id: string;
-  titol: string;
-  descripcio: string;
-  hora_acte: string;
-  data_acte: string;
-  adre_a?: string;
-  municipi?: string;
-  autoritat: string;
-  departament: string;
-};
+type ActeSocrata = Record<string, unknown> & { id: string };
+
+const OBLIGATORIS = ['titol', 'descripcio', 'hora_acte', 'data_acte', 'autoritat', 'departament'];
+const OPCIONALS = ['adre_a', 'municipi'];
+
+/** Socrata omet els camps buits: un camp obligatori que falta és un error de la font. */
+function camps(f: ActeSocrata) {
+  const llegits: Record<string, string> = {};
+  for (const camp of [...OBLIGATORIS, ...OPCIONALS]) {
+    const valor = f[camp];
+    if (valor === undefined && OPCIONALS.includes(camp)) continue;
+    if (typeof valor !== 'string')
+      throw new SourceError(`A l'acte del Govern ${f.id} hi falta el camp ${camp}.`);
+    llegits[camp] = valor;
+  }
+  return llegits;
+}
+
+/** El dia a Catalunya, i no en UTC: una actualització a les 00.30 és del dia que comença. */
+const diaACatalunya = (segons: number) =>
+  new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Madrid' }).format(new Date(segons * 1000));
 
 type Meta = { name: string; rowsUpdatedAt: number; attribution: string };
 
@@ -100,34 +110,35 @@ export async function construirAgendaGovern(fetchImpl: Fetch, avui: string) {
     perId.set(fila.id, fila);
   }
 
-  const actes = [...perId.values()].map((f) => {
-    const data = f.data_acte.match(/^(\d{4}-\d{2}-\d{2})T00:00:00\.000$/)?.[1];
-    const hora = f.hora_acte.match(/^(\d{2}:\d{2}):00$/)?.[1];
+  const actes = [...perId.values()].map((fila) => {
+    const f = camps(fila);
+    const data = f.data_acte!.match(/^(\d{4}-\d{2}-\d{2})T00:00:00\.000$/)?.[1];
+    const hora = f.hora_acte!.match(/^(\d{2}:\d{2}):00$/)?.[1];
     if (data === undefined || hora === undefined)
-      throw new SourceError(`L'acte del Govern ${f.id} té una data o una hora inesperada.`);
-    if (!AUTORITATS_GOVERN.includes(f.autoritat))
-      throw new SourceError(`L'acte del Govern ${f.id} és d'una autoritat que no s'ha demanat.`);
+      throw new SourceError(`L'acte del Govern ${fila.id} té una data o una hora inesperada.`);
+    if (!AUTORITATS_GOVERN.includes(f.autoritat!))
+      throw new SourceError(`L'acte del Govern ${fila.id} és d'una autoritat que no s'ha demanat.`);
     return {
-      id: f.id,
+      id: fila.id,
       data,
       hora,
-      titol: text(f.titol),
-      descripcio: text(f.descripcio),
+      titol: text(f.titol!),
+      descripcio: text(f.descripcio!),
       ...(f.adre_a && { adreca: text(f.adre_a) }),
       ...(f.municipi && { municipi: text(f.municipi) }),
-      autoritat: f.autoritat,
-      departament: f.departament,
+      autoritat: text(f.autoritat!),
+      departament: text(f.departament!),
     };
   });
 
   return {
     font: `Dades obertes de Catalunya: ${meta.name} (${meta.attribution})`,
     url: `${SOCRATA}/d/${ACTES_GOVERN}`,
-    data_dades: new Date(meta.rowsUpdatedAt * 1000).toISOString().slice(0, 10),
+    data_dades: diaACatalunya(meta.rowsUpdatedAt),
     des_de: desDe,
     fins_a: finsA,
     autoritats: AUTORITATS_GOVERN,
-    nota: 'Només els actes que el conjunt atribueix a la presidència, als consellers i conselleres i a la portaveu del Govern. El conjunt publica els actes ja fets; els que encara no s’han fet no hi són. El text és el de la font, amb les entitats HTML convertides en caràcters.',
+    nota: 'Només els actes de les autoritats President, Consellers i Portaveu del Govern, tal com les classifica el conjunt. El conjunt publica els actes ja fets; els que encara no s’han fet no hi són. Els textos són els de la font, amb les entitats HTML convertides en caràcters i els espais i salts de línia seguits convertits en un sol espai.',
     actes,
   };
 }
@@ -201,6 +212,8 @@ export function llegirAgendaParlament(
     if (DIES[new Date(`${data}T12:00:00Z`).getUTCDay()] !== capcalera[1])
       throw new SourceError(`${url} diu que el ${data} és ${capcalera[1]}.`);
 
+    // La icona de càmera de la cel·la de l'hora enllaça la portada del Canal Parlament, no el vídeo de
+    // l'acte; el vídeo de l'acte, si n'hi ha, és a la llista d'enllaços.
     const files = [
       ...tros.matchAll(
         /<tr><th rowspan="2" class="hora_lloc" scope="row"><p>([^<]*)<\/p>(?:<a [\s\S]*?<\/a>)?<\/th><td><p><strong>([\s\S]*?)<\/strong><\/p><\/td><\/tr><tr><td class="tema_acte">([\s\S]*?)<\/td><\/tr>/g,
@@ -212,12 +225,15 @@ export function llegirAgendaParlament(
 
     for (const [, horaWeb, titolWeb, tema] of files as unknown as string[][]) {
       const hora = horaWeb!.match(/^(\d{2}:\d{2})h$/)?.[1];
-      if (hora === undefined && horaWeb !== '&nbsp;')
+      if (hora === undefined && horaWeb !== '&nbsp;' && horaWeb !== '')
         throw new SourceError(`${url} té un acte del ${data} amb l'hora «${horaWeb}».`);
       const enllacos = [...tema!.matchAll(/<a href="([^"]*)"[^>]*>([^<]*)<\/a>/g)].map((m) => ({
         text: text(m[2]!),
-        url: new URL(text(m[1]!), PARLAMENT).href,
+        url: new URL(text(m[1]!), url).href,
       }));
+      // Un enllaç o un paràgraf amb una altra forma es perdria sense que ningú ho sabés.
+      if (enllacos.length !== (tema!.match(/<a /g) ?? []).length)
+        throw new SourceError(`${url} té un enllaç del ${data} amb una forma inesperada.`);
       const acte: ActeParlament = {
         data,
         ...(hora && { hora }),
@@ -226,7 +242,10 @@ export function llegirAgendaParlament(
         enllacos,
       };
       const senseLlista = tema!.replace(/<ul class="llista_simple">[\s\S]*?<\/ul>/g, '');
-      for (const [, paragraf] of senseLlista.matchAll(/<p>([\s\S]*?)<\/p>/g)) {
+      const paragrafs = [...senseLlista.matchAll(/<p>([\s\S]*?)<\/p>/g)];
+      if (paragrafs.length !== (senseLlista.match(/<p[\s>]/g) ?? []).length)
+        throw new SourceError(`${url} té un paràgraf del ${data} amb una forma inesperada.`);
+      for (const [, paragraf] of paragrafs) {
         const nota = text(paragraf!).match(
           /^\((Aparició al web|Desconvocat\/ada): (\d\d\/\d\d\/\d{4})\)$/,
         );

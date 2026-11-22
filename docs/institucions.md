@@ -165,7 +165,7 @@ Els actes públics del Govern i del Parlament del mes passat, l'actual i el seg�
 - **Data:** `data_dades` és la data de l'última actualització del conjunt.
 - **Qui hi surt:** només els actes que el conjunt atribueix a `President`, `Consellers` o `Portaveu del Govern`, és a dir, al Consell Executiu. Les altres autoritats del conjunt (secretaris, directors i delegats) no hi surten. El criteri és a `autoritats`.
 - **Només actes fets:** el conjunt publica els actes quan ja han passat. Els que encara no s'han fet no hi són, i la web ho diu.
-- **Text:** el títol, la descripció, l'adreça i el municipi són els de la font, amb les entitats HTML (`&nbsp;`, `&quot;`…) convertides en caràcters.
+- **Text:** el títol, la descripció, l'adreça, el municipi, l'autoritat i el departament són els de la font, amb les entitats HTML (`&nbsp;`, `&quot;`…) convertides en caràcters i els espais i salts de línia seguits convertits en un sol espai.
 - **Comprovacions:**
   - El conjunt repeteix algunes files idèntiques: se'n deixa una. Si dues files amb el mateix `id` no són idèntiques, l'script s'atura.
   - Cada acte ha de tenir la data i l'hora en el format del conjunt.
@@ -176,13 +176,17 @@ Els actes públics del Govern i del Parlament del mes passat, l'actual i el seg�
 - **Font:** l'[agenda parlamentària](https://www.parlament.cat/web/actualitat/agenda/index.html) del web del Parlament, mes a mes. El Parlament no la publica en cap format de dades.
 - **Data:** com a `parlament.json`, `data_consulta` és el dia en què es va llegir.
 - **Categoria:** el web no la diu a cada acte, però la deixa filtrar. Per a cada mes es llegeix l'agenda sencera i després la de cada categoria del desplegable (sessions dels òrgans, actes institucionals, conferències de premsa i reunions de treball), i cada acte ha de sortir en una sola categoria.
-- **Contingut:** la data, l'hora, el títol, els paràgrafs de l'acte tal com surten al web (`detalls`: el tipus de sessió, la sala, si s'emet en directe), els enllaços (l'ordre del dia, el vídeo, el programa), el dia en què es va publicar i, si s'ha desconvocat, quan.
+- **Contingut:** la data, l'hora, el títol, els paràgrafs de l'acte tal com surten al web (`detalls`: el tipus de sessió, la sala, si s'emet en directe), els enllaços de l'acte (l'ordre del dia, el vídeo, el programa), el dia en què es va publicar i, si s'ha desconvocat, quan. La icona de càmera del costat de l'hora no es desa: enllaça la portada del Canal Parlament, no el vídeo de l'acte.
+- **Ordre:** el del web. Els actes sense hora van just després de l'acte que els precedeix al web.
 - **Sense hora:** alguns actes no en tenen perquè comencen en acabar-ne un altre, i el web ho diu a `detalls`.
 - **Comprovacions:**
   - Cada pàgina ha de ser del mes demanat, i el dia de la setmana de cada data ha de coincidir.
   - Totes les files d'actes s'han de poder llegir: si en sobra alguna, l'script s'atura.
   - L'hora ha de ser `HH:MMh` o estar buida.
+  - Tots els enllaços i paràgrafs de cada acte s'han de poder llegir.
   - Cada acte de l'agenda sencera ha de sortir en una categoria, i només en una.
+- **Si una font falla:** l'agenda es genera amb la resta de dades, i si no es pot llegir, tampoc s'actualitzen el Govern ni el Parlament aquell dia. Així totes les dades d'un dia surten d'una mateixa execució i es poden comprovar juntes.
+- **Cada dia:** a diferència de la composició, `agenda.json` es desa encara que l'únic canvi sigui `data_consulta`, perquè la web en treu quins actes ja han passat.
 - **Reutilització:** la mateixa que la de les fotos: l'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) del Parlament en permet la reutilització si se'n cita la font, no se n'altera el sentit i no es presenta com una versió oficial ni avalada pel Parlament.
 
 ## Pendent

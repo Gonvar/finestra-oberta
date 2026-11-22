@@ -265,3 +265,59 @@ test('s’atura si dues files diferents tenen el mateix id o si una hora no té 
     /no caben en una pàgina/,
   );
 });
+
+test('s’atura si un enllaç o un paràgraf d’un acte no es pot llegir', () => {
+  const ambEnllac = (tema: string) =>
+    pagina('Novembre de 2026', [['Dimarts, 24', [{ ...PLE, tema }]]]);
+  assert.throws(
+    () =>
+      llegirAgendaParlament(
+        ambEnllac('<ul class="llista_simple"><li><a href="/v"><span>Vídeo</span></a></li></ul>'),
+        URL_PROVA,
+        2026,
+        11,
+      ),
+    /enllaç del 2026-11-24/,
+  );
+  assert.throws(
+    () => llegirAgendaParlament(ambEnllac('<p class="sala">Sala 1</p>'), URL_PROVA, 2026, 11),
+    /paràgraf del 2026-11-24/,
+  );
+});
+
+test('resol els enllaços relatius des de la pàgina i accepta l’hora buida', () => {
+  const [acte] = llegirAgendaParlament(
+    pagina('Novembre de 2026', [
+      [
+        'Dimarts, 24',
+        [
+          {
+            ...PLE,
+            hora: '',
+            tema: '<ul class="llista_simple"><li><a href="programa.pdf">Programa</a></li></ul>',
+          },
+        ],
+      ],
+    ]),
+    URL_PROVA,
+    2026,
+    11,
+  );
+  assert.equal(acte!.hora, undefined);
+  assert.deepEqual(acte!.enllacos, [
+    { text: 'Programa', url: 'https://www.parlament.cat/web/actualitat/agenda/programa.pdf' },
+  ]);
+});
+
+test('llegeix les entitats numèriques i s’atura si a un acte del Govern li falta un camp', async () => {
+  const { fetchImpl } = socrata([acteGovern('1', { titol: 'L&#8217;acte &#x2014; Vic' })]);
+  assert.equal(
+    (await construirAgendaGovern(fetchImpl, '2026-11-22')).actes[0]!.titol,
+    'L’acte — Vic',
+  );
+  const { descripcio: _, ...senseDescripcio } = acteGovern('2');
+  await assert.rejects(
+    construirAgendaGovern(socrata([senseDescripcio]).fetchImpl, '2026-11-22'),
+    /hi falta el camp descripcio/,
+  );
+});

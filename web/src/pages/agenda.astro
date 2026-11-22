@@ -22,7 +22,7 @@ const titolDia = (data: string) => {
 const NOM: Record<Acte['institucio'], string> = { gov: 'Govern', par: 'Parlament' };
 // El text en què busca el filtre: el mateix que es veu a la fila.
 const cercable = (a: Acte) =>
-  [NOM[a.institucio], a.qui, a.titol, a.text, a.lloc].filter((x) => x).join(' ');
+  [NOM[a.institucio], a.qui, a.titol, a.text, ...a.detalls].filter((x) => x).join(' ');
 
 const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
   {
@@ -31,7 +31,12 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
     dies: propers,
     buit: 'El Parlament encara no ha publicat cap acte per als propers dies.',
   },
-  { id: 'fet', titol: 'Què han fet', dies: fets, buit: 'No hi ha cap acte d’aquests dies.' },
+  {
+    id: 'fet',
+    titol: 'Què han fet',
+    dies: fets,
+    buit: `No hi ha cap acte des del ${dia(agenda.parlament.des_de)}.`,
+  },
 ];
 ---
 
@@ -44,7 +49,7 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
       </p>
       <h1 id="titol" class="entra" style="--ordre: 1">Agenda</h1>
       <p class="entradeta entra" style="--ordre: 2">
-        Els actes públics del president, els consellers i conselleres i el Parlament, dia a dia.
+        Els actes públics del Govern i del Parlament, dia a dia.
       </p>
       <p class="font-dada entra" style="--ordre: 2">
         Govern: <a href={agenda.govern.url}>Actes del Govern</a>, de Dades obertes de Catalunya, actualitzat el {
@@ -65,7 +70,7 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
         <span class="visualment-amagat">Busca a l’agenda</span>
         <input type="search" name="text" placeholder="Salut, Ple, Girona…" autocomplete="off" />
       </label>
-      <p class="secundari" data-cap hidden>Cap acte no coincideix amb la cerca.</p>
+      <p class="secundari" data-cap aria-live="polite"></p>
     </form>
 
     {
@@ -78,14 +83,14 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
             <p class="buit">{s.buit}</p>
           ) : (
             s.dies.map((d) => (
-              <section class="dia" aria-labelledby={`dia-${d.data}`} data-dia>
-                <h3 id={`dia-${d.data}`} class="titol-bloc">
+              <div class="dia" data-dia>
+                <h3 class="titol-bloc">
                   <time datetime={d.data}>{titolDia(d.data)}</time>
                 </h3>
                 <ol class="files">
                   {d.actes.map((a) => (
                     <li class="acte" data-institucio={a.institucio} data-text={cercable(a)}>
-                      <p class="hora">{a.hora ?? 'Sense hora'}</p>
+                      <p class="hora">{a.hora}</p>
                       <div>
                         <p class="etiqueta">
                           <span class:list={['punt', a.institucio]} aria-hidden="true" />
@@ -94,7 +99,9 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
                         <p class="titol-acte">{a.titol}</p>
                         {a.desconvocat && <p class="desconvocat">Desconvocat el {dia(a.desconvocat)}</p>}
                         {a.text && <p class="text">{a.text}</p>}
-                        {a.lloc && <p class="secundari">{a.lloc}</p>}
+                        {a.detalls.map((d) => (
+                          <p class="secundari">{d}</p>
+                        ))}
                         {a.enllacos.length > 0 && (
                           <ul class="enllacos">
                             {a.enllacos.map((e) => (
@@ -108,7 +115,7 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
                     </li>
                   ))}
                 </ol>
-              </section>
+              </div>
             ))
           )}
         </section>
@@ -128,6 +135,10 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
     text: fold(el.dataset.text!),
   }));
   const dies = [...document.querySelectorAll<HTMLElement>('[data-dia]')];
+  // Una secció sense cap dia és la de l'estat buit: el filtre no l'amaga.
+  const seccions = [...document.querySelectorAll<HTMLElement>('[data-seccio]')].filter((s) =>
+    s.querySelector('[data-dia]'),
+  );
   const cap = form.querySelector<HTMLElement>('[data-cap]')!;
 
   function filtra() {
@@ -141,7 +152,9 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
       if (es) visibles++;
     }
     for (const d of dies) d.hidden = !d.querySelector('.acte:not([hidden])');
-    cap.hidden = visibles > 0;
+    for (const s of seccions) s.hidden = !s.querySelector('[data-dia]:not([hidden])');
+    // Un missatge que canvia de text, perquè el lector de pantalla l'anunciï.
+    cap.textContent = visibles > 0 ? '' : 'Cap acte no coincideix amb la cerca.';
   }
 
   form.addEventListener('input', filtra);
