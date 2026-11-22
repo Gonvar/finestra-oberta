@@ -9,7 +9,9 @@ import { construirInstitucions } from './institucions.ts';
 import { genera } from './procedencia.ts';
 
 const carpeta = process.argv[2] ?? fileURLToPath(new URL('../dades', import.meta.url));
-const avui = new Date().toISOString().slice(0, 10);
+// El dia a Catalunya, no en UTC: una execució a les 00.30 ja és l'endemà, i un termini d'ajuts
+// que acaba el dia abans ja no és obert.
+const avui = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(new Date());
 try {
   const {
     'govern.json': govern,

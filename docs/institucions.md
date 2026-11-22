@@ -1,6 +1,6 @@
 # El Govern, el Parlament, els ajuntaments i els ajuts
 
-Les dades que canvien poc: qui forma el Govern, com es reparteixen els 135 escons del Parlament i qui forma el ple de cada ajuntament, i els ajuts i les subvencions que encara es poden demanar. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, com es reparteixen els 135 escons del Parlament i qui forma el ple de cada ajuntament, i els ajuts i les subvencions que encara es poden demanar. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -66,7 +66,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json` i `/tmp/ara/ajuntaments.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json` i `/tmp/ara/ajuts.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -121,13 +121,15 @@ Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les 
 
 - **Font:** les [convocatòries del RAISC](https://analisi.transparenciacatalunya.cat/d/khxn-nv6a) (`khxn-nv6a`), el Registre de subvencions i ajuts de Catalunya, del Departament d'Economia i Finances, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/). Recull les convocatòries de totes les administracions de Catalunya, no només de la Generalitat.
 - **Data:** `data_dades` és la data de l'última actualització del conjunt, que s'actualitza cada dia.
-- **Contingut:** les convocatòries que el dia de la consulta encara no han acabat el termini de presentació de sol·licituds (`fi` és avui o més endavant). Hi són també les que encara no l'han obert (`inici` és més endavant). Les que la font no dona amb final de termini queden fora, perquè no es pot dir si són obertes. Van ordenades pel final del termini i, després, pel codi RAISC.
-- **Dates:** el RAISC les escriu com a text, «19/10/2026». `inici` i `fi` són les mateixes dates en la forma `2026-10-19`; les originals són a `inici_font` i `fi_font`.
+- **Contingut:** les convocatòries que el dia de la consulta, a l'hora de Catalunya, encara no han acabat el termini de presentació de sol·licituds (`fi` és avui o més endavant). Hi són també les que encara no l'han obert (`inici` és més endavant). Van ordenades pel final del termini i, després, pel codi RAISC.
+- **Les que queden fora:** les que la font dona sense final de termini, o amb un final que no és una data (el conjunt en té, per exemple, amb «-»), perquè no es pot dir si són obertes. `finals_no_llegibles` diu quins valors tenen i quantes convocatòries n'hi ha de cadascun, perquè es vegi què s'ha deixat fora.
+- **Dates:** el RAISC les escriu com a text, «19/10/2026». `inici` i `fi` són les mateixes dates en la forma `2026-10-19`; les originals són a `inici_font` i `fi_font`. Si l'inici no és una data, `inici` és `null` i el valor de la font és a `inici_font`.
 - **Camps:** el títol en català, l'organisme i l'administració que convoca, el tipus de convocatòria i d'ajut, la finalitat, a qui va adreçada, l'import total, la seu electrònica on es demana i l'enllaç a les bases. Tal com els escriu la font. Totes les convocatòries tenen els mateixos camps, i el que la font no dona és `null`.
-- **Com es llegeix:** el final del termini és text i SoQL no el pot comparar amb una data. Per això primer es demanen tots els finals de termini diferents del conjunt (són pocs) i després només les convocatòries que en tenen un de vigent.
+- **Com es llegeix:** el final del termini és text i SoQL no el pot comparar amb una data. Per això primer es demanen tots els finals de termini diferents del conjunt (són pocs) i després les convocatòries que en tenen un de vigent, de cent en cent dates perquè l'adreça de la consulta no sigui massa llarga.
 - **Comprovacions:**
-  - Cada final de termini del conjunt, també els passats, ha de ser una data que existeixi amb la forma «DD/MM/AAAA». Si la font canvia la forma, no es pot saber què és obert i l'actualització s'atura.
-  - Cada convocatòria ha de tenir codi RAISC i títol, i un codi només pot sortir una vegada. L'import ha de ser un nombre.
+  - Hi ha d'haver almenys un final de termini d'avui o més endavant. El RAISC sempre té convocatòries obertes: si no en surt cap, la font ha canviat la forma de les dates, i una llista buida diria que no se'n pot demanar cap.
+  - Cada convocatòria ha de tenir codi RAISC, i un codi només pot sortir una vegada. L'import ha de ser un nombre.
+- **Cada dia canvia:** com que les convocatòries tanquen i n'obren de noves, `ajuts.json` canvia gairebé cada dia, i la branca `dades` té una actualització signada gairebé cada dia.
 - **Si falla:** com els ajuntaments, atura també l'actualització del Govern i el Parlament fins que es corregeix.
 
 ## Pendent

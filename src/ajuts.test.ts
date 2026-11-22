@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { construirAjuts, CONVOCATORIES, dataIso } from './ajuts.ts';
-import { SourceError, type Fetch } from './comun.ts';
+import type { Fetch } from './comun.ts';
 
 const AVUI = '2026-11-22';
 const META = {
@@ -18,6 +18,7 @@ const FINALS = [
   { data_fi_presentaci_sol: '22/11/2026', n: '1' },
   { data_fi_presentaci_sol: '31/01/2030', n: '1' },
   { n: '12' },
+  { data_fi_presentaci_sol: '-', n: '3' },
 ];
 
 const VIGENTS = [
@@ -97,27 +98,51 @@ test('publica les convocatòries que el dia de la consulta encara no han acabat 
   assert.equal(ajuts.convocatories[0]!.import_total, 1500.5);
 });
 
-test('si cap termini és vigent, no fa la segona consulta i publica una llista buida', async () => {
-  const { fetchImpl, urls } = font([{ data_fi_presentaci_sol: '19/10/2026', n: '3' }], []);
+test('deixa fora les convocatòries sense un final de termini que sigui una data, i ho diu', async () => {
+  const { fetchImpl } = font(FINALS, VIGENTS);
   const ajuts = await construirAjuts(fetchImpl, AVUI);
-  assert.equal(urls.length, 2);
-  assert.deepEqual(ajuts.convocatories, []);
+  assert.deepEqual(ajuts.finals_no_llegibles, [
+    { valor: null, convocatories: 12 },
+    { valor: '-', convocatories: 3 },
+  ]);
 });
 
-test("s'atura si una data de la font no té la forma esperada, encara que sigui antiga", async () => {
-  const { fetchImpl } = font([{ data_fi_presentaci_sol: '2019-10-19', n: '1' }], []);
-  await assert.rejects(construirAjuts(fetchImpl, AVUI), SourceError);
+test("un inici que no és una data surt com a null, amb l'original al costat", async () => {
+  const fila = { ...VIGENTS[0], data_inici_presentaci_sol: '-' };
+  const { fetchImpl } = font(FINALS, [fila]);
+  const [convocatoria] = (await construirAjuts(fetchImpl, AVUI)).convocatories;
+  assert.equal(convocatoria!.inici, null);
+  assert.equal(convocatoria!.inici_font, '-');
 });
 
-test("s'atura si una convocatòria surt dues vegades o la font és buida", async () => {
+test('demana les convocatòries de cent en cent dates, perquè l’URL no sigui massa llarga', async () => {
+  const finals = Array.from({ length: 150 }, (_, i) => {
+    const d = new Date(Date.UTC(2027, 0, 1 + i)).toISOString().slice(0, 10).split('-');
+    return { data_fi_presentaci_sol: `${d[2]}/${d[1]}/${d[0]}`, n: '1' };
+  });
+  const { fetchImpl, urls } = font(finals, []);
+  await construirAjuts(fetchImpl, AVUI);
+  const consultes = urls.slice(2).map((u) => new URL(u).searchParams.get('$where')!);
+  assert.equal(consultes.length, 2);
+  assert.equal(consultes[0]!.split(', ').length, 100);
+  assert.equal(consultes[1]!.split(', ').length, 50);
+});
+
+test("s'atura si cap final de termini és d'avui o més endavant", async () => {
+  const { fetchImpl } = font([{ data_fi_presentaci_sol: '19/10/2026', n: '3' }], []);
+  await assert.rejects(construirAjuts(fetchImpl, AVUI), /Cap final de termini/);
+  const buida = font([], []);
+  await assert.rejects(construirAjuts(buida.fetchImpl, AVUI), /Cap final de termini/);
+});
+
+test("s'atura si una convocatòria surt dues vegades", async () => {
   const doble = font(FINALS, [VIGENTS[0], VIGENTS[0]]);
   await assert.rejects(construirAjuts(doble.fetchImpl, AVUI), /surt dues vegades/);
-  const buida = font([], []);
-  await assert.rejects(construirAjuts(buida.fetchImpl, AVUI), /cap convocatòria/);
 });
 
-test('dataIso rebutja les dates que no existeixen', () => {
+test('dataIso només accepta les dates que existeixen', () => {
   assert.equal(dataIso('29/02/2028'), '2028-02-29');
-  assert.throws(() => dataIso('31/02/2026'), SourceError);
-  assert.throws(() => dataIso('1/2/2026'), SourceError);
+  assert.equal(dataIso('31/02/2026'), null);
+  assert.equal(dataIso('1/2/2026'), null);
+  assert.equal(dataIso('-'), null);
 });

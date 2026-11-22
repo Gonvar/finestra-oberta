@@ -1,4 +1,4 @@
-name: Dades del Govern, del Parlament i dels ajuntaments
+name: Dades del Govern, del Parlament, dels ajuntaments i dels ajuts
 
 # Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, la desa a la branca
 # `dades` amb la còpia de cada resposta. Les dades no passen per pull request perquè no les escriu
