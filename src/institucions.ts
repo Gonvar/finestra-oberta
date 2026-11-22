@@ -299,3 +299,11 @@ export async function construirGovern(fetchImpl: Fetch) {
       .sort((a, b) => a.departament.localeCompare(b.departament, 'ca')),
   };
 }
+
+/** Tot el que es publica, pel nom del fitxer. El Govern primer: l'ordre de les crides es reprodueix. */
+export async function construirInstitucions(fetchImpl: Fetch, avui: string, pausaMs: number) {
+  return {
+    'govern.json': await construirGovern(fetchImpl),
+    'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
+  };
+}

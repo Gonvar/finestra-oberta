@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "barcelona": "node src/index.ts barcelona",
-    "dades": "node src/dades.ts"
+    "dades": "node src/dades.ts",
+    "verifica-dades": "node src/verifica-dades.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.4.0",

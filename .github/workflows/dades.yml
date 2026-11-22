@@ -1,15 +1,25 @@
 name: Dades del Govern i del Parlament
 
-# Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, la desa a main.
-# Si una font falla o una comprovació no quadra, src/dades.ts surt amb un error: la tasca falla i
-# GitHub ho notifica, i les dades publicades es queden com estaven.
+# Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, la desa a la branca
+# `dades` amb la còpia de cada resposta. Les dades no passen per pull request perquè no les escriu
+# ningú: les escriu aquesta tasca, i cada actualització queda signada amb una attestation de GitHub
+# que diu quin workflow i quin commit de main les han generat. Vegeu docs/institucions.md.
+# Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i la branca
+# `dades` es queda com estava.
 on:
   schedule:
     - cron: '0 5 * * *'
   workflow_dispatch:
+    inputs:
+      publica:
+        description: Desa les dades a la branca dades si han canviat
+        type: boolean
+        default: true
 
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 
 concurrency:
   group: dades
@@ -17,26 +27,52 @@ concurrency:
 
 jobs:
   actualitza:
-    name: Actualitza dades/
+    name: Actualitza la branca dades
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Sense npm ci: llegir les fonts no necessita cap dependència, i així cap paquet de tercers
+      # s'executa amb permís per escriure al repositori.
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
-      - run: npm run dades
-      - run: npx prettier --write dades/
-      - name: Desa els canvis
+      - name: Baixa la branca dades
         run: |
-          git add dades/
-          # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
-          if git diff --cached --quiet -I '"data_consulta"'; then
-            echo "La composició no ha canviat."
-            exit 0
+          if git ls-remote --exit-code --heads origin dades; then
+            git fetch --depth=1 origin dades
+            git worktree add -B dades dades FETCH_HEAD
+          else
+            git worktree add --orphan -b dades dades
           fi
+      - run: node src/dades.ts dades
+      # Les dades que es publiquen s'han de poder tornar a generar a partir de les còpies.
+      - run: node src/verifica-dades.ts dades
+      - name: Mira si han canviat
+        id: canvis
+        working-directory: dades
+        run: |
+          git add -A
+          # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
+          if git diff --cached --quiet -I '"data_consulta"' -- govern.json parlament.json; then
+            echo "La composició no ha canviat."
+          else
+            echo "hi-ha=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Signa les dades
+        if: steps.canvis.outputs.hi-ha && (github.event_name == 'schedule' || inputs.publica)
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: |
+            dades/govern.json
+            dades/parlament.json
+            dades/procedencia.json
+      - name: Desa les dades
+        if: steps.canvis.outputs.hi-ha && (github.event_name == 'schedule' || inputs.publica)
+        working-directory: dades
+        run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'chore(dades): actualitza el Govern i el Parlament'
-          git push
+          git commit -m 'chore(dades): actualitza el Govern i el Parlament' \
+            -m "Codi: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/commit/$GITHUB_SHA" \
+            -m "Execució: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          git push origin dades
