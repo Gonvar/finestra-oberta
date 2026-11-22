@@ -4,11 +4,15 @@
 // val més aturar-se que publicar una composició incompleta.
 import { readFile } from 'node:fs/promises';
 import { construirAgenda } from './agenda.ts';
+import { construirAjuntaments } from './ajuntaments.ts';
 import {
   comprovaCodificacio,
+  dia,
   fold,
   getJson,
   getText,
+  metadades,
+  SOCRATA,
   SourceError,
   text,
   words,
@@ -25,7 +29,6 @@ export const ESCONS = 135;
 export const fotoUrl = (id: string) => `${PARLAMENT}/apl/gimg/imatgeweb?p_mida=M&p_id=${id}`;
 export const AVIS_LEGAL = `${PARLAMENT}/pcat/serveis-parlament/avis-legal`;
 
-const SOCRATA = 'https://analisi.transparenciacatalunya.cat';
 export const ALTS_CARRECS = 'x9au-abcn';
 export const INTERVENCIONS = '7chp-hkce';
 const PRESIDENT = 'PRESIDENT DE LA GENERALITAT DE CATALUNYA';
@@ -258,13 +261,12 @@ export function euros(text: string) {
 
 const lloc = (fila: AltCarrec) => fila.denominacio_lloc.replace(/\s+/g, ' ').trim();
 
-type Meta = { name: string; rowsUpdatedAt: number; attribution: string };
+type Meta = Awaited<ReturnType<typeof metadades>>;
 type MetaAmbColumnes = Meta & {
   columns: { fieldName: string; name: string; description: string }[];
 };
-const metadades = (fetchImpl: Fetch, id: string) =>
+const metadadesAmbColumnes = (fetchImpl: Fetch, id: string) =>
   getJson<MetaAmbColumnes>(fetchImpl, `${SOCRATA}/api/views/${id}.json`);
-const dia = (meta: Meta) => new Date(meta.rowsUpdatedAt * 1000).toISOString().slice(0, 10);
 
 /**
  * El nom ben escrit, de les intervencions del Govern al Parlament. La relació d'alts càrrecs
@@ -411,10 +413,16 @@ export function llegirPerfils(json: string): PerfilsDesats {
 
 /** Els paràgrafs del currículum, que govern.cat publica en HTML. */
 function paragrafs(html: string) {
-  return html
-    .split(/<\/(?:p|h\d)>/)
-    .map(text)
-    .filter(Boolean);
+  return (
+    html
+      // Una etiqueta de dins d'una frase no separa paraules: «XXI</em>, de» és «XXI, de», i
+      // «al<em>Manual» es llegeix «alManual» també a govern.cat. No s'hi afegeix cap espai que la
+      // font no té.
+      .replace(/<\/?(?:a|b|em|i|span|strong|sub|sup|u)\b[^>]*>/gi, '')
+      .split(/<\/(?:p|h\d)>/)
+      .map(text)
+      .filter(Boolean)
+  );
 }
 
 /**
@@ -482,10 +490,11 @@ function apartats(meta: MetaAmbColumnes) {
 
 /** «1. Primera\n2. Segona» en una llista; «N/A» vol dir que no en declara cap. */
 function llista(text: string, camp: string) {
-  if (text === 'N/A') return [];
+  if (text.trim() === 'N/A') return [];
   const items = text
     .split('\n')
-    .map((l) => l.replace(/^\s*\d+\s*\.\s*/, '').trim())
+    // Només el número de la llista: «12.11.2024 …» és una data i es queda.
+    .map((l) => l.replace(/^\s*\d+\s*\.(?!\d)\s*/, '').trim())
     .filter(Boolean);
   if (!items.length) throw new SourceError(`L'apartat ${camp} d'una declaració és buit.`);
   return items;
@@ -571,7 +580,7 @@ const font = (meta: Meta, id: string) => ({
  */
 export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]) {
   // D'una en una: la verificació torna a servir les còpies en l'ordre en què es van demanar.
-  const metaDecl = await metadades(fetchImpl, DECLARACIONS);
+  const metaDecl = await metadadesAmbColumnes(fetchImpl, DECLARACIONS);
   const metaAgenda = await metadades(fetchImpl, AGENDA);
   const metaViatges = await metadades(fetchImpl, VIATGES);
 
@@ -603,6 +612,10 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     $order: 'inici_viatge DESC',
   });
 
+  // Si el primer nomenament ja fa dos trimestres, l'agenda ha de tenir alguna fila: buida, és una
+  // consulta que ha fallat. Abans, tot un Govern nou encara pot no sortir-hi.
+  if (agenda.length === 0 && afegirDies(desDe, MARGE_AGENDA_DIES) < dia(metaAgenda))
+    throw new SourceError(`L'agenda de grups d'interès no té cap fila des del ${desDe}.`);
   const darreraAgenda = agenda.length ? diaDeSocrata(agenda[0]!.data) : desDe;
 
   const persones = membres.map((m, i) => {
@@ -640,15 +653,19 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
         const items = llista(valor, camp);
         return items.length ? [{ camp, tipus, apartat, items }] : [];
       }),
-      agenda: {
-        contactes: contactes.length,
-        darrers: contactes.slice(0, DARRERES).map((f) => ({
-          data: diaDeSocrata(f.data),
-          grup: f.grup_d_inter_s,
-          activitat: f.activitat,
-          ...(f.tema !== undefined && { tema: f.tema }),
-        })),
-      },
+      // Algú nomenat fa poc pot no sortir encara a l'agenda: llavors no se'n sap res, ni tan sols
+      // que no hagi tingut cap reunió.
+      ...(totesSeves.length && {
+        agenda: {
+          contactes: contactes.length,
+          darrers: contactes.slice(0, DARRERES).map((f) => ({
+            data: diaDeSocrata(f.data),
+            grup: f.grup_d_inter_s,
+            activitat: f.activitat,
+            ...(f.tema !== undefined && { tema: f.tema }),
+          })),
+        },
+      }),
       viatges: {
         viatges: viatgesSeus.length,
         // Les despeses es publiquen quan s'han validat: els viatges recents en poden no tenir.
@@ -673,12 +690,12 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     declaracions: font(metaDecl, DECLARACIONS),
     agenda: font(metaAgenda, AGENDA),
     viatges: font(metaViatges, VIATGES),
-    nota: 'L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva.',
+    nota: 'L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva. Qui encara no surt a l’agenda, que es publica per trimestres, no té el camp agenda.',
     persones,
   };
 }
 
-/** Tot el que es publica, pel nom del fitxer. El Govern primer: l'ordre de les crides es reprodueix. */
+/** Tot el que es publica, pel nom del fitxer, en un ordre fix: l'ordre de les crides es reprodueix. */
 export async function construirInstitucions(fetchImpl: Fetch, avui: string, pausaMs: number) {
   // govern.cat no respon als scripts: les fitxes es copien a mà (NEUTRALITAT.md §2).
   const perfils = llegirPerfils(await readFile(PERFILS_GOVERN, 'utf8'));
@@ -691,5 +708,6 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
     ]),
     'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
     'agenda.json': await construirAgenda(fetchImpl, avui, pausaMs),
+    'ajuntaments.json': await construirAjuntaments(fetchImpl),
   };
 }

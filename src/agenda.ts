@@ -2,9 +2,17 @@
 // servidor MCP: src/dades.ts la desa a agenda.json, a la branca `dades`, amb les institucions.
 // Com a la resta de dades, si una font canvia de forma, val més aturar-se que publicar una agenda
 // a mitges.
-import { comprovaCodificacio, getJson, getText, SourceError, text, type Fetch } from './comun.ts';
+import {
+  comprovaCodificacio,
+  getJson,
+  getText,
+  metadades,
+  SOCRATA,
+  SourceError,
+  text,
+  type Fetch,
+} from './comun.ts';
 
-const SOCRATA = 'https://analisi.transparenciacatalunya.cat';
 export const ACTES_GOVERN = 'wf87-e34n';
 const PARLAMENT = 'https://www.parlament.cat';
 export const AGENDA_PARLAMENT = `${PARLAMENT}/web/actualitat/agenda/index.html`;
@@ -77,16 +85,17 @@ function camps(f: ActeSocrata) {
   return llegits;
 }
 
-/** El dia a Catalunya, i no en UTC: una actualització a les 00.30 és del dia que comença. */
+/**
+ * El dia a Catalunya, i no en UTC com `dia` de comun.ts: una actualització a les 00.30 és del dia
+ * que comença.
+ */
 const diaACatalunya = (segons: number) =>
   new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Madrid' }).format(new Date(segons * 1000));
-
-type Meta = { name: string; rowsUpdatedAt: number; attribution: string };
 
 /** Els actes del Govern, del conjunt «Actes del Govern» de Dades obertes. */
 export async function construirAgendaGovern(fetchImpl: Fetch, avui: string) {
   const { des_de: desDe, fins_a: finsA } = finestra(avui);
-  const meta = await getJson<Meta>(fetchImpl, `${SOCRATA}/api/views/${ACTES_GOVERN}.json`);
+  const meta = await metadades(fetchImpl, ACTES_GOVERN);
   const limit = 5000;
   const autoritats = AUTORITATS_GOVERN.map((a) => `'${a}'`).join(',');
   const files = await getJson<ActeSocrata[]>(

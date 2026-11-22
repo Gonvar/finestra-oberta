@@ -35,6 +35,15 @@ export async function getJson<T>(fetchImpl: Fetch, url: string) {
   return (await (await get(fetchImpl, url, 'application/json')).json()) as T;
 }
 
+/** Dades obertes de Catalunya, la plataforma Socrata de la Generalitat. */
+export const SOCRATA = 'https://analisi.transparenciacatalunya.cat';
+
+type Meta = { name: string; rowsUpdatedAt: number; attribution: string };
+export const metadades = (fetchImpl: Fetch, id: string) =>
+  getJson<Meta>(fetchImpl, `${SOCRATA}/api/views/${id}.json`);
+/** El dia de l'última actualització de les files d'un conjunt, no el de la consulta. */
+export const dia = (meta: Meta) => new Date(meta.rowsUpdatedAt * 1000).toISOString().slice(0, 10);
+
 /** Per a les fonts que només publiquen pàgines web, com el Parlament. */
 export async function getText(fetchImpl: Fetch, url: string) {
   return (await get(fetchImpl, url, 'text/html')).text();
