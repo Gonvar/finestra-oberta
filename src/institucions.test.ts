@@ -271,7 +271,7 @@ const perfil = (nom: string, carrec: string, fotos = 1) => ({
   nom,
   carrec,
   fotos: Array.from({ length: fotos }, (_, i) => `https://govern.cat/govern/docs/${nom}-${i}.png`),
-  cv: `<p><strong>Nascuda a Lleida.</strong></p><p>Llicenciada&nbsp;en Dret.</p>`,
+  cv: `<p><strong>Nascuda a Lleida.</strong></p><p>Llicenciada&nbsp;en <em>Dret</em>, a Lleida.</p>`,
 });
 
 /** govern.cat fa servir el nom amb què es coneix cada persona, que pot no ser l'oficial. */
@@ -321,7 +321,7 @@ test('el Govern dona el president i un conseller per departament, amb el nom ben
     carrec_oficial: 'PRESIDENT DE LA GENERALITAT DE CATALUNYA',
     retribucio_anual: 1,
     foto: 'https://govern.cat/govern/docs/Anna Exemple i U-0.png',
-    cv: ['Nascuda a Lleida.', 'Llicenciada en Dret.'],
+    cv: ['Nascuda a Lleida.', 'Llicenciada en Dret, a Lleida.'],
   });
   assert.deepEqual(
     resultat.consellers.map((c) => [c.nom, c.carrec]),
@@ -485,7 +485,8 @@ function transparencia(declaracions: object[], viatges = VIATGES_FILES, agenda =
 test('la transparència dona la declaració, l’agenda i els viatges des del nomenament', async () => {
   const declaracions = [
     declaracio('Berta Exemple Dos', 'Consellera', 'Actiu', {
-      participacio_entitats_sense: '1. Entitat U\n2. Entitat Dos',
+      participacio_entitats_sense: '1. Entitat U\n2. 12.11.2024 Entitat Dos',
+      participacio_ocasional: 'N/A\n',
     }),
     // El càrrec anterior, ja inactiu, no és la declaració d'ara.
     declaracio('Berta Exemple Dos', 'Secretària general', 'Inactiu'),
@@ -499,9 +500,10 @@ test('la transparència dona la declaració, l’agenda i els viatges des del no
       camp: 'participacio_entitats_sense',
       tipus: 'privada',
       apartat: 'Descripció oficial de participacio_entitats_sense',
-      items: ['Entitat U', 'Entitat Dos'],
+      items: ['Entitat U', '12.11.2024 Entitat Dos'],
     },
   ]);
+  assert.ok(persona!.agenda);
   assert.equal(persona!.agenda.contactes, 2);
   assert.deepEqual(
     persona!.agenda.darrers.map((c) => c.grup),
@@ -519,6 +521,33 @@ test('la transparència falla si l’agenda no té cap fila d’un membre nomena
   await assert.rejects(
     construirTransparencia(transparencia(declaracions, VIATGES_FILES, agenda), MEMBRES),
     /no té cap fila de Berta Exemple i Dos/,
+  );
+});
+
+test('qui fa poc que és al càrrec i no surt a l’agenda no en té cap xifra', async () => {
+  const declaracions = [declaracio('Berta Exemple Dos', 'Consellera')];
+  // La darrera fila de l'agenda és de menys de dos trimestres després del nomenament.
+  const agenda = [
+    {
+      data: '2024-12-01T00:00:00.000',
+      grup_d_inter_s: 'Entitat U',
+      activitat: 'Reunió',
+      nom_i_cognoms: 'Una Altra Persona',
+      c_rrec: 'Conseller de Cultura',
+    },
+  ];
+  const resultat = await construirTransparencia(
+    transparencia(declaracions, VIATGES_FILES, agenda),
+    MEMBRES,
+  );
+  assert.equal('agenda' in resultat.persones[0]!, false);
+});
+
+test('la transparència falla si l’agenda no té cap fila', async () => {
+  const declaracions = [declaracio('Berta Exemple Dos', 'Consellera')];
+  await assert.rejects(
+    construirTransparencia(transparencia(declaracions, VIATGES_FILES, []), MEMBRES),
+    /no té cap fila des del/,
   );
 });
 

@@ -59,7 +59,7 @@ Regles:
 - **El color ocupa espai només en blocs sencers**: els tres blocs de les institucions de la portada i, dins de cada secció, la seva capçalera. A la resta, el color de la institució apareix com a punt, etiqueta o enllaç, mai com a fons de targetes.
 - **El text sobre color és sempre blanc**, i només sobre `--gov`, `--par` o `--dad`.
 - **No hi ha cap altre color de marca.** No s'hi afegeixen grocs, taronges ni degradats. Per als estats d'error, d'avís i d'èxit es fan servir tons semàntics a part, que no es confonguin amb cap institució.
-- **Els colors dels grups parlamentaris són dades, no marca.** Són els que fa servir el mapa d'escons del Parlament i només identifiquen cada grup: als seients de l'hemicicle, al punt de la llegenda i al títol de cada grup. No es fan servir per a res més, ni com a fons, i sempre van amb el nom del grup al costat.
+- **Els colors dels grups parlamentaris són dades, no marca.** Són els que fa servir el mapa d'escons del Parlament i només identifiquen cada grup: als seients de l'hemicicle, al punt de la llegenda, a la barra que en mostra la part de la cambra i al títol de cada grup. No es fan servir per a res més, ni com a fons, i sempre van amb el nom del grup al costat.
 - **El color mai és l'únic indicador.** Cada punt de color té al costat el nom del tipus («Acord del Govern», «Parlament», «Reunió»).
 - Cada valor nou es comprova amb el càlcul de contrast de WCAG abans d'entrar en aquesta taula.
 

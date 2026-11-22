@@ -22,7 +22,9 @@ export function getStaticPaths() {
 type Props = { membre: Membre };
 const { membre } = Astro.props;
 const t = transparenciaDe(membre);
-const { agenda, viatges } = t;
+const { viatges } = t;
+// Qui fa poc que és al càrrec pot no sortir encara a l'agenda, que es publica per trimestres.
+const agenda = 'agenda' in t ? t.agenda : undefined;
 
 const publiques = t.activitats.filter((a) => a.tipus === 'pública');
 const privades = t.activitats.filter((a) => a.tipus === 'privada');
@@ -50,8 +52,16 @@ const desDe = `des del ${dia(t.nomenament)}`;
         </p>
       </div>
       <div>
-        <p class="valor">{nombre(agenda.contactes)}</p>
-        <p class="que">Entrades a l'agenda de grups d'interès</p>
+        {
+          agenda ? (
+            <>
+              <p class="valor">{nombre(agenda.contactes)}</p>
+              <p class="que">Entrades a l'agenda de grups d'interès</p>
+            </>
+          ) : (
+            <p class="que">Encara no surt a l'agenda de grups d'interès</p>
+          )
+        }
         <p class="font-dada">
           <a href={transparencia.agenda.url}>Agenda pública</a>, {dia(transparencia.agenda.data_dades)}
         </p>
@@ -128,7 +138,9 @@ const desDe = `des del ${dia(t.nomenament)}`;
       reunions que hi tenen els alts càrrecs es publiquen en una agenda.
     </p>
     {
-      agenda.darrers.length === 0 ? (
+      agenda === undefined ? (
+        <p class="buit">Encara no surt a l'agenda, que es publica per trimestres.</p>
+      ) : agenda.darrers.length === 0 ? (
         <p class="buit">L'agenda pública no té cap reunió amb grups d'interès {desDe}.</p>
       ) : (
         <ol class="files cronologia">
@@ -148,7 +160,7 @@ const desDe = `des del ${dia(t.nomenament)}`;
       )
     }
     <p class="font-dada">
-      {agenda.darrers.length > 0 && `Les ${agenda.darrers.length} més recents de ${nombre(agenda.contactes)}. `}
+      {agenda && agenda.contactes > agenda.darrers.length && `Les ${agenda.darrers.length} més recents de ${nombre(agenda.contactes)}. `}
       L'agenda posa una entrada per grup: una reunió amb tres grups hi surt tres vegades. Font: <a
         href={transparencia.agenda.url}>{transparencia.agenda.font}</a
       >, actualitzada el {dia(transparencia.agenda.data_dades)}.
@@ -178,7 +190,7 @@ const desDe = `des del ${dia(t.nomenament)}`;
       )
     }
     <p class="font-dada">
-      {viatges.darrers.length > 0 && `Els ${viatges.darrers.length} més recents de ${nombre(viatges.viatges)}. `}
+      {viatges.viatges > viatges.darrers.length && `Els ${viatges.darrers.length} més recents de ${nombre(viatges.viatges)}. `}
       L'import d'un viatge pot incloure el de la comitiva{
         viatges.sense_despeses > 0 && `, i ${viatges.sense_despeses} encara no tenen les despeses validades`
       }. Font: <a href={transparencia.viatges.url}>{transparencia.viatges.font}</a>, actualitzada el {

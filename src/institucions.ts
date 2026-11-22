@@ -427,10 +427,14 @@ export function llegirPerfils(json: string): PerfilsDesats {
 
 /** Els paràgrafs del currículum, que govern.cat publica en HTML. */
 function paragrafs(html: string) {
-  return html
-    .split(/<\/(?:p|h\d)>/)
-    .map(text)
-    .filter(Boolean);
+  return (
+    html
+      // Les etiquetes de dins d'una frase no separen paraules: «XXI</em>, de» és «XXI, de».
+      .replace(/<\/?(?:a|b|em|i|span|strong|sub|sup|u)\b[^>]*>/gi, '')
+      .split(/<\/(?:p|h\d)>/)
+      .map(text)
+      .filter(Boolean)
+  );
 }
 
 /**
@@ -498,10 +502,11 @@ function apartats(meta: MetaAmbColumnes) {
 
 /** «1. Primera\n2. Segona» en una llista; «N/A» vol dir que no en declara cap. */
 function llista(text: string, camp: string) {
-  if (text === 'N/A') return [];
+  if (text.trim() === 'N/A') return [];
   const items = text
     .split('\n')
-    .map((l) => l.replace(/^\s*\d+\s*\.\s*/, '').trim())
+    // Només el número de la llista: «12.11.2024 …» és una data i es queda.
+    .map((l) => l.replace(/^\s*\d+\s*\.(?!\d)\s*/, '').trim())
     .filter(Boolean);
   if (!items.length) throw new SourceError(`L'apartat ${camp} d'una declaració és buit.`);
   return items;
@@ -619,7 +624,10 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     $order: 'inici_viatge DESC',
   });
 
-  const darreraAgenda = agenda.length ? diaDeSocrata(agenda[0]!.data) : desDe;
+  // Hi ha qui hi és des d'abans de l'estiu del 2024: una agenda buida és una consulta que ha fallat.
+  if (agenda.length === 0)
+    throw new SourceError(`L'agenda de grups d'interès no té cap fila des del ${desDe}.`);
+  const darreraAgenda = diaDeSocrata(agenda[0]!.data);
 
   const persones = membres.map((m, i) => {
     const declaracio = nomenaments[i]!;
@@ -656,15 +664,19 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
         const items = llista(valor, camp);
         return items.length ? [{ camp, tipus, apartat, items }] : [];
       }),
-      agenda: {
-        contactes: contactes.length,
-        darrers: contactes.slice(0, DARRERES).map((f) => ({
-          data: diaDeSocrata(f.data),
-          grup: f.grup_d_inter_s,
-          activitat: f.activitat,
-          ...(f.tema !== undefined && { tema: f.tema }),
-        })),
-      },
+      // Algú nomenat fa poc pot no sortir encara a l'agenda: llavors no se'n sap res, ni tan sols
+      // que no hagi tingut cap reunió.
+      ...(totesSeves.length && {
+        agenda: {
+          contactes: contactes.length,
+          darrers: contactes.slice(0, DARRERES).map((f) => ({
+            data: diaDeSocrata(f.data),
+            grup: f.grup_d_inter_s,
+            activitat: f.activitat,
+            ...(f.tema !== undefined && { tema: f.tema }),
+          })),
+        },
+      }),
       viatges: {
         viatges: viatgesSeus.length,
         // Les despeses es publiquen quan s'han validat: els viatges recents en poden no tenir.
