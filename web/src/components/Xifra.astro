@@ -1,0 +1,41 @@
+---
+import type { Xifra } from '../dades/portada.ts';
+
+// Sense xifra no es pinta res: un forat amb «sense dades» a la portada no respon cap pregunta.
+type Props = { xifra: Xifra | undefined };
+const { xifra } = Astro.props;
+---
+
+{
+  xifra && (
+    <section class="seccio xifra" aria-label="Xifra">
+      <p class="valor">{xifra.valor}</p>
+      <p class="que">
+        {xifra.que} · {xifra.periode}
+      </p>
+      <p class="font-dada">
+        Font: <a href={xifra.font.url}>{xifra.font.nom}</a>
+      </p>
+    </section>
+  )
+}
+
+<style>
+  .valor {
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .que {
+    margin-top: 0.75rem;
+    font-size: 1.0625rem;
+    color: var(--ink-2);
+  }
+
+  .font-dada {
+    margin-top: 0.375rem;
+  }
+</style>

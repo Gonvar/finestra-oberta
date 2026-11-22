@@ -1,0 +1,120 @@
+---
+import type { Fet } from '../dades/portada.ts';
+
+type Props = { fets: Fet[] };
+const { fets } = Astro.props;
+
+const data = new Intl.DateTimeFormat('ca', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<section class="seccio" id="cronologia" aria-labelledby="cronologia-titol">
+  <h2 class="titol-seccio" id="cronologia-titol">Què ha passat</h2>
+  {
+    fets.length === 0 ? (
+      <p class="buit">
+        Encara no hi ha res publicat. Mentrestant, pots consultar les dades obertes{' '}
+        <a href="#ia">amb la teva IA</a>.
+      </p>
+    ) : (
+      <ol>
+        {fets.map((fet) => (
+          <li class="fila">
+            <time datetime={fet.data}>{data.format(new Date(fet.data))}</time>
+            <div>
+              <p class="tipus">
+                <span class:list={['punt', fet.institucio]} aria-hidden="true" />
+                {fet.tipus}
+              </p>
+              <p class="frase">{fet.frase}</p>
+              <p class="meta">
+                {fet.qui} · <a href={fet.font.url}>{fet.font.nom}</a>
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+</section>
+
+<style>
+  .buit {
+    margin-top: 1.5rem;
+    max-width: 36rem;
+    color: var(--ink-2);
+  }
+
+  ol {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+  }
+
+  .fila {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1.25rem 0;
+    box-shadow: inset 0 1px 0 var(--hair);
+  }
+
+  @media (min-width: 640px) {
+    .fila {
+      grid-template-columns: 110px 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  time {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--ink-3);
+    padding-top: 0.25rem;
+  }
+
+  .tipus {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--ink-2);
+  }
+
+  .punt {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+  }
+  .punt.gov {
+    background: var(--gov);
+  }
+  .punt.par {
+    background: var(--par);
+  }
+  .punt.dad {
+    background: var(--dad);
+  }
+
+  .frase {
+    margin-top: 0.25rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+  }
+
+  .meta {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--ink-3);
+  }
+
+  .meta a {
+    color: inherit;
+  }
+</style>

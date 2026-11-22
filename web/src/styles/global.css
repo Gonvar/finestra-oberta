@@ -1,0 +1,139 @@
+/* Tokens de DESIGN.md §2. Un valor que no és aquí no entra a la web sense passar abans per la taula. */
+:root {
+  --gov: #1f5bd8;
+  --gov-tint: #eef3fd;
+  --par: #a3192f;
+  --par-tint: #fbefef;
+  --dad: #0e7a59;
+  --dad-tint: #ebf6f1;
+  --ink: #1d1d1f;
+  --ink-2: #424245;
+  --ink-3: #6e6e73;
+  --bg: #ffffff;
+  --bg-2: #f5f5f7;
+  --hair: #e8e8ed;
+
+  --font:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --ample: 67.5rem;
+  --marge-e: max(20px, env(safe-area-inset-left));
+  --marge-d: max(20px, env(safe-area-inset-right));
+  --entre-seccions: 4.5rem;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --t-boto: 160ms;
+  --t-bloc: 220ms;
+
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --entre-seccions: 6.5rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--gov);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gov);
+  outline-offset: 3px;
+}
+
+/* Les seccions reben el focus quan s'hi salta des del cercador; no són controls. */
+section[tabindex='-1']:focus {
+  outline: none;
+}
+
+.contingut {
+  max-width: calc(var(--ample) + var(--marge-e) + var(--marge-d));
+  margin: 0 auto;
+  padding-left: var(--marge-e);
+  padding-right: var(--marge-d);
+}
+
+.seccio {
+  margin-top: var(--entre-seccions);
+  scroll-margin-top: 4.5rem;
+}
+
+.titol-seccio {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.font-dada {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--ink-3);
+}
+
+.font-dada a {
+  color: inherit;
+}
+
+.visualment-amagat {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Entrada de la pàgina: 520 ms, 10 px i 60 ms entre elements (§2.4). */
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.entra {
+  animation: entra 520ms var(--ease-out) backwards;
+  animation-delay: calc(var(--ordre, 0) * 60ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entra {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

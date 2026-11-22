@@ -13,3 +13,5 @@
 ## Ajuda d'un agent
 
 <!-- Si un agent d'IA hi ha contribuït de manera important, digues quin i què ha fet (codi, proves o revisió). Si no, escriu «No». -->
+
+<!-- Digues si s'hi ha passat `/code-review` en una sessió independent i què se n'ha corregit. -->
