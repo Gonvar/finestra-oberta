@@ -10,7 +10,7 @@
   "description" : "El dataset inclou informació detallada de les intervencions realitzades pels membres del Govern de la Generalitat de Catalunya al Parlament. S’hi distingeix per tipus d’intervenció i número de sessió parlamentària.\nLes dades s'actualitzen segons el calendari dels plens del Parlament.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 248,
+  "downloadCount" : 249,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",

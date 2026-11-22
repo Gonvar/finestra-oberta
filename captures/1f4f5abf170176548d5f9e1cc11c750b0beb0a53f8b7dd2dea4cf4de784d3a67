@@ -1,0 +1,4091 @@
+{
+  "id" : "6nei-4b44",
+  "name" : "Dades generals dels ens locals de Catalunya",
+  "assetType" : "dataset",
+  "attribution" : "Secretaria de Governs Locals i de Relacions amb l'Aran",
+  "attributionLink" : "https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/",
+  "averageRating" : 0,
+  "category" : "Sector Públic",
+  "createdAt" : 1591700506,
+  "description" : "Informació general referent als ens locals de Catalunya, tant d’àmbit territorial com administratiu.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 33774,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "SEE_TERMS_OF_USE",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 3191048,
+  "provenance" : "official",
+  "publicationAppendEnabled" : true,
+  "publicationDate" : 1794298762,
+  "publicationGroup" : 1176077,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1795325490,
+  "rowsUpdatedBy" : "a4b5-gx6v",
+  "tableId" : 2159321,
+  "totalTimesRated" : 0,
+  "viewCount" : 30682,
+  "viewLastModified" : 1795325486,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1605542939,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 1582913,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1605542939,
+    "targetAudience" : "public",
+    "workflowId" : 182,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1605542939,
+      "failureCount" : 0,
+      "startedAt" : 1605542939,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "a4b5-gx6v",
+      "displayName" : "Dades Obertes Catalunya"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 27561653,
+    "name" : "CODI_ENS",
+    "dataTypeName" : "text",
+    "description" : "Codi oficial estadístic de l’Ens",
+    "fieldName" : "codi_ens",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760176,
+    "cachedContents" : {
+      "non_null" : "1679",
+      "largest" : "9915975000",
+      "null" : "10088",
+      "top" : [ {
+        "item" : "0800230008",
+        "count" : "1"
+      }, {
+        "item" : "0800390004",
+        "count" : "1"
+      }, {
+        "item" : "0800440003",
+        "count" : "1"
+      }, {
+        "item" : "0800570005",
+        "count" : "1"
+      }, {
+        "item" : "0800575038",
+        "count" : "1"
+      }, {
+        "item" : "0800600000",
+        "count" : "1"
+      }, {
+        "item" : "0800604013",
+        "count" : "1"
+      }, {
+        "item" : "0800760009",
+        "count" : "1"
+      }, {
+        "item" : "0800765011",
+        "count" : "1"
+      }, {
+        "item" : "0800820002",
+        "count" : "1"
+      }, {
+        "item" : "0800950006",
+        "count" : "1"
+      }, {
+        "item" : "0800955018",
+        "count" : "1"
+      }, {
+        "item" : "0801090004",
+        "count" : "1"
+      }, {
+        "item" : "0801160009",
+        "count" : "1"
+      }, {
+        "item" : "0801210007",
+        "count" : "1"
+      }, {
+        "item" : "0801213011",
+        "count" : "1"
+      }, {
+        "item" : "0801370005",
+        "count" : "1"
+      }, {
+        "item" : "0801420002",
+        "count" : "1"
+      }, {
+        "item" : "0801550006",
+        "count" : "1"
+      }, {
+        "item" : "0800180001",
+        "count" : "1"
+      } ],
+      "smallest" : "0800180001",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561654,
+    "name" : "CODI_13",
+    "dataTypeName" : "text",
+    "description" : "Codi estadístic d’Entitats i nuclis de població",
+    "fieldName" : "codi_13",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760223,
+    "cachedContents" : {
+      "non_null" : "11035",
+      "largest" : "4390760001799",
+      "null" : "732",
+      "top" : [ {
+        "item" : "0800180013600",
+        "count" : "1"
+      }, {
+        "item" : "0800180013601",
+        "count" : "1"
+      }, {
+        "item" : "0800180013602",
+        "count" : "1"
+      }, {
+        "item" : "0800180013603",
+        "count" : "1"
+      }, {
+        "item" : "0800180013604",
+        "count" : "1"
+      }, {
+        "item" : "0800180013605",
+        "count" : "1"
+      }, {
+        "item" : "0800180013699",
+        "count" : "1"
+      }, {
+        "item" : "0800180014100",
+        "count" : "1"
+      }, {
+        "item" : "0800180014101",
+        "count" : "1"
+      }, {
+        "item" : "0800180014102",
+        "count" : "1"
+      }, {
+        "item" : "0800180014103",
+        "count" : "1"
+      }, {
+        "item" : "0800180014104",
+        "count" : "1"
+      }, {
+        "item" : "0800180014199",
+        "count" : "1"
+      }, {
+        "item" : "0800230000000",
+        "count" : "1"
+      }, {
+        "item" : "0800230001700",
+        "count" : "1"
+      }, {
+        "item" : "0800230001701",
+        "count" : "1"
+      }, {
+        "item" : "0800230001799",
+        "count" : "1"
+      }, {
+        "item" : "0800230002200",
+        "count" : "1"
+      }, {
+        "item" : "0800230002201",
+        "count" : "1"
+      }, {
+        "item" : "0800180000000",
+        "count" : "1"
+      } ],
+      "smallest" : "0800180000000",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561655,
+    "name" : "NOMTIPUS",
+    "dataTypeName" : "text",
+    "description" : "Descripció del tipus d’Ens local",
+    "fieldName" : "nomtipus",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760228,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "Soc. Merc. Capital Mixt",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Nuclis",
+        "count" : "6179"
+      }, {
+        "item" : "Entitats de població",
+        "count" : "3909"
+      }, {
+        "item" : "Municipis",
+        "count" : "947"
+      }, {
+        "item" : "Ens de gestió",
+        "count" : "356"
+      }, {
+        "item" : "Consorcis",
+        "count" : "112"
+      }, {
+        "item" : "Entitats municipals descentralitzades",
+        "count" : "65"
+      }, {
+        "item" : "Fundacions",
+        "count" : "56"
+      }, {
+        "item" : "Mancomunitats",
+        "count" : "54"
+      }, {
+        "item" : "Comarques",
+        "count" : "43"
+      }, {
+        "item" : "Soc. Merc. Capital Mixt",
+        "count" : "27"
+      }, {
+        "item" : "Soc. Merc. Capital Íntegrament Local",
+        "count" : "13"
+      }, {
+        "item" : "Províncies",
+        "count" : "4"
+      }, {
+        "item" : "Entitats metropolitanes",
+        "count" : "1"
+      }, {
+        "item" : "Associacions",
+        "count" : "1"
+      } ],
+      "smallest" : "Associacions",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561656,
+    "name" : "NOM_COMPLERT",
+    "dataTypeName" : "text",
+    "description" : "Nom complet de l’Ens local",
+    "fieldName" : "nom_complert",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760185,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "Zona Platges d'Alcanar",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Serra, la",
+        "count" : "12"
+      }, {
+        "item" : "Cantallops",
+        "count" : "11"
+      }, {
+        "item" : "Casetes, les",
+        "count" : "10"
+      }, {
+        "item" : "Estació, l'",
+        "count" : "10"
+      }, {
+        "item" : "Pla, el",
+        "count" : "10"
+      }, {
+        "item" : "Coma, la",
+        "count" : "10"
+      }, {
+        "item" : "Pineda, la",
+        "count" : "10"
+      }, {
+        "item" : "Plana, la",
+        "count" : "9"
+      }, {
+        "item" : "Barceloneta, la",
+        "count" : "8"
+      }, {
+        "item" : "Canyelles",
+        "count" : "8"
+      }, {
+        "item" : "Bellavista",
+        "count" : "7"
+      }, {
+        "item" : "Comes, les",
+        "count" : "7"
+      }, {
+        "item" : "Floresta, la",
+        "count" : "7"
+      }, {
+        "item" : "Rieral, el",
+        "count" : "7"
+      }, {
+        "item" : "Puig, el",
+        "count" : "7"
+      }, {
+        "item" : "Sant Roc",
+        "count" : "7"
+      }, {
+        "item" : "Riera, la",
+        "count" : "7"
+      }, {
+        "item" : "Hostalets, els",
+        "count" : "7"
+      }, {
+        "item" : "Sant Cristòfol",
+        "count" : "7"
+      }, {
+        "item" : "Sant Pere",
+        "count" : "7"
+      } ],
+      "smallest" : "Abadals, els",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561657,
+    "name" : "ADREÇA",
+    "dataTypeName" : "text",
+    "description" : "Adreça postal de l’Ens local",
+    "fieldName" : "adre_a",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760188,
+    "cachedContents" : {
+      "non_null" : "1677",
+      "largest" : "Zona Franca, sector C, carrer 4, CD 5a planta",
+      "null" : "10090",
+      "top" : [ {
+        "item" : "Pl. Major, 1",
+        "count" : "43"
+      }, {
+        "item" : "Casa Consistorial",
+        "count" : "41"
+      }, {
+        "item" : "Pl. Vila, 1",
+        "count" : "28"
+      }, {
+        "item" : "Pl. Ajuntament, 1",
+        "count" : "25"
+      }, {
+        "item" : "Plaça Major, 1",
+        "count" : "20"
+      }, {
+        "item" : "Plaça de la Vila, 1",
+        "count" : "19"
+      }, {
+        "item" : "Pl. Ajuntament, s/n",
+        "count" : "16"
+      }, {
+        "item" : "Pl. de la Vila, 1",
+        "count" : "14"
+      }, {
+        "item" : "Plaça de l'Ajuntament, 1",
+        "count" : "14"
+      }, {
+        "item" : "Pl. Església, 1",
+        "count" : "13"
+      }, {
+        "item" : "Pl. de l'Ajuntament, 1",
+        "count" : "9"
+      }, {
+        "item" : "Pl. Església, s/n",
+        "count" : "9"
+      }, {
+        "item" : "Sarriulèra, 2 - Ajuntament Vielha e Mitjaran",
+        "count" : "7"
+      }, {
+        "item" : "Plaça de la Vila, s/n",
+        "count" : "7"
+      }, {
+        "item" : "Plaça Catalunya, 1",
+        "count" : "6"
+      }, {
+        "item" : "Pl. Major, 4",
+        "count" : "6"
+      }, {
+        "item" : "Pl. Catalunya, 1",
+        "count" : "5"
+      }, {
+        "item" : "Pl. Ajuntament, 2",
+        "count" : "5"
+      }, {
+        "item" : "Pl. Ajuntament, 3",
+        "count" : "5"
+      }, {
+        "item" : "Plaça d'Espanya, 1",
+        "count" : "5"
+      } ],
+      "smallest" : "Abeurador, 1",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561658,
+    "name" : "CODI_MUNICIPI",
+    "dataTypeName" : "text",
+    "description" : "Codi del municipi on es troba l’ens",
+    "fieldName" : "codi_municipi",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13567328,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "4390760009",
+      "null" : "0",
+      "top" : [ {
+        "item" : "4314820002",
+        "count" : "90"
+      }, {
+        "item" : "2523470005",
+        "count" : "77"
+      }, {
+        "item" : "0801930008",
+        "count" : "70"
+      }, {
+        "item" : "2514030008",
+        "count" : "67"
+      }, {
+        "item" : "0811360009",
+        "count" : "63"
+      }, {
+        "item" : "2503900000",
+        "count" : "62"
+      }, {
+        "item" : "1701390004",
+        "count" : "61"
+      }, {
+        "item" : "4304300000",
+        "count" : "60"
+      }, {
+        "item" : "2517340003",
+        "count" : "59"
+      }, {
+        "item" : "2503490004",
+        "count" : "56"
+      }, {
+        "item" : "2522710007",
+        "count" : "56"
+      }, {
+        "item" : "0816140003",
+        "count" : "55"
+      }, {
+        "item" : "0829560009",
+        "count" : "51"
+      }, {
+        "item" : "1707920002",
+        "count" : "51"
+      }, {
+        "item" : "0829170005",
+        "count" : "51"
+      }, {
+        "item" : "2524300000",
+        "count" : "48"
+      }, {
+        "item" : "0823100000",
+        "count" : "45"
+      }, {
+        "item" : "2523980001",
+        "count" : "45"
+      }, {
+        "item" : "2512070005",
+        "count" : "44"
+      }, {
+        "item" : "2505180001",
+        "count" : "44"
+      } ],
+      "smallest" : "0800180001",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561659,
+    "name" : "MUNICIPI",
+    "dataTypeName" : "text",
+    "description" : "Municipi de l’adreça postal",
+    "fieldName" : "municipi",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760208,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "Xerta",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Tarragona",
+        "count" : "90"
+      }, {
+        "item" : "Tremp",
+        "count" : "77"
+      }, {
+        "item" : "Barcelona",
+        "count" : "70"
+      }, {
+        "item" : "Montferrer i Castellbò",
+        "count" : "67"
+      }, {
+        "item" : "Manresa",
+        "count" : "63"
+      }, {
+        "item" : "Baix Pallars",
+        "count" : "62"
+      }, {
+        "item" : "Begur",
+        "count" : "61"
+      }, {
+        "item" : "Catllar",
+        "count" : "60"
+      }, {
+        "item" : "Pont de Suert",
+        "count" : "59"
+      }, {
+        "item" : "Torre de Cabdella",
+        "count" : "56"
+      }, {
+        "item" : "Artesa de Segre",
+        "count" : "56"
+      }, {
+        "item" : "Piera",
+        "count" : "55"
+      }, {
+        "item" : "Girona",
+        "count" : "51"
+      }, {
+        "item" : "Vacarisses",
+        "count" : "51"
+      }, {
+        "item" : "Vallirana",
+        "count" : "51"
+      }, {
+        "item" : "Vielha e Mijaran",
+        "count" : "48"
+      }, {
+        "item" : "Sant Pere de Ribes",
+        "count" : "45"
+      }, {
+        "item" : "Valls de Valira",
+        "count" : "45"
+      }, {
+        "item" : "Sant Martí Sarroca",
+        "count" : "44"
+      }, {
+        "item" : "Calonge i Sant Antoni",
+        "count" : "44"
+      } ],
+      "smallest" : "Abella de la Conca",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561660,
+    "name" : "CODI_DELEGACIO",
+    "dataTypeName" : "text",
+    "description" : "Codi de la delegació territorial",
+    "fieldName" : "codi_delegacio",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13567327,
+    "cachedContents" : {
+      "non_null" : "11541",
+      "largest" : "8",
+      "null" : "226",
+      "top" : [ {
+        "item" : "2",
+        "count" : "2771"
+      }, {
+        "item" : "1",
+        "count" : "2417"
+      }, {
+        "item" : "6",
+        "count" : "1723"
+      }, {
+        "item" : "7",
+        "count" : "1598"
+      }, {
+        "item" : "4",
+        "count" : "1293"
+      }, {
+        "item" : "3",
+        "count" : "1265"
+      }, {
+        "item" : "5",
+        "count" : "355"
+      }, {
+        "item" : "8",
+        "count" : "119"
+      } ],
+      "smallest" : "1",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561661,
+    "name" : "NOM_CAPITAL",
+    "dataTypeName" : "text",
+    "description" : "Nom de l’entitat capital del municipi",
+    "fieldName" : "nom_capital",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760183,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "Xerta",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "Valls",
+        "count" : "2"
+      }, {
+        "item" : "Fígols",
+        "count" : "2"
+      }, {
+        "item" : "Cambrils",
+        "count" : "2"
+      }, {
+        "item" : "Abrera",
+        "count" : "1"
+      }, {
+        "item" : "Aguilar de Segarra",
+        "count" : "1"
+      }, {
+        "item" : "Agullana",
+        "count" : "1"
+      }, {
+        "item" : "Agramunt",
+        "count" : "1"
+      }, {
+        "item" : "Aiguaviva",
+        "count" : "1"
+      }, {
+        "item" : "Aitona",
+        "count" : "1"
+      }, {
+        "item" : "Alamús, els",
+        "count" : "1"
+      }, {
+        "item" : "Alàs",
+        "count" : "1"
+      }, {
+        "item" : "Albagés, l'",
+        "count" : "1"
+      }, {
+        "item" : "Albanyà",
+        "count" : "1"
+      }, {
+        "item" : "Albatàrrec",
+        "count" : "1"
+      }, {
+        "item" : "Albi, l'",
+        "count" : "1"
+      }, {
+        "item" : "Albesa",
+        "count" : "1"
+      }, {
+        "item" : "Albinyana",
+        "count" : "1"
+      }, {
+        "item" : "Albiol, l'",
+        "count" : "1"
+      }, {
+        "item" : "Albons",
+        "count" : "1"
+      }, {
+        "item" : "Aiguafreda",
+        "count" : "1"
+      } ],
+      "smallest" : "Abella de la Conca",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561662,
+    "name" : "TELEFON",
+    "dataTypeName" : "text",
+    "description" : "Telèfon oficial de l’Ens local",
+    "fieldName" : "telefon",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760221,
+    "cachedContents" : {
+      "non_null" : "1658",
+      "largest" : "977-898235",
+      "null" : "10109",
+      "top" : [ {
+        "item" : "973-640018",
+        "count" : "8"
+      }, {
+        "item" : "938031950",
+        "count" : "7"
+      }, {
+        "item" : "973-350458",
+        "count" : "6"
+      }, {
+        "item" : "932235151",
+        "count" : "6"
+      }, {
+        "item" : "93-6852400",
+        "count" : "4"
+      }, {
+        "item" : "973-644030",
+        "count" : "4"
+      }, {
+        "item" : "938034735",
+        "count" : "3"
+      }, {
+        "item" : "973641801",
+        "count" : "3"
+      }, {
+        "item" : "977445308",
+        "count" : "3"
+      }, {
+        "item" : "973531300",
+        "count" : "3"
+      }, {
+        "item" : "932987000",
+        "count" : "3"
+      }, {
+        "item" : "973-624405",
+        "count" : "3"
+      }, {
+        "item" : "977880088",
+        "count" : "3"
+      }, {
+        "item" : "93-7417400",
+        "count" : "2"
+      }, {
+        "item" : "931696501",
+        "count" : "2"
+      }, {
+        "item" : "937712112",
+        "count" : "2"
+      }, {
+        "item" : "877604001",
+        "count" : "2"
+      }, {
+        "item" : "936373055",
+        "count" : "2"
+      }, {
+        "item" : "937713017",
+        "count" : "2"
+      }, {
+        "item" : "93-5719500",
+        "count" : "2"
+      } ],
+      "smallest" : "606966379",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561663,
+    "name" : "FAX",
+    "dataTypeName" : "text",
+    "description" : "Fax oficial der l’Ens local",
+    "fieldName" : "fax",
+    "position" : 11,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760201,
+    "cachedContents" : {
+      "non_null" : "1381",
+      "largest" : "977-898235",
+      "null" : "10386",
+      "top" : [ {
+        "item" : "973-640537",
+        "count" : "7"
+      }, {
+        "item" : "973-645726",
+        "count" : "6"
+      }, {
+        "item" : "938051964",
+        "count" : "5"
+      }, {
+        "item" : "973-624388",
+        "count" : "4"
+      }, {
+        "item" : "973-352788",
+        "count" : "4"
+      }, {
+        "item" : "972156062",
+        "count" : "4"
+      }, {
+        "item" : "93-6851868",
+        "count" : "4"
+      }, {
+        "item" : "977881463",
+        "count" : "3"
+      }, {
+        "item" : "977-823900",
+        "count" : "3"
+      }, {
+        "item" : "973641769",
+        "count" : "3"
+      }, {
+        "item" : "977445397",
+        "count" : "3"
+      }, {
+        "item" : "973-355566",
+        "count" : "3"
+      }, {
+        "item" : "938052345",
+        "count" : "3"
+      }, {
+        "item" : "977705946",
+        "count" : "3"
+      }, {
+        "item" : "938236403",
+        "count" : "2"
+      }, {
+        "item" : "938207624",
+        "count" : "2"
+      }, {
+        "item" : "93-8247991",
+        "count" : "2"
+      }, {
+        "item" : "938143727",
+        "count" : "2"
+      }, {
+        "item" : "932111428",
+        "count" : "2"
+      }, {
+        "item" : "93-8183470",
+        "count" : "2"
+      } ],
+      "smallest" : "872 558 02",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561664,
+    "name" : "TRACTAMENT",
+    "dataTypeName" : "text",
+    "description" : "Tractament del responsable de l’Ens local",
+    "fieldName" : "tractament",
+    "position" : 12,
+    "renderTypeName" : "text",
+    "tableColumnId" : 11340233,
+    "cachedContents" : {
+      "non_null" : "1675",
+      "largest" : "Sr./Sra.",
+      "null" : "10092",
+      "top" : [ {
+        "item" : "Il·lm. Sr.",
+        "count" : "773"
+      }, {
+        "item" : "Sr.",
+        "count" : "322"
+      }, {
+        "item" : "Il·lma. Sra.",
+        "count" : "240"
+      }, {
+        "item" : "Il.lm. Sr.",
+        "count" : "119"
+      }, {
+        "item" : "Sra.",
+        "count" : "89"
+      }, {
+        "item" : "Il.lma. Sra.",
+        "count" : "63"
+      }, {
+        "item" : "Sr./Sra.",
+        "count" : "27"
+      }, {
+        "item" : "Sr./Sra",
+        "count" : "21"
+      }, {
+        "item" : "Excm. Sr.",
+        "count" : "12"
+      }, {
+        "item" : "Excma. Sra.",
+        "count" : "4"
+      }, {
+        "item" : "Mgfc. Sr.",
+        "count" : "2"
+      }, {
+        "item" : "Excm. Sra.",
+        "count" : "1"
+      }, {
+        "item" : "Mgfca. Sra.",
+        "count" : "1"
+      }, {
+        "item" : "Hble. Sr.",
+        "count" : "1"
+      } ],
+      "smallest" : "Excma. Sra.",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561665,
+    "name" : "PRESIDENT",
+    "dataTypeName" : "text",
+    "description" : "Nom del responsable de l’Ens local",
+    "fieldName" : "president",
+    "position" : 13,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760219,
+    "cachedContents" : {
+      "non_null" : "1672",
+      "largest" : "Yolanda Ruiz Baena",
+      "null" : "10095",
+      "top" : [ {
+        "item" : "Vacant",
+        "count" : "294"
+      }, {
+        "item" : "Jaume Collboni Cuadrado",
+        "count" : "12"
+      }, {
+        "item" : "Marc Castells Berzosa",
+        "count" : "8"
+      }, {
+        "item" : "Antonio Balmón Arévalo",
+        "count" : "6"
+      }, {
+        "item" : "Marc Aloy Guàrdia",
+        "count" : "6"
+      }, {
+        "item" : "Carles Ruiz Novella",
+        "count" : "6"
+      }, {
+        "item" : "David Bote Paz",
+        "count" : "5"
+      }, {
+        "item" : "Janet Sanz Cid",
+        "count" : "5"
+      }, {
+        "item" : "Àngel Ros Domingo",
+        "count" : "5"
+      }, {
+        "item" : "Marta Madrenas Mir",
+        "count" : "4"
+      }, {
+        "item" : "Lluc Salellas Vilar",
+        "count" : "4"
+      }, {
+        "item" : "Jaume Asens Llodrà",
+        "count" : "4"
+      }, {
+        "item" : "Mireia Dionisio Calé",
+        "count" : "4"
+      }, {
+        "item" : "Sandra Guaita Esteruelas",
+        "count" : "4"
+      }, {
+        "item" : "Marc Solsona Aixalà",
+        "count" : "3"
+      }, {
+        "item" : "Marta Farrés Falgueras",
+        "count" : "3"
+      }, {
+        "item" : "José Antonio Montero Domínguez",
+        "count" : "3"
+      }, {
+        "item" : "Jesús Miguel Juárez Tamayo",
+        "count" : "3"
+      }, {
+        "item" : "Josep Perpinyà Palau",
+        "count" : "3"
+      }, {
+        "item" : "Isidre Chia Trilles",
+        "count" : "3"
+      } ],
+      "smallest" : "Abigail Garrido Tinta",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561666,
+    "name" : "NOM",
+    "dataTypeName" : "text",
+    "description" : "Nom President/a",
+    "fieldName" : "nom",
+    "position" : 14,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760192,
+    "cachedContents" : {
+      "non_null" : "1671",
+      "largest" : "Yolanda",
+      "null" : "10096",
+      "top" : [ {
+        "item" : "Vacant",
+        "count" : "294"
+      }, {
+        "item" : "Jordi",
+        "count" : "68"
+      }, {
+        "item" : "Josep",
+        "count" : "58"
+      }, {
+        "item" : "Joan",
+        "count" : "56"
+      }, {
+        "item" : "Jaume",
+        "count" : "44"
+      }, {
+        "item" : "Xavier",
+        "count" : "39"
+      }, {
+        "item" : "Marc",
+        "count" : "38"
+      }, {
+        "item" : "Josep Maria",
+        "count" : "30"
+      }, {
+        "item" : "Albert",
+        "count" : "28"
+      }, {
+        "item" : "David",
+        "count" : "23"
+      }, {
+        "item" : "Pere",
+        "count" : "23"
+      }, {
+        "item" : "Miquel",
+        "count" : "22"
+      }, {
+        "item" : "Francesc",
+        "count" : "22"
+      }, {
+        "item" : "Carles",
+        "count" : "21"
+      }, {
+        "item" : "Montserrat",
+        "count" : "21"
+      }, {
+        "item" : "Marta",
+        "count" : "20"
+      }, {
+        "item" : "Antoni",
+        "count" : "19"
+      }, {
+        "item" : "Ramon",
+        "count" : "18"
+      }, {
+        "item" : "Lluís",
+        "count" : "15"
+      }, {
+        "item" : "Eduard",
+        "count" : "14"
+      } ],
+      "smallest" : "Abigail",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561667,
+    "name" : "COGNOM1",
+    "dataTypeName" : "text",
+    "description" : "Cognom1 President/a",
+    "fieldName" : "cognom1",
+    "position" : 15,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760189,
+    "cachedContents" : {
+      "non_null" : "1377",
+      "largest" : "Zuloaga",
+      "null" : "10390",
+      "top" : [ {
+        "item" : "Garcia",
+        "count" : "13"
+      }, {
+        "item" : "Martínez",
+        "count" : "12"
+      }, {
+        "item" : "Collboni",
+        "count" : "12"
+      }, {
+        "item" : "Serra",
+        "count" : "11"
+      }, {
+        "item" : "Rovira",
+        "count" : "10"
+      }, {
+        "item" : "Ruiz",
+        "count" : "10"
+      }, {
+        "item" : "Puig",
+        "count" : "9"
+      }, {
+        "item" : "Castells",
+        "count" : "9"
+      }, {
+        "item" : "Ros",
+        "count" : "8"
+      }, {
+        "item" : "Sánchez",
+        "count" : "7"
+      }, {
+        "item" : "García",
+        "count" : "7"
+      }, {
+        "item" : "Oliveras",
+        "count" : "7"
+      }, {
+        "item" : "Vidal",
+        "count" : "7"
+      }, {
+        "item" : "López",
+        "count" : "6"
+      }, {
+        "item" : "Sans",
+        "count" : "6"
+      }, {
+        "item" : "Pérez",
+        "count" : "6"
+      }, {
+        "item" : "Roca",
+        "count" : "6"
+      }, {
+        "item" : "Balmón",
+        "count" : "6"
+      }, {
+        "item" : "Ferré",
+        "count" : "6"
+      }, {
+        "item" : "Aloy",
+        "count" : "6"
+      } ],
+      "smallest" : "Abel",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561668,
+    "name" : "COGNOM2",
+    "dataTypeName" : "text",
+    "description" : "Cognom2 President/a",
+    "fieldName" : "cognom2",
+    "position" : 16,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760226,
+    "cachedContents" : {
+      "non_null" : "1375",
+      "largest" : "Zaldo",
+      "null" : "10392",
+      "top" : [ {
+        "item" : "López",
+        "count" : "14"
+      }, {
+        "item" : "Rodríguez",
+        "count" : "12"
+      }, {
+        "item" : "Cuadrado",
+        "count" : "12"
+      }, {
+        "item" : "Domingo",
+        "count" : "11"
+      }, {
+        "item" : "Martínez",
+        "count" : "10"
+      }, {
+        "item" : "Garcia",
+        "count" : "9"
+      }, {
+        "item" : "Berzosa",
+        "count" : "8"
+      }, {
+        "item" : "Pujol",
+        "count" : "8"
+      }, {
+        "item" : "Solé",
+        "count" : "8"
+      }, {
+        "item" : "Ruiz",
+        "count" : "7"
+      }, {
+        "item" : "Serra",
+        "count" : "7"
+      }, {
+        "item" : "Casals",
+        "count" : "7"
+      }, {
+        "item" : "Vidal",
+        "count" : "7"
+      }, {
+        "item" : "Ferrer",
+        "count" : "6"
+      }, {
+        "item" : "Bosch",
+        "count" : "6"
+      }, {
+        "item" : "Pla",
+        "count" : "6"
+      }, {
+        "item" : "Guàrdia",
+        "count" : "6"
+      }, {
+        "item" : "Novella",
+        "count" : "6"
+      }, {
+        "item" : "Carrillo",
+        "count" : "6"
+      }, {
+        "item" : "Arévalo",
+        "count" : "6"
+      } ],
+      "smallest" : "Abadia",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561669,
+    "name" : "CARREC_PRESIDENT",
+    "dataTypeName" : "text",
+    "description" : "Càrrec del responsable de l’Ens local",
+    "fieldName" : "carrec_president",
+    "position" : 17,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760195,
+    "cachedContents" : {
+      "non_null" : "1677",
+      "largest" : "Síndica",
+      "null" : "10090",
+      "top" : [ {
+        "item" : "Alcalde President",
+        "count" : "686"
+      }, {
+        "item" : "President",
+        "count" : "539"
+      }, {
+        "item" : "Alcaldessa Presidenta",
+        "count" : "261"
+      }, {
+        "item" : "Presidenta",
+        "count" : "143"
+      }, {
+        "item" : "President/Presidenta",
+        "count" : "47"
+      }, {
+        "item" : "Síndica",
+        "count" : "1"
+      } ],
+      "smallest" : "Alcalde President",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561670,
+    "name" : "HD",
+    "dataTypeName" : "text",
+    "description" : "Sexe del/ de la responsable de l’Ens local",
+    "fieldName" : "hd",
+    "position" : 18,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760172,
+    "cachedContents" : {
+      "non_null" : "1676",
+      "largest" : "H",
+      "null" : "10091",
+      "top" : [ {
+        "item" : "H",
+        "count" : "1264"
+      }, {
+        "item" : "D",
+        "count" : "412"
+      } ],
+      "smallest" : "D",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561671,
+    "name" : "PARTITPOL",
+    "dataTypeName" : "text",
+    "description" : "Sigles partit polític/candidatura",
+    "fieldName" : "partitpol",
+    "position" : 19,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760200,
+    "cachedContents" : {
+      "non_null" : "1073",
+      "largest" : "xtu",
+      "null" : "10694",
+      "top" : [ {
+        "item" : "CM",
+        "count" : "313"
+      }, {
+        "item" : "ERC-AM",
+        "count" : "112"
+      }, {
+        "item" : "PSC-CP",
+        "count" : "87"
+      }, {
+        "item" : "AM",
+        "count" : "22"
+      }, {
+        "item" : "ERC",
+        "count" : "15"
+      }, {
+        "item" : "UA-PSC-CP",
+        "count" : "13"
+      }, {
+        "item" : "PSC",
+        "count" : "13"
+      }, {
+        "item" : "CP",
+        "count" : "13"
+      }, {
+        "item" : "JUNTS",
+        "count" : "10"
+      }, {
+        "item" : "ARA PL",
+        "count" : "10"
+      }, {
+        "item" : "JxCAT",
+        "count" : "8"
+      }, {
+        "item" : "ERC / ESQU",
+        "count" : "8"
+      }, {
+        "item" : "Junts",
+        "count" : "8"
+      }, {
+        "item" : "JXCAT",
+        "count" : "8"
+      }, {
+        "item" : "CDA-PNA",
+        "count" : "7"
+      }, {
+        "item" : "PP",
+        "count" : "6"
+      }, {
+        "item" : "ERC - AM",
+        "count" : "6"
+      }, {
+        "item" : "JuntsxCat",
+        "count" : "4"
+      }, {
+        "item" : "IVV-ERC-AM",
+        "count" : "4"
+      }, {
+        "item" : "CUP-AMUNT",
+        "count" : "4"
+      } ],
+      "smallest" : "AA-AM",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561672,
+    "name" : "GERENT",
+    "dataTypeName" : "text",
+    "description" : "Tractament i nom del gerent del Consell comarcal",
+    "fieldName" : "gerent",
+    "position" : 20,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760205,
+    "cachedContents" : {
+      "non_null" : "41",
+      "largest" : "Sr. Xavier Alonso Villaverde",
+      "null" : "11726",
+      "top" : [ {
+        "item" : "Sr. Vacant",
+        "count" : "3"
+      }, {
+        "item" : "Sr. Joan Emili Llauradó i Grau",
+        "count" : "2"
+      }, {
+        "item" : "Sra. Estefania Valdés García",
+        "count" : "1"
+      }, {
+        "item" : "Sra. Gal·la Cortadellas Bertran",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Albert Costa Marcé",
+        "count" : "1"
+      }, {
+        "item" : "Sra. Maria Pilar Tomàs i Chavalí",
+        "count" : "1"
+      }, {
+        "item" : "Sra. Mila Arcarons Oferil",
+        "count" : "1"
+      }, {
+        "item" : "Sra. Neus Guiu Cervelló",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Àngel Ollé Pujols",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Àngel Pérez Magrané",
+        "count" : "1"
+      }, {
+        "item" : "Sra. Núria Carrés Bordas",
+        "count" : "1"
+      }, {
+        "item" : "Sra. Rosa Pujols Castellà",
+        "count" : "1"
+      }, {
+        "item" : "Sra. Sílvia Bartrolí Besalú",
+        "count" : "1"
+      }, {
+        "item" : "Sra. Valentina Ambros Habulea",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Carles Fernandez Perez",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Cristian Rastrojo Lara",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Francesc Rossell Bascompte",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Ivan Guiu Farré",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Jaume Colomer Costa",
+        "count" : "1"
+      }, {
+        "item" : "Sr. Jaume Granyó Pons",
+        "count" : "1"
+      } ],
+      "smallest" : "Sra. Anna Antoja Serra",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561673,
+    "name" : "CARREC_GERENT",
+    "dataTypeName" : "text",
+    "description" : "Càrrec del gerent del Consell comarcal",
+    "fieldName" : "carrec_gerent",
+    "position" : 21,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760225,
+    "cachedContents" : {
+      "non_null" : "42",
+      "largest" : "Gerenta",
+      "null" : "11725",
+      "top" : [ {
+        "item" : "Gerent",
+        "count" : "35"
+      }, {
+        "item" : "Gerenta",
+        "count" : "7"
+      } ],
+      "smallest" : "Gerent",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561674,
+    "name" : "CIF",
+    "dataTypeName" : "text",
+    "description" : "NIF oficial de l’Ens local",
+    "fieldName" : "cif",
+    "position" : 22,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760214,
+    "cachedContents" : {
+      "non_null" : "1678",
+      "largest" : "V88794136",
+      "null" : "10089",
+      "top" : [ {
+        "item" : "A08007270",
+        "count" : "1"
+      }, {
+        "item" : "A08016081",
+        "count" : "1"
+      }, {
+        "item" : "A08196370",
+        "count" : "1"
+      }, {
+        "item" : "A08210403",
+        "count" : "1"
+      }, {
+        "item" : "A08233991",
+        "count" : "1"
+      }, {
+        "item" : "A08262768",
+        "count" : "1"
+      }, {
+        "item" : "A08294282",
+        "count" : "1"
+      }, {
+        "item" : "A08765919",
+        "count" : "1"
+      }, {
+        "item" : "A08778094",
+        "count" : "1"
+      }, {
+        "item" : "A08800880",
+        "count" : "1"
+      }, {
+        "item" : "A08808461",
+        "count" : "1"
+      }, {
+        "item" : "A08862997",
+        "count" : "1"
+      }, {
+        "item" : "A16765414",
+        "count" : "1"
+      }, {
+        "item" : "A17031246",
+        "count" : "1"
+      }, {
+        "item" : "A17068511",
+        "count" : "1"
+      }, {
+        "item" : "A17081555",
+        "count" : "1"
+      }, {
+        "item" : "A17098518",
+        "count" : "1"
+      }, {
+        "item" : "A17102740",
+        "count" : "1"
+      }, {
+        "item" : "A17114513",
+        "count" : "1"
+      }, {
+        "item" : "A08005795",
+        "count" : "1"
+      } ],
+      "smallest" : "A08005795",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561675,
+    "name" : "COMARCA",
+    "dataTypeName" : "text",
+    "description" : "Nom de la comarca",
+    "fieldName" : "comarca",
+    "position" : 23,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760210,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "Vallès Oriental",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Vallès Oriental",
+        "count" : "621"
+      }, {
+        "item" : "Alt Empordà",
+        "count" : "617"
+      }, {
+        "item" : "Baix Empordà",
+        "count" : "523"
+      }, {
+        "item" : "Alt Penedès",
+        "count" : "520"
+      }, {
+        "item" : "Bages",
+        "count" : "488"
+      }, {
+        "item" : "Anoia",
+        "count" : "436"
+      }, {
+        "item" : "Selva",
+        "count" : "433"
+      }, {
+        "item" : "Maresme",
+        "count" : "415"
+      }, {
+        "item" : "Gironès",
+        "count" : "408"
+      }, {
+        "item" : "Alt Urgell",
+        "count" : "404"
+      }, {
+        "item" : "Vallès Occidental",
+        "count" : "400"
+      }, {
+        "item" : "Pallars Jussà",
+        "count" : "396"
+      }, {
+        "item" : "Baix Llobregat",
+        "count" : "384"
+      }, {
+        "item" : "Noguera",
+        "count" : "372"
+      }, {
+        "item" : "Pallars Sobirà",
+        "count" : "365"
+      }, {
+        "item" : "Osona",
+        "count" : "347"
+      }, {
+        "item" : "Tarragonès",
+        "count" : "328"
+      }, {
+        "item" : "Ripollès",
+        "count" : "321"
+      }, {
+        "item" : "Garrotxa",
+        "count" : "318"
+      }, {
+        "item" : "Baix Camp",
+        "count" : "285"
+      } ],
+      "smallest" : "Alta Ribagorça",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561676,
+    "name" : "CODCOMARCA",
+    "dataTypeName" : "text",
+    "description" : "Codi oficial estadístic de la comarca",
+    "fieldName" : "codcomarca",
+    "position" : 24,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760207,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "8104300000",
+      "null" : "0",
+      "top" : [ {
+        "item" : "8104190004",
+        "count" : "621"
+      }, {
+        "item" : "8100220002",
+        "count" : "617"
+      }, {
+        "item" : "8101080001",
+        "count" : "523"
+      }, {
+        "item" : "8100380001",
+        "count" : "520"
+      }, {
+        "item" : "8100750006",
+        "count" : "488"
+      }, {
+        "item" : "8100690004",
+        "count" : "436"
+      }, {
+        "item" : "8103470005",
+        "count" : "433"
+      }, {
+        "item" : "8102130008",
+        "count" : "415"
+      }, {
+        "item" : "8102060009",
+        "count" : "408"
+      }, {
+        "item" : "8100430008",
+        "count" : "404"
+      }, {
+        "item" : "8104020002",
+        "count" : "400"
+      }, {
+        "item" : "8102520002",
+        "count" : "396"
+      }, {
+        "item" : "8101150006",
+        "count" : "384"
+      }, {
+        "item" : "8102340003",
+        "count" : "372"
+      }, {
+        "item" : "8102650006",
+        "count" : "365"
+      }, {
+        "item" : "8102490004",
+        "count" : "347"
+      }, {
+        "item" : "8103630008",
+        "count" : "328"
+      }, {
+        "item" : "8103110007",
+        "count" : "321"
+      }, {
+        "item" : "8101920002",
+        "count" : "318"
+      }, {
+        "item" : "8100810007",
+        "count" : "285"
+      } ],
+      "smallest" : "8100170005",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561677,
+    "name" : "PROVINCIA",
+    "dataTypeName" : "text",
+    "description" : "Nom de la província",
+    "fieldName" : "provincia",
+    "position" : 25,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760212,
+    "cachedContents" : {
+      "non_null" : "11739",
+      "largest" : "Tarragona",
+      "null" : "28",
+      "top" : [ {
+        "item" : "Barcelona",
+        "count" : "4093"
+      }, {
+        "item" : "Girona",
+        "count" : "2972"
+      }, {
+        "item" : "Lleida",
+        "count" : "2970"
+      }, {
+        "item" : "Tarragona",
+        "count" : "1704"
+      } ],
+      "smallest" : "Barcelona",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561678,
+    "name" : "CODIPROV",
+    "dataTypeName" : "text",
+    "description" : "Codi oficial estadístic de la província",
+    "fieldName" : "codiprov",
+    "position" : 26,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760222,
+    "cachedContents" : {
+      "non_null" : "11739",
+      "largest" : "8004330008",
+      "null" : "28",
+      "top" : [ {
+        "item" : "8000840003",
+        "count" : "4093"
+      }, {
+        "item" : "8001760009",
+        "count" : "2972"
+      }, {
+        "item" : "8002550006",
+        "count" : "2970"
+      }, {
+        "item" : "8004330008",
+        "count" : "1704"
+      } ],
+      "smallest" : "8000840003",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561679,
+    "name" : "CAPICOM",
+    "dataTypeName" : "text",
+    "description" : "Municipi capital de comarca (S/N)",
+    "fieldName" : "capicom",
+    "position" : 27,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760213,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "S",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "N",
+        "count" : "903"
+      }, {
+        "item" : "S",
+        "count" : "44"
+      } ],
+      "smallest" : "N",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561680,
+    "name" : "CENS",
+    "dataTypeName" : "number",
+    "description" : "Cens de població",
+    "fieldName" : "cens",
+    "position" : 28,
+    "renderTypeName" : "number",
+    "tableColumnId" : 9760227,
+    "cachedContents" : {
+      "non_null" : "11625",
+      "largest" : "5983325",
+      "null" : "142",
+      "top" : [ {
+        "item" : "0",
+        "count" : "896"
+      }, {
+        "item" : "5",
+        "count" : "172"
+      }, {
+        "item" : "1",
+        "count" : "170"
+      }, {
+        "item" : "9",
+        "count" : "158"
+      }, {
+        "item" : "2",
+        "count" : "157"
+      }, {
+        "item" : "4",
+        "count" : "155"
+      }, {
+        "item" : "7",
+        "count" : "152"
+      }, {
+        "item" : "3",
+        "count" : "150"
+      }, {
+        "item" : "6",
+        "count" : "128"
+      }, {
+        "item" : "10",
+        "count" : "126"
+      }, {
+        "item" : "12",
+        "count" : "125"
+      }, {
+        "item" : "8",
+        "count" : "125"
+      }, {
+        "item" : "11",
+        "count" : "117"
+      }, {
+        "item" : "17",
+        "count" : "115"
+      }, {
+        "item" : "18",
+        "count" : "113"
+      }, {
+        "item" : "16",
+        "count" : "99"
+      }, {
+        "item" : "15",
+        "count" : "96"
+      }, {
+        "item" : "14",
+        "count" : "95"
+      }, {
+        "item" : "13",
+        "count" : "95"
+      }, {
+        "item" : "21",
+        "count" : "94"
+      } ],
+      "smallest" : "0",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 27561681,
+    "name" : "ANY_CENS",
+    "dataTypeName" : "number",
+    "description" : "Any de les dades de població, procedents del padró o del cens",
+    "fieldName" : "any_cens",
+    "position" : 29,
+    "renderTypeName" : "number",
+    "tableColumnId" : 9760175,
+    "cachedContents" : {
+      "non_null" : "11201",
+      "largest" : "2025",
+      "null" : "566",
+      "top" : [ {
+        "item" : "2025",
+        "count" : "11198"
+      }, {
+        "item" : "2022",
+        "count" : "2"
+      }, {
+        "item" : "2024",
+        "count" : "1"
+      } ],
+      "smallest" : "2022",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : {
+      "noCommas" : "true"
+    }
+  }, {
+    "id" : 27561682,
+    "name" : "CODITIPUS",
+    "dataTypeName" : "text",
+    "description" : "Codi del tipus",
+    "fieldName" : "coditipus",
+    "position" : 30,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760190,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "9",
+      "null" : "0",
+      "top" : [ {
+        "item" : "10",
+        "count" : "6179"
+      }, {
+        "item" : "11",
+        "count" : "3909"
+      }, {
+        "item" : "2",
+        "count" : "947"
+      }, {
+        "item" : "5",
+        "count" : "356"
+      }, {
+        "item" : "12",
+        "count" : "112"
+      }, {
+        "item" : "4",
+        "count" : "65"
+      }, {
+        "item" : "18",
+        "count" : "56"
+      }, {
+        "item" : "9",
+        "count" : "54"
+      }, {
+        "item" : "3",
+        "count" : "43"
+      }, {
+        "item" : "13",
+        "count" : "27"
+      }, {
+        "item" : "22",
+        "count" : "13"
+      }, {
+        "item" : "6",
+        "count" : "4"
+      }, {
+        "item" : "19",
+        "count" : "1"
+      }, {
+        "item" : "7",
+        "count" : "1"
+      } ],
+      "smallest" : "10",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561683,
+    "name" : "SUPERFICIE",
+    "dataTypeName" : "number",
+    "description" : "Superfícies de l’Ens local en Km2",
+    "fieldName" : "superficie",
+    "position" : 31,
+    "renderTypeName" : "number",
+    "tableColumnId" : 9760204,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "21201",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "876",
+        "count" : "4"
+      }, {
+        "item" : "535",
+        "count" : "4"
+      }, {
+        "item" : "132",
+        "count" : "3"
+      }, {
+        "item" : "647",
+        "count" : "3"
+      }, {
+        "item" : "396",
+        "count" : "3"
+      }, {
+        "item" : "1641",
+        "count" : "3"
+      }, {
+        "item" : "629",
+        "count" : "2"
+      }, {
+        "item" : "471",
+        "count" : "2"
+      }, {
+        "item" : "589",
+        "count" : "2"
+      }, {
+        "item" : "389",
+        "count" : "2"
+      }, {
+        "item" : "302",
+        "count" : "2"
+      }, {
+        "item" : "352",
+        "count" : "2"
+      }, {
+        "item" : "55",
+        "count" : "2"
+      }, {
+        "item" : "622",
+        "count" : "2"
+      }, {
+        "item" : "228",
+        "count" : "2"
+      }, {
+        "item" : "63",
+        "count" : "2"
+      }, {
+        "item" : "9",
+        "count" : "2"
+      }, {
+        "item" : "165",
+        "count" : "2"
+      }, {
+        "item" : "108",
+        "count" : "2"
+      }, {
+        "item" : "253",
+        "count" : "2"
+      } ],
+      "smallest" : "8",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 27561684,
+    "name" : "ORDENACIO_ALFABETICA",
+    "dataTypeName" : "text",
+    "description" : "Camp per ordenar alfabèticament segons l’IEC",
+    "fieldName" : "ordenacio_alfabetica",
+    "position" : 32,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760184,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "Zona Rural el Raval de Baix-Eixample",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Cantallops",
+        "count" : "10"
+      }, {
+        "item" : "Estació, l'",
+        "count" : "10"
+      }, {
+        "item" : "Serra, la",
+        "count" : "10"
+      }, {
+        "item" : "Plana, la",
+        "count" : "9"
+      }, {
+        "item" : "Coma, la",
+        "count" : "9"
+      }, {
+        "item" : "Barceloneta, la",
+        "count" : "8"
+      }, {
+        "item" : "Sant Pere",
+        "count" : "8"
+      }, {
+        "item" : "Casetes, les",
+        "count" : "8"
+      }, {
+        "item" : "Pineda, la",
+        "count" : "8"
+      }, {
+        "item" : "Pla, el",
+        "count" : "8"
+      }, {
+        "item" : "Canyelles",
+        "count" : "8"
+      }, {
+        "item" : "Sant Antoni",
+        "count" : "8"
+      }, {
+        "item" : "Puig, el",
+        "count" : "7"
+      }, {
+        "item" : "Polígon Industrial",
+        "count" : "7"
+      }, {
+        "item" : "Aiguaviva",
+        "count" : "7"
+      }, {
+        "item" : "Floresta, la",
+        "count" : "7"
+      }, {
+        "item" : "Comes, les",
+        "count" : "7"
+      }, {
+        "item" : "Sant Roc",
+        "count" : "7"
+      }, {
+        "item" : "Montclar",
+        "count" : "7"
+      }, {
+        "item" : "Vila-seca",
+        "count" : "6"
+      } ],
+      "smallest" : "Abadals, els",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561685,
+    "name" : "ARTICLE",
+    "dataTypeName" : "text",
+    "description" : "Article",
+    "fieldName" : "article",
+    "position" : 33,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760196,
+    "cachedContents" : {
+      "non_null" : "1281",
+      "largest" : "Sa",
+      "null" : "10486",
+      "top" : [ {
+        "item" : "El",
+        "count" : "438"
+      }, {
+        "item" : "La",
+        "count" : "429"
+      }, {
+        "item" : "Les",
+        "count" : "168"
+      }, {
+        "item" : "L'",
+        "count" : "103"
+      }, {
+        "item" : "Els",
+        "count" : "96"
+      }, {
+        "item" : "la",
+        "count" : "14"
+      }, {
+        "item" : "el",
+        "count" : "8"
+      }, {
+        "item" : "els",
+        "count" : "6"
+      }, {
+        "item" : "l'",
+        "count" : "4"
+      }, {
+        "item" : "Sa",
+        "count" : "3"
+      }, {
+        "item" : "Era",
+        "count" : "3"
+      }, {
+        "item" : "Eth",
+        "count" : "2"
+      }, {
+        "item" : "les",
+        "count" : "2"
+      }, {
+        "item" : "Es",
+        "count" : "2"
+      }, {
+        "item" : "Los",
+        "count" : "1"
+      }, {
+        "item" : "S'",
+        "count" : "1"
+      }, {
+        "item" : "de",
+        "count" : "1"
+      } ],
+      "smallest" : "de",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561686,
+    "name" : "CODIPOSTAL",
+    "dataTypeName" : "text",
+    "description" : "Codi postal de l’adreça oficial de l’Ens local",
+    "fieldName" : "codipostal",
+    "position" : 34,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760229,
+    "cachedContents" : {
+      "non_null" : "1682",
+      "largest" : "43897",
+      "null" : "10085",
+      "top" : [ {
+        "item" : "25700",
+        "count" : "14"
+      }, {
+        "item" : "08800",
+        "count" : "14"
+      }, {
+        "item" : "08040",
+        "count" : "14"
+      }, {
+        "item" : "08500",
+        "count" : "13"
+      }, {
+        "item" : "25530",
+        "count" : "13"
+      }, {
+        "item" : "08700",
+        "count" : "12"
+      }, {
+        "item" : "43500",
+        "count" : "12"
+      }, {
+        "item" : "43003",
+        "count" : "10"
+      }, {
+        "item" : "25007",
+        "count" : "10"
+      }, {
+        "item" : "25595",
+        "count" : "9"
+      }, {
+        "item" : "43800",
+        "count" : "9"
+      }, {
+        "item" : "43201",
+        "count" : "9"
+      }, {
+        "item" : "08100",
+        "count" : "9"
+      }, {
+        "item" : "17004",
+        "count" : "9"
+      }, {
+        "item" : "08720",
+        "count" : "8"
+      }, {
+        "item" : "17800",
+        "count" : "8"
+      }, {
+        "item" : "08519",
+        "count" : "7"
+      }, {
+        "item" : "08240",
+        "count" : "7"
+      }, {
+        "item" : "17500",
+        "count" : "7"
+      }, {
+        "item" : "08840",
+        "count" : "7"
+      } ],
+      "smallest" : "08001",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561687,
+    "name" : "LOCALITAT_CP",
+    "dataTypeName" : "text",
+    "description" : "Localitat postal",
+    "fieldName" : "localitat_cp",
+    "position" : 35,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760209,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "Xerta",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Tarragona",
+        "count" : "90"
+      }, {
+        "item" : "Tremp",
+        "count" : "76"
+      }, {
+        "item" : "Barcelona",
+        "count" : "71"
+      }, {
+        "item" : "Montferrer i Castellbò",
+        "count" : "65"
+      }, {
+        "item" : "Manresa",
+        "count" : "63"
+      }, {
+        "item" : "Begur",
+        "count" : "61"
+      }, {
+        "item" : "Baix Pallars",
+        "count" : "60"
+      }, {
+        "item" : "Catllar",
+        "count" : "59"
+      }, {
+        "item" : "Pont de Suert",
+        "count" : "57"
+      }, {
+        "item" : "Artesa de Segre",
+        "count" : "56"
+      }, {
+        "item" : "Piera",
+        "count" : "55"
+      }, {
+        "item" : "Torre de Cabdella",
+        "count" : "54"
+      }, {
+        "item" : "Girona",
+        "count" : "52"
+      }, {
+        "item" : "Vacarisses",
+        "count" : "51"
+      }, {
+        "item" : "Vallirana",
+        "count" : "51"
+      }, {
+        "item" : "Sant Pere de Ribes",
+        "count" : "45"
+      }, {
+        "item" : "Sant Martí Sarroca",
+        "count" : "44"
+      }, {
+        "item" : "Sort",
+        "count" : "44"
+      }, {
+        "item" : "Bellver de Cerdanya",
+        "count" : "43"
+      }, {
+        "item" : "Castellbell i el Vilar",
+        "count" : "42"
+      } ],
+      "smallest" : "Abella de la Conca",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561688,
+    "name" : "HORARI",
+    "dataTypeName" : "text",
+    "description" : "Horari oficial de l’Ens local",
+    "fieldName" : "horari",
+    "position" : 36,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760230,
+    "cachedContents" : {
+      "non_null" : "702",
+      "largest" : "Tots els matins de 10:00 a 13:00 i les tardes de dimarts a dijous de 16:00 a 18:00.",
+      "null" : "11065",
+      "top" : [ {
+        "item" : "tots els dies de 8h-15h",
+        "count" : "17"
+      }, {
+        "item" : "Tots els dies de 8 a 15",
+        "count" : "13"
+      }, {
+        "item" : "Tots els dies de 9 a 14",
+        "count" : "9"
+      }, {
+        "item" : "tots els dies de 9h-14h",
+        "count" : "8"
+      }, {
+        "item" : "dilluns a divendres de 8h-15h",
+        "count" : "8"
+      }, {
+        "item" : "tots els dies de 8h a 15h",
+        "count" : "6"
+      }, {
+        "item" : "tots els dies de 16h-20h",
+        "count" : "6"
+      }, {
+        "item" : "de 9.00 a 14.00 hores",
+        "count" : "6"
+      }, {
+        "item" : "de 8.00 a 15.00 hores",
+        "count" : "6"
+      }, {
+        "item" : "tots els dies de 9h-15h",
+        "count" : "6"
+      }, {
+        "item" : "De dilluns a divendres de 9 a 14 h.",
+        "count" : "5"
+      }, {
+        "item" : "de 8:00 a 15:00 hores",
+        "count" : "5"
+      }, {
+        "item" : "tots els dies de 8h-14h",
+        "count" : "5"
+      }, {
+        "item" : "De dilluns a divendres de 8 a 15 h.",
+        "count" : "4"
+      }, {
+        "item" : "tots els dies de 8,30h-15h",
+        "count" : "4"
+      }, {
+        "item" : "tots els dies de 8h a 14h",
+        "count" : "4"
+      }, {
+        "item" : "Tots els dies de 9 a 15",
+        "count" : "4"
+      }, {
+        "item" : "Dl. a Dv. de 8:00 a 15:00 hores",
+        "count" : "4"
+      }, {
+        "item" : "Dl a Dv de 8:00 a 15:00 hores",
+        "count" : "4"
+      }, {
+        "item" : "Dl. a Dv. de 9:00 a 14:00 hores",
+        "count" : "4"
+      } ],
+      "smallest" : "10.00 a 13.00 hores i de 18.00 a 20.00 hores",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561689,
+    "name" : "DISSOLT",
+    "dataTypeName" : "text",
+    "description" : "Ens local dissolt o actiu (S/N)",
+    "fieldName" : "dissolt",
+    "position" : 37,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760177,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "N",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N",
+        "count" : "11767"
+      } ],
+      "smallest" : "N",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561690,
+    "name" : "SIGLACOM",
+    "dataTypeName" : "text",
+    "description" : "Sigles de la comarca",
+    "fieldName" : "siglacom",
+    "position" : 38,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760179,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "VR",
+      "null" : "0",
+      "top" : [ {
+        "item" : "VR",
+        "count" : "621"
+      }, {
+        "item" : "AE",
+        "count" : "617"
+      }, {
+        "item" : "BM",
+        "count" : "523"
+      }, {
+        "item" : "AP",
+        "count" : "520"
+      }, {
+        "item" : "BG",
+        "count" : "488"
+      }, {
+        "item" : "AI",
+        "count" : "436"
+      }, {
+        "item" : "SV",
+        "count" : "433"
+      }, {
+        "item" : "MM",
+        "count" : "415"
+      }, {
+        "item" : "GN",
+        "count" : "408"
+      }, {
+        "item" : "AU",
+        "count" : "404"
+      }, {
+        "item" : "VC",
+        "count" : "400"
+      }, {
+        "item" : "PJ",
+        "count" : "396"
+      }, {
+        "item" : "BT",
+        "count" : "384"
+      }, {
+        "item" : "NG",
+        "count" : "372"
+      }, {
+        "item" : "PS",
+        "count" : "365"
+      }, {
+        "item" : "OS",
+        "count" : "347"
+      }, {
+        "item" : "TR",
+        "count" : "328"
+      }, {
+        "item" : "RI",
+        "count" : "321"
+      }, {
+        "item" : "GX",
+        "count" : "318"
+      }, {
+        "item" : "BC",
+        "count" : "285"
+      } ],
+      "smallest" : "AC",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561691,
+    "name" : "ALTURA",
+    "dataTypeName" : "number",
+    "description" : "Alçada mitjana del municipi, expressada en mts.",
+    "fieldName" : "altura",
+    "position" : 39,
+    "renderTypeName" : "number",
+    "tableColumnId" : 9760180,
+    "cachedContents" : {
+      "non_null" : "946",
+      "largest" : "1539",
+      "null" : "10821",
+      "top" : [ {
+        "item" : "10",
+        "count" : "8"
+      }, {
+        "item" : "5",
+        "count" : "7"
+      }, {
+        "item" : "142",
+        "count" : "7"
+      }, {
+        "item" : "8",
+        "count" : "6"
+      }, {
+        "item" : "15",
+        "count" : "5"
+      }, {
+        "item" : "12",
+        "count" : "5"
+      }, {
+        "item" : "28",
+        "count" : "5"
+      }, {
+        "item" : "98",
+        "count" : "5"
+      }, {
+        "item" : "166",
+        "count" : "5"
+      }, {
+        "item" : "45",
+        "count" : "5"
+      }, {
+        "item" : "120",
+        "count" : "4"
+      }, {
+        "item" : "14",
+        "count" : "4"
+      }, {
+        "item" : "13",
+        "count" : "4"
+      }, {
+        "item" : "110",
+        "count" : "4"
+      }, {
+        "item" : "124",
+        "count" : "4"
+      }, {
+        "item" : "70",
+        "count" : "4"
+      }, {
+        "item" : "96",
+        "count" : "4"
+      }, {
+        "item" : "44",
+        "count" : "4"
+      }, {
+        "item" : "56",
+        "count" : "4"
+      }, {
+        "item" : "9",
+        "count" : "4"
+      } ],
+      "smallest" : "2",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 27561692,
+    "name" : "E_MAIL",
+    "dataTypeName" : "text",
+    "description" : "E-mail oficial de l’Ens local",
+    "fieldName" : "e_mail",
+    "position" : 40,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760171,
+    "cachedContents" : {
+      "non_null" : "1496",
+      "largest" : "xhernandez@selva.cat",
+      "null" : "10271",
+      "top" : [ {
+        "item" : "info@vielha-mijaran.org",
+        "count" : "8"
+      }, {
+        "item" : "eemmdd@vallsvalira.ddl.net",
+        "count" : "7"
+      }, {
+        "item" : "info@nautaran.org",
+        "count" : "6"
+      }, {
+        "item" : "ajuntament@alins.ddl.net",
+        "count" : "4"
+      }, {
+        "item" : "ajuntament@llavorsi.ddl.net",
+        "count" : "4"
+      }, {
+        "item" : "ajuntament@riudoms.cat",
+        "count" : "3"
+      }, {
+        "item" : "secretgen@consorci.org",
+        "count" : "3"
+      }, {
+        "item" : "ajuntament@albatarrec.cat",
+        "count" : "3"
+      }, {
+        "item" : "ajuntament@campllong.cat",
+        "count" : "3"
+      }, {
+        "item" : "mgonzalez@amb.cat",
+        "count" : "3"
+      }, {
+        "item" : "ajuntament@tirvia.ddl.net",
+        "count" : "3"
+      }, {
+        "item" : "aj.stacqueralt@altanet.org",
+        "count" : "3"
+      }, {
+        "item" : "ajuntament@vallsaguilar.ddl.net",
+        "count" : "3"
+      }, {
+        "item" : "ajuntament@santestevedepalautordera.cat",
+        "count" : "2"
+      }, {
+        "item" : "ajuntament@santfruitos.cat",
+        "count" : "2"
+      }, {
+        "item" : "ajuntament@lesborgesblanques.cat",
+        "count" : "2"
+      }, {
+        "item" : "ajuntament@oden.cat",
+        "count" : "2"
+      }, {
+        "item" : "ajuntament@sarrocabellera.ddl.net",
+        "count" : "2"
+      }, {
+        "item" : "ajuntament@concadalt.ddl.net",
+        "count" : "2"
+      }, {
+        "item" : "ajuntament@castellodempuries.net",
+        "count" : "2"
+      } ],
+      "smallest" : "010@ajsabadell.cat",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : {
+      "displayStyle" : "email"
+    }
+  }, {
+    "id" : 27561694,
+    "name" : "WEB",
+    "dataTypeName" : "text",
+    "description" : "Adreça URL oficial de l’Ens local",
+    "fieldName" : "web",
+    "position" : 42,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760211,
+    "cachedContents" : {
+      "non_null" : "1364",
+      "largest" : "www.viladepiera.cat",
+      "null" : "10403",
+      "top" : [ {
+        "item" : "http://www.nautaran.org",
+        "count" : "6"
+      }, {
+        "item" : "http://www.molletvalles.net",
+        "count" : "5"
+      }, {
+        "item" : "http://www.tortosa.cat",
+        "count" : "4"
+      }, {
+        "item" : "http://www.stacqueralt.altanet.org",
+        "count" : "3"
+      }, {
+        "item" : "http://www.igualada.cat",
+        "count" : "3"
+      }, {
+        "item" : "http://www.aj-igualada.net",
+        "count" : "3"
+      }, {
+        "item" : "www.vielha-mijaran.org",
+        "count" : "3"
+      }, {
+        "item" : "http://www.balaguer.cat",
+        "count" : "3"
+      }, {
+        "item" : "www.grupsagessa.com",
+        "count" : "3"
+      }, {
+        "item" : "www.tmb.cat",
+        "count" : "3"
+      }, {
+        "item" : "http://www.riudoms.cat",
+        "count" : "3"
+      }, {
+        "item" : "vallsvalira.ddl.net",
+        "count" : "3"
+      }, {
+        "item" : "http://www.campllong.cat",
+        "count" : "3"
+      }, {
+        "item" : "http://www.martorelles.cat",
+        "count" : "2"
+      }, {
+        "item" : "http://www.martorell.cat",
+        "count" : "2"
+      }, {
+        "item" : "http://www.masquefa.cat",
+        "count" : "2"
+      }, {
+        "item" : "http://www.falset.org",
+        "count" : "2"
+      }, {
+        "item" : "http://www.llagosta.cat",
+        "count" : "2"
+      }, {
+        "item" : "http://www.concadalt.cat",
+        "count" : "2"
+      }, {
+        "item" : "http://www.ccsegarra.cat",
+        "count" : "2"
+      } ],
+      "smallest" : "administracio@maas.cat",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561695,
+    "name" : "GENTILICI",
+    "dataTypeName" : "text",
+    "description" : "Gentilici dels habitants del municipi",
+    "fieldName" : "gentilici",
+    "position" : 43,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760217,
+    "cachedContents" : {
+      "non_null" : "801",
+      "largest" : "xertolins",
+      "null" : "10966",
+      "top" : [ {
+        "item" : "vilanovins",
+        "count" : "11"
+      }, {
+        "item" : "palauencs",
+        "count" : "5"
+      }, {
+        "item" : "pobletans",
+        "count" : "5"
+      }, {
+        "item" : "torredans",
+        "count" : "5"
+      }, {
+        "item" : "santquirzencs",
+        "count" : "3"
+      }, {
+        "item" : "castellfollitencs",
+        "count" : "3"
+      }, {
+        "item" : "pradencs",
+        "count" : "3"
+      }, {
+        "item" : "santfeliuencs",
+        "count" : "3"
+      }, {
+        "item" : "santmartinencs",
+        "count" : "3"
+      }, {
+        "item" : "santjoanencs",
+        "count" : "3"
+      }, {
+        "item" : "ribetans",
+        "count" : "3"
+      }, {
+        "item" : "selvatans",
+        "count" : "3"
+      }, {
+        "item" : "vallfogonins",
+        "count" : "3"
+      }, {
+        "item" : "artesencs",
+        "count" : "3"
+      }, {
+        "item" : "rodencs",
+        "count" : "3"
+      }, {
+        "item" : "santperencs",
+        "count" : "3"
+      }, {
+        "item" : "bisbalencs",
+        "count" : "3"
+      }, {
+        "item" : "colomins",
+        "count" : "2"
+      }, {
+        "item" : "colomencs",
+        "count" : "2"
+      }, {
+        "item" : "corberencs",
+        "count" : "2"
+      } ],
+      "smallest" : "abrerencs",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561696,
+    "name" : "PARTIT_JUDICIAL",
+    "dataTypeName" : "text",
+    "description" : "Partit judicial d’adscripció del municipi",
+    "fieldName" : "partit_judicial",
+    "position" : 44,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760182,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "Vilanova i la Geltrú",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "Figueres",
+        "count" : "68"
+      }, {
+        "item" : "Lleida",
+        "count" : "65"
+      }, {
+        "item" : "Vic",
+        "count" : "49"
+      }, {
+        "item" : "Valls",
+        "count" : "43"
+      }, {
+        "item" : "Balaguer",
+        "count" : "41"
+      }, {
+        "item" : "Girona",
+        "count" : "38"
+      }, {
+        "item" : "Cervera",
+        "count" : "36"
+      }, {
+        "item" : "Granollers",
+        "count" : "35"
+      }, {
+        "item" : "Manresa",
+        "count" : "35"
+      }, {
+        "item" : "La Bisbal d'Empordà",
+        "count" : "32"
+      }, {
+        "item" : "Igualada",
+        "count" : "32"
+      }, {
+        "item" : "Tremp",
+        "count" : "32"
+      }, {
+        "item" : "Falset",
+        "count" : "31"
+      }, {
+        "item" : "Berga",
+        "count" : "30"
+      }, {
+        "item" : "Reus",
+        "count" : "28"
+      }, {
+        "item" : "Solsona",
+        "count" : "26"
+      }, {
+        "item" : "Vilafranca del Penedès",
+        "count" : "26"
+      }, {
+        "item" : "El Vendrell",
+        "count" : "25"
+      }, {
+        "item" : "Santa Coloma de Farners",
+        "count" : "24"
+      }, {
+        "item" : "La Seu d'Urgell",
+        "count" : "22"
+      } ],
+      "smallest" : "Amposta",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561697,
+    "name" : "PARTIT_ELECTORAL",
+    "dataTypeName" : "text",
+    "description" : "Circumscripció electoral d’adscripció del municipi",
+    "fieldName" : "partit_electoral",
+    "position" : 45,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760197,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "Vilanova i la Geltrú",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "Lleida",
+        "count" : "68"
+      }, {
+        "item" : "Figueres",
+        "count" : "61"
+      }, {
+        "item" : "Reus",
+        "count" : "60"
+      }, {
+        "item" : "Girona",
+        "count" : "52"
+      }, {
+        "item" : "Valls",
+        "count" : "46"
+      }, {
+        "item" : "Vic",
+        "count" : "45"
+      }, {
+        "item" : "Balaguer",
+        "count" : "45"
+      }, {
+        "item" : "Tortosa",
+        "count" : "40"
+      }, {
+        "item" : "La Seu d'Urgell",
+        "count" : "40"
+      }, {
+        "item" : "Cervera",
+        "count" : "37"
+      }, {
+        "item" : "Berga",
+        "count" : "35"
+      }, {
+        "item" : "Manresa",
+        "count" : "35"
+      }, {
+        "item" : "Igualada",
+        "count" : "34"
+      }, {
+        "item" : "Granollers",
+        "count" : "34"
+      }, {
+        "item" : "Tremp",
+        "count" : "32"
+      }, {
+        "item" : "Puigcerdà",
+        "count" : "31"
+      }, {
+        "item" : "La Bisbal d'Empordà",
+        "count" : "29"
+      }, {
+        "item" : "Santa Coloma de Farners",
+        "count" : "26"
+      }, {
+        "item" : "El Vendrell",
+        "count" : "25"
+      }, {
+        "item" : "Vilafranca del Penedès",
+        "count" : "23"
+      } ],
+      "smallest" : "Arenys de Mar",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561698,
+    "name" : "DELEGACIO_GOVERN",
+    "dataTypeName" : "text",
+    "description" : "Delegació del Govern de la Generalitat d’adscripció",
+    "fieldName" : "delegacio_govern",
+    "position" : 46,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760202,
+    "cachedContents" : {
+      "non_null" : "11541",
+      "largest" : "Terres de l'Ebre",
+      "null" : "226",
+      "top" : [ {
+        "item" : "Girona",
+        "count" : "2771"
+      }, {
+        "item" : "Barcelona",
+        "count" : "2417"
+      }, {
+        "item" : "Catalunya Central",
+        "count" : "1723"
+      }, {
+        "item" : "Alt Pirineu i Aran",
+        "count" : "1598"
+      }, {
+        "item" : "Tarragona",
+        "count" : "1293"
+      }, {
+        "item" : "Lleida",
+        "count" : "1265"
+      }, {
+        "item" : "Terres de l'Ebre",
+        "count" : "355"
+      }, {
+        "item" : "Penedès",
+        "count" : "119"
+      } ],
+      "smallest" : "Alt Pirineu i Aran",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561699,
+    "name" : "MUNICAT",
+    "dataTypeName" : "url",
+    "description" : "Informació de l’Ens local a Municat",
+    "fieldName" : "municat",
+    "position" : 47,
+    "renderTypeName" : "url",
+    "tableColumnId" : 9760186,
+    "format" : { },
+    "subColumnTypes" : [ "url", "description" ]
+  }, {
+    "id" : 27561700,
+    "name" : "AMBIT",
+    "dataTypeName" : "text",
+    "description" : "Àmbit geogràfic de l’Ens local",
+    "fieldName" : "ambit",
+    "position" : 48,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760174,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "CATALUNYA",
+      "null" : "0",
+      "top" : [ {
+        "item" : "CATALUNYA",
+        "count" : "11767"
+      } ],
+      "smallest" : "CATALUNYA",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561701,
+    "name" : "SITUA_GEO_MUNICIPI",
+    "dataTypeName" : "text",
+    "description" : "Adreça URL situació geogràfica del municipi en cartografia base VISSIR -  ICGC",
+    "fieldName" : "situa_geo_municipi",
+    "position" : 49,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760203,
+    "cachedContents" : {
+      "non_null" : "1058",
+      "largest" : "https://mercuri.icc.cat/website/guia/carrerer.html?zoom=9&xy=485620.315%3A4648039.58&capes=GC_ADMINPUBL_2,GC_TRANSPORT_1,GC_TRANSPORT_2,&base=m&selectCarrer=17079250099",
+      "null" : "10709",
+      "top" : [ {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=8&lon=284778.699&lat=4619924.318",
+        "count" : "2"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=6&lon=325262.842&lat=4729475.679",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=280080.3577&lat=4543046.7331",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=6&lon=390022.615&lat=4686279.121",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=268891.3421&lat=4546680.759",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=269280.2601&lat=4532396.7982",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=270411.7228&lat=4501597.7689",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=274144.422&lat=4552777.7931",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=274174.6701&lat=4537099.0311",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=278055.4998&lat=4562246.7778",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=278247.472&lat=4512731.8277",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=278716.5462&lat=4588586.5819",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=278868.418&lat=4617055.365",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=279455.7361&lat=4593096.8154",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=6&lon=364394.625&lat=4692844.325",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=280930.2447&lat=4527996.703",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=281082.7088&lat=4533395.1137",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=281711.7261&lat=4540175.8836",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=7&lon=282582.4557&lat=4555435.7331",
+        "count" : "1"
+      }, {
+        "item" : "https://appmaps.icgc.cat/index.html?zoom=6&lon=322887.226&lat=4648777.572",
+        "count" : "1"
+      } ],
+      "smallest" : "https://appmaps.icgc.cat/index.html?zoom=6&lon=321280.669&lat=4707472.675",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561702,
+    "name" : "SITUA_GEO_COMARCA",
+    "dataTypeName" : "text",
+    "description" : "Adreça URL situació geogràfica del municipi en cartografia base GOOGLE",
+    "fieldName" : "situa_geo_comarca",
+    "position" : 50,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760199,
+    "cachedContents" : {
+      "non_null" : "1054",
+      "largest" : "https://goo.gl/maps/zPQ3EFtRCeaA83fk7",
+      "null" : "10713",
+      "top" : [ {
+        "item" : "https://goo.gl/maps/9KZijwNU3rybQt9K8",
+        "count" : "69"
+      }, {
+        "item" : "https://goo.gl/maps/UDPrpoWhdSevy25x6",
+        "count" : "52"
+      }, {
+        "item" : "https://goo.gl/maps/ivNj4g82eadFQkws9",
+        "count" : "42"
+      }, {
+        "item" : "https://goo.gl/maps/3TWe3WqwgQ1uUwrq6",
+        "count" : "40"
+      }, {
+        "item" : "https://goo.gl/maps/T9umwQqBeNmwSK4S6",
+        "count" : "38"
+      }, {
+        "item" : "https://goo.gl/maps/ZA1qgdHuAsLE89qMA",
+        "count" : "35"
+      }, {
+        "item" : "https://goo.gl/maps/yyhg8nb7cH1JLe697",
+        "count" : "34"
+      }, {
+        "item" : "https://goo.gl/maps/DuxAAJ2T8VpkBjoS7",
+        "count" : "32"
+      }, {
+        "item" : "https://goo.gl/maps/g8TckB8vqa2wXWjn7",
+        "count" : "32"
+      }, {
+        "item" : "https://goo.gl/maps/PseZXRwvfofHxEdT6",
+        "count" : "31"
+      }, {
+        "item" : "https://goo.gl/maps/BkQ67cGuFKKww6eW9",
+        "count" : "31"
+      }, {
+        "item" : "https://goo.gl/maps/gX7ECeLjwE3UcbZX9",
+        "count" : "31"
+      }, {
+        "item" : "https://goo.gl/maps/RtaAHZj7mENoKVXn6",
+        "count" : "29"
+      }, {
+        "item" : "https://goo.gl/maps/xt12ZRury2YWWud17",
+        "count" : "28"
+      }, {
+        "item" : "https://goo.gl/maps/baCxYr99ieM4fWjN9",
+        "count" : "28"
+      }, {
+        "item" : "https://goo.gl/maps/5Nuuu4bB1HwUvUNX8",
+        "count" : "27"
+      }, {
+        "item" : "https://goo.gl/maps/GA25fuWkjGLL1aYW9",
+        "count" : "26"
+      }, {
+        "item" : "https://goo.gl/maps/xKnc3wHuDHVfHQsN8",
+        "count" : "26"
+      }, {
+        "item" : "https://goo.gl/maps/R7GfovThSScVTqs58",
+        "count" : "25"
+      }, {
+        "item" : "https://goo.gl/maps/92ho6SXzqDchzrqR9",
+        "count" : "25"
+      } ],
+      "smallest" : "https://goo.gl/maps/3TWe3WqwgQ1uUwrq6",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561703,
+    "name" : "PLANOL_CARRERS",
+    "dataTypeName" : "text",
+    "description" : "Carrerer oficial de la Generalitat de Catalunya",
+    "fieldName" : "planol_carrers",
+    "position" : 51,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760206,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=439076",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080023",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080039",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080044",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080057",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080060",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080076",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080082",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080095",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080109",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080116",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080121",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080137",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080142",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080155",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080168",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080174",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080180",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080193",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080207",
+        "count" : "1"
+      }, {
+        "item" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080018",
+        "count" : "1"
+      } ],
+      "smallest" : "http://mercuri.icc.cat/website/mob_nf/mob1/mob2/inici2.htm?&mun=080018",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561704,
+    "name" : "UBICACIO",
+    "dataTypeName" : "text",
+    "description" : "Ubicació orogràfica del municipi",
+    "fieldName" : "ubicacio",
+    "position" : 52,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760178,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "Muntanya",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "Interior",
+        "count" : "580"
+      }, {
+        "item" : "Muntanya",
+        "count" : "298"
+      }, {
+        "item" : "Costa",
+        "count" : "69"
+      } ],
+      "smallest" : "Costa",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561705,
+    "name" : "LATITUD",
+    "dataTypeName" : "number",
+    "description" : "Coordenades latitud",
+    "fieldName" : "latitud",
+    "position" : 53,
+    "renderTypeName" : "number",
+    "tableColumnId" : 9760215,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "42.8402190337704",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "40.5981476",
+        "count" : "1"
+      }, {
+        "item" : "40.6201618918152",
+        "count" : "1"
+      }, {
+        "item" : "40.6333983",
+        "count" : "1"
+      }, {
+        "item" : "40.6555242196424",
+        "count" : "1"
+      }, {
+        "item" : "40.6717140881861",
+        "count" : "1"
+      }, {
+        "item" : "40.6822758256875",
+        "count" : "1"
+      }, {
+        "item" : "40.713316",
+        "count" : "1"
+      }, {
+        "item" : "40.7144376212904",
+        "count" : "1"
+      }, {
+        "item" : "40.7154627818354",
+        "count" : "1"
+      }, {
+        "item" : "40.7190627",
+        "count" : "1"
+      }, {
+        "item" : "40.7207983",
+        "count" : "1"
+      }, {
+        "item" : "40.7358107621218",
+        "count" : "1"
+      }, {
+        "item" : "40.7463348747855",
+        "count" : "1"
+      }, {
+        "item" : "40.7711914002504",
+        "count" : "1"
+      }, {
+        "item" : "40.8109989429348",
+        "count" : "1"
+      }, {
+        "item" : "40.8140153",
+        "count" : "1"
+      }, {
+        "item" : "40.8224848135799",
+        "count" : "1"
+      }, {
+        "item" : "40.8729495174899",
+        "count" : "1"
+      }, {
+        "item" : "40.8750715819461",
+        "count" : "1"
+      }, {
+        "item" : "40.5430664009318",
+        "count" : "1"
+      } ],
+      "smallest" : "40.5430664009318",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 27561706,
+    "name" : "LONGITUD",
+    "dataTypeName" : "number",
+    "description" : "Coordenades longitud",
+    "fieldName" : "longitud",
+    "position" : 54,
+    "renderTypeName" : "number",
+    "tableColumnId" : 9760193,
+    "cachedContents" : {
+      "non_null" : "947",
+      "largest" : "3.27720569729909",
+      "null" : "10820",
+      "top" : [ {
+        "item" : "0.2607386890167",
+        "count" : "1"
+      }, {
+        "item" : "0.2851319",
+        "count" : "1"
+      }, {
+        "item" : "0.31075600715256",
+        "count" : "1"
+      }, {
+        "item" : "0.31679678189991",
+        "count" : "1"
+      }, {
+        "item" : "0.35215982124238",
+        "count" : "1"
+      }, {
+        "item" : "0.3536860168028",
+        "count" : "1"
+      }, {
+        "item" : "0.35906269775069",
+        "count" : "1"
+      }, {
+        "item" : "0.37301435607618",
+        "count" : "1"
+      }, {
+        "item" : "0.38471806826949",
+        "count" : "1"
+      }, {
+        "item" : "0.38948376383058",
+        "count" : "1"
+      }, {
+        "item" : "0.40018984952147",
+        "count" : "1"
+      }, {
+        "item" : "0.40042357220686",
+        "count" : "1"
+      }, {
+        "item" : "0.40521969935801",
+        "count" : "1"
+      }, {
+        "item" : "0.41009726204653",
+        "count" : "1"
+      }, {
+        "item" : "0.41106640641428",
+        "count" : "1"
+      }, {
+        "item" : "0.42394",
+        "count" : "1"
+      }, {
+        "item" : "0.43708810806989",
+        "count" : "1"
+      }, {
+        "item" : "0.43903932975113",
+        "count" : "1"
+      }, {
+        "item" : "0.4486629",
+        "count" : "1"
+      }, {
+        "item" : "0.25064576897857",
+        "count" : "1"
+      } ],
+      "smallest" : "0.25064576897857",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 27561707,
+    "name" : "SALUTACIO",
+    "dataTypeName" : "text",
+    "description" : "Literal de salutació al/la responsable de l’Ens local",
+    "fieldName" : "salutacio",
+    "position" : 55,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760224,
+    "cachedContents" : {
+      "non_null" : "1677",
+      "largest" : "Presidenta",
+      "null" : "10090",
+      "top" : [ {
+        "item" : "Benvolgut Alcalde President",
+        "count" : "686"
+      }, {
+        "item" : "Benvolgut President",
+        "count" : "532"
+      }, {
+        "item" : "Benvolguda Alcaldessa Presidenta",
+        "count" : "261"
+      }, {
+        "item" : "Benvolguda Presidenta",
+        "count" : "138"
+      }, {
+        "item" : "Benvolgut President/Presidenta",
+        "count" : "42"
+      }, {
+        "item" : "Benvolguda President",
+        "count" : "7"
+      }, {
+        "item" : "Benvolguda President/Presidenta",
+        "count" : "5"
+      }, {
+        "item" : "Benvolgut Presidenta",
+        "count" : "4"
+      }, {
+        "item" : "Benvolguda Síndica",
+        "count" : "1"
+      }, {
+        "item" : "Presidenta",
+        "count" : "1"
+      } ],
+      "smallest" : "Benvolguda Alcaldessa Presidenta",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561708,
+    "name" : "DIA_MERCAT",
+    "dataTypeName" : "text",
+    "description" : "Dia de celebració del mercat",
+    "fieldName" : "dia_mercat",
+    "position" : 56,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760181,
+    "cachedContents" : {
+      "non_null" : "262",
+      "largest" : "Divendres",
+      "null" : "11505",
+      "top" : [ {
+        "item" : "Divendres",
+        "count" : "40"
+      }, {
+        "item" : "Dimecres",
+        "count" : "38"
+      }, {
+        "item" : "Diumenge",
+        "count" : "35"
+      }, {
+        "item" : "Dissabte",
+        "count" : "33"
+      }, {
+        "item" : "Dijous",
+        "count" : "30"
+      }, {
+        "item" : "Dimarts",
+        "count" : "29"
+      }, {
+        "item" : "Dilluns",
+        "count" : "24"
+      }, {
+        "item" : "Dimarts i divendres",
+        "count" : "4"
+      }, {
+        "item" : "Dimecres i dissabte",
+        "count" : "4"
+      }, {
+        "item" : "Dimarts i dissabte",
+        "count" : "3"
+      }, {
+        "item" : "Dimarts i dijous",
+        "count" : "2"
+      }, {
+        "item" : "Dilluns, dijous i dissabte",
+        "count" : "2"
+      }, {
+        "item" : "dimecres",
+        "count" : "1"
+      }, {
+        "item" : "Dimecres i dijous",
+        "count" : "1"
+      }, {
+        "item" : "Dimecres i dissabtes",
+        "count" : "1"
+      }, {
+        "item" : "Dimecres i divendres",
+        "count" : "1"
+      }, {
+        "item" : "Dimecres i divendres (la Batllòria)",
+        "count" : "1"
+      }, {
+        "item" : "Dissabte i diumenge",
+        "count" : "1"
+      }, {
+        "item" : "Dimarts, dimecres, dijous, divendres, dissabte i diumenge",
+        "count" : "1"
+      }, {
+        "item" : "Dijous i diumenge",
+        "count" : "1"
+      } ],
+      "smallest" : "dijous",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561709,
+    "name" : "METEOCAT",
+    "dataTypeName" : "url",
+    "description" : "Adreça URL a la previsió setmanal de METEOCAT",
+    "fieldName" : "meteocat",
+    "position" : 57,
+    "renderTypeName" : "url",
+    "tableColumnId" : 9760173,
+    "format" : { },
+    "subColumnTypes" : [ "url", "description" ]
+  }, {
+    "id" : 27561710,
+    "name" : "SUBTIPUS_ENS",
+    "dataTypeName" : "text",
+    "description" : "7a. posició del codi 10",
+    "fieldName" : "subtipus_ens",
+    "position" : 58,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760191,
+    "cachedContents" : {
+      "non_null" : "356",
+      "largest" : "5",
+      "null" : "11411",
+      "top" : [ {
+        "item" : "5",
+        "count" : "206"
+      }, {
+        "item" : "3",
+        "count" : "118"
+      }, {
+        "item" : "4",
+        "count" : "32"
+      } ],
+      "smallest" : "3",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561711,
+    "name" : "TIPUS_ENS_GESTIO",
+    "dataTypeName" : "text",
+    "description" : "Descripció subtipus d’Ens de gestió",
+    "fieldName" : "tipus_ens_gestio",
+    "position" : 59,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760194,
+    "cachedContents" : {
+      "non_null" : "356",
+      "largest" : "SMPI",
+      "null" : "11411",
+      "top" : [ {
+        "item" : "SMPI",
+        "count" : "206"
+      }, {
+        "item" : "OAL",
+        "count" : "118"
+      }, {
+        "item" : "EPE",
+        "count" : "32"
+      } ],
+      "smallest" : "EPE",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561712,
+    "name" : "INSCRIPCIO",
+    "dataTypeName" : "text",
+    "description" : "Només Fundacions(18) Data inscripció registre de Fundacions",
+    "fieldName" : "inscripcio",
+    "position" : 60,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760218,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "838 - 03-NOV-94",
+      "null" : "0",
+      "top" : [ {
+        "item" : "-",
+        "count" : "11711"
+      }, {
+        "item" : "1096 - 09-SEP-97",
+        "count" : "1"
+      }, {
+        "item" : "1702 - 22-OCT-02",
+        "count" : "1"
+      }, {
+        "item" : "1173 - 08-MAY-98",
+        "count" : "1"
+      }, {
+        "item" : "1181 - 09-JUN-98",
+        "count" : "1"
+      }, {
+        "item" : "1237 - 04-DEC-98",
+        "count" : "1"
+      }, {
+        "item" : "1244 - 18-JAN-99",
+        "count" : "1"
+      }, {
+        "item" : "1354 - 23-DEC-99",
+        "count" : "1"
+      }, {
+        "item" : "1357 - 14-JAN-00",
+        "count" : "1"
+      }, {
+        "item" : "1405 - 24-MAY-00",
+        "count" : "1"
+      }, {
+        "item" : "1478 - 04-DEC-00",
+        "count" : "1"
+      }, {
+        "item" : "1521 - 19-MAR-01",
+        "count" : "1"
+      }, {
+        "item" : "1615 - 29-JAN-02",
+        "count" : "1"
+      }, {
+        "item" : "1698 - 08-OCT-02",
+        "count" : "1"
+      }, {
+        "item" : "1133 - 25-MAY-10",
+        "count" : "1"
+      }, {
+        "item" : "1708 - 03-JUN-97",
+        "count" : "1"
+      }, {
+        "item" : "1746 - 13-JAN-13",
+        "count" : "1"
+      }, {
+        "item" : "1775 - 11-MAR-03",
+        "count" : "1"
+      }, {
+        "item" : "1837 - 11-JUL-03",
+        "count" : "1"
+      }, {
+        "item" : "1062 - 10-APR-97",
+        "count" : "1"
+      } ],
+      "smallest" : "-",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561713,
+    "name" : "CLASSIFICACIO",
+    "dataTypeName" : "text",
+    "description" : "Classificació",
+    "fieldName" : "classificacio",
+    "position" : 61,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9760220,
+    "cachedContents" : {
+      "non_null" : "56",
+      "largest" : "Sociosanitària",
+      "null" : "11711",
+      "top" : [ {
+        "item" : "Cultural",
+        "count" : "23"
+      }, {
+        "item" : "Assistencial",
+        "count" : "7"
+      }, {
+        "item" : "Benèfica de tipus cultural",
+        "count" : "4"
+      }, {
+        "item" : "Benèfica de tipus assistencial",
+        "count" : "3"
+      }, {
+        "item" : "Benéfica de tipus assistencial",
+        "count" : "1"
+      }, {
+        "item" : "Benéfica de tipus docent i cultural",
+        "count" : "1"
+      }, {
+        "item" : "Benèfica, docent, cultural, científica",
+        "count" : "1"
+      }, {
+        "item" : "Benèfica tipus cultural",
+        "count" : "1"
+      }, {
+        "item" : "Cultura",
+        "count" : "1"
+      }, {
+        "item" : "Assistencial i cultural",
+        "count" : "1"
+      }, {
+        "item" : "cultural/esportiva/promoció",
+        "count" : "1"
+      }, {
+        "item" : "Cultural i docent",
+        "count" : "1"
+      }, {
+        "item" : "Cultural i fins científics",
+        "count" : "1"
+      }, {
+        "item" : "Cultural/mediambientals",
+        "count" : "1"
+      }, {
+        "item" : "Docent",
+        "count" : "1"
+      }, {
+        "item" : "Formació",
+        "count" : "1"
+      }, {
+        "item" : "Formació/Docència",
+        "count" : "1"
+      }, {
+        "item" : "Fundació benèfica de tipus cultural",
+        "count" : "1"
+      }, {
+        "item" : "Fundació hospitalària",
+        "count" : "1"
+      }, {
+        "item" : "Serveis socials",
+        "count" : "1"
+      } ],
+      "smallest" : "Assistencial",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561718,
+    "name" : "DATA_ACTUALITZACIO",
+    "dataTypeName" : "calendar_date",
+    "description" : "Data de l’extracció",
+    "fieldName" : "data_actualitzacio",
+    "position" : 62,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 16754262,
+    "cachedContents" : {
+      "non_null" : "11767",
+      "largest" : "2026-11-22T00:00:00.000",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2013-12-28T00:00:00.000",
+        "count" : "9865"
+      }, {
+        "item" : "2018-01-24T00:00:00.000",
+        "count" : "233"
+      }, {
+        "item" : "2019-01-01T00:00:00.000",
+        "count" : "85"
+      }, {
+        "item" : "2023-10-05T00:00:00.000",
+        "count" : "44"
+      }, {
+        "item" : "2026-10-08T00:00:00.000",
+        "count" : "32"
+      }, {
+        "item" : "2026-07-18T00:00:00.000",
+        "count" : "29"
+      }, {
+        "item" : "2026-10-09T00:00:00.000",
+        "count" : "27"
+      }, {
+        "item" : "2026-09-30T00:00:00.000",
+        "count" : "21"
+      }, {
+        "item" : "2023-09-27T00:00:00.000",
+        "count" : "21"
+      }, {
+        "item" : "2026-02-20T00:00:00.000",
+        "count" : "18"
+      }, {
+        "item" : "2021-04-01T00:00:00.000",
+        "count" : "18"
+      }, {
+        "item" : "2022-02-12T00:00:00.000",
+        "count" : "18"
+      }, {
+        "item" : "2026-10-13T00:00:00.000",
+        "count" : "16"
+      }, {
+        "item" : "2021-09-08T00:00:00.000",
+        "count" : "15"
+      }, {
+        "item" : "2026-07-29T00:00:00.000",
+        "count" : "14"
+      }, {
+        "item" : "2026-10-29T00:00:00.000",
+        "count" : "14"
+      }, {
+        "item" : "2025-05-06T00:00:00.000",
+        "count" : "14"
+      }, {
+        "item" : "2024-03-21T00:00:00.000",
+        "count" : "13"
+      }, {
+        "item" : "2023-12-12T00:00:00.000",
+        "count" : "13"
+      }, {
+        "item" : "2026-02-13T00:00:00.000",
+        "count" : "13"
+      } ],
+      "smallest" : "1998-03-02T00:00:00.000",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : {
+      "view" : "date_dmy"
+    }
+  }, {
+    "id" : 27561715,
+    "name" : "GEOREFERÈNCIA",
+    "dataTypeName" : "point",
+    "description" : "Columna de georeferència",
+    "fieldName" : "geocoded_column",
+    "position" : 63,
+    "renderTypeName" : "point",
+    "tableColumnId" : 9760187,
+    "cachedContents" : {
+      "non_null" : "0",
+      "null" : "11767",
+      "count" : "11767",
+      "cardinality" : "11767"
+    },
+    "format" : { }
+  }, {
+    "id" : 27561716,
+    "name" : "LIMADM COMARCA",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : ":@computed_region_wvic_k925",
+    "position" : 64,
+    "renderTypeName" : "number",
+    "tableColumnId" : 9760232,
+    "computationStrategy" : {
+      "source_columns" : [ "geocoded_column" ],
+      "type" : "georegion_match_on_point",
+      "parameters" : {
+        "region" : "_wvic-k925",
+        "primary_key" : "_feature_id"
+      }
+    },
+    "format" : { }
+  }, {
+    "id" : 27561717,
+    "name" : "LIMADM_MUNICIPI",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : ":@computed_region_bh64_c7uy",
+    "position" : 65,
+    "renderTypeName" : "number",
+    "tableColumnId" : 9760231,
+    "computationStrategy" : {
+      "source_columns" : [ "geocoded_column" ],
+      "type" : "georegion_match_on_point",
+      "parameters" : {
+        "region" : "_bh64-c7uy",
+        "primary_key" : "_feature_id"
+      }
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "See Terms of Use"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Freqüència d'actualització" : {
+        "Freqüència d'actualització" : "Diària"
+      },
+      "Idioma" : {
+        "Idioma" : "Català",
+        "Dataset name (EN)" : "General data of the local entities of Catalonia",
+        "Nombre del conjunto de datos (ES)" : "Datos generales de los entes locales de Cataluña"
+      },
+      "Informació de gènere o sexe" : {
+        "Informació de gènere o sexe" : "No aplicable"
+      },
+      "Actors" : {
+        "Departament" : "Presidència",
+        "Tipus actor" : "Generalitat de Catalunya"
+      },
+      "Àmbit geogràfic" : {
+        "Informació geogràfica" : "Codi d'element",
+        "Àmbit geogràfic" : "Catalunya"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "ens locals", "ajuntaments", "municipis", "consells comarcals", "comarques", "diputació", "província", "emd", "entitat municipal descentralitzada", "ens de gestió", "dependències", "participacions", "nuclis de població", "entitats de població", "padró", "població", "alcaldes", "regidors", "presidents", "alcaldesses", "regidores", "presidentes", "municat", "smartcatalonia", "ods16_pau justícies i institucions sòlides" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

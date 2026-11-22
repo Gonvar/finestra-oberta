@@ -1,0 +1,947 @@
+[{"codi_ens":"0800180001","nom_complert":"Ajuntament d'Abrera","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"13227","any_cens":"2025","web":"http://www.ajuntamentabrera.cat"}
+,{"codi_ens":"0800230008","nom_complert":"Ajuntament d'Aguilar de Segarra","comarca":"Bages","provincia":"Barcelona","cens":"292","any_cens":"2025","web":"http://www.aguilardesegarra.cat"}
+,{"codi_ens":"0800390004","nom_complert":"Ajuntament d'Alella","comarca":"Maresme","provincia":"Barcelona","cens":"10262","any_cens":"2025","web":"http://www.alella.cat"}
+,{"codi_ens":"0800440003","nom_complert":"Ajuntament d'Alpens","comarca":"Lluçanès","provincia":"Barcelona","cens":"267","any_cens":"2025","web":"http://alpens.cat"}
+,{"codi_ens":"0800570005","nom_complert":"Ajuntament de l'Ametlla del Vallès","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"9474","any_cens":"2025","web":"http://www.ametlla.cat"}
+,{"codi_ens":"0800600000","nom_complert":"Ajuntament d'Arenys de Mar","comarca":"Maresme","provincia":"Barcelona","cens":"17042","any_cens":"2025","web":"http://www.arenysdemar.cat"}
+,{"codi_ens":"0800760009","nom_complert":"Ajuntament d'Arenys de Munt","comarca":"Maresme","provincia":"Barcelona","cens":"9558","any_cens":"2025","web":"http://www.arenysdemunt.cat"}
+,{"codi_ens":"0800820002","nom_complert":"Ajuntament d'Argençola","comarca":"Anoia","provincia":"Barcelona","cens":"245","any_cens":"2025","web":"http://www.argencola.cat"}
+,{"codi_ens":"0800950006","nom_complert":"Ajuntament d'Argentona","comarca":"Maresme","provincia":"Barcelona","cens":"12891","any_cens":"2025","web":"http://www.argentona.cat"}
+,{"codi_ens":"0801090004","nom_complert":"Ajuntament d'Artés","comarca":"Bages","provincia":"Barcelona","cens":"6225","any_cens":"2025","web":"http://www.artes.cat"}
+,{"codi_ens":"0801160009","nom_complert":"Ajuntament d'Avià","comarca":"Berguedà","provincia":"Barcelona","cens":"2267","any_cens":"2025","web":"http://www.avia.cat"}
+,{"codi_ens":"0801210007","nom_complert":"Ajuntament d'Avinyó","comarca":"Bages","provincia":"Barcelona","cens":"2322","any_cens":"2025","web":"http://www.avinyo.cat"}
+,{"codi_ens":"0801370005","nom_complert":"Ajuntament d'Avinyonet del Penedès","comarca":"Alt Penedès","provincia":"Barcelona","cens":"1782","any_cens":"2025","web":"http://www.avinyonet.org"}
+,{"codi_ens":"0801420002","nom_complert":"Ajuntament d'Aiguafreda","comarca":"Osona","provincia":"Barcelona","cens":"2569","any_cens":"2025","web":"http://www.aiguafreda.cat"}
+,{"codi_ens":"0801550006","nom_complert":"Ajuntament de Badalona","comarca":"Barcelonès","provincia":"Barcelona","cens":"231542","any_cens":"2025","web":"http://www.badalona.cat"}
+,{"codi_ens":"0801680001","nom_complert":"Ajuntament de Bagà","comarca":"Berguedà","provincia":"Barcelona","cens":"2161","any_cens":"2025","web":"http://www.viladebaga.org"}
+,{"codi_ens":"0801740003","nom_complert":"Ajuntament de Balenyà","comarca":"Osona","provincia":"Barcelona","cens":"4021","any_cens":"2025","web":"http://www.balenya.cat"}
+,{"codi_ens":"0801800000","nom_complert":"Ajuntament de Balsareny","comarca":"Bages","provincia":"Barcelona","cens":"3380","any_cens":"2025","web":"http://www.balsareny.cat"}
+,{"codi_ens":"0801930008","nom_complert":"Ajuntament de Barcelona","comarca":"Barcelonès","provincia":"Barcelona","cens":"1731649","any_cens":"2025","web":"http://www.bcn.cat"}
+,{"codi_ens":"0802070005","nom_complert":"Ajuntament de Begues","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"7561","any_cens":"2025","web":"http://www.begues.cat"}
+,{"codi_ens":"0802140003","nom_complert":"Ajuntament de Bellprat","comarca":"Anoia","provincia":"Barcelona","cens":"69","any_cens":"2025","web":"http://www.bellprat.cat"}
+,{"codi_ens":"0802290004","nom_complert":"Ajuntament de Berga","comarca":"Berguedà","provincia":"Barcelona","cens":"17473","any_cens":"2025","web":"http://www.ajberga.cat"}
+,{"codi_ens":"0802350006","nom_complert":"Ajuntament de Bigues i Riells del Fai","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"10139","any_cens":"2025","web":"http://www.biguesiriells.cat"}
+,{"codi_ens":"0802400000","nom_complert":"Ajuntament de Borredà","comarca":"Berguedà","provincia":"Barcelona","cens":"433","any_cens":"2025","web":"http://www.borreda.net"}
+,{"codi_ens":"0802530008","nom_complert":"Ajuntament del Bruc","comarca":"Anoia","provincia":"Barcelona","cens":"2290","any_cens":"2025","web":"http://www.bruc.cat"}
+,{"codi_ens":"0802660009","nom_complert":"Ajuntament del Brull","comarca":"Osona","provincia":"Barcelona","cens":"296","any_cens":"2025","web":"http://www.elbrull.cat"}
+,{"codi_ens":"0802720002","nom_complert":"Ajuntament de les Cabanyes","comarca":"Alt Penedès","provincia":"Barcelona","cens":"1060","any_cens":"2025","web":"http://www.lescabanyes.cat"}
+,{"codi_ens":"0802880001","nom_complert":"Ajuntament de Cabrera d'Anoia","comarca":"Anoia","provincia":"Barcelona","cens":"1772","any_cens":"2025","web":"http://www.cabreradanoia.cat"}
+,{"codi_ens":"0802910007","nom_complert":"Ajuntament de Cabrera de Mar","comarca":"Maresme","provincia":"Barcelona","cens":"5045","any_cens":"2025","web":"http://www.cabrerademar.cat"}
+,{"codi_ens":"0803050006","nom_complert":"Ajuntament de Cabrils","comarca":"Maresme","provincia":"Barcelona","cens":"7765","any_cens":"2025","web":"http://www.cabrils.cat"}
+,{"codi_ens":"0803120002","nom_complert":"Ajuntament de Calaf","comarca":"Anoia","provincia":"Barcelona","cens":"3644","any_cens":"2025","web":"http://www.calaf.cat"}
+,{"codi_ens":"0803270005","nom_complert":"Ajuntament de Caldes d'Estrac","comarca":"Maresme","provincia":"Barcelona","cens":"3356","any_cens":"2025","web":"http://www.caldetes.cat"}
+,{"codi_ens":"0803330008","nom_complert":"Ajuntament de Caldes de Montbui","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"18567","any_cens":"2025","web":"http://www.caldesdemontbui.cat"}
+,{"codi_ens":"0803480001","nom_complert":"Ajuntament de Calders","comarca":"Moianès","provincia":"Barcelona","cens":"1122","any_cens":"2025","web":"http://www.calders.cat"}
+,{"codi_ens":"0803510007","nom_complert":"Ajuntament de Calella","comarca":"Maresme","provincia":"Barcelona","cens":"20864","any_cens":"2025","web":"http://www.calella.cat"}
+,{"codi_ens":"0803640003","nom_complert":"Ajuntament de Calonge de Segarra","comarca":"Anoia","provincia":"Barcelona","cens":"179","any_cens":"2025","web":"http://www.calongesegarra.cat"}
+,{"codi_ens":"0803700000","nom_complert":"Ajuntament de Calldetenes","comarca":"Osona","provincia":"Barcelona","cens":"2733","any_cens":"2025","web":"http://www.calldetenes.cat"}
+,{"codi_ens":"0803860009","nom_complert":"Ajuntament de Callús","comarca":"Bages","provincia":"Barcelona","cens":"2180","any_cens":"2025","web":"http://www.callus.cat"}
+,{"codi_ens":"0803990004","nom_complert":"Ajuntament de Campins","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"586","any_cens":"2025","web":"http://www.campins.diba.cat"}
+,{"codi_ens":"0804030008","nom_complert":"Ajuntament de Canet de Mar","comarca":"Maresme","provincia":"Barcelona","cens":"15198","any_cens":"2025","web":"http://www.canetdemar.cat"}
+,{"codi_ens":"0804100000","nom_complert":"Ajuntament de Canovelles","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"17473","any_cens":"2025","web":"http://www.canovelles.cat"}
+,{"codi_ens":"0804250006","nom_complert":"Ajuntament de Cànoves i Samalús","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"3399","any_cens":"2025","web":"http://www.canovesisamalus.cat"}
+,{"codi_ens":"0804310007","nom_complert":"Ajuntament de Canyelles","comarca":"Garraf","provincia":"Barcelona","cens":"5505","any_cens":"2025","web":"http://www.canyelles.cat"}
+,{"codi_ens":"0804460009","nom_complert":"Ajuntament de Capellades","comarca":"Anoia","provincia":"Barcelona","cens":"5608","any_cens":"2025","web":"http://www.capellades.cat"}
+,{"codi_ens":"0804590004","nom_complert":"Ajuntament de Capolat","comarca":"Berguedà","provincia":"Barcelona","cens":"93","any_cens":"2025","web":"http://www.capolat.cat"}
+,{"codi_ens":"0804620002","nom_complert":"Ajuntament de Cardedeu","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"19046","any_cens":"2025","web":"http://www.cardedeu.cat"}
+,{"codi_ens":"0804780001","nom_complert":"Ajuntament de Cardona","comarca":"Bages","provincia":"Barcelona","cens":"4553","any_cens":"2025","web":"http://www.cardona.cat"}
+,{"codi_ens":"0804840003","nom_complert":"Ajuntament de Carme","comarca":"Anoia","provincia":"Barcelona","cens":"847","any_cens":"2025","web":"http://www.carme.cat"}
+,{"codi_ens":"0804970005","nom_complert":"Ajuntament de Casserres","comarca":"Berguedà","provincia":"Barcelona","cens":"1660","any_cens":"2025","web":"http://www.casserres.cat"}
+,{"codi_ens":"0805000000","nom_complert":"Ajuntament de Castellar del Riu","comarca":"Berguedà","provincia":"Barcelona","cens":"151","any_cens":"2025","web":"http://www.castellardelriu.cat"}
+,{"codi_ens":"0805170005","nom_complert":"Ajuntament de Castellar del Vallès","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"25422","any_cens":"2025","web":"http://www.castellarvalles.cat"}
+,{"codi_ens":"0805220002","nom_complert":"Ajuntament de Castellar de n'Hug","comarca":"Berguedà","provincia":"Barcelona","cens":"166","any_cens":"2025","web":"http://ajcastellardenhug.cat"}
+,{"codi_ens":"0805380001","nom_complert":"Ajuntament de Castellbell i el Vilar","comarca":"Bages","provincia":"Barcelona","cens":"4159","any_cens":"2025","web":"http://www.castellbellielvilar.cat"}
+,{"codi_ens":"0805430008","nom_complert":"Ajuntament de Castellbisbal","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"13061","any_cens":"2025","web":"http://www.castellbisbal.cat"}
+,{"codi_ens":"0805560009","nom_complert":"Ajuntament de Castellcir","comarca":"Moianès","provincia":"Barcelona","cens":"804","any_cens":"2025","web":"http://www.castellcir.cat"}
+,{"codi_ens":"0805690004","nom_complert":"Ajuntament de Castelldefels","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"70057","any_cens":"2025","web":"http://www.castelldefels.org"}
+,{"codi_ens":"0805750006","nom_complert":"Ajuntament de Castell de l'Areny","comarca":"Berguedà","provincia":"Barcelona","cens":"68","any_cens":"2025","web":"http://www.castelldelareny.cat"}
+,{"codi_ens":"0805810007","nom_complert":"Ajuntament de Castellet i la Gornal","comarca":"Alt Penedès","provincia":"Barcelona","cens":"2776","any_cens":"2025","web":"https://www.castelletilagornal.cat"}
+,{"codi_ens":"0805940003","nom_complert":"Ajuntament de Castellfollit del Boix","comarca":"Bages","provincia":"Barcelona","cens":"467","any_cens":"2025","web":"http://www.castellfollitdelboix.cat"}
+,{"codi_ens":"0806080001","nom_complert":"Ajuntament de Castellfollit de Riubregós","comarca":"Anoia","provincia":"Barcelona","cens":"153","any_cens":"2025","web":"https://www.riubregos.cat"}
+,{"codi_ens":"0806150006","nom_complert":"Ajuntament de Castellgalí","comarca":"Bages","provincia":"Barcelona","cens":"2413","any_cens":"2025","web":"http://www.castellgali.cat"}
+,{"codi_ens":"0806200000","nom_complert":"Ajuntament de Castellnou de Bages","comarca":"Bages","provincia":"Barcelona","cens":"1473","any_cens":"2025","web":"http://www.castellnoudebages.cat"}
+,{"codi_ens":"0806360009","nom_complert":"Ajuntament de Castellolí","comarca":"Anoia","provincia":"Barcelona","cens":"669","any_cens":"2025","web":"https://www.castelloli.cat"}
+,{"codi_ens":"0806410007","nom_complert":"Ajuntament de Castellterçol","comarca":"Moianès","provincia":"Barcelona","cens":"2754","any_cens":"2025","web":"http://www.castelltersol.cat"}
+,{"codi_ens":"0806540003","nom_complert":"Ajuntament de Castellví de la Marca","comarca":"Alt Penedès","provincia":"Barcelona","cens":"1721","any_cens":"2025","web":"https://www.castellvidelamarca.cat"}
+,{"codi_ens":"0806670005","nom_complert":"Ajuntament de Castellví de Rosanes","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"2171","any_cens":"2025","web":"http://www.castellviderosanes.cat"}
+,{"codi_ens":"0806730008","nom_complert":"Ajuntament de Centelles","comarca":"Osona","provincia":"Barcelona","cens":"7864","any_cens":"2025","web":"http://www.centelles.cat"}
+,{"codi_ens":"0806890004","nom_complert":"Ajuntament de Cervelló","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"9743","any_cens":"2025","web":"http://www.cervello.cat"}
+,{"codi_ens":"0806920002","nom_complert":"Ajuntament de Collbató","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"4828","any_cens":"2025","web":"http://www.collbato.cat"}
+,{"codi_ens":"0807060009","nom_complert":"Ajuntament de Collsuspina","comarca":"Moianès","provincia":"Barcelona","cens":"391","any_cens":"2025","web":"http://www.collsuspina.cat"}
+,{"codi_ens":"0807130008","nom_complert":"Ajuntament de Copons","comarca":"Anoia","provincia":"Barcelona","cens":"352","any_cens":"2025","web":"http://copons.cat"}
+,{"codi_ens":"0807280001","nom_complert":"Ajuntament de Corbera de Llobregat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"16010","any_cens":"2025","web":"http://www.corberadellobregat.cat"}
+,{"codi_ens":"0807340003","nom_complert":"Ajuntament de Cornellà de Llobregat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"92237","any_cens":"2025","web":"http://www.aj-cornella.cat"}
+,{"codi_ens":"0807490004","nom_complert":"Ajuntament de Cubelles","comarca":"Garraf","provincia":"Barcelona","cens":"17673","any_cens":"2025","web":"http://www.cubelles.cat"}
+,{"codi_ens":"0807520002","nom_complert":"Ajuntament de Dosrius","comarca":"Maresme","provincia":"Barcelona","cens":"6287","any_cens":"2025","web":"http://www.dosrius.cat"}
+,{"codi_ens":"0807650006","nom_complert":"Ajuntament d'Esparreguera","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"22665","any_cens":"2025","web":"http://www.esparreguera.cat"}
+,{"codi_ens":"0807710007","nom_complert":"Ajuntament d'Esplugues de Llobregat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"48221","any_cens":"2025","web":"http://www.esplugues.cat"}
+,{"codi_ens":"0807870005","nom_complert":"Ajuntament de l'Espunyola","comarca":"Berguedà","provincia":"Barcelona","cens":"260","any_cens":"2025","web":"http://www.diba.es/municipis/munview.asp?Ine=08078&Vista=1"}
+,{"codi_ens":"0807900000","nom_complert":"Ajuntament de l'Estany","comarca":"Moianès","provincia":"Barcelona","cens":"390","any_cens":"2025","web":"http://www.estany.cat"}
+,{"codi_ens":"0808040003","nom_complert":"Ajuntament de Fígols","comarca":"Berguedà","provincia":"Barcelona","cens":"40","any_cens":"2025","web":"http://figols.cat"}
+,{"codi_ens":"0808110007","nom_complert":"Ajuntament de Fogars de Montclús","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"494","any_cens":"2025","web":"http://www.fogarsdemontclus.cat"}
+,{"codi_ens":"0808260009","nom_complert":"Ajuntament de Fogars de la Selva","comarca":"Selva","provincia":"Barcelona","cens":"1704","any_cens":"2025","web":"http://www.fogarsdelaselva.cat"}
+,{"codi_ens":"0808320002","nom_complert":"Ajuntament de Folgueroles","comarca":"Osona","provincia":"Barcelona","cens":"2262","any_cens":"2025","web":"http://www.folgueroles.cat"}
+,{"codi_ens":"0808470005","nom_complert":"Ajuntament de Fonollosa","comarca":"Bages","provincia":"Barcelona","cens":"1570","any_cens":"2025","web":"http://www.fonollosa.cat"}
+,{"codi_ens":"0808500000","nom_complert":"Ajuntament de Font-rubí","comarca":"Alt Penedès","provincia":"Barcelona","cens":"1441","any_cens":"2025","web":"https://www.font-rubi.cat"}
+,{"codi_ens":"0808630008","nom_complert":"Ajuntament de les Franqueses del Vallès","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"20881","any_cens":"2025","web":"http://www.lesfranqueses.cat"}
+,{"codi_ens":"0808790004","nom_complert":"Ajuntament de Gallifa","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"171","any_cens":"2025","web":"http://www.gallifa.cat"}
+,{"codi_ens":"0808850006","nom_complert":"Ajuntament de la Garriga","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"17426","any_cens":"2025","web":"http://www.lagarriga.cat"}
+,{"codi_ens":"0808980001","nom_complert":"Ajuntament de Gavà","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"48243","any_cens":"2025","web":"http://www.gavaciutat.cat"}
+,{"codi_ens":"0809020002","nom_complert":"Ajuntament de Gaià","comarca":"Bages","provincia":"Barcelona","cens":"172","any_cens":"2025","web":"http://www.gaia.cat"}
+,{"codi_ens":"0809190004","nom_complert":"Ajuntament de Gelida","comarca":"Alt Penedès","provincia":"Barcelona","cens":"8198","any_cens":"2025","web":"http://www.gelida.cat"}
+,{"codi_ens":"0809240003","nom_complert":"Ajuntament de Gironella","comarca":"Berguedà","provincia":"Barcelona","cens":"5083","any_cens":"2025","web":"http://www.gironella.cat"}
+,{"codi_ens":"0809300000","nom_complert":"Ajuntament de Gisclareny","comarca":"Berguedà","provincia":"Barcelona","cens":"28","any_cens":"2025","web":"http://www.gisclareny.cat"}
+,{"codi_ens":"0809450006","nom_complert":"Ajuntament de la Granada","comarca":"Alt Penedès","provincia":"Barcelona","cens":"2287","any_cens":"2025","web":"www.lagranada.cat"}
+,{"codi_ens":"0809580001","nom_complert":"Ajuntament de Granera","comarca":"Moianès","provincia":"Barcelona","cens":"84","any_cens":"2025","web":"http://www.granera.cat"}
+,{"codi_ens":"0809610007","nom_complert":"Ajuntament de Granollers","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"65341","any_cens":"2025","web":"http://www.granollers.cat"}
+,{"codi_ens":"0809770005","nom_complert":"Ajuntament de Gualba","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"1766","any_cens":"2025","web":"http://www.gualba.cat"}
+,{"codi_ens":"0809830008","nom_complert":"Ajuntament de Sant Salvador de Guardiola","comarca":"Bages","provincia":"Barcelona","cens":"3612","any_cens":"2025","web":"http://www.santsalvadordeguardiola.cat"}
+,{"codi_ens":"0809960009","nom_complert":"Ajuntament de Guardiola de Berguedà","comarca":"Berguedà","provincia":"Barcelona","cens":"964","any_cens":"2025","web":"http://www.guardioladebergueda.cat"}
+,{"codi_ens":"0810000000","nom_complert":"Ajuntament de Gurb","comarca":"Osona","provincia":"Barcelona","cens":"2741","any_cens":"2025","web":"http://www.gurb.cat"}
+,{"codi_ens":"0810170005","nom_complert":"Ajuntament de l'Hospitalet de Llobregat","comarca":"Barcelonès","provincia":"Barcelona","cens":"289510","any_cens":"2025","web":"http://www.l-h.cat"}
+,{"codi_ens":"0810220002","nom_complert":"Ajuntament d'Igualada","comarca":"Anoia","provincia":"Barcelona","cens":"42085","any_cens":"2025","web":"http://www.igualada.cat"}
+,{"codi_ens":"0810380001","nom_complert":"Ajuntament de Jorba","comarca":"Anoia","provincia":"Barcelona","cens":"850","any_cens":"2025","web":"https://www.jorba.cat"}
+,{"codi_ens":"0810430008","nom_complert":"Ajuntament de la Llacuna","comarca":"Anoia","provincia":"Barcelona","cens":"959","any_cens":"2025","web":"http://www.ajuntamentlallacuna.cat"}
+,{"codi_ens":"0810560009","nom_complert":"Ajuntament de la Llagosta","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"13280","any_cens":"2025","web":"http://www.llagosta.cat"}
+,{"codi_ens":"0810690004","nom_complert":"Ajuntament de Llinars del Vallès","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"10956","any_cens":"2025","web":"https://www.llinarsdelvalles.cat"}
+,{"codi_ens":"0810750006","nom_complert":"Ajuntament de Lliçà d'Amunt","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"16540","any_cens":"2025","web":"http://www.llicamunt.cat"}
+,{"codi_ens":"0810810007","nom_complert":"Ajuntament de Lliçà de Vall","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"6903","any_cens":"2025","web":"http://www.llissadevall.cat"}
+,{"codi_ens":"0810940003","nom_complert":"Ajuntament de Lluçà","comarca":"Lluçanès","provincia":"Barcelona","cens":"281","any_cens":"2025","web":"http://www.lluca.cat"}
+,{"codi_ens":"0811080001","nom_complert":"Ajuntament de Malgrat de Mar","comarca":"Maresme","provincia":"Barcelona","cens":"19714","any_cens":"2025","web":"http://www.ajmalgrat.cat"}
+,{"codi_ens":"0811150006","nom_complert":"Ajuntament de Malla","comarca":"Osona","provincia":"Barcelona","cens":"285","any_cens":"2025","web":"http://www.malla-osona.cat"}
+,{"codi_ens":"0811200000","nom_complert":"Ajuntament de Manlleu","comarca":"Osona","provincia":"Barcelona","cens":"21425","any_cens":"2025","web":"http://www.manlleu.cat"}
+,{"codi_ens":"0811360009","nom_complert":"Ajuntament de Manresa","comarca":"Bages","provincia":"Barcelona","cens":"80974","any_cens":"2025","web":"http://www.ajmanresa.cat"}
+,{"codi_ens":"0811410007","nom_complert":"Ajuntament de Martorell","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"29175","any_cens":"2025","web":"http://www.martorell.cat"}
+,{"codi_ens":"0811540003","nom_complert":"Ajuntament de Martorelles","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"4992","any_cens":"2025","web":"http://www.martorelles.cat"}
+,{"codi_ens":"0811670005","nom_complert":"Ajuntament de les Masies de Roda","comarca":"Osona","provincia":"Barcelona","cens":"758","any_cens":"2025","web":"https://www.lesmasiesderoda.cat"}
+,{"codi_ens":"0811730008","nom_complert":"Ajuntament de les Masies de Voltregà","comarca":"Osona","provincia":"Barcelona","cens":"3345","any_cens":"2025","web":"http://www.lesmasiesdevoltrega.cat"}
+,{"codi_ens":"0811890004","nom_complert":"Ajuntament del Masnou","comarca":"Maresme","provincia":"Barcelona","cens":"24761","any_cens":"2025","web":"http://www.elmasnou.cat"}
+,{"codi_ens":"0811920002","nom_complert":"Ajuntament de Masquefa","comarca":"Anoia","provincia":"Barcelona","cens":"10120","any_cens":"2025","web":"http://www.masquefa.cat"}
+,{"codi_ens":"0812060009","nom_complert":"Ajuntament de Matadepera","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"9776","any_cens":"2025","web":"http://www.matadepera.cat"}
+,{"codi_ens":"0812130008","nom_complert":"Ajuntament de Mataró","comarca":"Maresme","provincia":"Barcelona","cens":"131683","any_cens":"2025","web":"http://www.mataro.cat"}
+,{"codi_ens":"0812280001","nom_complert":"Ajuntament de Mediona","comarca":"Alt Penedès","provincia":"Barcelona","cens":"2658","any_cens":"2025","web":"http://www.mediona.cat"}
+,{"codi_ens":"0812340003","nom_complert":"Ajuntament de Molins de Rei","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"27300","any_cens":"2025","web":"http://www.molinsderei.cat"}
+,{"codi_ens":"0812490004","nom_complert":"Ajuntament de Mollet del Vallès","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"52990","any_cens":"2025","web":"http://www.molletvalles.cat"}
+,{"codi_ens":"0812520002","nom_complert":"Ajuntament de Montcada i Reixac","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"37460","any_cens":"2025","web":"http://www.montcada.cat"}
+,{"codi_ens":"0812650006","nom_complert":"Ajuntament de Montgat","comarca":"Maresme","provincia":"Barcelona","cens":"12879","any_cens":"2025","web":"http://www.montgat.cat"}
+,{"codi_ens":"0812710007","nom_complert":"Ajuntament de Monistrol de Montserrat","comarca":"Bages","provincia":"Barcelona","cens":"3250","any_cens":"2025","web":"http://www.monistroldemontserrat.cat"}
+,{"codi_ens":"0812870005","nom_complert":"Ajuntament de Monistrol de Calders","comarca":"Moianès","provincia":"Barcelona","cens":"764","any_cens":"2025","web":"http://www.monistroldecalders.cat"}
+,{"codi_ens":"0812900000","nom_complert":"Ajuntament de Muntanyola","comarca":"Osona","provincia":"Barcelona","cens":"697","any_cens":"2025","web":"http://www.muntanyola.cat"}
+,{"codi_ens":"0813040003","nom_complert":"Ajuntament de Montclar","comarca":"Berguedà","provincia":"Barcelona","cens":"132","any_cens":"2025","web":"https://www.montclar.cat"}
+,{"codi_ens":"0813110007","nom_complert":"Ajuntament de Montesquiu","comarca":"Osona","provincia":"Barcelona","cens":"1131","any_cens":"2025","web":"http://www.montesquiu.cat"}
+,{"codi_ens":"0813260009","nom_complert":"Ajuntament de Montmajor","comarca":"Berguedà","provincia":"Barcelona","cens":"473","any_cens":"2025","web":"http://www.montmajor.cat"}
+,{"codi_ens":"0813320002","nom_complert":"Ajuntament de Montmaneu","comarca":"Anoia","provincia":"Barcelona","cens":"181","any_cens":"2025","web":"https://www.montmaneu.cat"}
+,{"codi_ens":"0813470005","nom_complert":"Ajuntament de Figaró-Montmany","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"1195","any_cens":"2025","web":"https://www.figaro-montmany.cat/"}
+,{"codi_ens":"0813500000","nom_complert":"Ajuntament de Montmeló","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"8886","any_cens":"2025","web":"http://www.montmelo.cat"}
+,{"codi_ens":"0813630008","nom_complert":"Ajuntament de Montornès del Vallès","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"17102","any_cens":"2025","web":"https://www.montornes.cat"}
+,{"codi_ens":"0813790004","nom_complert":"Ajuntament de Montseny","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"388","any_cens":"2025","web":"http://www.montseny.cat"}
+,{"codi_ens":"0813850006","nom_complert":"Ajuntament de Moià","comarca":"Moianès","provincia":"Barcelona","cens":"6828","any_cens":"2025","web":"http://www.moia.cat"}
+,{"codi_ens":"0813980001","nom_complert":"Ajuntament de Mura","comarca":"Bages","provincia":"Barcelona","cens":"235","any_cens":"2025","web":"http://www.mura.cat"}
+,{"codi_ens":"0814020002","nom_complert":"Ajuntament de Navarcles","comarca":"Bages","provincia":"Barcelona","cens":"6276","any_cens":"2025","web":"http://www.navarcles.cat"}
+,{"codi_ens":"0814190004","nom_complert":"Ajuntament de Navàs","comarca":"Bages","provincia":"Barcelona","cens":"6238","any_cens":"2025","web":"http://www.navas.cat"}
+,{"codi_ens":"0814240003","nom_complert":"Ajuntament de la Nou de Berguedà","comarca":"Berguedà","provincia":"Barcelona","cens":"163","any_cens":"2025","web":"http://www.lanoudebergueda.cat"}
+,{"codi_ens":"0814300000","nom_complert":"Ajuntament d'Òdena","comarca":"Anoia","provincia":"Barcelona","cens":"3760","any_cens":"2025","web":"http://www.odena.cat"}
+,{"codi_ens":"0814450006","nom_complert":"Ajuntament d'Olvan","comarca":"Berguedà","provincia":"Barcelona","cens":"924","any_cens":"2025","web":"http://www.olvan.cat"}
+,{"codi_ens":"0814580001","nom_complert":"Ajuntament d'Olèrdola","comarca":"Alt Penedès","provincia":"Barcelona","cens":"3945","any_cens":"2025","web":"http://www.olerdola.cat"}
+,{"codi_ens":"0814610007","nom_complert":"Ajuntament d'Olesa de Bonesvalls","comarca":"Alt Penedès","provincia":"Barcelona","cens":"2135","any_cens":"2025","web":"http://www.olesadebonesvalls.cat"}
+,{"codi_ens":"0814770005","nom_complert":"Ajuntament d'Olesa de Montserrat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"24966","any_cens":"2025","web":"http://www.olesademontserrat.cat"}
+,{"codi_ens":"0814830008","nom_complert":"Ajuntament d'Olivella","comarca":"Garraf","provincia":"Barcelona","cens":"4435","any_cens":"2025","web":"http://www.olivella.cat"}
+,{"codi_ens":"0814960009","nom_complert":"Ajuntament d'Olost","comarca":"Lluçanès","provincia":"Barcelona","cens":"1209","any_cens":"2025","web":"https://www.olost.cat"}
+,{"codi_ens":"0815090004","nom_complert":"Ajuntament d'Orís","comarca":"Osona","provincia":"Barcelona","cens":"355","any_cens":"2025","web":"http://www.oris.cat"}
+,{"codi_ens":"0815160009","nom_complert":"Ajuntament d'Oristà","comarca":"Lluçanès","provincia":"Barcelona","cens":"555","any_cens":"2025","web":"http://www.orista.cat"}
+,{"codi_ens":"0815210007","nom_complert":"Ajuntament d'Orpí","comarca":"Anoia","provincia":"Barcelona","cens":"175","any_cens":"2025","web":"http://orpi.cat"}
+,{"codi_ens":"0815370005","nom_complert":"Ajuntament d'Òrrius","comarca":"Maresme","provincia":"Barcelona","cens":"812","any_cens":"2025","web":"http://www.orrius.cat"}
+,{"codi_ens":"0815420002","nom_complert":"Ajuntament de Pacs del Penedès","comarca":"Alt Penedès","provincia":"Barcelona","cens":"932","any_cens":"2025","web":"http://www.pacsdelpenedes.cat"}
+,{"codi_ens":"0815550006","nom_complert":"Ajuntament de Palafolls","comarca":"Maresme","provincia":"Barcelona","cens":"10038","any_cens":"2025","web":"http://www.palafolls.cat"}
+,{"codi_ens":"0815680001","nom_complert":"Ajuntament de Palau-solità i Plegamans","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"15614","any_cens":"2025","web":"http://www.palauplegamans.cat"}
+,{"codi_ens":"0815740003","nom_complert":"Ajuntament de Pallejà","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"12006","any_cens":"2025","web":"http://www.palleja.cat"}
+,{"codi_ens":"0815800000","nom_complert":"Ajuntament del Papiol","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"4404","any_cens":"2025","web":"http://www.elpapiol.cat"}
+,{"codi_ens":"0815930008","nom_complert":"Ajuntament de Parets del Vallès","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"18885","any_cens":"2025","web":"http://www.parets.cat"}
+,{"codi_ens":"0816070005","nom_complert":"Ajuntament de Perafita","comarca":"Lluçanès","provincia":"Barcelona","cens":"433","any_cens":"2025","web":"http://www.perafita.cat"}
+,{"codi_ens":"0816140003","nom_complert":"Ajuntament de Piera","comarca":"Anoia","provincia":"Barcelona","cens":"17880","any_cens":"2025","web":"www.viladepiera.cat"}
+,{"codi_ens":"0816290004","nom_complert":"Ajuntament dels Hostalets de Pierola","comarca":"Anoia","provincia":"Barcelona","cens":"3258","any_cens":"2025","web":"http://www.elshostaletsdepierola.cat"}
+,{"codi_ens":"0816350006","nom_complert":"Ajuntament de Pineda de Mar","comarca":"Maresme","provincia":"Barcelona","cens":"30108","any_cens":"2025","web":"https://www.pinedademar.cat"}
+,{"codi_ens":"0816400000","nom_complert":"Ajuntament del Pla del Penedès","comarca":"Alt Penedès","provincia":"Barcelona","cens":"1393","any_cens":"2025","web":"http://www.elpladelpenedes.cat"}
+,{"codi_ens":"0816530008","nom_complert":"Ajuntament de la Pobla de Claramunt","comarca":"Anoia","provincia":"Barcelona","cens":"2350","any_cens":"2025","web":"http://www.lapobladeclaramunt.cat"}
+,{"codi_ens":"0816660009","nom_complert":"Ajuntament de la Pobla de Lillet","comarca":"Berguedà","provincia":"Barcelona","cens":"1105","any_cens":"2025","web":"http://www.poblalillet.cat"}
+,{"codi_ens":"0816720002","nom_complert":"Ajuntament de Polinyà","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"8581","any_cens":"2025","web":"http://www.ajpolinya.cat"}
+,{"codi_ens":"0816880001","nom_complert":"Ajuntament de Pontons","comarca":"Alt Penedès","provincia":"Barcelona","cens":"516","any_cens":"2025","web":"http://www.pontons.org"}
+,{"codi_ens":"0816910007","nom_complert":"Ajuntament del Prat de Llobregat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"66338","any_cens":"2025","web":"http://www.elprat.cat"}
+,{"codi_ens":"0817050006","nom_complert":"Ajuntament dels Prats de Rei","comarca":"Anoia","provincia":"Barcelona","cens":"554","any_cens":"2025","web":"http://www.pratsderei.cat"}
+,{"codi_ens":"0817120002","nom_complert":"Ajuntament de Prats de Lluçanès","comarca":"Lluçanès","provincia":"Barcelona","cens":"2761","any_cens":"2025","web":"http://www.pratsdellucanes.cat"}
+,{"codi_ens":"0817270005","nom_complert":"Ajuntament de Premià de Mar","comarca":"Maresme","provincia":"Barcelona","cens":"29431","any_cens":"2025","web":"http://www.premiademar.cat"}
+,{"codi_ens":"0817480001","nom_complert":"Ajuntament de Puigdàlber","comarca":"Alt Penedès","provincia":"Barcelona","cens":"621","any_cens":"2025","web":"http://www.puigdalber.cat"}
+,{"codi_ens":"0817510007","nom_complert":"Ajuntament de Puig-reig","comarca":"Berguedà","provincia":"Barcelona","cens":"4565","any_cens":"2025","web":"http://www.puig-reig.cat"}
+,{"codi_ens":"0817640003","nom_complert":"Ajuntament de Pujalt","comarca":"Anoia","provincia":"Barcelona","cens":"204","any_cens":"2025","web":"http://pujalt.cat"}
+,{"codi_ens":"0817700000","nom_complert":"Ajuntament de la Quar","comarca":"Berguedà","provincia":"Barcelona","cens":"41","any_cens":"2025","web":"http://www.laquar.cat"}
+,{"codi_ens":"0817860009","nom_complert":"Ajuntament de Rajadell","comarca":"Bages","provincia":"Barcelona","cens":"597","any_cens":"2025","web":"http://www.rajadell.cat"}
+,{"codi_ens":"0817990004","nom_complert":"Ajuntament de Rellinars","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"926","any_cens":"2025","web":"http://www.rellinars.cat"}
+,{"codi_ens":"0818030008","nom_complert":"Ajuntament de Ripollet","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"39897","any_cens":"2025","web":"http://www.ripollet.cat"}
+,{"codi_ens":"0818100000","nom_complert":"Ajuntament de la Roca del Vallès","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"11014","any_cens":"2025","web":"http://www.laroca.cat"}
+,{"codi_ens":"0818250006","nom_complert":"Ajuntament del Pont de Vilomara i Rocafort","comarca":"Bages","provincia":"Barcelona","cens":"4193","any_cens":"2025","web":"http://www.elpont.cat"}
+,{"codi_ens":"0818310007","nom_complert":"Ajuntament de Roda de Ter","comarca":"Osona","provincia":"Barcelona","cens":"6937","any_cens":"2025","web":"http://www.rodadeter.cat"}
+,{"codi_ens":"0818460009","nom_complert":"Ajuntament de Rubí","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"82823","any_cens":"2025","web":"http://www.ajrubi.cat"}
+,{"codi_ens":"0818590004","nom_complert":"Ajuntament de Rubió","comarca":"Anoia","provincia":"Barcelona","cens":"225","any_cens":"2025","web":"https://www.rubio.cat"}
+,{"codi_ens":"0818780001","nom_complert":"Ajuntament de Sabadell","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"225368","any_cens":"2025","web":"http://www.sabadell.cat"}
+,{"codi_ens":"0818840003","nom_complert":"Ajuntament de Sagàs","comarca":"Berguedà","provincia":"Barcelona","cens":"154","any_cens":"2025","web":"http://www.sagas.cat"}
+,{"codi_ens":"0818970005","nom_complert":"Ajuntament de Sant Pere Sallavinera","comarca":"Anoia","provincia":"Barcelona","cens":"177","any_cens":"2025","web":"http://www.sallavinera.cat"}
+,{"codi_ens":"0819010007","nom_complert":"Ajuntament de Saldes","comarca":"Berguedà","provincia":"Barcelona","cens":"302","any_cens":"2025","web":"http://www.saldes.cat"}
+,{"codi_ens":"0819180001","nom_complert":"Ajuntament de Sallent","comarca":"Bages","provincia":"Barcelona","cens":"7030","any_cens":"2025","web":"http://www.sallent.cat"}
+,{"codi_ens":"0819230008","nom_complert":"Ajuntament de Santpedor","comarca":"Bages","provincia":"Barcelona","cens":"7744","any_cens":"2025","web":"http://www.santpedor.cat"}
+,{"codi_ens":"0819390004","nom_complert":"Ajuntament de Sant Iscle de Vallalta","comarca":"Maresme","provincia":"Barcelona","cens":"1477","any_cens":"2025","web":"https://www.santiscle.cat"}
+,{"codi_ens":"0819440003","nom_complert":"Ajuntament de Sant Adrià de Besòs","comarca":"Barcelonès","provincia":"Barcelona","cens":"39323","any_cens":"2025","web":"http://www.sant-adria.net"}
+,{"codi_ens":"0819570005","nom_complert":"Ajuntament de Sant Agustí de Lluçanès","comarca":"Osona","provincia":"Barcelona","cens":"106","any_cens":"2025","web":"http://santagustidellucanes.cat"}
+,{"codi_ens":"0819600000","nom_complert":"Ajuntament de Sant Andreu de la Barca","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"27094","any_cens":"2025","web":"http://www.sabarca.cat"}
+,{"codi_ens":"0819760009","nom_complert":"Ajuntament de Sant Andreu de Llavaneres","comarca":"Maresme","provincia":"Barcelona","cens":"11938","any_cens":"2025","web":"http://www.ajllavaneres.cat"}
+,{"codi_ens":"0819820002","nom_complert":"Ajuntament de Sant Antoni de Vilamajor","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"6724","any_cens":"2025","web":"http://www.santantonidevilamajor.cat"}
+,{"codi_ens":"0819950006","nom_complert":"Ajuntament de Sant Bartomeu del Grau","comarca":"Osona","provincia":"Barcelona","cens":"933","any_cens":"2025","web":"http://www.sbg.cat"}
+,{"codi_ens":"0820090004","nom_complert":"Ajuntament de Sant Boi de Llobregat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"85610","any_cens":"2025","web":"http://www.stboi.cat"}
+,{"codi_ens":"0820160009","nom_complert":"Ajuntament de Sant Boi de Lluçanès","comarca":"Osona","provincia":"Barcelona","cens":"602","any_cens":"2025","web":"http://www.santboidellucanes.cat"}
+,{"codi_ens":"0820210007","nom_complert":"Ajuntament de Sant Celoni","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"18977","any_cens":"2025","web":"http://www.santceloni.cat"}
+,{"codi_ens":"0820370005","nom_complert":"Ajuntament de Sant Cebrià de Vallalta","comarca":"Maresme","provincia":"Barcelona","cens":"3872","any_cens":"2025","web":"https://www.stcebria.cat/"}
+,{"codi_ens":"0820420002","nom_complert":"Ajuntament de Sant Climent de Llobregat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"4187","any_cens":"2025","web":"http://santclimentdellobregat.cat"}
+,{"codi_ens":"0820550006","nom_complert":"Ajuntament de Sant Cugat del Vallès","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"97983","any_cens":"2025","web":"http://www.santcugat.cat"}
+,{"codi_ens":"0820680001","nom_complert":"Ajuntament de Sant Cugat Sesgarrigues","comarca":"Alt Penedès","provincia":"Barcelona","cens":"1038","any_cens":"2025","web":"http://www.santcugatsesgarrigues.cat"}
+,{"codi_ens":"0820740003","nom_complert":"Ajuntament de Sant Esteve de Palautordera","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"3099","any_cens":"2025","web":"http://santestevedepalautordera.cat"}
+,{"codi_ens":"0820800000","nom_complert":"Ajuntament de Sant Esteve Sesrovires","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"8121","any_cens":"2025","web":"http://www.sesrovires.cat"}
+,{"codi_ens":"0820930008","nom_complert":"Ajuntament de Sant Fost de Campsentelles","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"9419","any_cens":"2025","web":"http://www.santfost.cat"}
+,{"codi_ens":"0821070005","nom_complert":"Ajuntament de Sant Feliu de Codines","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"6827","any_cens":"2025","web":"https://www.santfeliudecodines.cat"}
+,{"codi_ens":"0821140003","nom_complert":"Ajuntament de Sant Feliu de Llobregat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"46781","any_cens":"2025","web":"http://www.santfeliu.cat"}
+,{"codi_ens":"0821290004","nom_complert":"Ajuntament de Sant Feliu Sasserra","comarca":"Bages","provincia":"Barcelona","cens":"633","any_cens":"2025","web":"http://www.santfeliusasserra.cat"}
+,{"codi_ens":"0821350006","nom_complert":"Ajuntament de Sant Fruitós de Bages","comarca":"Bages","provincia":"Barcelona","cens":"9333","any_cens":"2025","web":"http://www.santfruitos.cat"}
+,{"codi_ens":"0821400000","nom_complert":"Ajuntament de Vilassar de Dalt","comarca":"Maresme","provincia":"Barcelona","cens":"9404","any_cens":"2025","web":"http://www.vilassardedalt.cat"}
+,{"codi_ens":"0821530008","nom_complert":"Ajuntament de Sant Hipòlit de Voltregà","comarca":"Osona","provincia":"Barcelona","cens":"3666","any_cens":"2025","web":"http://www.santhipolitdevoltrega.cat"}
+,{"codi_ens":"0821660009","nom_complert":"Ajuntament de Sant Jaume de Frontanyà","comarca":"Berguedà","provincia":"Barcelona","cens":"25","any_cens":"2025","web":"http://www.santjaumedefrontanya.cat"}
+,{"codi_ens":"0821720002","nom_complert":"Ajuntament de Sant Joan Despí","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"35926","any_cens":"2025","web":"http://www.sjdespi.cat"}
+,{"codi_ens":"0821880001","nom_complert":"Ajuntament de Sant Joan de Vilatorrada","comarca":"Bages","provincia":"Barcelona","cens":"11133","any_cens":"2025","web":"http://www.santjoanvilatorrada.cat"}
+,{"codi_ens":"0821910007","nom_complert":"Ajuntament de Vilassar de Mar","comarca":"Maresme","provincia":"Barcelona","cens":"21227","any_cens":"2025","web":"http://www.vilassardemar.cat"}
+,{"codi_ens":"0822050006","nom_complert":"Ajuntament de Sant Julià de Vilatorta","comarca":"Osona","provincia":"Barcelona","cens":"3323","any_cens":"2025","web":"http://www.vilatorta.cat"}
+,{"codi_ens":"0822120002","nom_complert":"Ajuntament de Sant Just Desvern","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"21037","any_cens":"2025","web":"http://www.santjust.cat"}
+,{"codi_ens":"0822270005","nom_complert":"Ajuntament de Sant Llorenç d'Hortons","comarca":"Alt Penedès","provincia":"Barcelona","cens":"2627","any_cens":"2025","web":"https://www.ajhortons.cat"}
+,{"codi_ens":"0822330008","nom_complert":"Ajuntament de Sant Llorenç Savall","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"2587","any_cens":"2025","web":"http://www.savall.cat"}
+,{"codi_ens":"0822480001","nom_complert":"Ajuntament de Sant Martí de Centelles","comarca":"Osona","provincia":"Barcelona","cens":"1263","any_cens":"2025","web":"https://www.santmarticentelles.cat"}
+,{"codi_ens":"0822510007","nom_complert":"Ajuntament de Sant Martí d'Albars","comarca":"Lluçanès","provincia":"Barcelona","cens":"135","any_cens":"2025","web":"http://www.santmartidalbars.cat"}
+,{"codi_ens":"0822640003","nom_complert":"Ajuntament de Sant Martí de Tous","comarca":"Anoia","provincia":"Barcelona","cens":"1269","any_cens":"2025","web":"http://www.tous.cat"}
+,{"codi_ens":"0822700000","nom_complert":"Ajuntament de Sant Martí Sarroca","comarca":"Alt Penedès","provincia":"Barcelona","cens":"3485","any_cens":"2025","web":"http://www.santmartisarroca.cat"}
+,{"codi_ens":"0822860009","nom_complert":"Ajuntament de Sant Martí Sesgueioles","comarca":"Anoia","provincia":"Barcelona","cens":"353","any_cens":"2025","web":"http://www.sesgueioles.cat"}
+,{"codi_ens":"0822990004","nom_complert":"Ajuntament de Sant Mateu de Bages","comarca":"Bages","provincia":"Barcelona","cens":"641","any_cens":"2025","web":"http://www.santmateudebages.cat"}
+,{"codi_ens":"0823030008","nom_complert":"Ajuntament de Premià de Dalt","comarca":"Maresme","provincia":"Barcelona","cens":"10632","any_cens":"2025","web":"http://www.premiadedalt.cat"}
+,{"codi_ens":"0823100000","nom_complert":"Ajuntament de Sant Pere de Ribes","comarca":"Garraf","provincia":"Barcelona","cens":"32705","any_cens":"2025","web":"http://www.santperederibes.cat"}
+,{"codi_ens":"0823250006","nom_complert":"Ajuntament de Sant Pere de Riudebitlles","comarca":"Alt Penedès","provincia":"Barcelona","cens":"2516","any_cens":"2025","web":"http://www.santperederiudebitlles.cat"}
+,{"codi_ens":"0823310007","nom_complert":"Ajuntament de Sant Pere de Torelló","comarca":"Osona","provincia":"Barcelona","cens":"2596","any_cens":"2025","web":"http://www.stpere.cat"}
+,{"codi_ens":"0823460009","nom_complert":"Ajuntament de Sant Pere de Vilamajor","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"5074","any_cens":"2025","web":"http://www.vilamajor.cat"}
+,{"codi_ens":"0823590004","nom_complert":"Ajuntament de Sant Pol de Mar","comarca":"Maresme","provincia":"Barcelona","cens":"5793","any_cens":"2025","web":"http://www.santpol.cat"}
+,{"codi_ens":"0823620002","nom_complert":"Ajuntament de Sant Quintí de Mediona","comarca":"Alt Penedès","provincia":"Barcelona","cens":"2580","any_cens":"2025","web":"www.sntquintidemediona.cat"}
+,{"codi_ens":"0823780001","nom_complert":"Ajuntament de Sant Quirze de Besora","comarca":"Osona","provincia":"Barcelona","cens":"2164","any_cens":"2025","web":"http://www.ajsantquirze.cat"}
+,{"codi_ens":"0823840003","nom_complert":"Ajuntament de Sant Quirze del Vallès","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"20209","any_cens":"2025","web":"http://www.santquirzevalles.cat"}
+,{"codi_ens":"0823970005","nom_complert":"Ajuntament de Sant Quirze Safaja","comarca":"Moianès","provincia":"Barcelona","cens":"663","any_cens":"2025","web":"http://www.santquirzesafaja.cat"}
+,{"codi_ens":"0824010007","nom_complert":"Ajuntament de Sant Sadurní d'Anoia","comarca":"Alt Penedès","provincia":"Barcelona","cens":"12911","any_cens":"2025","web":"http://www.santsadurni.cat"}
+,{"codi_ens":"0824180001","nom_complert":"Ajuntament de Sant Sadurní d'Osormort","comarca":"Osona","provincia":"Barcelona","cens":"89","any_cens":"2025","web":"http://www.santsadurnidosormort.cat"}
+,{"codi_ens":"0824230008","nom_complert":"Ajuntament de Marganell","comarca":"Bages","provincia":"Barcelona","cens":"309","any_cens":"2025","web":"https://www.marganell.cat"}
+,{"codi_ens":"0824390004","nom_complert":"Ajuntament de Santa Cecília de Voltregà","comarca":"Osona","provincia":"Barcelona","cens":"197","any_cens":"2025","web":"http://www.santacecilia.cat"}
+,{"codi_ens":"0824440003","nom_complert":"Ajuntament de Santa Coloma de Cervelló","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"8273","any_cens":"2025","web":"http://www.santacolomadecervello.cat"}
+,{"codi_ens":"0824570005","nom_complert":"Ajuntament de Santa Coloma de Gramenet","comarca":"Barcelonès","provincia":"Barcelona","cens":"123981","any_cens":"2025","web":"https://www.gramenet.cat"}
+,{"codi_ens":"0824600000","nom_complert":"Ajuntament de Santa Eugènia de Berga","comarca":"Osona","provincia":"Barcelona","cens":"2348","any_cens":"2025","web":"http://www.santaeugeniadeberga.cat"}
+,{"codi_ens":"0824760009","nom_complert":"Ajuntament de Santa Eulàlia de Riuprimer","comarca":"Osona","provincia":"Barcelona","cens":"1516","any_cens":"2025","web":"https://www.santaeulaliariuprimer.cat"}
+,{"codi_ens":"0824820002","nom_complert":"Ajuntament de Santa Eulàlia de Ronçana","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"7953","any_cens":"2025","web":"http://www.ser.cat"}
+,{"codi_ens":"0824950006","nom_complert":"Ajuntament de Santa Fe del Penedès","comarca":"Alt Penedès","provincia":"Barcelona","cens":"365","any_cens":"2025","web":"http://www.santafepenedes.cat"}
+,{"codi_ens":"0825080001","nom_complert":"Ajuntament de Santa Margarida de Montbui","comarca":"Anoia","provincia":"Barcelona","cens":"10631","any_cens":"2025","web":"http://www.montbui.cat"}
+,{"codi_ens":"0825150006","nom_complert":"Ajuntament de Santa Margarida i els Monjos","comarca":"Alt Penedès","provincia":"Barcelona","cens":"7806","any_cens":"2025","web":"http://www.santamargaridaielsmonjos.cat"}
+,{"codi_ens":"0825200000","nom_complert":"Ajuntament de Barberà del Vallès","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"33987","any_cens":"2025","web":"http://www.bdv.cat"}
+,{"codi_ens":"0825360009","nom_complert":"Ajuntament de Santa Maria de Besora","comarca":"Osona","provincia":"Barcelona","cens":"164","any_cens":"2025","web":"https://www.santamariabesora.cat"}
+,{"codi_ens":"0825410007","nom_complert":"Ajuntament de l'Esquirol","comarca":"Osona","provincia":"Barcelona","cens":"2301","any_cens":"2025","web":"http://www.lesquirol.cat"}
+,{"codi_ens":"0825540003","nom_complert":"Ajuntament de Santa Maria de Merlès","comarca":"Berguedà","provincia":"Barcelona","cens":"179","any_cens":"2025","web":"http://santamariademerles.cat"}
+,{"codi_ens":"0825670005","nom_complert":"Ajuntament de Santa Maria de Martorelles","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"868","any_cens":"2025","web":"http://www.santamariademartorelles.cat"}
+,{"codi_ens":"0825730008","nom_complert":"Ajuntament de Santa Maria de Miralles","comarca":"Anoia","provincia":"Barcelona","cens":"144","any_cens":"2025","web":"http://www.santamariademiralles.cat"}
+,{"codi_ens":"0825890004","nom_complert":"Ajuntament de Santa Maria d'Oló","comarca":"Moianès","provincia":"Barcelona","cens":"1099","any_cens":"2025","web":"http://www.olo.cat"}
+,{"codi_ens":"0825920002","nom_complert":"Ajuntament de Santa Maria de Palautordera","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"10080","any_cens":"2025","web":"http://www.smpalautordera.cat"}
+,{"codi_ens":"0826060009","nom_complert":"Ajuntament de Santa Perpètua de Mogoda","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"26130","any_cens":"2025","web":"http://www.staperpetua.cat"}
+,{"codi_ens":"0826130008","nom_complert":"Ajuntament de Santa Susanna","comarca":"Maresme","provincia":"Barcelona","cens":"4099","any_cens":"2025","web":"https://www.stasusanna.cat"}
+,{"codi_ens":"0826280001","nom_complert":"Ajuntament de Sant Vicenç de Castellet","comarca":"Bages","provincia":"Barcelona","cens":"10164","any_cens":"2025","web":"http://www.svc.cat"}
+,{"codi_ens":"0826340003","nom_complert":"Ajuntament de Sant Vicenç dels Horts","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"28746","any_cens":"2025","web":"http://www.svh.cat"}
+,{"codi_ens":"0826490004","nom_complert":"Ajuntament de Sant Vicenç de Montalt","comarca":"Maresme","provincia":"Barcelona","cens":"6802","any_cens":"2025","web":"http://www.svmontalt.cat"}
+,{"codi_ens":"0826520002","nom_complert":"Ajuntament de Sant Vicenç de Torelló","comarca":"Osona","provincia":"Barcelona","cens":"2117","any_cens":"2025","web":"http://santvicencdetorello.cat"}
+,{"codi_ens":"0826650006","nom_complert":"Ajuntament de Cerdanyola del Vallès","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"58528","any_cens":"2025","web":"http://www.cerdanyola.cat"}
+,{"codi_ens":"0826710007","nom_complert":"Ajuntament de Sentmenat","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"9548","any_cens":"2025","web":"http://www.ajsentmenat.cat"}
+,{"codi_ens":"0826870005","nom_complert":"Ajuntament de Cercs","comarca":"Berguedà","provincia":"Barcelona","cens":"1236","any_cens":"2025","web":"http://www.cercs.cat"}
+,{"codi_ens":"0826900000","nom_complert":"Ajuntament de Seva","comarca":"Osona","provincia":"Barcelona","cens":"3808","any_cens":"2025","web":"http://www.seva.cat"}
+,{"codi_ens":"0827040003","nom_complert":"Ajuntament de Sitges","comarca":"Garraf","provincia":"Barcelona","cens":"32609","any_cens":"2025","web":"http://www.sitges.cat"}
+,{"codi_ens":"0827110007","nom_complert":"Ajuntament de Sobremunt","comarca":"Lluçanès","provincia":"Barcelona","cens":"90","any_cens":"2025","web":"http://www.sobremunt.cat"}
+,{"codi_ens":"0827260009","nom_complert":"Ajuntament de Sora","comarca":"Osona","provincia":"Barcelona","cens":"225","any_cens":"2025","web":"https://www.sora.cat"}
+,{"codi_ens":"0827320002","nom_complert":"Ajuntament de Subirats","comarca":"Alt Penedès","provincia":"Barcelona","cens":"3288","any_cens":"2025","web":"https://subirats.cat"}
+,{"codi_ens":"0827470005","nom_complert":"Ajuntament de Súria","comarca":"Bages","provincia":"Barcelona","cens":"6200","any_cens":"2025","web":"http://www.suria.cat"}
+,{"codi_ens":"0827500000","nom_complert":"Ajuntament de Tavèrnoles","comarca":"Osona","provincia":"Barcelona","cens":"354","any_cens":"2025","web":"https://www.tavernoles.cat"}
+,{"codi_ens":"0827630008","nom_complert":"Ajuntament de Tagamanent","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"328","any_cens":"2025","web":"http://www.tagamanent.cat"}
+,{"codi_ens":"0827790004","nom_complert":"Ajuntament de Talamanca","comarca":"Bages","provincia":"Barcelona","cens":"209","any_cens":"2025","web":"http://www.talamanca.cat"}
+,{"codi_ens":"0827850006","nom_complert":"Ajuntament de Taradell","comarca":"Osona","provincia":"Barcelona","cens":"6854","any_cens":"2025","web":"http://www.taradell.cat"}
+,{"codi_ens":"0827980001","nom_complert":"Ajuntament de Terrassa","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"233270","any_cens":"2025","web":"http://www.terrassa.cat"}
+,{"codi_ens":"0828020002","nom_complert":"Ajuntament de Tavertet","comarca":"Osona","provincia":"Barcelona","cens":"128","any_cens":"2025","web":"https://www.tavertet.cat"}
+,{"codi_ens":"0828190004","nom_complert":"Ajuntament de Teià","comarca":"Maresme","provincia":"Barcelona","cens":"6898","any_cens":"2025","web":"http://www.teia.cat"}
+,{"codi_ens":"0828240003","nom_complert":"Ajuntament de Tiana","comarca":"Maresme","provincia":"Barcelona","cens":"9331","any_cens":"2025","web":"http://www.tiana.cat"}
+,{"codi_ens":"0828300000","nom_complert":"Ajuntament de Tona","comarca":"Osona","provincia":"Barcelona","cens":"8527","any_cens":"2025","web":"http://www.tona.cat"}
+,{"codi_ens":"0828450006","nom_complert":"Ajuntament de Tordera","comarca":"Maresme","provincia":"Barcelona","cens":"19039","any_cens":"2025","web":"http://www.tordera.cat"}
+,{"codi_ens":"0828580001","nom_complert":"Ajuntament de Torelló","comarca":"Osona","provincia":"Barcelona","cens":"15334","any_cens":"2025","web":"http://www.ajtorello.cat"}
+,{"codi_ens":"0828610007","nom_complert":"Ajuntament de la Torre de Claramunt","comarca":"Anoia","provincia":"Barcelona","cens":"4158","any_cens":"2025","web":"http://www.latorredeclaramunt.cat"}
+,{"codi_ens":"0828770005","nom_complert":"Ajuntament de Torrelavit","comarca":"Alt Penedès","provincia":"Barcelona","cens":"1572","any_cens":"2025","web":"http://www.torrelavit.cat"}
+,{"codi_ens":"0828830008","nom_complert":"Ajuntament de Torrelles de Foix","comarca":"Alt Penedès","provincia":"Barcelona","cens":"2746","any_cens":"2025","web":"http://www.torrellesdefoix.cat"}
+,{"codi_ens":"0828960009","nom_complert":"Ajuntament de Torrelles de Llobregat","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"6170","any_cens":"2025","web":"http://www.torrelles.cat"}
+,{"codi_ens":"0829000000","nom_complert":"Ajuntament d'Ullastrell","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"2171","any_cens":"2025","web":"http://www.ullastrell.cat"}
+,{"codi_ens":"0829170005","nom_complert":"Ajuntament de Vacarisses","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"7729","any_cens":"2025","web":"http://www.vacarisses.cat"}
+,{"codi_ens":"0829220002","nom_complert":"Ajuntament de Vallbona d'Anoia","comarca":"Anoia","provincia":"Barcelona","cens":"1424","any_cens":"2025","web":"http://www.vallbonadanoia.cat"}
+,{"codi_ens":"0829380001","nom_complert":"Ajuntament de Vallcebre","comarca":"Berguedà","provincia":"Barcelona","cens":"260","any_cens":"2025","web":"http://www.vallcebre.cat"}
+,{"codi_ens":"0829430008","nom_complert":"Ajuntament de Vallgorguina","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"3261","any_cens":"2025","web":"http://www.vallgorguina.cat"}
+,{"codi_ens":"0829560009","nom_complert":"Ajuntament de Vallirana","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"16245","any_cens":"2025","web":"http://www.vallirana.cat"}
+,{"codi_ens":"0829690004","nom_complert":"Ajuntament de Vallromanes","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"2778","any_cens":"2025","web":"http://www.vallromanes.cat"}
+,{"codi_ens":"0829750006","nom_complert":"Ajuntament de Veciana","comarca":"Anoia","provincia":"Barcelona","cens":"168","any_cens":"2025","web":"http://www.veciana.cat"}
+,{"codi_ens":"0829810007","nom_complert":"Ajuntament de Vic","comarca":"Osona","provincia":"Barcelona","cens":"50796","any_cens":"2025","web":"http://www.vic.cat"}
+,{"codi_ens":"0829940003","nom_complert":"Ajuntament de Vilada","comarca":"Berguedà","provincia":"Barcelona","cens":"432","any_cens":"2025","web":"http://www.vilada.cat"}
+,{"codi_ens":"0830080001","nom_complert":"Ajuntament de Viladecavalls","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"7817","any_cens":"2025","web":"http://www.viladecavalls.cat"}
+,{"codi_ens":"0830150006","nom_complert":"Ajuntament de Viladecans","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"67587","any_cens":"2025","web":"http://www.viladecans.cat"}
+,{"codi_ens":"0830200000","nom_complert":"Ajuntament de Vilanova del Camí","comarca":"Anoia","provincia":"Barcelona","cens":"12936","any_cens":"2025","web":"http://www.vilanovadelcami.cat"}
+,{"codi_ens":"0830360009","nom_complert":"Ajuntament de Vilanova de Sau","comarca":"Osona","provincia":"Barcelona","cens":"325","any_cens":"2025","web":"hwww.vilanovadesau.cat"}
+,{"codi_ens":"0830410007","nom_complert":"Ajuntament de Vilobí del Penedès","comarca":"Alt Penedès","provincia":"Barcelona","cens":"1154","any_cens":"2025","web":"http://www.vilobi.cat"}
+,{"codi_ens":"0830540003","nom_complert":"Ajuntament de Vilafranca del Penedès","comarca":"Alt Penedès","provincia":"Barcelona","cens":"42607","any_cens":"2025","web":"http://www.vilafranca.cat"}
+,{"codi_ens":"0830670005","nom_complert":"Ajuntament de Vilalba Sasserra","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"794","any_cens":"2025","web":"http://www.vilalbasasserra.cat"}
+,{"codi_ens":"0830730008","nom_complert":"Ajuntament de Vilanova i la Geltrú","comarca":"Garraf","provincia":"Barcelona","cens":"71641","any_cens":"2025","web":"http://www.vilanova.cat"}
+,{"codi_ens":"0830890004","nom_complert":"Ajuntament de Viver i Serrateix","comarca":"Berguedà","provincia":"Barcelona","cens":"178","any_cens":"2025","web":"http://www.viveriserrateix.cat"}
+,{"codi_ens":"0890190004","nom_complert":"Ajuntament de Rupit i Pruit","comarca":"Osona","provincia":"Barcelona","cens":"280","any_cens":"2025","web":"http://www.rupitpruit.cat"}
+,{"codi_ens":"0890240003","nom_complert":"Ajuntament de Vilanova del Vallès","comarca":"Vallès Oriental","provincia":"Barcelona","cens":"5693","any_cens":"2025","web":"http://www.vilanovadelvalles.cat"}
+,{"codi_ens":"0890300000","nom_complert":"Ajuntament de Sant Julià de Cerdanyola","comarca":"Berguedà","provincia":"Barcelona","cens":"234","any_cens":"2025","web":"https://www.santjuliadecerdanyola.cat/"}
+,{"codi_ens":"0890450006","nom_complert":"Ajuntament de Badia del Vallès","comarca":"Vallès Occidental","provincia":"Barcelona","cens":"13060","any_cens":"2025","web":"http://www.badiadelvalles.net"}
+,{"codi_ens":"0890580001","nom_complert":"Ajuntament de la Palma de Cervelló","comarca":"Baix Llobregat","provincia":"Barcelona","cens":"3056","any_cens":"2025","web":"http://www.lapalmadecervello.cat"}
+,{"codi_ens":"1700100000","nom_complert":"Ajuntament d'Agullana","comarca":"Alt Empordà","provincia":"Girona","cens":"880","any_cens":"2025","web":"http://www.agullana.cat"}
+,{"codi_ens":"1700250006","nom_complert":"Ajuntament d'Aiguaviva","comarca":"Gironès","provincia":"Girona","cens":"804","any_cens":"2025","web":"http://aiguaviva.cat"}
+,{"codi_ens":"1700310007","nom_complert":"Ajuntament d'Albanyà","comarca":"Alt Empordà","provincia":"Girona","cens":"157","any_cens":"2025","web":"http://www.albanya.cat"}
+,{"codi_ens":"1700460009","nom_complert":"Ajuntament d'Albons","comarca":"Baix Empordà","provincia":"Girona","cens":"845","any_cens":"2025","web":"http://www.albons.cat"}
+,{"codi_ens":"1700590004","nom_complert":"Ajuntament del Far d'Empordà","comarca":"Alt Empordà","provincia":"Girona","cens":"628","any_cens":"2025","web":"http://www.far.cat"}
+,{"codi_ens":"1700620002","nom_complert":"Ajuntament d'Alp","comarca":"Cerdanya","provincia":"Girona","cens":"1724","any_cens":"2025","web":"http://www.alp2500.cat"}
+,{"codi_ens":"1700780001","nom_complert":"Ajuntament d'Amer","comarca":"Selva","provincia":"Girona","cens":"2422","any_cens":"2025","web":"http://www.amer.cat"}
+,{"codi_ens":"1700840003","nom_complert":"Ajuntament d'Anglès","comarca":"Selva","provincia":"Girona","cens":"5944","any_cens":"2025","web":"http://www.angles.cat"}
+,{"codi_ens":"1700970005","nom_complert":"Ajuntament d'Arbúcies","comarca":"Selva","provincia":"Girona","cens":"6665","any_cens":"2025","web":"http://www.arbucies.cat"}
+,{"codi_ens":"1701010007","nom_complert":"Ajuntament d'Argelaguer","comarca":"Garrotxa","provincia":"Girona","cens":"468","any_cens":"2025","web":"http://www.argelaguer.cat"}
+,{"codi_ens":"1701180001","nom_complert":"Ajuntament de l'Armentera","comarca":"Alt Empordà","provincia":"Girona","cens":"1080","any_cens":"2025","web":"http://armentera.cat"}
+,{"codi_ens":"1701230008","nom_complert":"Ajuntament d'Avinyonet de Puigventós","comarca":"Alt Empordà","provincia":"Girona","cens":"1671","any_cens":"2025","web":"http://www.avinyonetdepuigventos.cat"}
+,{"codi_ens":"1701390004","nom_complert":"Ajuntament de Begur","comarca":"Baix Empordà","provincia":"Girona","cens":"4291","any_cens":"2025","web":"http://www.begur.cat"}
+,{"codi_ens":"1701440003","nom_complert":"Ajuntament de la Vajol","comarca":"Alt Empordà","provincia":"Girona","cens":"112","any_cens":"2025","web":"http://ca.lavajol.cat"}
+,{"codi_ens":"1701570005","nom_complert":"Ajuntament de Banyoles","comarca":"Pla de l'Estany","provincia":"Girona","cens":"20865","any_cens":"2025","web":"http://www.banyoles.cat"}
+,{"codi_ens":"1701600000","nom_complert":"Ajuntament de Bàscara","comarca":"Alt Empordà","provincia":"Girona","cens":"1049","any_cens":"2025","web":"http://www.bascara.cat"}
+,{"codi_ens":"1701820002","nom_complert":"Ajuntament de Bellcaire d'Empordà","comarca":"Baix Empordà","provincia":"Girona","cens":"723","any_cens":"2025","web":"http://www.bellcaire.cat"}
+,{"codi_ens":"1701950006","nom_complert":"Ajuntament de Besalú","comarca":"Garrotxa","provincia":"Girona","cens":"2592","any_cens":"2025","web":"http://www.besalu.cat"}
+,{"codi_ens":"1702090004","nom_complert":"Ajuntament de Bescanó","comarca":"Gironès","provincia":"Girona","cens":"5088","any_cens":"2025","web":"http://www.bescano.cat"}
+,{"codi_ens":"1702160009","nom_complert":"Ajuntament de Beuda","comarca":"Garrotxa","provincia":"Girona","cens":"203","any_cens":"2025","web":"http://www.beuda.cat"}
+,{"codi_ens":"1702210007","nom_complert":"Ajuntament de la Bisbal d'Empordà","comarca":"Baix Empordà","provincia":"Girona","cens":"11757","any_cens":"2025","web":"http://www.labisbal.cat"}
+,{"codi_ens":"1702370005","nom_complert":"Ajuntament de Blanes","comarca":"Selva","provincia":"Girona","cens":"42699","any_cens":"2025","web":"https://www.blanes.cat"}
+,{"codi_ens":"1702420002","nom_complert":"Ajuntament de Bolvir","comarca":"Cerdanya","provincia":"Girona","cens":"493","any_cens":"2025","web":"http://www.bolvir.cat"}
+,{"codi_ens":"1702550006","nom_complert":"Ajuntament de Bordils","comarca":"Gironès","provincia":"Girona","cens":"1841","any_cens":"2025","web":"http://www.bordils.cat"}
+,{"codi_ens":"1702680001","nom_complert":"Ajuntament de Borrassà","comarca":"Alt Empordà","provincia":"Girona","cens":"804","any_cens":"2025","web":"http://www.borrassa.cat"}
+,{"codi_ens":"1702740003","nom_complert":"Ajuntament de Breda","comarca":"Selva","provincia":"Girona","cens":"3969","any_cens":"2025","web":"http://www.breda.cat"}
+,{"codi_ens":"1702800000","nom_complert":"Ajuntament de Brunyola i Sant Martí Sapresa","comarca":"Selva","provincia":"Girona","cens":"401","any_cens":"2025","web":"http://www.brunyola.cat"}
+,{"codi_ens":"1702930008","nom_complert":"Ajuntament de Boadella i les Escaules","comarca":"Alt Empordà","provincia":"Girona","cens":"262","any_cens":"2025","web":"http://webspobles2.ddgi.cat/boadellailesescaules"}
+,{"codi_ens":"1703070005","nom_complert":"Ajuntament de Cabanes","comarca":"Alt Empordà","provincia":"Girona","cens":"995","any_cens":"2025","web":"http://www.cabanes.cat"}
+,{"codi_ens":"1703140003","nom_complert":"Ajuntament de Cabanelles","comarca":"Alt Empordà","provincia":"Girona","cens":"286","any_cens":"2025","web":"http://www.cabanelles.cat"}
+,{"codi_ens":"1703290004","nom_complert":"Ajuntament de Cadaqués","comarca":"Alt Empordà","provincia":"Girona","cens":"2918","any_cens":"2025","web":"http://www.cadaques.cat"}
+,{"codi_ens":"1703350006","nom_complert":"Ajuntament de Caldes de Malavella","comarca":"Selva","provincia":"Girona","cens":"8673","any_cens":"2025","web":"http://www.caldesdemalavella.cat"}
+,{"codi_ens":"1703400000","nom_complert":"Ajuntament de Calonge i Sant Antoni","comarca":"Baix Empordà","provincia":"Girona","cens":"12335","any_cens":"2025","web":"http://www.calonge.cat"}
+,{"codi_ens":"1703530008","nom_complert":"Ajuntament de Camós","comarca":"Pla de l'Estany","provincia":"Girona","cens":"701","any_cens":"2025","web":"http://www.camos.cat"}
+,{"codi_ens":"1703660009","nom_complert":"Ajuntament de Campdevànol","comarca":"Ripollès","provincia":"Girona","cens":"3241","any_cens":"2025","web":"http://www.campdevanol.cat"}
+,{"codi_ens":"1703720002","nom_complert":"Ajuntament de Campelles","comarca":"Ripollès","provincia":"Girona","cens":"163","any_cens":"2025","web":"http://www.campelles.cat"}
+,{"codi_ens":"1703880001","nom_complert":"Ajuntament de Campllong","comarca":"Gironès","provincia":"Girona","cens":"534","any_cens":"2025","web":"http://www.campllong.cat"}
+,{"codi_ens":"1703910007","nom_complert":"Ajuntament de Camprodon","comarca":"Ripollès","provincia":"Girona","cens":"2570","any_cens":"2025","web":"http://www.camprodon.cat"}
+,{"codi_ens":"1704050006","nom_complert":"Ajuntament de Canet d'Adri","comarca":"Gironès","provincia":"Girona","cens":"744","any_cens":"2025","web":"http://www.canet-adri.cat"}
+,{"codi_ens":"1704120002","nom_complert":"Ajuntament de Cantallops","comarca":"Alt Empordà","provincia":"Girona","cens":"366","any_cens":"2025","web":"http://www.cantallops.cat"}
+,{"codi_ens":"1704270005","nom_complert":"Ajuntament de Capmany","comarca":"Alt Empordà","provincia":"Girona","cens":"680","any_cens":"2025","web":"http://www.capmany.cat"}
+,{"codi_ens":"1704330008","nom_complert":"Ajuntament de Queralbs","comarca":"Ripollès","provincia":"Girona","cens":"202","any_cens":"2025","web":"http://www.ajqueralbs.cat"}
+,{"codi_ens":"1704480001","nom_complert":"Ajuntament de Cassà de la Selva","comarca":"Gironès","provincia":"Girona","cens":"11131","any_cens":"2025","web":"http://www.cassa.cat"}
+,{"codi_ens":"1704640003","nom_complert":"Ajuntament de Castellfollit de la Roca","comarca":"Garrotxa","provincia":"Girona","cens":"966","any_cens":"2025","web":"http://www.castellfollitdelaroca.cat"}
+,{"codi_ens":"1704700000","nom_complert":"Ajuntament de Castelló d'Empúries","comarca":"Alt Empordà","provincia":"Girona","cens":"12201","any_cens":"2025","web":"http://www.castello.cat"}
+,{"codi_ens":"1704860009","nom_complert":"Ajuntament de Castell d'Aro, Platja d'Aro i s'Agaró","comarca":"Baix Empordà","provincia":"Girona","cens":"12982","any_cens":"2025","web":"http://ciutada.platjadaro.com"}
+,{"codi_ens":"1704990004","nom_complert":"Ajuntament de Celrà","comarca":"Gironès","provincia":"Girona","cens":"5621","any_cens":"2025","web":"http://www.celra.cat"}
+,{"codi_ens":"1705020002","nom_complert":"Ajuntament de Cervià de Ter","comarca":"Gironès","provincia":"Girona","cens":"1029","any_cens":"2025","web":"http://www.cerviadeter.cat"}
+,{"codi_ens":"1705190004","nom_complert":"Ajuntament de Cistella","comarca":"Alt Empordà","provincia":"Girona","cens":"283","any_cens":"2025","web":"http://www.cistella.cat"}
+,{"codi_ens":"1705240003","nom_complert":"Ajuntament de Siurana","comarca":"Alt Empordà","provincia":"Girona","cens":"188","any_cens":"2025","web":"http://www.siuranaemporda.cat"}
+,{"codi_ens":"1705450006","nom_complert":"Ajuntament de Colera","comarca":"Alt Empordà","provincia":"Girona","cens":"494","any_cens":"2025","web":"http://www.colera.cat"}
+,{"codi_ens":"1705580001","nom_complert":"Ajuntament de Colomers","comarca":"Baix Empordà","provincia":"Girona","cens":"208","any_cens":"2025","web":"http://www.colomers.cat"}
+,{"codi_ens":"1705610007","nom_complert":"Ajuntament de Cornellà del Terri","comarca":"Pla de l'Estany","provincia":"Girona","cens":"2414","any_cens":"2025","web":"http://www.cornelladelterri.cat"}
+,{"codi_ens":"1705770005","nom_complert":"Ajuntament de Corçà","comarca":"Baix Empordà","provincia":"Girona","cens":"1283","any_cens":"2025","web":"http://www.corca.cat"}
+,{"codi_ens":"1705830008","nom_complert":"Ajuntament de Crespià","comarca":"Pla de l'Estany","provincia":"Girona","cens":"254","any_cens":"2025","web":"http://www.crespia.cat"}
+,{"codi_ens":"1706000000","nom_complert":"Ajuntament de Darnius","comarca":"Alt Empordà","provincia":"Girona","cens":"563","any_cens":"2025","web":"http://ca.darnius.cat"}
+,{"codi_ens":"1706170005","nom_complert":"Ajuntament de Das","comarca":"Cerdanya","provincia":"Girona","cens":"261","any_cens":"2025","web":"http://www.das.cat"}
+,{"codi_ens":"1706220002","nom_complert":"Ajuntament de l'Escala","comarca":"Alt Empordà","provincia":"Girona","cens":"10374","any_cens":"2025","web":"http://www.lescala.cat"}
+,{"codi_ens":"1706380001","nom_complert":"Ajuntament d'Espinelves","comarca":"Osona","provincia":"Girona","cens":"261","any_cens":"2025","web":"http://www.espinelves.cat"}
+,{"codi_ens":"1706430008","nom_complert":"Ajuntament d'Espolla","comarca":"Alt Empordà","provincia":"Girona","cens":"398","any_cens":"2025","web":"http://www.espolla.cat"}
+,{"codi_ens":"1706560009","nom_complert":"Ajuntament d'Esponellà","comarca":"Pla de l'Estany","provincia":"Girona","cens":"446","any_cens":"2025","web":"http://www.esponella.cat"}
+,{"codi_ens":"1706690004","nom_complert":"Ajuntament de Figueres","comarca":"Alt Empordà","provincia":"Girona","cens":"49689","any_cens":"2025","web":"http://www.figueres.cat"}
+,{"codi_ens":"1706750006","nom_complert":"Ajuntament de Flaçà","comarca":"Gironès","provincia":"Girona","cens":"1175","any_cens":"2025","web":"http://www.flaca.cat"}
+,{"codi_ens":"1706810007","nom_complert":"Ajuntament de Foixà","comarca":"Baix Empordà","provincia":"Girona","cens":"298","any_cens":"2025","web":"http://www.foixa.cat"}
+,{"codi_ens":"1706940003","nom_complert":"Ajuntament de Fontanals de Cerdanya","comarca":"Cerdanya","provincia":"Girona","cens":"516","any_cens":"2025","web":"http://www.fontanals.cat"}
+,{"codi_ens":"1707080001","nom_complert":"Ajuntament de Fontanilles","comarca":"Baix Empordà","provincia":"Girona","cens":"171","any_cens":"2025","web":"http://www.ajfontanilles.cat"}
+,{"codi_ens":"1707150006","nom_complert":"Ajuntament de Fontcoberta","comarca":"Pla de l'Estany","provincia":"Girona","cens":"1483","any_cens":"2025","web":"http://www.fontcoberta.cat"}
+,{"codi_ens":"1707360009","nom_complert":"Ajuntament de Fornells de la Selva","comarca":"Gironès","provincia":"Girona","cens":"2818","any_cens":"2025","web":"http://www.fornellsdelaselva.cat"}
+,{"codi_ens":"1707410007","nom_complert":"Ajuntament de Fortià","comarca":"Alt Empordà","provincia":"Girona","cens":"793","any_cens":"2025","web":"http://www.fortia.cat"}
+,{"codi_ens":"1707540003","nom_complert":"Ajuntament de Garrigàs","comarca":"Alt Empordà","provincia":"Girona","cens":"480","any_cens":"2025","web":"http://ajuntamentdegarrigas.cat"}
+,{"codi_ens":"1707670005","nom_complert":"Ajuntament de Garrigoles","comarca":"Baix Empordà","provincia":"Girona","cens":"182","any_cens":"2025","web":"http://www.garrigoles.cat"}
+,{"codi_ens":"1707730008","nom_complert":"Ajuntament de Garriguella","comarca":"Alt Empordà","provincia":"Girona","cens":"989","any_cens":"2025","web":"http://www.garriguella.cat"}
+,{"codi_ens":"1707890004","nom_complert":"Ajuntament de Ger","comarca":"Cerdanya","provincia":"Girona","cens":"501","any_cens":"2025","web":"http://www.ajger.cat"}
+,{"codi_ens":"1707920002","nom_complert":"Ajuntament de Girona","comarca":"Gironès","provincia":"Girona","cens":"108666","any_cens":"2025","web":"http://www.girona.cat"}
+,{"codi_ens":"1708060009","nom_complert":"Ajuntament de Gombrèn","comarca":"Ripollès","provincia":"Girona","cens":"206","any_cens":"2025","web":"http://www.gombren.cat"}
+,{"codi_ens":"1708130008","nom_complert":"Ajuntament de Gualta","comarca":"Baix Empordà","provincia":"Girona","cens":"438","any_cens":"2025","web":"http://www.gualta.cat"}
+,{"codi_ens":"1708280001","nom_complert":"Ajuntament de Guils de Cerdanya","comarca":"Cerdanya","provincia":"Girona","cens":"557","any_cens":"2025","web":"http://www.guils.cat"}
+,{"codi_ens":"1708340003","nom_complert":"Ajuntament d'Hostalric","comarca":"Selva","provincia":"Girona","cens":"4493","any_cens":"2025","web":"http://www.hostalric.cat"}
+,{"codi_ens":"1708490004","nom_complert":"Ajuntament d'Isòvol","comarca":"Cerdanya","provincia":"Girona","cens":"314","any_cens":"2025","web":"http://www.isovol.cat"}
+,{"codi_ens":"1708520002","nom_complert":"Ajuntament de Jafre","comarca":"Baix Empordà","provincia":"Girona","cens":"386","any_cens":"2025","web":"http://www.jafre.cat"}
+,{"codi_ens":"1708650006","nom_complert":"Ajuntament de la Jonquera","comarca":"Alt Empordà","provincia":"Girona","cens":"3420","any_cens":"2025","web":"http://www.lajonquera.cat"}
+,{"codi_ens":"1708710007","nom_complert":"Ajuntament de Juià","comarca":"Gironès","provincia":"Girona","cens":"319","any_cens":"2025","web":"http://www.juia.cat"}
+,{"codi_ens":"1708870005","nom_complert":"Ajuntament de Lladó","comarca":"Alt Empordà","provincia":"Girona","cens":"822","any_cens":"2025","web":"http://ca.llado.cat"}
+,{"codi_ens":"1708900000","nom_complert":"Ajuntament de Llagostera","comarca":"Gironès","provincia":"Girona","cens":"9585","any_cens":"2025","web":"http://www.llagostera.cat"}
+,{"codi_ens":"1709040003","nom_complert":"Ajuntament de Llambilles","comarca":"Gironès","provincia":"Girona","cens":"737","any_cens":"2025","web":"http://www.llambilles.cat"}
+,{"codi_ens":"1709110007","nom_complert":"Ajuntament de Llanars","comarca":"Ripollès","provincia":"Girona","cens":"516","any_cens":"2025","web":"http://www.llanars.cat"}
+,{"codi_ens":"1709260009","nom_complert":"Ajuntament de Llançà","comarca":"Alt Empordà","provincia":"Girona","cens":"4892","any_cens":"2025","web":"http://www.llanca.cat"}
+,{"codi_ens":"1709320002","nom_complert":"Ajuntament de Llers","comarca":"Alt Empordà","provincia":"Girona","cens":"1269","any_cens":"2025","web":"http://www.llers.cat"}
+,{"codi_ens":"1709470005","nom_complert":"Ajuntament de Llívia","comarca":"Cerdanya","provincia":"Girona","cens":"1562","any_cens":"2025","web":"http://www.llivia.org"}
+,{"codi_ens":"1709500000","nom_complert":"Ajuntament de Lloret de Mar","comarca":"Selva","provincia":"Girona","cens":"43000","any_cens":"2025","web":"http://www.lloret.cat"}
+,{"codi_ens":"1709630008","nom_complert":"Ajuntament de les Llosses","comarca":"Ripollès","provincia":"Girona","cens":"197","any_cens":"2025","web":"http://www.lesllosses.cat"}
+,{"codi_ens":"1709790004","nom_complert":"Ajuntament de Madremanya","comarca":"Gironès","provincia":"Girona","cens":"280","any_cens":"2025","web":"http://www.madremanya.cat"}
+,{"codi_ens":"1709850006","nom_complert":"Ajuntament de Maià de Montcal","comarca":"Garrotxa","provincia":"Girona","cens":"498","any_cens":"2025","web":"http://www.maiademontcal.cat"}
+,{"codi_ens":"1709980001","nom_complert":"Ajuntament de Meranges","comarca":"Cerdanya","provincia":"Girona","cens":"111","any_cens":"2025","web":"https://meranges.cat"}
+,{"codi_ens":"1710020002","nom_complert":"Ajuntament de Masarac i Vilarnadal","comarca":"Alt Empordà","provincia":"Girona","cens":"287","any_cens":"2025","web":"http://www.masarac.cat"}
+,{"codi_ens":"1710190004","nom_complert":"Ajuntament de Massanes","comarca":"Selva","provincia":"Girona","cens":"882","any_cens":"2025","web":"http://www.massanes.cat"}
+,{"codi_ens":"1710240003","nom_complert":"Ajuntament de Maçanet de Cabrenys","comarca":"Alt Empordà","provincia":"Girona","cens":"761","any_cens":"2025","web":"http://maçanetdecabrenys.cat"}
+,{"codi_ens":"1710300000","nom_complert":"Ajuntament de Maçanet de la Selva","comarca":"Selva","provincia":"Girona","cens":"8071","any_cens":"2025","web":"http://www.massanetdelaselva.cat"}
+,{"codi_ens":"1710580001","nom_complert":"Ajuntament de Mieres","comarca":"Garrotxa","provincia":"Girona","cens":"369","any_cens":"2025","web":"www.mieres.cat"}
+,{"codi_ens":"1710610007","nom_complert":"Ajuntament de Mollet de Peralada","comarca":"Alt Empordà","provincia":"Girona","cens":"202","any_cens":"2025","web":"http://www.molletperalada.cat"}
+,{"codi_ens":"1710770005","nom_complert":"Ajuntament de Molló","comarca":"Ripollès","provincia":"Girona","cens":"351","any_cens":"2025","web":"http://www.mollo.cat"}
+,{"codi_ens":"1710960009","nom_complert":"Ajuntament de Montagut i Oix","comarca":"Garrotxa","provincia":"Girona","cens":"1011","any_cens":"2025","web":"http://montagut-oix.cat"}
+,{"codi_ens":"1711000000","nom_complert":"Ajuntament de Mont-ras","comarca":"Baix Empordà","provincia":"Girona","cens":"1690","any_cens":"2025","web":"http://www.mont-ras.cat"}
+,{"codi_ens":"1711170005","nom_complert":"Ajuntament de Navata","comarca":"Alt Empordà","provincia":"Girona","cens":"1507","any_cens":"2025","web":"http://navata.cat"}
+,{"codi_ens":"1711220002","nom_complert":"Ajuntament d'Ogassa","comarca":"Ripollès","provincia":"Girona","cens":"222","any_cens":"2025","web":"http://webspobles2.ddgi.cat/ogassa"}
+,{"codi_ens":"1711430008","nom_complert":"Ajuntament d'Olot","comarca":"Garrotxa","provincia":"Girona","cens":"39519","any_cens":"2025","web":"http://www.olot.cat"}
+,{"codi_ens":"1711560009","nom_complert":"Ajuntament d'Ordis","comarca":"Alt Empordà","provincia":"Girona","cens":"409","any_cens":"2025","web":"http://www.ordis.cat"}
+,{"codi_ens":"1711690004","nom_complert":"Ajuntament d'Osor","comarca":"Selva","provincia":"Girona","cens":"430","any_cens":"2025","web":"http://www.osor.cat"}
+,{"codi_ens":"1711750006","nom_complert":"Ajuntament de Palafrugell","comarca":"Baix Empordà","provincia":"Girona","cens":"24543","any_cens":"2025","web":"http://www.palafrugell.cat"}
+,{"codi_ens":"1711810007","nom_complert":"Ajuntament de Palamós i Sant Joan","comarca":"Baix Empordà","provincia":"Girona","cens":"18933","any_cens":"2025","web":"http://www.palamos.cat"}
+,{"codi_ens":"1711940003","nom_complert":"Ajuntament de Palau de Santa Eulàlia","comarca":"Alt Empordà","provincia":"Girona","cens":"124","any_cens":"2025","web":"http://www.palaudesantaeulalia.cat"}
+,{"codi_ens":"1712080001","nom_complert":"Ajuntament de Palau-saverdera","comarca":"Alt Empordà","provincia":"Girona","cens":"1535","any_cens":"2025","web":"http://www.palau-saverdera.cat"}
+,{"codi_ens":"1712150006","nom_complert":"Ajuntament de Palau-sator","comarca":"Baix Empordà","provincia":"Girona","cens":"311","any_cens":"2025","web":"http://www.palau-sator.cat"}
+,{"codi_ens":"1712360009","nom_complert":"Ajuntament de Palol de Revardit","comarca":"Pla de l'Estany","provincia":"Girona","cens":"459","any_cens":"2025","web":"http://www.palol.cat"}
+,{"codi_ens":"1712410007","nom_complert":"Ajuntament de Pals","comarca":"Baix Empordà","provincia":"Girona","cens":"2534","any_cens":"2025","web":"http://www.pals.cat"}
+,{"codi_ens":"1712540003","nom_complert":"Ajuntament de Pardines","comarca":"Ripollès","provincia":"Girona","cens":"168","any_cens":"2025","web":"http://www.pardines.cat"}
+,{"codi_ens":"1712670005","nom_complert":"Ajuntament de Parlavà","comarca":"Baix Empordà","provincia":"Girona","cens":"432","any_cens":"2025","web":"http://www.parlava.cat"}
+,{"codi_ens":"1712890004","nom_complert":"Ajuntament de Pau","comarca":"Alt Empordà","provincia":"Girona","cens":"560","any_cens":"2025","web":"http://www.pau.cat"}
+,{"codi_ens":"1712920002","nom_complert":"Ajuntament de Pedret i Marzà","comarca":"Alt Empordà","provincia":"Girona","cens":"208","any_cens":"2025","web":"http://www.pedret-marza.cat"}
+,{"codi_ens":"1713060009","nom_complert":"Ajuntament de la Pera","comarca":"Baix Empordà","provincia":"Girona","cens":"447","any_cens":"2025","web":"http://www.lapera.cat"}
+,{"codi_ens":"1713280001","nom_complert":"Ajuntament de Peralada","comarca":"Alt Empordà","provincia":"Girona","cens":"2077","any_cens":"2025","web":"http://www.peralada.org"}
+,{"codi_ens":"1713340003","nom_complert":"Ajuntament de les Planes d'Hostoles","comarca":"Garrotxa","provincia":"Girona","cens":"1746","any_cens":"2025","web":"http://www.lesplanes.cat"}
+,{"codi_ens":"1713490004","nom_complert":"Ajuntament de Planoles","comarca":"Ripollès","provincia":"Girona","cens":"313","any_cens":"2025","web":"http://www.planoles.cat"}
+,{"codi_ens":"1713520002","nom_complert":"Ajuntament de Pont de Molins","comarca":"Alt Empordà","provincia":"Girona","cens":"585","any_cens":"2025","web":"http://www.pontdemolins.cat"}
+,{"codi_ens":"1713650006","nom_complert":"Ajuntament de Pontós","comarca":"Alt Empordà","provincia":"Girona","cens":"296","any_cens":"2025","web":"http://www.pontos.cat"}
+,{"codi_ens":"1713710007","nom_complert":"Ajuntament de Porqueres","comarca":"Pla de l'Estany","provincia":"Girona","cens":"4811","any_cens":"2025","web":"http://www.porqueres.cat"}
+,{"codi_ens":"1713870005","nom_complert":"Ajuntament de Portbou","comarca":"Alt Empordà","provincia":"Girona","cens":"1131","any_cens":"2025","web":"http://www.portbou.cat"}
+,{"codi_ens":"1713900000","nom_complert":"Ajuntament de les Preses","comarca":"Garrotxa","provincia":"Girona","cens":"1948","any_cens":"2025","web":"http://www.lespreses.cat"}
+,{"codi_ens":"1714040003","nom_complert":"Ajuntament del Port de la Selva","comarca":"Alt Empordà","provincia":"Girona","cens":"1053","any_cens":"2025","web":"http://ca.elportdelaselva.cat"}
+,{"codi_ens":"1714110007","nom_complert":"Ajuntament de Puigcerdà","comarca":"Cerdanya","provincia":"Girona","cens":"10035","any_cens":"2025","web":"http://www.puigcerda.cat"}
+,{"codi_ens":"1714260009","nom_complert":"Ajuntament de Quart","comarca":"Gironès","provincia":"Girona","cens":"4165","any_cens":"2025","web":"http://www.quart.cat"}
+,{"codi_ens":"1714320002","nom_complert":"Ajuntament de Rabós","comarca":"Alt Empordà","provincia":"Girona","cens":"232","any_cens":"2025","web":"http://www.rabos.cat"}
+,{"codi_ens":"1714470005","nom_complert":"Ajuntament de Regencós","comarca":"Baix Empordà","provincia":"Girona","cens":"275","any_cens":"2025","web":"http://www.regencos.cat"}
+,{"codi_ens":"1714500000","nom_complert":"Ajuntament de Ribes de Freser","comarca":"Ripollès","provincia":"Girona","cens":"1841","any_cens":"2025","web":"http://www.ajribesdefreser.cat"}
+,{"codi_ens":"1714630008","nom_complert":"Ajuntament de Riells i Viabrea","comarca":"Selva","provincia":"Girona","cens":"4635","any_cens":"2025","web":"https://riellsiviabrea.cat"}
+,{"codi_ens":"1714790004","nom_complert":"Ajuntament de Ripoll","comarca":"Ripollès","provincia":"Girona","cens":"10665","any_cens":"2025","web":"https://ripoll.cat"}
+,{"codi_ens":"1714850006","nom_complert":"Ajuntament de Riudarenes","comarca":"Selva","provincia":"Girona","cens":"2532","any_cens":"2025","web":"https://www.ajuntamentderiudarenes.cat"}
+,{"codi_ens":"1714980001","nom_complert":"Ajuntament de Riudaura","comarca":"Garrotxa","provincia":"Girona","cens":"526","any_cens":"2025","web":"http://www.riudaura.cat"}
+,{"codi_ens":"1715010007","nom_complert":"Ajuntament de Riudellots de la Selva","comarca":"Selva","provincia":"Girona","cens":"2125","any_cens":"2025","web":"http://www.riudellots.cat"}
+,{"codi_ens":"1715180001","nom_complert":"Ajuntament de Riumors","comarca":"Alt Empordà","provincia":"Girona","cens":"253","any_cens":"2025","web":"http://webspobles2.ddgi.cat/riumors"}
+,{"codi_ens":"1715230008","nom_complert":"Ajuntament de Roses","comarca":"Alt Empordà","provincia":"Girona","cens":"20365","any_cens":"2025","web":"http://www.roses.cat"}
+,{"codi_ens":"1715390004","nom_complert":"Ajuntament de Rupià","comarca":"Baix Empordà","provincia":"Girona","cens":"325","any_cens":"2025","web":"http://www.rupia.cat"}
+,{"codi_ens":"1715440003","nom_complert":"Ajuntament de Sales de Llierca","comarca":"Garrotxa","provincia":"Girona","cens":"164","any_cens":"2025","web":"http://www.salesdellierca.cat"}
+,{"codi_ens":"1715570005","nom_complert":"Ajuntament de Salt","comarca":"Gironès","provincia":"Girona","cens":"34491","any_cens":"2025","web":"http://viladesalt.cat"}
+,{"codi_ens":"1715760009","nom_complert":"Ajuntament de Sant Andreu Salou","comarca":"Gironès","provincia":"Girona","cens":"161","any_cens":"2025","web":"http://www.santandreusalou.cat"}
+,{"codi_ens":"1715820002","nom_complert":"Ajuntament de Sant Climent Sescebes","comarca":"Alt Empordà","provincia":"Girona","cens":"690","any_cens":"2025","web":"http://www.santcliment.cat"}
+,{"codi_ens":"1715950006","nom_complert":"Ajuntament de Sant Feliu de Buixalleu","comarca":"Selva","provincia":"Girona","cens":"882","any_cens":"2025","web":"http://www.sfbuixalleu.cat"}
+,{"codi_ens":"1716090004","nom_complert":"Ajuntament de Sant Feliu de Guíxols","comarca":"Baix Empordà","provincia":"Girona","cens":"23141","any_cens":"2025","web":"http://ciutada.guixols.cat"}
+,{"codi_ens":"1716160009","nom_complert":"Ajuntament de Sant Feliu de Pallerols","comarca":"Garrotxa","provincia":"Girona","cens":"1700","any_cens":"2025","web":"http://www.santfeliudepallerols.cat"}
+,{"codi_ens":"1716210007","nom_complert":"Ajuntament de Sant Ferriol","comarca":"Garrotxa","provincia":"Girona","cens":"245","any_cens":"2025","web":"http://www.santferriol.cat"}
+,{"codi_ens":"1716370005","nom_complert":"Ajuntament de Sant Gregori","comarca":"Gironès","provincia":"Girona","cens":"4191","any_cens":"2025","web":"http://www.santgregori.cat"}
+,{"codi_ens":"1716420002","nom_complert":"Ajuntament de Sant Hilari Sacalm","comarca":"Selva","provincia":"Girona","cens":"6069","any_cens":"2025","web":"http://www.santhilari.cat"}
+,{"codi_ens":"1716550006","nom_complert":"Ajuntament de Sant Jaume de Llierca","comarca":"Garrotxa","provincia":"Girona","cens":"863","any_cens":"2025","web":"http://www.santjaumedellierca.cat"}
+,{"codi_ens":"1716680001","nom_complert":"Ajuntament de Sant Jordi Desvalls","comarca":"Gironès","provincia":"Girona","cens":"880","any_cens":"2025","web":"http://www.santjordidesvalls.cat"}
+,{"codi_ens":"1716740003","nom_complert":"Ajuntament de Sant Joan de les Abadesses","comarca":"Ripollès","provincia":"Girona","cens":"3404","any_cens":"2025","web":"http://www.santjoandelesabadesses.cat"}
+,{"codi_ens":"1716800000","nom_complert":"Ajuntament de Sant Joan de Mollet","comarca":"Gironès","provincia":"Girona","cens":"536","any_cens":"2025","web":"http://www.santjoandemollet.cat"}
+,{"codi_ens":"1716930008","nom_complert":"Ajuntament de Sant Julià de Ramis","comarca":"Gironès","provincia":"Girona","cens":"3715","any_cens":"2025","web":"http://www.santjuliaderamis.cat"}
+,{"codi_ens":"1717070005","nom_complert":"Ajuntament de Vallfogona de Ripollès","comarca":"Ripollès","provincia":"Girona","cens":"225","any_cens":"2025","web":"http://www.vallfogona.cat"}
+,{"codi_ens":"1717140003","nom_complert":"Ajuntament de Sant Llorenç de la Muga","comarca":"Alt Empordà","provincia":"Girona","cens":"247","any_cens":"2025","web":"http://www.santllorençdelamuga.cat"}
+,{"codi_ens":"1717290004","nom_complert":"Ajuntament de Sant Martí de Llémena","comarca":"Gironès","provincia":"Girona","cens":"726","any_cens":"2025","web":"http://www.smartillemena.cat"}
+,{"codi_ens":"1717350006","nom_complert":"Ajuntament de Sant Martí Vell","comarca":"Gironès","provincia":"Girona","cens":"271","any_cens":"2025","web":"http://www.santmartivell.cat"}
+,{"codi_ens":"1717400000","nom_complert":"Ajuntament de Sant Miquel de Campmajor","comarca":"Pla de l'Estany","provincia":"Girona","cens":"258","any_cens":"2025","web":"http://www.santmiqueldecampmajor.cat"}
+,{"codi_ens":"1717530008","nom_complert":"Ajuntament de Sant Miquel de Fluvià","comarca":"Alt Empordà","provincia":"Girona","cens":"860","any_cens":"2025","web":"http://www.santmiquelfluvia.cat"}
+,{"codi_ens":"1717660009","nom_complert":"Ajuntament de Sant Mori","comarca":"Alt Empordà","provincia":"Girona","cens":"163","any_cens":"2025","web":"http://www.santmori.cat"}
+,{"codi_ens":"1717720002","nom_complert":"Ajuntament de Sant Pau de Segúries","comarca":"Ripollès","provincia":"Girona","cens":"719","any_cens":"2025","web":"http://www.santpauseguries.cat"}
+,{"codi_ens":"1717880001","nom_complert":"Ajuntament de Sant Pere Pescador","comarca":"Alt Empordà","provincia":"Girona","cens":"2290","any_cens":"2025","web":"http://www.santpere.cat"}
+,{"codi_ens":"1718050006","nom_complert":"Ajuntament de Santa Coloma de Farners","comarca":"Selva","provincia":"Girona","cens":"13993","any_cens":"2025","web":"http://www.scf.cat"}
+,{"codi_ens":"1718120002","nom_complert":"Ajuntament de Santa Cristina d'Aro","comarca":"Baix Empordà","provincia":"Girona","cens":"5987","any_cens":"2025","web":"https://santacristina.cat"}
+,{"codi_ens":"1718270005","nom_complert":"Ajuntament de Santa Llogaia d'Àlguema","comarca":"Alt Empordà","provincia":"Girona","cens":"396","any_cens":"2025","web":"http://www.santallogaia.cat"}
+,{"codi_ens":"1718330008","nom_complert":"Ajuntament de Sant Aniol de Finestres","comarca":"Garrotxa","provincia":"Girona","cens":"382","any_cens":"2025","web":"http://www.santaniol.cat"}
+,{"codi_ens":"1718480001","nom_complert":"Ajuntament de Santa Pau","comarca":"Garrotxa","provincia":"Girona","cens":"1579","any_cens":"2025","web":"http://www.santapau.cat"}
+,{"codi_ens":"1718510007","nom_complert":"Ajuntament de Sant Joan les Fonts","comarca":"Garrotxa","provincia":"Girona","cens":"3167","any_cens":"2025","web":"http://www.santjoanlesfonts.cat"}
+,{"codi_ens":"1718640003","nom_complert":"Ajuntament de Sarrià de Ter","comarca":"Gironès","provincia":"Girona","cens":"5406","any_cens":"2025","web":"http://www.sarriadeter.cat"}
+,{"codi_ens":"1718700000","nom_complert":"Ajuntament de Saus, Camallera i Llampaies","comarca":"Alt Empordà","provincia":"Girona","cens":"897","any_cens":"2025","web":"http://www.ajuntamentdesaus.com"}
+,{"codi_ens":"1718860009","nom_complert":"Ajuntament de la Selva de Mar","comarca":"Alt Empordà","provincia":"Girona","cens":"223","any_cens":"2025","web":"http://www.selvamar.cat"}
+,{"codi_ens":"1718990004","nom_complert":"Ajuntament de la Cellera de Ter","comarca":"Selva","provincia":"Girona","cens":"2027","any_cens":"2025","web":"https://lacelleradeter.cat"}
+,{"codi_ens":"1719030008","nom_complert":"Ajuntament de Serinyà","comarca":"Pla de l'Estany","provincia":"Girona","cens":"1228","any_cens":"2025","web":"http://www.serinya.cat"}
+,{"codi_ens":"1719100000","nom_complert":"Ajuntament de Serra de Daró","comarca":"Baix Empordà","provincia":"Girona","cens":"240","any_cens":"2025","web":"http://www.serradedaro.cat"}
+,{"codi_ens":"1719250006","nom_complert":"Ajuntament de Setcases","comarca":"Ripollès","provincia":"Girona","cens":"195","any_cens":"2025","web":"http://www.setcases.cat"}
+,{"codi_ens":"1719310007","nom_complert":"Ajuntament de Sils","comarca":"Selva","provincia":"Girona","cens":"6920","any_cens":"2025","web":"http://www.sils.cat"}
+,{"codi_ens":"1719460009","nom_complert":"Ajuntament de Susqueda","comarca":"Selva","provincia":"Girona","cens":"103","any_cens":"2025","web":"http://www.susqueda.cat"}
+,{"codi_ens":"1719590004","nom_complert":"Ajuntament de la Tallada d'Empordà","comarca":"Baix Empordà","provincia":"Girona","cens":"490","any_cens":"2025","web":"http://www.latallada.cat"}
+,{"codi_ens":"1719620002","nom_complert":"Ajuntament de Terrades","comarca":"Alt Empordà","provincia":"Girona","cens":"337","any_cens":"2025","web":"http://www.terrades.cat"}
+,{"codi_ens":"1719780001","nom_complert":"Ajuntament de Torrent","comarca":"Baix Empordà","provincia":"Girona","cens":"182","any_cens":"2025","web":"http://www.torrent.cat"}
+,{"codi_ens":"1719840003","nom_complert":"Ajuntament de Torroella de Fluvià","comarca":"Alt Empordà","provincia":"Girona","cens":"778","any_cens":"2025","web":"http://www.torroelladefluvia.cat"}
+,{"codi_ens":"1719970005","nom_complert":"Ajuntament de Torroella de Montgrí","comarca":"Baix Empordà","provincia":"Girona","cens":"12570","any_cens":"2025","web":"http://www.torroella-estartit.cat"}
+,{"codi_ens":"1720010007","nom_complert":"Ajuntament de Tortellà","comarca":"Garrotxa","provincia":"Girona","cens":"849","any_cens":"2025","web":"http://www.tortella.cat"}
+,{"codi_ens":"1720180001","nom_complert":"Ajuntament de Toses","comarca":"Ripollès","provincia":"Girona","cens":"198","any_cens":"2025","web":"http://www.toses.cat"}
+,{"codi_ens":"1720230008","nom_complert":"Ajuntament de Tossa de Mar","comarca":"Selva","provincia":"Girona","cens":"6347","any_cens":"2025","web":"http://www.tossademar.cat"}
+,{"codi_ens":"1720390004","nom_complert":"Ajuntament d'Ultramort","comarca":"Baix Empordà","provincia":"Girona","cens":"218","any_cens":"2025","web":"http://www.ultramort.cat"}
+,{"codi_ens":"1720440003","nom_complert":"Ajuntament d'Ullà","comarca":"Baix Empordà","provincia":"Girona","cens":"1258","any_cens":"2025","web":"http://webspobles2.ddgi.cat/ulla"}
+,{"codi_ens":"1720570005","nom_complert":"Ajuntament d'Ullastret","comarca":"Baix Empordà","provincia":"Girona","cens":"249","any_cens":"2025","web":"http://www.ullastret.cat"}
+,{"codi_ens":"1720600000","nom_complert":"Ajuntament d'Urús","comarca":"Cerdanya","provincia":"Girona","cens":"201","any_cens":"2025","web":"http://www.urus.cat"}
+,{"codi_ens":"1720760009","nom_complert":"Ajuntament de la Vall d'en Bas","comarca":"Garrotxa","provincia":"Girona","cens":"3269","any_cens":"2025","web":"http://www.vallbas.cat"}
+,{"codi_ens":"1720820002","nom_complert":"Ajuntament de la Vall de Bianya","comarca":"Garrotxa","provincia":"Girona","cens":"1347","any_cens":"2025","web":"http://www.valldebianya.cat"}
+,{"codi_ens":"1720950006","nom_complert":"Ajuntament de Vall-llobrega","comarca":"Baix Empordà","provincia":"Girona","cens":"891","any_cens":"2025","web":"http://www.vall-llobrega.cat"}
+,{"codi_ens":"1721090004","nom_complert":"Ajuntament de Ventalló","comarca":"Alt Empordà","provincia":"Girona","cens":"914","any_cens":"2025","web":"http://www.ventallo.cat"}
+,{"codi_ens":"1721160009","nom_complert":"Ajuntament de Verges","comarca":"Baix Empordà","provincia":"Girona","cens":"1167","any_cens":"2025","web":"http://www.verges.cat"}
+,{"codi_ens":"1721210007","nom_complert":"Ajuntament de Vidrà","comarca":"Osona","provincia":"Girona","cens":"167","any_cens":"2025","web":"http://www.vidra.cat"}
+,{"codi_ens":"1721370005","nom_complert":"Ajuntament de Vidreres","comarca":"Selva","provincia":"Girona","cens":"8862","any_cens":"2025","web":"http://www.vidreres.cat"}
+,{"codi_ens":"1721420002","nom_complert":"Ajuntament de Vilabertran","comarca":"Alt Empordà","provincia":"Girona","cens":"961","any_cens":"2025","web":"http://www.vilabertran.cat"}
+,{"codi_ens":"1721550006","nom_complert":"Ajuntament de Vilablareix","comarca":"Gironès","provincia":"Girona","cens":"4077","any_cens":"2025","web":"http://www.vilablareix.cat"}
+,{"codi_ens":"1721680001","nom_complert":"Ajuntament de Viladasens","comarca":"Gironès","provincia":"Girona","cens":"206","any_cens":"2025","web":"http://www.viladasens.org"}
+,{"codi_ens":"1721740003","nom_complert":"Ajuntament de Viladamat","comarca":"Alt Empordà","provincia":"Girona","cens":"500","any_cens":"2025","web":"http://www.viladamat.cat"}
+,{"codi_ens":"1721800000","nom_complert":"Ajuntament de Vilademuls","comarca":"Pla de l'Estany","provincia":"Girona","cens":"898","any_cens":"2025","web":"http://www.vilademuls.cat"}
+,{"codi_ens":"1722070005","nom_complert":"Ajuntament de Viladrau","comarca":"Osona","provincia":"Girona","cens":"1184","any_cens":"2025","web":"http://www.viladrau.cat"}
+,{"codi_ens":"1722140003","nom_complert":"Ajuntament de Vilafant","comarca":"Alt Empordà","provincia":"Girona","cens":"5663","any_cens":"2025","web":"http://www.vilafant.cat"}
+,{"codi_ens":"1722290004","nom_complert":"Ajuntament de Vilaür","comarca":"Alt Empordà","provincia":"Girona","cens":"164","any_cens":"2025","web":"http://www.vilaur.cat"}
+,{"codi_ens":"1722350006","nom_complert":"Ajuntament de Vilajuïga","comarca":"Alt Empordà","provincia":"Girona","cens":"1177","any_cens":"2025","web":"http://www.vilajuiga.cat"}
+,{"codi_ens":"1722400000","nom_complert":"Ajuntament de Vilallonga de Ter","comarca":"Ripollès","provincia":"Girona","cens":"395","any_cens":"2025","web":"http://www.vilallongadeter.cat"}
+,{"codi_ens":"1722530008","nom_complert":"Ajuntament de Vilamacolum","comarca":"Alt Empordà","provincia":"Girona","cens":"406","any_cens":"2025","web":"http://www.vilamacolum.cat"}
+,{"codi_ens":"1722660009","nom_complert":"Ajuntament de Vilamalla","comarca":"Alt Empordà","provincia":"Girona","cens":"1205","any_cens":"2025","web":"http://www.vilamalla.cat"}
+,{"codi_ens":"1722720002","nom_complert":"Ajuntament de Vilamaniscle","comarca":"Alt Empordà","provincia":"Girona","cens":"185","any_cens":"2025","web":"http://www.vilamaniscle.cat"}
+,{"codi_ens":"1722880001","nom_complert":"Ajuntament de Vilanant","comarca":"Alt Empordà","provincia":"Girona","cens":"406","any_cens":"2025","web":"http://www.vilanant.cat"}
+,{"codi_ens":"1723050006","nom_complert":"Ajuntament de Vila-sacra","comarca":"Alt Empordà","provincia":"Girona","cens":"878","any_cens":"2025","web":"http://www.vila-sacra.cat"}
+,{"codi_ens":"1723270005","nom_complert":"Ajuntament de Vilopriu","comarca":"Baix Empordà","provincia":"Girona","cens":"209","any_cens":"2025","web":"http://www.vilopriu.cat"}
+,{"codi_ens":"1723330008","nom_complert":"Ajuntament de Vilobí d'Onyar","comarca":"Selva","provincia":"Girona","cens":"3297","any_cens":"2025","web":"http://www.vilobidonyar.cat"}
+,{"codi_ens":"1723480001","nom_complert":"Ajuntament de Biure","comarca":"Alt Empordà","provincia":"Girona","cens":"226","any_cens":"2025","web":"http://www.biure.cat"}
+,{"codi_ens":"1790110007","nom_complert":"Ajuntament de Cruïlles, Monells i Sant Sadurní de l'Heura","comarca":"Baix Empordà","provincia":"Girona","cens":"1350","any_cens":"2025","web":"http://www.cruilles.cat"}
+,{"codi_ens":"1790260009","nom_complert":"Ajuntament de Forallac","comarca":"Baix Empordà","provincia":"Girona","cens":"1790","any_cens":"2025","web":"http://www.forallac.cat"}
+,{"codi_ens":"1790320002","nom_complert":"Ajuntament de Sant Julià del Llor i Bonmatí","comarca":"Selva","provincia":"Girona","cens":"1457","any_cens":"2025","web":"http://www.stjuliabonmati.cat"}
+,{"codi_ens":"2500190004","nom_complert":"Ajuntament d'Abella de la Conca","comarca":"Pallars Jussà","provincia":"Lleida","cens":"156","any_cens":"2025","web":"http://abellaconca.ddl.net"}
+,{"codi_ens":"2500240003","nom_complert":"Ajuntament d'Àger","comarca":"Noguera","provincia":"Lleida","cens":"637","any_cens":"2025","web":"http://ager.cat"}
+,{"codi_ens":"2500300000","nom_complert":"Ajuntament d'Agramunt","comarca":"Urgell","provincia":"Lleida","cens":"5653","any_cens":"2025","web":"http://agramunt.cat"}
+,{"codi_ens":"2500450006","nom_complert":"Ajuntament dels Alamús","comarca":"Segrià","provincia":"Lleida","cens":"835","any_cens":"2025","web":"http://alamus.ddl.net"}
+,{"codi_ens":"2500580001","nom_complert":"Ajuntament d'Alàs i Cerc","comarca":"Alt Urgell","provincia":"Lleida","cens":"320","any_cens":"2025","web":"http://alascerc.ddl.net"}
+,{"codi_ens":"2500610007","nom_complert":"Ajuntament de l'Albagés","comarca":"Garrigues","provincia":"Lleida","cens":"339","any_cens":"2025","web":"http://albages.cat"}
+,{"codi_ens":"2500770005","nom_complert":"Ajuntament d'Albatàrrec","comarca":"Segrià","provincia":"Lleida","cens":"2331","any_cens":"2025","web":"http://www.albatarrec.cat"}
+,{"codi_ens":"2500830008","nom_complert":"Ajuntament d'Albesa","comarca":"Noguera","provincia":"Lleida","cens":"1584","any_cens":"2025","web":"http://albesa.cat"}
+,{"codi_ens":"2500960009","nom_complert":"Ajuntament de l'Albi","comarca":"Garrigues","provincia":"Lleida","cens":"764","any_cens":"2025","web":"http://albi.cat"}
+,{"codi_ens":"2501000000","nom_complert":"Ajuntament d'Alcanó","comarca":"Segrià","provincia":"Lleida","cens":"244","any_cens":"2025","web":"http://alcano.ddl.net"}
+,{"codi_ens":"2501170005","nom_complert":"Ajuntament d'Alcarràs","comarca":"Segrià","provincia":"Lleida","cens":"10256","any_cens":"2025","web":"http://alcarras.cat"}
+,{"codi_ens":"2501220002","nom_complert":"Ajuntament d'Alcoletge","comarca":"Segrià","provincia":"Lleida","cens":"3640","any_cens":"2025","web":"http://alcoletge.cat"}
+,{"codi_ens":"2501380001","nom_complert":"Ajuntament d'Alfarràs","comarca":"Segrià","provincia":"Lleida","cens":"2805","any_cens":"2025","web":"http://www.ajuntamentalfarras.cat"}
+,{"codi_ens":"2501430008","nom_complert":"Ajuntament d'Alfés","comarca":"Segrià","provincia":"Lleida","cens":"284","any_cens":"2025","web":"http://www.alfes.cat"}
+,{"codi_ens":"2501560009","nom_complert":"Ajuntament d'Algerri","comarca":"Noguera","provincia":"Lleida","cens":"424","any_cens":"2025","web":"http://algerri.ddl.net"}
+,{"codi_ens":"2501690004","nom_complert":"Ajuntament d'Alguaire","comarca":"Segrià","provincia":"Lleida","cens":"3060","any_cens":"2025","web":"http://www.alguaire.cat"}
+,{"codi_ens":"2501750006","nom_complert":"Ajuntament d'Alins","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"269","any_cens":"2025","web":"http://alins.ddl.net"}
+,{"codi_ens":"2501940003","nom_complert":"Ajuntament d'Almacelles","comarca":"Segrià","provincia":"Lleida","cens":"7018","any_cens":"2025","web":"http://almacelles.cat"}
+,{"codi_ens":"2502080001","nom_complert":"Ajuntament d'Almatret","comarca":"Segrià","provincia":"Lleida","cens":"292","any_cens":"2025","web":"http://almatret.cat"}
+,{"codi_ens":"2502150006","nom_complert":"Ajuntament d'Almenar","comarca":"Segrià","provincia":"Lleida","cens":"3369","any_cens":"2025","web":"http://www.almenar.cat"}
+,{"codi_ens":"2502200000","nom_complert":"Ajuntament d'Alòs de Balaguer","comarca":"Noguera","provincia":"Lleida","cens":"118","any_cens":"2025","web":"http://www.alosbalaguer.cat"}
+,{"codi_ens":"2502360009","nom_complert":"Ajuntament d'Alpicat","comarca":"Segrià","provincia":"Lleida","cens":"6515","any_cens":"2025","web":"http://www.alpicat.cat"}
+,{"codi_ens":"2502410007","nom_complert":"Ajuntament d'Alt Àneu","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"453","any_cens":"2025","web":"http://www.altaneu.cat"}
+,{"codi_ens":"2502540003","nom_complert":"Ajuntament de Naut Aran","comarca":"Aran","provincia":"Lleida","cens":"1902","any_cens":"2025","web":"http://www.nautaran.org"}
+,{"codi_ens":"2502730008","nom_complert":"Ajuntament d'Anglesola","comarca":"Urgell","provincia":"Lleida","cens":"1389","any_cens":"2025","web":"http://anglesola.cat"}
+,{"codi_ens":"2502920002","nom_complert":"Ajuntament d'Arbeca","comarca":"Garrigues","provincia":"Lleida","cens":"2163","any_cens":"2025","web":"http://www.arbeca.cat"}
+,{"codi_ens":"2503060009","nom_complert":"Ajuntament del Pont de Bar","comarca":"Alt Urgell","provincia":"Lleida","cens":"162","any_cens":"2025","web":"http://pontbar.cat"}
+,{"codi_ens":"2503130008","nom_complert":"Ajuntament d'Arres","comarca":"Aran","provincia":"Lleida","cens":"58","any_cens":"2025","web":"http://arres.ddl.net"}
+,{"codi_ens":"2503280001","nom_complert":"Ajuntament d'Arsèguel","comarca":"Alt Urgell","provincia":"Lleida","cens":"87","any_cens":"2025","web":"http://arseguel.ddl.net"}
+,{"codi_ens":"2503340003","nom_complert":"Ajuntament d'Artesa de Lleida","comarca":"Segrià","provincia":"Lleida","cens":"1543","any_cens":"2025","web":"http://artesalleida.ddl.net"}
+,{"codi_ens":"2503490004","nom_complert":"Ajuntament d'Artesa de Segre","comarca":"Noguera","provincia":"Lleida","cens":"3559","any_cens":"2025","web":"http://www.artesadesegre.cat"}
+,{"codi_ens":"2503520002","nom_complert":"Ajuntament de la Sentiu de Sió","comarca":"Noguera","provincia":"Lleida","cens":"448","any_cens":"2025","web":"http://sentiu.cat"}
+,{"codi_ens":"2503650006","nom_complert":"Ajuntament d'Aspa","comarca":"Segrià","provincia":"Lleida","cens":"233","any_cens":"2025","web":"http://aspa.ddl.net"}
+,{"codi_ens":"2503710007","nom_complert":"Ajuntament de les Avellanes i Santa Linya","comarca":"Noguera","provincia":"Lleida","cens":"434","any_cens":"2025","web":"http://avellanes.ddl.net"}
+,{"codi_ens":"2503870005","nom_complert":"Ajuntament d'Aitona","comarca":"Segrià","provincia":"Lleida","cens":"2591","any_cens":"2025","web":"http://www.aitona.cat"}
+,{"codi_ens":"2503900000","nom_complert":"Ajuntament de Baix Pallars","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"345","any_cens":"2025","web":"http://baixpallars.ddl.net"}
+,{"codi_ens":"2504040003","nom_complert":"Ajuntament de Balaguer","comarca":"Noguera","provincia":"Lleida","cens":"17729","any_cens":"2025","web":"http://www.balaguer.cat"}
+,{"codi_ens":"2504110007","nom_complert":"Ajuntament de Barbens","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"929","any_cens":"2025","web":"http://barbens.ddl.net"}
+,{"codi_ens":"2504260009","nom_complert":"Ajuntament de la Baronia de Rialb","comarca":"Noguera","provincia":"Lleida","cens":"216","any_cens":"2025","web":"http://www.baroniarialb.cat"}
+,{"codi_ens":"2504320002","nom_complert":"Ajuntament de la Vall de Boí","comarca":"Alta Ribagorça","provincia":"Lleida","cens":"1122","any_cens":"2025","web":"https://www.vallboi.cat"}
+,{"codi_ens":"2504470005","nom_complert":"Ajuntament de Bassella","comarca":"Alt Urgell","provincia":"Lleida","cens":"216","any_cens":"2025","web":"http://bassella.ddl.net"}
+,{"codi_ens":"2504500000","nom_complert":"Ajuntament de Bausen","comarca":"Aran","provincia":"Lleida","cens":"62","any_cens":"2025","web":"http://bausen.ddl.net"}
+,{"codi_ens":"2504630008","nom_complert":"Ajuntament de Belianes","comarca":"Urgell","provincia":"Lleida","cens":"514","any_cens":"2025","web":"http://www.belianes.cat"}
+,{"codi_ens":"2504790004","nom_complert":"Ajuntament de Bellcaire d'Urgell","comarca":"Noguera","provincia":"Lleida","cens":"1275","any_cens":"2025","web":"http://bellcairedurgell.cat"}
+,{"codi_ens":"2504850006","nom_complert":"Ajuntament de Bell-lloc d'Urgell","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"2364","any_cens":"2025","web":"http://www.bell-lloc.cat"}
+,{"codi_ens":"2504980001","nom_complert":"Ajuntament de Bellmunt d'Urgell","comarca":"Noguera","provincia":"Lleida","cens":"174","any_cens":"2025","web":"http://bellmunt.ddl.net"}
+,{"codi_ens":"2505010007","nom_complert":"Ajuntament de Bellpuig","comarca":"Urgell","provincia":"Lleida","cens":"5510","any_cens":"2025","web":"http://www.bellpuig.cat"}
+,{"codi_ens":"2505180001","nom_complert":"Ajuntament de Bellver de Cerdanya","comarca":"Cerdanya","provincia":"Lleida","cens":"2289","any_cens":"2025","web":"http://www.bellver.cat"}
+,{"codi_ens":"2505230008","nom_complert":"Ajuntament de Bellvís","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"2249","any_cens":"2025","web":"http://bellvis.cat"}
+,{"codi_ens":"2505390004","nom_complert":"Ajuntament de Benavent de Segrià","comarca":"Segrià","provincia":"Lleida","cens":"1571","any_cens":"2025","web":"http://www.benaventdesegria.cat"}
+,{"codi_ens":"2505570005","nom_complert":"Ajuntament de Biosca","comarca":"Solsonès","provincia":"Lleida","cens":"185","any_cens":"2025","web":"http://biosca.ddl.net"}
+,{"codi_ens":"2505600000","nom_complert":"Ajuntament de Bovera","comarca":"Garrigues","provincia":"Lleida","cens":"244","any_cens":"2025","web":"http://bovera.ddl.net"}
+,{"codi_ens":"2505760009","nom_complert":"Ajuntament d'Es Bòrdes","comarca":"Aran","provincia":"Lleida","cens":"281","any_cens":"2025","web":"http://www.esbordes.org"}
+,{"codi_ens":"2505820002","nom_complert":"Ajuntament de les Borges Blanques","comarca":"Garrigues","provincia":"Lleida","cens":"6482","any_cens":"2025","web":"http://www.lesborgesblanques.cat"}
+,{"codi_ens":"2505950006","nom_complert":"Ajuntament de Bossòst","comarca":"Aran","provincia":"Lleida","cens":"1189","any_cens":"2025","web":"http://www.bossost.es"}
+,{"codi_ens":"2506090004","nom_complert":"Ajuntament de Cabanabona","comarca":"Noguera","provincia":"Lleida","cens":"70","any_cens":"2025","web":"http://cabanabona.ddl.net"}
+,{"codi_ens":"2506160009","nom_complert":"Ajuntament de Cabó","comarca":"Alt Urgell","provincia":"Lleida","cens":"85","any_cens":"2025","web":"http://cabo.ddl.net"}
+,{"codi_ens":"2506210007","nom_complert":"Ajuntament de Camarasa","comarca":"Noguera","provincia":"Lleida","cens":"788","any_cens":"2025","web":"http://www.camarasa.cat"}
+,{"codi_ens":"2506370005","nom_complert":"Ajuntament de Canejan","comarca":"Aran","provincia":"Lleida","cens":"95","any_cens":"2025","web":"http://www.canejan.org"}
+,{"codi_ens":"2506420002","nom_complert":"Ajuntament de Castellar de la Ribera","comarca":"Solsonès","provincia":"Lleida","cens":"131","any_cens":"2025","web":"http://castellarribera.ddl.net"}
+,{"codi_ens":"2506740003","nom_complert":"Ajuntament de Castelldans","comarca":"Garrigues","provincia":"Lleida","cens":"952","any_cens":"2025","web":"http://www.castelldans.cat"}
+,{"codi_ens":"2506800000","nom_complert":"Ajuntament de Castellnou de Seana","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"726","any_cens":"2025","web":"http://castellnouseana.ddl.net"}
+,{"codi_ens":"2506930008","nom_complert":"Ajuntament de Castelló de Farfanya","comarca":"Noguera","provincia":"Lleida","cens":"548","any_cens":"2025","web":"http://castellofarfanya.ddl.net"}
+,{"codi_ens":"2507070005","nom_complert":"Ajuntament de Castellserà","comarca":"Urgell","provincia":"Lleida","cens":"993","any_cens":"2025","web":"http://www.castellsera.cat"}
+,{"codi_ens":"2507140003","nom_complert":"Ajuntament de Cava","comarca":"Alt Urgell","provincia":"Lleida","cens":"38","any_cens":"2025","web":"http://cava.ddl.net"}
+,{"codi_ens":"2507290004","nom_complert":"Ajuntament de Cervera","comarca":"Segarra","provincia":"Lleida","cens":"9603","any_cens":"2025","web":"https://cervera.cat"}
+,{"codi_ens":"2507350006","nom_complert":"Ajuntament de Cervià de les Garrigues","comarca":"Garrigues","provincia":"Lleida","cens":"641","any_cens":"2025","web":"http://www.cerviadelesgarrigues.cat"}
+,{"codi_ens":"2507400000","nom_complert":"Ajuntament de Ciutadilla","comarca":"Urgell","provincia":"Lleida","cens":"186","any_cens":"2025","web":"http://ciutadilla.cat"}
+,{"codi_ens":"2507530008","nom_complert":"Ajuntament de Clariana de Cardener","comarca":"Solsonès","provincia":"Lleida","cens":"160","any_cens":"2025","web":"http://clarianacardener.ddl.net"}
+,{"codi_ens":"2507660009","nom_complert":"Ajuntament del Cogul","comarca":"Garrigues","provincia":"Lleida","cens":"163","any_cens":"2025","web":"http://www.cogul.cat"}
+,{"codi_ens":"2507720002","nom_complert":"Ajuntament de Coll de Nargó","comarca":"Alt Urgell","provincia":"Lleida","cens":"585","any_cens":"2025","web":"http://collnargo.ddl.net"}
+,{"codi_ens":"2507880001","nom_complert":"Ajuntament de Corbins","comarca":"Segrià","provincia":"Lleida","cens":"1502","any_cens":"2025","web":"http://www.corbins.cat"}
+,{"codi_ens":"2507910007","nom_complert":"Ajuntament de Cubells","comarca":"Noguera","provincia":"Lleida","cens":"354","any_cens":"2025","web":"http://www.cubells.cat"}
+,{"codi_ens":"2508120002","nom_complert":"Ajuntament de l'Espluga Calba","comarca":"Garrigues","provincia":"Lleida","cens":"324","any_cens":"2025","web":"http://esplugacalba.ddl.net"}
+,{"codi_ens":"2508270005","nom_complert":"Ajuntament d'Espot","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"377","any_cens":"2025","web":"http://espot.ddl.net"}
+,{"codi_ens":"2508510007","nom_complert":"Ajuntament d'Estaràs","comarca":"Segarra","provincia":"Lleida","cens":"161","any_cens":"2025","web":"http://estaras.ddl.net"}
+,{"codi_ens":"2508640003","nom_complert":"Ajuntament d'Esterri d'Àneu","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"917","any_cens":"2025","web":"https://www.esterrianeu.cat"}
+,{"codi_ens":"2508700000","nom_complert":"Ajuntament d'Esterri de Cardós","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"63","any_cens":"2025","web":"http://esterricardos.ddl.net"}
+,{"codi_ens":"2508860009","nom_complert":"Ajuntament d'Estamariu","comarca":"Alt Urgell","provincia":"Lleida","cens":"135","any_cens":"2025","web":"http://estamariu.ddl.net"}
+,{"codi_ens":"2508990004","nom_complert":"Ajuntament de Farrera","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"118","any_cens":"2025","web":"https://www.ajuntamentfarrera.cat"}
+,{"codi_ens":"2509250006","nom_complert":"Ajuntament de la Floresta","comarca":"Garrigues","provincia":"Lleida","cens":"159","any_cens":"2025","web":"http://floresta.cat"}
+,{"codi_ens":"2509310007","nom_complert":"Ajuntament de Fondarella","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"823","any_cens":"2025","web":"http://fondarella.ddl.net"}
+,{"codi_ens":"2509460009","nom_complert":"Ajuntament de Foradada","comarca":"Noguera","provincia":"Lleida","cens":"193","any_cens":"2025","web":"http://www.foradada.cat"}
+,{"codi_ens":"2509620002","nom_complert":"Ajuntament de la Fuliola","comarca":"Urgell","provincia":"Lleida","cens":"1262","any_cens":"2025","web":"http://www.fuliola.cat"}
+,{"codi_ens":"2509780001","nom_complert":"Ajuntament de Fulleda","comarca":"Garrigues","provincia":"Lleida","cens":"87","any_cens":"2025","web":"http://fulleda.cat"}
+,{"codi_ens":"2509840003","nom_complert":"Ajuntament de Gavet de la Conca","comarca":"Pallars Jussà","provincia":"Lleida","cens":"252","any_cens":"2025","web":"http://www.gavet.cat"}
+,{"codi_ens":"2509970005","nom_complert":"Ajuntament de Golmés","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"1909","any_cens":"2025","web":"http://golmes.cat"}
+,{"codi_ens":"2510010007","nom_complert":"Ajuntament de Gósol","comarca":"Berguedà","provincia":"Lleida","cens":"205","any_cens":"2025","web":"http://gosol.ddl.net"}
+,{"codi_ens":"2510180001","nom_complert":"Ajuntament de la Granadella","comarca":"Garrigues","provincia":"Lleida","cens":"748","any_cens":"2025","web":"http://www.lagranadella.cat"}
+,{"codi_ens":"2510230008","nom_complert":"Ajuntament de la Granja d'Escarp","comarca":"Segrià","provincia":"Lleida","cens":"994","any_cens":"2025","web":"http://granjaescarp.ddl.net"}
+,{"codi_ens":"2510390004","nom_complert":"Ajuntament de Granyanella","comarca":"Segarra","provincia":"Lleida","cens":"154","any_cens":"2025","web":"http://granyanella.ddl.net"}
+,{"codi_ens":"2510440003","nom_complert":"Ajuntament de Granyena de Segarra","comarca":"Segarra","provincia":"Lleida","cens":"149","any_cens":"2025","web":"http://granyenasegarra.ddl.net"}
+,{"codi_ens":"2510570005","nom_complert":"Ajuntament de Granyena de les Garrigues","comarca":"Garrigues","provincia":"Lleida","cens":"174","any_cens":"2025","web":"http://granyenagarrigues.ddl.net"}
+,{"codi_ens":"2510950006","nom_complert":"Ajuntament de Guimerà","comarca":"Urgell","provincia":"Lleida","cens":"250","any_cens":"2025","web":"http://guimera.cat"}
+,{"codi_ens":"2511090004","nom_complert":"Ajuntament de Guissona","comarca":"Segarra","provincia":"Lleida","cens":"7774","any_cens":"2025","web":"http://www.guissona.cat"}
+,{"codi_ens":"2511160009","nom_complert":"Ajuntament de Guixers","comarca":"Solsonès","provincia":"Lleida","cens":"125","any_cens":"2025","web":"http://guixers.ddl.net"}
+,{"codi_ens":"2511210007","nom_complert":"Ajuntament d'Ivars de Noguera","comarca":"Noguera","provincia":"Lleida","cens":"317","any_cens":"2025","web":"http://ivarsnoguera.ddl.net"}
+,{"codi_ens":"2511370005","nom_complert":"Ajuntament d'Ivars d'Urgell","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"1578","any_cens":"2025","web":"http://ivarsurgell.ddl.net"}
+,{"codi_ens":"2511420002","nom_complert":"Ajuntament d'Ivorra","comarca":"Segarra","provincia":"Lleida","cens":"100","any_cens":"2025","web":"http://ivorra.ddl.net"}
+,{"codi_ens":"2511550006","nom_complert":"Ajuntament d'Isona i Conca Dellà","comarca":"Pallars Jussà","provincia":"Lleida","cens":"1038","any_cens":"2025","web":"https://www.isona.cat"}
+,{"codi_ens":"2511800000","nom_complert":"Ajuntament de Juncosa","comarca":"Garrigues","provincia":"Lleida","cens":"377","any_cens":"2025","web":"http://juncosa.cat"}
+,{"codi_ens":"2511930008","nom_complert":"Ajuntament de Juneda","comarca":"Garrigues","provincia":"Lleida","cens":"3453","any_cens":"2025","web":"http://juneda.cat"}
+,{"codi_ens":"2512070005","nom_complert":"Ajuntament de Lleida","comarca":"Segrià","provincia":"Lleida","cens":"146266","any_cens":"2025","web":"http://www.paeria.cat"}
+,{"codi_ens":"2512140003","nom_complert":"Ajuntament de Les","comarca":"Aran","provincia":"Lleida","cens":"1036","any_cens":"2025","web":"http://les.es"}
+,{"codi_ens":"2512290004","nom_complert":"Ajuntament de Linyola","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"2762","any_cens":"2025","web":"http://www.ajuntamentdelinyola.cat"}
+,{"codi_ens":"2512350006","nom_complert":"Ajuntament de Lladorre","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"246","any_cens":"2025","web":"http://ajuntament-lladorre.tavascan.net"}
+,{"codi_ens":"2512400000","nom_complert":"Ajuntament de Lladurs","comarca":"Solsonès","provincia":"Lleida","cens":"186","any_cens":"2025","web":"http://www.lladurs.cat"}
+,{"codi_ens":"2512530008","nom_complert":"Ajuntament de Llardecans","comarca":"Segrià","provincia":"Lleida","cens":"444","any_cens":"2025","web":"https://www.llardecans.cat"}
+,{"codi_ens":"2512660009","nom_complert":"Ajuntament de Llavorsí","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"342","any_cens":"2025","web":"http://www.llavorsi.cat"}
+,{"codi_ens":"2512720002","nom_complert":"Ajuntament de Lles de Cerdanya","comarca":"Cerdanya","provincia":"Lleida","cens":"290","any_cens":"2025","web":"http://lles.ddl.net"}
+,{"codi_ens":"2512880001","nom_complert":"Ajuntament de Llimiana","comarca":"Pallars Jussà","provincia":"Lleida","cens":"130","any_cens":"2025","web":"http://llimiana.ddl.net"}
+,{"codi_ens":"2512910007","nom_complert":"Ajuntament de Llobera","comarca":"Solsonès","provincia":"Lleida","cens":"201","any_cens":"2025","web":"http://llobera.cat"}
+,{"codi_ens":"2513050006","nom_complert":"Ajuntament de Maldà","comarca":"Urgell","provincia":"Lleida","cens":"239","any_cens":"2025","web":"http://www.malda.cat"}
+,{"codi_ens":"2513120002","nom_complert":"Ajuntament de Massalcoreig","comarca":"Segrià","provincia":"Lleida","cens":"592","any_cens":"2025","web":"http://massalcoreig.cat"}
+,{"codi_ens":"2513270005","nom_complert":"Ajuntament de Massoteres","comarca":"Segarra","provincia":"Lleida","cens":"227","any_cens":"2025","web":"http://massoteres.cat"}
+,{"codi_ens":"2513330008","nom_complert":"Ajuntament de Maials","comarca":"Segrià","provincia":"Lleida","cens":"951","any_cens":"2025","web":"http://maials.ddl.net"}
+,{"codi_ens":"2513480001","nom_complert":"Ajuntament de Menàrguens","comarca":"Noguera","provincia":"Lleida","cens":"798","any_cens":"2025","web":"http://www.menarguens.cat"}
+,{"codi_ens":"2513510007","nom_complert":"Ajuntament de Miralcamp","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"1369","any_cens":"2025","web":"http://www.miralcamp.cat"}
+,{"codi_ens":"2513640003","nom_complert":"Ajuntament de la Molsosa","comarca":"Solsonès","provincia":"Lleida","cens":"100","any_cens":"2025","web":"http://molsosa.ddl.net"}
+,{"codi_ens":"2513700000","nom_complert":"Ajuntament de Mollerussa","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"15763","any_cens":"2025","web":"https://www.mollerussa.cat"}
+,{"codi_ens":"2513860009","nom_complert":"Ajuntament de Montgai","comarca":"Noguera","provincia":"Lleida","cens":"640","any_cens":"2025","web":"http://www.montgai.cat"}
+,{"codi_ens":"2513990004","nom_complert":"Ajuntament de Montellà i Martinet","comarca":"Cerdanya","provincia":"Lleida","cens":"598","any_cens":"2025","web":"http://montellamartinet.ddl.net"}
+,{"codi_ens":"2514030008","nom_complert":"Ajuntament de Montferrer i Castellbò","comarca":"Alt Urgell","provincia":"Lleida","cens":"1161","any_cens":"2025","web":"http://www.montferrercastellbo.cat"}
+,{"codi_ens":"2514100000","nom_complert":"Ajuntament de Montoliu de Segarra","comarca":"Segarra","provincia":"Lleida","cens":"180","any_cens":"2025","web":"http://www.montoliusegarra.cat"}
+,{"codi_ens":"2514250006","nom_complert":"Ajuntament de Montoliu de Lleida","comarca":"Segrià","provincia":"Lleida","cens":"488","any_cens":"2025","web":"http://montoliulleida.ddl.net"}
+,{"codi_ens":"2514310007","nom_complert":"Ajuntament de Montornès de Segarra","comarca":"Segarra","provincia":"Lleida","cens":"87","any_cens":"2025","web":"http://montornes.ddl.net"}
+,{"codi_ens":"2514590004","nom_complert":"Ajuntament de Nalec","comarca":"Urgell","provincia":"Lleida","cens":"91","any_cens":"2025","web":"http://www.nalec.cat"}
+,{"codi_ens":"2514620002","nom_complert":"Ajuntament de Navès","comarca":"Solsonès","provincia":"Lleida","cens":"292","any_cens":"2025","web":"http://naves.cat"}
+,{"codi_ens":"2514840003","nom_complert":"Ajuntament d'Odèn","comarca":"Solsonès","provincia":"Lleida","cens":"231","any_cens":"2025","web":"http://www.oden.cat"}
+,{"codi_ens":"2514970005","nom_complert":"Ajuntament d'Oliana","comarca":"Alt Urgell","provincia":"Lleida","cens":"1874","any_cens":"2025","web":"http://www.ajuntamentoliana.cat"}
+,{"codi_ens":"2515000000","nom_complert":"Ajuntament d'Oliola","comarca":"Noguera","provincia":"Lleida","cens":"192","any_cens":"2025","web":"http://oliola.cat"}
+,{"codi_ens":"2515170005","nom_complert":"Ajuntament d'Olius","comarca":"Solsonès","provincia":"Lleida","cens":"990","any_cens":"2025","web":"http://olius.cat"}
+,{"codi_ens":"2515220002","nom_complert":"Ajuntament de les Oluges","comarca":"Segarra","provincia":"Lleida","cens":"167","any_cens":"2025","web":"http://oluges.ddl.net"}
+,{"codi_ens":"2515380001","nom_complert":"Ajuntament dels Omellons","comarca":"Garrigues","provincia":"Lleida","cens":"187","any_cens":"2025","web":"http://www.omellons.cat"}
+,{"codi_ens":"2515430008","nom_complert":"Ajuntament dels Omells de na Gaia","comarca":"Urgell","provincia":"Lleida","cens":"126","any_cens":"2025","web":"http://www.omellsdenagaia.cat"}
+,{"codi_ens":"2515560009","nom_complert":"Ajuntament d'Organyà","comarca":"Alt Urgell","provincia":"Lleida","cens":"853","any_cens":"2025","web":"http://www.organya.cat"}
+,{"codi_ens":"2515690004","nom_complert":"Ajuntament d'Os de Balaguer","comarca":"Noguera","provincia":"Lleida","cens":"1088","any_cens":"2025","web":"http://osbalaguer.cat"}
+,{"codi_ens":"2515750006","nom_complert":"Ajuntament d'Ossó de Sió","comarca":"Urgell","provincia":"Lleida","cens":"198","any_cens":"2025","web":"http://ossosio.ddl.net"}
+,{"codi_ens":"2515810007","nom_complert":"Ajuntament del Palau d'Anglesola","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"2232","any_cens":"2025","web":"http://www.palaudanglesola.cat"}
+,{"codi_ens":"2516150006","nom_complert":"Ajuntament de Conca de Dalt","comarca":"Pallars Jussà","provincia":"Lleida","cens":"438","any_cens":"2025","web":"http://www.concadalt.cat"}
+,{"codi_ens":"2516360009","nom_complert":"Ajuntament de la Coma i la Pedra","comarca":"Solsonès","provincia":"Lleida","cens":"277","any_cens":"2025","web":"http://www.comapedra.cat"}
+,{"codi_ens":"2516410007","nom_complert":"Ajuntament de Penelles","comarca":"Noguera","provincia":"Lleida","cens":"431","any_cens":"2025","web":"http://www.penelles.cat"}
+,{"codi_ens":"2516540003","nom_complert":"Ajuntament de Peramola","comarca":"Alt Urgell","provincia":"Lleida","cens":"339","any_cens":"2025","web":"http://peramola.ddl.net"}
+,{"codi_ens":"2516670005","nom_complert":"Ajuntament de Pinell de Solsonès","comarca":"Solsonès","provincia":"Lleida","cens":"198","any_cens":"2025","web":"http://www.pinelldesolsones.cat"}
+,{"codi_ens":"2516730008","nom_complert":"Ajuntament de Pinós","comarca":"Solsonès","provincia":"Lleida","cens":"274","any_cens":"2025","web":"http://pinos.ddl.net"}
+,{"codi_ens":"2516890004","nom_complert":"Ajuntament del Poal","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"649","any_cens":"2025","web":"http://poal.ddl.net"}
+,{"codi_ens":"2516920002","nom_complert":"Ajuntament de la Pobla de Cérvoles","comarca":"Garrigues","provincia":"Lleida","cens":"208","any_cens":"2025","web":"http://poblacervoles.cat"}
+,{"codi_ens":"2517060009","nom_complert":"Ajuntament de Bellaguarda","comarca":"Garrigues","provincia":"Lleida","cens":"278","any_cens":"2025","web":"https://www.bellaguarda.cat"}
+,{"codi_ens":"2517130008","nom_complert":"Ajuntament de la Pobla de Segur","comarca":"Pallars Jussà","provincia":"Lleida","cens":"3143","any_cens":"2025","web":"http://www.pobladesegur.cat"}
+,{"codi_ens":"2517280001","nom_complert":"Ajuntament de Ponts","comarca":"Noguera","provincia":"Lleida","cens":"2653","any_cens":"2025","web":"http://www.ponts.cat"}
+,{"codi_ens":"2517340003","nom_complert":"Ajuntament del Pont de Suert","comarca":"Alta Ribagorça","provincia":"Lleida","cens":"2381","any_cens":"2025","web":"http://www.elpontdesuert.cat"}
+,{"codi_ens":"2517490004","nom_complert":"Ajuntament de la Portella","comarca":"Segrià","provincia":"Lleida","cens":"731","any_cens":"2025","web":"http://portella.ddl.net"}
+,{"codi_ens":"2517520002","nom_complert":"Ajuntament de Prats i Sansor","comarca":"Cerdanya","provincia":"Lleida","cens":"252","any_cens":"2025","web":"http://pratssansor.ddl.net"}
+,{"codi_ens":"2517650006","nom_complert":"Ajuntament de Preixana","comarca":"Urgell","provincia":"Lleida","cens":"401","any_cens":"2025","web":"http://preixana.cat"}
+,{"codi_ens":"2517710007","nom_complert":"Ajuntament de Preixens","comarca":"Noguera","provincia":"Lleida","cens":"399","any_cens":"2025","web":"http://preixens.cat"}
+,{"codi_ens":"2517900000","nom_complert":"Ajuntament de Prullans","comarca":"Cerdanya","provincia":"Lleida","cens":"270","any_cens":"2025","web":"http://prullans.ddl.net"}
+,{"codi_ens":"2518040003","nom_complert":"Ajuntament de Puiggròs","comarca":"Garrigues","provincia":"Lleida","cens":"269","any_cens":"2025","web":"http://puiggros.ddl.net"}
+,{"codi_ens":"2518110007","nom_complert":"Ajuntament de Puigverd d'Agramunt","comarca":"Urgell","provincia":"Lleida","cens":"231","any_cens":"2025","web":"http://www.puigverdagramunt.cat"}
+,{"codi_ens":"2518260009","nom_complert":"Ajuntament de Puigverd de Lleida","comarca":"Segrià","provincia":"Lleida","cens":"1409","any_cens":"2025","web":"http://puigverdlleida.ddl.net"}
+,{"codi_ens":"2518320002","nom_complert":"Ajuntament de Rialp","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"654","any_cens":"2025","web":"http://www.rialp.cat"}
+,{"codi_ens":"2518500000","nom_complert":"Ajuntament de Ribera d'Urgellet","comarca":"Alt Urgell","provincia":"Lleida","cens":"989","any_cens":"2025","web":"http://riberaurgellet.ddl.cat"}
+,{"codi_ens":"2518630008","nom_complert":"Ajuntament de Riner","comarca":"Solsonès","provincia":"Lleida","cens":"269","any_cens":"2025","web":"http://riner.ddl.net"}
+,{"codi_ens":"2518980001","nom_complert":"Ajuntament de Rosselló","comarca":"Segrià","provincia":"Lleida","cens":"3416","any_cens":"2025","web":"http://www.rossello.cat"}
+,{"codi_ens":"2519020002","nom_complert":"Ajuntament de Salàs de Pallars","comarca":"Pallars Jussà","provincia":"Lleida","cens":"365","any_cens":"2025","web":"http://salas.cat"}
+,{"codi_ens":"2519190004","nom_complert":"Ajuntament de Sanaüja","comarca":"Segarra","provincia":"Lleida","cens":"385","any_cens":"2025","web":"http://sanauja.ddl.net"}
+,{"codi_ens":"2519240003","nom_complert":"Ajuntament de Sant Guim de Freixenet","comarca":"Segarra","provincia":"Lleida","cens":"1235","any_cens":"2025","web":"http://www.santguim.cat"}
+,{"codi_ens":"2519300000","nom_complert":"Ajuntament de Sant Llorenç de Morunys","comarca":"Solsonès","provincia":"Lleida","cens":"983","any_cens":"2025","web":"http://santllorens.ddl.net"}
+,{"codi_ens":"2519450006","nom_complert":"Ajuntament de Sant Ramon","comarca":"Segarra","provincia":"Lleida","cens":"483","any_cens":"2025","web":"http://santramon.ddl.net"}
+,{"codi_ens":"2519610007","nom_complert":"Ajuntament de Sant Esteve de la Sarga","comarca":"Pallars Jussà","provincia":"Lleida","cens":"121","any_cens":"2025","web":"http://www.santesteve.cat"}
+,{"codi_ens":"2519770005","nom_complert":"Ajuntament de Sant Guim de la Plana","comarca":"Segarra","provincia":"Lleida","cens":"190","any_cens":"2025","web":"http://santguimplana.ddl.net"}
+,{"codi_ens":"2520000000","nom_complert":"Ajuntament de Sarroca de Lleida","comarca":"Segrià","provincia":"Lleida","cens":"383","any_cens":"2025","web":"http://sarrocalleida.ddl.net"}
+,{"codi_ens":"2520170005","nom_complert":"Ajuntament de Sarroca de Bellera","comarca":"Pallars Jussà","provincia":"Lleida","cens":"111","any_cens":"2025","web":"http://sarrocabellera.ddl.net"}
+,{"codi_ens":"2520220002","nom_complert":"Ajuntament de Senterada","comarca":"Pallars Jussà","provincia":"Lleida","cens":"160","any_cens":"2025","web":"http://www.senterada.cat"}
+,{"codi_ens":"2520380001","nom_complert":"Ajuntament de la Seu d'Urgell","comarca":"Alt Urgell","provincia":"Lleida","cens":"13009","any_cens":"2025","web":"http://www.laseu.cat"}
+,{"codi_ens":"2520430008","nom_complert":"Ajuntament de Seròs","comarca":"Segrià","provincia":"Lleida","cens":"1954","any_cens":"2025","web":"http://www.seros.cat"}
+,{"codi_ens":"2520560009","nom_complert":"Ajuntament de Sidamon","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"760","any_cens":"2025","web":"http://sidamon.cat"}
+,{"codi_ens":"2520690004","nom_complert":"Ajuntament del Soleràs","comarca":"Garrigues","provincia":"Lleida","cens":"308","any_cens":"2025","web":"https://www.ajuntamentdelsoleras.cat"}
+,{"codi_ens":"2520750006","nom_complert":"Ajuntament de Solsona","comarca":"Solsonès","provincia":"Lleida","cens":"9717","any_cens":"2025","web":"http://www.ajsolsona.cat"}
+,{"codi_ens":"2520810007","nom_complert":"Ajuntament de Soriguera","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"446","any_cens":"2025","web":"http://soriguera.ddl.net"}
+,{"codi_ens":"2520940003","nom_complert":"Ajuntament de Sort","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"2236","any_cens":"2025","web":"https://sort.cat"}
+,{"codi_ens":"2521080001","nom_complert":"Ajuntament de Soses","comarca":"Segrià","provincia":"Lleida","cens":"1892","any_cens":"2025","web":"https://soses.cat"}
+,{"codi_ens":"2521150006","nom_complert":"Ajuntament de Sudanell","comarca":"Segrià","provincia":"Lleida","cens":"915","any_cens":"2025","web":"http://www.sudanell.cat"}
+,{"codi_ens":"2521200000","nom_complert":"Ajuntament de Sunyer","comarca":"Segrià","provincia":"Lleida","cens":"310","any_cens":"2025","web":"http://sunyer.ddl.net"}
+,{"codi_ens":"2521540003","nom_complert":"Ajuntament de Talarn","comarca":"Pallars Jussà","provincia":"Lleida","cens":"555","any_cens":"2025","web":"http://talarn.cat"}
+,{"codi_ens":"2521670005","nom_complert":"Ajuntament de Talavera","comarca":"Segarra","provincia":"Lleida","cens":"280","any_cens":"2025","web":"http://talavera.ddl.net"}
+,{"codi_ens":"2521730008","nom_complert":"Ajuntament de Tàrrega","comarca":"Urgell","provincia":"Lleida","cens":"19057","any_cens":"2025","web":"http://www.tarrega.cat"}
+,{"codi_ens":"2521890004","nom_complert":"Ajuntament de Tarrés","comarca":"Garrigues","provincia":"Lleida","cens":"126","any_cens":"2025","web":"http://www.tarres.cat"}
+,{"codi_ens":"2521920002","nom_complert":"Ajuntament de Tarroja de Segarra","comarca":"Segarra","provincia":"Lleida","cens":"164","any_cens":"2025","web":"http://tarroja.ddl.net"}
+,{"codi_ens":"2522060009","nom_complert":"Ajuntament de Térmens","comarca":"Noguera","provincia":"Lleida","cens":"1350","any_cens":"2025","web":"http://www.termens.cat"}
+,{"codi_ens":"2522130008","nom_complert":"Ajuntament de Tírvia","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"141","any_cens":"2025","web":"http://tirvia.ddl.net"}
+,{"codi_ens":"2522280001","nom_complert":"Ajuntament de Tiurana","comarca":"Noguera","provincia":"Lleida","cens":"69","any_cens":"2025","web":"http://www.tiurana.cat"}
+,{"codi_ens":"2522340003","nom_complert":"Ajuntament de Torà","comarca":"Solsonès","provincia":"Lleida","cens":"1190","any_cens":"2025","web":"http://www.tora.cat"}
+,{"codi_ens":"2522490004","nom_complert":"Ajuntament dels Torms","comarca":"Garrigues","provincia":"Lleida","cens":"135","any_cens":"2025","web":"www.elstorms.cat"}
+,{"codi_ens":"2522520002","nom_complert":"Ajuntament de Tornabous","comarca":"Urgell","provincia":"Lleida","cens":"832","any_cens":"2025","web":"http://tornabous.cat"}
+,{"codi_ens":"2522650006","nom_complert":"Ajuntament de Torrebesses","comarca":"Segrià","provincia":"Lleida","cens":"278","any_cens":"2025","web":"http://www.torrebesses.cat"}
+,{"codi_ens":"2522710007","nom_complert":"Ajuntament de la Torre de Cabdella","comarca":"Pallars Jussà","provincia":"Lleida","cens":"758","any_cens":"2025","web":"http://www.torredecapdella.org"}
+,{"codi_ens":"2522870005","nom_complert":"Ajuntament de Torrefarrera","comarca":"Segrià","provincia":"Lleida","cens":"4900","any_cens":"2025","web":"http://torrefarrera.cat"}
+,{"codi_ens":"2523040003","nom_complert":"Ajuntament de Torregrossa","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"2248","any_cens":"2025","web":"http://www.torregrossa.cat"}
+,{"codi_ens":"2523110007","nom_complert":"Ajuntament de Torrelameu","comarca":"Noguera","provincia":"Lleida","cens":"788","any_cens":"2025","web":"http://www.torrelameu.cat"}
+,{"codi_ens":"2523260009","nom_complert":"Ajuntament de Torres de Segre","comarca":"Segrià","provincia":"Lleida","cens":"2317","any_cens":"2025","web":"http://www.torressegre.cat"}
+,{"codi_ens":"2523320002","nom_complert":"Ajuntament de Torre-serona","comarca":"Segrià","provincia":"Lleida","cens":"405","any_cens":"2025","web":"http://torreserona.ddl.net"}
+,{"codi_ens":"2523470005","nom_complert":"Ajuntament de Tremp","comarca":"Pallars Jussà","provincia":"Lleida","cens":"6123","any_cens":"2025","web":"http://www.ajuntamentdetremp.cat"}
+,{"codi_ens":"2523850006","nom_complert":"Ajuntament de Vallbona de les Monges","comarca":"Urgell","provincia":"Lleida","cens":"223","any_cens":"2025","web":"http://www.vallbonadelesmonges.cat"}
+,{"codi_ens":"2523980001","nom_complert":"Ajuntament de les Valls de Valira","comarca":"Alt Urgell","provincia":"Lleida","cens":"845","any_cens":"2025","web":"http://vallsvalira.ddl.net"}
+,{"codi_ens":"2524020002","nom_complert":"Ajuntament de Vallfogona de Balaguer","comarca":"Noguera","provincia":"Lleida","cens":"2009","any_cens":"2025","web":"http://vallfogona.net"}
+,{"codi_ens":"2524240003","nom_complert":"Ajuntament de Verdú","comarca":"Urgell","provincia":"Lleida","cens":"876","any_cens":"2025","web":"http://www.verdu.cat"}
+,{"codi_ens":"2524300000","nom_complert":"Ajuntament de Vielha e Mijaran","comarca":"Aran","provincia":"Lleida","cens":"5865","any_cens":"2025","web":"http://www.vielha-mijaran.org"}
+,{"codi_ens":"2524450006","nom_complert":"Ajuntament de Vilagrassa","comarca":"Urgell","provincia":"Lleida","cens":"627","any_cens":"2025","web":"http://vilagrassa.cat"}
+,{"codi_ens":"2524580001","nom_complert":"Ajuntament de Vilaller","comarca":"Alta Ribagorça","provincia":"Lleida","cens":"496","any_cens":"2025","web":"http://www.ajuntamentdevilaller.cat"}
+,{"codi_ens":"2524770005","nom_complert":"Ajuntament de Vilamòs","comarca":"Aran","provincia":"Lleida","cens":"174","any_cens":"2025","web":"http://vilamos.ddl.net"}
+,{"codi_ens":"2524830008","nom_complert":"Ajuntament de Vilanova de Bellpuig","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"1150","any_cens":"2025","web":"http://vilanovabellpuig.ddl.net"}
+,{"codi_ens":"2524960009","nom_complert":"Ajuntament de Vilanova de l'Aguda","comarca":"Noguera","provincia":"Lleida","cens":"192","any_cens":"2025","web":"http://vilanovaaguda.ddl.net"}
+,{"codi_ens":"2525090004","nom_complert":"Ajuntament de Vilanova de Meià","comarca":"Noguera","provincia":"Lleida","cens":"479","any_cens":"2025","web":"http://www.vilanovameia.cat"}
+,{"codi_ens":"2525160009","nom_complert":"Ajuntament de Vilanova de Segrià","comarca":"Segrià","provincia":"Lleida","cens":"1094","any_cens":"2025","web":"http://www.vilanovasegria.cat"}
+,{"codi_ens":"2525210007","nom_complert":"Ajuntament de Vila-sana","comarca":"Pla d'Urgell","provincia":"Lleida","cens":"753","any_cens":"2025","web":"http://vilasana.ddl.net"}
+,{"codi_ens":"2525370005","nom_complert":"Ajuntament del Vilosell","comarca":"Garrigues","provincia":"Lleida","cens":"177","any_cens":"2025","web":"http://www.vilosell.cat"}
+,{"codi_ens":"2525420002","nom_complert":"Ajuntament de Vilanova de la Barca","comarca":"Segrià","provincia":"Lleida","cens":"1163","any_cens":"2025","web":"http://www.vilanovadelabarca.cat"}
+,{"codi_ens":"2525550006","nom_complert":"Ajuntament de Vinaixa","comarca":"Garrigues","provincia":"Lleida","cens":"437","any_cens":"2025","web":"http://www.vinaixa.cat"}
+,{"codi_ens":"2590100000","nom_complert":"Ajuntament de Vall de Cardós","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"388","any_cens":"2025","web":"http://vallcardos.ddl.net"}
+,{"codi_ens":"2590250006","nom_complert":"Ajuntament de Sant Martí de Riucorb","comarca":"Urgell","provincia":"Lleida","cens":"668","any_cens":"2025","web":"http://www.santmartiriucorb.cat"}
+,{"codi_ens":"2590310007","nom_complert":"Ajuntament de la Guingueta d'Àneu","comarca":"Pallars Sobirà","provincia":"Lleida","cens":"278","any_cens":"2025","web":"http://guingueta.ddl.net"}
+,{"codi_ens":"2590460009","nom_complert":"Ajuntament de Castell de Mur","comarca":"Pallars Jussà","provincia":"Lleida","cens":"159","any_cens":"2025","web":"http://www.castellmur.cat"}
+,{"codi_ens":"2590590004","nom_complert":"Ajuntament de Ribera d'Ondara","comarca":"Segarra","provincia":"Lleida","cens":"437","any_cens":"2025","web":"http://www.ajriberaondara.net"}
+,{"codi_ens":"2590620002","nom_complert":"Ajuntament de les Valls d'Aguilar","comarca":"Alt Urgell","provincia":"Lleida","cens":"253","any_cens":"2025","web":"http://vallsaguilar.ddl.net"}
+,{"codi_ens":"2590780001","nom_complert":"Ajuntament de Torrefeta i Florejacs","comarca":"Segarra","provincia":"Lleida","cens":"589","any_cens":"2025","web":"http://torrefeta.ddl.net"}
+,{"codi_ens":"2590840003","nom_complert":"Ajuntament de Fígols i Alinyà","comarca":"Alt Urgell","provincia":"Lleida","cens":"234","any_cens":"2025","web":"http://figolsalinya.ddl.net"}
+,{"codi_ens":"2590970005","nom_complert":"Ajuntament de la Vansa i Fórnols","comarca":"Alt Urgell","provincia":"Lleida","cens":"187","any_cens":"2025","web":"http://vansafornols.ddl.net"}
+,{"codi_ens":"2591010007","nom_complert":"Ajuntament de Josa i Tuixén","comarca":"Alt Urgell","provincia":"Lleida","cens":"110","any_cens":"2025","web":"http://tuixent.ddl.net"}
+,{"codi_ens":"2591180001","nom_complert":"Ajuntament dels Plans de Sió","comarca":"Segarra","provincia":"Lleida","cens":"506","any_cens":"2025","web":"http://planssio.ddl.net"}
+,{"codi_ens":"2591230008","nom_complert":"Ajuntament de Gimenells i el Pla de la Font","comarca":"Segrià","provincia":"Lleida","cens":"1069","any_cens":"2025","web":"http://www.gimenells.cat"}
+,{"codi_ens":"2591390004","nom_complert":"Ajuntament de Riu de Cerdanya","comarca":"Cerdanya","provincia":"Lleida","cens":"96","any_cens":"2025","web":"http://www.riucerdanya.cat"}
+,{"codi_ens":"4300170005","nom_complert":"Ajuntament d'Aiguamúrcia","comarca":"Alt Camp","provincia":"Tarragona","cens":"987","any_cens":"2025","web":"http://www.aiguamurcia.cat"}
+,{"codi_ens":"4300220002","nom_complert":"Ajuntament d'Albinyana","comarca":"Baix Penedès","provincia":"Tarragona","cens":"2718","any_cens":"2025","web":"http://www.albinyana.cat"}
+,{"codi_ens":"4300380001","nom_complert":"Ajuntament de l'Albiol","comarca":"Baix Camp","provincia":"Tarragona","cens":"557","any_cens":"2025","web":"http://www.albiol.cat"}
+,{"codi_ens":"4300430008","nom_complert":"Ajuntament d'Alcanar","comarca":"Montsià","provincia":"Tarragona","cens":"10104","any_cens":"2025","web":"http://www.alcanar.cat"}
+,{"codi_ens":"4300560009","nom_complert":"Ajuntament d'Alcover","comarca":"Alt Camp","provincia":"Tarragona","cens":"5362","any_cens":"2025","web":"http://www.alcover.cat"}
+,{"codi_ens":"4300690004","nom_complert":"Ajuntament d'Aldover","comarca":"Baix Ebre","provincia":"Tarragona","cens":"901","any_cens":"2025","web":"http://www.aldover.cat"}
+,{"codi_ens":"4300750006","nom_complert":"Ajuntament de l'Aleixar","comarca":"Baix Camp","provincia":"Tarragona","cens":"1009","any_cens":"2025","web":"http://www.aleixar.altanet.org"}
+,{"codi_ens":"4300810007","nom_complert":"Ajuntament d'Alfara de Carles","comarca":"Baix Ebre","provincia":"Tarragona","cens":"355","any_cens":"2025","web":"http://www.alfaracarles.cat"}
+,{"codi_ens":"4300940003","nom_complert":"Ajuntament d'Alforja","comarca":"Baix Camp","provincia":"Tarragona","cens":"2024","any_cens":"2025","web":"http://www.alforja.cat"}
+,{"codi_ens":"4301080001","nom_complert":"Ajuntament d'Alió","comarca":"Alt Camp","provincia":"Tarragona","cens":"496","any_cens":"2025","web":"http://www.alio.cat"}
+,{"codi_ens":"4301150006","nom_complert":"Ajuntament d'Almoster","comarca":"Baix Camp","provincia":"Tarragona","cens":"1384","any_cens":"2025","web":"http://www.almoster.cat"}
+,{"codi_ens":"4301200000","nom_complert":"Ajuntament d'Altafulla","comarca":"Tarragonès","provincia":"Tarragona","cens":"5870","any_cens":"2025","web":"http://www.altafulla.cat"}
+,{"codi_ens":"4301360009","nom_complert":"Ajuntament de l'Ametlla de Mar","comarca":"Baix Ebre","provincia":"Tarragona","cens":"7446","any_cens":"2025","web":"http://www.ametllamar.cat"}
+,{"codi_ens":"4301410007","nom_complert":"Ajuntament d'Amposta","comarca":"Montsià","provincia":"Tarragona","cens":"23080","any_cens":"2025","web":"http://www.amposta.cat"}
+,{"codi_ens":"4301540003","nom_complert":"Ajuntament d'Arbolí","comarca":"Baix Camp","provincia":"Tarragona","cens":"138","any_cens":"2025","web":"http://www.arboli.altanet.org"}
+,{"codi_ens":"4301670005","nom_complert":"Ajuntament de l'Arboç","comarca":"Baix Penedès","provincia":"Tarragona","cens":"5721","any_cens":"2025","web":"http://www.arbocenc.cat"}
+,{"codi_ens":"4301730008","nom_complert":"Ajuntament de l'Argentera","comarca":"Baix Camp","provincia":"Tarragona","cens":"139","any_cens":"2025","web":"http://www.argentera.cat"}
+,{"codi_ens":"4301890004","nom_complert":"Ajuntament d'Arnes","comarca":"Terra Alta","provincia":"Tarragona","cens":"461","any_cens":"2025","web":"http://www.arnes.altanet.org"}
+,{"codi_ens":"4301920002","nom_complert":"Ajuntament d'Ascó","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"1589","any_cens":"2025","web":"http://www.asco.cat"}
+,{"codi_ens":"4302060009","nom_complert":"Ajuntament de Banyeres del Penedès","comarca":"Baix Penedès","provincia":"Tarragona","cens":"3395","any_cens":"2025","web":"http://www.banyeresdelpenedes.cat"}
+,{"codi_ens":"4302130008","nom_complert":"Ajuntament de Barberà de la Conca","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"476","any_cens":"2025","web":"http://www.barbera.altanet.org"}
+,{"codi_ens":"4302280001","nom_complert":"Ajuntament de Batea","comarca":"Terra Alta","provincia":"Tarragona","cens":"1875","any_cens":"2025","web":"http://www.batea.altanet.org"}
+,{"codi_ens":"4302340003","nom_complert":"Ajuntament de Bellmunt del Priorat","comarca":"Priorat","provincia":"Tarragona","cens":"290","any_cens":"2025","web":"http://www.bellmunt.altanet.org"}
+,{"codi_ens":"4302490004","nom_complert":"Ajuntament de Bellvei","comarca":"Baix Penedès","provincia":"Tarragona","cens":"2460","any_cens":"2025","web":"http://www.bellveidelpenedes.com"}
+,{"codi_ens":"4302520002","nom_complert":"Ajuntament de Benifallet","comarca":"Baix Ebre","provincia":"Tarragona","cens":"706","any_cens":"2025","web":"http://www.benifallet.altanet.org"}
+,{"codi_ens":"4302650006","nom_complert":"Ajuntament de Benissanet","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"1186","any_cens":"2025","web":"http://www.benissanet.cat"}
+,{"codi_ens":"4302710007","nom_complert":"Ajuntament de la Bisbal de Montsant","comarca":"Priorat","provincia":"Tarragona","cens":"214","any_cens":"2025","web":"https://labisbaldemontsant.altanet.org/"}
+,{"codi_ens":"4302870005","nom_complert":"Ajuntament de la Bisbal del Penedès","comarca":"Baix Penedès","provincia":"Tarragona","cens":"4278","any_cens":"2025","web":"http://www.bisbalpenedes.com"}
+,{"codi_ens":"4302900000","nom_complert":"Ajuntament de Blancafort","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"392","any_cens":"2025","web":"http://www.blancafort.altanet.org"}
+,{"codi_ens":"4303040003","nom_complert":"Ajuntament de Bonastre","comarca":"Baix Penedès","provincia":"Tarragona","cens":"777","any_cens":"2025","web":"http://www.bonastre.altanet.org"}
+,{"codi_ens":"4303110007","nom_complert":"Ajuntament de les Borges del Camp","comarca":"Baix Camp","provincia":"Tarragona","cens":"2319","any_cens":"2025","web":"http://www.lesborgesdelcamp.cat"}
+,{"codi_ens":"4303260009","nom_complert":"Ajuntament de Bot","comarca":"Terra Alta","provincia":"Tarragona","cens":"548","any_cens":"2025","web":"http://www.bot.altanet.org"}
+,{"codi_ens":"4303320002","nom_complert":"Ajuntament de Botarell","comarca":"Baix Camp","provincia":"Tarragona","cens":"1161","any_cens":"2025","web":"https://www.botarell.cat"}
+,{"codi_ens":"4303470005","nom_complert":"Ajuntament de Bràfim","comarca":"Alt Camp","provincia":"Tarragona","cens":"697","any_cens":"2025","web":"http://www.brafim.altanet.org"}
+,{"codi_ens":"4303500000","nom_complert":"Ajuntament de Cabacés","comarca":"Priorat","provincia":"Tarragona","cens":"296","any_cens":"2025","web":"http://www.cabaces.altanet.org"}
+,{"codi_ens":"4303630008","nom_complert":"Ajuntament de Cabra del Camp","comarca":"Alt Camp","provincia":"Tarragona","cens":"1388","any_cens":"2025","web":"http://www.cabra.altanet.org"}
+,{"codi_ens":"4303790004","nom_complert":"Ajuntament de Calafell","comarca":"Baix Penedès","provincia":"Tarragona","cens":"32624","any_cens":"2025","web":"http://calafell.cat"}
+,{"codi_ens":"4303850006","nom_complert":"Ajuntament de Cambrils","comarca":"Baix Camp","provincia":"Tarragona","cens":"37042","any_cens":"2025","web":"https://www.cambrils.cat"}
+,{"codi_ens":"4303980001","nom_complert":"Ajuntament de Capafonts","comarca":"Baix Camp","provincia":"Tarragona","cens":"101","any_cens":"2025","web":"http://www.capafonts.cat"}
+,{"codi_ens":"4304020002","nom_complert":"Ajuntament de Capçanes","comarca":"Priorat","provincia":"Tarragona","cens":"444","any_cens":"2025","web":"http://www.capcanes.org"}
+,{"codi_ens":"4304190004","nom_complert":"Ajuntament de Caseres","comarca":"Terra Alta","provincia":"Tarragona","cens":"250","any_cens":"2025","web":"http://www.caseres.altanet.org"}
+,{"codi_ens":"4304240003","nom_complert":"Ajuntament de Castellvell del Camp","comarca":"Baix Camp","provincia":"Tarragona","cens":"3002","any_cens":"2025","web":"http://www.castellvelldelcamp.cat"}
+,{"codi_ens":"4304300000","nom_complert":"Ajuntament del Catllar","comarca":"Tarragonès","provincia":"Tarragona","cens":"5375","any_cens":"2025","web":"http://www.elcatllar.cat"}
+,{"codi_ens":"4304450006","nom_complert":"Ajuntament de la Sénia","comarca":"Montsià","provincia":"Tarragona","cens":"5516","any_cens":"2025","web":"http://www.lasenia.cat"}
+,{"codi_ens":"4304580001","nom_complert":"Ajuntament de Colldejou","comarca":"Baix Camp","provincia":"Tarragona","cens":"155","any_cens":"2025","web":"http://www.colldejou.altanet.org"}
+,{"codi_ens":"4304610007","nom_complert":"Ajuntament de Conesa","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"111","any_cens":"2025","web":"http://www.conesa.cat"}
+,{"codi_ens":"4304770005","nom_complert":"Ajuntament de Constantí","comarca":"Tarragonès","provincia":"Tarragona","cens":"7108","any_cens":"2025","web":"http://www.constanti.cat"}
+,{"codi_ens":"4304830008","nom_complert":"Ajuntament de Corbera d'Ebre","comarca":"Terra Alta","provincia":"Tarragona","cens":"1023","any_cens":"2025","web":"https://www.corberaebre.cat"}
+,{"codi_ens":"4304960009","nom_complert":"Ajuntament de Cornudella de Montsant","comarca":"Priorat","provincia":"Tarragona","cens":"999","any_cens":"2025","web":"http://www.cornudella.altanet.org"}
+,{"codi_ens":"4305090004","nom_complert":"Ajuntament de Creixell","comarca":"Tarragonès","provincia":"Tarragona","cens":"4261","any_cens":"2025","web":"http://www.creixell.cat"}
+,{"codi_ens":"4305160009","nom_complert":"Ajuntament de Cunit","comarca":"Baix Penedès","provincia":"Tarragona","cens":"16385","any_cens":"2025","web":"http://www.cunit.cat"}
+,{"codi_ens":"4305210007","nom_complert":"Ajuntament de Xerta","comarca":"Baix Ebre","provincia":"Tarragona","cens":"1180","any_cens":"2025","web":"http://www.xerta.cat"}
+,{"codi_ens":"4305370005","nom_complert":"Ajuntament de Duesaigües","comarca":"Baix Camp","provincia":"Tarragona","cens":"217","any_cens":"2025","web":"http://www.duesaigues.cat"}
+,{"codi_ens":"4305420002","nom_complert":"Ajuntament de l'Espluga de Francolí","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"3863","any_cens":"2025","web":"http://www.esplugadefrancoli.cat"}
+,{"codi_ens":"4305550006","nom_complert":"Ajuntament de Falset","comarca":"Priorat","provincia":"Tarragona","cens":"2890","any_cens":"2025","web":"http://www.falset.org"}
+,{"codi_ens":"4305680001","nom_complert":"Ajuntament de la Fatarella","comarca":"Terra Alta","provincia":"Tarragona","cens":"840","any_cens":"2025","web":"http://www.lafatarella.cat"}
+,{"codi_ens":"4305740003","nom_complert":"Ajuntament de la Febró","comarca":"Baix Camp","provincia":"Tarragona","cens":"35","any_cens":"2025","web":"http://www.lafebro.altanet.org"}
+,{"codi_ens":"4305800000","nom_complert":"Ajuntament de la Figuera","comarca":"Priorat","provincia":"Tarragona","cens":"115","any_cens":"2025","web":"http://www.figuera.altanet.org"}
+,{"codi_ens":"4305930008","nom_complert":"Ajuntament de Figuerola del Camp","comarca":"Alt Camp","provincia":"Tarragona","cens":"342","any_cens":"2025","web":"http://www.figuerola.altanet.org"}
+,{"codi_ens":"4306070005","nom_complert":"Ajuntament de Flix","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"3340","any_cens":"2025","web":"https://www.flix.cat"}
+,{"codi_ens":"4306140003","nom_complert":"Ajuntament de Forès","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"38","any_cens":"2025","web":"http://www.fores.cat"}
+,{"codi_ens":"4306290004","nom_complert":"Ajuntament de Freginals","comarca":"Montsià","provincia":"Tarragona","cens":"443","any_cens":"2025","web":"http://www.freginals.info"}
+,{"codi_ens":"4306350006","nom_complert":"Ajuntament de la Galera","comarca":"Montsià","provincia":"Tarragona","cens":"726","any_cens":"2025","web":"http://www.galera.cat"}
+,{"codi_ens":"4306400000","nom_complert":"Ajuntament de Gandesa","comarca":"Terra Alta","provincia":"Tarragona","cens":"3150","any_cens":"2025","web":"https://www.gandesa.cat"}
+,{"codi_ens":"4306530008","nom_complert":"Ajuntament de Garcia","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"551","any_cens":"2025","web":"http://www.garcia.cat"}
+,{"codi_ens":"4306660009","nom_complert":"Ajuntament dels Garidells","comarca":"Alt Camp","provincia":"Tarragona","cens":"211","any_cens":"2025","web":"http://www.elsgaridells.cat"}
+,{"codi_ens":"4306720002","nom_complert":"Ajuntament de Ginestar","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"800","any_cens":"2025","web":"http://www.ginestar.cat"}
+,{"codi_ens":"4306880001","nom_complert":"Ajuntament de Godall","comarca":"Montsià","provincia":"Tarragona","cens":"591","any_cens":"2025","web":"http://www.godall.org"}
+,{"codi_ens":"4306910007","nom_complert":"Ajuntament de Gratallops","comarca":"Priorat","provincia":"Tarragona","cens":"226","any_cens":"2025","web":"http://www.gratallops.altanet.org"}
+,{"codi_ens":"4307050006","nom_complert":"Ajuntament dels Guiamets","comarca":"Priorat","provincia":"Tarragona","cens":"254","any_cens":"2025","web":"http://www.guiamets.altanet.org"}
+,{"codi_ens":"4307120002","nom_complert":"Ajuntament d'Horta de Sant Joan","comarca":"Terra Alta","provincia":"Tarragona","cens":"1150","any_cens":"2025","web":"http://www.hortadesantjoan.cat"}
+,{"codi_ens":"4307270005","nom_complert":"Ajuntament del Lloar","comarca":"Priorat","provincia":"Tarragona","cens":"99","any_cens":"2025","web":"http://www.lloar.altanet.org"}
+,{"codi_ens":"4307330008","nom_complert":"Ajuntament de Llorac","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"105","any_cens":"2025","web":"http://www.llorac.altanet.org"}
+,{"codi_ens":"4307480001","nom_complert":"Ajuntament de Llorenç del Penedès","comarca":"Baix Penedès","provincia":"Tarragona","cens":"2425","any_cens":"2025","web":"http://www.llorenc.cat"}
+,{"codi_ens":"4307510007","nom_complert":"Ajuntament de Margalef","comarca":"Priorat","provincia":"Tarragona","cens":"106","any_cens":"2025","web":"http://www.margalef.altanet.org"}
+,{"codi_ens":"4307640003","nom_complert":"Ajuntament de Marçà","comarca":"Priorat","provincia":"Tarragona","cens":"623","any_cens":"2025","web":"http://www.marca.altanet.org"}
+,{"codi_ens":"4307700000","nom_complert":"Ajuntament de Mas de Barberans","comarca":"Montsià","provincia":"Tarragona","cens":"535","any_cens":"2025","web":"http://www.masdebarberans.net"}
+,{"codi_ens":"4307860009","nom_complert":"Ajuntament de Masdenverge","comarca":"Montsià","provincia":"Tarragona","cens":"1138","any_cens":"2025","web":"http://http://www.masdenverge.cat"}
+,{"codi_ens":"4307990004","nom_complert":"Ajuntament de Masllorenç","comarca":"Baix Penedès","provincia":"Tarragona","cens":"573","any_cens":"2025","web":"http://www.masllorenc.cat"}
+,{"codi_ens":"4308030008","nom_complert":"Ajuntament de la Masó","comarca":"Alt Camp","provincia":"Tarragona","cens":"307","any_cens":"2025","web":"http://www.maso.altanet.org"}
+,{"codi_ens":"4308100000","nom_complert":"Ajuntament de Maspujols","comarca":"Baix Camp","provincia":"Tarragona","cens":"915","any_cens":"2025","web":"http://www.maspujols.altanet.org"}
+,{"codi_ens":"4308250006","nom_complert":"Ajuntament del Masroig","comarca":"Priorat","provincia":"Tarragona","cens":"473","any_cens":"2025","web":"http://www.masroig.altanet.org"}
+,{"codi_ens":"4308310007","nom_complert":"Ajuntament del Milà","comarca":"Alt Camp","provincia":"Tarragona","cens":"194","any_cens":"2025","web":"http://www.mila.altanet.org"}
+,{"codi_ens":"4308460009","nom_complert":"Ajuntament de Miravet","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"703","any_cens":"2025","web":"http://www.miravet.cat"}
+,{"codi_ens":"4308590004","nom_complert":"Ajuntament del Molar","comarca":"Priorat","provincia":"Tarragona","cens":"295","any_cens":"2025","web":"http://www.molar.altanet.org"}
+,{"codi_ens":"4308620002","nom_complert":"Ajuntament de Montblanc","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"7542","any_cens":"2025","web":"http://www.montblanc.cat"}
+,{"codi_ens":"4308840003","nom_complert":"Ajuntament de Montbrió del Camp","comarca":"Baix Camp","provincia":"Tarragona","cens":"3157","any_cens":"2025","web":"http://www.montbriodelcamp.cat"}
+,{"codi_ens":"4308970005","nom_complert":"Ajuntament de Montferri","comarca":"Alt Camp","provincia":"Tarragona","cens":"502","any_cens":"2025","web":"https://www.ajuntamentmontferri.cat"}
+,{"codi_ens":"4309010007","nom_complert":"Ajuntament del Montmell","comarca":"Baix Penedès","provincia":"Tarragona","cens":"1958","any_cens":"2025","web":"http://www.elmontmell.cat"}
+,{"codi_ens":"4309180001","nom_complert":"Ajuntament de Mont-ral","comarca":"Alt Camp","provincia":"Tarragona","cens":"174","any_cens":"2025","web":"http://www.mont-ral.altanet.org"}
+,{"codi_ens":"4309230008","nom_complert":"Ajuntament de Mont-roig del Camp","comarca":"Baix Camp","provincia":"Tarragona","cens":"14615","any_cens":"2025","web":"https://mont-roig.cat"}
+,{"codi_ens":"4309390004","nom_complert":"Ajuntament de Móra d'Ebre","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"5811","any_cens":"2025","web":"http://www.moradebre.cat"}
+,{"codi_ens":"4309440003","nom_complert":"Ajuntament de Móra la Nova","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"3350","any_cens":"2025","web":"http://www.moralanova.cat"}
+,{"codi_ens":"4309570005","nom_complert":"Ajuntament del Morell","comarca":"Tarragonès","provincia":"Tarragona","cens":"3811","any_cens":"2025","web":"https://elmorell.cat"}
+,{"codi_ens":"4309600000","nom_complert":"Ajuntament de la Morera de Montsant","comarca":"Priorat","provincia":"Tarragona","cens":"150","any_cens":"2025","web":"http://www.lamorerademontsant.org"}
+,{"codi_ens":"4309760009","nom_complert":"Ajuntament de la Nou de Gaià","comarca":"Tarragonès","provincia":"Tarragona","cens":"603","any_cens":"2025","web":"http://www.noudegaia.altanet.org"}
+,{"codi_ens":"4309820002","nom_complert":"Ajuntament de Nulles","comarca":"Alt Camp","provincia":"Tarragona","cens":"551","any_cens":"2025","web":"http://www.nulles.altanet.org"}
+,{"codi_ens":"4309950006","nom_complert":"Ajuntament de la Palma d'Ebre","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"333","any_cens":"2025","web":"http://www.palmadebre.cat"}
+,{"codi_ens":"4310090004","nom_complert":"Ajuntament dels Pallaresos","comarca":"Tarragonès","provincia":"Tarragona","cens":"5028","any_cens":"2025","web":"https://elspallaresos.cat"}
+,{"codi_ens":"4310160009","nom_complert":"Ajuntament de Passanant i Belltall","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"149","any_cens":"2025","web":"http://www.passanantibelltall.cat"}
+,{"codi_ens":"4310210007","nom_complert":"Ajuntament de Paüls","comarca":"Baix Ebre","provincia":"Tarragona","cens":"558","any_cens":"2025","web":"http://www.pauls.oasi.org"}
+,{"codi_ens":"4310370005","nom_complert":"Ajuntament de Perafort","comarca":"Tarragonès","provincia":"Tarragona","cens":"1342","any_cens":"2025","web":"http://www.perafort.com"}
+,{"codi_ens":"4310420002","nom_complert":"Ajuntament del Perelló","comarca":"Baix Ebre","provincia":"Tarragona","cens":"2948","any_cens":"2025","web":"http://www.elperello.cat"}
+,{"codi_ens":"4310550006","nom_complert":"Ajuntament de les Piles","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"229","any_cens":"2025","web":"http://www.piles.altanet.org"}
+,{"codi_ens":"4310680001","nom_complert":"Ajuntament del Pinell de Brai","comarca":"Terra Alta","provincia":"Tarragona","cens":"948","any_cens":"2025","web":"http://www.pinelldebrai.altanet.org"}
+,{"codi_ens":"4310740003","nom_complert":"Ajuntament de Pira","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"512","any_cens":"2025","web":"http://www.pira.altanet.org"}
+,{"codi_ens":"4310800000","nom_complert":"Ajuntament del Pla de Santa Maria","comarca":"Alt Camp","provincia":"Tarragona","cens":"2408","any_cens":"2025","web":"http://www.elpladesantamaria.cat"}
+,{"codi_ens":"4310930008","nom_complert":"Ajuntament de la Pobla de Mafumet","comarca":"Tarragonès","provincia":"Tarragona","cens":"4175","any_cens":"2025","web":"https://www.poblamafumet.cat"}
+,{"codi_ens":"4311070005","nom_complert":"Ajuntament de la Pobla de Massaluca","comarca":"Terra Alta","provincia":"Tarragona","cens":"344","any_cens":"2025","web":"http://www.poblamassaluca.altanet.org"}
+,{"codi_ens":"4311140003","nom_complert":"Ajuntament de la Pobla de Montornès","comarca":"Tarragonès","provincia":"Tarragona","cens":"3440","any_cens":"2025","web":"http://www.lapoblademontornes.cat"}
+,{"codi_ens":"4311290004","nom_complert":"Ajuntament de Poboleda","comarca":"Priorat","provincia":"Tarragona","cens":"345","any_cens":"2025","web":"http://www.poboleda.cat"}
+,{"codi_ens":"4311350006","nom_complert":"Ajuntament del Pont d'Armentera","comarca":"Alt Camp","provincia":"Tarragona","cens":"500","any_cens":"2025","web":"http://elpontdarmentera.com"}
+,{"codi_ens":"4311400000","nom_complert":"Ajuntament de Porrera","comarca":"Priorat","provincia":"Tarragona","cens":"405","any_cens":"2025","web":"http://www.porrera.cat"}
+,{"codi_ens":"4311530008","nom_complert":"Ajuntament de Pradell de la Teixeta","comarca":"Priorat","provincia":"Tarragona","cens":"182","any_cens":"2025","web":"http://www.pradelldelateixeta.cat"}
+,{"codi_ens":"4311660009","nom_complert":"Ajuntament de Prades","comarca":"Baix Camp","provincia":"Tarragona","cens":"629","any_cens":"2025","web":"https://www.prades.cat"}
+,{"codi_ens":"4311720002","nom_complert":"Ajuntament de Prat de Comte","comarca":"Terra Alta","provincia":"Tarragona","cens":"174","any_cens":"2025","web":"http://www.pratdecomte.altanet.org"}
+,{"codi_ens":"4311880001","nom_complert":"Ajuntament de Pratdip","comarca":"Baix Camp","provincia":"Tarragona","cens":"781","any_cens":"2025","web":"http://www.pratdip.cat"}
+,{"codi_ens":"4311910007","nom_complert":"Ajuntament de Puigpelat","comarca":"Alt Camp","provincia":"Tarragona","cens":"1222","any_cens":"2025","web":"http://www.puigpelat.altanet.org"}
+,{"codi_ens":"4312050006","nom_complert":"Ajuntament de Querol","comarca":"Alt Camp","provincia":"Tarragona","cens":"611","any_cens":"2025","web":"http://www.querol.cat"}
+,{"codi_ens":"4312120002","nom_complert":"Ajuntament de Rasquera","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"786","any_cens":"2025","web":"http://www.rasquera.cat"}
+,{"codi_ens":"4312270005","nom_complert":"Ajuntament de Renau","comarca":"Tarragonès","provincia":"Tarragona","cens":"165","any_cens":"2025","web":"http://www.renau.altanet.org"}
+,{"codi_ens":"4312330008","nom_complert":"Ajuntament de Reus","comarca":"Baix Camp","provincia":"Tarragona","cens":"111601","any_cens":"2025","web":"http://www.reus.cat"}
+,{"codi_ens":"4312480001","nom_complert":"Ajuntament de la Riba","comarca":"Alt Camp","provincia":"Tarragona","cens":"574","any_cens":"2025","web":"www.riba.cat"}
+,{"codi_ens":"4312510007","nom_complert":"Ajuntament de Riba-roja d'Ebre","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"1132","any_cens":"2025","web":"https://riba-roja.cat"}
+,{"codi_ens":"4312640003","nom_complert":"Ajuntament de la Riera de Gaià","comarca":"Tarragonès","provincia":"Tarragona","cens":"1834","any_cens":"2025","web":"http://www.rieradegaia.cat"}
+,{"codi_ens":"4312700000","nom_complert":"Ajuntament de Riudecanyes","comarca":"Baix Camp","provincia":"Tarragona","cens":"1362","any_cens":"2025","web":"http://www.riudecanyes.cat"}
+,{"codi_ens":"4312860009","nom_complert":"Ajuntament de Riudecols","comarca":"Baix Camp","provincia":"Tarragona","cens":"1264","any_cens":"2025","web":"http://www.riudecols.cat"}
+,{"codi_ens":"4312990004","nom_complert":"Ajuntament de Riudoms","comarca":"Baix Camp","provincia":"Tarragona","cens":"6891","any_cens":"2025","web":"http://www.riudoms.cat"}
+,{"codi_ens":"4313030008","nom_complert":"Ajuntament de Rocafort de Queralt","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"247","any_cens":"2025","web":"http://www.rocafort.altanet.org"}
+,{"codi_ens":"4313100000","nom_complert":"Ajuntament de Roda de Berà","comarca":"Tarragonès","provincia":"Tarragona","cens":"8260","any_cens":"2025","web":"http://www.rodadebera.cat"}
+,{"codi_ens":"4313250006","nom_complert":"Ajuntament de Rodonyà","comarca":"Alt Camp","provincia":"Tarragona","cens":"519","any_cens":"2025","web":"http://www.rodonya.altanet.org"}
+,{"codi_ens":"4313310007","nom_complert":"Ajuntament de Roquetes","comarca":"Baix Ebre","provincia":"Tarragona","cens":"8607","any_cens":"2025","web":"http://roquetes.cat"}
+,{"codi_ens":"4313460009","nom_complert":"Ajuntament del Rourell","comarca":"Alt Camp","provincia":"Tarragona","cens":"385","any_cens":"2025","web":"http://www.rourell.altanet.org"}
+,{"codi_ens":"4313590004","nom_complert":"Ajuntament de Salomó","comarca":"Tarragonès","provincia":"Tarragona","cens":"519","any_cens":"2025","web":"http://www.salomo.cat"}
+,{"codi_ens":"4313620002","nom_complert":"Ajuntament de la Ràpita","comarca":"Montsià","provincia":"Tarragona","cens":"16119","any_cens":"2025","web":"http://www.larapita.cat"}
+,{"codi_ens":"4313780001","nom_complert":"Ajuntament de Sant Jaume dels Domenys","comarca":"Baix Penedès","provincia":"Tarragona","cens":"2819","any_cens":"2025","web":"http://www.santjaumedelsdomenys.cat"}
+,{"codi_ens":"4313840003","nom_complert":"Ajuntament de Santa Bàrbara","comarca":"Montsià","provincia":"Tarragona","cens":"3871","any_cens":"2025","web":"http://www.santabarbara.cat"}
+,{"codi_ens":"4313970005","nom_complert":"Ajuntament de Santa Coloma de Queralt","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"2795","any_cens":"2025","web":"http://www.stacqueralt.altanet.org"}
+,{"codi_ens":"4314010007","nom_complert":"Ajuntament de Santa Oliva","comarca":"Baix Penedès","provincia":"Tarragona","cens":"3711","any_cens":"2025","web":"http://www.santaoliva.cat"}
+,{"codi_ens":"4314180001","nom_complert":"Ajuntament de Pontils","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"124","any_cens":"2025","web":"http://www.pontils.altanet.org"}
+,{"codi_ens":"4314230008","nom_complert":"Ajuntament de Sarral","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"1644","any_cens":"2025","web":"http://www.sarral.altanet.org"}
+,{"codi_ens":"4314390004","nom_complert":"Ajuntament de Savallà del Comtat","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"49","any_cens":"2025","web":"http://www.savalla.altanet.org"}
+,{"codi_ens":"4314440003","nom_complert":"Ajuntament de la Secuita","comarca":"Tarragonès","provincia":"Tarragona","cens":"1845","any_cens":"2025","web":"http://www.lasecuita.cat"}
+,{"codi_ens":"4314570005","nom_complert":"Ajuntament de la Selva del Camp","comarca":"Baix Camp","provincia":"Tarragona","cens":"5732","any_cens":"2025","web":"http://www.laselvadelcamp.cat"}
+,{"codi_ens":"4314600000","nom_complert":"Ajuntament de Senan","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"47","any_cens":"2025","web":"http://www.senan.altanet.org"}
+,{"codi_ens":"4314760009","nom_complert":"Ajuntament de Solivella","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"633","any_cens":"2025","web":"http://www.solivella.cat"}
+,{"codi_ens":"4314820002","nom_complert":"Ajuntament de Tarragona","comarca":"Tarragonès","provincia":"Tarragona","cens":"143649","any_cens":"2025","web":"http://www.tarragona.cat"}
+,{"codi_ens":"4314950006","nom_complert":"Ajuntament de Tivenys","comarca":"Baix Ebre","provincia":"Tarragona","cens":"948","any_cens":"2025","web":"http://www.tivenys.altanet.org"}
+,{"codi_ens":"4315080001","nom_complert":"Ajuntament de Tivissa","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"1658","any_cens":"2025","web":"http://www.tivissa.cat"}
+,{"codi_ens":"4315150006","nom_complert":"Ajuntament de la Torre de Fontaubella","comarca":"Priorat","provincia":"Tarragona","cens":"124","any_cens":"2025","web":"http://www.tfontaubella.altanet.org"}
+,{"codi_ens":"4315200000","nom_complert":"Ajuntament de la Torre de l'Espanyol","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"641","any_cens":"2025","web":"http://www.torredelespanyol.cat"}
+,{"codi_ens":"4315360009","nom_complert":"Ajuntament de Torredembarra","comarca":"Tarragonès","provincia":"Tarragona","cens":"18237","any_cens":"2025","web":"http://www.torredembarra.cat"}
+,{"codi_ens":"4315410007","nom_complert":"Ajuntament de Torroja del Priorat","comarca":"Priorat","provincia":"Tarragona","cens":"129","any_cens":"2025","web":"http://www.torroja.altanet.org"}
+,{"codi_ens":"4315540003","nom_complert":"Ajuntament de Tortosa","comarca":"Baix Ebre","provincia":"Tarragona","cens":"35997","any_cens":"2025","web":"http://www.tortosa.cat"}
+,{"codi_ens":"4315670005","nom_complert":"Ajuntament d'Ulldecona","comarca":"Montsià","provincia":"Tarragona","cens":"6714","any_cens":"2025","web":"http://www.ulldecona.cat"}
+,{"codi_ens":"4315730008","nom_complert":"Ajuntament d'Ulldemolins","comarca":"Priorat","provincia":"Tarragona","cens":"389","any_cens":"2025","web":"http://www.ulldemolins.cat"}
+,{"codi_ens":"4315890004","nom_complert":"Ajuntament de Vallclara","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"91","any_cens":"2025","web":"http://www.vallclara.cat"}
+,{"codi_ens":"4315920002","nom_complert":"Ajuntament de Vallfogona de Riucorb","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"95","any_cens":"2025","web":"http://www.vallfogonaderiucorb.cat"}
+,{"codi_ens":"4316060009","nom_complert":"Ajuntament de Vallmoll","comarca":"Alt Camp","provincia":"Tarragona","cens":"1997","any_cens":"2025","web":"http://www.vallmoll.cat"}
+,{"codi_ens":"4316130008","nom_complert":"Ajuntament de Valls","comarca":"Alt Camp","provincia":"Tarragona","cens":"25518","any_cens":"2025","web":"http://www.valls.cat"}
+,{"codi_ens":"4316280001","nom_complert":"Ajuntament de Vandellòs i l'Hospitalet de l'Infant","comarca":"Baix Camp","provincia":"Tarragona","cens":"7143","any_cens":"2025","web":"http://www.vandellos-hospitalet.cat"}
+,{"codi_ens":"4316340003","nom_complert":"Ajuntament del Vendrell","comarca":"Baix Penedès","provincia":"Tarragona","cens":"41133","any_cens":"2025","web":"http://www.elvendrell.net"}
+,{"codi_ens":"4316490004","nom_complert":"Ajuntament de Vespella de Gaià","comarca":"Tarragonès","provincia":"Tarragona","cens":"502","any_cens":"2025","web":"http://www.vespella.altanet.org"}
+,{"codi_ens":"4316520002","nom_complert":"Ajuntament de Vilabella","comarca":"Alt Camp","provincia":"Tarragona","cens":"724","any_cens":"2025","web":"http://www.vilabella.cat"}
+,{"codi_ens":"4316650006","nom_complert":"Ajuntament de Vilallonga del Camp","comarca":"Tarragonès","provincia":"Tarragona","cens":"2495","any_cens":"2025","web":"http://www.vilallongadelcamp.cat"}
+,{"codi_ens":"4316710007","nom_complert":"Ajuntament de Vilanova d'Escornalbou","comarca":"Baix Camp","provincia":"Tarragona","cens":"614","any_cens":"2025","web":"http://www.vescornalbou.cat"}
+,{"codi_ens":"4316870005","nom_complert":"Ajuntament de Vilanova de Prades","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"111","any_cens":"2025","web":"http://www.vprades.altanet.org"}
+,{"codi_ens":"4316900000","nom_complert":"Ajuntament de Vilaplana","comarca":"Baix Camp","provincia":"Tarragona","cens":"549","any_cens":"2025","web":"http://www.vilaplana.cat"}
+,{"codi_ens":"4317040003","nom_complert":"Ajuntament de Vila-rodona","comarca":"Alt Camp","provincia":"Tarragona","cens":"1382","any_cens":"2025","web":"http://www.vila-rodona.altanet.org"}
+,{"codi_ens":"4317110007","nom_complert":"Ajuntament de Vila-seca","comarca":"Tarragonès","provincia":"Tarragona","cens":"23917","any_cens":"2025","web":"http://www.vila-seca.cat"}
+,{"codi_ens":"4317260009","nom_complert":"Ajuntament de Vilaverd","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"493","any_cens":"2025","web":"https://vilaverd.cat"}
+,{"codi_ens":"4317320002","nom_complert":"Ajuntament de la Vilella Alta","comarca":"Priorat","provincia":"Tarragona","cens":"127","any_cens":"2025","web":"http://www.vilellaalta.altanet.org"}
+,{"codi_ens":"4317470005","nom_complert":"Ajuntament de la Vilella Baixa","comarca":"Priorat","provincia":"Tarragona","cens":"201","any_cens":"2025","web":"http://www.vilellabaixa.altanet.org"}
+,{"codi_ens":"4317500000","nom_complert":"Ajuntament de Vilalba dels Arcs","comarca":"Terra Alta","provincia":"Tarragona","cens":"611","any_cens":"2025","web":"http://www.vilalba.altanet.org"}
+,{"codi_ens":"4317630008","nom_complert":"Ajuntament de Vimbodí i Poblet","comarca":"Conca de Barberà","provincia":"Tarragona","cens":"887","any_cens":"2025","web":"http://www.vimbodiipoblet.cat"}
+,{"codi_ens":"4317790004","nom_complert":"Ajuntament de Vinebre","comarca":"Ribera d'Ebre","provincia":"Tarragona","cens":"427","any_cens":"2025","web":"http://www.vinebre.cat"}
+,{"codi_ens":"4317850006","nom_complert":"Ajuntament de Vinyols i els Arcs","comarca":"Baix Camp","provincia":"Tarragona","cens":"2450","any_cens":"2025","web":"http://www.vinyols.altanet.org"}
+,{"codi_ens":"4390180001","nom_complert":"Ajuntament de Deltebre","comarca":"Baix Ebre","provincia":"Tarragona","cens":"12041","any_cens":"2025","web":"http://www.deltebre.cat"}
+,{"codi_ens":"4390230008","nom_complert":"Ajuntament de Sant Jaume d'Enveja","comarca":"Montsià","provincia":"Tarragona","cens":"3745","any_cens":"2025","web":"http://www.santjaume.cat"}
+,{"codi_ens":"4390390004","nom_complert":"Ajuntament de Camarles","comarca":"Baix Ebre","provincia":"Tarragona","cens":"3465","any_cens":"2025","web":"http://www.camarles.cat"}
+,{"codi_ens":"4390440003","nom_complert":"Ajuntament de l'Aldea","comarca":"Baix Ebre","provincia":"Tarragona","cens":"4657","any_cens":"2025","web":"http://www.laldea.cat"}
+,{"codi_ens":"4390570005","nom_complert":"Ajuntament de Salou","comarca":"Tarragonès","provincia":"Tarragona","cens":"31491","any_cens":"2025","web":"http://www.salou.cat"}
+,{"codi_ens":"4390600000","nom_complert":"Ajuntament de l'Ampolla","comarca":"Baix Ebre","provincia":"Tarragona","cens":"3785","any_cens":"2025","web":"http://ampolla.cat"}
+,{"codi_ens":"4390760009","nom_complert":"Ajuntament de la Canonja","comarca":"Tarragonès","provincia":"Tarragona","cens":"6001","any_cens":"2025","web":"http://www.lacanonja.cat"}]
