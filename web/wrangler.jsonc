@@ -6,6 +6,6 @@
   "assets": { "directory": "./dist" },
   "routes": [{ "pattern": "finestraoberta.cat", "custom_domain": true }],
   "observability": { "enabled": true },
-  // Les branques que no són main es despleguen com a previsualització amb `wrangler preview`, que necessita aquest bloc.
+  // Workers Builds publica cada branca i cada pull request com a previsualització amb `wrangler preview`.
   "previews": {},
 }
