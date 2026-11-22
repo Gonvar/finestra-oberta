@@ -150,6 +150,21 @@ const posicions = (escons = 150) =>
 test('les posicions dels escons surten del dibuix del mapa', () => {
   assert.deepEqual(llegirPosicions(posicions(2)).get(2), { x: 1, y: 2 });
   assert.throws(() => llegirPosicions('var x = 1;'), /cap escó/);
+  assert.throws(
+    () => llegirPosicions(`${posicions(2)}\nposicionsEscons["002"] = {x:9, y:9};`),
+    /dues posicions a l’escó 2/,
+  );
+});
+
+test('el Parlament falla si el mapa pinta un grup de dos colors', async () => {
+  const fetchImpl = fake((url) =>
+    url === POSICIONS_ESCONS
+      ? posicions()
+      : url === MAPA_ESCONS
+        ? mapa().replace(esco(5, 5, GRUP_A), esco(5, 5, GRUP_A, '#ccc'))
+        : fitxa({ legislatura: url === fitxaUrl('3'), foto: url.split('=')[1]! }),
+  );
+  await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /de #aaa i de #ccc/);
 });
 
 test('el Parlament falla si un escó no té posició al mapa', async () => {
@@ -407,7 +422,51 @@ const COLUMNES = [
   })),
 ];
 
-function transparencia(declaracions: object[], viatges = VIATGES_FILES) {
+const AGENDA_FILES: object[] = [
+  {
+    data: '2025-03-01T00:00:00.000',
+    grup_d_inter_s: 'Entitat U',
+    activitat: 'Reunió',
+    tema: 'Tema U',
+    nom_i_cognoms: 'Berta Exemple Dos',
+    c_rrec: 'consellera de Salut',
+  },
+  // La mateixa reunió amb un altre grup: la relació no diu que ho sigui, i compta a part.
+  {
+    data: '2025-03-01T00:00:00.000',
+    grup_d_inter_s: 'Entitat Quatre',
+    activitat: 'Reunió',
+    tema: 'Tema U',
+    nom_i_cognoms: 'Berta Exemple Dos',
+    c_rrec: 'consellera de Salut',
+  },
+  // Abans del nomenament, amb un altre càrrec o sense grup d'interès: no compten.
+  {
+    data: '2025-06-01T00:00:00.000',
+    grup_d_inter_s: '-',
+    activitat: "Sense activitats d'influència en el darrer trimestre",
+    nom_i_cognoms: 'Berta Exemple Dos',
+    c_rrec: 'consellera de Salut',
+  },
+  {
+    data: '2024-08-01T00:00:00.000',
+    grup_d_inter_s: 'Entitat Dos',
+    activitat: 'Reunió',
+    tema: 'Tema Dos',
+    nom_i_cognoms: 'Berta Exemple Dos',
+    c_rrec: 'consellera de Salut',
+  },
+  {
+    data: '2025-01-01T00:00:00.000',
+    grup_d_inter_s: 'Entitat Tres',
+    activitat: 'Reunió',
+    tema: 'Tema Tres',
+    nom_i_cognoms: 'Berta Exemple Dos',
+    c_rrec: 'Secretària general',
+  },
+];
+
+function transparencia(declaracions: object[], viatges = VIATGES_FILES, agenda = AGENDA_FILES) {
   return fake((url) => {
     if (url.includes('/api/views/'))
       return {
@@ -417,50 +476,7 @@ function transparencia(declaracions: object[], viatges = VIATGES_FILES) {
         columns: COLUMNES,
       };
     if (url.includes(DECLARACIONS)) return declaracions;
-    if (url.includes(AGENDA))
-      return [
-        {
-          data: '2025-03-01T00:00:00.000',
-          grup_d_inter_s: 'Entitat U',
-          activitat: 'Reunió',
-          tema: 'Tema U',
-          nom_i_cognoms: 'Berta Exemple Dos',
-          c_rrec: 'consellera de Salut',
-        },
-        // La mateixa reunió amb un altre grup: és una sola reunió.
-        {
-          data: '2025-03-01T00:00:00.000',
-          grup_d_inter_s: 'Entitat Quatre',
-          activitat: 'Reunió',
-          tema: 'Tema U',
-          nom_i_cognoms: 'Berta Exemple Dos',
-          c_rrec: 'consellera de Salut',
-        },
-        // Abans del nomenament, amb un altre càrrec o sense grup d'interès: no compten.
-        {
-          data: '2025-06-01T00:00:00.000',
-          grup_d_inter_s: '-',
-          activitat: "Sense activitats d'influència en el darrer trimestre",
-          nom_i_cognoms: 'Berta Exemple Dos',
-          c_rrec: 'consellera de Salut',
-        },
-        {
-          data: '2024-08-01T00:00:00.000',
-          grup_d_inter_s: 'Entitat Dos',
-          activitat: 'Reunió',
-          tema: 'Tema Dos',
-          nom_i_cognoms: 'Berta Exemple Dos',
-          c_rrec: 'consellera de Salut',
-        },
-        {
-          data: '2025-01-01T00:00:00.000',
-          grup_d_inter_s: 'Entitat Tres',
-          activitat: 'Reunió',
-          tema: 'Tema Tres',
-          nom_i_cognoms: 'Berta Exemple Dos',
-          c_rrec: 'Secretària general',
-        },
-      ];
+    if (url.includes(AGENDA)) return agenda;
     if (url.includes(VIATGES)) return viatges;
     throw new Error(`URL inesperada: ${url}`);
   });
@@ -486,11 +502,24 @@ test('la transparència dona la declaració, l’agenda i els viatges des del no
       items: ['Entitat U', 'Entitat Dos'],
     },
   ]);
-  assert.equal(persona!.agenda.reunions, 1);
-  assert.deepEqual(persona!.agenda.darreres[0]!.grups, ['Entitat U', 'Entitat Quatre']);
+  assert.equal(persona!.agenda.contactes, 2);
+  assert.deepEqual(
+    persona!.agenda.darrers.map((c) => c.grup),
+    ['Entitat U', 'Entitat Quatre'],
+  );
   assert.equal(persona!.viatges.viatges, 2);
   assert.equal(persona!.viatges.sense_despeses, 1);
   assert.equal(persona!.viatges.despeses, 100.5);
+});
+
+test('la transparència falla si l’agenda no té cap fila d’un membre nomenat fa temps', async () => {
+  const declaracions = [declaracio('Berta Exemple Dos', 'Consellera')];
+  // Un nom que no es troba no és que no hagi tingut cap reunió: seria un zero fals.
+  const agenda = AGENDA_FILES.map((f) => ({ ...f, nom_i_cognoms: 'Una Altra Persona' }));
+  await assert.rejects(
+    construirTransparencia(transparencia(declaracions, VIATGES_FILES, agenda), MEMBRES),
+    /no té cap fila de Berta Exemple i Dos/,
+  );
 });
 
 test('sense cap import publicat no hi ha suma de despeses', async () => {
