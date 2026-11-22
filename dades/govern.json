@@ -6,12 +6,27 @@
   "url_noms": "https://analisi.transparenciacatalunya.cat/d/7chp-hkce",
   "data_noms": "2026-11-20",
   "nota": "Qui forma el Govern i el departament que porta surten de la relació d’alts càrrecs. El nom ben escrit surt de les intervencions del Govern al Parlament, perquè la relació l’escriu en majúscules i a vegades sense accents; el nom i el càrrec tal com els escriu la relació són a nom_oficial i carrec_oficial.",
+  "font_perfils": "govern.cat: el Consell Executiu",
+  "url_perfils": "https://govern.cat/gov/consell-executiu",
+  "data_perfils": "2026-11-22",
+  "llicencia_perfils": "CC0, segons l’avís legal de govern.cat (https://govern.cat/gov/avis-legal)",
   "president": {
     "nom": "Salvador Illa Roca",
     "carrec": "President de la Generalitat",
     "departament": "Departament de la Presidència",
     "nom_oficial": "ILLA ROCA, SALVADOR",
-    "carrec_oficial": "PRESIDENT DE LA GENERALITAT DE CATALUNYA"
+    "carrec_oficial": "PRESIDENT DE LA GENERALITAT DE CATALUNYA",
+    "retribucio_anual": 146635.82,
+    "foto": "https://govern.cat/govern/docs/2024/08/10/10/53/4ac1df3f-a1c5-43f5-afa5-5370c03a07d9.png",
+    "cv": [
+      "Nascut a la Roca del Vallès (Barcelona) el 5 de maig del 1966, Salvador Illa ha dedicat bona part de la seva trajectòria professional al servei públic. Està casat i té una filla.",
+      "És llicenciat en Filosofia per la Universitat de Barcelona i té un màster en Business Administration a l'Escola de Gestió i Negocis IESE de la Universitat de Navarra. També ha exercit de professor associat de la Facultat de Comunicació i Relacions Institucionals Blanquerna.",
+      "La seva singladura pública va iniciar-se l'any 1995 com a alcalde del seu municipi natal, la Roca del Vallès, on sempre ha residit. Posteriorment, va assumir la Direcció General de Gestió d'Infraestructures del Departament de Justícia de la Generalitat entre el 2005 i el 2009.",
+      "El 2010, després d'una breu estada en el sector privat, va ser nomenat director de Gestió Econòmica de l'Ajuntament de Barcelona. Aquest pas per la capital catalana el va portar a exercir, entre el 2011 i el 2016, la coordinació del Grup Municipal Socialista a l'Ajuntament de Barcelona. Al consistori, va exercir de gerent d'Empresa, Cultura i Innovació.",
+      "Salvador Illa va ser nomenat ministre de Sanitat del Govern d'Espanya el gener del 2020 i va gestionar des de primera línia els moments més difícils de la crisi sanitària causada per la pandèmia de la COVID-19, i va impulsar el procés de vacunació.",
+      "Candidat i guanyador de les eleccions catalanes el febrer del 2021, ha estat president del Grup Parlamentari Socialistes i Units per Avançar i Cap de l'Oposició al Parlament de Catalunya durant aquesta última legislatura. A les eleccions del 12 de maig del 2024, Salvador Illa va tornar a ser el cap de llista del PSC, que va tornar a guanyar els comicis, amb 42 diputats.",
+      "Des del desembre del 2021, Salvador Illa és el primer secretari del PSC, formació a la qual va afiliar-se l'any 1995."
+    ]
   },
   "consellers": [
     {
@@ -19,112 +34,257 @@
       "carrec": "Conseller d'Agricultura, Ramaderia, Pesca i Alimentació",
       "departament": "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
       "nom_oficial": "ORDEIG MOLIST, ÓSCAR",
-      "carrec_oficial": "CONSELLER/A AGRICULTURA, RAMADERIA, PESCA I ALIMENTACIÓ"
+      "carrec_oficial": "CONSELLER/A AGRICULTURA, RAMADERIA, PESCA I ALIMENTACIÓ",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/12/02/270500f5-f1e5-4d3c-b207-e08bceea625b.jpg",
+      "cv": [
+        "Nascut a Vic (Osona) el 14 de març de 1978. Economista. Doctor en Administració i Direcció d'Empreses (UPC). Màster en Assessoria Fiscal i Direcció Tributària (EAE i UPC). MBA - Màster en Administració i Direcció d'Empreses (Interuniversitari: UB, UAB i UPC). Llicenciatura en Ciències de l'Activitat Física i l'Esport (UdL).",
+        "Assessor polític del grup socialista de la Diputació de Lleida (2011-2014). Assessor empresarial del CEEI - Lleida (2008-2011), gerent de l'Associació Esportiva Sedis Bàsquet - la Seu d'Urgell (2006-2007) i director de l'àrea d'esports de l'Ajuntament de la Seu d'Urgell (2001-2006).",
+        "Diputat del PSC al Parlament de Catalunya des del 2014. Primer secretari de la Federació del PSC de Lleida, Pirineu i Aran. Regidor de l'Ajuntament de la Seu d'Urgell des del 2007 fins al 2021. Membre de la Comissió Executiva del PSC.",
+        "Ha publicat nombrosos articles d'opinió en diverses publicacions locals i provincials. Autor del llibre Compromís amb la Seu. Pensaments Compartits (2011). També ha participat en taules rodones i tertúlies de ràdios i televisions locals i provincials sobre temes d'actualitat."
+      ]
     },
     {
       "nom": "Alícia Romero Llano",
       "carrec": "Consellera d'Economia i Finances",
       "departament": "Departament d'Economia i Finances",
       "nom_oficial": "ROMERO LLANO, ALICIA",
-      "carrec_oficial": "CONSELLER/A D'ECONOMIA I FINANCES"
+      "carrec_oficial": "CONSELLER/A D'ECONOMIA I FINANCES",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/10/23/13/58/3f28bce2-1431-40ef-a5d8-0f3cd491d5db.png",
+      "cv": [
+        "Nascuda a Caldes d'Estrac el 20 de juny de 1976. És llicenciada en Dret per la Universitat Pompeu Fabra (UPF) i té un màster en Gestió Pública i Governança d'ESADE Executive Education.",
+        "També ha cursat un postgrau de Dret Local i Urbanístic a l'IDEC-Universitat Pompeu Fabra, i un curs de formació per a dones conselleres a EADA.",
+        "Després de treballar durant dos anys en una entitat financera, va fer el pas a la política local. Va ser regidora de l'Ajuntament de Mataró des del 1999 fins al 2011 assumint diverses responsabilitats, com joventut, igualtat, esports i desenvolupament econòmic. Al capdavant de l'Àrea d'Innovació i de l'Institut de Promoció Econòmica de Mataró es va encarregar de la creació i serveis a les empreses, de polítiques actives d'ocupació, comerç, turisme i promoció de la ciutat, entre d'altres.",
+        "Entre el 2007 i el 2011 també va ser presidenta de la Fundació TecnoCampus Mataró-Maresme, des d'on va liderar l'estratègia de creació i creixement del projecte. En la mateixa època va ser secretària del CETEMMSA, un centre tecnològic avançat especialitzat en teixits intel·ligents, i del Consorci del Port de Mataró.",
+        "Entre el 2011 i el 2012 va dirigir l'àrea d'emprenedoria i creixement empresarial de GlobaLleida, un consorci publicoprivat centrat a potenciar el desenvolupament econòmic del territori i la seva projecció internacional. El 2012 també va formar part de l'equip directiu de l'Ajuntament de Premià de Mar com a gerent.",
+        "Entre el 2007 i el 2012 va compatibilitzar aquestes tasques amb col·laboracions en la consultoria i en la docència, en matèries sobre comunicació, estratègia i innovació territorial a Elisava, ESADE i la Universitat Politècnica de Catalunya (UPC).",
+        "Des del 2012 és diputada al Parlament de Catalunya del Grup Parlamentari Socialistes-Units per Avançar, en el qual va exercir de portaveu entre el 2021 i el 2024. Des del 1996 és militant del PSC, i actualment és la secretària d'Economia, Coneixement i Transició Digital del partit.",
+        "També forma part de la Junta Directiva del Club de Gestió Pública d'ESADE. Finalment, és membre de l'equip de muntanya GLOBALTRAINER, sòcia del Club Tennis Mataró i sòcia de la Fundació Pasqual Maragall per la lluita contra l'Alzheimer."
+      ]
     },
     {
       "nom": "Esther Niubó Cidoncha",
       "carrec": "Consellera d'Educació i Formació Professional",
       "departament": "Departament d'Educació i Formació Professional",
       "nom_oficial": "NIUBO CIDONCHA, ESTHER",
-      "carrec_oficial": "CONSELLER/A D'EDUCACIÓ I FORMACIÓ PROFESSIONAL"
+      "carrec_oficial": "CONSELLER/A D'EDUCACIÓ I FORMACIÓ PROFESSIONAL",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/22/09/36/d222b2a9-ac7c-4278-b4b0-5c6f3bb82c6b.png",
+      "cv": [
+        "Nascuda a Barcelona (Barcelonès) el 1980. Viu a Castelldefels (Baix Llobregat). Llicenciada en ciències polítiques i de l'Administració (especialitat de relacions internacionals) per la Universitat Autònoma de Barcelona (premi extraordinari). Màster en política internacional a la Universitat Lliure de Brussel·les. Màster en comerç exterior i economia internacional a la Universitat de Barcelona. Màster en polítiques públiques i socials a la Universitat Pompeu Fabra - Universitat Johns Hopkins.",
+        "Ha treballat com a analista a la secretaria de política europea i internacional del Partit dels Socialistes de Catalunya PSC (2001-2004) i com a assessora al Parlament Europeu (2004-2009). Va ser coordinadora de les relacions institucionals i internacionals a la Fundació Rafael Campalans (2010-2013) i posteriorment en va ser directora (2013-2020). Col·laboradora acadèmica del Departament de Ciències Socials d'ESADE (2010-2012).",
+        "Afiliada al Partit dels Socialistes de Catalunya (PSC) des del 2002. Secretària de política europea (2012-2014). Membre de la comissió responsable d'elaborar un reglament per a celebrar eleccions primàries per a elegir un candidat del PSC a presidir el Govern de la Generalitat de Catalunya (2012). Portaveu del PSC (2013-2014). Candidata número 2 del PSC en les eleccions al Parlament Europeu del 2014. Portaveu del PSC (2014-2016). Secretària d'educació de la comissió executiva del PSC des del 2019. Regidora de l'Ajuntament de Castelldefels des del 2019 i regidora a l'oposició des del 2023. Primera secretària del PSC de Castelldefels. Com a diputada, durant l'XI legislatura ha estat portaveu en la Comissió d'Ensenyament i vicepresidenta de les comissions de Cultura i d'Afers Exteriors; durant la XII legislatura, portaveu en la Comissió d'Educació, secretària de la Comissió d'Acció Exterior, Relacions Institucionals i Transparència, i membre de la Comissió de Cultura, i en la darrera, portaveu en la Comissió d'Educació i secretària de la Comissió d'Acció Exterior, Unió Europea i Cooperació.",
+        "Activitat cívica i cultural",
+        "Membre del Patronat de la Fundació Rafael Campalans. Ha participat en l'elaboració i edició d'\"Europa XXI\", en el llibre Europa, federalisme, socialdemocràcia XXI , de la Fundació Rafael Campalans (2012); \"Educació i formació a la Unió Europea: per a un creixement intel·ligent i socialment inclusiu a Europa\", a la revista + Europa , del Consell Català del Moviment Europeu, 10 preguntes i respostes sobre l'estratègia socioeconòmica Europa 2020 (2011); \"El futur del socialisme europeu\", en el llibre L'esquerra, un instint bàsic. Vint-i-una reflexions sobre els reptes del socialisme del segle XXI (2008) i la guia Barcelona +10. El procés euromediterrani (2005), juntament amb Raimon Obiols i Josep Borrell, entre altres autors, editada pel Grup Socialista al Parlament Europeu. Autora de les publicacions Catalunya en el nou escenari europeu i mundial (2003) i Guia de la Convenció sobre el futur d'Europa (2002). Ha col·laborat en diversos números de la Revista de la Fundació Rafael Campalans (2005-2017), amb articles d'anàlisi de l'actualitat política europea i mediterrània, la construcció europea o el debat sobre la socialdemocràcia. Ha col·laborat en publicacions de diverses fundacions progressistes europees, i ha publicat articles també en diaris estatals."
+      ]
     },
     {
       "nom": "Miquel Sàmper i Rodríguez",
       "carrec": "Conseller d'Empresa i Treball",
       "departament": "Departament d'Empresa i Treball",
       "nom_oficial": "SAMPER RODRIGUEZ, MIQUEL",
-      "carrec_oficial": "CONSELLER/A D'EMPRESA I TREBALL"
+      "carrec_oficial": "CONSELLER/A D'EMPRESA I TREBALL",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/22/09/49/ddab2f78-8b7b-42f0-bb80-6de08bf94c38.jpg",
+      "cv": [
+        "Nascut a Terrassa el 1966. Llicenciat en Dret i en Ciències Polítiques i de l'Administració, ha dedicat bona part de la seva trajectòria professional a l'advocacia, especialment en assumptes civils, penals i matrimonials.",
+        "Ha estat degà del Col·legi d'Advocats de Terrassa (2006-2014), president del Consell de l'Advocacia Catalana (2013 i 2014) i adjunt a la presidència del Consell General de l'Advocacia Espanyola (2009-2014). Va ser, també, un dels impulsors de la primera Oficina d'Intermediació Hipotecària de l'Estat espanyol. Exerceix d'advocat des de l'any 1989.",
+        "Va ser regidor de l'Ajuntament de Terrassa (2015-2020) i tinent d'alcalde de Promoció Econòmica, Indústria i Ocupació (2015-2017) del mateix ajuntament, i diputat delegat de Turisme de la Diputació de Barcelona (2018-2019).",
+        "De setembre de 2020 a maig de 2021 va ser conseller d'Interior de la Generalitat de Catalunya. Des del maig de 2022 era membre de la Comissió Jurídica Assessora."
+      ]
     },
     {
       "nom": "Bernardo Álvarez Merino",
       "carrec": "Conseller d'Esports",
       "departament": "Departament d'Esports",
       "nom_oficial": "ALVAREZ MERINO, BERNARDO",
-      "carrec_oficial": "CONSELLER/A D'ESPORTS"
+      "carrec_oficial": "CONSELLER/A D'ESPORTS",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2024/08/12/17/24/893b5731-7473-4bde-912e-adf68dddecc6.jpg",
+      "cv": [
+        "Nascut a Reus el 1971. És tècnic superior d'esports, màster en formació per la Federació Espanyola de Bàsquet i té estudis de medicina i en ciències empresarials (UOC).",
+        "Ha estat professor de tècnic esportiu de bàsquet i també ha portat la gerència comercial durant 8 anys d'una botiga d'esports.",
+        "Des del 2023 formava part de l'Ajuntament de Tarragona com a regidor d'Esports, Educació i Turisme esportiu i segon tinent d'alcalde. També va treballar al comitè organitzador dels Jocs Mediterranis del 2018 de Tarragona, exercint com a coordinador esportiu de diferents especialitats esportives.",
+        "La seva trajectòria professional sempre ha estat molt vinculada al món de l'esport, especialment al bàsquet. Format al planter del Club Bàsquet Tarragona (CBT), on es va retirar, el conseller va ser jugador professional en equips com el Pamesa València -amb el qual va assolir una Copa del Rei i un subcampionat d'Europa- o el Caprabo Lleida, convertint-se en un dels millors tiradors de la lliga ACB.",
+        "Més endavant, com a entrenador, va liderar el projecte esportiu i del primer equip del Club Bàsquet Tarragona. A la banqueta del CBT, va aconseguir diferents ascensos a la LEB Plata (ara \"Segunda FEB\"). Des del 2015, va ser tècnic de diferents equips de les categories inferiors de la selecció estatal, amb les quals va guanyar medalles de plata el 2017 a l'Europeu U18 de Bratislava (Eslovàquia) i el 2019 a l'Europeu U20 de Tel-Aviv (Israel), així com l'or el 2022 al Campionat d'Europa U20 de Podgorica (Montenegro)."
+      ]
     },
     {
       "nom": "Eva Menor Cantador",
       "carrec": "Consellera d'Igualtat i Feminisme",
       "departament": "Departament d'Igualtat i Feminisme",
       "nom_oficial": "MENOR CANTADOR, EVA",
-      "carrec_oficial": "CONSELLER/A D'IGUALTAT I FEMINISME"
+      "carrec_oficial": "CONSELLER/A D'IGUALTAT I FEMINISME",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/11/31/deefe6bb-7048-4cb5-baae-446115abf938.jpg",
+      "cv": [
+        "Eva Menor Cantador",
+        "Nascuda a Madrid el 21 de setembre de 1972, viu a Badia del Vallès (Vallès Occidental).",
+        "És llicenciada en Dret per la Universitat Autònoma de Madrid, amb un màster en pràctica jurídica per la Universitat Autònoma de Barcelona (UAB), un màster en hisenda autonòmica i local per la Universitat de Barcelona i un postgrau en gestió i administració local per la UAB.",
+        "Ha exercit com a advocada especialitzada en dret penal, laboral i de família (1998-2009). També ha treballat com a gestora fiscal i comptable de petites i mitjanes empreses.",
+        "Afiliada al Partit dels Socialistes (PSC) des de 1998, ha tingut responsabilitats orgàniques en l'executiva de la federació del Vallès Occidental Sud i com a consellera nacional. És membre de l'executiva nacional del PSC.",
+        "Ha estat alcaldessa de Badia del Vallès des de 2009 fins al 2024. Abans, va ser tinenta d'alcaldia d'Economia (2007-2009) i regidora de Cultura i Participació Ciutadana a l'Ajuntament de Badia del Vallès (2003-2007). A més, ha estat presidenta delegada de l'Àrea de Desenvolupament Econòmic i Turisme de la Diputació de Barcelona des de 2023 i, anteriorment, de l'Àrea de Desenvolupament Econòmic, Turisme i Comerç (2019-2023). Des del 2024 és Consellera d'igualtat i Feminisme.",
+        "És membre del Col·legi d'Advocats de Barcelona des de 1998 i sòcia de la Creu Roja, l'Associació contra el Càncer i l'Associació de Celíacs de Catalunya. Alhora, és membre de l'associació Dones per la Igualtat de Badia del Vallès i de l'Associació d'Integrants de Grups de Música de Badia (AIGMB). Té una medalla al mèrit esportiu de la Real Federació Espanyola de Judo (2011)."
+      ]
     },
     {
       "nom": "Núria Parlon i Gil",
       "carrec": "Consellera d'Interior i Seguretat Pública",
       "departament": "Departament d'Interior i Seguretat Pública",
       "nom_oficial": "PARLON GIL, NURIA",
-      "carrec_oficial": "CONSELLER/A D'INTERIOR I SEGURETAT PÚBLICA"
+      "carrec_oficial": "CONSELLER/A D'INTERIOR I SEGURETAT PÚBLICA",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/11/21/7b19db85-2b87-4432-bb18-edaceaadc8ab.png",
+      "cv": [
+        "Nascuda a Barcelona el 1974. Llicenciada en Ciències Polítiques i de l'Administració per la Universitat Autònoma de Barcelona (1996). Estudis de doctorat en Ciències Polítiques a la Universitat Pompeu Fabra (1998-2000).",
+        "Funcionària de carrera de l'Ajuntament de Santa Coloma de Gramenet des de 2003, en qualitat de tècnica superior d'Anàlisi i Planificació. Actualment en situació de serveis especials.",
+        "Alcaldessa de Santa Coloma de Gramenet des de 2009 fins a agost de 2024. Formà part del Govern Municipal des de 2007, que va entrar com a regidora pel Partit dels Socialistes de Catalunya (PSC). Abans d'accedir a l'Alcaldia va ser responsable de la ponència de Joventut, Solidaritat i Cooperació i tinenta d'alcalde coordinadora de les ponències de l'Àrea de Serveis a la Persona.",
+        "Des de desembre de 2012 fins a juny de 2015 va ser Diputada en el Parlament de Catalunya, exercint de portaveu de la Comissió de Control de l'actuació de la Corporació Catalana de Mitjans Audiovisuals (CCMA) del Parlament de Catalunya.",
+        "Des del 13 de juliol de 2023 fins al 2024 ostentà les responsabilitats de presidenta i portaveu del grup. PSC-CP i diputada adjunta a la Presidència, delegada de Relacions Internacionals, Agenda 2030, Agendes Urbanes i Innovació de Polítiques Públiques, de la Diputació de Barcelona.",
+        "Actualment, portaveu i responsable de l'àrea de Seguretat i Convivència de l'Executiva Nacional del Partit dels Socialistes."
+      ]
     },
     {
       "nom": "Jaume Duch i Guillot",
       "carrec": "Conseller d'Unió Europea i Acció Exterior",
       "departament": "Departament d'Unió Europea i Acció Exterior",
       "nom_oficial": "DUCH GUILLOT, JAUME",
-      "carrec_oficial": "CONSELLER/A D'UNIÓ EUROPEA I ACCIÓ EXTERIOR"
+      "carrec_oficial": "CONSELLER/A D'UNIÓ EUROPEA I ACCIÓ EXTERIOR",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/11/09/1cf19547-94dc-4bd9-9ce1-0025ff127c24.jpg",
+      "cv": [
+        "Nascut a Barcelona el 1962, Jaume Duch i Guillot és llicenciat en Dret per la Universitat de Barcelona. Ha dedicat pràcticament tota la seva trajectòria professional a les institucions europees.",
+        "Advocat, professor universitari i periodista, ha ocupat, entre d'altres, els càrrecs de director general de Comunicació i de portaveu del Parlament Europeu. Funcionari de la Unió Europea des del 1990, va ser el número u de la seva promoció.",
+        "Des del 2017 fins al seu nomenament com a conseller, ha estat director general de Comunicació del Parlament Europeu. Del 2008 al 2017 va ser director de mitjans, i des del 2006, portaveu de la institució.",
+        "També va ser cap de la sala de premsa i cap de Programació de la Direcció General de Comunicació del Parlament Europeu (2000-2006) i portaveu i conseller del Gabinet del President del Parlament Europeu en l'època de José María Gil-Robles (1997 i 1999), amb responsabilitats en matèria de comunicació, intervencions públiques i visites oficials.",
+        "Així mateix, va ser responsable d'informació i comunicació del grup de treball parlamentari de la convenció encarregada de redactar el projecte de Constitució europea (2002-2003) i de la convenció que va preparar la Carta dels drets fonamentals de la Unió Europa (1999-2000).",
+        "Entre 1986 i 1990 va ser professor associat de Dret Internacional Públic a la Facultat de Dret de la Universitat de Barcelona i coordinador del Seminari d'institucions i polítiques comunitàries.",
+        "Ha publicat articles i comunicacions, entre altres treballs, i ha participat en jornades, conferències i seminaris sobre les institucions de la Unió Europea, el dret comunitari i la comunicació europea.",
+        "Ha rebut diversos premis i reconeixements per la seva tasca com a portaveu.",
+        "És membre del Consell de la Fundació Jean Monnet per Europa, amb seu a Lausana (Suïssa)."
+      ]
     },
     {
       "nom": "Sònia Hernández Almodóvar",
       "carrec": "Consellera de Cultura",
       "departament": "Departament de Cultura",
       "nom_oficial": "HERNANDEZ ALMODOVAR, SONIA",
-      "carrec_oficial": "CONSELLER/A DE CULTURA"
+      "carrec_oficial": "CONSELLER/A DE CULTURA",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/12/00/260c0440-6273-4d46-b9d4-434b2d13720c.jpg",
+      "cv": [
+        "Nascuda a Barcelona l'any 1968, Hernández és llicenciada en Història de l'Art per la Universitat de Barcelona, i té un postgrau en Museus i Educació per la Universitat de Barcelona i un màster en Direcció de Comunicació Empresarial i Institucional por la Universitat Autònoma de Barcelona.",
+        "El març de 2022 va ser nomenada directora general del Patrimoni Cultural i directora de l'Agència Catalana del Patrimoni Cultural. Prèviament, havia estat directora del Museu de les Aigües durant més de vint anys i, des de 2020, directora d'Acció Social d'Aigües de Barcelona. També ha estat responsable d'Exposicions i Activitats del Museu de les Aigües, així com coordinadora de projectes museogràfics a Stoa, Planificació, Comunicació i Presentació del Patrimoni. Hernández també ha treballat com a educadora, dissenyadora i consultora en projectes educatius per a diferents institucions museístiques i patrimonials, com la Fundació \"la Caixa\", el Museu d'Història de Catalunya o el Museu d'Història de Barcelona, i empreses culturals com Ciutar't o Magma Cultura.",
+        "Entre altres càrrecs, ha estat presidenta de l'Asociación de Espacios y Museos Corporativo; tresorera de l'Asociación Española de Museos de la Ciencia y de la Técnica, així com vocal del Comité Internacional para la conservación y defensa del Patrimonio Industrial - Ticchi."
+      ]
     },
     {
       "nom": "Raúl Moreno Montaña",
       "carrec": "Conseller de Drets Socials i Inclusió",
       "departament": "Departament de Drets Socials i Inclusió",
       "nom_oficial": "MORENO MONTAÑA, RAUL",
-      "carrec_oficial": "CONSELLER/A DE DRETS SOCIALS I INCLUSIÓ"
+      "carrec_oficial": "CONSELLER/A DE DRETS SOCIALS I INCLUSIÓ",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2026/07/22/13/59/7195132b-74ad-432f-84d7-462b5ad1e605.png",
+      "cv": [
+        "Nascut a Santa Coloma de Gramenet l'any 1978. Graduat en Educació Social (UOC), amb estudis de geografia, i postgraus en serveis per a la joventut i participació ciutadana en les administracions públiques.",
+        "Ha treballat com a dinamitzador sociocultural i com a educador social en el sector social i en l'empresa privada.",
+        "Quant a la trajectòria institucional, ha estat regidor i tinent d'alcaldia a Santa Coloma de Gramenet fins a 2015. Posteriorment, va ser diputat al Parlament de Catalunya des de l'XI fins a la XV legislatura. Des del 2024 era secretari general del Departament de Drets Socials i Inclusió.",
+        "Com a diputat, ha estat portaveu adjunt del grup parlamentari Socialistes i Units per Avançar, i portaveu de la Comissió de Drets Socials, entre d'altres. Ha participat com a ponent de la Llei de la Renda Garantida de Ciutadania i de la Llei del Tercer Sector Social i impulsor de la Llei de Prevenció de la Pèrdua i el Malbaratament Alimentari i la Llei de la Gent Gran.",
+        "Pel que fa a la trajectòria política, ha sigut primer secretari de la Joventut Socialista de Catalunya, ha format part de l'Executiva Nacional del PSC i ha ocupat diversos càrrecs a Santa Coloma de Gramenet i el Barcelonès. Actualment, és secretari nacional de Polítiques Socials del partit.",
+        "També ha format part del sindicat estudiantil AJEC, i ha presidit dues associacions sense ànim de lucre, JoveColoma i SC media."
+      ]
     },
     {
       "nom": "Ramon Espadaler Parcerisas",
       "carrec": "Conseller de Justícia i Qualitat Democràtica",
       "departament": "Departament de Justícia i Qualitat Democràtica",
       "nom_oficial": "ESPADALER PARCERISAS, RAMON",
-      "carrec_oficial": "CONSELLER/A DE JUSTÍCIA I QUALITAT DEMOCRÀTICA"
+      "carrec_oficial": "CONSELLER/A DE JUSTÍCIA I QUALITAT DEMOCRÀTICA",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/22/09/54/c0ac4e23-b2e8-4b40-8be0-6103391a535f.png",
+      "cv": [
+        "Nascut a Sant Quirze de Besora el 1963. Llicenciat en Geografia i Història per la Universitat de Barcelona. Estudis de Ciències Polítiques i Sociologia a la Universitat Autònoma de Barcelona i Màster en doctrina social de l'Església a la Universitat Pontifícia de Salamanca.",
+        "Secretari general d'Units per Avançar des de 2017. Va militar a Unió Democràtica de Catalunya ( 1989-2015) i ha exercit diverses responsabilitats executives: conseller de Medi Ambient (2001-2003); conseller d'Interior (2012-2015) i director general d'Administració Local (1999-2001), així com parlamentàries. Membre del Consell de Poders Locals i Regionals del Consell d'Europa (2010-2012). Diputat del grup parlamentari Socialistes i Units per Avançar en les legislatures XII, XIII-XIV i XV. En l'àmbit municipal, ha estat tinent d'alcaldia a l'Ajuntament de Sant Quirze de Besora (1991-1999) i tinent d'alcaldia a l'Ajuntament de Vic (1999-2001)."
+      ]
     },
     {
       "nom": "Albert Dalmau Miranda",
       "carrec": "Conseller de la Presidència",
       "departament": "Departament de la Presidència",
       "nom_oficial": "DALMAU MIRANDA, ALBERT",
-      "carrec_oficial": "CONSELLER/A DE LA PRESIDÈNCIA"
+      "carrec_oficial": "CONSELLER/A DE LA PRESIDÈNCIA",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/11/18/7b726820-59ad-4266-af0a-3b6ddc0f68e5.png",
+      "cv": [
+        "Nascut a Barcelona el 1990. Ha estat Gerent Municipal de l'Ajuntament de Barcelona.",
+        "És llicenciat en Ciències Polítiques i de l'Administració, perfil en Relacions Internacionals per la Universitat Pompeu Fabra (2009-2013). També va participar en el programa London and Global Cities, Governance, Planning and Design (2014) a la London School of Economics Executive Summer School.",
+        "Va iniciar la seva experiència professional en l'àmbit privat l'any 2013 a Barcelona Global, una associació privada, independent i sense ànim de lucre, on va assumir les tasques de coordinació de projectes. Gràcies a la seva formació universitària i al seu pas per Barcelona Global, va centrar el seu interès en el paper de les ciutats, les seves àrees metropolitanes i les regions en el desenvolupament econòmic, les relacions internacionals, la col·laboració publico-privada i l'atracció de talent. Aquest interès el portà a incorporar-se a l'àmbit públic l'any 2016, assumint la responsabilitat de Cap de Gabinet de la mà del llavors Segon Tinent d'Alcalde, d'Empresa, Cultura i Innovació de l'Ajuntament de Barcelona, l'Il·lustríssim Sr. Jaume Collboni.",
+        "Aprofitant la reestructuració del govern municipal de l'any 2019, passà a exercir de Gerent d'Economia, Recursos i Promoció Econòmica i posteriorment a encarregar-se de la Gerència Municipal (CEO) de l'Ajuntament de Barcelona l'any 2023.",
+        "En aquesta darrera etapa, cal destacar la seva contribució a la recuperació de les finances municipals afectades pels efectes de la pandèmia, juntament amb la negociació i aprovació dels darrers quatre pressupostos municipals i el retorn a l'equilibri pressupostari, així com l'aprovació del Pla d'Inversions Municipals. Alhora, va impulsar una agenda de transformació i modernització de l'administració, i ha coordinat els esforços per la consecució i organització de la Copa Amèrica a Barcelona, així com el desplegament Barcelona Green Deal, l'agenda urbana i econòmica per revitalitzar noves zones estratègiques de la ciutat."
+      ]
     },
     {
       "nom": "Francesc Xavier Vila i Moreno",
       "carrec": "Conseller de Política Lingüística",
       "departament": "Departament de Política Lingüística",
       "nom_oficial": "VILA MORENO, FRANCESC XAVIER",
-      "carrec_oficial": "CONSELLER/A DE POLÍTICA LINGÜÍSTICA"
+      "carrec_oficial": "CONSELLER/A DE POLÍTICA LINGÜÍSTICA",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2024/08/12/17/19/e01e0dc1-6ef2-4049-b9c2-09f9e4d478c5.jpg",
+      "cv": [
+        "Nascut a Esplugues de Llobregat el 1966, Francesc Xavier Vila és catedràtic de sociolingüística catalana del Departament de Filologia Catalana i Lingüística General de la Universitat de Barcelona. El 2021 va ser nomenat secretari de Política Lingüística, càrrec que va exercir fins al seu nomenament com a conseller.",
+        "Llicenciat en Filologia Catalana per la Universitat de Barcelona (1989) i doctor en Lingüística per la Vrije Universiteit Brussel (1996), ha impartit docència en diverses universitats nacionals i estrangeres. Va ser el director del Màster en Assessorament, Política Lingüística i Serveis Editorials de la Universitat de Barcelona. Des d'abril del 2010 fins al seu nomenament com a Secretari de Política Lingüística va ser director del CUSC, Centre de Recerca en Sociolingüística i Comunicació de la Universitat de Barcelona. També va ser director del Departament de Filologia Catalana i Lingüística General de la mateixa universitat. Anteriorment havia estat el primer director de la Xarxa CRUSCAT (Coneixements, Representacions i Usos del català) de l'Institut d'Estudis Catalans (2004-2009).",
+        "Vila té nombroses publicacions especialitzades en forma de llibres, capítols de llibre i articles en revistes, i també s'ha dedicat a la divulgació científica en forma d'articles a la premsa, conferències i altres activitats. Entre les seves darreres publicacions hi ha, entre d'altres, l'estudi Català, youtubers i instagramers. Un punt de partida per promoure l'ús de la llengua , fet en col·laboració amb Marina Massaguer i Avel·lí Flors i els seus capítols sobre política lingüística en l'educació i sobre demolingüística apareguts al Manual of Catalan Linguistics , editat a Berlín per Joan A. Argenter i Jens Lüdtke el 2020"
+      ]
     },
     {
       "nom": "Núria Montserrat Pulido",
       "carrec": "Consellera de Recerca i Universitats",
       "departament": "Departament de Recerca i Universitats",
       "nom_oficial": "MONTSERRAT PULIDO, NÚRIA",
-      "carrec_oficial": "CONSELLER/A DE RECERCA I UNIVERSITATS"
+      "carrec_oficial": "CONSELLER/A DE RECERCA I UNIVERSITATS",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/11/14/11eea28c-33af-4777-8f73-49bb6dfb0833.jpg",
+      "cv": [
+        "Nascuda a Barcelona el 1978. Professora d'investigació ICREA i líder del grup de Pluripotència per a la Regeneració d'Òrgans de l'Institut de Bioenginyeria de Catalunya (IBEC), Montserrat és coneguda internacionalment pels seus treballs pioners en enginyeria de teixits i medicina regenerativa que han contribuït de manera significativa a l'avenç del coneixement en la regeneració d'òrgans, amb potencials aplicacions en la medicina personalitzada.",
+        "La recerca de la consellera Núria Montserrat ha estat reconeguda en dues ocasions pel prestigiós Consell Europeu de Recerca. Fruit de la seva activitat en la generació de mini òrgans per entendre la formació dels teixits humans i diferents malalties d'origen genètic i sistèmic, ha publicat un centenar de publicacions científiques i ha estat convidada a més de 400 congressos i fòrums científics i socioeconòmics. Així mateix, és coneguda pel seu paper com a divulgadora científica i mentora per a nenes i dones en l'àmbit de la recerca. Per aquest motiu, va ser seleccionada com a Comissionada de la primera Biennal Ciutat i Ciència de Barcelona l'any 2019, i en va ser reelegida per a la segona edició.",
+        "La consellera de Recerca i Universitats ha compaginat la seva trajectòria de recerca científica amb la gestió. Primer, com a adjunta a la direcció del Centre de Medicina Regenerativa de Barcelona i, més recentment, com a adjunta a la direcció en translació clínica a l'IBEC.",
+        "Abans del seu nomenament, la nova consellera de Recerca i Universitats va ser una de les 14 personalitats rellevants del sistema de recerca, universitats i innovació escollides per integrar el Consell per a la Recerca i la Innovació de Catalunya (CORICAT), l'òrgan que assessora el Govern en les grans decisions estratègiques de país sobre ciència i innovació per a la definició de les polítiques públiques de recerca, desenvolupament i innovació (R+D+I). Prèviament, va formar part del Grup Horitzó d'assessorament que va lliurar al Govern, a la primavera del 2023, deu mesures per afavorir el desenvolupament de la recerca i la innovació.",
+        "La consellera Núria Montserrat ha estat reconeguda amb nombrosos premis al llarg de la seva carrera. Destaca especialment el Premi Nacional de Recerca al Talent Jove 2021, atorgat per la Generalitat de Catalunya, que reconeix la seva contribució innovadora en el camp de la bioenginyeria. També va obtenir el Premi Jove Investigador EMBO (2020) de la prestigiosa agència que reuneix alguns dels investigadors de ciències de la vida més brillants del món, de la qual n'és membre. Així mateix, és membre electa de la Reial Acadèmia Europea de Doctors."
+      ]
     },
     {
       "nom": "Olga Pané i Mena",
       "carrec": "Consellera de Salut",
       "departament": "Departament de Salut",
       "nom_oficial": "PANE MENA, OLGA",
-      "carrec_oficial": "CONSELLER/A DE SALUT"
+      "carrec_oficial": "CONSELLER/A DE SALUT",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/11/56/1a0dba30-b431-4aed-bdf2-1887ef0e1ed7.png",
+      "cv": [
+        "Metgessa, especialista en Medicina del Treball. Màster en Gestió de Serveis sanitaris per la UB, i és diplomada per ESADE en gestió d'hospitals, i també en sanitat.",
+        "Fins a l'abril de 2024 ha estat la gerent del Parc de Salut Mar (Hospital del Mar, Hospital de l'Esperança, Hospital d'atenció intermèdia Fòrum i Hospital de Salut Mental Emili Mira, una escola d'FP i una Facultat d'infermeria). També ha estat consellera delegada del Laboratori de referència de Catalunya; consellera delegada d'Imatge Mèdica Intercentres, i presidenta de la Fundació Bonanova (fundació de suport a una escola d'FP en professions sanitàries).",
+        "Anteriorment, en altres càrrecs, ha estat presidenta de la Comissió Acadèmica de l'IS Global; gerent de l'Hospital d'Igualada; directora de la Consultoria del Consorci de Salut i Social de Catalunya, on ha estat consultora de Projectes de reforma sanitària a Amèrica Llatina per al Banc Mundial i el BID. També ha estat gerent de la Fundació Jordi Gol de Recerca en Atenció Primària, i directora de centres d'atenció primària de l'Institut Català de la Salut al Baix Llobregat i a l'Àrea Bàsica de la Roca del Vallès. Encara en el seu vessant com a gestora, ha estat gerent de la Fundació d'Investigació en Atenció Primària Jordi Gol.",
+        "Altres activitats",
+        "Paral·lelament, a la seva activitat professional, durant l'any 2020 va formar part del comitè d'experts per a la transformació del sistema sanitari públic a Catalunya; va ser membre del Patronat de l'Institut Hospital del Mar de recerca (IMIM); membre de la Junta de la Societat Catalana de Gestió Sanitària; presidenta del comitè assessor del Cercle de Salut de Catalunya, i membre de la Comissió Permanent del Consorci de Salut i Social de Catalunya.",
+        "En l'àmbit civil, ha estat membre del Consell Social de la Universitat Pompeu Fabra; membre del Consell d'administració del Consorci de Salut i Social de Catalunya SA ( CSC, SA ) , i membre de la Junta directiva d'OIKIA."
+      ]
     },
     {
       "nom": "Sílvia Paneque i Sureda",
       "carrec": "Consellera de Territori, Habitatge i Transició Ecològica",
       "departament": "Departament de Territori, Habitatge i Transició Ecològica",
       "nom_oficial": "PANEQUE SUREDA, SILVIA",
-      "carrec_oficial": "CONSELLER/A DE TERRITORI, HABITATGE I TRANSICIÓ ECOLÒGICA"
+      "carrec_oficial": "CONSELLER/A DE TERRITORI, HABITATGE I TRANSICIÓ ECOLÒGICA",
+      "retribucio_anual": 130049.1,
+      "foto": "https://govern.cat/govern/docs/2025/01/23/11/58/fcaa5e0f-1701-40ee-9eda-e25f44fb904f.png",
+      "cv": [
+        "Nascuda a Llagostera el 22 de desembre de 1972. És llicenciada en Ciències Químiques per la Universitat de Girona i té un màster en Qualitat i Direcció d'Empreses.",
+        "Des del 2021, és diputada al Parlament de Catalunya, on ha liderat la Comissió d'Acció Climàtica. Ha estat regidora a l'Ajuntament de Girona des del 2011 i fins al nomenament com a consellera del Govern de la Generalitat. Entre el 23 de març de 2016 i el 27 d'octubre de 2017, va ser primera tinenta d'alcaldia i responsable de l'Àrea d'Igualtat, Drets Socials, Treball, Joventut i Seguretat.",
+        "En l'àmbit professional, ha treballat com a química, professora associada i investigadora a la Universitat de Girona. També ha estat directora general de dues empreses del sector dels taps de suro amb exportacions internacionals."
+      ]
     }
   ]
 }

@@ -13,36 +13,43 @@
     {
       "nom": "Grup Parlamentari Socialistes i Units per Avançar",
       "sigla": "GP PSC-Units",
+      "color": "#C70A08",
       "escons": 42
     },
     {
       "nom": "Grup Parlamentari de Junts",
       "sigla": "GP Junts",
+      "color": "#18BEA8",
       "escons": 35
     },
     {
       "nom": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
       "sigla": "GP ERC",
+      "color": "#fdb94d",
       "escons": 20
     },
     {
       "nom": "Grup Parlamentari del Partit Popular de Catalunya",
       "sigla": "GP PPC",
+      "color": "grey",
       "escons": 15
     },
     {
       "nom": "Grup Parlamentari de VOX en Cataluña",
       "sigla": "GP VOX",
+      "color": "#7EC521",
       "escons": 11
     },
     {
       "nom": "Grup Parlamentari Comuns",
       "sigla": "GP Comuns",
+      "color": "#C65777",
       "escons": 6
     },
     {
       "nom": "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra",
       "sigla": "GP CUP-DT",
+      "color": "#FFFC0A",
       "escons": 4,
       "subgrups": [
         {
@@ -54,6 +61,7 @@
     {
       "nom": "Grup Mixt",
       "sigla": "G Mixt",
+      "color": "#0D71BD",
       "escons": 2
     }
   ],
