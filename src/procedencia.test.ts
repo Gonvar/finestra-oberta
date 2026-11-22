@@ -4,7 +4,7 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
-import { getJson, getText, type Fetch } from './comun.ts';
+import { getJson, getText, SourceError, type Fetch } from './comun.ts';
 import {
   DesquadreError,
   genera,
@@ -163,5 +163,68 @@ test('la verificació falla si falta una còpia', async () => {
   const { captures } = await llegeixProcedencia(carpeta);
   await rm(join(carpeta, 'captures', captures[0]!.sha256));
   await assert.rejects(verifica(carpeta, construeix), DesquadreError);
+  await rm(carpeta, { recursive: true });
+});
+
+test('genera torna a provar una font que talla la connexió, i només desa la resposta', async () => {
+  let talls = 1;
+  const fontQueTalla: Fetch = async (input, init) => {
+    if (String(input) === B && talls-- > 0) throw new TypeError('fetch failed');
+    return font(input, init);
+  };
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  await genera(carpeta, fontQueTalla, '2026-11-22', construeix, 0);
+  assert.deepEqual(
+    (await llegeixProcedencia(carpeta)).captures.map((c) => c.url),
+    [A, B],
+  );
+  await verifica(carpeta, construeix);
+  await rm(carpeta, { recursive: true });
+});
+
+test('genera falla si la font no respon després de tres intents', async () => {
+  const fontCaiguda: Fetch = async () => {
+    throw new TypeError('fetch failed');
+  };
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  await assert.rejects(genera(carpeta, fontCaiguda, '2026-11-22', construeix, 0), SourceError);
+  await rm(carpeta, { recursive: true });
+});
+
+test('genera torna a provar un 503 i una resposta tallada a mig cos, i només desa la bona', async () => {
+  const errors: Response[] = [
+    new Response('Ocupat', { status: 503 }),
+    new Response(
+      new ReadableStream({
+        start: (control) => control.error(new TypeError('terminated')),
+      }),
+    ),
+  ];
+  const fontInestable: Fetch = async (input, init) =>
+    String(input) === A && errors.length > 0 ? errors.shift()! : font(input, init);
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  await genera(carpeta, fontInestable, '2026-11-22', construeix, 0);
+  const procedencia = await llegeixProcedencia(carpeta);
+  assert.deepEqual(
+    procedencia.captures.map((c) => [c.url, c.estat]),
+    [
+      [A, 200],
+      [B, 200],
+    ],
+  );
+  await verifica(carpeta, construeix);
+  await rm(carpeta, { recursive: true });
+});
+
+test('genera no torna a provar un 404', async () => {
+  let consultes = 0;
+  const fontSenseA: Fetch = async (input, init) => {
+    if (String(input) !== A) return font(input, init);
+    consultes++;
+    return new Response('No hi és', { status: 404 });
+  };
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  await assert.rejects(genera(carpeta, fontSenseA, '2026-11-22', construeix, 0), /404/);
+  assert.equal(consultes, 1);
   await rm(carpeta, { recursive: true });
 });
