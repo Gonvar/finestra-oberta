@@ -4,8 +4,6 @@ on:
   push:
     branches: [main]
   pull_request:
-  # El workflow de dades la llança a mà perquè les seves pull requests passin les comprovacions.
-  workflow_dispatch:
 
 permissions:
   contents: read

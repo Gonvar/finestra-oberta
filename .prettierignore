@@ -3,3 +3,4 @@ package-lock.json
 web/dist/
 web/.astro/
 web/.wrangler/
+dades/

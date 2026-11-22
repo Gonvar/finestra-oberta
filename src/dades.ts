@@ -1,19 +1,22 @@
-// Regenera dades/govern.json i dades/parlament.json des de les fonts oficials:
-//   node src/dades.ts
-// Primer ho llegeix i ho comprova tot; només escriu si tot quadra. Si una font falla, surt amb un
-// error i deixa els fitxers com estaven, perquè es pugui executar sense ningú al davant.
-import { writeFile } from 'node:fs/promises';
+// Regenera govern.json i parlament.json des de les fonts oficials, amb la còpia de cada resposta:
+//   node src/dades.ts [carpeta]
+// La carpeta és dades/ si no se'n diu cap altra. Primer ho llegeix i ho comprova tot; només escriu
+// si tot quadra. Si una font falla, surt amb un error i deixa la carpeta com estava, perquè es pugui
+// executar sense ningú al davant.
+import { fileURLToPath } from 'node:url';
 import { SourceError } from './comun.ts';
-import { construirGovern, construirParlament } from './institucions.ts';
+import { construirInstitucions } from './institucions.ts';
+import { genera } from './procedencia.ts';
 
+const carpeta = process.argv[2] ?? fileURLToPath(new URL('../dades', import.meta.url));
 const avui = new Date().toISOString().slice(0, 10);
 try {
-  const govern = await construirGovern(fetch);
-  const parlament = await construirParlament(fetch, avui);
-  const desa = (nom: string, dades: unknown) =>
-    writeFile(new URL(`../dades/${nom}`, import.meta.url), `${JSON.stringify(dades, null, 2)}\n`);
-  await desa('govern.json', govern);
-  await desa('parlament.json', parlament);
+  const { 'govern.json': govern, 'parlament.json': parlament } = await genera(
+    carpeta,
+    fetch,
+    avui,
+    construirInstitucions,
+  );
   console.log(
     `Govern: ${govern.consellers.length} consellers (dades del ${govern.data_dades}). ` +
       `Parlament: ${parlament.diputats.length} diputats en ${parlament.grups.length} grups.`,

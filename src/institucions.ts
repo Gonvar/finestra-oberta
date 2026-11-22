@@ -1,5 +1,5 @@
 // Les dades que canvien poc: el Govern i la composició del Parlament. No és un servidor MCP:
-// src/dades.ts les desa en JSON a dades/ perquè la web les pugui mostrar sense consultar les fonts.
+// src/dades.ts les desa en JSON a la branca `dades` perquè la web les pugui mostrar sense consultar les fonts.
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
 import { getJson, getText, SourceError, words, type Fetch } from './comun.ts';
@@ -315,5 +315,13 @@ export async function construirGovern(fetchImpl: Fetch) {
     consellers: consellers
       .map((f) => persona(f))
       .sort((a, b) => a.departament.localeCompare(b.departament, 'ca')),
+  };
+}
+
+/** Tot el que es publica, pel nom del fitxer. El Govern primer: l'ordre de les crides es reprodueix. */
+export async function construirInstitucions(fetchImpl: Fetch, avui: string, pausaMs: number) {
+  return {
+    'govern.json': await construirGovern(fetchImpl),
+    'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
   };
 }
