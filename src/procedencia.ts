@@ -4,7 +4,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import type { Fetch } from './comun.ts';
+import { TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
 
 /**
  * Una resposta d'una font oficial, tal com va arribar. El cos és a captures/<sha256>. `url` és
@@ -65,28 +65,45 @@ const empremta = (cos: Uint8Array) => createHash('sha256').update(cos).digest('h
 
 export const serialitza = (dades: unknown) => `${JSON.stringify(dades, null, 2)}\n`;
 
+const INTENTS = 3;
+
+/** Una connexió tallada o un temps límit vençut: no hi ha resposta sencera de la font. */
+const esTall = (error: unknown) =>
+  error instanceof TypeError ||
+  (error instanceof DOMException && (error.name === 'AbortError' || error.name === 'TimeoutError'));
+
 /**
- * Les fonts oficials de tant en tant tallen una connexió quan s'hi fan desenes de consultes seguides.
- * Només es torna a provar quan no hi ha resposta: una resposta, encara que sigui un error, es desa
- * tal com ha arribat. L'URL va a stderr perquè el registre de la tasca digui quina font ha fallat.
+ * Les fonts oficials de tant en tant tallen una connexió, o responen 429 o 5xx, quan s'hi fan desenes
+ * de consultes seguides. En aquests casos es torna a provar, i només es desa l'última resposta, amb
+ * el cos sencer. L'URL va a stderr perquè el registre de la tasca digui quina font ha fallat.
  */
-async function ambReintents(
+async function consultaAmbReintents(
   fetchImpl: Fetch,
   input: Parameters<Fetch>[0],
   init: RequestInit | undefined,
   pausaMs: number,
 ) {
+  // Una URL mal formada és un error del codi, no de la font: no es torna a provar.
+  new URL(String(input));
   for (let intent = 1; ; intent++) {
     try {
-      // Cada intent té el seu temps límit: el del primer ja pot haver vençut.
-      return await (intent === 1
-        ? fetchImpl(input, init)
-        : fetchImpl(input, { ...init, signal: AbortSignal.timeout(20_000) }));
+      // Cada intent té el seu temps límit, el mateix que comun.ts: el del primer ja pot haver vençut.
+      const resposta = await fetchImpl(input, {
+        ...init,
+        signal: AbortSignal.timeout(TEMPS_LIMIT_MS),
+      });
+      const cos = new Uint8Array(await resposta.arrayBuffer());
+      const transitori = resposta.status === 429 || resposta.status >= 500;
+      if (!transitori || intent === INTENTS) return { resposta, cos };
+      console.error(
+        `${String(input)} ha respost ${resposta.status} (intent ${intent} de ${INTENTS}).`,
+      );
     } catch (error) {
-      console.error(`${String(input)} no ha respost (intent ${intent} de 3).`);
-      if (intent === 3) throw error;
-      await new Promise((resol) => setTimeout(resol, pausaMs * 10 * intent));
+      if (!esTall(error)) throw error;
+      console.error(`${String(input)} no ha respost (intent ${intent} de ${INTENTS}).`);
+      if (intent === INTENTS) throw error;
     }
+    await new Promise((resol) => setTimeout(resol, pausaMs * 10 * intent));
   }
 }
 
@@ -104,8 +121,7 @@ export async function genera<T extends Record<string, unknown>>(
   const captures: Captura[] = [];
   const cossos = new Map<string, Uint8Array>();
   const enregistrat: Fetch = async (input, init) => {
-    const resposta = await ambReintents(fetchImpl, input, init, pausaMs);
-    const cos = new Uint8Array(await resposta.arrayBuffer());
+    const { resposta, cos } = await consultaAmbReintents(fetchImpl, input, init, pausaMs);
     const sha256 = empremta(cos);
     captures.push({
       url: String(input),
