@@ -1,0 +1,19 @@
+{
+  "name": "Finestra Oberta",
+  "short_name": "Finestra Oberta",
+  "lang": "ca",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/icones/192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icones/512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "/icones/mascara-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

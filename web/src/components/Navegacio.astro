@@ -1,4 +1,9 @@
 ---
+import Comparteix from './Comparteix.tsx';
+
+type Props = { url: string; titol: string };
+const { url, titol } = Astro.props;
+
 // El botó de cerca és fora de l'illa de React perquè la barra es pinti sense esperar JavaScript;
 // l'illa del cercador escolta l'esdeveniment que envia.
 ---
@@ -24,8 +29,11 @@
               <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
               <path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
             </svg>
-            Cerca
+            <span class="etiqueta-cerca">Cerca</span>
           </button>
+        </li>
+        <li>
+          <Comparteix client:load url={url} titol={titol} />
         </li>
         <li>
           <a class="codi" href="https://github.com/Gonvar/finestra-oberta">
@@ -137,6 +145,18 @@
 
     /* Al mòbil només hi cap la icona; el text queda per als lectors de pantalla. */
     .etiqueta-codi {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+
+  /* Per sota de 380 px la marca i els tres botons amb text no hi caben en una línia. */
+  @media (max-width: 379px) {
+    .etiqueta-cerca {
       position: absolute;
       width: 1px;
       height: 1px;
