@@ -81,6 +81,7 @@ Node executa el TypeScript directament, sense compilar. Les proves fan servir da
 
 - [CONTRIBUTING.md](CONTRIBUTING.md): com contribuir, com proposar un canvi i com afegir un servidor.
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md): el codi de conducta del projecte.
+- [NEUTRALITAT.md](NEUTRALITAT.md): només fonts oficials, cap dada editada a mà i res que afavoreixi cap partit.
 - [SECURITY.md](SECURITY.md): què fan els servidors amb les dades i com informar d'un problema.
 - [DESIGN.md](DESIGN.md): el sistema de disseny de la web (colors, tipografia, components i to).
 - [AGENTS.md](AGENTS.md): instruccions per als agents d'IA que hi treballen.

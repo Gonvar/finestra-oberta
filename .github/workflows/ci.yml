@@ -14,6 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # El commit de fusió i el seu primer pare, la base: n'hi ha prou per saber què canvia la pull request.
+          fetch-depth: 2
+      # NEUTRALITAT.md §2: les dades les escriu el workflow de dades, mai una pull request.
+      - name: Cap dada escrita a mà
+        if: github.event_name == 'pull_request'
+        run: |
+          dades=$(git diff --name-only --diff-filter=d HEAD^1 HEAD -- dades/)
+          if [ -n "$dades" ]; then
+            for f in $dades; do
+              echo "::error file=$f::Cap pull request no pot canviar dades/: les genera el workflow de dades. Vegeu NEUTRALITAT.md."
+            done
+            exit 1
+          fi
+          for f in $(git diff --name-only HEAD^1 HEAD -- fonts/); do
+            echo "::warning file=$f::És una còpia feta a mà. Abans d'aprovar, cal tornar-la a generar amb el fragment de docs/institucions.md, passar-hi Prettier i comprovar que surt igual, llevat de la data de consulta. Vegeu NEUTRALITAT.md."
+          done
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
