@@ -1,8 +1,8 @@
 // El Govern i el Parlament, tal com els desa src/dades.ts a dades/. Si una persona del Govern no té
 // les dades de transparència, la web no es construeix: val més un error que una fitxa a mitges.
-import govern from '../../../dades/govern.json';
-import parlament from '../../../dades/parlament.json';
-import transparencia from '../../../dades/transparencia.json';
+import govern from '../../../dades/govern.json' with { type: 'json' };
+import parlament from '../../../dades/parlament.json' with { type: 'json' };
+import transparencia from '../../../dades/transparencia.json' with { type: 'json' };
 
 export { govern, parlament, transparencia };
 
