@@ -1,0 +1,447 @@
+var midaEsco = 8; 
+var midaEscoPresident = 11.5;
+
+var separacioLlegenda = 25;
+var altLlegenda = 20;
+var llistaLlegendes = [];
+var llistaEscons = [];
+
+var c = document.getElementById("canvasEscons");
+var cOverlay = document.getElementById("canvasOverlay");
+
+var ctx = c.getContext("2d");
+var ctxOverlay = cOverlay.getContext("2d");
+
+var escoSeleccionat = -1;
+var detallSeleccionat = false;
+
+var posicionsEscons = {};
+
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+function inicialitzarPosicionsEscons() {
+	posicionsEscons["001"] = {x:398, y:450};
+	posicionsEscons["002"] = {x:398, y:430};
+	posicionsEscons["003"] = {x:398, y:410};
+	posicionsEscons["004"] = {x:395, y:390};
+	posicionsEscons["005"] = {x:389, y:370};
+	posicionsEscons["006"] = {x:380, y:350};
+	posicionsEscons["007"] = {x:368, y:331};
+	posicionsEscons["008"] = {x:353, y:315};
+	posicionsEscons["009"] = {x:335, y:300};
+	posicionsEscons["010"] = {x:316, y:289};
+	posicionsEscons["011"] = {x:296, y:281};
+	posicionsEscons["012"] = {x:276, y:276};	            
+	posicionsEscons["013"] = {x:225, y:276};
+	posicionsEscons["014"] = {x:205, y:281};
+	posicionsEscons["015"] = {x:185, y:289};
+	posicionsEscons["016"] = {x:166, y:300};
+	posicionsEscons["017"] = {x:148, y:315};
+	posicionsEscons["018"] = {x:133, y:331};
+	posicionsEscons["019"] = {x:121, y:350};
+	posicionsEscons["020"] = {x:112, y:370};
+	posicionsEscons["021"] = {x:106, y:390};
+	posicionsEscons["022"] = {x:103, y:410};
+	posicionsEscons["023"] = {x:103, y:430};
+	posicionsEscons["024"] = {x:103, y:450};	            
+	posicionsEscons["025"] = {x:429, y:357};
+	posicionsEscons["026"] = {x:420, y:337};
+	posicionsEscons["027"] = {x:410, y:318};
+	posicionsEscons["028"] = {x:397, y:301};
+	posicionsEscons["029"] = {x:383, y:286};
+	posicionsEscons["030"] = {x:368, y:272};
+	posicionsEscons["031"] = {x:351, y:261};
+	posicionsEscons["032"] = {x:333, y:252};
+	posicionsEscons["033"] = {x:314, y:244};
+	posicionsEscons["034"] = {x:295, y:238};
+	posicionsEscons["035"] = {x:275, y:235};	            
+	posicionsEscons["036"] = {x:227, y:235};
+	posicionsEscons["037"] = {x:207, y:238};
+	posicionsEscons["038"] = {x:188, y:244};
+	posicionsEscons["039"] = {x:169, y:252};
+	posicionsEscons["040"] = {x:151, y:261};
+	posicionsEscons["041"] = {x:134, y:272};
+	posicionsEscons["042"] = {x:119, y:286};
+	posicionsEscons["043"] = {x:105, y:301};
+	posicionsEscons["044"] = {x:92,  y:318};
+	posicionsEscons["045"] = {x:82,  y:337};
+	posicionsEscons["046"] = {x:73,  y:357};	            
+	posicionsEscons["047"] = {x:470, y:359};
+	posicionsEscons["048"] = {x:463, y:339};
+	posicionsEscons["049"] = {x:455, y:320};	            
+	posicionsEscons["050"] = {x:390, y:240};
+	posicionsEscons["051"] = {x:373, y:227};
+	posicionsEscons["052"] = {x:353, y:217};
+	posicionsEscons["053"] = {x:334, y:208};
+	posicionsEscons["054"] = {x:314, y:201};
+	posicionsEscons["055"] = {x:294, y:196};
+	posicionsEscons["056"] = {x:274, y:193};	            
+	posicionsEscons["057"] = {x:227, y:193};
+	posicionsEscons["058"] = {x:206, y:196};
+	posicionsEscons["059"] = {x:186, y:201};
+	posicionsEscons["060"] = {x:167, y:208};
+	posicionsEscons["061"] = {x:148, y:217};
+	posicionsEscons["062"] = {x:129, y:227};
+	posicionsEscons["063"] = {x:112, y:240};	            
+	posicionsEscons["064"] = {x:45,  y:320};
+	posicionsEscons["065"] = {x:36,  y:339};
+	posicionsEscons["066"] = {x:29,  y:359};	            
+	posicionsEscons["067"] = {x:428, y:221};
+	posicionsEscons["068"] = {x:413, y:207};
+	posicionsEscons["069"] = {x:396, y:195};
+	posicionsEscons["070"] = {x:378, y:185};
+	posicionsEscons["071"] = {x:360, y:176};
+	posicionsEscons["072"] = {x:341, y:168};
+	posicionsEscons["073"] = {x:318, y:162};
+	posicionsEscons["074"] = {x:297, y:157};
+	posicionsEscons["075"] = {x:276, y:154};	            
+	posicionsEscons["076"] = {x:226, y:154};
+	posicionsEscons["077"] = {x:204, y:157};
+	posicionsEscons["078"] = {x:183, y:162};
+	posicionsEscons["079"] = {x:162, y:168};
+	posicionsEscons["080"] = {x:141, y:176};
+	posicionsEscons["081"] = {x:123, y:185};
+	posicionsEscons["082"] = {x:105, y:195};
+	posicionsEscons["083"] = {x:88,  y:207};
+	posicionsEscons["084"] = {x:73,  y:221};	            
+	posicionsEscons["085"] = {x:431, y:168};
+	posicionsEscons["086"] = {x:413, y:156};
+	posicionsEscons["087"] = {x:395, y:146};
+	posicionsEscons["088"] = {x:377, y:137};
+	posicionsEscons["089"] = {x:358, y:129};
+	posicionsEscons["090"] = {x:338, y:122};
+	posicionsEscons["091"] = {x:318, y:117};
+	posicionsEscons["092"] = {x:298, y:113};
+	posicionsEscons["093"] = {x:276, y:110};	            
+	posicionsEscons["094"] = {x:224, y:110};
+	posicionsEscons["095"] = {x:202, y:113};
+	posicionsEscons["096"] = {x:182, y:117};
+	posicionsEscons["097"] = {x:162, y:122};
+	posicionsEscons["098"] = {x:142, y:129};
+	posicionsEscons["099"] = {x:123, y:137};
+	posicionsEscons["100"] = {x:105, y:146};
+	posicionsEscons["101"] = {x:87,  y:156};
+	posicionsEscons["102"] = {x:69,  y:168};	            
+	posicionsEscons["103"] = {x:397, y:102};
+	posicionsEscons["104"] = {x:378, y:94};
+	posicionsEscons["105"] = {x:359, y:87};
+	posicionsEscons["106"] = {x:339, y:81};
+	posicionsEscons["107"] = {x:319, y:76};
+	posicionsEscons["108"] = {x:298, y:73};
+	posicionsEscons["109"] = {x:277, y:70};	            
+	posicionsEscons["110"] = {x:224, y:70};
+	posicionsEscons["111"] = {x:203, y:73};
+	posicionsEscons["112"] = {x:182, y:76};
+	posicionsEscons["113"] = {x:162, y:81};
+	posicionsEscons["114"] = {x:142, y:87};
+	posicionsEscons["115"] = {x:123, y:94};
+	posicionsEscons["116"] = {x:104, y:102};	            
+	posicionsEscons["117"] = {x:378, y:48};
+	posicionsEscons["118"] = {x:358, y:42};
+	posicionsEscons["119"] = {x:337, y:36};
+	posicionsEscons["120"] = {x:316, y:32};
+	posicionsEscons["121"] = {x:295, y:29};
+	posicionsEscons["122"] = {x:274, y:27};	            
+	posicionsEscons["123"] = {x:228, y:27};
+	posicionsEscons["124"] = {x:207, y:29};
+	posicionsEscons["125"] = {x:186, y:32};
+	posicionsEscons["126"] = {x:165, y:36};
+	posicionsEscons["127"] = {x:144, y:42};
+	posicionsEscons["128"] = {x:124, y:48};	            
+	posicionsEscons["129"] = {x:340, y:490};
+	posicionsEscons["130"] = {x:310, y:490};
+	posicionsEscons["131"] = {x:280, y:490};
+	posicionsEscons["132"] = {x:250, y:490};
+	posicionsEscons["133"] = {x:220, y:490};
+	posicionsEscons["134"] = {x:190, y:490};
+	posicionsEscons["135"] = {x:160, y:490};
+	
+	posicionsEscons["136"] = {x:355, y:450};
+	posicionsEscons["137"] = {x:355, y:430};
+	posicionsEscons["138"] = {x:355, y:410};
+	posicionsEscons["139"] = {x:350, y:390};
+	posicionsEscons["140"] = {x:341, y:370};
+	posicionsEscons["141"] = {x:328, y:350};
+	posicionsEscons["142"] = {x:312, y:335};
+	posicionsEscons["143"] = {x:293, y:325};
+	posicionsEscons["144"] = {x:274, y:319};
+	
+	posicionsEscons["145"] = {x:228, y:319};
+	posicionsEscons["146"] = {x:208, y:325};
+	posicionsEscons["147"] = {x:188, y:335};
+	posicionsEscons["148"] = {x:172, y:350};
+	posicionsEscons["149"] = {x:159, y:370};
+	posicionsEscons["150"] = {x:150, y:390};
+	posicionsEscons["151"] = {x:145, y:410};
+	posicionsEscons["152"] = {x:145, y:430};	
+	posicionsEscons["153"] = {x:145, y:450};
+}
+
+function renderitzarLlegendes(ctx) {
+    llistaLlegendes.forEach(function(Llegenda) {
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.fillStyle = Llegenda.colorIconaLlegenda;
+        ctx.rect(Llegenda.xLlegenda, Llegenda.yLlegenda, Llegenda.midaIconaLlegenda, Llegenda.midaIconaLlegenda);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.font = "15px Arial";
+        ctx.fillText(Llegenda.nomLlegenda, 550, Llegenda.yLlegenda + 14);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+    });
+}
+
+function renderitzarEscons(ctx) {
+	//Pintem tots els escons com buits
+	for (var numIndex in posicionsEscons){
+		var posicio = posicionsEscons[numIndex];
+		ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.fillStyle = 'white';
+        ctx.arc(posicio.x, posicio.y, midaEsco, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+	}
+	
+	//Pintem els escons plens
+    llistaEscons.forEach(function(esco) {
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.fillStyle = esco.colorEsco;
+        ctx.arc(esco.xEsco, esco.yEsco, esco.midaEsco, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+    });
+}
+
+function afegirEsco(mida, color, num, nomDiputat, titol, subtitol, imatgeUrl, nomGrup, urlFitxa) {
+    var posicio = posicionsEscons[num];
+	var index = -1;	
+	
+    if(posicio != null) {
+      llistaEscons.push({
+        colorEsco: color,
+        midaEsco: mida,
+        xEsco: posicio.x,
+        yEsco: posicio.y,
+        numEsco: num,
+        nomDiputatEsco: nomDiputat,
+        titolEsco: titol,
+        subtitolEsco: subtitol,
+        imatgeUrlEsco: imatgeUrl,
+		nomGrupDiputat: nomGrup,
+		urlFitxaDiputat: urlFitxa
+      });
+    }
+	
+}
+
+function afegirLlegenda(color, nom) {
+    llistaLlegendes.push({
+        nomLlegenda: nom,
+        colorIconaLlegenda: color,
+        midaIconaLlegenda: 15,
+        midaTextLlegenda: 14,
+        xLlegenda: 520,
+        yLlegenda: altLlegenda
+    });
+
+    altLlegenda = altLlegenda + separacioLlegenda;
+}
+
+function calcularMidaImatge(imgAmple, imgAlt, maxAmple, maxAlt) {
+
+    var ratio = [maxAmple / imgAmple, maxAlt / imgAlt];
+    ratio = Math.min(ratio[0], ratio[1]);
+
+    return {
+        ample: imgAmple * ratio,
+        alt: imgAlt * ratio
+    };
+}
+
+function getMousePos(canvas, evt) {
+	var rect = canvas.getBoundingClientRect();
+	return {
+	  x: evt.clientX - rect.left,
+	  y: evt.clientY - rect.top
+	};
+}
+
+function getTouchPos(canvas, evt) {
+  var rect = canvas.getBoundingClientRect();
+  return {
+    x: evt.touches[0].clientX - rect.left,
+    y: evt.touches[0].clientY - rect.top
+  };
+}
+
+function pintaDetallEsco(esco, midaLinia){
+	//Seleccio punt esco
+	ctxOverlay.clearRect(0, 0, 950, 525);
+	ctxOverlay.lineWidth = 0.5;
+	ctxOverlay.beginPath();
+	ctxOverlay.fillStyle = "black";
+	ctxOverlay.arc(esco.xEsco, esco.yEsco, 2, 0, 2 * Math.PI);
+	ctxOverlay.closePath();
+	ctxOverlay.stroke(); 
+	ctxOverlay.fill();
+
+	//Detall esco
+	ctxOverlay.lineWidth = midaLinia;
+	ctxOverlay.beginPath();
+	ctxOverlay.fillStyle = "Transparent";
+	//ctxOverlay.rect(430, 400, 500, 100);
+	ctxOverlay.rect(500, 420, 440, 90);
+	ctxOverlay.closePath();
+	ctxOverlay.stroke();
+	ctxOverlay.fill();
+
+	//Dades esco
+	ctxOverlay.beginPath();
+	ctxOverlay.fillStyle = "black";
+	ctxOverlay.font = "12px Arial";
+	//ctxOverlay.fillText(esco.numEsco, 515, 450);
+	ctxOverlay.fillText(esco.nomDiputatEsco, 515, 460);
+	ctxOverlay.fillText(esco.titolEsco, 515, 480);
+	ctxOverlay.fillText(esco.subtitolEsco, 515, 440);
+	ctxOverlay.fillText(esco.nomGrupDiputat, 515, 500);
+	ctxOverlay.closePath();
+	ctxOverlay.stroke();
+	ctxOverlay.fill(); 
+
+	var imgDiputat = new window.Image();
+	imgDiputat.addEventListener("load", function() {
+		var midaImatge = calcularMidaImatge(imgDiputat.width, imgDiputat.height, 110, 110);
+		ctxOverlay.drawImage(imgDiputat, 820, 295, midaImatge.ample, midaImatge.alt);
+
+	});
+	imgDiputat.setAttribute("src", esco.imatgeUrlEsco);
+	
+}
+
+function resaltaEscoCoord(x, y) {
+	llistaEscons.forEach(function(esco) {
+		var mouseDinsDetall = y > 400 && y < 500 && x > 430 && x < 830;
+		var mouseDinsEsco = y > esco.yEsco - esco.midaEsco && y < esco.yEsco + esco.midaEsco && x > esco.xEsco - esco.midaEsco && x < esco.xEsco + esco.midaEsco;
+		
+		if(escoSeleccionat == esco.numEsco){
+			if (mouseDinsDetall) {						
+				if(!detallSeleccionat){ //Resaltem la finestra de detall
+					pintaDetallEsco(esco, 2);
+					detallSeleccionat = true;
+					document.body.style.cursor = 'pointer';
+				}
+			}else if (detallSeleccionat){ //Deixem de resaltar la finestra de detall
+				pintaDetallEsco(esco, 0.3);
+				detallSeleccionat = false;
+				document.body.style.cursor = 'auto';
+			}else if (mouseDinsEsco){ //Ens mantenim dins del esco seleccionat
+				document.body.style.cursor = 'pointer';
+			}else{ //Deixem de estar dins del esco seleccionat i de la vista de detall
+				document.body.style.cursor = 'auto';
+			}					
+		} else if (mouseDinsEsco) { //Canviem el esco seleccionat actualment			
+			document.body.style.cursor = 'pointer';
+			escoSeleccionat = esco.numEsco;
+			pintaDetallEsco(esco, 0.3);
+		}
+	});	
+}
+
+function inicialitzar() {
+    var img = new window.Image();
+    img.addEventListener("load", function() {
+        ctx.drawImage(img, 10, 10);
+        renderitzarLlegendes(ctx);
+        renderitzarEscons(ctx);
+    });
+	
+    img.setAttribute("src", "/imatges/hemicicle_separadors.png");
+
+    cOverlay.addEventListener('mousemove',
+        function(event) {
+			var mousePos = getMousePos(cOverlay, event);
+            var x = mousePos.x,
+                y = mousePos.y;			
+			resaltaEscoCoord(x, y);
+        }, false);
+	cOverlay.addEventListener('touchmove',
+        function(event) {
+			var mousePos = getTouchPos(cOverlay, event);
+            var x = mousePos.x,
+                y = mousePos.y;			
+			resaltaEscoCoord(x, y);
+        }, false);
+	cOverlay.addEventListener('touchdown',
+        function(event) {
+			var mousePos = getTouchPos(cOverlay, event);
+            var x = mousePos.x,
+                y = mousePos.y;			
+			resaltaEscoCoord(x, y);
+        }, false);	
+		
+	cOverlay.addEventListener('mousedown',
+
+        function(event) {
+			var mousePos = getMousePos(cOverlay, event);
+            var x = mousePos.x,
+                y = mousePos.y;
+			
+			//Verificar si fem click sobre el cuadre de dades del diputat
+			if (y > 400 && y < 500 && x > 430 && x < 830) {
+				llistaEscons.forEach(function(esco) {
+					if(esco.numEsco == escoSeleccionat){
+						var win = window.open(esco.urlFitxaDiputat, '_blank');
+						win.focus();
+					}
+				});				
+            }
+			if(!isMobile.any()){
+				//Verificar si fem click en un esco concret 
+				llistaEscons.forEach(function(esco) {
+					if (y > esco.yEsco - esco.midaEsco && y < esco.yEsco + esco.midaEsco && x > esco.xEsco - esco.midaEsco && x < esco.xEsco + esco.midaEsco) {
+						var win = window.open(esco.urlFitxaDiputat, '_blank');
+						win.focus();
+					}
+				});
+			}
+
+        }, false);
+
+}
+
+inicialitzarPosicionsEscons();
+
+
+
+
+   
+

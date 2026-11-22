@@ -1,0 +1,1930 @@
+{
+  "declaracions": {
+    "font": "Dades obertes de Catalunya: Declaracions d'activitats públiques i privades d’alts càrrecs i directius públics de la Generalitat de Catalunya (Secretaria d'Administració i Funció Pública)",
+    "url": "https://analisi.transparenciacatalunya.cat/d/vdss-2ppz",
+    "data_dades": "2026-10-29"
+  },
+  "agenda": {
+    "font": "Dades obertes de Catalunya: Agenda pública amb grups d’interès dels alts càrrecs i personal directiu; subdirectors/es i llocs assimilats de la Generalitat de Catalunya (Direcció General de Govern Obert)",
+    "url": "https://analisi.transparenciacatalunya.cat/d/hd8k-y28e",
+    "data_dades": "2026-11-20"
+  },
+  "viatges": {
+    "font": "Dades obertes de Catalunya: Viatges a l’estranger dels alts càrrecs i personal directiu de la Generalitat de Catalunya (Direcció General de Govern Obert)",
+    "url": "https://analisi.transparenciacatalunya.cat/d/5kte-hque",
+    "data_dades": "2026-11-18"
+  },
+  "nota": "L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva. Qui encara no surt a l’agenda, que es publica per trimestres, no té el camp agenda.",
+  "persones": [
+    {
+      "nom": "Salvador Illa Roca",
+      "nom_oficial": "ILLA ROCA, SALVADOR",
+      "nomenament": "2024-08-10",
+      "activitats": [
+        {
+          "camp": "activitat_sector_public",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible en un altre lloc en el sector públic sense retribució de caràcter fix i periòdic, autoritzada pel govern",
+          "items": [
+            "Exerceix la presidència dels òrgans de govern superior de les següents entitats:",
+            "Consorci del Patronat de la Vall de Núria",
+            "Euroregió Pirineus mediterrània",
+            "Consorci del Gran Teatre del Liceu",
+            "Consorci de la Comunitat de treballs dels Pirineus",
+            "Consorci Casa Àsia",
+            "Patronat Catalunya Món-Consell de Diplomàcia Pública de Catalunya (PCM-DIPLOCAT)",
+            "Consorci Palau de la Música Catalana",
+            "Patronat de la Muntanya de Montserrat",
+            "Consorci de l'Institut Ramon Llull"
+          ]
+        },
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Comissió de Commemoracions",
+            "Consell de direcció del Premi Ramon Margalef d'Ecologia",
+            "Jurat del Premi Internacional de Catalunya",
+            "Consell d'accions exteriors i de Relacions amb la UE",
+            "Consell de les Comunitats Catalanes de l'Exterior",
+            "Patronat de la Fundació Privada Bioregió de Catalunya",
+            "Junta de Seguretat Pública",
+            "Consell Social de la Llengua Catalana",
+            "Junta de Museus de Catalunya",
+            "Junta rectora del Consorci Ramon Llull",
+            "Fundació Ramon Llull",
+            "Fundació Princesa de Girona",
+            "Patronat del Reial Monestir de Santes Creus",
+            "Patronat del Reial Monestir de Poblet",
+            "Patronat del Consorci del Palau de la Música Catalana",
+            "Consell de Discapacitat de Catalunya (CODISCAT)",
+            "Consell General de Fira Internacional de Barcelona",
+            "Observatori Català de la Justícia",
+            "Taula del pacte nacional pels drets de les persones amb discapacitat",
+            "Comissió per a l'elaboració del Pla per a la reactivació econòmica i protecció socials com a conseqüència de la crisi de la COVID-19"
+          ]
+        },
+        {
+          "camp": "carrecs_electius_compatibles",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de càrrecs electius compatibles",
+          "items": [
+            "Diputat del Parlament de Catalunya"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 469,
+        "darrers": [
+          {
+            "data": "2026-09-10",
+            "grup": "Col·legi Oficial de Gestors Administratius de Catalunya",
+            "activitat": "Reunió",
+            "tema": "Reunió amb representants del Col·legi Oficial de Gestors Administratius de Catalunya (COGAC) sobre temes d'interès per l'entitat"
+          },
+          {
+            "data": "2026-09-08",
+            "grup": "Comunitat de Sant'Egidio - CSP",
+            "activitat": "Reunió",
+            "tema": "Reunió amb representants de la Comunitat de Sant'Egidio a Barcelona sobre temes d'interès per la entitat"
+          },
+          {
+            "data": "2026-09-07",
+            "grup": "Adetca",
+            "activitat": "Acte",
+            "tema": "XXV Gala Catalunya Aixeca el Teló 2026-2027, tret de sortida a la temporada teatral a Catalunya, al Gran Teatre del Liceu de Barcelona"
+          },
+          {
+            "data": "2026-08-31",
+            "grup": "Circulo de Directivos de Habla Alemana",
+            "activitat": "Reunió",
+            "tema": "Reunió amb el Cercle de Directius de Parla Alemanya sobre temes d'actualitat i d'interès per les empreses alemanyes implantades a Catalunya"
+          },
+          {
+            "data": "2026-08-29",
+            "grup": "Solaria Promoción y Desarrollo Fotovoltaico, S.L,",
+            "activitat": "Acte",
+            "tema": "Visita institucional i recorregut a peu pel Parc Fotovoltaic d'Alcarràs amb motiu de la seva entrada en funcionament"
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 14,
+        "sense_despeses": 0,
+        "despeses": 618334.11,
+        "darrers": [
+          {
+            "inici": "2026-07-25",
+            "fi": "2026-07-30",
+            "destinacio": "Hanoi (Vietnam)/Da Nang (Vietnam)/Ho Chi Minh City (Vietnam)Hanoi (Singapur)/Da Nang (Singapur)/Ho Chi Minh City (Singapur)",
+            "motiu": "Viatge oficial del President a Vietnam i Singapur del 25 al 30/07/2026",
+            "despeses": 102240.98
+          },
+          {
+            "inici": "2025-11-29",
+            "fi": "2025-12-04",
+            "destinacio": "Ciutat de Mèxic (Mèxic)/Jalisco (Mèxic)/Guadalajara (Mèxic)",
+            "motiu": "Viatge oficial del President als Estats Units de Mèxic del 29/11/2025 al 4/12/2025, amb motiu de diverses reunions institucionals amb el Govern de Mèxic i amb el Govern de l'Estat de Jalisco.",
+            "despeses": 83284.42
+          },
+          {
+            "inici": "2025-10-15",
+            "fi": "2025-10-15",
+            "destinacio": "Londres (Regne Unit)",
+            "motiu": "Viatge institucional del President a Londres el dia 15/10/2025, amb motiu de l'acte a la Fundació Circular Bioeconomy Alliance i d'altres reunions institucionals.",
+            "despeses": 22414.08
+          },
+          {
+            "inici": "2025-09-30",
+            "fi": "2025-10-03",
+            "destinacio": "Roma (Itàlia)",
+            "motiu": "Viatge institucional del President a Roma, amb motiu de l'audiència privada amb Sa Santedat el Papa Lleó XIV, de diverses reunions institucionals, de la conferència del President a la Facultat de Ciències Polítiques de la Università de la Sapienza i de la inauguració de l'exposició del mil·lenari de Montserrat.",
+            "despeses": 33028.28
+          },
+          {
+            "inici": "2025-09-25",
+            "fi": "2025-09-25",
+            "destinacio": "Londres (Regne Unit)",
+            "motiu": "Viatge institucional del President a Londres, amb motiu de la participació en la conferència d'Apple sobre Salut Digital, entrevista amb el The Times i Trobada amb empresaris catalans",
+            "despeses": 18828.31
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Òscar Ordeig i Molist",
+      "nom_oficial": "ORDEIG MOLIST, ÓSCAR",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Consell Rector del Centre de la Propietat Forestal. President Centre i Consell ARP",
+            "Fundació Privada Bioregió de Catalunya (BIOCAT). Patró",
+            "Comissió Interdep. de Prev. de Riscs i danys produïts per les espècies cinegètiques i comis. tècnica. President ARP",
+            "Consell Català de l'Alimentació President ARP",
+            "Comissió Interdepartamental per a la Prevenció i Lluita contra la malaltia de la pesta porcina africana (CIPPA). President ARP",
+            "Consell Assessor de dones del món rural i marítim. President ARP",
+            "Comissió elaboració Pla Reactiv. economia i protecc. Social com a conseqüència Crisi Covid-19 Membre PRE",
+            "Consell català de la cogestió marítima. President ARP",
+            "Comissió Interdepartamental de Governança rural. Vicepresident primer ARP",
+            "Comissió Interdepartamental de la Sequera Representant TER"
+          ]
+        },
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Taula Agrària President ARP",
+            "Grupo de Trabajo español de la Dieta Mediterránea. Vocal representant DACC ESTAT",
+            "Consell Català de la Innovació",
+            "Conferència sectorial de Pesca. Representant Estat",
+            "Conferència sectorial de Agricultura y Desarrollo Rural. Representant Estat",
+            "Conferència sectorial i Comissió sectorial per a l'agenda 2030 Representant Generalitat Catalunya Estat"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Consell d'administració PRODECA. Membre i president ARP 12.11.2024",
+            "Consell d'Administració IRTA President IRTA i Consell Adm. ARP",
+            "Consell Assessor de l'IRTA President ARP",
+            "Consell Assessor de l'INCAVI President ARP",
+            "Consell Rector de l'INCAVI President INCAVI i Consell ARP",
+            "Consorci Centre de Ciència i Tecnologia Forestal de Catalunya (CTFC). President ARP"
+          ]
+        },
+        {
+          "camp": "participacio_organs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de participació en òrgans de direcció o de govern d'empreses o entitats privades en representació de les administracions públiques",
+          "items": [
+            "Fundació Privada per al Desenvolupament de la Dieta Mediterrània Patró Estat",
+            "Fundació Centre Internacional de Cultura de l'Alimentació i Recerca Gastronòmica",
+            "Fundació Alicia Patró nat ARP",
+            "Consell d'Administració de Forest Bioengineering Solutions SA. President Junta General ARP"
+          ]
+        },
+        {
+          "camp": "carrecs_electius_compatibles",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de càrrecs electius compatibles",
+          "items": [
+            "Diputat del Parlament de Catalunya"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 1220,
+        "darrers": [
+          {
+            "data": "2026-11-13",
+            "grup": "Federacio de Cooperatives Agraries de Catalunya",
+            "activitat": "Reunió",
+            "tema": "1.\tPla de xoc de resposta a la crisi agrària provocada per l’augment de costos, la caiguda dels preus, l’emergència climàtica i les crisis sanitàries.\n2.\tEstat de la modificació en tràmit del PEPAC 2023-2027 de l’Estat espanyol."
+          },
+          {
+            "data": "2026-11-13",
+            "grup": "Joves Agricultors i Ramaders de Catalunya-jarc",
+            "activitat": "Reunió",
+            "tema": "1.\tPla de xoc de resposta a la crisi agrària provocada per l’augment de costos, la caiguda dels preus, l’emergència climàtica i les crisis sanitàries.\n2.\tEstat de la modificació en tràmit del PEPAC 2023-2027 de l’Estat espanyol."
+          },
+          {
+            "data": "2026-11-13",
+            "grup": "Unió de Pagesos de Catalunya",
+            "activitat": "Reunió",
+            "tema": "1.\tPla de xoc de resposta a la crisi agrària provocada per l’augment de costos, la caiguda dels preus, l’emergència climàtica i les crisis sanitàries.\n2.\tEstat de la modificació en tràmit del PEPAC 2023-2027 de l’Estat espanyol."
+          },
+          {
+            "data": "2026-11-12",
+            "grup": "Bonarea Agrupa",
+            "activitat": "Acte",
+            "tema": "Participació en la jornada de treball sobre la Llei de l'Alimentació de Catalunya. Per primera vegada, Catalunya es dota d’una llei per al conjunt del seu sistema alimentari, una llei pionera.\n"
+          },
+          {
+            "data": "2026-11-12",
+            "grup": "Frit Ravich SL",
+            "activitat": "Acte",
+            "tema": "Participació en la jornada de treball sobre la Llei de l'Alimentació de Catalunya. Per primera vegada, Catalunya es dota d’una llei per al conjunt del seu sistema alimentari, una llei pionera.\n"
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 12,
+        "sense_despeses": 0,
+        "despeses": 101773.63,
+        "darrers": [
+          {
+            "inici": "2026-09-02",
+            "fi": "2026-09-03",
+            "destinacio": "Brussel·les (Bèlgica)",
+            "motiu": "Viatge institucional a Brussel·les ",
+            "despeses": 3339.75
+          },
+          {
+            "inici": "2026-06-09",
+            "fi": "2026-06-12",
+            "destinacio": "Bolonya (Itàlia)",
+            "motiu": "Viatge institucional a la regió d'Emilia-Romanya (Itàlia) ",
+            "despeses": 8379
+          },
+          {
+            "inici": "2026-05-17",
+            "fi": "2026-05-23",
+            "destinacio": "Ciutat de Mèxic (Mèxic)/Puebla (Mèxic)",
+            "motiu": "Viatge institucional del conseller",
+            "despeses": 18675
+          },
+          {
+            "inici": "2026-03-03",
+            "fi": "2026-03-05",
+            "destinacio": "Brussel·les (Bèlgica)",
+            "motiu": "Viatge institucional",
+            "despeses": 6706
+          },
+          {
+            "inici": "2025-11-04",
+            "fi": "2025-11-05",
+            "destinacio": "Brussels (Bèlgica)",
+            "motiu": "Viatge de treball a Brussel·les ",
+            "despeses": 3934.76
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Alícia Romero Llano",
+      "nom_oficial": "ROMERO LLANO, ALICIA",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Comissió Bilateral Generalitat- Estat. Representant",
+            "Comissió de Govern per al seguiment del conflicte bèl·lic a Ucraïna. Vocal",
+            "Comissió del Centenari de l'Exposició Internacional de 1929. Representant",
+            "Comissió Institucional de Fira de Barcelona. Vocal. Presidenta suplent",
+            "Comissió Interdepartamental de govern per a la Recuperació Econòmica i la Governança dels Fons Next Generation EU. Vicepresidenta",
+            "Comissió Interdepartamental de Recerca i Innovació (CIRI). Vicepresidenta",
+            "Comissió Mixta d'Afers Econòmics i Fiscals Estat-Generalitat. Presidenta",
+            "Comitè Estratègic d'Inversions de la Generalitat de Catalunya. Presidenta",
+            "Conferència Sectorial per a la Millora Regulatòria i el Clima de Negocis. Representant del Ple de la Conferència Sectorial",
+            "Consell Executiu de l'Assegurança Privada. Presidenta",
+            "Consell de Política Fiscal i Financera de les Comunitats Autònomes. Vocal Consell de Polítiques del Joc. Representant",
+            "Consell de Polítiques del Joc. Representant",
+            "Taula de l'aliança de semiconductors i xips de Catalunya (l'aliança). Vicepresidenta primera",
+            "Taula de l'Estratègia per una Societat Longeva i una Vida Plena. Vocal",
+            "Taula del Pacte Nacional per la Justícia. Vocal"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Institut d'Estadística de Catalunya. Presidenta del  Consell Rector del Sistema Estadístic de Catalunya",
+            "Institut d'Estadística de Catalunya. Presidenta de la Junta de Govern",
+            "Fira 2000, SA. Presidenta i vocal del Consell d'Administració"
+          ]
+        },
+        {
+          "camp": "participacio_organs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de participació en òrgans de direcció o de govern d'empreses o entitats privades en representació de les administracions públiques",
+          "items": [
+            "Consorci Casa Àsia. Vocal del Consell Rector",
+            "Consorci Intermunicipal de Vilaseca i de Salou. Presidenta de la Junta de Direcció Biocat, la Fundació BioRegió de Catalunya. Patrona nata del Patronat",
+            "Fundació Privada Catalana per a l'Ensenyament de l'Idioma Anglès i l'Educació en Anglès"
+          ]
+        },
+        {
+          "camp": "carrecs_electius_compatibles",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de càrrecs electius compatibles",
+          "items": [
+            "Diputada al Parlament de Catalunya"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 414,
+        "darrers": [
+          {
+            "data": "2026-11-13",
+            "grup": "Col·legi d'Economistes de Catalunya",
+            "activitat": "Acte",
+            "tema": "Assistència de la consellera d'Economia i Finances a l'acte XXXI JORNADA DELS ECONOMISTES:\n“NOU ORDRE GLOBAL: L’ECONOMIA CATALANA EN JOC”"
+          },
+          {
+            "data": "2026-11-09",
+            "grup": "Fundació Institut Català d'Investigació Química (ICIQ)",
+            "activitat": "Acte",
+            "tema": "Assistència de la consellera d'Economia i Finances a l'acte de LLIURAMENT I CLOENDA DE LA 5a EDICIÓ DELS PREMIS BASF-ICIQ"
+          },
+          {
+            "data": "2026-11-09",
+            "grup": "BASF Española S.L.",
+            "activitat": "Acte",
+            "tema": "Assistència de la consellera d'Economia i Finances a l'acte de LLIURAMENT I CLOENDA DE LA 5a EDICIÓ DELS PREMIS BASF-ICIQ"
+          },
+          {
+            "data": "2026-11-06",
+            "grup": "Casa Ametller SL",
+            "activitat": "Acte",
+            "tema": "Visita de la consellera d'Economia i Finances de la Generalitat de Catalunya l’AGROPARC D’AMETLLER ORIGEN"
+          },
+          {
+            "data": "2026-10-17",
+            "grup": "Associació de Dones La Clau",
+            "activitat": "Acte",
+            "tema": "Assistència de la consellera d'Economia i Finances a l'acte XXIV Trobada d’Associacions de dones de la Noguera i dinar posterior."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 0,
+        "sense_despeses": 0,
+        "darrers": []
+      }
+    },
+    {
+      "nom": "Esther Niubó Cidoncha",
+      "nom_oficial": "NIUBO CIDONCHA, ESTHER",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Presidenta del Consorci d'Educació de Barcelona",
+            "Presidenta del Patronat de l'ESMUC (Escola Superior de Música de Catalunya)",
+            "Presidenta del Patronat de la JONC (Jove Orquestra Nacional de Catalunya)"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Vocal del Patronat de la Fundació BCN Formació Professional",
+            "Membre del Patronat Fundació per a la Universitat Oberta de Catalunya (FUOC)",
+            "Membre del Patronat de la Fundació Barcelona Mobile World Capital"
+          ]
+        },
+        {
+          "camp": "participacio_entitats_sense",
+          "tipus": "privada",
+          "apartat": "Activitat privada compatible de participació en entitats sense ànim de lucre",
+          "items": [
+            "Membre del Patronat de la Fundació Rafael Campalans"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 162,
+        "darrers": [
+          {
+            "data": "2026-07-30",
+            "grup": "Fundació El Llindar",
+            "activitat": "Reunió",
+            "tema": "Reunió per tractar temes d'interès comú entre les dues institucions, el Departament i la Fundació El Llindar."
+          },
+          {
+            "data": "2026-07-30",
+            "grup": "Arquebisbat de Tarragona",
+            "activitat": "Reunió",
+            "tema": "Reunió entre el Departament i l'Arquebisbat  per tractar temes d'interès sobre la Religió a les Escoles."
+          },
+          {
+            "data": "2026-07-23",
+            "grup": "Associació Catalana de Psicopedagogia i Orientació",
+            "activitat": "Reunió",
+            "tema": "Reunió per tractar temes d'interès Relacionats amb la Associació Catalana de Psicopedagogia i Orientació"
+          },
+          {
+            "data": "2026-07-23",
+            "grup": "AIEC(Associació d'inspectors d'Educació de Catalunya)",
+            "activitat": "Reunió",
+            "tema": "Reunió per tractar temes d'interès en relació a l'Associació d'Inspectores i Inspectors d'Educació de Catalunya"
+          },
+          {
+            "data": "2026-07-22",
+            "grup": "Innovamat Education, S.L.",
+            "activitat": "Reunió",
+            "tema": "Reunió per tractar temes d'interès de les dues institucions comú sobre les matemàtiques amb Innovamat"
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 0,
+        "sense_despeses": 0,
+        "darrers": []
+      }
+    },
+    {
+      "nom": "Miquel Sàmper i Rodríguez",
+      "nom_oficial": "SAMPER RODRIGUEZ, MIQUEL",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Agència Catalana de Turisme. Consell de direcció. President",
+            "Agència Catalana de Turisme. Consell general de participació. President",
+            "Agència Catalana de Consum (ACC). Consell de direcció. President",
+            "Agència per a la Competitivitat de l'Empresa (ACCIÓ). Consell d'Administració. President",
+            "Consell Assessor de la Generalitat de Catalunya en matèria de Comerç. Consell Assessor. President",
+            "Consell Català de l'empresa. Consell. President",
+            "Consell de les Persones Consumidores de Catalunya. Ple. President",
+            "Consell de Relacions Laborals. Ple. President",
+            "Consell del Diàleg Social. Consell. Membre",
+            "Consell del Treball Autònom de Catalunya. Consell. President",
+            "Consell Superior de la Cooperació. Consell. President",
+            "Consorci de Comerç, Artesania i Moda de Catalunya (CCAM). Consell General. President",
+            "Consorci de la Inspecció de Treball i Seguretat Social de Catalunya. Consell de Govern. President delegat",
+            "Consorci Fira Internacional de Barcelona. Consell General. Vicepresident primer",
+            "Empresa de Promoció i Localització Industrial de Catalunya, SA (Avançsa). Consell d'Administració. President",
+            "Fundació Barcelona Capital Nàutica AC 24. Patronat. Patró",
+            "Fundació Eurecat. Patronat. Membre",
+            "Servei Públic d'Ocupació de Catalunya. Consell de Direcció. President"
+          ]
+        },
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Comissió Consultiva del Programa Catalunya Cústers. Comissió. President",
+            "Comissió de Govern de la Renda Garantida de la Ciutadania. Comissió. President",
+            "Comissió de Govern per al seguiment del conflicte a Ucraïna i els efectes a Catalunya. Comissió de Govern. Vocal",
+            "Comissió Interdepartamental de Recerca i Innovació (CIRI). Comissió. Vicepresident",
+            "Comissió Interdepartamental de Seguiment del Programa Catalunya Emprèn+1 (2021-2023). Comissió Interdepartamental. President",
+            "Comissió Interdepartamental de Turisme. Comissió Interdepartamental. President",
+            "Comissió Interdepartamental per a la Coordinació i la Gestió de les Actuacions Relacionades amb l'Eclipsi Solar Total de l'Any 2026. Comissió. Vocal",
+            "Comissió Interdepartamental per a la Recuperació Econòmica i Governança del Fons Next Generation UE. Comissió Interdepartamental. Vocal",
+            "Comissió per a l'elaboració del Pla per a la reactivació econòmica i protecció social com a conseqüència de la crisi de la COVID-19. Comissió. Membre",
+            "Comissió per a l'elaboració del Pla per a la reactivació econòmica i protecció social com a conseqüència de la crisi de la COVID-19. Comitè tècnic. Vicepresident",
+            "Comissió rectora del Sistema de Formació i Qualificació Professionals. Ple. Membre titular",
+            "Comitè Assessor Catalunya-Next Generation EU (Context CAT-EU). Comitè. Vicepresident",
+            "Consejo Jacobeo. Ple. Representant",
+            "Consorci \"Casa Àsia\". Consell Rector. Representant",
+            "Fundació Barcelona Mobile World Capital Foundation. Patronat. Membre",
+            "Fundació Privada Bioregió de Catalunya (BIOCAT). Patronat. Patró",
+            "Grup de treball per agilitzar els tràmits administratius que afecten les activitats econòmiques amb impacte. Grup de Treball. President",
+            "Organismo Estatal Inspección de Trabajo y Seguridad Social. Consell Rector. Vocal titular",
+            "Taula del Pacte Nacional de Salut Mental de Catalunya. Taula. Vocal",
+            "Taula del Pacte Nacional per la Justícia. Taula. Membre",
+            "Taula estratègica de les estacions de muntanya (TEM). Taula. Membre"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Circuits de Catalunya, SL. Consell d'Administració. President",
+            "Patronat de la Muntanya de Montserrat. Ple. Representant"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 282,
+        "darrers": [
+          {
+            "data": "2026-09-29",
+            "grup": "ACAVe",
+            "activitat": "Acte",
+            "tema": "Participació en la cloenda institucional de XXVI Fòrum Acave, punt de trobada dels principals agents del sector de les agències de viatges"
+          },
+          {
+            "data": "2026-09-16",
+            "grup": "Elian Barcelona S.L.",
+            "activitat": "Acte",
+            "tema": "Visita a la planta de Cofidès Elian Barcelona on s’anuncia l’acord d’inversió estratègica entre Elian i Cofidès per consolidar Barcelona com a enclavament clau referent en sobirania alimentària i producció de proteïna vegetal a Europa. "
+          },
+          {
+            "data": "2026-09-16",
+            "grup": "Taula d'Entitats del Tercer Sector Social de Catalunya",
+            "activitat": "Reunió",
+            "tema": "Trobada entre institució i Confederació per fer seguiment i intercanvi de projectes amb l’objectiu de trobar solucions a temàtiques actuals que es gestionen des del Departament d’Empresa i Treball.\n"
+          },
+          {
+            "data": "2026-09-14",
+            "grup": "AeroS",
+            "activitat": "Reunió",
+            "tema": "Trobada entre institució i empresa per fer seguiment i intercanvi de projectes amb l’objectiu de trobar solucions a temàtiques actuals que es gestionen des del Departament d’Empresa i Treball.\n"
+          },
+          {
+            "data": "2026-09-14",
+            "grup": "AEBALL - Associació Empresarial de L'Hospitalet i Baix Llobregat",
+            "activitat": "Acte",
+            "tema": "Fòrum empresarial del Llobregat promogut per Aeball ( Associació empresarial de l' Hospitalet i Baix Llobregat), reforçant el compromís amb la innovació i la competitivitat empresarial."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 13,
+        "sense_despeses": 0,
+        "despeses": 80931.25,
+        "darrers": [
+          {
+            "inici": "2026-10-08",
+            "fi": "2026-10-09",
+            "destinacio": "Brussel·les (Bèlgica)",
+            "motiu": "Viatge a Brussel·les amb motiu de l'acte organitzat pel Departament, amb Agenda Pública a Brussel·les sobre política industrial",
+            "despeses": 2006.25
+          },
+          {
+            "inici": "2026-10-03",
+            "fi": "2026-10-04",
+            "destinacio": "Antalya (Turquia)",
+            "motiu": "Viatge a Turquia amb motiu de la celebració de l'International Astronautical Congress (IAC) 2026",
+            "despeses": 5474.62
+          },
+          {
+            "inici": "2026-09-08",
+            "fi": "2026-09-09",
+            "destinacio": "Vieille-Toulouse (França)",
+            "motiu": "Viatge a Toulousse amb motiu d'una reunió institucional amb el Govern d'Occitània i l'assistència al sopar amb represetants de la missió d'empreses catalanes del Cluster AEROS",
+            "despeses": 1271.51
+          },
+          {
+            "inici": "2026-07-25",
+            "fi": "2026-07-30",
+            "destinacio": "Casablanca (Marroc, el)/Rabat (Marroc, el)/Tànger (Marroc, el)",
+            "motiu": "Viatge amb agenda institucional i empresarial a Marroc",
+            "despeses": 3696.99
+          },
+          {
+            "inici": "2026-03-26",
+            "fi": "2026-03-27",
+            "destinacio": "Milan (Itàlia)",
+            "motiu": "Viatge oficial amb motiu de diverses trobades tant institucionals com empresarials",
+            "despeses": 3613.66
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Bernardo Álvarez Merino",
+      "nom_oficial": "ALVAREZ MERINO, BERNARDO",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Consell Rector d'INEFC"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 434,
+        "darrers": [
+          {
+            "data": "2026-10-27",
+            "grup": "Althaia Xarxa Assistencial Universitària de Manresa",
+            "activitat": "Reunió",
+            "tema": "Reunió del conseller per l'explicació d'un projecte pioner de col·laboració lligant l'activitat física amb la prescripció mèdica i el benestar de la ciutadania."
+          },
+          {
+            "data": "2026-10-23",
+            "grup": "Volta Ciclista a Catalunya A.E",
+            "activitat": "Reunió",
+            "tema": "Reunió del conseller per tractar diferents temes de la Volta Ciclista a Catalunya."
+          },
+          {
+            "data": "2026-10-09",
+            "grup": "Federació Catalana d'Esports per a Persones amb Discapacitat Intel·lectual -ACELL",
+            "activitat": "Acte",
+            "tema": "Acte d' Inauguració dels Jocs Special Olympics Tarragona 2026 al Tarraco Arena amb desfilada de les delegacions dels clubs i entitats de Catalunya participants als Jocs. Cerimònia inaugural i benvinguda als i les esportistes"
+          },
+          {
+            "data": "2026-09-01",
+            "grup": "Federacio Catalana de Basquetbol",
+            "activitat": "Acte",
+            "tema": "El Conseller del Departament d' Esports, Sr. Berni Álvarez assisteix a l' acte de la Presentació de les LLigues Nacionals Catalanes 2026 AON a l' Antiga Fàbrica Estrella Damm"
+          },
+          {
+            "data": "2026-06-08",
+            "grup": "NSN Cycling Team",
+            "activitat": "Reunió",
+            "tema": "Reunió de l'honorable conseller amb representants de l'equip NSN Cycling Team per tractar temes d'interès per l'entitat."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 6,
+        "sense_despeses": 0,
+        "despeses": 38008.84,
+        "darrers": [
+          {
+            "inici": "2025-10-22",
+            "fi": "2025-10-23",
+            "destinacio": "Paris (França)",
+            "motiu": "Presentació Oficial del Recorregut del Tour de France 2026 ",
+            "despeses": 2356.72
+          },
+          {
+            "inici": "2025-09-23",
+            "fi": "2025-09-28",
+            "destinacio": "New York City (Estats Units, els)",
+            "motiu": "Presentació Ryder Cup Nova York",
+            "despeses": 14691.82
+          },
+          {
+            "inici": "2025-07-27",
+            "fi": "2025-07-28",
+            "destinacio": "Paris (França)",
+            "motiu": "Etapa de Finalització del Tour de França 2025",
+            "despeses": 3190.39
+          },
+          {
+            "inici": "2025-06-14",
+            "fi": "2025-06-15",
+            "destinacio": "Köln (Alemanya)",
+            "motiu": "Truckscout24 EHF Champions League",
+            "despeses": 3941.97
+          },
+          {
+            "inici": "2025-06-11",
+            "fi": "2025-06-12",
+            "destinacio": "Lausanne (Suïssa)",
+            "motiu": "Visita al Comitè Olímpic Internacional",
+            "despeses": 6478.66
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Eva Menor Cantador",
+      "nom_oficial": "MENOR CANTADOR, EVA",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Membre de la Conferencia Sectorial de Igualdad, del Ministerio de Igualdad."
+          ]
+        },
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Presidenta de Comissió Nacional per una Intervenció Coordinada contra les Violències Masclistes (CNVM), del Departament d'Igualtat i Feminisme",
+            "Presidenta del Consell Nacional LGTBI, del Departament d'Igualtat i Feminisme",
+            "Presidenta de la Comissió Interdepartamental per coordinar l'acció transversal de les polítiques per garantir els drets LGTBI, del Departament d'Igualtat i Feminisme",
+            "Presidenta del Consell Assessor de Drets Humans, del Departament  d'Igualtat i Feminisme",
+            "Membre de la Taula pel Pacte Nacional de la Justícia, del Departament de Justícia i Qualitat Democràtica"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Presidenta de la Comissió Interdepartamental per a la Igualtat Efectiva de Dones i Homes (CIIEDH), de l'Institut Català de les Dones",
+            "Presidenta de la Comissió Interdepartamental per a l'Impuls i el Seguiment de l'Estratègia Nacional de Drets Sexuals i Reproductius (CI ENDSIR), de l'Institut Català de les Dones",
+            "Presidenta de la Comissió Interdepartamental per elaborar i fer seguiment del Pla per combatre la pressió estètica (CI Pressió Estètica), de l'Institut Català de les Dones"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 229,
+        "darrers": [
+          {
+            "data": "2026-11-06",
+            "grup": "Comitè Català de Representants de Persones amb Discapacitat - COCARMI",
+            "activitat": "Reunió",
+            "tema": "Presentar institucionalment a l’entitat i compartir les principals prioritats i línies de treball d’aquesta nova etapa com a nou president de l’entitat. "
+          },
+          {
+            "data": "2026-10-30",
+            "grup": "Col·legi Oficial d'Infermeres i Infermers de Barcelona",
+            "activitat": "Reunió",
+            "tema": "Reunió per exposar la possibilitat de treballar conjuntament amb el COIB en el projecte de la Xarxa dels Punts Liles."
+          },
+          {
+            "data": "2026-10-27",
+            "grup": "ASSOCIACIÓ DESENVOLUPAMENT RURAL EN MIRADA DE DONA. FADEMUR CATALUNYA",
+            "activitat": "Acte",
+            "tema": "Intervenció de la Consellera d'IFE en la Trobada Internacional de Dones – «Les mans que sostenen el món» Fademur Catalunya."
+          },
+          {
+            "data": "2026-10-13",
+            "grup": "Federació de la Paràlisi Cerebral i Pluridiscapacitat de Catalunya -FEPCCAT-",
+            "activitat": "Reunió",
+            "tema": "Presentar la nova Junta Directiva, compartir la visió i les prioritats de les entitats que representem i explorar conjuntament possibles línies de col·laboració."
+          },
+          {
+            "data": "2026-10-08",
+            "grup": "Creacion Positiva",
+            "activitat": "Reunió",
+            "tema": "Presentar la seva trajectòria i el treball que desenvolupa en l’àmbit dels drets sexuals i reproductius, els drets humans i l’abordatge de les violències, en el marc del seu 25è aniversari i explorar possibles vies de col·laboració."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 3,
+        "sense_despeses": 0,
+        "despeses": 56136.83,
+        "darrers": [
+          {
+            "inici": "2026-03-08",
+            "fi": "2026-03-13",
+            "destinacio": "Nova York (Estats Units, els)",
+            "motiu": "Assistència i participació a la setantena sessió de la Comissió de la Condició Jurídica i Social de la Dona (CSW), organitzada per l'ONU",
+            "despeses": 30142.58
+          },
+          {
+            "inici": "2025-05-24",
+            "fi": "2025-05-25",
+            "destinacio": "Lisbon (Portugal)",
+            "motiu": "Assistència a la Final UEFA Women’s Champions League",
+            "despeses": 2008.07
+          },
+          {
+            "inici": "2025-03-09",
+            "fi": "2025-03-15",
+            "destinacio": "New York City (Estats Units, els)",
+            "motiu": "Assistència i participació a la 69a Comissió de la Condició Jurídica i Social de la Dona (CSW69), que l'ONU organitza del 10 al 21 de març de 2025. La Hble. Consellera i el seu equip, participen en representació del Departament d'Igualtat i Feminisme (Generalitat de Catalunya).",
+            "despeses": 23986.18
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Núria Parlon i Gil",
+      "nom_oficial": "PARLON GIL, NURIA",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Consell de Direcció de l'Institut de Seguretat Pública de Catalunya. Presidenta",
+            "Junta de Seguretat de Catalunya. Representat Generalitat",
+            "Patronat Muntanya de Montserrat. Vocal Interior",
+            "Comissió de Policia de Catalunya. Presidenta",
+            "Comissió de Protecció Civil de Catalunya. Presidenta",
+            "Consell Assessor d'Espectacles i Activitats Recreatives. Presidenta",
+            "Consell de la Policia-Mossos d'Esquadra. Presidenta",
+            "Comissió Interinstitucional per a La Reinserció Social. Vocal Interior",
+            "Comissió Interdepartamental pera la Millora de la  Seguretat Viària. Presidenta",
+            "Consell de Direcció del Departament d'Interior. Presidenta",
+            "Comissió de Govern per a la Seguretat. Vocal",
+            "Consell Rector De La Xarxa Rescat. Presidenta",
+            "Consell Rector del Centre d'Atenció i Gestió de Trucades d'urgència 112 Catalunya. Presidenta.",
+            "Consell de Seguretat de Catalunya. Presidenta",
+            "Comissió Permanent de Protecció Civil. Presidenta",
+            "Comisión Nacional de Coordinación de La Policia Judicial. Vocal Generalitat"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 52,
+        "darrers": [
+          {
+            "data": "2026-10-15",
+            "grup": "Securitas Seguridad España, S.A.",
+            "activitat": "Reunió",
+            "tema": "Reunió de presentació institucional i visita les instal·lacions de la Central Receptora d’Alarmes (CRA)"
+          },
+          {
+            "data": "2026-10-15",
+            "grup": "Asociación de Directivos de Seguridad Integral, ADSI",
+            "activitat": "Acte",
+            "tema": "Assistència a l'acte de lliurament dels Premis ADSI (Associació de Directius de Seguretat Integral) on la consellera entregarà el Premi a la Trajectòria Professional"
+          },
+          {
+            "data": "2026-09-16",
+            "grup": "el Periódico de Catalunya",
+            "activitat": "Acte",
+            "tema": "Assisteix a l'acte del lliurament del premi Barceloní / Barcelonina de l'any 2026 que organitza El Periódico"
+          },
+          {
+            "data": "2026-09-13",
+            "grup": "Fundacio Privada Oncolliga Girona",
+            "activitat": "Acte",
+            "tema": "Participa a la Cursa Apaguem el càncer! organitzada pels Bombers de Girona i la Fundació Oncolliga Girona"
+          },
+          {
+            "data": "2026-07-10",
+            "grup": "Asociacion Profesional de Compañias Privadas de Servicios de Seguridad",
+            "activitat": "Acte",
+            "tema": "La consellera fa l'acte de cloenda de la 10ª Trobada anual de la Asociación Profesional de Compañías Privadas de Servicios de Seguridad (APROSER) Catalunya. "
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 0,
+        "sense_despeses": 0,
+        "darrers": []
+      }
+    },
+    {
+      "nom": "Jaume Duch i Guillot",
+      "nom_oficial": "DUCH GUILLOT, JAUME",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Consell d'Acció Exterior i de Relacions amb la Unió Europea",
+            "Comissió de Coordinació amb els Ens Locals",
+            "Consell de la Catalunya Exterior"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Consell Rector del Consorci Catalunya Internacional",
+            "Consell d'Administració de l'ACCD",
+            "Consell Rector de Casa Àsia",
+            "Agrupació Europea de Cooperació Territorial Euroregió Pirineus-Mediterrània"
+          ]
+        },
+        {
+          "camp": "participacio_organs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de participació en òrgans de direcció o de govern d'empreses o entitats privades en representació de les administracions públiques",
+          "items": [
+            "Patronat de l'IBEI"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 64,
+        "darrers": [
+          {
+            "data": "2026-09-14",
+            "grup": "Amnistia Internacional Catalunya",
+            "activitat": "Reunió",
+            "tema": "Intercanvi d’informació sobre les línies d’actuació d’Amnistia Internacional de Catalunya i del Govern, en l’àmbit de la cooperació al desenvolupament"
+          },
+          {
+            "data": "2026-09-09",
+            "grup": "Amec - Asociación Multisectorial de Empresas",
+            "activitat": "Reunió",
+            "tema": "Presentar l'entitat i del suport a l'expansió internacional de les empreses mitjançant intel·ligència de mercats, missions empresarials, participació en fires, identificació d'oportunitats de negoci i assessorament per a l'accés a mercats exteriors."
+          },
+          {
+            "data": "2026-07-21",
+            "grup": "Fundació \"\"La Caixa",
+            "activitat": "Reunió",
+            "tema": "Orientar la presentació a Brussel·les del Institut Research, el primer centre dedicat íntegrament a la recerca en immunologia d’Espanya i Portugal i comentar les diferents línies d'actuació social fetes segons el Acord signat el passat 2025"
+          },
+          {
+            "data": "2026-06-01",
+            "grup": "Associació Medcities I/o Medcités",
+            "activitat": "Reunió",
+            "tema": "Presentació com a nom secretari general de MedCities i valoració de les iniciatives en curs i vies de col·laboració entre DUEX i aquesta entitat"
+          },
+          {
+            "data": "2026-05-28",
+            "grup": "Associació CATESCO (Catalonia for Education, Science and Culture Organization)",
+            "activitat": "Reunió",
+            "tema": "Seguiment de les reunions mantingudes amb el DUEX per explorar possibles vies de col·laboració."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 35,
+        "sense_despeses": 0,
+        "despeses": 287138.92,
+        "darrers": [
+          {
+            "inici": "2026-07-10",
+            "fi": "2026-07-13",
+            "destinacio": "Brussel·les (Bèlgica)",
+            "motiu": "Reunions institucionals Brussel·les",
+            "despeses": 1079.16
+          },
+          {
+            "inici": "2026-05-19",
+            "fi": "2026-05-21",
+            "destinacio": "Viena (Àustria)/Krems an der Donau (Àustria)",
+            "motiu": "Participació Fòrum Wachau",
+            "despeses": 8452.26
+          },
+          {
+            "inici": "2026-05-05",
+            "fi": "2026-08-08",
+            "destinacio": "Brussel·les (Bèlgica)Brussel·les (França)",
+            "motiu": "Participació a la comissió COTER i acompanyament MHP Lió",
+            "despeses": 3870.86
+          },
+          {
+            "inici": "2026-03-21",
+            "fi": "2026-03-29",
+            "destinacio": "Pequín (Xina)/Nanjiang (Xina)/Haining (Xina)",
+            "motiu": "Participació Fòrum Boao",
+            "despeses": 40480.58
+          },
+          {
+            "inici": "2026-02-23",
+            "fi": "2026-02-23",
+            "destinacio": "Paris (França)",
+            "motiu": "Reunions bilaterals UNESCO",
+            "despeses": 1177.3
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Sònia Hernández Almodóvar",
+      "nom_oficial": "HERNANDEZ ALMODOVAR, SONIA",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Comissió de Coordinació Generalitat- Església a Catalunya per al Patrimoni Cultural",
+            "Comissió d'Impuls del Pla Nacional de Fotografia",
+            "Comissió Institucional del Sistema d'Equipaments Escènics i Musicals de Catalunya - SPEEM",
+            "Comissió Interdepartamental de govern per a la Recuperació Econòmica i la Governança dels Fons Next Generation EU",
+            "Comissió Interdepartamental per a la reinserció social",
+            "Comissió Tècnica de Política Lingüística",
+            "Conferència Sectorial de Cultura",
+            "Consell Assessor del Patrimoni Cultural Català",
+            "Consell de Biblioteques",
+            "Consell de Direcció del Departament de Cultura",
+            "Consell de l'Etnologia Catalana",
+            "Consell Nacional d'Arqueologia i Paleontologia",
+            "Consell Nacional d'Arxius i Gestió Documental - CNAGD",
+            "Consell Nacional de la Lectura",
+            "Consell per al Foment i la Difusió de l'Obra de Gaudí",
+            "Consell Social de la Cultura de Catalunya",
+            "Consell Social de la Llengua Catalana",
+            "Consell Social de la Llengua de Signes Catalana",
+            "Junta de Museus de Catalunya",
+            "Sistema Públic d'Equipaments d'Arts Visuals de Catalunya",
+            "Taula del Pacte Nacional de Salut Mental de Catalunya",
+            "Consell de la Mancomunitat Cultural",
+            "Centre d'Estudis Catalans de la Universitat París-Sorbonne",
+            "Patronat de l'Arxiu de la Corona d'Aragó",
+            "Patronat del Reial Monestir de Poblet"
+          ]
+        },
+        {
+          "camp": "participacio_organs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de participació en òrgans de direcció o de govern d'empreses o entitats privades en representació de les administracions públiques",
+          "items": [
+            "Fundació del Gran Teatre del Liceu",
+            "Fundació Mediterrània, Fira d'Espectacles d'Arrel Tradicional",
+            "Fundació Antoni Tàpies",
+            "Fundació Gala-Salvador Dalí",
+            "Museu Episcopal de Vic",
+            "Patronat del Monestir de Santa Maria de Ripoll",
+            "Centre Internacional de Música Antiga Fundació Privada",
+            "Fundació Francesc Pujols i Morgades"
+          ]
+        },
+        {
+          "camp": "pertinenca_consells_administracio",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de pertinença a tres o més consells d'administració d'organismes o òrgans de govern d'empreses o entitats",
+          "items": [
+            "Agència Catalana del Patrimoni Cultural",
+            "Biblioteca de Catalunya",
+            "Institució de les Lletres Catalanes - ILC",
+            "Institut Català de les Empreses Culturals - ICEC",
+            "Consorci Institut Ramon Llull - IRLL",
+            "Consorci de l'Auditori i l'Orquestra",
+            "Consorci del Museu de Ciències Naturals de Barcelona",
+            "Consorci del Museu de Lleida Diocesà i Comarcal",
+            "Consorci del Palau de la Música Catalana",
+            "Consorci del Turó de la Seu Vella de Lleida",
+            "Consorci Mercat de les Flors",
+            "Consorci Museu Nacional d'Art de Catalunya - MNAC",
+            "Consorci Museu d'Art Contemporani de Barcelona - MACBA",
+            "Consorci Casa Àsia",
+            "Consorci del Patrimoni Mundial de la Vall de Boí",
+            "Consorci del Besòs",
+            "Consorci del Gran Teatre del Liceu",
+            "Patronat de la Muntanya de Montserrat",
+            "Consorci Organitzador del Fòrum Universal de les Cultures Barcelona 2004",
+            "Fòrum Universal de les Cultures, Barcelona 2004, SA",
+            "Patronat Ramon Llull"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 236,
+        "darrers": [
+          {
+            "data": "2026-09-15",
+            "grup": "Gremi de Cinemes de Catalunya",
+            "activitat": "Reunió",
+            "tema": "Seguiment de les polítiques públiques en el sector del cinema a Catalunya."
+          },
+          {
+            "data": "2026-09-09",
+            "grup": "Proa (productors Audiovisuals Federats)",
+            "activitat": "Reunió",
+            "tema": "Coordinació i seguiment de les polítiques públiques actuals del sector audiovisual."
+          },
+          {
+            "data": "2026-09-09",
+            "grup": "Centre Internacional de Música Antiga, Fundació privada",
+            "activitat": "Reunió",
+            "tema": "Reunió de seguiment de les polítiques públiques en matèria de cultura, en l'àmbit de la promoció musical."
+          },
+          {
+            "data": "2026-07-21",
+            "grup": "Associació de Professionals de la Gestió Cultural de Catalunya",
+            "activitat": "Reunió",
+            "tema": "Presentació institucional de la nova junta de l'entitat. Reforçar vincles i compartir les seves línies de treball."
+          },
+          {
+            "data": "2026-07-14",
+            "grup": "Associacio Escriptors en Llengua Catlana",
+            "activitat": "Reunió",
+            "tema": "Coordinació i seguiment de les polítiques públiques actuals en matèria de cultura de la Generalitat de Catalunya"
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 18,
+        "sense_despeses": 0,
+        "despeses": 139812.92,
+        "darrers": [
+          {
+            "inici": "2026-09-17",
+            "fi": "2026-09-18",
+            "destinacio": "Paris (França)",
+            "motiu": "Inauguració Temporada 2026-2027 de la prestigiosa Comédie Française",
+            "despeses": 6006.89
+          },
+          {
+            "inici": "2026-08-14",
+            "fi": "2026-08-17",
+            "destinacio": "Estocolm (Suècia)",
+            "motiu": "38è Aplec Internacional d'Adifolk - Kulturfestivalen ",
+            "despeses": 10761.73
+          },
+          {
+            "inici": "2026-05-23",
+            "fi": "2026-05-24",
+            "destinacio": "Múnic (Alemanya)",
+            "motiu": "Lliurament Premi Ernst von Siemens Music Foundation",
+            "despeses": 3405.21
+          },
+          {
+            "inici": "2026-05-14",
+            "fi": "2026-05-15",
+            "destinacio": "Cannes-Écluse (França)",
+            "motiu": "Projecció Pel·lícula Nominada Viva d'Aina Clotet i Visita a l'estand Catalan Films",
+            "despeses": 6350.04
+          },
+          {
+            "inici": "2026-05-07",
+            "fi": "2026-05-09",
+            "destinacio": "Venice (Itàlia)",
+            "motiu": "Inauguració Catalonia in Venice a la Biennale d'Art de Venècia",
+            "despeses": 8368.66
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Raúl Moreno Montaña",
+      "nom_oficial": "MORENO MONTAÑA, RAUL",
+      "nomenament": "2026-07-20",
+      "activitats": [
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Comissió Interdepartamental de Suport a les Famílies. Ple. Presidència. Per raó del càrrec",
+            "Observatori català de la Família. Ple. Presidència. Per raó del càrrec",
+            "Consell Rector de l'Institut Català de l'Acolliment i de l'Adopció. Presidència. Per raó del càrrec",
+            "Consorci de Serveis Socials de Barcelona. Consell de Govern. Presidència. Per raó del càrrec",
+            "Comissió Interdepartamental d'Immigració. Ple. Presidència. Per raó del càrrec",
+            "Taula de Ciutadania i Immigració. Ple. Presidència. Per raó del càrrec",
+            "Consorci del Barri de la Mina. Consell de Govern. Presidència/Vicepresidència. Per raó del càrrec",
+            "Consejo del Real Patronato sobre discapacidad. Vocal. Per raó del càrrec",
+            "Observatori dels drets de la infància. Ple. Presidència. Per raó del càrrec",
+            "Consell de la Gent Gran de Catalunya. Ple. Presidència. Per raó del càrrec",
+            "Comissió Interdepartamental de Polítiques de Joventut. Ple. Presidència. Per raó del càrrec",
+            "Comissió Interdepartamental del Pla Integral del Poble Gitano. Presidència. Per raó del càrrec",
+            "Consell Assessor del Poble Gitano. Ple. Presidència. Per raó del càrrec",
+            "Comissió Interdepartamental per a la reinserció social (CIRSO). Ple. Per raó del càrrec",
+            "Consorci de Badalona Sud. Ple. Per raó del càrrec",
+            "Consell General de Serveis Socials. Ple. Presidència. Per raó del càrrec",
+            "Consell de coordinació de Benestar Social. Presidència. Per raó del càrrec",
+            "Consell de l'Associacionisme i el Voluntariat de Catalunya. Ple. Presidència Per raó del càrrec",
+            "Consell Nacional dels Infants i els Adolescents de Catalunya (CNIAC)",
+            "Consejo Territorial de Servicios Sociales y del Sistema para la Autonomia y Atención a la Dependencia",
+            "Taula Nacional de la Infància de Catalunya. Ple. Presidència. Per raó del càrrec",
+            "Patronat de la Fundació TICSALUT. Vicepresidència segona",
+            "Consell de la Discapacitat de Catalunya (CODISCAT). Vicepresidència primera",
+            "Taula d'atenció integral dels menors d'edat estrangers sense referents familiars. Presidència. Per raó del càrrec",
+            "Comissió de Govern de la Renda Garantida de Ciutadania. Presidència. Per raó del càrrec",
+            "Comissió Interdepartamental de Coordinació de l'Acció Transversal de les Polítiques de Foment de l'Associacionisme i el Voluntariat. Presidència. Per raó del càrrec",
+            "Taula del pacte nacional pels drets de les persones amb discapacitat. Vocal. Per raó del càrrec",
+            "Comissió per a l'Elaboració del Pla per a la Reactivació econòmica i protecció social com a conseqüència de la crisi de la COVID-19. Vocal. Per raó del càrrec",
+            "Comissió Delegada de la Comissió Interdepartamental de la Sida de Catalunya. Presidència. Per raó del càrrec",
+            "Comissió Interdepartamental de Govern per a la Recuperació Econòmica i la Governança dels Fons Next Generation EU. Vocal. Per raó del càrrec",
+            "Taula per a la inclusió de joves en situació de vulnerabilitat. Presidència. Per raó del càrrec",
+            "Comisión de Seguimiento del Ingreso Mínimo Vital. Vocal. Per raó del càrrec",
+            "Taula de l'Estratègia per una Societat Longeva i una Vida Plena. Presidència. Per raó del càrrec",
+            "Comissió Interdepartamental de l'Habitatge. Vocal. Per raó del càrrec",
+            "Comitè Interdepartamental de Lluita contra la Pobresa Infantil. Presidència. Per raó del càrrec",
+            "Consorci Casa Àsia. Consell Rector. Vocal. Per raó del càrrec",
+            "Consell de Promoció de l'Accessibilitat. Presidència. Per designació",
+            "Comissió Interdepartamental d'Integració de Prestacions. Presidència. Per raó del càrrec"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 23,
+        "darrers": [
+          {
+            "data": "2026-11-06",
+            "grup": "Fundació Privada Pere Closa per a la formació i la promoció dels gitanos a Catalunya",
+            "activitat": "Reunió",
+            "tema": "Donar a conèixer els projectes que impulsen.Volen exposar una proposta en l'àmbit educatiu, principalment en l'acompanyament i la millora d'oportunitats educatives de població gitana i de persones que viuen en barris amb especial vulnerabilitat"
+          },
+          {
+            "data": "2026-11-04",
+            "grup": "Comissió Catalana d'Ajuda al Refugiat",
+            "activitat": "Reunió",
+            "tema": "Preocupacions i recomanacions sobre la situació humanitària que afronten actualment la ciutat autònoma de Ceuta i les persones que hi viuen. Transmetre les propostes d’accions que podria desplegar la Generalitat en aquest sentit."
+          },
+          {
+            "data": "2026-11-04",
+            "grup": "Associació NOVACT",
+            "activitat": "Reunió",
+            "tema": "Preocupacions i recomanacions sobre la situació humanitària que afronten actualment la ciutat autònoma de Ceuta i les persones que hi viuen. Transmetre les propostes d’accions que podria desplegar la Generalitat en aquest sentit."
+          },
+          {
+            "data": "2026-11-04",
+            "grup": "Oxfam Intermon Fundació Privada",
+            "activitat": "Reunió",
+            "tema": "Preocupacions i recomanacions sobre la situació humanitària que afronten actualment la ciutat autònoma de Ceuta i les persones que hi viuen. Transmetre les propostes d’accions que podria desplegar la Generalitat en aquest sentit."
+          },
+          {
+            "data": "2026-11-04",
+            "grup": "Associació Irídia Centre per la Defensa dels Drets Humans",
+            "activitat": "Reunió",
+            "tema": "Preocupacions i recomanacions sobre la situació humanitària que afronten actualment la ciutat autònoma de Ceuta i les persones que hi viuen. Transmetre les propostes d’accions que podria desplegar la Generalitat en aquest sentit."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 0,
+        "sense_despeses": 0,
+        "darrers": []
+      }
+    },
+    {
+      "nom": "Ramon Espadaler Parcerisas",
+      "nom_oficial": "ESPADALER PARCERISAS, RAMON",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Consell de Direcció",
+            "Observatori de Dret Privat de Catalunya",
+            "Presidència de l'Observatori Català de la Justícia en Violència Masclista",
+            "Presidència del Grup de Treball AG 50 anys de la mort del dictador Francisco Franco",
+            "Consell Interacadèmic de Catalunya"
+          ]
+        },
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Vocal de la Taula per a l'Aplicació del Pacte Nacional de Salut Mental de Catalunya",
+            "Comissió Interinstitucional per a la Reinserció Social (CIRSO)",
+            "Presidència de la Comissió Interdepartamental de Mediació i Resolució Alternativa de Conflictes (ADR)",
+            "Presidència de la Comissió de Codificació de Catalunya",
+            "Comissió de Seguiment i Avaluació de les mesures de contenció de rendes en els contractes d'arrendament d'habitatge",
+            "Comissió Interdepartamental de Govern per a la Recuperació Econòmica i la Governança dels Fons Next Generation EU"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Consell Assessor del Centre d'Iniciatives per a la Reinserció (CIRE)",
+            "Presidència del Consell d'Administració del Centre d'Iniciatives per a la Reinserció (CIRE)",
+            "Presidència del Consell Rector del Centre d'Estudis Jurídics i Formació Especialitzada (CEJFE)",
+            "Presidència del Consell d'Administració del Consorci Memorial dels Espais de la Batalla de l'Ebre (COMEBE)",
+            "Presidència de la Junta de Govern del Memorial Democràtic",
+            "Consell Rector de l'Institut d'Estudis de l'Autogovern"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 206,
+        "darrers": [
+          {
+            "data": "2026-10-24",
+            "grup": "Associacio Catalana En Pro de la Justícia",
+            "activitat": "Acte",
+            "tema": "Celebració del Dia de la Justícia de Pau a Catalunya 2026, a Montserrat, amb lliurament de distincions. Al conseller se li atorga la Gran Creu de la Justícia de Pau, en reconeixement de la seva trajectòria i del seu suport a la justícia de pau."
+          },
+          {
+            "data": "2026-10-23",
+            "grup": "Consell dels Il·lustres Col·legis d'Advocats de Catalunya",
+            "activitat": "Acte",
+            "tema": "Acte de cloenda del IV Congrés de Dret Civil Català, sota el lema \"Més enllà del Codi: del coneixement a la pràctica\", centrat en l'estratègia, el criteri jurídic i les solucions pràctiques per a l'advocacia ctalana."
+          },
+          {
+            "data": "2026-10-23",
+            "grup": "Fòrum de síndics, síndiques, defensors i defensores locals de Catalunya",
+            "activitat": "Acte",
+            "tema": "Participació i lliurament de medalles del conseller a l'acte de Cloenda de l'escola de Tardor del Fòrum de Síndic de Greuges de Catalunya i Celebració dels 25 anys de la Sindicatura de Greuges d'Igualada."
+          },
+          {
+            "data": "2026-10-19",
+            "grup": "Unió General de Treballadors de Catalunya",
+            "activitat": "Reunió",
+            "tema": "Tractar la petició d'UGT Justícia Catalunya perquè s'impulsi el traspàs a la Generalitat de les competències sobre el cos de Lletrats de l'Administració de Justícia (LAJ), amb l'objectiu de reforçar la coherència i l'eficàcia de l'Oficina Judicial."
+          },
+          {
+            "data": "2026-10-15",
+            "grup": "Associació Catalana de Metges Forenses (acmf)",
+            "activitat": "Acte",
+            "tema": "Acte inaugural \"Jornades Catalanes de Medicina Forense\". Es tracta de la XVII edició de les Jornades Catalanes d'Actualització en Medicina Forense. Aquest any coincideix amb el 40è aniversari de l'Associació Catalana de Metges Forenses (1986-2026)"
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 10,
+        "sense_despeses": 0,
+        "despeses": 16402.93,
+        "darrers": [
+          {
+            "inici": "2026-09-04",
+            "fi": "2026-09-05",
+            "destinacio": "Paris (França)",
+            "motiu": "Commemoració del 150è aniversari del naixement de Josep Irla i Bosch en el marc de la Diada Nacional de Catalunya 2026 a Paris",
+            "despeses": 3118.83
+          },
+          {
+            "inici": "2026-02-07",
+            "fi": "2026-02-07",
+            "destinacio": "Maureillas-las-Illas (França)",
+            "motiu": "Commemoració del Dia Nacional de l'Exili i la Deportació",
+            "despeses": 0
+          },
+          {
+            "inici": "2025-10-25",
+            "fi": "2025-10-26",
+            "destinacio": "Marseille (França)",
+            "motiu": "Visita institucional a Marsella",
+            "despeses": 978.71
+          },
+          {
+            "inici": "2025-09-30",
+            "fi": "2025-10-02",
+            "destinacio": "Roma (Itàlia)",
+            "motiu": "Viatge oficial",
+            "despeses": 3432.78
+          },
+          {
+            "inici": "2025-05-04",
+            "fi": "2025-05-05",
+            "destinacio": "Paris (França)",
+            "motiu": "Viatge institucional a París amb motiu del 80è Aniversari de l’Alliberament del Camp de Mauthausen",
+            "despeses": 2722.84
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Albert Dalmau Miranda",
+      "nom_oficial": "DALMAU MIRANDA, ALBERT",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Jurats del Premis Nacionals de Comunicació de la Generalitat de Catalunya"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Consell Català de Municipis Rurals",
+            "Consell d'Administració de l'Agència de Ciberseguretat de Catalunya",
+            "Consell d'Administració del Centre de Telecomunicacions i tecnologies de la Informació (CTTI)",
+            "Consell General del Consorci Administració Oberta de Catalunya (AOC). Comissió executiva",
+            "Consell General del Consorci Administració Oberta de Catalunya (AOC). Consell General",
+            "Consell Rector de l'Escola d'Administració Pública de Catalunya",
+            "Consell Rector de l'Institut d'Estudis de l'Autogovern"
+          ]
+        },
+        {
+          "camp": "participacio_organs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de participació en òrgans de direcció o de govern d'empreses o entitats privades en representació de les administracions públiques",
+          "items": [
+            "Patronat de la Fundació Barcelona Mobile World Capital Foundation",
+            "Patronat de la Fundació Privada I2cat, Internet i Innovació Digital a Catalunya",
+            "Ple del Patronat de la Muntanya de Montserrat"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 125,
+        "darrers": [
+          {
+            "data": "2026-07-29",
+            "grup": "Fundació Privada d'Empresaris FemCAT",
+            "activitat": "Reunió",
+            "tema": "Reunió sobre l'avantprojecte de llei: tràmits urbanístics i ambientals amb l'objectiu de reduir la burocràcia, modificar una quinzena de normes i agilitzar els procediments administratius. "
+          },
+          {
+            "data": "2026-07-10",
+            "grup": "Ppsrc-iese",
+            "activitat": "Reunió",
+            "tema": "Trobada per compartir impressions sobre lideratge i els reptes de futur. Intercanviar idees i explorar possibles vies de col·laboració entre l’àmbit públic"
+          },
+          {
+            "data": "2026-07-07",
+            "grup": "Hipra, S.A.",
+            "activitat": "Reunió",
+            "tema": "La trobada institucional  es va centrar en la col·laboració estratègica entre el sector públic i la indústria farmacèutica catalana."
+          },
+          {
+            "data": "2026-06-26",
+            "grup": "Confederacio d'Organitzacions Empresarials de Lleida - COELL",
+            "activitat": "Reunió",
+            "tema": "Trobada amb el sector industrial i empresarial amb el Ministre d'Indústria i Turisme, Jordi Hereu. Reunió de treball per tractar temes clau del municipi:  van centrar el debat en l'impuls del teixit socioeconòmic de les terres lleidatanes."
+          },
+          {
+            "data": "2026-06-26",
+            "grup": "Bonarea Agrupa",
+            "activitat": "Reunió",
+            "tema": "Recorregut pel Centre Alimentari \"La Closa, presentació de la Fundació bonÀrea: Es van exposar els projectes socials i de l'entorn que promou la corporació i trobada amb la directiva del Grup."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 3,
+        "sense_despeses": 0,
+        "despeses": 16905.58,
+        "darrers": [
+          {
+            "inici": "2026-05-08",
+            "fi": "2026-05-10",
+            "destinacio": "Viena (Àustria)",
+            "motiu": "Viatge institucional a Austria: acte Mauthausen",
+            "despeses": 3561.69
+          },
+          {
+            "inici": "2025-11-12",
+            "fi": "2025-11-13",
+            "destinacio": "Brussel·les (Bèlgica)",
+            "motiu": "Diverses reunions de treball Unió Europea",
+            "despeses": 5638.86
+          },
+          {
+            "inici": "2025-10-26",
+            "fi": "2025-10-28",
+            "destinacio": "Tallinn (Estònia)",
+            "motiu": "Viatge institucional del conseller i comitiva a Estònia",
+            "despeses": 7705.03
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Francesc Xavier Vila i Moreno",
+      "nom_oficial": "VILA MORENO, FRANCESC XAVIER",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "President del Consorci per a la Normalització Lingüística",
+            "President del TERMCAT Centre de Terminologia"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Membre del Consell General de l'ICEC"
+          ]
+        },
+        {
+          "camp": "participacio_ocasional",
+          "tipus": "privada",
+          "apartat": "Activitat privada compatible de participació ocasional en seminaris, cursos, conferències, col·loquis i programes de qualsevol mitjà de comunicació social, sempre que no siguin conseqüència d'una relació de treball o de prestació de serveis",
+          "items": [
+            "Alguna conferència esporàdica en àmbit universitari en tant que catedràtic d'universitat"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 277,
+        "darrers": [
+          {
+            "data": "2026-08-23",
+            "grup": "Fundació Universitat Catalana d'Estiu",
+            "activitat": "Acte",
+            "tema": "Cloenda de la 58a edició de la Universitat Catalana d'Estiu, a Prada, i participació en el lliurament dels Premis Canigó 2026 a La Bressola i a El Punt Avui"
+          },
+          {
+            "data": "2026-07-29",
+            "grup": "Centre Internacional Escarré per a les Minories Ètniques i les Nacions",
+            "activitat": "Acte",
+            "tema": "Cloenda de l'acte de presentació de l'Informe d'usos lingüístics en el tercer sector, elaborat per Farida Boudichat Fortas, per encàrrec del CIEMEN"
+          },
+          {
+            "data": "2026-07-17",
+            "grup": "Institut d'Estudis Catalans",
+            "activitat": "Reunió",
+            "tema": "Trobada amb el president de la Secció Filològica de l'IEC per tractar de l'actualització dels criteris del llenguatge inclusiu, entre altres temes."
+          },
+          {
+            "data": "2026-07-14",
+            "grup": "FUNDACIÓ PIMEC acció social",
+            "activitat": "Reunió",
+            "tema": "Dinar-reunió de treball del Jurat de la 39 edició dels Premis PIMEC, que distingiran les millors iniciatives empresarials desenvolupades a Catalunya durant l’any 2025 en diferents àmbits. "
+          },
+          {
+            "data": "2026-07-09",
+            "grup": "Barcelona Events Musicals, SL",
+            "activitat": "Acte",
+            "tema": "Visita institucional al Festival Cruïlla: rebuda de l'explicació de les novetats de l'edició 2026, passeig pel festival i assistència als concerts de Mishima i d'Alosa."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 1,
+        "sense_despeses": 0,
+        "despeses": 165.4,
+        "darrers": [
+          {
+            "inici": "2025-06-27",
+            "fi": "2025-06-27",
+            "destinacio": "Perpignan (França)",
+            "motiu": "Visita institucional ",
+            "despeses": 165.4
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Núria Montserrat Pulido",
+      "nom_oficial": "MONTSERRAT PULIDO, NÚRIA",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Vocal del Patronat de la Fundació Privada Bioregió de Catalunya",
+            "Presidenta del Patronat de la Fundació Institució dels Centres de Recerca de Catalunya",
+            "Presidenta del Patronat de la Institució Catalana de Recerca i Estudis Avançats",
+            "Presidenta del Patronat del Centre de Regulació Genòmica",
+            "Presidenta del Patronat del Centre Tecnològic de Telecomunicacions de Catalunya",
+            "Presidenta/Vicepresidenta (càrrec rotatori) del Patronat de la Fundació de Recerca Clínica Barcelona - Institut FRCB-IDIBAPS",
+            "Vocal del Patronat de l'Institut de Bioenginyeria de Catalunya",
+            "Presidenta del Patronat de la Fundació Institut Barcelona d'Estudis Internacionals",
+            "Presidenta del Patronat de l'Institut de Ciències Fotòniques",
+            "Presidenta/Vicepresidenta (càrrec rotatori) del Patronat de l'Institut Català d'Investigació Química",
+            "Presidenta del Patronat de l'Institut Català de Nanociència i Nanotecnologia",
+            "Presidenta del Patronat de l'Institut Català de Paleontologia Miquel Crusafont",
+            "Presidenta del Patronat de l'Institut Català de Recerca de l'Aigua",
+            "Vicepresidenta primera  del Patronat de l'Institut Català de Recerca en Patrimoni Cultural",
+            "Vicepresidenta primera del Patronat de l'Institut d'Investigació Biomèdica de Bellvitge",
+            "Presidenta del Patronat de l'Institut d'Investigació Biomèdica de Girona Dr. Josep Trueta",
+            "Vicepresidenta primera del Patronat de l'Institut d'Estudis Espacials de Catalunya",
+            "Vicepresidenta primera de l'Institut d'investigació en Ciències de la Salut Germans Trias i Pujol",
+            "Vicepresidenta segona del Patronat de l'Institut d'Investigació Sanitària Pere Virgili",
+            "Vicepresidenta primera del Patronat de l'Institut d'Investigació contra la Leucèmia Josep Carrera",
+            "Presidenta del Patronat de l'Institut Hospital del Mar d'Investigacions Mèdiques",
+            "Presidenta/Vicepresidenta (càrrec rotatori) del Patronat de l'Institut Català de Paleontologia Humana i Evolució Social",
+            "Vicepresidenta primera del Patronat de l'Institut de Recerca Biomèdica",
+            "Vicepresidenta del Patronat de l'Institut de Recerca Biomèdica de Lleida, Fundació Dr. Pifarré",
+            "Vocal del Patronat de l'Institut de Recerca en Energia de Catalunya",
+            "Vicepresidenta del Patronat de l'Institut de Salut Global Barcelona",
+            "Vocal del Patronat de la Vall d'Hebron Institut de Recerca",
+            "Vocal del Patronat de l'Institut de Ciència i Tecnologia de Barcelona",
+            "Presidenta del Patronat Barcelona School of Economics",
+            "Vicepresidenta primera del Patronat de la Fundació Catalana per a la Recerca i la Innovació",
+            "Vicepresidenta del Patronat de la Fundació Universitària Balmes",
+            "Vocal del Patronat de la Fundació per a la Universitat Oberta de Catalunya",
+            "Vicepresidenta del Consell d'Administració de l'Institut de Recerca i Tecnologia Agroalimentària",
+            "Presidenta del Consell de Govern del Centre de Recerca Matemàtica",
+            "Presidenta del Consell de Direcció de l'Agència de Gestió d'Ajuts Universitaris de Recerca",
+            "Presidenta del Consell de Govern del Consorci de Serveis Universitaris de Catalunya",
+            "Presidenta del Consell de Govern del Centre de Visió per Computador",
+            "Presidenta del Consell de Direcció de l'Institut Català d'Arqueologia Clàssica",
+            "Presidenta del Consell de Govern de l'Institut de Física d'Altes Energies",
+            "Presidenta del Consell Rector i de la Comissió Executiva del Parc de Recerca Biomèdica de Barcelona",
+            "Presidenta/Vicepresidenta (càrrec rotatiu) del Consell Rector del Consorci per a la Construcció, Equipament i Explotació del Laboratori de Llum Sincrotró",
+            "Presidenta/Vicepresidenta/Vocal (càrrec rotatiu) del Consell Rector del Consorci per a l'explotació del Centre Nacional d'Anàlisi Genòmica",
+            "Presidenta del Consell Rector del Centre de Recerca en Economia Internacional"
+          ]
+        },
+        {
+          "camp": "representacio_organs_colegiats",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+          "items": [
+            "Comissió Rectora del Sistema de Formació i Qualificació Professional",
+            "Conferència General de Política Universitària",
+            "Comissió Interdepartamental de Recerca i Innovació",
+            "Programa de Teràpies Avançades i Emergents en Salut de Catalunya"
+          ]
+        },
+        {
+          "camp": "missions_temporals",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de compliment de missions temporals de representació en organitzacions o conferències nacionals i internacionals.",
+          "items": [
+            "Revisora a European Research Council (sense remuneració)"
+          ]
+        },
+        {
+          "camp": "participacio_ocasional",
+          "tipus": "privada",
+          "apartat": "Activitat privada compatible de participació ocasional en seminaris, cursos, conferències, col·loquis i programes de qualsevol mitjà de comunicació social, sempre que no siguin conseqüència d'una relació de treball o de prestació de serveis",
+          "items": [
+            "Totes aquelles relacionades amb l'activitat prèvia com a professora d'investigació ICREA (Societat Europea de Transplantament, Societat Internacional de Cèl·lules Mare-ISSCR; Australiasian Society for Biomaterials and Tissue Engineering; RIKEN BDR-CUSTOM Joint Organoid Symposium, entre d'altres)",
+            "Membre del panell (expert extern avaluador) de la subvenció avançada del Consell Europeu d'Investigació, any 2026, línia LS9: Biotecnologia i Enginyeria de sistemes biològics. Comissió Europea (ERC). Any 2026-2027"
+          ]
+        },
+        {
+          "camp": "produccio_creacio_literaries",
+          "tipus": "privada",
+          "apartat": "Activitat privada compatible de producció i creació literàries, artístiques, científiques o tècniques i col·laboració en les publicacions que se'n derivin",
+          "items": [
+            "Producció en obert de treballs científics relacionades amb l'activitat prèvia com a professora d'investigació ICREA (Nature Biomedical Engineering, Kidney International, Transplant International, entre d'altres)"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 134,
+        "darrers": [
+          {
+            "data": "2026-07-27",
+            "grup": "Fundació Privada Pasqual Maragall Per a la Recerca Sobre l'Alzheimer",
+            "activitat": "Reunió",
+            "tema": "Trobada i explicació dels objectius i projectes de la Fundació Pasqual Maragall (FPM) i visita de les instal·lacions del BarcelonaBeta Brain Research Center (BBRC)"
+          },
+          {
+            "data": "2026-06-29",
+            "grup": "Organización Nacional de Ciegos Españoles (once)",
+            "activitat": "Reunió",
+            "tema": "Reunió institucional amb l'ONCE per intercanviar impressions sobre iniciatives d'accessibilitat, inclusió i divulgació científica adreçades a garantir la participació de totes les persones en el marc de l'eclipsi solar del 12 d'agost del 2026."
+          },
+          {
+            "data": "2026-06-29",
+            "grup": "Fundació \"\"La Caixa",
+            "activitat": "Reunió",
+            "tema": "Reunió per intercanviar impressions i abordar qüestions d’interès compartit en l’àmbit de les competències del Departament."
+          },
+          {
+            "data": "2026-06-25",
+            "grup": "Reial Acadèmia de Ciències i Arts de Barcelona",
+            "activitat": "Acte",
+            "tema": "Participar en la sessió de clausura del curs acadèmic 2025-2026 de la Reial Acadèmia de Ciències i Arts de Barcelona."
+          },
+          {
+            "data": "2026-06-03",
+            "grup": "Grifols Movaco, S.A.",
+            "activitat": "Acte",
+            "tema": "Participació en l’acte de col·locació de la primera pedra de la nova planta de producció de Grifols a Lliçà de Vall."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 6,
+        "sense_despeses": 0,
+        "despeses": 86366.94,
+        "darrers": [
+          {
+            "inici": "2026-01-24",
+            "fi": "2026-01-28",
+            "destinacio": "Tokyo (Japó) / Kyoto (Japó) / Osaka (Japó)",
+            "motiu": "Viatge a TOKYO-KYOTO-OSAKA",
+            "despeses": 18150.14
+          },
+          {
+            "inici": "2025-10-16",
+            "fi": "2025-10-16",
+            "destinacio": "Cernier (Suïssa)",
+            "motiu": "Viatge a Ginebra amb els 2 alumnes en millors nores a les PAU 2024",
+            "despeses": 3161.45
+          },
+          {
+            "inici": "2025-09-30",
+            "fi": "2025-10-06",
+            "destinacio": "Osaka (Japó)",
+            "motiu": "Viatge institucional KYOTO-OSAKA ",
+            "despeses": 33317.48
+          },
+          {
+            "inici": "2025-03-24",
+            "fi": "2025-03-27",
+            "destinacio": "Brussels (Bèlgica)",
+            "motiu": "Viatge a Brussel·les 24 al 27 de març de 2025",
+            "despeses": 5307.03
+          },
+          {
+            "inici": "2025-03-03",
+            "fi": "2025-03-07",
+            "destinacio": "Kobe (Japó)",
+            "motiu": "Viatge a Kobe (Japó)",
+            "despeses": 22038.82
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Olga Pané i Mena",
+      "nom_oficial": "PANE MENA, OLGA",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Consell de Direcció del Servei Català de la Salut. Presidenta                   2. Junta General del Consorci Sanitari de Barcelona. Presidenta                 3. Consell d'Administració de l'Agrupació Europea de Cooperació Territorial de la Cerdanya. Vicepresidenta                                                                     4. Patronat Biocat, Fundació Bioregió de Catalunya. Vicepresidenta 1a       5. Patronat de la Fundació Institut de Bioenginyeria de Catalunya (IBEC). Presidenta                                                                                                      6. Patronat de la Fundació Institut Universitari per a la Recerca a l'Atenció Primària de Salut Jordi Gol i Gurina (IDIAP Jordi Gol i Gurina). Presidenta d'honor                                                                                                           7. Patronat de la Fundació Institut d'Investigació Biomèdica de Bellvitge (IDIBELL). Presidenta                                                                                     8. Patronat de la Fundació Institut d'Investigació Biomèdica de Girona Dr. Josep Trueta (IDIBGI). Presidenta                                                                 9. Patronat de la Fundació Institut d'Investigació en Ciències de la Salut Germans Trias i Pujol (IGTP). Presidenta                                                    10. Patronat de la Fundació Institut d'Investigació Sanitària Pere Virgili (IISPV). Presidenta                                                                                       11. Patronat de la Fundació Institut de Recerca Contra la Leucèmia Josep Carreras. Vicepresidenta 1a                                                                         12. Patronat de la Fundació Institut Hospital del Mar d'Investigacions Mèdiques (IMIM). Presidenta                                                                       13. Patronat de la Fundació Institut de Recerca Biomèdica de Lleida, Fundació Dr. Pifarré (IRBLleida). Presidenta                                               14. Patronat de la Fundació Institut de Recerca Biomèdica (IRB Barcelona). Presidenta                                                                                                    15. Patronat de la Fundació Privada Institut de Recerca de la Sida - Caixa (Irsi Caixa). Presidenta                                                                                 16. Patronat de la Fundació Privada Institut de Salut Global Barcelona. Vocal                                                                                                            17. Patronat de la Fundació Ticsalut. Presidenta                                        18. Patronat de la Fundació Privada Institut d'Investigació Oncològica de la Vall d'Hebron (VHIO). Presidenta                                                                 19. Patronat de la Fundació Hospital Universitari Vall d'Hebron - Institut de Recerca (VHIR). Presidenta                                                                         20. Patronat de la Fundació Institut d'Investigació i Innovació Parc Taulí (I3PT). Presidenta                                                                                        21. Patronat de la Fundació de Recerca Clínic Barcelona - Institut d'Investigacions Biomèdiques August Pi i Sunyer (FRCB- IDIBAPS). Presidenta"
+          ]
+        },
+        {
+          "camp": "administracio_patrimoni",
+          "tipus": "privada",
+          "apartat": "Activitat privada compatible derivada de la simple administració del patrimoni personal o familiar, en empreses o entitats que no subscriuen contractes amb cap administració o entitat del sector públic",
+          "items": [
+            "Societat familiar per lloguer d'un local"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 253,
+        "darrers": [
+          {
+            "data": "2026-05-08",
+            "grup": "Associació Internacional Innohealth Academy",
+            "activitat": "Reunió",
+            "tema": "Reunió amb la Direcció d'\"Innohealth Academy\", per presentar aquesta associació de professionals creada per impulsar la innovació en les organitzacions de l'ecosistema sanitari."
+          },
+          {
+            "data": "2026-04-08",
+            "grup": "ACAF - Associació Catalana d'Afectades i Afectats de Fibromiàlgia i d'altres SSC",
+            "activitat": "Reunió",
+            "tema": "Reunió amb l'Associació Catalana d'Afectades i Afectats de Fibromiàlgia i altres SSC (ACAF), per presentar el Projecte \"Fundació 12 de Maig\" (observatori i laboratori d'idees per a l'estudi i l'atenció de la fibromiàlgia, la SFC i la SQM="
+          },
+          {
+            "data": "2026-04-07",
+            "grup": "Fundació Privada Catalana de l'Hemofília",
+            "activitat": "Reunió",
+            "tema": "Reunió amb la vicepresidenta de l'Associació Catalana d'Hemofília i un vocal del Patronat, per tractar de la celebració del 50è aniversari de l'associació, que tindrà lloc enguany."
+          },
+          {
+            "data": "2026-04-07",
+            "grup": "Consorci de Salut i d'Atenció Social de Catalunya",
+            "activitat": "Reunió",
+            "tema": "Reunió amb el president i el director general del Consorci de Salut i Social de Catalunya, per revisar els documents que han publicat per reivindicar la participació del món local en les reformes del sistema de salut i de serveis socials."
+          },
+          {
+            "data": "2026-03-25",
+            "grup": "Fundació Puigvert",
+            "activitat": "Reunió",
+            "tema": "Reunió amb la presidenta i el director general de la Fundació Puigvert, per tractar temes d'interès de la Fundació."
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 2,
+        "sense_despeses": 0,
+        "despeses": 5746.21,
+        "darrers": [
+          {
+            "inici": "2026-01-08",
+            "fi": "2026-01-09",
+            "destinacio": "Paris (França)",
+            "motiu": "Assistència al Consell d’Administració de l’Agrupació Europea de Cooperació Territorial - Hospital de Cerdanya (AECT-HC)",
+            "despeses": 636.61
+          },
+          {
+            "inici": "2025-10-15",
+            "fi": "2025-10-18",
+            "destinacio": "São Paulo (Brasil)",
+            "motiu": "Ponència Seminari Internacional de Xarxes Regionals d’Atenció a la Salut i Signatura del Memoràndum d’Intencions per a l’Acord de Col·laboració Tècnica en Innovació en la Gestió dels Sistemes de Salut",
+            "despeses": 5109.6
+          }
+        ]
+      }
+    },
+    {
+      "nom": "Sílvia Paneque i Sureda",
+      "nom_oficial": "PANEQUE SUREDA, SILVIA",
+      "nomenament": "2024-08-12",
+      "activitats": [
+        {
+          "camp": "exercici_carrecs",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+          "items": [
+            "Institut Cartogràfic de Catalunya (ICGC). Presidenta",
+            "Incasòl. Presidenta",
+            "Consorci del Centre Internacional de mètodes numèrics a l'Enginyeria (CIMNE). Presidenta",
+            "Autoritat del Transport Metropolità. Àrea de Barcelona (ATM Barcelona). Presidenta",
+            "Consorci del Transport Públic de l'Àrea de Girona (ATM Girona). Presidenta",
+            "Consorci del Transport Públic del Camp de Tarragona (ATM Tarragona). Presidenta",
+            "Consorci del Transport Públic de l'Àrea de Lleida (ATM Lleida). Presidenta",
+            "Consorci per a la Reforma de la Gran Via  a l'Hospitalet de Llobregat. Presidenta",
+            "Consorci de l'Observatori del Paisatge. Presidenta",
+            "Consorci del Parc de l'Espai d'Interès Natural de Gallecs. Presidenta",
+            "Consorci del Parc de l'Espai d'Interès Natural de Gallecs. Presidenta",
+            "Consorci de l'Aeròdrom de la Cerdanya. Presidenta",
+            "IDAPA. Presidenta",
+            "Consorci del Besòs. Presidenta",
+            "IREC - Fundació Institut de Recerca en Energia de Catalunya. Presidenta",
+            "ICAEN - Institut Català de la l'Energia. Presidenta",
+            "ACA - Agència Catalana de l'Aigua. Presidenta",
+            "ARC - Agència de Residus de Catalunya. Presidenta",
+            "SMC - Servei Meteorològic de Catalunya. Presidenta",
+            "Consorci Centre de Ciència i Tecnologia Forestal de Catalunya (CTFC). Presidenta",
+            "Consorci per a la Protecció i la Gestió dels Espais Naturals del Delta del Llobregat. Presidenta",
+            "Comissió Interdepartamental de la Sequera. Presidenta",
+            "Comissió de Territori de Catalunya. Presidenta",
+            "Comissió d'Urbanisme d'Aran. Presidenta",
+            "Comissió Territorial d'Urbanisme de l'Àmbit Metropolità de Barcelona. Presidenta",
+            "Subcomissió d'Urbanisme del Municipi de Barcelona. Presidenta",
+            "Comissió de Coordinació Cartogràfica de Catalunya. Presidenta",
+            "Consell de la Mobilitat. Presidenta",
+            "Consell del Taxi. Presidenta",
+            "Comitè d'Experts per a la reforma de les polítiques d'ordenació territorial i d'urbanisme a Catalunya. Presidenta",
+            "Assemblea Urbana de Catalunya. Presidenta",
+            "Comissió d'Ordenació Territorial Metropolitana de Barcelona. Presidenta",
+            "Consell General de Muntanya. Presidenta",
+            "Comissió Bilateral d'Infraestructures. Presidenta",
+            "Barcelona Sagrera Alta Velocitat, SA. Vicepresidenta",
+            "Consorci Alta Velocitat Barcelona. Vicepresidenta",
+            "Patronat de la Vall de Núria. Vicepresidenta",
+            "Fundació ITEC. Patrona",
+            "Fundació Observatori de l'Ebre. Patrona (Patró en representació de l'Administració de la Generalitat de Catalunya, que n'exerceix la presidència (membre NAT)",
+            "Fundació Barcelona Mobile World Capital Foundation. Presidenta",
+            "Fundació ISGlobal. Patrona"
+          ]
+        },
+        {
+          "camp": "representacio_consells",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+          "items": [
+            "Fundació Observatori de l'Ebre. Comissió Mixta de Transferències Estat-Generalitat"
+          ]
+        },
+        {
+          "camp": "pertinenca_consells_administracio",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de pertinença a tres o més consells d'administració d'organismes o òrgans de govern d'empreses o entitats",
+          "items": [
+            "Incasòl, ATM Barcelona, ICAEN, ACA, SMC, IRTA, Barcelona Sagrera Alta Velocitat...",
+            "Data de l'Acord de Govern: 12/08/2024"
+          ]
+        },
+        {
+          "camp": "carrecs_electius_compatibles",
+          "tipus": "pública",
+          "apartat": "Activitat pública compatible de càrrecs electius compatibles",
+          "items": [
+            "Diputada al Parlament de Catalunya"
+          ]
+        },
+        {
+          "camp": "participacio_entitats_sense",
+          "tipus": "privada",
+          "apartat": "Activitat privada compatible de participació en entitats sense ànim de lucre",
+          "items": [
+            "Càritas",
+            "La Diana",
+            "Sunset Jazz"
+          ]
+        }
+      ],
+      "agenda": {
+        "contactes": 512,
+        "darrers": [
+          {
+            "data": "2026-03-04",
+            "grup": "Plataforma d'usuaris Avant Catalunya",
+            "activitat": "Reunió",
+            "tema": "Reunió, per Teams, informativa i de seguiment sobre la situació de Rodalies amb diferents plataformes d'usuaris de Rodalies i Renfe"
+          },
+          {
+            "data": "2026-03-04",
+            "grup": "Associació per a la Promoció del Transport Públic",
+            "activitat": "Reunió",
+            "tema": "Reunió, per Teams, informativa i de seguiment sobre la situació de Rodalies amb diferents plataformes d'usuaris de Rodalies i Renfe"
+          },
+          {
+            "data": "2026-03-04",
+            "grup": "Plataforma Salvem R2 Nord",
+            "activitat": "Reunió",
+            "tema": "Reunió, per Teams, informativa i de seguiment sobre la situació de Rodalies amb diferents plataformes d'usuaris de Rodalies i Renfe"
+          },
+          {
+            "data": "2026-03-04",
+            "grup": "Grup Perquè no ens fotin el tren",
+            "activitat": "Reunió",
+            "tema": "Reunió, per Teams, informativa i de seguiment sobre la situació de Rodalies amb diferents plataformes d'usuaris de Rodalies i Renfe"
+          },
+          {
+            "data": "2026-01-16",
+            "grup": "Transports Elèctrics Interurbans, SA (teisa)",
+            "activitat": "Reunió",
+            "tema": "Reunió de treball"
+          }
+        ]
+      },
+      "viatges": {
+        "viatges": 0,
+        "sense_despeses": 0,
+        "darrers": []
+      }
+    }
+  ]
+}

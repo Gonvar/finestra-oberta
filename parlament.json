@@ -13,36 +13,43 @@
     {
       "nom": "Grup Parlamentari Socialistes i Units per Avançar",
       "sigla": "GP PSC-Units",
+      "color": "#C70A08",
       "escons": 42
     },
     {
       "nom": "Grup Parlamentari de Junts",
       "sigla": "GP Junts",
+      "color": "#18BEA8",
       "escons": 35
     },
     {
       "nom": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
       "sigla": "GP ERC",
+      "color": "#fdb94d",
       "escons": 20
     },
     {
       "nom": "Grup Parlamentari del Partit Popular de Catalunya",
       "sigla": "GP PPC",
+      "color": "grey",
       "escons": 15
     },
     {
       "nom": "Grup Parlamentari de VOX en Cataluña",
       "sigla": "GP VOX",
+      "color": "#7EC521",
       "escons": 11
     },
     {
       "nom": "Grup Parlamentari Comuns",
       "sigla": "GP Comuns",
+      "color": "#C65777",
       "escons": 6
     },
     {
       "nom": "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra",
       "sigla": "GP CUP-DT",
+      "color": "#FFFC0A",
       "escons": 4,
       "subgrups": [
         {
@@ -54,6 +61,7 @@
     {
       "nom": "Grup Mixt",
       "sigla": "G Mixt",
+      "color": "#0D71BD",
       "escons": 2
     }
   ],
@@ -66,6 +74,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 1,
+      "posicio": {
+        "x": 398,
+        "y": 450
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2545",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799545"
     },
@@ -77,6 +89,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 2,
+      "posicio": {
+        "x": 398,
+        "y": 430
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2546",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799563"
     },
@@ -88,6 +104,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 3,
+      "posicio": {
+        "x": 398,
+        "y": 410
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2539",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799557"
     },
@@ -99,6 +119,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 4,
+      "posicio": {
+        "x": 395,
+        "y": 390
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2541",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798521"
     },
@@ -110,6 +134,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 5,
+      "posicio": {
+        "x": 389,
+        "y": 370
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2232",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799594"
     },
@@ -121,6 +149,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 6,
+      "posicio": {
+        "x": 380,
+        "y": 350
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2548",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799489"
     },
@@ -132,6 +164,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 7,
+      "posicio": {
+        "x": 368,
+        "y": 331
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2125",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793845"
     },
@@ -143,6 +179,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 8,
+      "posicio": {
+        "x": 353,
+        "y": 315
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2334",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798620"
     },
@@ -154,6 +194,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 9,
+      "posicio": {
+        "x": 335,
+        "y": 300
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2040",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793864"
     },
@@ -165,6 +209,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 10,
+      "posicio": {
+        "x": 316,
+        "y": 289
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2233",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799600"
     },
@@ -176,6 +224,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 11,
+      "posicio": {
+        "x": 296,
+        "y": 281
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2036",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799575"
     },
@@ -187,6 +239,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 12,
+      "posicio": {
+        "x": 276,
+        "y": 276
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1176",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799066"
     },
@@ -198,6 +254,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 13,
+      "posicio": {
+        "x": 225,
+        "y": 276
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1602",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=831006"
     },
@@ -209,6 +269,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 14,
+      "posicio": {
+        "x": 205,
+        "y": 281
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2256",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821668"
     },
@@ -220,6 +284,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 15,
+      "posicio": {
+        "x": 185,
+        "y": 289
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2252",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821792"
     },
@@ -231,6 +299,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 16,
+      "posicio": {
+        "x": 166,
+        "y": 300
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2532",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821730"
     },
@@ -242,6 +314,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 17,
+      "posicio": {
+        "x": 148,
+        "y": 315
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2250",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821704"
     },
@@ -253,6 +329,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 18,
+      "posicio": {
+        "x": 133,
+        "y": 331
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2248",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821650"
     },
@@ -264,6 +344,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 19,
+      "posicio": {
+        "x": 121,
+        "y": 350
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1691",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821710"
     },
@@ -275,6 +359,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 20,
+      "posicio": {
+        "x": 112,
+        "y": 370
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2015",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821810"
     },
@@ -286,6 +374,10 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Catalunya en Comú",
       "esco": 21,
+      "posicio": {
+        "x": 106,
+        "y": 390
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2511",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793010"
     },
@@ -297,6 +389,10 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Catalunya en Comú",
       "esco": 22,
+      "posicio": {
+        "x": 103,
+        "y": 410
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2012",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880491"
     },
@@ -308,6 +404,10 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Catalunya en Comú",
       "esco": 23,
+      "posicio": {
+        "x": 103,
+        "y": 430
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1078",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792732"
     },
@@ -319,6 +419,10 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Catalunya en Comú",
       "esco": 24,
+      "posicio": {
+        "x": 103,
+        "y": 450
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1850",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880616"
     },
@@ -330,6 +434,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 25,
+      "posicio": {
+        "x": 429,
+        "y": 357
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2236",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799501"
     },
@@ -341,6 +449,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 26,
+      "posicio": {
+        "x": 420,
+        "y": 337
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2358",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=838374"
     },
@@ -352,6 +464,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 27,
+      "posicio": {
+        "x": 410,
+        "y": 318
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2540",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799328"
     },
@@ -363,6 +479,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 28,
+      "posicio": {
+        "x": 397,
+        "y": 301
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=720",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799469"
     },
@@ -374,6 +494,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 29,
+      "posicio": {
+        "x": 383,
+        "y": 286
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1640",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799539"
     },
@@ -385,6 +509,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 30,
+      "posicio": {
+        "x": 368,
+        "y": 272
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2237",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793839"
     },
@@ -396,6 +524,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 31,
+      "posicio": {
+        "x": 351,
+        "y": 261
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2544",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799526"
     },
@@ -407,6 +539,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 32,
+      "posicio": {
+        "x": 333,
+        "y": 252
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2310",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=794349"
     },
@@ -418,6 +554,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 33,
+      "posicio": {
+        "x": 314,
+        "y": 244
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2231",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799495"
     },
@@ -429,6 +569,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 34,
+      "posicio": {
+        "x": 295,
+        "y": 238
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2538",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799476"
     },
@@ -440,6 +584,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 35,
+      "posicio": {
+        "x": 275,
+        "y": 235
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1573",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=810481"
     },
@@ -451,6 +599,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 36,
+      "posicio": {
+        "x": 227,
+        "y": 235
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2528",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821644"
     },
@@ -462,6 +614,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 37,
+      "posicio": {
+        "x": 207,
+        "y": 238
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2522",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821692"
     },
@@ -473,6 +629,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 38,
+      "posicio": {
+        "x": 188,
+        "y": 244
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2270",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821717"
     },
@@ -484,6 +644,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Units per Avançar",
       "esco": 39,
+      "posicio": {
+        "x": 169,
+        "y": 252
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2582",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821754"
     },
@@ -495,6 +659,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 40,
+      "posicio": {
+        "x": 151,
+        "y": 261
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2253",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821798"
     },
@@ -506,6 +674,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 41,
+      "posicio": {
+        "x": 134,
+        "y": 272
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2535",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821804"
     },
@@ -517,6 +689,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 42,
+      "posicio": {
+        "x": 119,
+        "y": 286
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2526",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821632"
     },
@@ -528,6 +704,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 43,
+      "posicio": {
+        "x": 105,
+        "y": 301
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2520",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821674"
     },
@@ -539,6 +719,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 44,
+      "posicio": {
+        "x": 92,
+        "y": 318
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2534",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=967366"
     },
@@ -550,6 +734,10 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Esquerra Unida i Alternativa",
       "esco": 45,
+      "posicio": {
+        "x": 82,
+        "y": 337
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2447",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880478"
     },
@@ -561,6 +749,10 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Independent",
       "esco": 46,
+      "posicio": {
+        "x": 73,
+        "y": 357
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2512",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793004"
     },
@@ -572,6 +764,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 47,
+      "posicio": {
+        "x": 470,
+        "y": 359
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1832",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799532"
     },
@@ -583,6 +779,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 48,
+      "posicio": {
+        "x": 463,
+        "y": 339
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2699",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=980367"
     },
@@ -594,6 +794,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 49,
+      "posicio": {
+        "x": 455,
+        "y": 320
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2651",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=885944"
     },
@@ -605,6 +809,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 50,
+      "posicio": {
+        "x": 390,
+        "y": 240
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2458",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=875813"
     },
@@ -616,6 +824,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 51,
+      "posicio": {
+        "x": 373,
+        "y": 227
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2547",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=933059"
     },
@@ -627,6 +839,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 52,
+      "posicio": {
+        "x": 353,
+        "y": 217
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2543",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799551"
     },
@@ -638,6 +854,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 53,
+      "posicio": {
+        "x": 334,
+        "y": 208
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2313",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793858"
     },
@@ -649,6 +869,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 54,
+      "posicio": {
+        "x": 314,
+        "y": 201
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2031",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799482"
     },
@@ -660,6 +884,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 55,
+      "posicio": {
+        "x": 294,
+        "y": 196
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2228",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799463"
     },
@@ -671,6 +899,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 56,
+      "posicio": {
+        "x": 274,
+        "y": 193
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1961",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798614"
     },
@@ -682,6 +914,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 57,
+      "posicio": {
+        "x": 227,
+        "y": 193
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1985",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=705553"
     },
@@ -693,6 +929,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 58,
+      "posicio": {
+        "x": 206,
+        "y": 196
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1669",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792819"
     },
@@ -704,6 +944,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 59,
+      "posicio": {
+        "x": 186,
+        "y": 201
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1971",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840880"
     },
@@ -715,6 +959,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 60,
+      "posicio": {
+        "x": 167,
+        "y": 208
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2241",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840893"
     },
@@ -726,6 +974,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 61,
+      "posicio": {
+        "x": 148,
+        "y": 217
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2521",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821736"
     },
@@ -737,6 +989,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 62,
+      "posicio": {
+        "x": 129,
+        "y": 227
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1007",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821772"
     },
@@ -748,6 +1004,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 63,
+      "posicio": {
+        "x": 112,
+        "y": 240
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2529",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821662"
     },
@@ -759,6 +1019,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 64,
+      "posicio": {
+        "x": 45,
+        "y": 320
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2527",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821638"
     },
@@ -770,6 +1034,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 65,
+      "posicio": {
+        "x": 36,
+        "y": 339
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2531",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821686"
     },
@@ -781,6 +1049,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 68,
+      "posicio": {
+        "x": 413,
+        "y": 207
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2554",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798923"
     },
@@ -792,6 +1064,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 69,
+      "posicio": {
+        "x": 396,
+        "y": 195
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=937",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880834"
     },
@@ -803,6 +1079,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 70,
+      "posicio": {
+        "x": 378,
+        "y": 185
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2559",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=803618"
     },
@@ -814,6 +1094,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 71,
+      "posicio": {
+        "x": 360,
+        "y": 176
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=725",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880850"
     },
@@ -825,6 +1109,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 72,
+      "posicio": {
+        "x": 341,
+        "y": 168
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1644",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=649975"
     },
@@ -836,6 +1124,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 73,
+      "posicio": {
+        "x": 318,
+        "y": 162
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2557",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=803594"
     },
@@ -847,6 +1139,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 74,
+      "posicio": {
+        "x": 297,
+        "y": 157
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1875",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880858"
     },
@@ -858,6 +1154,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 75,
+      "posicio": {
+        "x": 276,
+        "y": 154
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1061",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=489214"
     },
@@ -869,6 +1169,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 76,
+      "posicio": {
+        "x": 226,
+        "y": 154
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1614",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=705776"
     },
@@ -880,6 +1184,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 77,
+      "posicio": {
+        "x": 204,
+        "y": 157
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1976",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840918"
     },
@@ -891,6 +1199,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 78,
+      "posicio": {
+        "x": 183,
+        "y": 162
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2517",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840912"
     },
@@ -902,6 +1214,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 79,
+      "posicio": {
+        "x": 162,
+        "y": 168
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=115",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840925"
     },
@@ -913,6 +1229,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 80,
+      "posicio": {
+        "x": 141,
+        "y": 176
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2515",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792824"
     },
@@ -924,6 +1244,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 81,
+      "posicio": {
+        "x": 123,
+        "y": 185
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2469",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821656"
     },
@@ -935,6 +1259,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 82,
+      "posicio": {
+        "x": 105,
+        "y": 195
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2537",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821823"
     },
@@ -946,6 +1274,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 83,
+      "posicio": {
+        "x": 88,
+        "y": 207
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2249",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821698"
     },
@@ -957,6 +1289,10 @@
       "llista_electoral": "Aliança Catalana",
       "partit": "Aliança Catalana",
       "esco": 85,
+      "posicio": {
+        "x": 431,
+        "y": 168
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880827"
     },
@@ -968,6 +1304,10 @@
       "llista_electoral": "Aliança Catalana",
       "partit": "Aliança Catalana",
       "esco": 86,
+      "posicio": {
+        "x": 413,
+        "y": 156
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2602",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=881673"
     },
@@ -979,6 +1319,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 87,
+      "posicio": {
+        "x": 395,
+        "y": 146
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=965",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=847859"
     },
@@ -990,6 +1334,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 88,
+      "posicio": {
+        "x": 377,
+        "y": 137
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2565",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=801683"
     },
@@ -1001,6 +1349,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 89,
+      "posicio": {
+        "x": 358,
+        "y": 129
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2558",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=804391"
     },
@@ -1012,6 +1364,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 90,
+      "posicio": {
+        "x": 338,
+        "y": 122
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1891",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880842"
     },
@@ -1023,6 +1379,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 91,
+      "posicio": {
+        "x": 318,
+        "y": 117
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2552",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799053"
     },
@@ -1034,6 +1394,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 92,
+      "posicio": {
+        "x": 298,
+        "y": 113
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2556",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799432"
     },
@@ -1045,6 +1409,10 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 93,
+      "posicio": {
+        "x": 276,
+        "y": 110
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2553",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799046"
     },
@@ -1056,6 +1424,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 94,
+      "posicio": {
+        "x": 224,
+        "y": 110
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2518",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840899"
     },
@@ -1067,6 +1439,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 95,
+      "posicio": {
+        "x": 202,
+        "y": 113
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2127",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=960720"
     },
@@ -1078,6 +1454,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 96,
+      "posicio": {
+        "x": 182,
+        "y": 117
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=92",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840905"
     },
@@ -1089,6 +1469,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 97,
+      "posicio": {
+        "x": 162,
+        "y": 122
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2259",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840887"
     },
@@ -1100,6 +1484,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 98,
+      "posicio": {
+        "x": 142,
+        "y": 129
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2514",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792839"
     },
@@ -1111,6 +1499,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 99,
+      "posicio": {
+        "x": 123,
+        "y": 137
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2525",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821786"
     },
@@ -1122,6 +1514,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 100,
+      "posicio": {
+        "x": 105,
+        "y": 146
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2533",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821742"
     },
@@ -1133,6 +1529,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 101,
+      "posicio": {
+        "x": 87,
+        "y": 156
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2536",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821817"
     },
@@ -1144,6 +1544,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 102,
+      "posicio": {
+        "x": 69,
+        "y": 168
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2530",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=938808"
     },
@@ -1155,6 +1559,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 103,
+      "posicio": {
+        "x": 397,
+        "y": 102
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2277",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659192"
     },
@@ -1166,6 +1574,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 104,
+      "posicio": {
+        "x": 378,
+        "y": 94
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2550",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799060"
     },
@@ -1177,6 +1589,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 105,
+      "posicio": {
+        "x": 359,
+        "y": 87
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2279",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659464"
     },
@@ -1188,6 +1604,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 106,
+      "posicio": {
+        "x": 339,
+        "y": 81
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2276",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=710191"
     },
@@ -1199,6 +1619,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 107,
+      "posicio": {
+        "x": 319,
+        "y": 76
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2283",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=663254"
     },
@@ -1210,6 +1634,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 108,
+      "posicio": {
+        "x": 298,
+        "y": 73
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2275",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=663182"
     },
@@ -1221,6 +1649,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 109,
+      "posicio": {
+        "x": 277,
+        "y": 70
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2274",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659130"
     },
@@ -1232,6 +1664,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 110,
+      "posicio": {
+        "x": 224,
+        "y": 70
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2655",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=886241"
     },
@@ -1243,6 +1679,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 111,
+      "posicio": {
+        "x": 203,
+        "y": 73
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2513",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793162"
     },
@@ -1254,6 +1694,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 112,
+      "posicio": {
+        "x": 182,
+        "y": 76
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2516",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792809"
     },
@@ -1265,6 +1709,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 113,
+      "posicio": {
+        "x": 162,
+        "y": 81
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2312",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=929933"
     },
@@ -1276,6 +1724,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 114,
+      "posicio": {
+        "x": 142,
+        "y": 87
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2583",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821760"
     },
@@ -1287,6 +1739,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 115,
+      "posicio": {
+        "x": 123,
+        "y": 94
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2519",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821587"
     },
@@ -1298,6 +1754,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 116,
+      "posicio": {
+        "x": 104,
+        "y": 102
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2584",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821766"
     },
@@ -1309,6 +1769,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 119,
+      "posicio": {
+        "x": 337,
+        "y": 36
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2549",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=804127"
     },
@@ -1320,6 +1784,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 120,
+      "posicio": {
+        "x": 316,
+        "y": 32
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2280",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=705763"
     },
@@ -1331,6 +1799,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 121,
+      "posicio": {
+        "x": 295,
+        "y": 29
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2278",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659577"
     },
@@ -1342,6 +1814,10 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 122,
+      "posicio": {
+        "x": 274,
+        "y": 27
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2551",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798492"
     },
@@ -1354,6 +1830,10 @@
       "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
       "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
       "esco": 123,
+      "posicio": {
+        "x": 228,
+        "y": 27
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1921",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798576"
     },
@@ -1366,6 +1846,10 @@
       "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
       "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
       "esco": 124,
+      "posicio": {
+        "x": 207,
+        "y": 29
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2485",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798595"
     },
@@ -1377,6 +1861,10 @@
       "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
       "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
       "esco": 125,
+      "posicio": {
+        "x": 186,
+        "y": 32
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2262",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=883204"
     },
@@ -1389,6 +1877,10 @@
       "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
       "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
       "esco": 126,
+      "posicio": {
+        "x": 165,
+        "y": 36
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2264",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792757"
     },
@@ -1400,6 +1892,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 129,
+      "posicio": {
+        "x": 340,
+        "y": 490
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1885",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821723"
     },
@@ -1411,6 +1907,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 130,
+      "posicio": {
+        "x": 310,
+        "y": 490
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2187",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=892494"
     },
@@ -1422,6 +1922,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 131,
+      "posicio": {
+        "x": 280,
+        "y": 490
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2133",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792814"
     },
@@ -1433,6 +1937,10 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 132,
+      "posicio": {
+        "x": 250,
+        "y": 490
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=683",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=802343"
     },
@@ -1444,6 +1952,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 133,
+      "posicio": {
+        "x": 220,
+        "y": 490
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=756",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=660310"
     },
@@ -1455,6 +1967,10 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 134,
+      "posicio": {
+        "x": 190,
+        "y": 490
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2240",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840932"
     },
@@ -1466,6 +1982,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 135,
+      "posicio": {
+        "x": 160,
+        "y": 490
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2246",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821577"
     },
@@ -1477,6 +1997,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 139,
+      "posicio": {
+        "x": 350,
+        "y": 390
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1685",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=794083"
     },
@@ -1488,6 +2012,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 142,
+      "posicio": {
+        "x": 312,
+        "y": 335
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2523",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=831000"
     },
@@ -1499,6 +2027,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 145,
+      "posicio": {
+        "x": 228,
+        "y": 319
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2255",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=830994"
     },
@@ -1510,6 +2042,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 147,
+      "posicio": {
+        "x": 188,
+        "y": 335
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1603",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793937"
     },
@@ -1521,6 +2057,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Units per Avançar",
       "esco": 149,
+      "posicio": {
+        "x": 159,
+        "y": 370
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=117",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=794000"
     },
@@ -1532,6 +2072,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 150,
+      "posicio": {
+        "x": 150,
+        "y": 390
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2251",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659478"
     },
@@ -1543,6 +2087,10 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 152,
+      "posicio": {
+        "x": 145,
+        "y": 430
+      },
       "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1877",
       "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=663261"
     }
