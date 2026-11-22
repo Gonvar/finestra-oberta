@@ -4,7 +4,7 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
-import { getJson, getText, type Fetch } from './comun.ts';
+import { getJson, getText, SourceError, type Fetch } from './comun.ts';
 import {
   DesquadreError,
   genera,
@@ -163,5 +163,30 @@ test('la verificació falla si falta una còpia', async () => {
   const { captures } = await llegeixProcedencia(carpeta);
   await rm(join(carpeta, 'captures', captures[0]!.sha256));
   await assert.rejects(verifica(carpeta, construeix), DesquadreError);
+  await rm(carpeta, { recursive: true });
+});
+
+test('genera torna a provar una font que talla la connexió, i només desa la resposta', async () => {
+  let talls = 1;
+  const fontQueTalla: Fetch = async (input, init) => {
+    if (String(input) === B && talls-- > 0) throw new TypeError('fetch failed');
+    return font(input, init);
+  };
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  await genera(carpeta, fontQueTalla, '2026-11-22', construeix, 0);
+  assert.deepEqual(
+    (await llegeixProcedencia(carpeta)).captures.map((c) => c.url),
+    [A, B],
+  );
+  await verifica(carpeta, construeix);
+  await rm(carpeta, { recursive: true });
+});
+
+test('genera falla si la font no respon després de tres intents', async () => {
+  const fontCaiguda: Fetch = async () => {
+    throw new TypeError('fetch failed');
+  };
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  await assert.rejects(genera(carpeta, fontCaiguda, '2026-11-22', construeix, 0), SourceError);
   await rm(carpeta, { recursive: true });
 });

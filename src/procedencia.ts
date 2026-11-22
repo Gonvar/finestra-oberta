@@ -66,6 +66,31 @@ const empremta = (cos: Uint8Array) => createHash('sha256').update(cos).digest('h
 export const serialitza = (dades: unknown) => `${JSON.stringify(dades, null, 2)}\n`;
 
 /**
+ * Les fonts oficials de tant en tant tallen una connexió quan s'hi fan desenes de consultes seguides.
+ * Només es torna a provar quan no hi ha resposta: una resposta, encara que sigui un error, es desa
+ * tal com ha arribat. L'URL va a stderr perquè el registre de la tasca digui quina font ha fallat.
+ */
+async function ambReintents(
+  fetchImpl: Fetch,
+  input: Parameters<Fetch>[0],
+  init: RequestInit | undefined,
+  pausaMs: number,
+) {
+  for (let intent = 1; ; intent++) {
+    try {
+      // Cada intent té el seu temps límit: el del primer ja pot haver vençut.
+      return await (intent === 1
+        ? fetchImpl(input, init)
+        : fetchImpl(input, { ...init, signal: AbortSignal.timeout(20_000) }));
+    } catch (error) {
+      console.error(`${String(input)} no ha respost (intent ${intent} de 3).`);
+      if (intent === 3) throw error;
+      await new Promise((resol) => setTimeout(resol, pausaMs * 10 * intent));
+    }
+  }
+}
+
+/**
  * Genera les dades des de les fonts i les desa a `carpeta` amb la còpia de cada resposta. Només
  * escriu quan `construeix` ha acabat bé, perquè una font que falla no deixi la carpeta a mitges.
  */
@@ -79,7 +104,7 @@ export async function genera<T extends Record<string, unknown>>(
   const captures: Captura[] = [];
   const cossos = new Map<string, Uint8Array>();
   const enregistrat: Fetch = async (input, init) => {
-    const resposta = await fetchImpl(input, init);
+    const resposta = await ambReintents(fetchImpl, input, init, pausaMs);
     const cos = new Uint8Array(await resposta.arrayBuffer());
     const sha256 = empremta(cos);
     captures.push({
