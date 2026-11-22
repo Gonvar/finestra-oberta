@@ -18,9 +18,9 @@ const { cerca = true } = Astro.props;
     </a>
     <nav aria-label="Seccions">
       <ul>
-        {/* A la portada, al mòbil hi caben el cercador i el codi; el Govern i el Parlament ja hi tenen el seu bloc. */}
-        <li class:list={{ 'nomes-ample': cerca }}><a href="/govern">Govern</a></li>
-        <li class:list={{ 'nomes-ample': cerca }}><a href="/parlament">Parlament</a></li>
+        {/* A la portada, en pantalles estretes no hi cabrien; el Govern i el Parlament ja hi tenen el seu bloc. */}
+        <li class:list={{ 'nomes-escriptori': cerca }}><a href="/govern">Govern</a></li>
+        <li class:list={{ 'nomes-escriptori': cerca }}><a href="/parlament">Parlament</a></li>
         <li class="nomes-ample"><a href="/#ia">Per a la IA</a></li>
         {
           cerca && (
@@ -136,6 +136,12 @@ const { cerca = true } = Astro.props;
 
   .cerca {
     transition: transform var(--t-boto) var(--ease-out);
+  }
+
+  @media (max-width: 767px) {
+    .nomes-escriptori {
+      display: none;
+    }
   }
 
   @media (max-width: 479px) {

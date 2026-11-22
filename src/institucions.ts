@@ -147,9 +147,30 @@ export function llegirFitxa(html: string, url: string): Fitxa {
 
 const pausa = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+export const POSICIONS_ESCONS = `${PARLAMENT}/js/mapa-escons.js`;
+
+/**
+ * On és cada escó a l'hemicicle, del dibuix del mateix mapa: `posicionsEscons["001"] = {x:398, y:450}`.
+ * La web els col·loca així perquè la posició de cada grup a la sala no la decideixi aquest projecte.
+ */
+export function llegirPosicions(js: string) {
+  const posicions = new Map<number, { x: number; y: number }>();
+  for (const m of js.matchAll(/posicionsEscons\["(\d+)"\]\s*=\s*\{x:\s*(\d+),\s*y:\s*(\d+)\}/g))
+    posicions.set(Number(m[1]), { x: Number(m[2]), y: Number(m[3]) });
+  if (posicions.size === 0)
+    throw new SourceError('El mapa d’escons no dona la posició de cap escó.');
+  return posicions;
+}
+
 /** La composició del Parlament: el mapa d'escons i, de cada persona, la seva fitxa. */
 export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs = 300) {
   const escons = llegirMapa(await getText(fetchImpl, MAPA_ESCONS));
+  const posicions = llegirPosicions(await getText(fetchImpl, POSICIONS_ESCONS));
+  const sensePosicio = escons.filter((e) => !posicions.has(e.esco));
+  if (sensePosicio.length)
+    throw new SourceError(
+      `El mapa d’escons no dona la posició dels escons ${sensePosicio.map((e) => e.esco).join(', ')}.`,
+    );
   const diputats = [];
   for (const esco of escons) {
     const url = fitxaUrl(esco.codi);
@@ -218,6 +239,7 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
       llista_electoral: fitxa.llista_electoral,
       ...(fitxa.partit && { partit: fitxa.partit }),
       esco: esco.esco,
+      posicio: posicions.get(esco.esco)!,
       fitxa: url,
       ...(fitxa.foto && { foto: fitxa.foto }),
     })),
@@ -242,8 +264,11 @@ export function euros(text: string) {
 const lloc = (fila: AltCarrec) => fila.denominacio_lloc.replace(/\s+/g, ' ').trim();
 
 type Meta = { name: string; rowsUpdatedAt: number; attribution: string };
+type MetaAmbColumnes = Meta & {
+  columns: { fieldName: string; name: string; description: string }[];
+};
 const metadades = (fetchImpl: Fetch, id: string) =>
-  getJson<Meta>(fetchImpl, `${SOCRATA}/api/views/${id}.json`);
+  getJson<MetaAmbColumnes>(fetchImpl, `${SOCRATA}/api/views/${id}.json`);
 const dia = (meta: Meta) => new Date(meta.rowsUpdatedAt * 1000).toISOString().slice(0, 10);
 
 /**
@@ -424,39 +449,23 @@ type Declaracio = Record<string, string> & {
   data_nomenament: string;
 };
 
-/** Els apartats de la declaració, amb el nom que es mostra. La relació en descriu el contingut legal. */
-const APARTATS: [camp: string, tipus: 'pública' | 'privada', nom: string][] = [
-  ['activitat_sector_public', 'pública', 'Un altre lloc al sector públic'],
-  ['exercici_carrecs', 'pública', 'Càrrecs que li corresponen pel càrrec'],
-  [
-    'representacio_organs_colegiats',
-    'pública',
-    'Representació de la Generalitat en òrgans col·legiats',
-  ],
-  [
-    'representacio_consells',
-    'pública',
-    'Representació de la Generalitat en consells d’administració',
-  ],
-  ['missions_temporals', 'pública', 'Missions temporals de representació'],
-  [
-    'participacio_organs',
-    'pública',
-    'Òrgans de govern d’empreses o entitats privades, en representació de l’Administració',
-  ],
-  ['pertinenca_consells_administracio', 'pública', 'Tres o més consells d’administració'],
-  ['carrecs_electius_compatibles', 'pública', 'Càrrecs electes'],
-  ['administracio_patrimoni', 'privada', 'Administració del patrimoni personal o familiar'],
-  [
-    'administracio_patrimoni_personal',
-    'privada',
-    'Patrimoni en empreses que contracten amb el sector públic',
-  ],
-  ['participacio_ocasional', 'privada', 'Seminaris, cursos, conferències i mitjans de comunicació'],
-  ['participacio_seminaris', 'privada', 'Formació per al personal de l’Administració'],
-  ['produccio_creacio_literaries', 'privada', 'Creació literària, artística, científica o tècnica'],
-  ['participacio_entitats_sense', 'privada', 'Entitats sense ànim de lucre'],
-];
+/**
+ * Els apartats de la declaració són les columnes «Activitat pública N» i «Activitat privada N» del
+ * conjunt. Es mostren amb la descripció que en fa la mateixa font, perquè un resum fet aquí podria
+ * dir d'una persona una cosa que la declaració no diu.
+ */
+function apartats(meta: MetaAmbColumnes) {
+  const trobats = meta.columns.flatMap((c) => {
+    const m = c.name.match(/^Activitat (pública|privada) \d/);
+    if (m === null) return [];
+    if (!c.description.trim())
+      throw new SourceError(`La columna ${c.fieldName} de les declaracions no té descripció.`);
+    return [{ camp: c.fieldName, tipus: m[1] as 'pública' | 'privada', apartat: c.description }];
+  });
+  if (!trobats.length)
+    throw new SourceError('Les declaracions d’activitats no tenen cap columna d’activitat.');
+  return trobats;
+}
 
 /** «1. Primera\n2. Segona» en una llista; «N/A» vol dir que no en declara cap. */
 function llista(text: string, camp: string) {
@@ -474,6 +483,20 @@ function diaIso(text: string) {
   const m = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
   if (m === null) throw new SourceError(`Data amb una forma inesperada: ${text}.`);
   return `${m[3]}-${m[2]!.padStart(2, '0')}-${m[1]!.padStart(2, '0')}`;
+}
+
+/** Socrata dona les dates com «2025-03-01T00:00:00.000». */
+function diaDeSocrata(text: string) {
+  if (!/^\d{4}-\d{2}-\d{2}T/.test(text))
+    throw new SourceError(`Data amb una forma inesperada: ${text}.`);
+  return text.slice(0, 10);
+}
+
+/** Socrata dona els imports com a text amb punt decimal: «100.5». */
+function import_(text: string) {
+  if (!/^\d+(\.\d+)?$/.test(text))
+    throw new SourceError(`Import amb una forma inesperada: ${text}.`);
+  return Number(text);
 }
 
 // Les relacions d'agenda i de viatges inclouen tots els alts càrrecs, també els de mandats anteriors:
@@ -531,6 +554,7 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     metadades(fetchImpl, VIATGES),
   ]);
 
+  const columnes = apartats(metaDecl);
   const declaracions = await totes<Declaracio>(fetchImpl, DECLARACIONS, {});
   const nomenaments = membres.map((m) => {
     const propies = declaracions.filter(
@@ -567,46 +591,59 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     ) =>
       files.filter(
         (f) =>
-          data(f).slice(0, 10) >= nomenament &&
+          diaDeSocrata(data(f)) >= nomenament &&
           esCarrecDelGovern(f.c_rrec) &&
           esLaPersona(m.nom_oficial, f.nom_i_cognoms),
       );
     // La relació també hi posa una fila sense grup («-») per dir que en un trimestre no n'hi ha hagut.
-    const reunions = seves(agenda, (f) => f.data).filter((f) => f.grup_d_inter_s !== '-');
+    const files = seves(agenda, (f) => f.data).filter((f) => f.grup_d_inter_s !== '-');
+    // Un acte amb diversos grups d'interès hi surt en una fila per grup. Si es comptessin les files,
+    // qui apunta cada grup per separat semblaria tenir més reunions que qui els apunta junts.
+    const actes = new Map<string, { fila: FilaAgenda; grups: string[] }>();
+    for (const f of files) {
+      const clau = JSON.stringify([f.data, f.activitat, f.tema]);
+      const acte = actes.get(clau);
+      if (acte === undefined) actes.set(clau, { fila: f, grups: [f.grup_d_inter_s] });
+      else acte.grups.push(f.grup_d_inter_s);
+    }
+    const reunions = [...actes.values()];
     const viatgesSeus = seves(viatges, (f) => f.inici_viatge);
     const ambDespeses = viatgesSeus.filter((v) => v.total_despeses !== undefined);
     return {
       nom: m.nom,
       nom_oficial: m.nom_oficial,
       nomenament,
-      activitats: APARTATS.flatMap(([camp, tipus, nom]) => {
+      activitats: columnes.flatMap(({ camp, tipus, apartat }) => {
         const valor = declaracio[camp];
         if (valor === undefined)
           throw new SourceError(`A la declaració de ${m.nom} hi falta l'apartat ${camp}.`);
         const items = llista(valor, camp);
-        return items.length ? [{ tipus, apartat: nom, items }] : [];
+        return items.length ? [{ camp, tipus, apartat, items }] : [];
       }),
       agenda: {
         reunions: reunions.length,
-        darreres: reunions.slice(0, DARRERES).map((r) => ({
-          data: r.data.slice(0, 10),
-          grup: r.grup_d_inter_s,
-          activitat: r.activitat,
-          ...(r.tema !== undefined && { tema: r.tema }),
+        darreres: reunions.slice(0, DARRERES).map(({ fila, grups }) => ({
+          data: diaDeSocrata(fila.data),
+          grups,
+          activitat: fila.activitat,
+          ...(fila.tema !== undefined && { tema: fila.tema }),
         })),
       },
       viatges: {
         viatges: viatgesSeus.length,
         // Les despeses es publiquen quan s'han validat: els viatges recents en poden no tenir.
         sense_despeses: viatgesSeus.length - ambDespeses.length,
-        despeses:
-          Math.round(ambDespeses.reduce((s, v) => s + Number(v.total_despeses), 0) * 100) / 100,
+        // Sense cap import publicat no hi ha suma: un zero diria que no han costat res.
+        ...(ambDespeses.length && {
+          despeses:
+            Math.round(ambDespeses.reduce((s, v) => s + import_(v.total_despeses!), 0) * 100) / 100,
+        }),
         darrers: viatgesSeus.slice(0, DARRERES).map((v) => ({
-          inici: v.inici_viatge.slice(0, 10),
-          fi: v.fi_viatge.slice(0, 10),
+          inici: diaDeSocrata(v.inici_viatge),
+          fi: diaDeSocrata(v.fi_viatge),
           destinacio: v.destinaci,
           motiu: v.motiu,
-          ...(v.total_despeses !== undefined && { despeses: Number(v.total_despeses) }),
+          ...(v.total_despeses !== undefined && { despeses: import_(v.total_despeses) }),
         })),
       },
     };

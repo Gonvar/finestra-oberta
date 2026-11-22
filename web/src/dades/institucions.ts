@@ -57,35 +57,3 @@ export const eurosRodons = (n: number) =>
   }).format(n);
 
 export const nombre = (n: number) => new Intl.NumberFormat('ca').format(n);
-
-export type Seient = { x: number; y: number; grup: number };
-
-/**
- * Els escons en semicercle, d'esquerra a dreta per grups i en l'ordre que se li dona. Cada fila té
- * els seients proporcionals al seu radi, perquè quedin a la mateixa distància. No és el plànol de la
- * sala: és una manera de veure quina part del total té cada grup.
- */
-export function hemicicle(escons: number[], files = 6): Seient[] {
-  const total = escons.reduce((a, b) => a + b, 0);
-  const radis = Array.from({ length: files }, (_, i) => 0.45 + (i * 0.55) / (files - 1));
-  const suma = radis.reduce((a, b) => a + b, 0);
-  const perFila = radis.map((r) => Math.round((total * r) / suma));
-  perFila[files - 1]! += total - perFila.reduce((a, b) => a + b, 0);
-
-  const seients = radis.flatMap((r, i) => {
-    const n = perFila[i]!;
-    return Array.from({ length: n }, (_, j) => ({ r, angle: Math.PI - (j * Math.PI) / (n - 1) }));
-  });
-  seients.sort((a, b) => b.angle - a.angle || a.r - b.r);
-
-  const limits = escons.map((_, i) => escons.slice(0, i + 1).reduce((a, b) => a + b, 0));
-  return seients.map((s, k) => ({
-    x: s.r * Math.cos(s.angle),
-    y: s.r * Math.sin(s.angle),
-    grup: limits.findIndex((l) => k < l),
-  }));
-}
-
-/** «GP PSC-Units» → «PSC-Units»; «G Mixt» → «Grup Mixt». La sigla sola diu poc de cada grup. */
-export const nomCurt = (sigla: string) =>
-  sigla === 'G Mixt' ? 'Grup Mixt' : sigla.replace(/^GP /, '');

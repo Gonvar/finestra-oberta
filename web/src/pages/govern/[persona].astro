@@ -57,7 +57,10 @@ const desDe = `des del ${dia(t.nomenament)}`;
       <div>
         <p class="valor">{nombre(viatges.viatges)}</p>
         <p class="que">
-          Viatges a l'estranger{viatges.viatges > 0 && `, ${eurosRodons(viatges.despeses)} en despeses`}
+          Viatges a l'estranger{
+            'despeses' in viatges &&
+              `, ${eurosRodons(viatges.despeses)} en despeses${viatges.sense_despeses > 0 ? ` de ${viatges.viatges - viatges.sense_despeses}` : ''}, comitiva inclosa si n'hi ha`
+          }
         </p>
         <p class="font-dada">
           <a href={transparencia.viatges.url}>Viatges a l'estranger</a>, {dia(transparencia.viatges.data_dades)}
@@ -122,8 +125,11 @@ const desDe = `des del ${dia(t.nomenament)}`;
             <li>
               <time datetime={r.data}>{diaCurt(r.data)}</time>
               <div>
-                <p class="destacat">{r.grup}</p>
-                {'tema' in r && <p class="secundari">{r.activitat}. {r.tema}</p>}
+                <p class="destacat">{r.grups.join(', ')}</p>
+                <p class="secundari">
+                  {r.activitat}
+                  {'tema' in r && `. ${r.tema}`}
+                </p>
               </div>
             </li>
           ))}
@@ -131,7 +137,8 @@ const desDe = `des del ${dia(t.nomenament)}`;
       )
     }
     <p class="font-dada">
-      Les {agenda.darreres.length} més recents de {nombre(agenda.reunions)}. Font: <a
+      {agenda.darreres.length > 0 && `Les ${agenda.darreres.length} més recents de ${nombre(agenda.reunions)}. `}
+      Una reunió amb diversos grups compta una vegada. Font: <a
         href={transparencia.agenda.url}>{transparencia.agenda.font}</a
       >, actualitzada el {dia(transparencia.agenda.data_dades)}.
     </p>

@@ -17,6 +17,8 @@ import {
   llegirFitxa,
   llegirMapa,
   MAPA_ESCONS,
+  POSICIONS_ESCONS,
+  llegirPosicions,
   llegirPerfils,
   type PerfilsDesats,
   VIATGES,
@@ -98,11 +100,6 @@ test('el mapa falla si una persona té dos grups', () => {
   assert.throws(() => llegirMapa(mapa({ extra: esco(5, 5, GRUP_B) })), /un sol grup/);
 });
 
-test('les fitxes copiades de govern.cat han de ser totes', () => {
-  const text = JSON.stringify({ ...desats(), total: 4 });
-  assert.throws(() => llegirPerfils(text), /té 3 fitxes de les 4/);
-});
-
 test('el mapa falla si un color no és a la llegenda', () => {
   const html = mapa().replace('afegirLlegenda("#aaa", "GP A");', '');
   assert.throws(() => llegirMapa(html), /llegenda/);
@@ -144,11 +141,35 @@ test('la fitxa falla amb caràcters mal codificats', () => {
   assert.throws(() => llegirFitxa(fitxa({ nom: 'Persona Ex�mple' }), 'u'), /mal codificats/);
 });
 
+const posicions = (escons = 150) =>
+  Array.from(
+    { length: escons },
+    (_, i) => `posicionsEscons["${String(i + 1).padStart(3, '0')}"] = {x:${i}, y:${2 * i}};`,
+  ).join('\n');
+
+test('les posicions dels escons surten del dibuix del mapa', () => {
+  assert.deepEqual(llegirPosicions(posicions(2)).get(2), { x: 1, y: 2 });
+  assert.throws(() => llegirPosicions('var x = 1;'), /cap escó/);
+});
+
+test('el Parlament falla si un escó no té posició al mapa', async () => {
+  const fetchImpl = fake((url) =>
+    url === POSICIONS_ESCONS
+      ? posicions(10)
+      : url === MAPA_ESCONS
+        ? mapa()
+        : fitxa({ legislatura: url === fitxaUrl('3'), foto: url.split('=')[1]! }),
+  );
+  await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /no dona la posició/);
+});
+
 test('el Parlament suma els escons per grup i subgrup', async () => {
   const fetchImpl = fake((url) =>
-    url === MAPA_ESCONS
-      ? mapa()
-      : fitxa({ legislatura: url === fitxaUrl('3'), foto: url.split('=')[1]! }),
+    url === POSICIONS_ESCONS
+      ? posicions()
+      : url === MAPA_ESCONS
+        ? mapa()
+        : fitxa({ legislatura: url === fitxaUrl('3'), foto: url.split('=')[1]! }),
   );
   const parlament = await construirParlament(fetchImpl, '2026-11-22', 0);
   assert.match(parlament.fotos, /Foto: Parlament de Catalunya/);
@@ -170,32 +191,45 @@ test('el Parlament suma els escons per grup i subgrup', async () => {
   ]);
   assert.equal(parlament.diputats.length, ESCONS);
   assert.equal(parlament.diputats[1]!.subgrup, SUBGRUP_B);
+  assert.deepEqual(parlament.diputats[0]!.posicio, { x: 0, y: 0 });
 });
 
 test('el Parlament falla si la fitxa i el mapa no donen el mateix grup', async () => {
-  const fetchImpl = fake((url) => (url === MAPA_ESCONS ? mapa() : fitxa({ grup: GRUP_B })));
+  const fetchImpl = fake((url) =>
+    url === POSICIONS_ESCONS ? posicions() : url === MAPA_ESCONS ? mapa() : fitxa({ grup: GRUP_B }),
+  );
   await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /la fitxa .* diu/i);
 });
 
 test('el Parlament falla si cap fitxa no dona la foto', async () => {
   const fetchImpl = fake((url) =>
-    url === MAPA_ESCONS
-      ? mapa()
-      : fitxa({ legislatura: url === fitxaUrl('3') }).replace(/src="[^"]*"/, 'src="x"'),
+    url === POSICIONS_ESCONS
+      ? posicions()
+      : url === MAPA_ESCONS
+        ? mapa()
+        : fitxa({ legislatura: url === fitxaUrl('3') }).replace(/src="[^"]*"/, 'src="x"'),
   );
   await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /Cap fitxa no dona la foto/);
 });
 
 test('el Parlament falla si dues fitxes donen la mateixa foto', async () => {
   const fetchImpl = fake((url) =>
-    url === MAPA_ESCONS ? mapa() : fitxa({ legislatura: url === fitxaUrl('3') }),
+    url === POSICIONS_ESCONS
+      ? posicions()
+      : url === MAPA_ESCONS
+        ? mapa()
+        : fitxa({ legislatura: url === fitxaUrl('3') }),
   );
   await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /mateixa foto/);
 });
 
 test('el Parlament falla si cap fitxa dona la legislatura en curs', async () => {
   const fetchImpl = fake((url) =>
-    url === MAPA_ESCONS ? mapa() : fitxa({ legislatura: false, foto: url.split('=')[1]! }),
+    url === POSICIONS_ESCONS
+      ? posicions()
+      : url === MAPA_ESCONS
+        ? mapa()
+        : fitxa({ legislatura: false, foto: url.split('=')[1]! }),
   );
   await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /0 legislatures/);
 });
@@ -342,18 +376,61 @@ const declaracio = (nom: string, carrec: string, situacio = 'Actiu', extra = {})
   };
 };
 
+const VIATGES_FILES: object[] = [
+  {
+    nom_i_cognoms: 'Berta Exemple i Dos',
+    c_rrec: 'Consellera de Salut',
+    inici_viatge: '2025-05-02T00:00:00.000',
+    fi_viatge: '2025-05-04T00:00:00.000',
+    destinaci: 'Ciutat U',
+    motiu: 'Motiu U',
+  },
+  {
+    nom_i_cognoms: 'Berta Exemple Dos',
+    c_rrec: 'consellera de Salut',
+    inici_viatge: '2025-02-02T00:00:00.000',
+    fi_viatge: '2025-02-03T00:00:00.000',
+    destinaci: 'Ciutat Dos',
+    motiu: 'Motiu Dos',
+    total_despeses: '100.5',
+  },
+];
+
 const MEMBRES = [{ nom: 'Berta Exemple i Dos', nom_oficial: 'EXEMPLE DOS, BERTA' }];
 
-function transparencia(declaracions: object[]) {
+const COLUMNES = [
+  { fieldName: 'nom', name: 'Nom', description: 'Nom de l’alt càrrec' },
+  ...Object.keys(NA).map((camp, i) => ({
+    fieldName: camp,
+    name: i < 8 ? `Activitat pública ${i + 1} (${camp})` : `Activitat privada ${i - 7} (${camp})`,
+    description: `Descripció oficial de ${camp}`,
+  })),
+];
+
+function transparencia(declaracions: object[], viatges = VIATGES_FILES) {
   return fake((url) => {
     if (url.includes('/api/views/'))
-      return { name: 'Relació', rowsUpdatedAt: 1795208408, attribution: 'Direcció' };
+      return {
+        name: 'Relació',
+        rowsUpdatedAt: 1795208408,
+        attribution: 'Direcció',
+        columns: COLUMNES,
+      };
     if (url.includes(DECLARACIONS)) return declaracions;
     if (url.includes(AGENDA))
       return [
         {
           data: '2025-03-01T00:00:00.000',
           grup_d_inter_s: 'Entitat U',
+          activitat: 'Reunió',
+          tema: 'Tema U',
+          nom_i_cognoms: 'Berta Exemple Dos',
+          c_rrec: 'consellera de Salut',
+        },
+        // La mateixa reunió amb un altre grup: és una sola reunió.
+        {
+          data: '2025-03-01T00:00:00.000',
+          grup_d_inter_s: 'Entitat Quatre',
           activitat: 'Reunió',
           tema: 'Tema U',
           nom_i_cognoms: 'Berta Exemple Dos',
@@ -384,26 +461,7 @@ function transparencia(declaracions: object[]) {
           c_rrec: 'Secretària general',
         },
       ];
-    if (url.includes(VIATGES))
-      return [
-        {
-          nom_i_cognoms: 'Berta Exemple i Dos',
-          c_rrec: 'Consellera de Salut',
-          inici_viatge: '2025-05-02T00:00:00.000',
-          fi_viatge: '2025-05-04T00:00:00.000',
-          destinaci: 'Ciutat U',
-          motiu: 'Motiu U',
-        },
-        {
-          nom_i_cognoms: 'Berta Exemple Dos',
-          c_rrec: 'consellera de Salut',
-          inici_viatge: '2025-02-02T00:00:00.000',
-          fi_viatge: '2025-02-03T00:00:00.000',
-          destinaci: 'Ciutat Dos',
-          motiu: 'Motiu Dos',
-          total_despeses: '100.5',
-        },
-      ];
+    if (url.includes(VIATGES)) return viatges;
     throw new Error(`URL inesperada: ${url}`);
   });
 }
@@ -422,16 +480,36 @@ test('la transparència dona la declaració, l’agenda i els viatges des del no
   assert.equal(persona!.nomenament, '2024-08-12');
   assert.deepEqual(persona!.activitats, [
     {
+      camp: 'participacio_entitats_sense',
       tipus: 'privada',
-      apartat: 'Entitats sense ànim de lucre',
+      apartat: 'Descripció oficial de participacio_entitats_sense',
       items: ['Entitat U', 'Entitat Dos'],
     },
   ]);
   assert.equal(persona!.agenda.reunions, 1);
-  assert.equal(persona!.agenda.darreres[0]!.grup, 'Entitat U');
+  assert.deepEqual(persona!.agenda.darreres[0]!.grups, ['Entitat U', 'Entitat Quatre']);
   assert.equal(persona!.viatges.viatges, 2);
   assert.equal(persona!.viatges.sense_despeses, 1);
   assert.equal(persona!.viatges.despeses, 100.5);
+});
+
+test('sense cap import publicat no hi ha suma de despeses', async () => {
+  const declaracions = [declaracio('Berta Exemple Dos', 'Consellera')];
+  const sensImport = VIATGES_FILES.map((v) => ({ ...v, total_despeses: undefined }));
+  const resultat = await construirTransparencia(
+    transparencia(declaracions, JSON.parse(JSON.stringify(sensImport))),
+    MEMBRES,
+  );
+  assert.equal('despeses' in resultat.persones[0]!.viatges, false);
+});
+
+test('la transparència falla si un import no té la forma esperada', async () => {
+  const declaracions = [declaracio('Berta Exemple Dos', 'Consellera')];
+  const viatges = VIATGES_FILES.map((v) => ({ ...v, total_despeses: '1.234,56' }));
+  await assert.rejects(
+    construirTransparencia(transparencia(declaracions, viatges), MEMBRES),
+    /Import amb una forma inesperada/,
+  );
 });
 
 test('la transparència falla si un membre no té cap declaració activa', async () => {

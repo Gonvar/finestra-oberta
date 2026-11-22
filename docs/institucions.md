@@ -68,13 +68,14 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
 - **Llicència:** la de les condicions d'ús de Dades obertes de Catalunya. Els conjunts no en donen cap altra («See Terms of Use»).
 - **Contingut de cada persona:**
   - `nomenament`: la data de nomenament que dona la declaració d'activitats.
-  - `activitats`: els apartats de la declaració que no diuen «N/A», amb la llista d'activitats. El nom de cada apartat és un resum de la descripció legal que en fa el conjunt.
-  - `agenda`: quantes reunions i actes amb grups d'interès hi ha des del nomenament, i els cinc últims. No compten les files sense grup («-»), que la relació fa servir per dir que en un trimestre no n'hi ha hagut cap.
-  - `viatges`: quants viatges a l'estranger hi ha des del nomenament, la suma de les despeses publicades, quants encara no en tenen (`sense_despeses`) i els cinc últims.
+  - `activitats`: els apartats de la declaració que no diuen «N/A», amb la llista d'activitats. Cada apartat porta el nom del camp (`camp`) i, a `apartat`, la descripció que en fan les metadades del mateix conjunt, sense resumir-la.
+  - `agenda`: quantes reunions i actes amb grups d'interès hi ha des del nomenament, i els cinc últims amb tots els grups que hi van ser. La relació posa una fila per grup, i per això les files amb la mateixa data, activitat i tema compten com un sol acte. No compten les files sense grup («-»), que la relació fa servir per dir que en un trimestre no n'hi ha hagut cap.
+  - `viatges`: quants viatges a l'estranger hi ha des del nomenament, la suma de les despeses publicades (`despeses`, que no hi és si encara no n'hi ha cap), quants encara no en tenen (`sense_despeses`) i els cinc últims.
 - **Com es troba cada persona:** pel nom oficial de la relació d'alts càrrecs, com amb els noms ben escrits. L'agenda i els viatges inclouen tots els alts càrrecs i els mandats anteriors, i per això només compten les files amb el càrrec de president o de conseller i a partir del nomenament.
 - **Comprovacions:**
   - Cada membre del Govern ha de tenir una declaració d'activitats activa, i només una, amb tots els apartats.
   - Les dates i els imports han de tenir la forma esperada.
+  - Les metadades de les declaracions han de tenir columnes «Activitat pública N» i «Activitat privada N», cadascuna amb descripció.
   - Cap consulta no pot omplir una pàgina sencera de resultats.
 - **Despeses:** es publiquen quan s'han validat, i l'import d'un viatge pot incloure el de la comitiva.
 
@@ -92,6 +93,7 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
   - Les fitxes han de donar una sola legislatura en curs.
 - **Grups:** són els d'avui, que poden no coincidir amb els resultats de les eleccions.
 - **Fotos:** `foto` és l'enllaç a la foto oficial al web del Parlament, a la mida mitjana (fins a 600 px pel costat llarg). No se'n desa cap còpia. L'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) del Parlament en permet la reutilització si se'n cita la font, no se n'altera el sentit i no es presenten com una versió oficial ni avalada pel Parlament. Cal mostrar-les amb «Foto: Parlament de Catalunya». Les condicions també són al camp `fotos` del fitxer.
+- **Posicions:** cada persona porta a `posicio` el punt on la situa el dibuix del mapa d'escons, que surt de `posicionsEscons` a [mapa-escons.js](https://www.parlament.cat/js/mapa-escons.js). La web dibuixa l'hemicicle amb aquests punts, de manera que la disposició dels grups a la sala és la del Parlament. Si un escó no hi té posició, l'script s'atura.
 - **Colors:** cada grup porta el color amb què el pinta el mapa d'escons. Un color que no tingui la forma d'un color CSS atura l'script.
 - **Subgrups:** el mapa mostra els membres d'un subgrup dues vegades, una amb el grup i una altra amb el subgrup. Es comptabilitzen al grup i, a més, al subgrup.
 

@@ -1,27 +1,27 @@
 ---
 import Pagina from '../layouts/Pagina.astro';
-import { dia, hemicicle, nomCurt, parlament } from '../dades/institucions.ts';
+import { dia, parlament } from '../dades/institucions.ts';
 
 const grups = parlament.grups.map((g, i) => ({
   ...g,
   i,
-  curt: nomCurt(g.sigla),
-  // Per escó, perquè cada seient de l'hemicicle sigui sempre la mateixa persona.
-  diputats: parlament.diputats.filter((d) => d.grup === g.nom).sort((a, b) => a.esco - b.esco),
+  diputats: parlament.diputats.filter((d) => d.grup === g.nom),
 }));
 const majoria = Math.floor(parlament.escons / 2) + 1;
 
-const seients = hemicicle(grups.map((g) => g.escons));
-const perGrup = grups.map(() => 0);
-const ocupats = seients.map((s) => {
-  const grup = grups[s.grup]!;
-  return { ...s, grup, diputat: grup.diputats[perGrup[s.grup]!++]! };
-});
+// Cada persona seu on la situa el mapa d'escons del Parlament, amb el color del seu grup.
+const ocupats = grups.flatMap((grup) => grup.diputats.map((diputat) => ({ grup, diputat })));
+const RADI = 9;
+const xs = ocupats.map((s) => s.diputat.posicio.x);
+const ys = ocupats.map((s) => s.diputat.posicio.y);
+const marc = [
+  Math.min(...xs) - RADI - 2,
+  Math.min(...ys) - RADI - 2,
+  Math.max(...xs) - Math.min(...xs) + 2 * RADI + 4,
+  Math.max(...ys) - Math.min(...ys) + 2 * RADI + 4,
+].join(' ');
 
 const codi = (fitxa: string) => new URL(fitxa).searchParams.get('p_codi');
-
-const MIDA = 100;
-const punt = (v: number) => Math.round(v * MIDA * 100) / 100;
 
 // En passar per sobre d'un grup de la llegenda, la resta d'escons s'apaguen.
 const ressalta = grups
@@ -50,20 +50,20 @@ const ressalta = grups
     <h2 class="visualment-amagat" id="grups-titol">Escons per grup</h2>
     <div class="distribucio">
       <figure class="hemicicle">
-        <svg viewBox={`${-MIDA - 5} ${-MIDA - 5} ${2 * MIDA + 10} ${MIDA + 10}`} aria-hidden="true">
+        <svg viewBox={marc} aria-hidden="true">
           {
             ocupats.map((s) => (
               <a href={`#diputat-${codi(s.diputat.fitxa)}`} tabindex="-1">
                 <circle
                   class="seient"
                   data-grup={s.grup.i}
-                  cx={punt(s.x)}
-                  cy={punt(-s.y)}
-                  r="3.9"
+                  cx={s.diputat.posicio.x}
+                  cy={s.diputat.posicio.y}
+                  r={RADI}
                   style={`--color: ${s.grup.color}`}
                 >
                   <title>
-                    {s.diputat.nom} · {s.grup.curt}
+                    {s.diputat.nom} · {s.grup.sigla}
                   </title>
                 </circle>
               </a>
@@ -83,7 +83,7 @@ const ressalta = grups
               <a href={`#grup-${g.i}`} data-grup={g.i}>
                 <span class="color" style={`--color: ${g.color}`} aria-hidden="true" />
                 <span class="noms">
-                  <span class="curt">{g.curt}</span>
+                  <span class="curt">{g.sigla}</span>
                   <span class="secundari">{g.nom}</span>
                 </span>
                 <span class="escons">{g.escons}</span>
@@ -110,12 +110,12 @@ const ressalta = grups
       <section class="seccio grup" id={`grup-${g.i}`} aria-labelledby={`grup-${g.i}-titol`}>
         <h2 class="titol-seccio" id={`grup-${g.i}-titol`}>
           <span class="color gran" style={`--color: ${g.color}`} aria-hidden="true" />
-          {g.curt}
+          {g.sigla}
           <span class="secundari compte">{g.escons}</span>
         </h2>
         <p class="secundari nom-grup">
           {g.nom}
-          {'subgrups' in g && g.subgrups.map((s) => `. Inclou el ${s.nom}, amb ${s.escons}`)}
+          {'subgrups' in g && g.subgrups.map((s) => `. Inclou el ${s.nom}, amb ${s.escons} ${s.escons === 1 ? 'escó' : 'escons'}`)}.
         </p>
         <ul class="diputats">
           {[...g.diputats]
@@ -123,7 +123,11 @@ const ressalta = grups
             .map((d) => (
               <li id={`diputat-${codi(d.fitxa)}`}>
                 <a href={d.fitxa}>
-                  <img src={d.foto} alt="" loading="lazy" decoding="async" width="300" height="400" />
+                  {'foto' in d ? (
+                    <img src={d.foto} alt="" loading="lazy" decoding="async" width="300" height="400" />
+                  ) : (
+                    <span class="sense-foto" />
+                  )}
                   <span class="nom">{d.nom}</span>
                   <span class="secundari">
                     {d.circumscripcio}
@@ -172,13 +176,13 @@ const ressalta = grups
     fill: var(--color);
     /* Alguns colors del Parlament, com el groc, gairebé no es veuen sobre blanc sense contorn. */
     stroke: rgba(0, 0, 0, 0.14);
-    stroke-width: 0.6;
+    stroke-width: 1.2;
     transition: opacity var(--t-bloc) var(--ease-out);
   }
 
   .hemicicle a:hover .seient {
     stroke: var(--ink);
-    stroke-width: 1.2;
+    stroke-width: 2.4;
   }
 
   figcaption {
@@ -187,17 +191,6 @@ const ressalta = grups
     align-items: center;
     text-align: center;
     margin-top: 0.75rem;
-  }
-
-  /* Al mòbil el forat del mig és massa petit per al total. */
-  @media (min-width: 600px) {
-    figcaption {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      margin-top: 0;
-    }
   }
 
   .total {
@@ -325,7 +318,8 @@ const ressalta = grups
     text-decoration: none;
   }
 
-  .diputats img {
+  .diputats img,
+  .sense-foto {
     width: 100%;
     height: auto;
     aspect-ratio: 3 / 4;
