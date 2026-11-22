@@ -2,6 +2,7 @@
 // src/dades.ts les desa en JSON a dades/ perquè la web les pugui mostrar sense consultar les fonts.
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
+import { z } from 'zod';
 import { fold, getJson, getText, SourceError, words, type Fetch } from './comun.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
@@ -284,7 +285,7 @@ function carrec(f: AltCarrec, president: boolean) {
 }
 
 /** El Govern: el president i els consellers i conselleres, de la relació oficial d'alts càrrecs. */
-export async function construirGovern(fetchImpl: Fetch, avui: string) {
+export async function construirGovern(fetchImpl: Fetch, perfilsDesats: PerfilsDesats) {
   const meta = await metadades(fetchImpl, ALTS_CARRECS);
   const limit = 5000;
   const files = await getJson<AltCarrec[]>(
@@ -327,7 +328,7 @@ export async function construirGovern(fetchImpl: Fetch, avui: string) {
   const ordenats = consellers
     .map((f) => persona(f))
     .sort((a, b) => a.departament.localeCompare(b.departament, 'ca'));
-  const perfils = await construirPerfils(fetchImpl, [president, ...ordenats]);
+  const perfils = construirPerfils(perfilsDesats, [president, ...ordenats]);
   return {
     font: `Dades obertes de Catalunya: ${meta.name} (${meta.attribution})`,
     url: `${SOCRATA}/d/${ALTS_CARRECS}`,
@@ -338,21 +339,37 @@ export async function construirGovern(fetchImpl: Fetch, avui: string) {
     nota: 'Qui forma el Govern i el departament que porta surten de la relació d’alts càrrecs. El nom ben escrit surt de les intervencions del Govern al Parlament, perquè la relació l’escriu en majúscules i a vegades sense accents; el nom i el càrrec tal com els escriu la relació són a nom_oficial i carrec_oficial.',
     font_perfils: 'govern.cat: el Consell Executiu',
     url_perfils: CONSELL_EXECUTIU,
-    data_perfils: avui,
+    data_perfils: perfilsDesats.consultat,
     llicencia_perfils: `CC0, segons l’avís legal de govern.cat (${AVIS_GOVERN})`,
     president: { ...president, ...perfils[0]! },
     consellers: ordenats.map((c, i) => ({ ...c, ...perfils[i + 1]! })),
   };
 }
 
-export const PERFILS = 'https://govern.cat/gov/api/v1/consell-executiu';
 export const AVIS_GOVERN = 'https://govern.cat/gov/avis-legal';
 export const CONSELL_EXECUTIU = 'https://govern.cat/gov/consell-executiu';
 
-type Perfil = {
-  consellerIdioma: { nom: string; carrec: string; descripcioCV: string };
-  audiovisual: { tipusImatge: number; data: string }[];
-};
+/**
+ * Les fitxes del Consell Executiu tal com les copia, des d'un navegador, la línia de
+ * docs/institucions.md. govern.cat no respon als scripts, i per això no es llegeixen aquí.
+ */
+const perfilsDesats = z.object({
+  consultat: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  total: z.number().int(),
+  fitxes: z.array(
+    z.object({ nom: z.string(), carrec: z.string(), fotos: z.array(z.string()), cv: z.string() }),
+  ),
+});
+export type PerfilsDesats = z.infer<typeof perfilsDesats>;
+
+export function llegirPerfils(json: string): PerfilsDesats {
+  const desats = perfilsDesats.parse(JSON.parse(json));
+  if (desats.fitxes.length !== desats.total)
+    throw new SourceError(
+      `dades/perfils-govern.json té ${desats.fitxes.length} fitxes de les ${desats.total} de govern.cat.`,
+    );
+  return desats;
+}
 
 /** Els paràgrafs del currículum, que govern.cat publica en HTML. */
 function paragrafs(html: string) {
@@ -367,37 +384,27 @@ function paragrafs(html: string) {
  * servir el nom amb què se'l coneix («Berni» per «Bernardo»), i per això es troba pel càrrec, que ha
  * de començar com el de la relació d'alts càrrecs, i pels cognoms, que hi han de ser tots.
  */
-export async function construirPerfils(
-  fetchImpl: Fetch,
+export function construirPerfils(
+  desats: PerfilsDesats,
   membres: { nom: string; nom_oficial: string; carrec: string }[],
 ) {
-  const resposta = await getJson<{ content: Perfil[]; totalElements: number }>(
-    fetchImpl,
-    `${PERFILS}?${new URLSearchParams({ size: '100' })}`,
-  );
-  if (resposta.content.length !== resposta.totalElements)
-    throw new SourceError('Les fitxes de govern.cat no caben en una pàgina.');
   return membres.map((m) => {
     const cognoms = words(m.nom_oficial.split(',')[0]);
-    const seus = resposta.content.filter((p) => {
-      const nom = words(p.consellerIdioma.nom);
-      return (
-        fold(p.consellerIdioma.carrec).startsWith(fold(m.carrec)) &&
-        cognoms.every((c) => nom.includes(c))
-      );
+    const seus = desats.fitxes.filter((f) => {
+      const nom = words(f.nom);
+      return fold(f.carrec).startsWith(fold(m.carrec)) && cognoms.every((c) => nom.includes(c));
     });
     if (seus.length !== 1)
       throw new SourceError(`${m.nom} té ${seus.length} fitxes a govern.cat, no una.`);
-    const perfil = seus[0]!;
-    // Hi ha dues fotos: la principal (338 x 245) i una d'apaïsada per a la capçalera (862 x 478).
-    const fotos = perfil.audiovisual.filter((a) => a.tipusImatge === 1);
-    if (fotos.length !== 1)
+    const fitxa = seus[0]!;
+    // Només hi compten les fotos principals (338 x 245), no les apaïsades de la capçalera.
+    if (fitxa.fotos.length !== 1)
       throw new SourceError(
-        `La fitxa de ${m.nom} a govern.cat té ${fotos.length} fotos principals.`,
+        `La fitxa de ${m.nom} a govern.cat té ${fitxa.fotos.length} fotos principals.`,
       );
-    const cv = paragrafs(perfil.consellerIdioma.descripcioCV);
+    const cv = paragrafs(fitxa.cv);
     if (!cv.length) throw new SourceError(`La fitxa de ${m.nom} a govern.cat no té currículum.`);
-    return { foto: fotos[0]!.data, cv };
+    return { foto: fitxa.fotos[0]!, cv };
   });
 }
 

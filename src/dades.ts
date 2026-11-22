@@ -2,20 +2,28 @@
 //   node src/dades.ts
 // Primer ho llegeix i ho comprova tot; només escriu si tot quadra. Si una font falla, surt amb un
 // error i deixa els fitxers com estaven, perquè es pugui executar sense ningú al davant.
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { SourceError } from './comun.ts';
-import { construirGovern, construirParlament, construirTransparencia } from './institucions.ts';
+import {
+  construirGovern,
+  construirParlament,
+  construirTransparencia,
+  llegirPerfils,
+} from './institucions.ts';
 
 const avui = new Date().toISOString().slice(0, 10);
+const dades = (nom: string) => new URL(`../dades/${nom}`, import.meta.url);
 try {
-  const govern = await construirGovern(fetch, avui);
+  // govern.cat no respon als scripts: les fotos i els currículums es copien a mà (docs/institucions.md).
+  const perfils = llegirPerfils(await readFile(dades('perfils-govern.json'), 'utf8'));
+  const govern = await construirGovern(fetch, perfils);
   const transparencia = await construirTransparencia(fetch, [
     govern.president,
     ...govern.consellers,
   ]);
   const parlament = await construirParlament(fetch, avui);
-  const desa = (nom: string, dades: unknown) =>
-    writeFile(new URL(`../dades/${nom}`, import.meta.url), `${JSON.stringify(dades, null, 2)}\n`);
+  const desa = (nom: string, contingut: unknown) =>
+    writeFile(dades(nom), `${JSON.stringify(contingut, null, 2)}\n`);
   await desa('govern.json', govern);
   await desa('transparencia.json', transparencia);
   await desa('parlament.json', parlament);

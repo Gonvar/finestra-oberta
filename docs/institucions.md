@@ -26,7 +26,37 @@ La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 
 - **Comprovacions:**
   - Hi ha d'haver un president, i cada departament ha de tenir un conseller, i només un.
   - Cada persona ha de tenir un nom, i només un, a les intervencions. Una persona que encara no ha intervingut al Parlament atura l'script fins que s'hi afegeixi.
-- **Foto i currículum:** `foto` i `cv` surten de l'[API del Consell Executiu](https://govern.cat/gov/api/v1/consell-executiu) de govern.cat, que té la seva pròpia data (`data_perfils`). `foto` és l'enllaç a la foto oficial, sense cap còpia, i `cv` són els paràgrafs del currículum en text pla. Cada membre es troba pel càrrec i els cognoms, i ha de coincidir amb una sola fitxa, amb una sola foto principal i amb un currículum que no sigui buit. Segons l'[avís legal](https://govern.cat/gov/avis-legal) de govern.cat, els continguts són CC0. Igualment es mostra d'on surten. No es desa cap altre camp de l'API, perquè n'hi ha que identifiquen qui va publicar la fitxa.
+- **Foto i currículum:** `foto` i `cv` surten de les fitxes del [Consell Executiu](https://govern.cat/gov/consell-executiu) a govern.cat, copiades a `dades/perfils-govern.json`. `data_perfils` és el dia en què es van copiar. `foto` és l'enllaç a la foto oficial, sense cap còpia, i `cv` són els paràgrafs del currículum en text pla. Cada membre es troba pel càrrec i els cognoms, i ha de coincidir amb una sola fitxa, amb una sola foto principal i amb un currículum que no sigui buit. Si algú no hi és, l'script s'atura. Segons l'[avís legal](https://govern.cat/gov/avis-legal) de govern.cat, els continguts són CC0. Igualment es mostra d'on surten.
+
+### Com es copien les fitxes de govern.cat
+
+govern.cat no respon als scripts: la seva API, al darrere de CloudFront, torna 403 a qualsevol petició que no vingui d'un navegador, també des d'un ordinador personal. Per això les fitxes es copien a mà, i cal tornar-ho a fer quan canvia el Govern (l'script s'atura si un membre no hi és):
+
+1. Obre <https://govern.cat/gov/consell-executiu> al navegador i, a la consola de les eines de desenvolupament, enganxa:
+
+   ```js
+   const r = await (await fetch('/gov/api/v1/consell-executiu?size=100')).json();
+   copy(
+     JSON.stringify(
+       {
+         consultat: new Date().toISOString().slice(0, 10),
+         total: r.totalElements,
+         fitxes: r.content.map((f) => ({
+           nom: f.consellerIdioma.nom,
+           carrec: f.consellerIdioma.carrec,
+           fotos: f.audiovisual.filter((a) => a.tipusImatge === 1).map((a) => a.data),
+           cv: f.consellerIdioma.descripcioCV,
+         })),
+       },
+       null,
+       2,
+     ),
+   );
+   ```
+
+2. Desa el que s'ha copiat a `dades/perfils-govern.json` (al Mac, `pbpaste > dades/perfils-govern.json`) i executa `npm run dades`.
+
+Només es copien aquests quatre camps. L'API en dona d'altres, com qui va publicar cada fitxa, que no s'han de desar.
 
 ## `dades/transparencia.json`
 

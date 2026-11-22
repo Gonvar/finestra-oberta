@@ -17,7 +17,8 @@ import {
   llegirFitxa,
   llegirMapa,
   MAPA_ESCONS,
-  PERFILS,
+  llegirPerfils,
+  type PerfilsDesats,
   VIATGES,
 } from './institucions.ts';
 
@@ -95,6 +96,11 @@ test('el mapa falla si les còpies d’un escó no coincideixen', () => {
 
 test('el mapa falla si una persona té dos grups', () => {
   assert.throws(() => llegirMapa(mapa({ extra: esco(5, 5, GRUP_B) })), /un sol grup/);
+});
+
+test('les fitxes copiades de govern.cat han de ser totes', () => {
+  const text = JSON.stringify({ ...desats(), total: 4 });
+  assert.throws(() => llegirPerfils(text), /té 3 fitxes de les 4/);
 });
 
 test('el mapa falla si un color no és a la llegenda', () => {
@@ -212,16 +218,11 @@ const NOMS = [
   { nom: 'Carles Exemple Tres' },
 ];
 
-const perfil = (nom: string, carrec: string, fotos = [1, 2]) => ({
-  consellerIdioma: {
-    nom,
-    carrec,
-    descripcioCV: `<p><strong>Nascuda a Lleida.</strong></p><p>Llicenciada&nbsp;en Dret.</p>`,
-  },
-  audiovisual: fotos.map((tipusImatge) => ({
-    tipusImatge,
-    data: `https://govern.cat/govern/docs/${nom}-${tipusImatge}.png`,
-  })),
+const perfil = (nom: string, carrec: string, fotos = 1) => ({
+  nom,
+  carrec,
+  fotos: Array.from({ length: fotos }, (_, i) => `https://govern.cat/govern/docs/${nom}-${i}.png`),
+  cv: `<p><strong>Nascuda a Lleida.</strong></p><p>Llicenciada&nbsp;en Dret.</p>`,
 });
 
 /** govern.cat fa servir el nom amb què es coneix cada persona, que pot no ser l'oficial. */
@@ -231,9 +232,14 @@ const PERFILS_GOVERN = [
   perfil('Carla Exemple i Tres', 'Consellera de Salut\n'),
 ];
 
-function govern(files: object[], noms = NOMS, perfils: object[] = PERFILS_GOVERN) {
+const desats = (fitxes = PERFILS_GOVERN): PerfilsDesats => ({
+  consultat: '2026-11-21',
+  total: fitxes.length,
+  fitxes,
+});
+
+function govern(files: object[], noms = NOMS) {
   return fake((url) => {
-    if (url.startsWith(PERFILS)) return { content: perfils, totalElements: perfils.length };
     if (url.includes(`/api/views/${ALTS_CARRECS}`))
       return {
         name: 'Relació d’alts càrrecs',
@@ -255,7 +261,7 @@ const GOVERN = [
 ];
 
 test('el Govern dona el president i un conseller per departament, amb el nom ben escrit', async () => {
-  const resultat = await construirGovern(govern(GOVERN), '2026-11-22');
+  const resultat = await construirGovern(govern(GOVERN), desats());
   assert.equal(resultat.data_dades, '2026-09-29');
   assert.equal(resultat.data_noms, '2026-11-20');
   assert.deepEqual(resultat.president, {
@@ -265,7 +271,7 @@ test('el Govern dona el president i un conseller per departament, amb el nom ben
     nom_oficial: 'EXEMPLE U, ANNA',
     carrec_oficial: 'PRESIDENT DE LA GENERALITAT DE CATALUNYA',
     retribucio_anual: 1,
-    foto: 'https://govern.cat/govern/docs/Anna Exemple i U-1.png',
+    foto: 'https://govern.cat/govern/docs/Anna Exemple i U-0.png',
     cv: ['Nascuda a Lleida.', 'Llicenciada en Dret.'],
   });
   assert.deepEqual(
@@ -279,28 +285,22 @@ test('el Govern dona el president i un conseller per departament, amb el nom ben
 
 test('el Govern falla si un nom no és a les intervencions', async () => {
   const noms = NOMS.filter((n) => n.nom !== 'Berta Exemple Dos');
-  await assert.rejects(
-    construirGovern(govern(GOVERN, noms), '2026-11-22'),
-    /coincideix amb 0 noms/,
-  );
+  await assert.rejects(construirGovern(govern(GOVERN, noms), desats()), /coincideix amb 0 noms/);
 });
 
 test('el Govern falla si un nom coincideix amb dues persones', async () => {
   const noms = [...NOMS, { nom: 'Berta Maria Exemple Dos' }];
-  await assert.rejects(
-    construirGovern(govern(GOVERN, noms), '2026-11-22'),
-    /coincideix amb 2 noms/,
-  );
+  await assert.rejects(construirGovern(govern(GOVERN, noms), desats()), /coincideix amb 2 noms/);
 });
 
 test('el Govern falla si un departament no té conseller', async () => {
   const files = GOVERN.filter((f) => f.cognoms_nom !== 'EXEMPLE TRES, CARLA');
-  await assert.rejects(construirGovern(govern(files), '2026-11-22'), /Salut té 0 consellers/);
+  await assert.rejects(construirGovern(govern(files), desats()), /Salut té 0 consellers/);
 });
 
 test('el Govern falla si no hi ha president', async () => {
   const files = GOVERN.filter((f) => f.cognoms_nom !== 'EXEMPLE U, ANNA');
-  await assert.rejects(construirGovern(govern(files), '2026-11-22'), /0 presidents/);
+  await assert.rejects(construirGovern(govern(files), desats()), /0 presidents/);
 });
 
 test('els imports de la relació passen a euros', () => {
@@ -443,31 +443,30 @@ test('la transparència falla si un membre no té cap declaració activa', async
 });
 
 test('el Govern troba la fitxa de govern.cat encara que el nom no sigui l’oficial', async () => {
-  const resultat = await construirGovern(govern(GOVERN), '2026-11-22');
+  const resultat = await construirGovern(govern(GOVERN), desats());
   assert.equal(
     resultat.consellers[0]!.foto,
-    'https://govern.cat/govern/docs/Bet Exemple Dos-1.png',
+    'https://govern.cat/govern/docs/Bet Exemple Dos-0.png',
   );
-  assert.equal(resultat.data_perfils, '2026-11-22');
+  assert.equal(resultat.data_perfils, '2026-11-21');
 });
 
 test('el Govern falla si un membre no té fitxa a govern.cat', async () => {
-  const perfils = PERFILS_GOVERN.filter((p) => p.consellerIdioma.nom !== 'Bet Exemple Dos');
-  await assert.rejects(
-    construirGovern(govern(GOVERN, NOMS, perfils), '2026-11-22'),
-    /0 fitxes a govern.cat/,
-  );
+  const perfils = PERFILS_GOVERN.filter((p) => p.nom !== 'Bet Exemple Dos');
+  await assert.rejects(construirGovern(govern(GOVERN), desats(perfils)), /0 fitxes a govern.cat/);
 });
 
 test('el Govern falla si una fitxa de govern.cat no té foto principal', async () => {
   const perfils = [
     ...PERFILS_GOVERN.slice(0, 2),
-    perfil('Carla Exemple i Tres', 'Consellera de Salut', [2]),
+    perfil('Carla Exemple i Tres', 'Consellera de Salut', 0),
   ];
-  await assert.rejects(
-    construirGovern(govern(GOVERN, NOMS, perfils), '2026-11-22'),
-    /0 fotos principals/,
-  );
+  await assert.rejects(construirGovern(govern(GOVERN), desats(perfils)), /0 fotos principals/);
+});
+
+test('les fitxes copiades de govern.cat han de ser totes', () => {
+  const text = JSON.stringify({ ...desats(), total: 4 });
+  assert.throws(() => llegirPerfils(text), /té 3 fitxes de les 4/);
 });
 
 test('el mapa falla si un color no és un color de CSS', () => {
