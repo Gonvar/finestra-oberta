@@ -12,50 +12,65 @@ L'script ho llegeix i ho comprova tot abans d'escriure res. Si una comprovació 
 
 La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 5.00 UTC. També es pot llançar a mà des de la pestanya Actions de GitHub.
 
-- Executa `npm run dades` sobre la branca `dades` i comprova que el resultat es pot reproduir a partir de les còpies de les fonts.
-- Si alguna cosa ha canviat, signa els fitxers amb una attestation i en fa un commit a `dades`. El commit enllaça el commit de `main` amb què s'ha generat i l'execució de la tasca.
+- Primer comprova que el que hi ha publicat a `dades` encara es pot reproduir. Després executa `npm run dades` i comprova que el resultat nou també es pot reproduir a partir de les còpies de les fonts.
+- Si la composició ha canviat, o si el que hi ha publicat ja no es pot reproduir, signa `procedencia.json` amb una atestació i en fa un commit a `dades`. El missatge del commit enllaça l'execució de la tasca.
 - Si l'únic canvi és `data_consulta`, no fa cap commit: la composició és la mateixa.
 - Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
+- Llançada des d'una branca que no és `main`, la tasca llegeix les fonts i ho comprova tot, però no signa ni publica res. Serveix per provar un canvi abans de fusionar-lo.
 
 Les dades no passen per pull request perquè no les escriu cap persona. El codi que les genera sí: tot canvi a `main` el revisa algú que manté el projecte.
+
+### Qui pot escriure a `dades`
+
+Ho decideix GitHub, no el workflow, que qualsevol branca podria canviar:
+
+- Un ruleset de la branca `dades` hi impedeix el force push i l'esborrat, i només hi deixa fer push a la clau de desplegament del repositori. No hi té excepció ningú més, tampoc qui administra el repositori.
+- La clau privada és un secret de l'entorn `dades` de GitHub, i aquest entorn només s'obre per a execucions de la branca `main`. Una execució des d'una altra branca no la pot llegir.
+
+Per tant, a `dades` només hi pot escriure el workflow de `main`, i el codi de `main` només canvia amb una pull request revisada.
 
 ## Com comprovar que les dades són de la font
 
 Al costat de cada JSON hi ha:
 
 - `captures/`: la resposta de cada font oficial tal com va arribar, sense cap canvi. Cada fitxer es diu com la seva empremta SHA-256.
-- `procedencia.json`: de cada resposta, l'URL, l'hora de la consulta, el codi HTTP, el tipus de contingut i l'empremta, en l'ordre en què es van demanar.
+- `procedencia.json`: l'empremta de cada JSON publicat i, de cada resposta, l'URL demanat, l'URL que la va servir després de les redireccions, l'hora de la consulta, el codi HTTP, el tipus de contingut i l'empremta, en l'ordre en què es van demanar.
 
-Hi ha tres comprovacions, i les pot fer qualsevol persona.
+L'atestació signa `procedencia.json`. Com que aquest fitxer porta l'empremta dels JSON i de cada còpia, els signa tots alhora: no es poden barrejar fitxers de dues execucions.
 
-**1. Les dades surten de les còpies, sense retocs.** Torna a generar els JSON a partir de `captures/` amb el mateix codi i comprova que surten idèntics, byte a byte, i que cada còpia té l'empremta que diu `procedencia.json`:
+Hi ha tres comprovacions, i les pot fer qualsevol persona. Cal [`gh`](https://cli.github.com/), Git i Node.js 24.
+
+**1. Les ha generat la tasca automàtica de `main`, i no una persona.** Cada actualització porta una [atestació de GitHub](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations) que diu quin workflow, quin commit de `main` i quina execució han produït `procedencia.json`. Es desa al registre públic de [Sigstore](https://www.sigstore.dev/), que no controla aquest projecte i on no es pot esborrar res.
 
 ```sh
 git clone https://github.com/Gonvar/finestra-oberta.git
 cd finestra-oberta
 git clone --branch dades https://github.com/Gonvar/finestra-oberta.git dades
-git checkout <commit>   # el que enllaça «Codi:» al missatge de l'últim commit de dades
-npm run verifica-dades
-```
-
-Cal el codi de `main` amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera.
-
-**2. Les ha generat la tasca automàtica, i no una persona.** Cada actualització porta una [attestation de GitHub](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations) que diu quin workflow, quin commit de `main` i quina execució han produït aquests fitxers. Es desa al registre públic de [Sigstore](https://www.sigstore.dev/), que no controla aquest projecte i on no es pot esborrar res:
-
-```sh
-gh attestation verify dades/govern.json --repo Gonvar/finestra-oberta \
+gh attestation verify dades/procedencia.json --repo Gonvar/finestra-oberta \
   --signer-workflow Gonvar/finestra-oberta/.github/workflows/dades.yml --source-ref refs/heads/main
 ```
 
-Fes el mateix amb `parlament.json` i `procedencia.json`. Si algú canviés un fitxer a mà, o reescrivís la història de la branca, no hi hauria cap attestation amb la seva empremta.
+Si algú hagués canviat `procedencia.json` a mà, no hi hauria cap atestació amb la seva empremta.
 
-**3. La font encara diu el mateix.** Executa `npm run dades` pel teu compte i compara-ho amb el que hi ha publicat. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi.
+**2. Les dades surten de les còpies, sense retocs.** Torna a generar els JSON a partir de `captures/` amb el codi que diu l'atestació, i comprova que surten idèntics, byte a byte, i que cada fitxer té l'empremta que diu `procedencia.json`. El commit es treu de l'atestació, i no del missatge del commit, perquè l'atestació no la pot triar qui publica:
+
+```sh
+CODI=$(gh attestation verify dades/procedencia.json --repo Gonvar/finestra-oberta \
+  --signer-workflow Gonvar/finestra-oberta/.github/workflows/dades.yml --source-ref refs/heads/main \
+  --format json --jq '.[0].verificationResult.signature.certificate.sourceRepositoryDigest')
+git checkout "$CODI"
+npm run verifica-dades
+```
+
+Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera.
+
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json` i `/tmp/ara/parlament.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
 - Que la font oficial digui la veritat. Les dades són les que va publicar la font aquell dia. Si la font s'equivoca, l'error hi és.
 - Que la resposta vingués del servidor oficial. HTTPS no signa les respostes, i el que es pot provar és que la tasca automàtica, executant un codi públic, va rebre aquests bytes en connectar-se a l'URL oficial.
-- Qui administra el repositori pot canviar el workflow o la protecció de la branca. Tots dos canvis queden a la vista: el workflow és a la història de `main`, i un fitxer que no surt d'una execució del workflow no té attestation.
+- Qui administra el repositori pot canviar el ruleset, l'entorn o el workflow. Un canvi al workflow queda a la història de `main`, i un fitxer que no surt d'una execució del workflow de `main` no té atestació. Un canvi al ruleset o a l'entorn no és públic: si algú el fes servir per tornar a publicar dades antigues, ho detectaria la comprovació 3.
 
 ## `govern.json`
 

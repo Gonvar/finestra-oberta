@@ -101,6 +101,17 @@ test('la verificació falla si sobra una còpia', async () => {
   await rm(carpeta, { recursive: true });
 });
 
+test('la verificació falla si els JSON no són els de procedencia.json', async () => {
+  // Un JSON i les seves còpies d'una altra execució, barrejats amb el procedencia.json d'aquesta.
+  const altra = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  await genera(altra, font, '2026-11-23', construeix, 0);
+  const carpeta = await carpetaGenerada();
+  await writeFile(join(carpeta, 'resultat.json'), await readFile(join(altra, 'resultat.json')));
+  await assert.rejects(verifica(carpeta, construeix), DesquadreError);
+  await rm(carpeta, { recursive: true });
+  await rm(altra, { recursive: true });
+});
+
 test('la verificació falla si falta una còpia', async () => {
   const carpeta = await carpetaGenerada();
   const { captures } = await llegeixProcedencia(carpeta);

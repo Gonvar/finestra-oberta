@@ -6,28 +6,45 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { Fetch } from './comun.ts';
 
-/** Una resposta d'una font oficial, tal com va arribar. El cos és a captures/<sha256>. */
+/**
+ * Una resposta d'una font oficial, tal com va arribar. El cos és a captures/<sha256>. `url` és
+ * l'adreça demanada i `url_resposta`, la que va servir els bytes després de les redireccions.
+ */
 export type Captura = {
   url: string;
+  url_resposta: string;
   consultat: string;
   estat: number;
   tipus: string | null;
   sha256: string;
 };
 
-export type Procedencia = { data_consulta: string; captures: Captura[] };
+/**
+ * `fitxers` és l'empremta de cada JSON publicat. L'atestació signa aquest fitxer, de manera que
+ * lliga els JSON i les còpies d'una mateixa execució: no se'n poden barrejar de dues.
+ */
+export type Procedencia = {
+  data_consulta: string;
+  fitxers: Record<string, string>;
+  captures: Captura[];
+};
 
 // Sense zod: la tasca de dades no instal·la cap dependència (vegeu .github/workflows/dades.yml).
+const esEmpremta = (x: unknown) => typeof x === 'string' && /^[0-9a-f]{64}$/.test(x);
+
 const esCaptura = (c: Record<string, unknown>) =>
   typeof c.url === 'string' &&
+  typeof c.url_resposta === 'string' &&
   typeof c.consultat === 'string' &&
   typeof c.estat === 'number' &&
   (typeof c.tipus === 'string' || c.tipus === null) &&
-  typeof c.sha256 === 'string' &&
-  /^[0-9a-f]{64}$/.test(c.sha256);
+  esEmpremta(c.sha256);
 
 const esProcedencia = (p: Record<string, unknown>): p is Procedencia =>
   typeof p.data_consulta === 'string' &&
+  typeof p.fitxers === 'object' &&
+  p.fitxers !== null &&
+  Object.values(p.fitxers).every(esEmpremta) &&
   Array.isArray(p.captures) &&
   p.captures.every((c) => typeof c === 'object' && c !== null && esCaptura(c));
 
@@ -61,6 +78,7 @@ export async function genera<T extends Record<string, unknown>>(
     const sha256 = empremta(cos);
     captures.push({
       url: String(input),
+      url_resposta: resposta.url,
       consultat: new Date().toISOString(),
       estat: resposta.status,
       tipus: resposta.headers.get('content-type'),
@@ -75,9 +93,13 @@ export async function genera<T extends Record<string, unknown>>(
   await rm(join(carpeta, 'captures'), { recursive: true, force: true });
   await mkdir(join(carpeta, 'captures'), { recursive: true });
   for (const [sha256, cos] of cossos) await writeFile(join(carpeta, 'captures', sha256), cos);
-  for (const [nom, dades] of Object.entries(fitxers))
-    await writeFile(join(carpeta, nom), serialitza(dades));
-  const procedencia: Procedencia = { data_consulta: data, captures };
+  const empremtes: Record<string, string> = {};
+  for (const [nom, dades] of Object.entries(fitxers)) {
+    const text = serialitza(dades);
+    empremtes[nom] = empremta(new TextEncoder().encode(text));
+    await writeFile(join(carpeta, nom), text);
+  }
+  const procedencia: Procedencia = { data_consulta: data, fitxers: empremtes, captures };
   await writeFile(join(carpeta, 'procedencia.json'), serialitza(procedencia));
   return fitxers;
 }
@@ -141,8 +163,15 @@ export async function verifica(carpeta: string, construeix: Construeix) {
       `procedencia.json té ${procedencia.captures.length} còpies, però les dades només en fan servir ${seguent}.`,
     );
 
-  for (const [nom, dades] of Object.entries(fitxers))
-    if (String(await llegeix(nom)) !== serialitza(dades))
+  const noms = Object.keys(fitxers);
+  if (JSON.stringify(Object.keys(procedencia.fitxers).sort()) !== JSON.stringify([...noms].sort()))
+    throw new DesquadreError(`procedencia.json no dona l'empremta de ${noms.join(' i ')}.`);
+  for (const [nom, dades] of Object.entries(fitxers)) {
+    const publicat = await llegeix(nom);
+    if (String(publicat) !== serialitza(dades))
       throw new DesquadreError(`${nom} no és el que surt de les còpies de les fonts.`);
+    if (empremta(publicat) !== procedencia.fitxers[nom])
+      throw new DesquadreError(`${nom} no té l'empremta que diu procedencia.json.`);
+  }
   return { procedencia, fitxers: Object.keys(fitxers) };
 }
