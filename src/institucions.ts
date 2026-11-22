@@ -39,7 +39,7 @@ const ENTITATS: Record<string, string> = {
 };
 
 /** El text d'un tros d'HTML. Una entitat desconeguda és un error: no es pot endevinar. */
-function text(html: string) {
+export function text(html: string) {
   return html
     .replace(/<[^>]*>/g, ' ')
     .replace(/&([#\w]+);/g, (whole, name: string) => {
@@ -51,7 +51,7 @@ function text(html: string) {
     .trim();
 }
 
-function comprovaCodificacio(html: string, url: string) {
+export function comprovaCodificacio(html: string, url: string) {
   if (html.includes('�')) throw new SourceError(`${url} té caràcters mal codificats.`);
 }
 
@@ -139,7 +139,7 @@ export function llegirFitxa(html: string, url: string): Fitxa {
   };
 }
 
-const pausa = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+export const pausa = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** La composició del Parlament: el mapa d'escons i, de cada persona, la seva fitxa. */
 export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs = 300) {
