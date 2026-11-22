@@ -43,27 +43,29 @@ const desDe = `des del ${dia(t.nomenament)}`;
 
     <div class="xifres entra" style="--ordre: 3">
       <div>
-        <p class="valor">{eurosRodons(membre.retribucio_anual)}</p>
+        <p class="valor">{euros(membre.retribucio_anual)}</p>
         <p class="que">Sou anual previst</p>
         <p class="font-dada">
           <a href={govern.url}>Relació d'alts càrrecs</a>, {dia(govern.data_dades)}
         </p>
       </div>
       <div>
-        <p class="valor">{nombre(agenda.reunions)}</p>
-        <p class="que">Reunions i actes amb grups d'interès</p>
+        <p class="valor">{nombre(agenda.contactes)}</p>
+        <p class="que">Entrades a l'agenda de grups d'interès</p>
         <p class="font-dada">
           <a href={transparencia.agenda.url}>Agenda pública</a>, {dia(transparencia.agenda.data_dades)}
         </p>
       </div>
       <div>
         <p class="valor">{nombre(viatges.viatges)}</p>
-        <p class="que">
-          Viatges a l'estranger{
-            'despeses' in viatges &&
-              `, ${eurosRodons(viatges.despeses)} en despeses${viatges.sense_despeses > 0 ? ` de ${viatges.viatges - viatges.sense_despeses}` : ''}, comitiva inclosa si n'hi ha`
-          }
-        </p>
+        <p class="que">Viatges a l'estranger</p>
+        {
+          'despeses' in viatges && (
+            <p class="que">
+              {`${eurosRodons(viatges.despeses)} en despeses${viatges.sense_despeses > 0 ? ` de ${viatges.viatges - viatges.sense_despeses} dels ${viatges.viatges} viatges` : ''}. Pot incloure la comitiva.`}
+            </p>
+          )
+        }
         <p class="font-dada">
           <a href={transparencia.viatges.url}>Viatges a l'estranger</a>, {dia(transparencia.viatges.data_dades)}
         </p>
@@ -126,15 +128,15 @@ const desDe = `des del ${dia(t.nomenament)}`;
       reunions que hi tenen els alts càrrecs es publiquen en una agenda.
     </p>
     {
-      agenda.darreres.length === 0 ? (
+      agenda.darrers.length === 0 ? (
         <p class="buit">L'agenda pública no té cap reunió amb grups d'interès {desDe}.</p>
       ) : (
         <ol class="files cronologia">
-          {agenda.darreres.map((r) => (
+          {agenda.darrers.map((r) => (
             <li>
               <time datetime={r.data}>{diaCurt(r.data)}</time>
               <div>
-                <p class="destacat">{r.grups.join(', ')}</p>
+                <p class="destacat">{r.grup}</p>
                 <p class="secundari">
                   {r.activitat}
                   {'tema' in r && `. ${r.tema}`}
@@ -146,8 +148,8 @@ const desDe = `des del ${dia(t.nomenament)}`;
       )
     }
     <p class="font-dada">
-      {agenda.darreres.length > 0 && `Les ${agenda.darreres.length} més recents de ${nombre(agenda.reunions)}. `}
-      Una reunió amb diversos grups compta una vegada. Font: <a
+      {agenda.darrers.length > 0 && `Les ${agenda.darrers.length} més recents de ${nombre(agenda.contactes)}. `}
+      L'agenda posa una entrada per grup: una reunió amb tres grups hi surt tres vegades. Font: <a
         href={transparencia.agenda.url}>{transparencia.agenda.font}</a
       >, actualitzada el {dia(transparencia.agenda.data_dades)}.
     </p>

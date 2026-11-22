@@ -139,8 +139,14 @@ export const POSICIONS_ESCONS = `${PARLAMENT}/js/mapa-escons.js`;
  */
 export function llegirPosicions(js: string) {
   const posicions = new Map<number, { x: number; y: number }>();
-  for (const m of js.matchAll(/posicionsEscons\["(\d+)"\]\s*=\s*\{x:\s*(\d+),\s*y:\s*(\d+)\}/g))
-    posicions.set(Number(m[1]), { x: Number(m[2]), y: Number(m[3]) });
+  for (const m of js.matchAll(
+    /(?<![\w.$])posicionsEscons\["(\d+)"\]\s*=\s*\{x:\s*(\d+),\s*y:\s*(\d+)\}/g,
+  )) {
+    const esco = Number(m[1]);
+    if (posicions.has(esco))
+      throw new SourceError(`El mapa d’escons dona dues posicions a l’escó ${esco}.`);
+    posicions.set(esco, { x: Number(m[2]), y: Number(m[3]) });
+  }
   if (posicions.size === 0)
     throw new SourceError('El mapa d’escons no dona la posició de cap escó.');
   return posicions;
@@ -193,6 +199,11 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
       escons: 0,
       subgrups: new Map(),
     };
+    // La web pinta el grup d'un sol color: si el mapa en dona més d'un, aquest color no seria el seu.
+    if (esco.color !== grup.color)
+      throw new SourceError(
+        `El mapa d'escons pinta el grup ${esco.grup} de ${grup.color} i de ${esco.color}.`,
+      );
     grup.escons++;
     if (esco.subgrup) grup.subgrups.set(esco.subgrup, (grup.subgrups.get(esco.subgrup) ?? 0) + 1);
     grups.set(esco.grup, grup);
@@ -528,6 +539,15 @@ type FilaViatge = {
 };
 
 const DARRERES = 5;
+
+/**
+ * Dos trimestres: el temps en què l'agenda ja ha de dir alguna cosa d'algú nomenat de nou, encara
+ * que sigui que no ha tingut cap reunió.
+ */
+const MARGE_AGENDA_DIES = 183;
+
+const afegirDies = (dia: string, dies: number) =>
+  new Date(Date.parse(dia) + dies * 86_400_000).toISOString().slice(0, 10);
 const LIMIT = 50000;
 
 async function totes<T>(fetchImpl: Fetch, id: string, params: Record<string, string>) {
@@ -583,6 +603,8 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     $order: 'inici_viatge DESC',
   });
 
+  const darreraAgenda = agenda.length ? diaDeSocrata(agenda[0]!.data) : desDe;
+
   const persones = membres.map((m, i) => {
     const declaracio = nomenaments[i]!;
     const nomenament = diaIso(declaracio.data_nomenament);
@@ -596,18 +618,15 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
           esCarrecDelGovern(f.c_rrec) &&
           esLaPersona(m.nom_oficial, f.nom_i_cognoms),
       );
-    // La relació també hi posa una fila sense grup («-») per dir que en un trimestre no n'hi ha hagut.
-    const files = seves(agenda, (f) => f.data).filter((f) => f.grup_d_inter_s !== '-');
-    // Un acte amb diversos grups d'interès hi surt en una fila per grup. Si es comptessin les files,
-    // qui apunta cada grup per separat semblaria tenir més reunions que qui els apunta junts.
-    const actes = new Map<string, { fila: FilaAgenda; grups: string[] }>();
-    for (const f of files) {
-      const clau = JSON.stringify([f.data, f.activitat, f.tema]);
-      const acte = actes.get(clau);
-      if (acte === undefined) actes.set(clau, { fila: f, grups: [f.grup_d_inter_s] });
-      else acte.grups.push(f.grup_d_inter_s);
-    }
-    const reunions = [...actes.values()];
+    const totesSeves = seves(agenda, (f) => f.data);
+    // L'agenda es publica per trimestres, i qui no ha tingut cap reunió hi té una fila sense grup
+    // («-»). Si un membre no hi surt amb prou temps, no és que no n'hagi tingut: és que el nom o el
+    // càrrec ja no es troben, i un zero seria una dada falsa.
+    if (totesSeves.length === 0 && afegirDies(nomenament, MARGE_AGENDA_DIES) < darreraAgenda)
+      throw new SourceError(`L'agenda de grups d'interès no té cap fila de ${m.nom}.`);
+    // La relació posa una fila per grup i no diu quines són d'una mateixa reunió: es compten les
+    // files, com les dona, i no reunions endevinades.
+    const contactes = totesSeves.filter((f) => f.grup_d_inter_s !== '-');
     const viatgesSeus = seves(viatges, (f) => f.inici_viatge);
     const ambDespeses = viatgesSeus.filter((v) => v.total_despeses !== undefined);
     return {
@@ -622,12 +641,12 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
         return items.length ? [{ camp, tipus, apartat, items }] : [];
       }),
       agenda: {
-        reunions: reunions.length,
-        darreres: reunions.slice(0, DARRERES).map(({ fila, grups }) => ({
-          data: diaDeSocrata(fila.data),
-          grups,
-          activitat: fila.activitat,
-          ...(fila.tema !== undefined && { tema: fila.tema }),
+        contactes: contactes.length,
+        darrers: contactes.slice(0, DARRERES).map((f) => ({
+          data: diaDeSocrata(f.data),
+          grup: f.grup_d_inter_s,
+          activitat: f.activitat,
+          ...(f.tema !== undefined && { tema: f.tema }),
         })),
       },
       viatges: {

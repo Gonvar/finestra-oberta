@@ -10,7 +10,7 @@ L'script ho llegeix i ho comprova tot abans d'escriure res. Si una comprovació 
 
 ## Actualització automàtica
 
-La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 5.00 UTC. També es pot llançar a mà des de la pestanya Actions de GitHub.
+La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 5.00 UTC i cada vegada que a main canvia `src/` o `fonts/`, perquè la web necessita les dades amb la forma que dona el codi nou. També es pot llançar a mà des de la pestanya Actions de GitHub.
 
 - Primer comprova que el que hi ha publicat a `dades` encara es pot reproduir. Després executa `npm run dades` i comprova que el resultat nou també es pot reproduir a partir de les còpies de les fonts.
 - Si la composició ha canviat, o si el que hi ha publicat ja no es pot reproduir, signa `procedencia.json` amb una atestació i en fa un commit a `dades`. El missatge del commit enllaça l'execució de la tasca.
@@ -127,7 +127,7 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
 - **Contingut de cada persona:**
   - `nomenament`: la data de nomenament que dona la declaració d'activitats.
   - `activitats`: els apartats de la declaració que no diuen «N/A», amb la llista d'activitats. Cada apartat porta el nom del camp (`camp`) i, a `apartat`, la descripció que en fan les metadades del mateix conjunt, sense resumir-la.
-  - `agenda`: quantes reunions i actes amb grups d'interès hi ha des del nomenament, i els cinc últims amb tots els grups que hi van ser. La relació posa una fila per grup, i per això les files amb la mateixa data, activitat i tema compten com un sol acte. No compten les files sense grup («-»), que la relació fa servir per dir que en un trimestre no n'hi ha hagut cap.
+  - `agenda`: quantes files amb grups d'interès té l'agenda des del nomenament (`contactes`), i les cinc últimes. La relació posa una fila per grup i no diu quines són d'una mateixa reunió, i per això es compten les files tal com les dona: una reunió amb tres grups compta tres vegades. No compten les files sense grup («-»), que la relació fa servir per dir que en un trimestre no n'hi ha hagut cap. Si un membre nomenat fa més de dos trimestres no té cap fila, ni tan sols «-», la tasca falla: vol dir que el nom o el càrrec ja no es troben, i un zero seria fals.
   - `viatges`: quants viatges a l'estranger hi ha des del nomenament, la suma de les despeses publicades (`despeses`, que no hi és si encara no n'hi ha cap), quants encara no en tenen (`sense_despeses`) i els cinc últims.
 - **Com es troba cada persona:** pel nom oficial de la relació d'alts càrrecs, com amb els noms ben escrits. L'agenda i els viatges inclouen tots els alts càrrecs i els mandats anteriors, i per això només compten les files amb el càrrec de president o de conseller i a partir del nomenament.
 - **Comprovacions:**

@@ -14,13 +14,15 @@ export class SourceError extends Error {}
 
 export type Fetch = typeof fetch;
 
+export const TEMPS_LIMIT_MS = 20_000;
+
 /** GET amb temps límit: la resposta si és 2xx; si no, un SourceError amb el codi. */
 async function get(fetchImpl: Fetch, url: string, accept: string) {
   let response: Response;
   try {
     response = await fetchImpl(url, {
       headers: { Accept: accept },
-      signal: AbortSignal.timeout(20_000),
+      signal: AbortSignal.timeout(TEMPS_LIMIT_MS),
     });
   } catch {
     throw new SourceError('La font no respon. Torna-ho a provar més tard.');
