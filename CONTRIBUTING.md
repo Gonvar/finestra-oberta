@@ -75,6 +75,8 @@ Cada servidor és un fitxer a `src/` que exporta una funció `create…Server(fe
 
 Aquest projecte publica dades públiques. Una dada falsa que sembla real és desinformació:
 
+- **Només fonts oficials i res de partit.** Les dades surten dels organismes públics de la taula de [NEUTRALITAT.md](NEUTRALITAT.md), no les edita ningú a mà, i ni l'ordre, ni els colors, ni els textos afavoreixen cap partit o ideologia. Una pull request que no ho compleixi no entra.
+
 - **Cap valor per defecte que amagui un error.** Si la font falla o no té la dada, l'assistent ho ha de saber. Un zero, una llista buida o una dada antiga no poden semblar una resposta vàlida.
 - **Valida el que l'API no valida.** Si un filtre mal escrit torna dades buides sense cap error, comprova'l abans contra les metadades o avisa'n a la resposta.
 - **Dona sempre la data de les dades**, i no la freqüència d'actualització que anuncia el conjunt.
@@ -92,6 +94,6 @@ Aquest projecte publica dades públiques. Una dada falsa que sembla real és des
 - Un objectiu per pull request. Les pull requests s'integren amb _squash_, i el títol de la pull request és el del commit final.
 - Omple la [plantilla](.github/pull_request_template.md): què canvia, com ho has comprovat i si t'ha ajudat un agent d'IA.
 - No diguis que has provat una cosa que no has provat. Les proves amb dades sintètiques no substitueixen una prova contra l'API real.
-- Abans de la revisió, qui manté el projecte passa `/code-review` de Claude Code a cada pull request nova, en una sessió independent i mai en la que ha escrit el canvi, també quan la pull request l'obre una sessió de Claude. Se'n revisen les troballes i se'n corregeixen les que siguin correctes.
+- Abans de la revisió, qui manté el projecte passa `/code-review` de Claude Code a cada pull request nova, en una sessió independent i mai en la que ha escrit el canvi, també quan la pull request l'obre una sessió de Claude. Se'n revisen les troballes i se'n corregeixen les que siguin correctes. Cada revisió, de persona o d'agent, fa les comprovacions de [NEUTRALITAT.md](NEUTRALITAT.md) §4.
 
 Si treballes amb un agent d'IA, llegeix també [AGENTS.md](AGENTS.md).

@@ -1,6 +1,6 @@
 # Instruccions per a agents
 
-Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegir un servidor i els criteris del projecte. Per als límits de seguretat, [SECURITY.md](SECURITY.md). Per a qualsevol canvi visual o de text de la interfície, [DESIGN.md](DESIGN.md).
+Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegir un servidor i els criteris del projecte. Per als límits de seguretat, [SECURITY.md](SECURITY.md). Per a les fonts i les dades, [NEUTRALITAT.md](NEUTRALITAT.md). Per a qualsevol canvi visual o de text de la interfície, [DESIGN.md](DESIGN.md).
 
 ## Idioma: català
 
@@ -24,6 +24,11 @@ Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegi
 - Corregeix un defecte on neix, no on es manifesta.
 - Els comentaris expliquen per què, mai què fa el codi.
 - El projecte fa servir Node 24, que executa el TypeScript directament. No afegeixis suport per a versions anteriors ni cap pas de compilació.
+
+## Neutralitat
+
+- No escriguis ni corregeixis dades a mà, i no afegeixis fonts que no siguin a la taula de [NEUTRALITAT.md](NEUTRALITAT.md).
+- Quan revisis una pull request, també amb `/code-review`, fes les comprovacions de NEUTRALITAT.md §4 i digues-ne el resultat. Qualsevol d'aquests casos és una troballa que bloqueja la pull request.
 
 ## Verificació
 
