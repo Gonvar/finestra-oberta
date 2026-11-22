@@ -91,6 +91,5 @@ Aquest projecte publica dades públiques. Una dada falsa que sembla real és des
 - Un objectiu per pull request. Les pull requests s'integren amb _squash_, i el títol de la pull request és el del commit final.
 - Omple la [plantilla](.github/pull_request_template.md): què canvia, com ho has comprovat i si t'ha ajudat un agent d'IA.
 - No diguis que has provat una cosa que no has provat. Les proves amb dades sintètiques no substitueixen una prova contra l'API real.
-- Cada pull request nova passa per `/code-review` en una sessió de Claude Code independent, que no ha escrit el canvi. La sessió que ha obert la pull request corregeix el que troba la revisió abans de donar-la per llesta.
 
 Si treballes amb un agent d'IA, llegeix també [AGENTS.md](AGENTS.md).
