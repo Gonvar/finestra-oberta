@@ -17,8 +17,9 @@ on:
 
 permissions: {}
 
+# Per branca: una prova des d'una altra branca no ha de cancel·lar l'execució de main en cua.
 concurrency:
-  group: dades
+  group: dades-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -94,11 +95,7 @@ jobs:
         with:
           name: dades
           path: nou
-      # procedencia.json porta l'empremta dels JSON i de cada còpia. Signar-lo els signa tots junts.
-      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
-        with:
-          subject-path: nou/procedencia.json
-      - name: Desa les dades
+      - name: Comprova que són les dades més noves
         env:
           CLAU: ${{ secrets.DADES_CLAU_DESPLEGAMENT }}
         run: |
@@ -108,12 +105,31 @@ jobs:
           echo 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl' > ~/.ssh/known_hosts
           export GIT_SSH_COMMAND='ssh -i ~/.ssh/dades -o IdentitiesOnly=yes'
           REPO="git@github.com:$GITHUB_REPOSITORY.git"
+          # Tornar a executar una execució antiga de main la tornaria a obrir l'entorn: només publica
+          # l'execució del commit que avui és el cap de main.
+          if [ "$(git ls-remote "$REPO" refs/heads/main | cut -f1)" != "$GITHUB_SHA" ]; then
+            echo "::error::main ja no és a $GITHUB_SHA. Aquesta execució no publica."
+            exit 1
+          fi
           if git ls-remote --exit-code --heads "$REPO" dades; then
             git clone --depth=1 --branch dades "$REPO" dades
+            ARA=$(jq -r .data_consulta nou/procedencia.json)
+            PUBLICADA=$(jq -r .data_consulta dades/procedencia.json)
+            if [[ "$ARA" < "$PUBLICADA" ]]; then
+              echo "::error::Les dades publicades són del $PUBLICADA, i aquestes, del $ARA."
+              exit 1
+            fi
           else
             git init -b dades dades && git -C dades remote add origin "$REPO"
           fi
-          cd dades
+      # procedencia.json porta l'empremta dels JSON i de cada còpia. Signar-lo els signa tots junts.
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: nou/procedencia.json
+      - name: Desa les dades
+        working-directory: dades
+        run: |
+          export GIT_SSH_COMMAND='ssh -i ~/.ssh/dades -o IdentitiesOnly=yes'
           git rm -rq --ignore-unmatch .
           cp -R ../nou/. .
           git add -A

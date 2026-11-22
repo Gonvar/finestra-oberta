@@ -16,8 +16,15 @@ import {
 const A = 'https://font.example/a.json';
 const B = 'https://font.example/b.html';
 
-const font: Fetch = async (input) =>
-  String(input) === A ? Response.json({ valor: 7 }) : new Response('<p>Hola</p>');
+const B_FINAL = 'https://www.font.example/b.html';
+
+/** B redirigeix: la resposta ve d'una altra adreça. */
+const font: Fetch = async (input) => {
+  if (String(input) === A) return Response.json({ valor: 7 });
+  const resposta = new Response('<p>Hola</p>');
+  Object.defineProperty(resposta, 'url', { value: B_FINAL });
+  return resposta;
+};
 
 const construeix: Construeix = async (fetchImpl, data) => ({
   'resultat.json': {
@@ -40,6 +47,7 @@ test('genera desa cada resposta amb la seva empremta, i les dades es poden repro
   const carpeta = await carpetaGenerada();
   const procedencia = await llegeixProcedencia(carpeta);
   assert.equal(procedencia.data_consulta, '2026-11-22');
+  assert.equal(procedencia.captures[1]!.url_resposta, B_FINAL);
   assert.deepEqual(
     procedencia.captures.map((c) => c.url),
     [A, B],
@@ -110,6 +118,32 @@ test('la verificació falla si els JSON no són els de procedencia.json', async 
   await assert.rejects(verifica(carpeta, construeix), DesquadreError);
   await rm(carpeta, { recursive: true });
   await rm(altra, { recursive: true });
+});
+
+test('genera esborra els JSON que ja no es generen', async () => {
+  const carpeta = await carpetaGenerada();
+  await writeFile(join(carpeta, 'antic.json'), '{}');
+  await genera(carpeta, font, '2026-11-23', construeix, 0);
+  await assert.rejects(readFile(join(carpeta, 'antic.json')), { code: 'ENOENT' });
+  await rm(carpeta, { recursive: true });
+});
+
+test('la verificació falla, sense petar, si procedencia.json no és JSON', async () => {
+  const carpeta = await carpetaGenerada();
+  await writeFile(join(carpeta, 'procedencia.json'), 'null');
+  await assert.rejects(verifica(carpeta, construeix), DesquadreError);
+  await writeFile(join(carpeta, 'procedencia.json'), '{');
+  await assert.rejects(verifica(carpeta, construeix), DesquadreError);
+  await rm(carpeta, { recursive: true });
+});
+
+test('la verificació falla si una còpia diu que la font no va respondre bé', async () => {
+  const carpeta = await carpetaGenerada();
+  const procedencia = await llegeixProcedencia(carpeta);
+  procedencia.captures[0]!.estat = 999;
+  await writeFile(join(carpeta, 'procedencia.json'), JSON.stringify(procedencia));
+  await assert.rejects(verifica(carpeta, construeix), /no té la forma esperada/);
+  await rm(carpeta, { recursive: true });
 });
 
 test('la verificació falla si falta una còpia', async () => {

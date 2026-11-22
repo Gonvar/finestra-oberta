@@ -2,7 +2,7 @@
 // arribar, amb l'URL, l'hora i l'empremta SHA-256. Amb aquestes còpies qualsevol persona pot tornar
 // a generar els JSON i comprovar que surten idèntics, sense haver de confiar en qui els publica.
 import { createHash } from 'node:crypto';
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { Fetch } from './comun.ts';
 
@@ -25,6 +25,8 @@ export type Captura = {
  */
 export type Procedencia = {
   data_consulta: string;
+  /** L'ordre dels grups depèn de les dades ICU de cada versió: per reproduir-ho, la mateixa. */
+  node: string;
   fitxers: Record<string, string>;
   captures: Captura[];
 };
@@ -36,12 +38,16 @@ const esCaptura = (c: Record<string, unknown>) =>
   typeof c.url === 'string' &&
   typeof c.url_resposta === 'string' &&
   typeof c.consultat === 'string' &&
-  typeof c.estat === 'number' &&
+  // Només es publica a partir de respostes 2xx; qualsevol altre codi és una còpia manipulada.
+  Number.isInteger(c.estat) &&
+  (c.estat as number) >= 200 &&
+  (c.estat as number) < 300 &&
   (typeof c.tipus === 'string' || c.tipus === null) &&
   esEmpremta(c.sha256);
 
 const esProcedencia = (p: Record<string, unknown>): p is Procedencia =>
   typeof p.data_consulta === 'string' &&
+  typeof p.node === 'string' &&
   typeof p.fitxers === 'object' &&
   p.fitxers !== null &&
   Object.values(p.fitxers).every(esEmpremta) &&
@@ -89,9 +95,10 @@ export async function genera<T extends Record<string, unknown>>(
   };
   const fitxers = await construeix(enregistrat, data, pausaMs);
 
-  // Les còpies d'una actualització anterior ja no corresponen a aquestes dades.
+  // Les còpies i els JSON d'una actualització anterior ja no corresponen a aquestes dades.
   await rm(join(carpeta, 'captures'), { recursive: true, force: true });
   await mkdir(join(carpeta, 'captures'), { recursive: true });
+  for (const nom of await readdir(carpeta)) if (nom.endsWith('.json')) await rm(join(carpeta, nom));
   for (const [sha256, cos] of cossos) await writeFile(join(carpeta, 'captures', sha256), cos);
   const empremtes: Record<string, string> = {};
   for (const [nom, dades] of Object.entries(fitxers)) {
@@ -99,7 +106,12 @@ export async function genera<T extends Record<string, unknown>>(
     empremtes[nom] = empremta(new TextEncoder().encode(text));
     await writeFile(join(carpeta, nom), text);
   }
-  const procedencia: Procedencia = { data_consulta: data, fitxers: empremtes, captures };
+  const procedencia: Procedencia = {
+    data_consulta: data,
+    node: process.version,
+    fitxers: empremtes,
+    captures,
+  };
   await writeFile(join(carpeta, 'procedencia.json'), serialitza(procedencia));
   return fitxers;
 }
@@ -120,10 +132,16 @@ export async function verifica(carpeta: string, construeix: Construeix) {
       throw new DesquadreError(`Falta ${join(carpeta, ...cami)}.`);
     }
   };
-  const procedencia = JSON.parse(String(await llegeix('procedencia.json'))) as Record<
-    string,
-    unknown
-  >;
+  let llegit: unknown;
+  try {
+    llegit = JSON.parse(String(await llegeix('procedencia.json')));
+  } catch (error) {
+    if (!(error instanceof SyntaxError)) throw error;
+    throw new DesquadreError('procedencia.json no és JSON vàlid.');
+  }
+  if (typeof llegit !== 'object' || llegit === null)
+    throw new DesquadreError('procedencia.json no té la forma esperada.');
+  const procedencia = llegit as Record<string, unknown>;
   if (!esProcedencia(procedencia))
     throw new DesquadreError('procedencia.json no té la forma esperada.');
   const cossos = await Promise.all(

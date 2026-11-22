@@ -27,6 +27,8 @@ Ho decideix GitHub, no el workflow, que qualsevol branca podria canviar:
 - Un ruleset de la branca `dades` hi impedeix el force push i l'esborrat, i només hi deixa fer push a la clau de desplegament del repositori. No hi té excepció ningú més, tampoc qui administra el repositori.
 - La clau privada és un secret de l'entorn `dades` de GitHub, i aquest entorn només s'obre per a execucions de la branca `main`. Una execució des d'una altra branca no la pot llegir.
 
+- El job que publica comprova que el seu commit encara és el cap de `main` i que les dades no són més antigues que les publicades. Així, tornar a executar una execució antiga no torna a publicar dades velles.
+
 Per tant, a `dades` només hi pot escriure el workflow de `main`, i el codi de `main` només canvia amb una pull request revisada.
 
 ## Com comprovar que les dades són de la font
@@ -62,7 +64,7 @@ git checkout "$CODI"
 npm run verifica-dades
 ```
 
-Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera.
+Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups i dels departaments depèn de la versió.
 
 **3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json` i `/tmp/ara/parlament.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
