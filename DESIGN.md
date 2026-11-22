@@ -8,12 +8,37 @@ Aquest document és la font de veritat per a tota la interfície de la web. Quan
 
 ## 1. Principis
 
+**Qualsevol persona ha d'entrar a la web i entendre-ho tot.** L'Administració ha de ser accessible, senzilla, propera i visual per a tothom. El model és [GOV.UK](https://www.gov.uk/guidance/government-design-principles): text clar, pàgines senzilles i només el que és útil. Aquesta regla mana per damunt de totes les altres d'aquest document.
+
+Vol dir:
+
+- **Comença pel que la gent vol saber**, no pas per com s'organitza l'Administració. Una pàgina respon una pregunta («Què ha aprovat el Govern aquesta setmana?»).
+- **Paraules de tots els dies.** Si un terme oficial és imprescindible («lectura única», «moció»), s'explica la primera vegada que surt.
+- **Frases curtes**, d'unes 20 paraules com a molt, i un paràgraf per idea.
+- **Visual quan ajuda a entendre**: un hemicicle per a una votació, una barra per a una proporció, una xifra gran per a un total. Mai un gràfic que no respongui cap pregunta (§6).
+- **Treu tot el que no calgui.** Cada text, cada xifra i cada enllaç s'ha de guanyar el lloc.
+- **Igual per a tothom**: al mòbil, amb un lector de pantalla, amb el text ampliat o sense saber res de política (§5).
+
+Cada revisió d'una pull request que toca la web comprova aquests punts (§1.1).
+
 1. **Entendre-ho d'un cop d'ull.** Primer la decisió o la xifra; el detall, a sota. Qualsevol persona, sense saber com funciona l'Administració, ha d'entendre què ha passat.
 2. **La font, sempre a la vista.** Cada dada diu d'on ve i de quan és. Una dada sense font no es publica.
 3. **Elegant vol dir silenciós.** Molt d'aire, tipografia gran i poques peces. El color té un significat (§2.1) i no decora.
 4. **Res que sembli fet per IA.** La web ha de semblar feta per algú amb criteri. La llista de coses que no es fan és a §6.
 5. **Per a tothom.** WCAG 2.2 AA com a mínim, el mòbil primer i controls nadius.
 6. **Feta també per a la IA.** Cada secció té el seu servidor MCP, i la web explica com connectar-lo.
+
+### 1.1 Què mira cada revisió
+
+Tota revisió d'una pull request que toca la web, també el `/code-review`, es pregunta:
+
+1. Una persona que no sap com funciona l'Administració entén cada pàgina a la primera?
+2. Hi ha algun terme tècnic sense explicar, o alguna frase que es pugui dir més curt?
+3. Cada element respon una pregunta útil, o es pot treure?
+4. El que és visual ajuda a entendre una dada, o només decora?
+5. Funciona al mòbil, amb el teclat i amb un lector de pantalla, amb el contrast de §2.1?
+
+Si la resposta a alguna d'aquestes preguntes és que no, la pull request es corregeix abans d'entrar.
 
 ## 2. Tokens
 
