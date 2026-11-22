@@ -9,6 +9,7 @@ Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegi
 ## Textos de la interfície
 
 - Cada vegada que escriguis o canviïs un text que llegirà la gent a la web (títols, etiquetes, botons, avisos, estats buits, descripcions), passa'l per la skill [`clean-copy`](.claude/skills/clean-copy/SKILL.md) abans de donar-lo per bo. Primer es decideix si el text ha d'existir i després com es diu, i el català i el to de [DESIGN.md](DESIGN.md) §4 també s'hi apliquen.
+- Cada revisió d'una pull request que toca la web, també el `/code-review`, fa les preguntes de [DESIGN.md](DESIGN.md) §1.1 i en diu el resultat.
 
 ## Abast
 

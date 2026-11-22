@@ -1,6 +1,6 @@
 # Finestra Oberta · Sistema de disseny
 
-Versió 1.0 · 22 de novembre de 2026
+Versió 1.1 · 22 de novembre de 2026
 
 La direcció es diu **Silenci**, amb la paleta **Institucions**. La referència visual és la [portada de mostra](https://claude.ai/artifact/D7dvtutK1o8NQe3rFGamq9), feta amb dades reals.
 
@@ -8,12 +8,30 @@ Aquest document és la font de veritat per a tota la interfície de la web. Quan
 
 ## 1. Principis
 
+0. **Qualsevol persona ho entén tot.** La informació de l'Administració ha de ser accessible, senzilla, propera i visual per a tothom. El model és [GOV.UK](https://www.gov.uk/guidance/government-design-principles): text clar, pàgines senzilles i només el que és útil. És la decisió de qui porta el projecte, perquè una web que només entén qui ja sap com funciona l'Administració no obre cap finestra. Aquest principi mana per damunt dels altres, excepte la font (principi 2), la neutralitat (§4 i [NEUTRALITAT.md](NEUTRALITAT.md)) i l'accessibilitat (§5). Vol dir:
+   - **Comença pel que la gent vol saber**, no pas per com s'organitza l'Administració. Una pàgina respon una pregunta («Què ha aprovat el Govern aquesta setmana?»).
+   - **Si un terme oficial és imprescindible** («lectura única», «moció»), s'explica la primera vegada que surt.
+   - **Frases d'unes 20 paraules com a molt**, perquè a partir d'aquí costen d'entendre a la primera, i un paràgraf per idea.
+   - **Visual quan ajuda a entendre**: una barra per a una proporció, una xifra gran per a un total, una línia de temps per a un tràmit. Mai un gràfic que no respongui cap pregunta (§6).
+   - **Treu tot el que no calgui.** Cada text, cada xifra i cada enllaç s'ha de guanyar el lloc. La font i la data d'una dada sempre se'l guanyen.
 1. **Entendre-ho d'un cop d'ull.** Primer la decisió o la xifra; el detall, a sota. Qualsevol persona, sense saber com funciona l'Administració, ha d'entendre què ha passat.
 2. **La font, sempre a la vista.** Cada dada diu d'on ve i de quan és. Una dada sense font no es publica.
 3. **Elegant vol dir silenciós.** Molt d'aire, tipografia gran i poques peces. El color té un significat (§2.1) i no decora.
 4. **Res que sembli fet per IA.** La web ha de semblar feta per algú amb criteri. La llista de coses que no es fan és a §6.
 5. **Per a tothom.** WCAG 2.2 AA com a mínim, el mòbil primer i controls nadius.
 6. **Feta també per a la IA.** Cada secció té el seu servidor MCP, i la web explica com connectar-lo.
+
+### 1.1 Què mira cada revisió
+
+Tota revisió d'una pull request que toca la web, també el `/code-review`, es pregunta:
+
+1. Una persona que no sap com funciona l'Administració entén cada pàgina a la primera?
+2. Cada terme tècnic s'explica i cada frase és tan curta com pot?
+3. Cada element respon una pregunta útil?
+4. El que és visual ajuda a entendre una dada?
+5. Funciona al mòbil, amb el teclat, amb un lector de pantalla i amb el text ampliat al 200 %, i compleix §5?
+
+Si alguna resposta és que no, la pull request es corregeix abans d'entrar.
 
 ## 2. Tokens
 
