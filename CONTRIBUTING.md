@@ -8,9 +8,15 @@ Gràcies per voler ajudar. Pots contribuir sense escriure codi:
 
 Obre una [issue](https://github.com/Gonvar/finestreta-oberta/issues) per a qualsevol d'aquestes coses.
 
+## L'idioma del projecte és el català
+
+**Tot es fa en català**: el codi que llegeixen els assistents (instruccions, descripcions de les eines i errors), els comentaris, la documentació, els commits, les pull requests, les issues i les revisions. Es conserven tal com són els identificadors tècnics i els noms dels camps de les APIs.
+
+Si no escrius en català, pots obrir una issue en castellà o en anglès i t'hi respondrem en català. Les contribucions que entren al repositori, però, han d'estar en català.
+
 ## Preparar l'entorn
 
-Cal **Node.js 22.18 o posterior**. Node executa el TypeScript directament, sense compilar.
+Cal **Node.js 24 o posterior**. Node executa el TypeScript directament, sense compilar.
 
 ```sh
 npm install
@@ -26,7 +32,7 @@ Cada servidor és un fitxer a `src/` que exporta una funció `create…Server(fe
 1. **Estudia l'API real abans d'escriure.** Fes algunes crides a mà i apunta què passa amb un paràmetre que no existeix, un identificador inexistent, una consulta massa gran i les dades provisionals o antigues.
 2. **Escriu el servidor a `src/<font>.ts`.**
    - Fes servir `run`, `getJson`, `SourceError` i `READ_ONLY_EXTERNAL` de [src/comun.ts](src/comun.ts).
-   - Escriu les instruccions, les descripcions de les eines i els errors en català.
+   - Escriu les instruccions, les descripcions de les eines, els errors i els noms de les eines i dels paràmetres en català.
    - Tota eina és de només lectura.
 3. **Registra'l a [src/index.ts](src/index.ts)** i afegeix-ne l'script a `package.json`.
 4. **Afegeix proves a `src/<font>.test.ts`** amb `node:test` i un `fetch` fals. Fes servir dades sintètiques amb la forma de l'API, no captures reals.

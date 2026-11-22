@@ -2,6 +2,10 @@
 
 Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegir un servidor i els criteris del projecte. Per als límits de seguretat, [SECURITY.md](SECURITY.md).
 
+## Idioma: català
+
+**L'idioma del projecte és el català, i tot es fa en català**: el codi que llegeixen els assistents, els noms de les eines i dels paràmetres, els comentaris, la documentació, els commits, les PR, les issues i les respostes a qui hi treballa. No escriguis en castellà ni en anglès encara que la persona o la font ho facin. Només es conserven els identificadors tècnics i els noms dels camps de les APIs.
+
 ## Abast
 
 - Fes només el que se t'ha demanat. Res de neteges, canvis de format o refactoritzacions alienes a la tasca.
@@ -15,7 +19,7 @@ Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegi
 - Captura només els errors que esperes i saps tractar. Mai tornis un valor per defecte per amagar un error: una dada que falta és un error, no un zero.
 - Corregeix un defecte on neix, no on es manifesta.
 - Els comentaris expliquen per què, mai què fa el codi.
-- Tot el que veu l'assistent (instruccions, descripcions, errors) va en català.
+- El projecte fa servir Node 24, que executa el TypeScript directament. No afegeixis suport per a versions anteriors ni cap pas de compilació.
 
 ## Verificació
 

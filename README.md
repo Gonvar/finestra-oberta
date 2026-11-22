@@ -1,6 +1,10 @@
 # Finestreta Oberta
 
+[![CI](https://github.com/Gonvar/finestreta-oberta/actions/workflows/ci.yml/badge.svg)](https://github.com/Gonvar/finestreta-oberta/actions/workflows/ci.yml)
+
 **Les dades i els tràmits de l'Administració catalana, més clars i a l'abast de tothom.**
+
+[Català](#finestreta-oberta) · [Castellano](#en-castellano) · [English](#in-english)
 
 Finestreta Oberta és una iniciativa oberta per fer més fàcil relacionar-se amb la Generalitat, els ajuntaments i els organismes públics de Catalunya. Comencem connectant assistents d'IA amb les dades obertes oficials, sempre amb la font i la data de les dades.
 
@@ -25,9 +29,11 @@ Exemples de preguntes:
 - Com ha variat el PIB de Catalunya l'últim trimestre?
 - Quina comarca va tenir més morts en accidents de trànsit el 2023?
 
+A [docs/exemples.md](docs/exemples.md) hi ha aquestes preguntes resoltes amb les crides i les respostes reals dels servidors.
+
 ## Com fer-los servir
 
-Cal **Node.js 22.18 o posterior**.
+Cal **Node.js 24 o posterior**.
 
 ```sh
 git clone https://github.com/Gonvar/finestreta-oberta.git
@@ -57,6 +63,8 @@ En altres clients (Claude Desktop, Cursor…), configura un servidor stdio amb l
 
 ## Desenvolupament
 
+**L'idioma del projecte és el català.** El codi, la documentació, els commits, les pull requests i les issues es fan en català.
+
 ```sh
 npm test             # proves amb dades sintètiques
 npm run typecheck    # TypeScript
@@ -78,3 +86,13 @@ Node executa el TypeScript directament, sense compilar. Les proves fan servir da
 ## Llicència
 
 [MIT](LICENSE).
+
+---
+
+## En castellano
+
+Finestreta Oberta conecta asistentes de IA con los datos abiertos oficiales de Cataluña: las estadísticas del Idescat y los conjuntos de datos de la Generalitat, mediante servidores MCP de solo lectura que citan siempre la fuente y la fecha de los datos. Se inspira en [Reforma Digital](https://github.com/samuelcorsan/reforma-digital). **El idioma del proyecto es el catalán**: la documentación y las contribuciones están en catalán, pero puedes abrir una issue en castellano.
+
+## In English
+
+Finestreta Oberta connects AI assistants to Catalonia's official open data, Idescat statistics and Generalitat datasets, through read-only MCP servers that always cite the source and the date of the data. It is inspired by [Reforma Digital](https://github.com/samuelcorsan/reforma-digital). **The project's language is Catalan**: documentation and contributions are in Catalan, but you can open an issue in English.

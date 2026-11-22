@@ -1,0 +1,27 @@
+name: Error
+description: Un servidor no arrenca, falla o es comporta de manera estranya.
+labels: [error]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No hi posis dades personals, tokens ni sessions. Pots escriure en castellà o en anglès; et respondrem en català.
+  - type: textarea
+    id: que-passa
+    attributes:
+      label: Què passa
+      description: Què has fet, què esperaves i què ha passat. Inclou el missatge d'error si n'hi ha.
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: Client MCP
+      description: Per exemple, Claude Code, Claude Desktop o Cursor, amb la versió.
+  - type: input
+    id: node
+    attributes:
+      label: Versió de Node
+      description: La sortida de `node -v`.
+    validations:
+      required: true

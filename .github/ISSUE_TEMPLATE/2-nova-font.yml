@@ -1,0 +1,26 @@
+name: Proposar una font
+description: Una font de dades obertes de Catalunya que valdria la pena connectar.
+labels: [nova font]
+body:
+  - type: markdown
+    attributes:
+      value: Pots escriure en castellà o en anglès; et respondrem en català.
+  - type: input
+    id: font
+    attributes:
+      label: Font
+      description: Nom de l'organisme i enllaç al portal o a l'API.
+    validations:
+      required: true
+  - type: textarea
+    id: preguntes
+    attributes:
+      label: Què s'hi podria preguntar
+      description: Dues o tres preguntes que la gent es fa i que aquesta font respondria.
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Què en saps de l'API
+      description: Si té documentació, si demana una clau, si hi ha límits d'ús… Si no ho saps, deixa-ho en blanc.

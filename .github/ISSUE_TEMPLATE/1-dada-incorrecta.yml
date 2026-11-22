@@ -1,0 +1,35 @@
+name: Dada mal presentada
+description: Un servidor ha donat una dada equivocada, antiga, incompleta o mal explicada.
+labels: [dades]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gràcies per avisar. No hi posis dades personals. Pots escriure en castellà o en anglès; et respondrem en català.
+  - type: dropdown
+    id: servidor
+    attributes:
+      label: Servidor
+      options: [idescat, dades-obertes, Un altre]
+    validations:
+      required: true
+  - type: textarea
+    id: pregunta
+    attributes:
+      label: Què vas preguntar
+      description: La pregunta que vas fer a l'assistent i, si les tens, les crides que va fer (eina i arguments).
+    validations:
+      required: true
+  - type: textarea
+    id: resposta
+    attributes:
+      label: Què va respondre
+    validations:
+      required: true
+  - type: textarea
+    id: correcte
+    attributes:
+      label: Què hauria de dir
+      description: La dada correcta i on l'has trobada (un enllaç a la font oficial, si pot ser).
+    validations:
+      required: true
