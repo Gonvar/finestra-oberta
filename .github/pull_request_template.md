@@ -21,9 +21,10 @@
 <!-- Vegeu DESIGN.md §1.1. Només si la pull request toca la web; si no, esborra aquesta secció. -->
 
 - [ ] Una persona que no sap com funciona l'Administració entén cada pàgina a la primera.
-- [ ] Cap terme tècnic sense explicar, i frases curtes.
-- [ ] Cada element respon una pregunta útil, i el que és visual ajuda a entendre una dada.
-- [ ] Funciona al mòbil, amb el teclat i amb un lector de pantalla.
+- [ ] Cada terme tècnic s'explica i cada frase és tan curta com pot.
+- [ ] Cada element respon una pregunta útil.
+- [ ] El que és visual ajuda a entendre una dada.
+- [ ] Funciona al mòbil, amb el teclat, amb un lector de pantalla i amb el text ampliat al 200 %, i compleix DESIGN.md §5.
 
 ## Impacte
 
