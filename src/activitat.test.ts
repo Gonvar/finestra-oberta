@@ -127,7 +127,7 @@ test('els acords fallen si ocupen més d’una pàgina o un punt no té la forma
   assert.throws(() => llegirAcords(sense, 'u'), /forma esperada/);
 });
 
-test('l’activitat llegeix totes les pàgines i les normes des de la sessió constitutiva', async () => {
+test('l’activitat llegeix totes les pàgines, ajunta els dies d’una sessió i llegeix les normes', async () => {
   const consultes: string[] = [];
   const fetchImpl: Fetch = async (input) => {
     const url = String(input);
@@ -136,7 +136,11 @@ test('l’activitat llegeix totes les pàgines i les normes des de la sessió co
     if (url === `${BASE}/XV-legislatura/index.html`) return new Response(organs);
     if (url === LLISTA)
       return new Response(
-        llista(1, 2, [fila(3, 'ordinària', '04/11/2026'), fila(2, 'ordinària', '20/10/2026')]),
+        llista(1, 2, [
+          fila(3, 'ordinària', '04/11/2026'),
+          fila(2, 'ordinària', '21/10/2026'),
+          fila(2, 'ordinària', '20/10/2026'),
+        ]),
       );
     if (url === `${LLISTA}&p_pagina=2`)
       return new Response(llista(2, 2, [fila(1, 'constitutiva', '10/06/2024')]));
@@ -172,6 +176,12 @@ test('l’activitat llegeix totes les pàgines i les normes des de la sessió co
     [3, 2, 1],
   );
   assert.equal(activitat.sessions[0]!.punts[0]!.resultat, 'rebutjat');
+  // Els acords d'una sessió de dos dies es llegeixen una sola vegada.
+  assert.equal(consultes.filter((u) => u === acordsUrl(2)).length, 1);
+  assert.deepEqual(activitat.sessions[1]!.convocatories, [
+    { caracter: 'ordinària', data: '2026-10-20', hora: '15:00' },
+    { caracter: 'ordinària', data: '2026-10-21', hora: '15:00' },
+  ]);
   const normes = consultes.find((u) => u.includes(`/resource/${NORMATIVA}.json`))!;
   assert.match(
     new URL(normes).searchParams.get('$where')!,

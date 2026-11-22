@@ -148,6 +148,8 @@ export async function construirNormes(fetchImpl: Fetch, des_de: string) {
   };
 }
 
+type Convocatoria = { caracter: string; data: string; hora: string };
+
 /** Totes les sessions del Ple de la legislatura en curs, de la més nova a la més antiga. */
 export async function construirActivitat(fetchImpl: Fetch, avui: string, pausaMs = 300) {
   const ple = await llistaDelPle(fetchImpl);
@@ -158,23 +160,30 @@ export async function construirActivitat(fetchImpl: Fetch, avui: string, pausaMs
     await pausa(pausaMs);
     llista.push(...llegirLlista(await getText(fetchImpl, url), url).sessions);
   }
-  const numeros = llista.map((s) => s.numero);
-  const repetides = numeros.filter((n, i) => numeros.indexOf(n) !== i);
-  if (repetides.length > 0)
-    throw new SourceError(
-      `La llista de sessions del Ple repeteix les sessions ${[...new Set(repetides)].join(', ')} (llegides: ${numeros.join(', ')}).`,
-    );
+  // Una sessió que dura més d'un dia, o que es reprèn un altre dia, surt una vegada per dia, amb el
+  // mateix enllaç als acords: es desa una sola vegada, amb cada convocatòria.
+  const perNumero = new Map<
+    number,
+    { numero: number; url: string; convocatories: Convocatoria[] }
+  >();
+  for (const { numero, url, ...convocatoria } of llista) {
+    const sessio = perNumero.get(numero) ?? { numero, url, convocatories: [] };
+    if (sessio.url !== url)
+      throw new SourceError(`La sessió ${numero} del Ple té dos enllaços d'acords diferents.`);
+    sessio.convocatories.push(convocatoria);
+    perNumero.set(numero, sessio);
+  }
 
   const sessions = [];
-  for (const sessio of llista) {
+  for (const sessio of [...perNumero.values()].sort((a, b) => b.numero - a.numero)) {
     await pausa(pausaMs);
+    sessio.convocatories.sort((a, b) => `${a.data} ${a.hora}`.localeCompare(`${b.data} ${b.hora}`));
     sessions.push({
       ...sessio,
       punts: llegirAcords(await getText(fetchImpl, sessio.url), sessio.url),
     });
   }
-  sessions.sort((a, b) => b.numero - a.numero);
-  const constitutiva = sessions.at(-1)!;
+  const constitutiva = sessions.at(-1)!.convocatories[0]!;
 
   return {
     font: 'Parlament de Catalunya: sessions tingudes i acords del Ple',
