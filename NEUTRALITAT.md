@@ -6,7 +6,7 @@ Finestra Oberta mostra què fan el Govern, el Parlament i les administracions ca
 
 Les dades surten només dels organismes públics que les publiquen. Ni mitjans de comunicació, ni partits, ni fundacions, ni la Viquipèdia, ni enquestes privades, ni dades escrites de memòria.
 
-Aquests són els dominis que el codi de `src/` pot consultar. [src/fonts.test.ts](src/fonts.test.ts) llegeix aquesta taula i falla si el codi conté l'adreça d'un domini que no hi és.
+Aquests són els dominis que el codi de `src/` pot consultar. [src/fonts.test.ts](src/fonts.test.ts) llegeix aquesta taula i falla si el codi de `src/` conté l'adreça d'un domini que no hi és, o una adreça muntada a trossos.
 
 | Domini                       | Qui el publica                           |
 | ---------------------------- | ---------------------------------------- |
@@ -27,19 +27,20 @@ Un domini inclou els seus subdominis: `api.idescat.cat` entra amb `idescat.cat`.
 
 ## 2. Les dades no les escriu ningú a mà
 
-Les dades del Govern i del Parlament les genera el [workflow de dades](.github/workflows/dades.yml) a partir de les fonts i es publiquen a la branca `dades`, amb una còpia de cada resposta oficial i una atestació de GitHub. Qualsevol persona pot comprovar que surten de la font (vegeu [docs/institucions.md](docs/institucions.md)).
+Les dades del Govern i del Parlament les genera el [workflow de dades](.github/workflows/dades.yml) a partir de les fonts i es publiquen a la branca `dades`, amb una còpia de cada resposta oficial i una atestació de GitHub. Qualsevol persona pot comprovar que surten de la font (vegeu [docs/institucions.md](docs/institucions.md)), llevat de les fitxes de govern.cat, que es copien a mà i no tenen aquesta còpia (vegeu més avall).
 
 - **Cap pull request no pot afegir ni canviar fitxers a `dades/`.** La CI ho comprova i falla.
 - **El codi no pot corregir la font.** Res de taules que reescriguin un nom, un càrrec, un grup, un partit, un escó o una xifra que la font dona d'una altra manera. Si la font s'equivoca, es demana a l'organisme que la corregeixi, i mentrestant es mostra tal com és, o l'script s'atura.
 - **Transformar no és editar.** Es pot canviar el format (posar accents a un nom en majúscules, formar «Consellera de Salut» a partir del sexe i el departament), sempre que el resultat surti de la font, la regla estigui documentada i el valor original es conservi al costat.
+- **Filtrar només amb criteris objectius.** Es pot deixar fora una fila amb un criteri documentat i igual per a tothom (per exemple, una fila que la font marca com a buida), mai per qui és o per què diu.
 
 ### L'única còpia feta a mà: `fonts/perfils-govern.json`
 
 govern.cat no deixa que cap script en llegeixi les fitxes del Consell Executiu, i per això algú les copia des del navegador amb el fragment de [docs/institucions.md](docs/institucions.md). És l'única entrada que no és automàtica. Per això:
 
-- El fitxer només es pot canviar amb el fragment documentat, sense retocar-ne res després.
+- El fitxer només es pot canviar amb el fragment documentat. Després només s'hi passa Prettier, com a tots els fitxers del repositori.
 - La pull request que el canvia diu quan es va copiar.
-- Qui revisa la pull request torna a executar el fragment a govern.cat i comprova que dona el mateix fitxer. La CI ho recorda amb un avís a cada pull request que el toca.
+- Qui revisa la pull request torna a executar el fragment a govern.cat, hi passa Prettier i comprova que el contingut és el mateix, llevat de la data de consulta. La CI ho recorda amb un avís a cada pull request que el toca.
 
 Qualsevol altra font que s'hagi de copiar a mà necessita una excepció com aquesta, escrita en aquest document i acceptada en una pull request pròpia.
 

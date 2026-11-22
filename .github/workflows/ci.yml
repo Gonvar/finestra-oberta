@@ -31,7 +31,7 @@ jobs:
             exit 1
           fi
           for f in $(git diff --name-only HEAD^1 HEAD -- fonts/); do
-            echo "::warning file=$f::És una còpia feta a mà. Abans d'aprovar, cal tornar-la a generar amb el fragment de docs/institucions.md i comprovar que surt igual. Vegeu NEUTRALITAT.md."
+            echo "::warning file=$f::És una còpia feta a mà. Abans d'aprovar, cal tornar-la a generar amb el fragment de docs/institucions.md, passar-hi Prettier i comprovar que surt igual, llevat de la data de consulta. Vegeu NEUTRALITAT.md."
           done
       - uses: actions/setup-node@v7
         with:

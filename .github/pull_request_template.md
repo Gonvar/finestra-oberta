@@ -14,7 +14,7 @@
 - [ ] Totes les dades surten de les fonts oficials de NEUTRALITAT.md. Si n'hi ha una de nova, s'hi afegeix i es justifica.
 - [ ] El codi no canvia, filtra ni substitueix el que diu la font.
 - [ ] Cap text, ordre, color ni resum afavoreix o perjudica cap partit, grup, persona o ideologia.
-- [ ] Si canvia `fonts/perfils-govern.json`: s'ha generat amb el fragment de docs/institucions.md, sense retocs, i dic quan.
+- [ ] Si canvia `fonts/perfils-govern.json`: s'ha generat amb el fragment de docs/institucions.md, sense cap retoc més que Prettier, i dic quan.
 
 ## Impacte
 
