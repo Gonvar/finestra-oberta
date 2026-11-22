@@ -4,15 +4,21 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import type { Fetch } from './comun.ts';
 import {
+  AGENDA,
   ALTS_CARRECS,
   construirGovern,
   construirParlament,
+  construirTransparencia,
+  DECLARACIONS,
+  euros,
   ESCONS,
   fitxaUrl,
   INTERVENCIONS,
   llegirFitxa,
   llegirMapa,
   MAPA_ESCONS,
+  PERFILS,
+  VIATGES,
 } from './institucions.ts';
 
 const GRUP_A = 'Grup Parlamentari A';
@@ -66,6 +72,7 @@ test('el mapa dona un escó per persona, amb el grup i el subgrup', () => {
     carrec: 'Diputat',
     grup: GRUP_B,
     sigla: 'GP B',
+    color: '#bbb',
   });
   assert.deepEqual(escons[1], {
     codi: '2',
@@ -74,6 +81,7 @@ test('el mapa dona un escó per persona, amb el grup i el subgrup', () => {
     grup: GRUP_B,
     subgrup: SUBGRUP_B,
     sigla: 'GP B',
+    color: '#bbb',
   });
 });
 
@@ -145,8 +153,14 @@ test('el Parlament suma els escons per grup i subgrup', async () => {
   assert.equal(parlament.data_consulta, '2026-11-22');
   assert.deepEqual(parlament.legislatura, { numero: 'XV', inici: 2024 });
   assert.deepEqual(parlament.grups, [
-    { nom: GRUP_A, sigla: 'GP A', escons: 133 },
-    { nom: GRUP_B, sigla: 'GP B', escons: 2, subgrups: [{ nom: SUBGRUP_B, escons: 1 }] },
+    { nom: GRUP_A, sigla: 'GP A', color: '#aaa', escons: 133 },
+    {
+      nom: GRUP_B,
+      sigla: 'GP B',
+      color: '#bbb',
+      escons: 2,
+      subgrups: [{ nom: SUBGRUP_B, escons: 1 }],
+    },
   ]);
   assert.equal(parlament.diputats.length, ESCONS);
   assert.equal(parlament.diputats[1]!.subgrup, SUBGRUP_B);
@@ -198,8 +212,28 @@ const NOMS = [
   { nom: 'Carles Exemple Tres' },
 ];
 
-function govern(files: object[], noms = NOMS) {
+const perfil = (nom: string, carrec: string, fotos = [1, 2]) => ({
+  consellerIdioma: {
+    nom,
+    carrec,
+    descripcioCV: `<p><strong>Nascuda a Lleida.</strong></p><p>Llicenciada&nbsp;en Dret.</p>`,
+  },
+  audiovisual: fotos.map((tipusImatge) => ({
+    tipusImatge,
+    data: `https://govern.cat/govern/docs/${nom}-${tipusImatge}.png`,
+  })),
+});
+
+/** govern.cat fa servir el nom amb què es coneix cada persona, que pot no ser l'oficial. */
+const PERFILS_GOVERN = [
+  perfil('Anna Exemple i U', 'Presidenta de la Generalitat de Catalunya'),
+  perfil('Bet Exemple Dos', 'Consellera de la Presidència'),
+  perfil('Carla Exemple i Tres', 'Consellera de Salut\n'),
+];
+
+function govern(files: object[], noms = NOMS, perfils: object[] = PERFILS_GOVERN) {
   return fake((url) => {
+    if (url.startsWith(PERFILS)) return { content: perfils, totalElements: perfils.length };
     if (url.includes(`/api/views/${ALTS_CARRECS}`))
       return {
         name: 'Relació d’alts càrrecs',
@@ -221,7 +255,7 @@ const GOVERN = [
 ];
 
 test('el Govern dona el president i un conseller per departament, amb el nom ben escrit', async () => {
-  const resultat = await construirGovern(govern(GOVERN));
+  const resultat = await construirGovern(govern(GOVERN), '2026-11-22');
   assert.equal(resultat.data_dades, '2026-09-29');
   assert.equal(resultat.data_noms, '2026-11-20');
   assert.deepEqual(resultat.president, {
@@ -230,6 +264,9 @@ test('el Govern dona el president i un conseller per departament, amb el nom ben
     departament: PRESIDENCIA,
     nom_oficial: 'EXEMPLE U, ANNA',
     carrec_oficial: 'PRESIDENT DE LA GENERALITAT DE CATALUNYA',
+    retribucio_anual: 1,
+    foto: 'https://govern.cat/govern/docs/Anna Exemple i U-1.png',
+    cv: ['Nascuda a Lleida.', 'Llicenciada en Dret.'],
   });
   assert.deepEqual(
     resultat.consellers.map((c) => [c.nom, c.carrec]),
@@ -242,20 +279,198 @@ test('el Govern dona el president i un conseller per departament, amb el nom ben
 
 test('el Govern falla si un nom no és a les intervencions', async () => {
   const noms = NOMS.filter((n) => n.nom !== 'Berta Exemple Dos');
-  await assert.rejects(construirGovern(govern(GOVERN, noms)), /coincideix amb 0 noms/);
+  await assert.rejects(
+    construirGovern(govern(GOVERN, noms), '2026-11-22'),
+    /coincideix amb 0 noms/,
+  );
 });
 
 test('el Govern falla si un nom coincideix amb dues persones', async () => {
   const noms = [...NOMS, { nom: 'Berta Maria Exemple Dos' }];
-  await assert.rejects(construirGovern(govern(GOVERN, noms)), /coincideix amb 2 noms/);
+  await assert.rejects(
+    construirGovern(govern(GOVERN, noms), '2026-11-22'),
+    /coincideix amb 2 noms/,
+  );
 });
 
 test('el Govern falla si un departament no té conseller', async () => {
   const files = GOVERN.filter((f) => f.cognoms_nom !== 'EXEMPLE TRES, CARLA');
-  await assert.rejects(construirGovern(govern(files)), /Salut té 0 consellers/);
+  await assert.rejects(construirGovern(govern(files), '2026-11-22'), /Salut té 0 consellers/);
 });
 
 test('el Govern falla si no hi ha president', async () => {
   const files = GOVERN.filter((f) => f.cognoms_nom !== 'EXEMPLE U, ANNA');
-  await assert.rejects(construirGovern(govern(files)), /0 presidents/);
+  await assert.rejects(construirGovern(govern(files), '2026-11-22'), /0 presidents/);
+});
+
+test('els imports de la relació passen a euros', () => {
+  assert.equal(euros('146.635,82 €'), 146635.82);
+  assert.equal(euros('980,00 €'), 980);
+  assert.throws(() => euros('146635.82'), /forma inesperada/);
+});
+
+const NA = Object.fromEntries(
+  [
+    'activitat_sector_public',
+    'exercici_carrecs',
+    'representacio_organs_colegiats',
+    'representacio_consells',
+    'missions_temporals',
+    'participacio_organs',
+    'pertinenca_consells_administracio',
+    'carrecs_electius_compatibles',
+    'administracio_patrimoni',
+    'administracio_patrimoni_personal',
+    'participacio_ocasional',
+    'participacio_seminaris',
+    'produccio_creacio_literaries',
+    'participacio_entitats_sense',
+  ].map((camp) => [camp, 'N/A']),
+);
+
+const declaracio = (nom: string, carrec: string, situacio = 'Actiu', extra = {}) => {
+  const [propi, primer, segon] = nom.split(' ');
+  return {
+    nom: propi,
+    primer_cognom: primer,
+    segon_cognom: segon,
+    carrec,
+    situaci_carrec: situacio,
+    data_nomenament: '12/8/2024',
+    ...NA,
+    ...extra,
+  };
+};
+
+const MEMBRES = [{ nom: 'Berta Exemple i Dos', nom_oficial: 'EXEMPLE DOS, BERTA' }];
+
+function transparencia(declaracions: object[]) {
+  return fake((url) => {
+    if (url.includes('/api/views/'))
+      return { name: 'Relació', rowsUpdatedAt: 1795208408, attribution: 'Direcció' };
+    if (url.includes(DECLARACIONS)) return declaracions;
+    if (url.includes(AGENDA))
+      return [
+        {
+          data: '2025-03-01T00:00:00.000',
+          grup_d_inter_s: 'Entitat U',
+          activitat: 'Reunió',
+          tema: 'Tema U',
+          nom_i_cognoms: 'Berta Exemple Dos',
+          c_rrec: 'consellera de Salut',
+        },
+        // Abans del nomenament, amb un altre càrrec o sense grup d'interès: no compten.
+        {
+          data: '2025-06-01T00:00:00.000',
+          grup_d_inter_s: '-',
+          activitat: "Sense activitats d'influència en el darrer trimestre",
+          nom_i_cognoms: 'Berta Exemple Dos',
+          c_rrec: 'consellera de Salut',
+        },
+        {
+          data: '2024-08-01T00:00:00.000',
+          grup_d_inter_s: 'Entitat Dos',
+          activitat: 'Reunió',
+          tema: 'Tema Dos',
+          nom_i_cognoms: 'Berta Exemple Dos',
+          c_rrec: 'consellera de Salut',
+        },
+        {
+          data: '2025-01-01T00:00:00.000',
+          grup_d_inter_s: 'Entitat Tres',
+          activitat: 'Reunió',
+          tema: 'Tema Tres',
+          nom_i_cognoms: 'Berta Exemple Dos',
+          c_rrec: 'Secretària general',
+        },
+      ];
+    if (url.includes(VIATGES))
+      return [
+        {
+          nom_i_cognoms: 'Berta Exemple i Dos',
+          c_rrec: 'Consellera de Salut',
+          inici_viatge: '2025-05-02T00:00:00.000',
+          fi_viatge: '2025-05-04T00:00:00.000',
+          destinaci: 'Ciutat U',
+          motiu: 'Motiu U',
+        },
+        {
+          nom_i_cognoms: 'Berta Exemple Dos',
+          c_rrec: 'consellera de Salut',
+          inici_viatge: '2025-02-02T00:00:00.000',
+          fi_viatge: '2025-02-03T00:00:00.000',
+          destinaci: 'Ciutat Dos',
+          motiu: 'Motiu Dos',
+          total_despeses: '100.5',
+        },
+      ];
+    throw new Error(`URL inesperada: ${url}`);
+  });
+}
+
+test('la transparència dona la declaració, l’agenda i els viatges des del nomenament', async () => {
+  const declaracions = [
+    declaracio('Berta Exemple Dos', 'Consellera', 'Actiu', {
+      participacio_entitats_sense: '1. Entitat U\n2. Entitat Dos',
+    }),
+    // El càrrec anterior, ja inactiu, no és la declaració d'ara.
+    declaracio('Berta Exemple Dos', 'Secretària general', 'Inactiu'),
+  ];
+  const resultat = await construirTransparencia(transparencia(declaracions), MEMBRES);
+  assert.equal(resultat.agenda.data_dades, '2026-11-20');
+  const [persona] = resultat.persones;
+  assert.equal(persona!.nomenament, '2024-08-12');
+  assert.deepEqual(persona!.activitats, [
+    {
+      tipus: 'privada',
+      apartat: 'Entitats sense ànim de lucre',
+      items: ['Entitat U', 'Entitat Dos'],
+    },
+  ]);
+  assert.equal(persona!.agenda.reunions, 1);
+  assert.equal(persona!.agenda.darreres[0]!.grup, 'Entitat U');
+  assert.equal(persona!.viatges.viatges, 2);
+  assert.equal(persona!.viatges.sense_despeses, 1);
+  assert.equal(persona!.viatges.despeses, 100.5);
+});
+
+test('la transparència falla si un membre no té cap declaració activa', async () => {
+  const declaracions = [declaracio('Berta Exemple Dos', 'Consellera', 'Inactiu')];
+  await assert.rejects(
+    construirTransparencia(transparencia(declaracions), MEMBRES),
+    /0 declaracions/,
+  );
+});
+
+test('el Govern troba la fitxa de govern.cat encara que el nom no sigui l’oficial', async () => {
+  const resultat = await construirGovern(govern(GOVERN), '2026-11-22');
+  assert.equal(
+    resultat.consellers[0]!.foto,
+    'https://govern.cat/govern/docs/Bet Exemple Dos-1.png',
+  );
+  assert.equal(resultat.data_perfils, '2026-11-22');
+});
+
+test('el Govern falla si un membre no té fitxa a govern.cat', async () => {
+  const perfils = PERFILS_GOVERN.filter((p) => p.consellerIdioma.nom !== 'Bet Exemple Dos');
+  await assert.rejects(
+    construirGovern(govern(GOVERN, NOMS, perfils), '2026-11-22'),
+    /0 fitxes a govern.cat/,
+  );
+});
+
+test('el Govern falla si una fitxa de govern.cat no té foto principal', async () => {
+  const perfils = [
+    ...PERFILS_GOVERN.slice(0, 2),
+    perfil('Carla Exemple i Tres', 'Consellera de Salut', [2]),
+  ];
+  await assert.rejects(
+    construirGovern(govern(GOVERN, NOMS, perfils), '2026-11-22'),
+    /0 fotos principals/,
+  );
+});
+
+test('el mapa falla si un color no és un color de CSS', () => {
+  const html = mapa().replaceAll('#aaa', '#aaa;x');
+  assert.throws(() => llegirMapa(html), /color inesperat/);
 });

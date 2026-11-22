@@ -1,0 +1,279 @@
+---
+import Pagina from '../../layouts/Pagina.astro';
+import {
+  dia,
+  diaCurt,
+  euros,
+  eurosRodons,
+  govern,
+  membres,
+  nombre,
+  slug,
+  transparencia,
+  transparenciaDe,
+  type Membre,
+} from '../../dades/institucions.ts';
+
+export function getStaticPaths() {
+  return membres.map((membre) => ({ params: { persona: slug(membre.nom) }, props: { membre } }));
+}
+
+type Props = { membre: Membre };
+const { membre } = Astro.props;
+const t = transparenciaDe(membre);
+const { agenda, viatges } = t;
+
+const publiques = t.activitats.filter((a) => a.tipus === 'pública');
+const privades = t.activitats.filter((a) => a.tipus === 'privada');
+const desDe = `des del ${dia(t.nomenament)}`;
+---
+
+<Pagina titol={membre.nom} descripcio={`${membre.carrec}: retribució, activitats, agenda i viatges.`}>
+  <section class="capcalera" aria-labelledby="titol">
+    <p class="etiqueta entra"><a href="/govern"><span class="punt gov" aria-hidden="true"></span>Govern</a></p>
+    <div class="persona">
+      <img class="entra" src={membre.foto} alt="" width="338" height="245" decoding="async" />
+      <div>
+        <h1 id="titol" class="entra" style="--ordre: 1">{membre.nom}</h1>
+        <p class="entradeta entra" style="--ordre: 2">{membre.carrec}, {desDe}.</p>
+      </div>
+    </div>
+
+    <div class="xifres entra" style="--ordre: 3">
+      <div>
+        <p class="valor">{eurosRodons(membre.retribucio_anual)}</p>
+        <p class="que">Retribució anual prevista</p>
+        <p class="font-dada">
+          <a href={govern.url}>Relació d'alts càrrecs</a>, {dia(govern.data_dades)}
+        </p>
+      </div>
+      <div>
+        <p class="valor">{nombre(agenda.reunions)}</p>
+        <p class="que">Reunions i actes amb grups d'interès</p>
+        <p class="font-dada">
+          <a href={transparencia.agenda.url}>Agenda pública</a>, {dia(transparencia.agenda.data_dades)}
+        </p>
+      </div>
+      <div>
+        <p class="valor">{nombre(viatges.viatges)}</p>
+        <p class="que">
+          Viatges a l'estranger{viatges.viatges > 0 && `, ${eurosRodons(viatges.despeses)} en despeses`}
+        </p>
+        <p class="font-dada">
+          <a href={transparencia.viatges.url}>Viatges a l'estranger</a>, {dia(transparencia.viatges.data_dades)}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccio" aria-labelledby="cv-titol">
+    <h2 class="titol-seccio" id="cv-titol">Trajectòria</h2>
+    <div class="cv">
+      {membre.cv.map((p) => <p>{p}</p>)}
+    </div>
+    <p class="font-dada">
+      Currículum i foto: <a href={govern.url_perfils}>govern.cat</a>, consultat el {dia(govern.data_perfils)}.
+    </p>
+  </section>
+
+  <section class="seccio" aria-labelledby="activitats-titol">
+    <h2 class="titol-seccio" id="activitats-titol">Altres activitats que declara</h2>
+    {
+      t.activitats.length === 0 ? (
+        <p class="buit">No declara cap altra activitat, pública ni privada.</p>
+      ) : (
+        [
+          { titol: 'Activitats públiques', apartats: publiques },
+          { titol: 'Activitats privades', apartats: privades },
+        ]
+          .filter((g) => g.apartats.length)
+          .map((g) => (
+            <div class="activitats">
+              <h3 class="titol-bloc">{g.titol}</h3>
+              {g.apartats.map((a) => (
+                <div class="apartat">
+                  <p class="secundari">{a.apartat}</p>
+                  <ul>
+                    {a.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          ))
+      )
+    }
+    <p class="font-dada">
+      Font: <a href={transparencia.declaracions.url}>{transparencia.declaracions.font}</a>, actualitzada el {
+        dia(transparencia.declaracions.data_dades)
+      }.
+    </p>
+  </section>
+
+  <section class="seccio" aria-labelledby="agenda-titol">
+    <h2 class="titol-seccio" id="agenda-titol">Amb qui s'ha reunit</h2>
+    {
+      agenda.darreres.length === 0 ? (
+        <p class="buit">L'agenda pública no té cap reunió amb grups d'interès {desDe}.</p>
+      ) : (
+        <ol class="files cronologia">
+          {agenda.darreres.map((r) => (
+            <li>
+              <time datetime={r.data}>{diaCurt(r.data)}</time>
+              <div>
+                <p class="destacat">{r.grup}</p>
+                {'tema' in r && <p class="secundari">{r.activitat}. {r.tema}</p>}
+              </div>
+            </li>
+          ))}
+        </ol>
+      )
+    }
+    <p class="font-dada">
+      Les {agenda.darreres.length} més recents de {nombre(agenda.reunions)}. Font: <a
+        href={transparencia.agenda.url}>{transparencia.agenda.font}</a
+      >, actualitzada el {dia(transparencia.agenda.data_dades)}.
+    </p>
+  </section>
+
+  <section class="seccio" aria-labelledby="viatges-titol">
+    <h2 class="titol-seccio" id="viatges-titol">Viatges a l'estranger</h2>
+    {
+      viatges.darrers.length === 0 ? (
+        <p class="buit">No n'hi ha cap de publicat {desDe}.</p>
+      ) : (
+        <ol class="files cronologia">
+          {viatges.darrers.map((v) => (
+            <li>
+              <time datetime={v.inici}>{diaCurt(v.inici)}</time>
+              <div>
+                <p class="destacat">{v.destinacio}</p>
+                <p class="secundari">
+                  {v.motiu}
+                  {'despeses' in v && ` · ${euros(v.despeses)}`}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      )
+    }
+    <p class="font-dada">
+      {viatges.darrers.length > 0 && `Els ${viatges.darrers.length} més recents de ${nombre(viatges.viatges)}. `}
+      L'import d'un viatge pot incloure el de la comitiva{
+        viatges.sense_despeses > 0 && `, i ${viatges.sense_despeses} encara no tenen les despeses validades`
+      }. Font: <a href={transparencia.viatges.url}>{transparencia.viatges.font}</a>, actualitzada el {
+        dia(transparencia.viatges.data_dades)
+      }.
+    </p>
+  </section>
+</Pagina>
+
+<style>
+  .persona {
+    display: grid;
+    gap: 1.5rem;
+    align-items: end;
+  }
+
+  @media (min-width: 768px) {
+    .persona {
+      grid-template-columns: minmax(14rem, 22rem) 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .persona img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 338 / 245;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 22px;
+    background: var(--gov-tint);
+  }
+
+  .cv {
+    margin-top: 1.5rem;
+    max-width: 44rem;
+    display: grid;
+    gap: 1rem;
+    color: var(--ink-2);
+  }
+
+  .cv p:first-child {
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+  }
+
+  .etiqueta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .buit {
+    margin-top: 1.5rem;
+    max-width: 36rem;
+    color: var(--ink-2);
+  }
+
+  .activitats {
+    margin-top: 2rem;
+  }
+
+  .apartat {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    box-shadow: inset 0 1px 0 var(--hair);
+  }
+
+  .apartat ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+  }
+
+  .apartat li + li {
+    margin-top: 0.25rem;
+  }
+
+  .cronologia li {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .cronologia li {
+      grid-template-columns: 110px 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  time {
+    font-size: 0.9375rem;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .destacat {
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+  }
+
+  .secundari {
+    margin-top: 0.25rem;
+    max-width: 44rem;
+  }
+
+  .seccio > .font-dada {
+    margin-top: 1.25rem;
+    max-width: 44rem;
+  }
+</style>

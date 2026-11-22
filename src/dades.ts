@@ -1,18 +1,23 @@
-// Regenera dades/govern.json i dades/parlament.json des de les fonts oficials:
+// Regenera dades/govern.json, dades/transparencia.json i dades/parlament.json des de les fonts oficials:
 //   node src/dades.ts
 // Primer ho llegeix i ho comprova tot; només escriu si tot quadra. Si una font falla, surt amb un
 // error i deixa els fitxers com estaven, perquè es pugui executar sense ningú al davant.
 import { writeFile } from 'node:fs/promises';
 import { SourceError } from './comun.ts';
-import { construirGovern, construirParlament } from './institucions.ts';
+import { construirGovern, construirParlament, construirTransparencia } from './institucions.ts';
 
 const avui = new Date().toISOString().slice(0, 10);
 try {
-  const govern = await construirGovern(fetch);
+  const govern = await construirGovern(fetch, avui);
+  const transparencia = await construirTransparencia(fetch, [
+    govern.president,
+    ...govern.consellers,
+  ]);
   const parlament = await construirParlament(fetch, avui);
   const desa = (nom: string, dades: unknown) =>
     writeFile(new URL(`../dades/${nom}`, import.meta.url), `${JSON.stringify(dades, null, 2)}\n`);
   await desa('govern.json', govern);
+  await desa('transparencia.json', transparencia);
   await desa('parlament.json', parlament);
   console.log(
     `Govern: ${govern.consellers.length} consellers (dades del ${govern.data_dades}). ` +

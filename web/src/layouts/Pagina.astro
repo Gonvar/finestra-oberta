@@ -1,0 +1,133 @@
+---
+import '../styles/global.css';
+import Navegacio from '../components/Navegacio.astro';
+import Peu from '../components/Peu.astro';
+
+type Props = { titol: string; descripcio: string };
+const { titol, descripcio } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>{titol} · Finestra Oberta</title>
+    <meta name="description" content={descripcio} />
+  </head>
+  <body>
+    <Navegacio cerca={false} />
+    <main class="contingut">
+      <slot />
+    </main>
+    <Peu />
+  </body>
+</html>
+
+<style is:global>
+  .capcalera {
+    padding-top: clamp(3rem, 7vw, 5rem);
+  }
+
+  .capcalera h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .capcalera .entradeta {
+    margin-top: 1rem;
+    max-width: 38rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+    color: var(--ink-2);
+  }
+
+  .capcalera .font-dada {
+    margin-top: 0.75rem;
+  }
+
+  /* Files separades per una línia interior (§2.3), sense vores ni ombres. */
+  .files {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+  }
+
+  .files > li {
+    padding: 1rem 0;
+    box-shadow: inset 0 1px 0 var(--hair);
+  }
+
+  .etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--ink-2);
+  }
+
+  .punt {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    flex: none;
+  }
+
+  .punt.gov {
+    background: var(--gov);
+  }
+
+  .punt.par {
+    background: var(--par);
+  }
+
+  .xifres {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .xifres {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .xifres .valor {
+    font-size: clamp(2.25rem, 4.2vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .xifres .que {
+    margin-top: 0.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: var(--ink-2);
+  }
+
+  .xifres .font-dada {
+    margin-top: 0.25rem;
+  }
+
+  .secundari {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: var(--ink-3);
+    letter-spacing: 0;
+  }
+
+  .titol-bloc {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.012em;
+  }
+</style>

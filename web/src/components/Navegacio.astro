@@ -1,6 +1,8 @@
 ---
 // El botó de cerca és fora de l'illa de React perquè la barra es pinti sense esperar JavaScript;
-// l'illa del cercador escolta l'esdeveniment que envia.
+// l'illa del cercador escolta l'esdeveniment que envia. Les pàgines sense cercador no el mostren.
+type Props = { cerca?: boolean };
+const { cerca = true } = Astro.props;
 ---
 
 <header class="nav">
@@ -16,17 +18,23 @@
     </a>
     <nav aria-label="Seccions">
       <ul>
-        <li class="nomes-ample"><a href="#cronologia">Cronologia</a></li>
-        <li class="nomes-ample"><a href="#ia">Per a la IA</a></li>
-        <li>
-          <button type="button" class="cerca" data-obre-cercador disabled aria-keyshortcuts="Meta+K Control+K">
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
-              <path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
-            </svg>
-            Cerca
-          </button>
-        </li>
+        {/* A la portada, al mòbil hi caben el cercador i el codi; el Govern i el Parlament ja hi tenen el seu bloc. */}
+        <li class:list={{ 'nomes-ample': cerca }}><a href="/govern">Govern</a></li>
+        <li class:list={{ 'nomes-ample': cerca }}><a href="/parlament">Parlament</a></li>
+        <li class="nomes-ample"><a href="/#ia">Per a la IA</a></li>
+        {
+          cerca && (
+            <li>
+              <button type="button" class="cerca" data-obre-cercador disabled aria-keyshortcuts="Meta+K Control+K">
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6" />
+                  <path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+                Cerca
+              </button>
+            </li>
+          )
+        }
         <li>
           <a class="codi" href="https://github.com/Gonvar/finestra-oberta">
             <svg viewBox="0 0 16 16" aria-hidden="true">

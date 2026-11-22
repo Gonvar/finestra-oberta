@@ -2,7 +2,7 @@
 // src/dades.ts les desa en JSON a dades/ perquè la web les pugui mostrar sense consultar les fonts.
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
-import { getJson, getText, SourceError, words, type Fetch } from './comun.ts';
+import { fold, getJson, getText, SourceError, words, type Fetch } from './comun.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
 export const MAPA_ESCONS = `${PARLAMENT}/web/composicio/distribucio-escons/index.html`;
@@ -27,6 +27,8 @@ export type Esco = {
   grup: string;
   subgrup?: string;
   sigla: string;
+  /** El color del grup al mapa del Parlament: «#C70A08» o un nom de CSS com «grey». */
+  color: string;
 };
 
 const ENTITATS: Record<string, string> = {
@@ -84,11 +86,14 @@ export function llegirMapa(html: string): Esco[] {
     const sigla = llegenda.get(color);
     if (sigla === undefined)
       throw new SourceError(`El color ${color} del mapa d'escons no és a la llegenda.`);
+    // El color passa tal qual a la web: ha de ser un color de CSS i res més.
+    if (!/^(#[0-9a-f]{3}|#[0-9a-f]{6}|[a-z]+)$/i.test(color))
+      throw new SourceError(`El mapa d'escons té un color inesperat: ${color}.`);
     if (grups.size !== 1 || subgrups.size > 1)
       throw new SourceError(`El mapa d'escons no dona un sol grup per al codi ${codi}.`);
     const [grup] = grups as unknown as [string];
     const [subgrup] = subgrups;
-    return { codi, esco: Number(esco), carrec, grup, ...(subgrup && { subgrup }), sigla };
+    return { codi, esco: Number(esco), carrec, grup, ...(subgrup && { subgrup }), sigla, color };
   });
   if (new Set(escons.map((e) => e.esco)).size !== ESCONS)
     throw new SourceError(`El mapa d'escons no té ${ESCONS} escons diferents.`);
@@ -172,12 +177,13 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
 
   const grups = new Map<
     string,
-    { nom: string; sigla: string; escons: number; subgrups: Map<string, number> }
+    { nom: string; sigla: string; color: string; escons: number; subgrups: Map<string, number> }
   >();
   for (const { esco } of diputats) {
     const grup = grups.get(esco.grup) ?? {
       nom: esco.grup,
       sigla: esco.sigla,
+      color: esco.color,
       escons: 0,
       subgrups: new Map(),
     };
@@ -222,7 +228,15 @@ type AltCarrec = {
   sexe: string;
   denominacio_lloc: string;
   departament: string;
+  retribucio_anual_prevista: string;
 };
+
+/** «146.635,82 €» en euros. Una altra forma és un error: no es pot endevinar on van els decimals. */
+export function euros(text: string) {
+  const m = text.match(/^(\d{1,3}(?:\.\d{3})*),(\d{2}) €$/);
+  if (m === null) throw new SourceError(`Import amb una forma inesperada: ${text}.`);
+  return Number(`${m[1]!.replaceAll('.', '')}.${m[2]}`);
+}
 
 const lloc = (fila: AltCarrec) => fila.denominacio_lloc.replace(/\s+/g, ' ').trim();
 
@@ -238,14 +252,19 @@ const dia = (meta: Meta) => new Date(meta.rowsUpdatedAt * 1000).toISOString().sl
  * escrit, i només en un.
  */
 function nomEscrit(oficial: string, noms: string[]) {
-  const [cognoms, nom] = oficial.split(',');
-  const buscades = words(`${nom} ${cognoms}`);
-  const trobats = noms.filter((n) => buscades.every((w) => words(n).includes(w)));
+  const trobats = noms.filter((n) => esLaPersona(oficial, n));
   if (trobats.length !== 1)
     throw new SourceError(
       `«${oficial}» coincideix amb ${trobats.length} noms de les intervencions del Govern, no amb un.`,
     );
   return trobats[0]!;
+}
+
+/** Si un nom escrit d'una altra manera conté totes les paraules del nom oficial («PANE MENA, OLGA»). */
+function esLaPersona(oficial: string, nom: string) {
+  const [cognoms, propi] = oficial.split(',');
+  const paraules = words(nom);
+  return words(`${propi} ${cognoms}`).every((w) => paraules.includes(w));
 }
 
 const GENERE: Record<string, { conseller: string; president: string }> = {
@@ -265,7 +284,7 @@ function carrec(f: AltCarrec, president: boolean) {
 }
 
 /** El Govern: el president i els consellers i conselleres, de la relació oficial d'alts càrrecs. */
-export async function construirGovern(fetchImpl: Fetch) {
+export async function construirGovern(fetchImpl: Fetch, avui: string) {
   const meta = await metadades(fetchImpl, ALTS_CARRECS);
   const limit = 5000;
   const files = await getJson<AltCarrec[]>(
@@ -302,7 +321,13 @@ export async function construirGovern(fetchImpl: Fetch) {
     departament: f.departament,
     nom_oficial: f.cognoms_nom,
     carrec_oficial: lloc(f),
+    retribucio_anual: euros(f.retribucio_anual_prevista),
   });
+  const president = persona(presidents[0]!, true);
+  const ordenats = consellers
+    .map((f) => persona(f))
+    .sort((a, b) => a.departament.localeCompare(b.departament, 'ca'));
+  const perfils = await construirPerfils(fetchImpl, [president, ...ordenats]);
   return {
     font: `Dades obertes de Catalunya: ${meta.name} (${meta.attribution})`,
     url: `${SOCRATA}/d/${ALTS_CARRECS}`,
@@ -311,9 +336,280 @@ export async function construirGovern(fetchImpl: Fetch) {
     url_noms: `${SOCRATA}/d/${INTERVENCIONS}`,
     data_noms: dia(metaNoms),
     nota: 'Qui forma el Govern i el departament que porta surten de la relació d’alts càrrecs. El nom ben escrit surt de les intervencions del Govern al Parlament, perquè la relació l’escriu en majúscules i a vegades sense accents; el nom i el càrrec tal com els escriu la relació són a nom_oficial i carrec_oficial.',
-    president: persona(presidents[0]!, true),
-    consellers: consellers
-      .map((f) => persona(f))
-      .sort((a, b) => a.departament.localeCompare(b.departament, 'ca')),
+    font_perfils: 'govern.cat: el Consell Executiu',
+    url_perfils: CONSELL_EXECUTIU,
+    data_perfils: avui,
+    llicencia_perfils: `CC0, segons l’avís legal de govern.cat (${AVIS_GOVERN})`,
+    president: { ...president, ...perfils[0]! },
+    consellers: ordenats.map((c, i) => ({ ...c, ...perfils[i + 1]! })),
+  };
+}
+
+export const PERFILS = 'https://govern.cat/gov/api/v1/consell-executiu';
+export const AVIS_GOVERN = 'https://govern.cat/gov/avis-legal';
+export const CONSELL_EXECUTIU = 'https://govern.cat/gov/consell-executiu';
+
+type Perfil = {
+  consellerIdioma: { nom: string; carrec: string; descripcioCV: string };
+  audiovisual: { tipusImatge: number; data: string }[];
+};
+
+/** Els paràgrafs del currículum, que govern.cat publica en HTML. */
+function paragrafs(html: string) {
+  return html
+    .split(/<\/(?:p|h\d)>/)
+    .map(text)
+    .filter(Boolean);
+}
+
+/**
+ * El currículum i la foto de cada membre, de la fitxa que en publica govern.cat. La fitxa pot fer
+ * servir el nom amb què se'l coneix («Berni» per «Bernardo»), i per això es troba pel càrrec, que ha
+ * de començar com el de la relació d'alts càrrecs, i pels cognoms, que hi han de ser tots.
+ */
+export async function construirPerfils(
+  fetchImpl: Fetch,
+  membres: { nom: string; nom_oficial: string; carrec: string }[],
+) {
+  const resposta = await getJson<{ content: Perfil[]; totalElements: number }>(
+    fetchImpl,
+    `${PERFILS}?${new URLSearchParams({ size: '100' })}`,
+  );
+  if (resposta.content.length !== resposta.totalElements)
+    throw new SourceError('Les fitxes de govern.cat no caben en una pàgina.');
+  return membres.map((m) => {
+    const cognoms = words(m.nom_oficial.split(',')[0]);
+    const seus = resposta.content.filter((p) => {
+      const nom = words(p.consellerIdioma.nom);
+      return (
+        fold(p.consellerIdioma.carrec).startsWith(fold(m.carrec)) &&
+        cognoms.every((c) => nom.includes(c))
+      );
+    });
+    if (seus.length !== 1)
+      throw new SourceError(`${m.nom} té ${seus.length} fitxes a govern.cat, no una.`);
+    const perfil = seus[0]!;
+    // Hi ha dues fotos: la principal (338 x 245) i una d'apaïsada per a la capçalera (862 x 478).
+    const fotos = perfil.audiovisual.filter((a) => a.tipusImatge === 1);
+    if (fotos.length !== 1)
+      throw new SourceError(
+        `La fitxa de ${m.nom} a govern.cat té ${fotos.length} fotos principals.`,
+      );
+    const cv = paragrafs(perfil.consellerIdioma.descripcioCV);
+    if (!cv.length) throw new SourceError(`La fitxa de ${m.nom} a govern.cat no té currículum.`);
+    return { foto: fotos[0]!.data, cv };
+  });
+}
+
+export const DECLARACIONS = 'vdss-2ppz';
+export const AGENDA = 'hd8k-y28e';
+export const VIATGES = '5kte-hque';
+
+/** Qui hi ha a govern.json: amb el nom oficial es troba cada persona a les altres relacions. */
+type Membre = { nom: string; nom_oficial: string };
+
+type Declaracio = Record<string, string> & {
+  nom: string;
+  primer_cognom: string;
+  segon_cognom: string;
+  carrec: string;
+  situaci_carrec: string;
+  data_nomenament: string;
+};
+
+/** Els apartats de la declaració, amb el nom que es mostra. La relació en descriu el contingut legal. */
+const APARTATS: [camp: string, tipus: 'pública' | 'privada', nom: string][] = [
+  ['activitat_sector_public', 'pública', 'Un altre lloc al sector públic'],
+  ['exercici_carrecs', 'pública', 'Càrrecs que li corresponen pel càrrec'],
+  [
+    'representacio_organs_colegiats',
+    'pública',
+    'Representació de la Generalitat en òrgans col·legiats',
+  ],
+  [
+    'representacio_consells',
+    'pública',
+    'Representació de la Generalitat en consells d’administració',
+  ],
+  ['missions_temporals', 'pública', 'Missions temporals de representació'],
+  [
+    'participacio_organs',
+    'pública',
+    'Òrgans de govern d’empreses o entitats privades, en representació de l’Administració',
+  ],
+  ['pertinenca_consells_administracio', 'pública', 'Tres o més consells d’administració'],
+  ['carrecs_electius_compatibles', 'pública', 'Càrrecs electes'],
+  ['administracio_patrimoni', 'privada', 'Administració del patrimoni personal o familiar'],
+  [
+    'administracio_patrimoni_personal',
+    'privada',
+    'Patrimoni en empreses que contracten amb el sector públic',
+  ],
+  ['participacio_ocasional', 'privada', 'Seminaris, cursos, conferències i mitjans de comunicació'],
+  ['participacio_seminaris', 'privada', 'Formació per al personal de l’Administració'],
+  ['produccio_creacio_literaries', 'privada', 'Creació literària, artística, científica o tècnica'],
+  ['participacio_entitats_sense', 'privada', 'Entitats sense ànim de lucre'],
+];
+
+/** «1. Primera\n2. Segona» en una llista; «N/A» vol dir que no en declara cap. */
+function llista(text: string, camp: string) {
+  if (text === 'N/A') return [];
+  const items = text
+    .split('\n')
+    .map((l) => l.replace(/^\s*\d+\s*\.\s*/, '').trim())
+    .filter(Boolean);
+  if (!items.length) throw new SourceError(`L'apartat ${camp} d'una declaració és buit.`);
+  return items;
+}
+
+/** «12/8/2024» en ISO. */
+function diaIso(text: string) {
+  const m = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (m === null) throw new SourceError(`Data amb una forma inesperada: ${text}.`);
+  return `${m[3]}-${m[2]!.padStart(2, '0')}-${m[1]!.padStart(2, '0')}`;
+}
+
+// Les relacions d'agenda i de viatges inclouen tots els alts càrrecs, també els de mandats anteriors:
+// només compten les files amb el càrrec de president o de conseller i des del nomenament.
+const esCarrecDelGovern = (carrec: string) =>
+  /^(conseller|consellera|president de la generalitat|presidenta de la generalitat)\b/.test(
+    fold(carrec),
+  ) && !/^consellera? delegad/.test(fold(carrec));
+
+type FilaAgenda = {
+  data: string;
+  grup_d_inter_s: string;
+  activitat: string;
+  tema?: string;
+  nom_i_cognoms: string;
+  c_rrec: string;
+};
+
+type FilaViatge = {
+  nom_i_cognoms: string;
+  c_rrec: string;
+  inici_viatge: string;
+  fi_viatge: string;
+  destinaci: string;
+  motiu: string;
+  total_despeses?: string;
+};
+
+const DARRERES = 5;
+const LIMIT = 50000;
+
+async function totes<T>(fetchImpl: Fetch, id: string, params: Record<string, string>) {
+  const files = await getJson<T[]>(
+    fetchImpl,
+    `${SOCRATA}/resource/${id}.json?${new URLSearchParams({ ...params, $limit: String(LIMIT) })}`,
+  );
+  if (files.length === LIMIT) throw new SourceError(`La relació ${id} no cap en una pàgina.`);
+  return files;
+}
+
+const font = (meta: Meta, id: string) => ({
+  font: `Dades obertes de Catalunya: ${meta.name} (${meta.attribution})`,
+  url: `${SOCRATA}/d/${id}`,
+  data_dades: dia(meta),
+});
+
+/**
+ * El que el Govern publica de cada membre a més del càrrec i la retribució: la declaració
+ * d'activitats, l'agenda amb grups d'interès i els viatges a l'estranger des del nomenament.
+ */
+export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]) {
+  const [metaDecl, metaAgenda, metaViatges] = await Promise.all([
+    metadades(fetchImpl, DECLARACIONS),
+    metadades(fetchImpl, AGENDA),
+    metadades(fetchImpl, VIATGES),
+  ]);
+
+  const declaracions = await totes<Declaracio>(fetchImpl, DECLARACIONS, {});
+  const nomenaments = membres.map((m) => {
+    const propies = declaracions.filter(
+      (d) =>
+        d.situaci_carrec === 'Actiu' &&
+        esCarrecDelGovern(d.carrec) &&
+        esLaPersona(m.nom_oficial, `${d.nom} ${d.primer_cognom} ${d.segon_cognom}`),
+    );
+    if (propies.length !== 1)
+      throw new SourceError(
+        `${m.nom} té ${propies.length} declaracions d'activitats actives com a membre del Govern, no una.`,
+      );
+    return propies[0]!;
+  });
+  const desDe = nomenaments.map((d) => diaIso(d.data_nomenament)).sort()[0]!;
+
+  const agenda = await totes<FilaAgenda>(fetchImpl, AGENDA, {
+    $select: 'data,grup_d_inter_s,activitat,tema,nom_i_cognoms,c_rrec',
+    $where: `data >= '${desDe}'`,
+    $order: 'data DESC',
+  });
+  const viatges = await totes<FilaViatge>(fetchImpl, VIATGES, {
+    $select: 'nom_i_cognoms,c_rrec,inici_viatge,fi_viatge,destinaci,motiu,total_despeses',
+    $where: `inici_viatge >= '${desDe}'`,
+    $order: 'inici_viatge DESC',
+  });
+
+  const persones = membres.map((m, i) => {
+    const declaracio = nomenaments[i]!;
+    const nomenament = diaIso(declaracio.data_nomenament);
+    const seves = <T extends { nom_i_cognoms: string; c_rrec: string }>(
+      files: T[],
+      data: (f: T) => string,
+    ) =>
+      files.filter(
+        (f) =>
+          data(f).slice(0, 10) >= nomenament &&
+          esCarrecDelGovern(f.c_rrec) &&
+          esLaPersona(m.nom_oficial, f.nom_i_cognoms),
+      );
+    // La relació també hi posa una fila sense grup («-») per dir que en un trimestre no n'hi ha hagut.
+    const reunions = seves(agenda, (f) => f.data).filter((f) => f.grup_d_inter_s !== '-');
+    const viatgesSeus = seves(viatges, (f) => f.inici_viatge);
+    const ambDespeses = viatgesSeus.filter((v) => v.total_despeses !== undefined);
+    return {
+      nom: m.nom,
+      nom_oficial: m.nom_oficial,
+      nomenament,
+      activitats: APARTATS.flatMap(([camp, tipus, nom]) => {
+        const valor = declaracio[camp];
+        if (valor === undefined)
+          throw new SourceError(`A la declaració de ${m.nom} hi falta l'apartat ${camp}.`);
+        const items = llista(valor, camp);
+        return items.length ? [{ tipus, apartat: nom, items }] : [];
+      }),
+      agenda: {
+        reunions: reunions.length,
+        darreres: reunions.slice(0, DARRERES).map((r) => ({
+          data: r.data.slice(0, 10),
+          grup: r.grup_d_inter_s,
+          activitat: r.activitat,
+          ...(r.tema !== undefined && { tema: r.tema }),
+        })),
+      },
+      viatges: {
+        viatges: viatgesSeus.length,
+        // Les despeses es publiquen quan s'han validat: els viatges recents en poden no tenir.
+        sense_despeses: viatgesSeus.length - ambDespeses.length,
+        despeses:
+          Math.round(ambDespeses.reduce((s, v) => s + Number(v.total_despeses), 0) * 100) / 100,
+        darrers: viatgesSeus.slice(0, DARRERES).map((v) => ({
+          inici: v.inici_viatge.slice(0, 10),
+          fi: v.fi_viatge.slice(0, 10),
+          destinacio: v.destinaci,
+          motiu: v.motiu,
+          ...(v.total_despeses !== undefined && { despeses: Number(v.total_despeses) }),
+        })),
+      },
+    };
+  });
+
+  return {
+    declaracions: font(metaDecl, DECLARACIONS),
+    agenda: font(metaAgenda, AGENDA),
+    viatges: font(metaViatges, VIATGES),
+    nota: 'L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva.',
+    persones,
   };
 }
