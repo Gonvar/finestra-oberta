@@ -1,12 +1,26 @@
 ---
-// Pàgina provisional fins que hi hagi la portada: serveix per comprovar el domini i el desplegament.
+import '../styles/global.css';
+import Navegacio from '../components/Navegacio.astro';
+import Cercador from '../components/Cercador.tsx';
+import BlocInstitucio from '../components/BlocInstitucio.astro';
+import Cronologia from '../components/Cronologia.astro';
+import Xifra from '../components/Xifra.astro';
+import BlocIA from '../components/BlocIA.astro';
+import Peu from '../components/Peu.astro';
+import { blocs, cronologia, preguntes, respostes, xifra } from '../dades/portada.ts';
+
+const llocs = [
+  { nom: 'Què ha passat', href: '#cronologia' },
+  ...blocs.flatMap((b) => (b.href ? [{ nom: b.titol, href: b.href }] : [])),
+];
 ---
 
 <!doctype html>
 <html lang="ca">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
     <title>Finestra Oberta</title>
     <meta
       name="description"
@@ -14,41 +28,37 @@
     />
   </head>
   <body>
-    <main>
-      <h1>Finestra Oberta</h1>
-      <p>
-        La web encara s'està fent. Els servidors MCP ja es poden fer servir: són a <a
-          href="https://github.com/Gonvar/finestra-oberta">GitHub</a
-        >.
-      </p>
+    <Navegacio />
+    <main class="contingut">
+      <section class="portada" aria-labelledby="portada-titol">
+        <h1 id="portada-titol" class="entra">
+          Què decideix el Govern.<br /><span class="segona">Ara, a la vista.</span>
+        </h1>
+        <p class="entradeta entra" style="--ordre: 1">
+          Les dades obertes de les institucions catalanes, amb la font i la data de cada dada.
+        </p>
+        <div class="entra" style="--ordre: 2">
+          <Cercador client:idle exemple="Quanta gent viu al meu municipi?" preguntes={preguntes} respostes={respostes} llocs={llocs} />
+        </div>
+      </section>
+
+      <section class="seccio" aria-label="Institucions">
+        <div class="blocs">
+          {blocs.map((bloc, i) => <BlocInstitucio bloc={bloc} ordre={3 + i} />)}
+        </div>
+      </section>
+
+      <Cronologia fets={cronologia} />
+      <Xifra xifra={xifra} />
+      <BlocIA />
     </main>
-    <footer>
-      <p>
-        Projecte independent, sense vinculació amb cap administració. Inspirat en <a
-          href="https://github.com/samuelcorsan/reforma-digital">Reforma Digital</a
-        >.
-      </p>
-    </footer>
+    <Peu />
   </body>
 </html>
 
-<style is:global>
-  :root {
-    --gov: #1f5bd8;
-    --ink: #1d1d1f;
-    --ink-2: #424245;
-    --ink-3: #6e6e73;
-    --bg: #ffffff;
-    font-family:
-      -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', sans-serif;
-    color: var(--ink);
-    background: var(--bg);
-  }
-
-  body {
-    max-width: 67.5rem;
-    margin: 0 auto;
-    padding: 6.5rem max(20px, env(safe-area-inset-right)) 4rem max(20px, env(safe-area-inset-left));
+<style>
+  .portada {
+    padding-top: clamp(3.5rem, 9vw, 6.5rem);
   }
 
   h1 {
@@ -56,31 +66,35 @@
     font-weight: 600;
     line-height: 1.02;
     letter-spacing: -0.045em;
-    margin: 0 0 1.5rem;
+    text-wrap: balance;
   }
 
-  main p {
+  .segona {
+    color: var(--gov);
+  }
+
+  .entradeta {
+    margin-top: 1.5rem;
+    max-width: 36rem;
     font-size: 1.1875rem;
     line-height: 1.45;
     letter-spacing: -0.012em;
     color: var(--ink-2);
-    max-width: 36rem;
-    margin: 0;
   }
 
-  footer {
-    margin-top: 6.5rem;
-    font-size: 0.875rem;
-    line-height: 1.4;
-    color: var(--ink-3);
+  .portada > div {
+    margin-top: 2.5rem;
+    max-width: 44rem;
   }
 
-  a {
-    color: var(--gov);
+  .blocs {
+    display: grid;
+    gap: 1rem;
   }
 
-  a:focus-visible {
-    outline: 2px solid var(--gov);
-    outline-offset: 3px;
+  @media (min-width: 900px) {
+    .blocs {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>
