@@ -1,2 +1,5 @@
 package-lock.json
 .claude/
+web/dist/
+web/.astro/
+web/.wrangler/

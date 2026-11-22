@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "finestra-oberta",
+  "compatibility_date": "2026-11-22",
+  // La web és estàtica: Astro la genera a dist i Cloudflare la serveix tal com és, sense codi de servidor.
+  "assets": { "directory": "./dist" },
+  "routes": [{ "pattern": "finestraoberta.cat", "custom_domain": true }],
+  "observability": { "enabled": true },
+}
