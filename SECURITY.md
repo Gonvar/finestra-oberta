@@ -16,11 +16,11 @@ El que demana l'assistent sí que arriba a l'API oficial: per exemple, el nom d'
 
 La web de `web/` és estàtica i no té codi de servidor: Cloudflare Workers serveix els fitxers que genera Astro.
 
-- Només es publica a [finestraoberta.cat](https://finestraoberta.cat) des de la branca `main`, i només ho fa Workers Builds, connectat a aquest repositori. Ningú la publica a mà.
-- `main` està protegida: tot canvi hi arriba per una pull request que ha passat la CI.
-- Cada versió publicada porta el commit del qual surt, i per tant es pot comparar amb el codi públic.
-- La compilació no fa servir cap secret ni cap variable d'entorn. Al repositori no n'hi ha cap.
-- Les pull requests que venen de forks no es compilen a Cloudflare.
+- Workers Builds, connectat a aquest repositori, publica [finestraoberta.cat](https://finestraoberta.cat) cada vegada que canvia la branca `main`. El repositori no té cap ordre per publicar a mà, però la persona que administra el compte de Cloudflare encara ho podria fer amb `wrangler deploy`.
+- `main` està protegida i els canvis hi arriben per pull requests que han passat la CI. Els administradors del repositori es poden saltar aquesta protecció.
+- Cloudflare desa el commit de cada versió publicada. Ara per ara, aquest registre només es veu al tauler de Cloudflare, no a la web.
+- El repositori no conté secrets i el codi de `web/` no llegeix cap variable d'entorn. Workers Builds publica amb un token d'API que guarda Cloudflare.
+- La branca de producció i les previsualitzacions es configuren al tauler de Cloudflare (Workers, `finestra-oberta`, Configuració, Compilacions), no en aquest repositori.
 
 ## Fiabilitat de les dades
 
