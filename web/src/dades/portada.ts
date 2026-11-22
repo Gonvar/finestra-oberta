@@ -29,8 +29,18 @@ export type Fet = {
 export const REPO = 'https://github.com/Gonvar/finestra-oberta';
 
 export const blocs: Bloc[] = [
-  { institucio: 'gov', titol: 'Govern', frase: 'Qui forma el Govern i què decideix.' },
-  { institucio: 'par', titol: 'Parlament', frase: 'Qui seu a cada escó i de quin grup és.' },
+  {
+    institucio: 'gov',
+    titol: 'Govern',
+    frase: 'Qui forma el Govern i què decideix.',
+    href: '/govern',
+  },
+  {
+    institucio: 'par',
+    titol: 'Parlament',
+    frase: 'Qui seu a cada escó i de quin grup és.',
+    href: '/parlament',
+  },
   {
     institucio: 'dad',
     titol: 'Dades',
