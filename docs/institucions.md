@@ -1,22 +1,80 @@
 # El Govern i el Parlament
 
-Les dades que canvien poc: qui forma el Govern i com es reparteixen els 135 escons del Parlament. Són a [`dades/`](../dades/) en JSON, perquè la web les pugui mostrar sense consultar les fonts.
+Les dades que canvien poc: qui forma el Govern i com es reparteixen els 135 escons del Parlament. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
 ```
 
-L'script ho llegeix i ho comprova tot abans d'escriure res. Si una comprovació falla, surt amb un error i deixa els fitxers com estaven. Per això es pot executar sense ningú al davant.
+L'script ho llegeix i ho comprova tot abans d'escriure res. Si una comprovació falla, surt amb un error i deixa els fitxers com estaven. Per això es pot executar sense ningú al davant. Escriu a `dades/`, que no forma part de `main`.
 
 ## Actualització automàtica
 
 La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 5.00 UTC. També es pot llançar a mà des de la pestanya Actions de GitHub.
 
-- Executa `npm run dades`, passa Prettier per `dades/` i, si alguna cosa ha canviat, en fa un commit a `main`.
+- Primer comprova que el que hi ha publicat a `dades` encara es pot reproduir. Després executa `npm run dades` i comprova que el resultat nou també es pot reproduir a partir de les còpies de les fonts.
+- Si la composició ha canviat, o si el que hi ha publicat ja no es pot reproduir, signa `procedencia.json` amb una atestació i en fa un commit a `dades`. El missatge del commit enllaça l'execució de la tasca.
 - Si l'únic canvi és `data_consulta`, no fa cap commit: la composició és la mateixa.
-- Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades/` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
+- Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
+- Llançada des d'una branca que no és `main`, la tasca llegeix les fonts i ho comprova tot, però no signa ni publica res. Serveix per provar un canvi abans de fusionar-lo.
 
-## `dades/govern.json`
+Les dades no passen per pull request perquè no les escriu cap persona. El codi que les genera sí: un ruleset de `main` hi impedeix el push directe, el force push i l'esborrat, i tot canvi hi entra per una pull request pública, també els de qui administra el repositori.
+
+### Qui pot escriure a `dades`
+
+Ho decideix GitHub, no el workflow, que qualsevol branca podria canviar:
+
+- Un ruleset de la branca `dades` hi impedeix el push, el force push i l'esborrat. L'única excepció són les claus de desplegament del repositori, i el repositori només en té una, la del workflow. No hi té excepció ningú més, tampoc qui administra el repositori.
+- La clau privada és un secret de l'entorn `dades` de GitHub, i aquest entorn només s'obre per a execucions de la branca `main`. Una execució des d'una altra branca no la pot llegir.
+
+- El job que publica comprova que el seu commit encara és el cap de `main` i que les fonts s'han consultat després de les dades publicades. Així, tornar a executar una execució antiga no torna a publicar dades velles.
+
+Per tant, a `dades` només hi pot escriure el workflow de `main`, i el codi de `main` només canvia amb una pull request pública.
+
+## Com comprovar que les dades són de la font
+
+Al costat de cada JSON hi ha:
+
+- `captures/`: la resposta de cada font oficial tal com va arribar, sense cap canvi. Cada fitxer es diu com la seva empremta SHA-256.
+- `procedencia.json`: l'empremta de cada JSON publicat i, de cada resposta, l'URL demanat, l'URL que la va servir després de les redireccions, l'hora de la consulta, el codi HTTP, el tipus de contingut i l'empremta, en l'ordre en què es van demanar.
+
+L'atestació signa `procedencia.json`. Com que aquest fitxer porta l'empremta dels JSON i de cada còpia, els signa tots alhora: no es poden barrejar fitxers de dues execucions.
+
+Hi ha tres comprovacions, i les pot fer qualsevol persona. Cal [`gh`](https://cli.github.com/), Git i Node.js 24.
+
+**1. Les ha generat la tasca automàtica de `main`, i no una persona.** Cada actualització porta una [atestació de GitHub](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations) que diu quin workflow, quin commit de `main` i quina execució han produït `procedencia.json`. Es desa al registre públic de [Sigstore](https://www.sigstore.dev/), que no controla aquest projecte i on no es pot esborrar res.
+
+```sh
+git clone https://github.com/Gonvar/finestra-oberta.git
+cd finestra-oberta
+git clone --branch dades https://github.com/Gonvar/finestra-oberta.git dades
+gh attestation verify dades/procedencia.json --repo Gonvar/finestra-oberta \
+  --signer-workflow Gonvar/finestra-oberta/.github/workflows/dades.yml --source-ref refs/heads/main
+```
+
+Si algú hagués canviat `procedencia.json` a mà, no hi hauria cap atestació amb la seva empremta.
+
+**2. Les dades surten de les còpies, sense retocs.** Torna a generar els JSON a partir de `captures/` amb el codi que diu l'atestació, i comprova que surten idèntics, byte a byte, i que cada fitxer té l'empremta que diu `procedencia.json`. El commit es treu de l'atestació, i no del missatge del commit, perquè l'atestació no la pot triar qui publica:
+
+```sh
+CODI=$(gh attestation verify dades/procedencia.json --repo Gonvar/finestra-oberta \
+  --signer-workflow Gonvar/finestra-oberta/.github/workflows/dades.yml --source-ref refs/heads/main \
+  --format json --jq '.[0].verificationResult.signature.certificate.sourceRepositoryDigest')
+git checkout "$CODI"
+npm run verifica-dades
+```
+
+Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups i dels departaments depèn de la versió.
+
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json` i `/tmp/ara/parlament.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+
+### Què no demostra
+
+- Que la font oficial digui la veritat. Les dades són les que va publicar la font aquell dia. Si la font s'equivoca, l'error hi és.
+- Que la resposta vingués del servidor oficial. HTTPS no signa les respostes, i el que es pot provar és que la tasca automàtica, executant un codi públic, va rebre aquests bytes en connectar-se a l'URL oficial.
+- Qui administra el repositori pot canviar el ruleset, l'entorn o el workflow. Un canvi al workflow queda a la història de `main`, i un fitxer que no surt d'una execució del workflow de `main` no té atestació. Un canvi al ruleset o a l'entorn no és públic: si algú el fes servir per tornar a publicar dades antigues, ho detectaria la comprovació 3.
+
+## `govern.json`
 
 - **Font:** la [relació d'alts càrrecs dels departaments](https://analisi.transparenciacatalunya.cat/d/x9au-abcn) (`x9au-abcn`), que publica la Secretaria d'Administració i Funció Pública a Dades obertes de Catalunya.
 - **Data:** `data_dades` és la data de l'última actualització del conjunt, no la del dia en què s'executa l'script.
@@ -27,7 +85,7 @@ La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 
   - Hi ha d'haver un president, i cada departament ha de tenir un conseller, i només un.
   - Cada persona ha de tenir un nom, i només un, a les intervencions. Una persona que encara no ha intervingut al Parlament atura l'script fins que s'hi afegeixi.
 
-## `dades/parlament.json`
+## `parlament.json`
 
 - **Font:** la [distribució d'escons](https://www.parlament.cat/web/composicio/distribucio-escons/index.html) del Parlament de Catalunya i la fitxa de cada persona diputada. El Parlament no té cap API amb la composició: les dades es llegeixen de les pàgines web.
 - **Data:** el Parlament no publica quan va canviar la composició per última vegada. Per això `data_consulta` és el dia en què es van llegir les pàgines i hi va sortir la composició que hi ha al fitxer. Com que la tasca automàtica només desa els canvis, pot ser anterior a l'última comprovació.

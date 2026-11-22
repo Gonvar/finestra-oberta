@@ -47,11 +47,14 @@ La web és a `web/`: un lloc estàtic fet amb [Astro](https://astro.build) que e
 cd web
 npm install
 npm run dev          # servidor local amb recàrrega
+npm test             # les proves de la web
 npm run build        # la compilació que fa la CI
 npm run preview      # la web compilada, servida com a Cloudflare
 ```
 
 Tot el que es veu a la web (colors, tipografia, components i textos) segueix [DESIGN.md](DESIGN.md). Si un canvi necessita una regla que no hi és, proposa-la a la mateixa pull request.
+
+Cada pàgina fa servir la plantilla `web/src/layouts/Pagina.astro` i ha de ser a `web/src/dades/pagines.ts`, amb el títol, la descripció i el text de la imatge que es veu quan algú comparteix l'enllaç. La imatge es genera al build; sense l'entrada, el build falla.
 
 - Els textos han de passar per la skill [`clean-copy`](.claude/skills/clean-copy/SKILL.md): primer es decideix si un text ha d'existir i després com es diu.
 - Comprova el canvi a 320 px d'amplada i a l'escriptori, amb el teclat i amb el contrast de DESIGN.md §5.
