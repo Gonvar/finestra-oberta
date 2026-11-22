@@ -1,11 +1,12 @@
 // Comprova que les dades publicades surten, sense cap retoc, de les còpies de les fonts oficials:
 //   node src/verifica-dades.ts [carpeta]
 // La carpeta és dades/ si no se'n diu cap altra: la branca `dades` del repositori.
+import { fileURLToPath } from 'node:url';
 import { SourceError } from './comun.ts';
 import { construirInstitucions } from './institucions.ts';
 import { DesquadreError, verifica } from './procedencia.ts';
 
-const carpeta = process.argv[2] ?? 'dades';
+const carpeta = process.argv[2] ?? fileURLToPath(new URL('../dades', import.meta.url));
 try {
   const { procedencia, fitxers } = await verifica(carpeta, construirInstitucions);
   console.log(

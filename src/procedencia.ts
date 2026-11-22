@@ -17,6 +17,20 @@ export type Captura = {
 
 export type Procedencia = { data_consulta: string; captures: Captura[] };
 
+// Sense zod: la tasca de dades no instal·la cap dependència (vegeu .github/workflows/dades.yml).
+const esCaptura = (c: Record<string, unknown>) =>
+  typeof c.url === 'string' &&
+  typeof c.consultat === 'string' &&
+  typeof c.estat === 'number' &&
+  (typeof c.tipus === 'string' || c.tipus === null) &&
+  typeof c.sha256 === 'string' &&
+  /^[0-9a-f]{64}$/.test(c.sha256);
+
+const esProcedencia = (p: Record<string, unknown>): p is Procedencia =>
+  typeof p.data_consulta === 'string' &&
+  Array.isArray(p.captures) &&
+  p.captures.every((c) => typeof c === 'object' && c !== null && esCaptura(c));
+
 /** Llegeix les fonts amb `fetchImpl` i torna cada fitxer JSON que s'ha de publicar, pel seu nom. */
 export type Construeix<T extends Record<string, unknown> = Record<string, unknown>> = (
   fetchImpl: Fetch,
@@ -76,12 +90,23 @@ export class DesquadreError extends Error {}
  * dades a partir d'aquestes còpies, els JSON publicats surten idèntics, byte a byte.
  */
 export async function verifica(carpeta: string, construeix: Construeix) {
-  const procedencia = JSON.parse(
-    await readFile(join(carpeta, 'procedencia.json'), 'utf8'),
-  ) as Procedencia;
+  const llegeix = async (...cami: string[]) => {
+    try {
+      return await readFile(join(carpeta, ...cami));
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+      throw new DesquadreError(`Falta ${join(carpeta, ...cami)}.`);
+    }
+  };
+  const procedencia = JSON.parse(String(await llegeix('procedencia.json'))) as Record<
+    string,
+    unknown
+  >;
+  if (!esProcedencia(procedencia))
+    throw new DesquadreError('procedencia.json no té la forma esperada.');
   const cossos = await Promise.all(
     procedencia.captures.map(async (captura) => {
-      const cos = new Uint8Array(await readFile(join(carpeta, 'captures', captura.sha256)));
+      const cos = new Uint8Array(await llegeix('captures', captura.sha256));
       if (empremta(cos) !== captura.sha256)
         throw new DesquadreError(
           `La còpia de ${captura.url} no té l'empremta que diu procedencia.json.`,
@@ -117,7 +142,7 @@ export async function verifica(carpeta: string, construeix: Construeix) {
     );
 
   for (const [nom, dades] of Object.entries(fitxers))
-    if ((await readFile(join(carpeta, nom), 'utf8')) !== serialitza(dades))
+    if (String(await llegeix(nom)) !== serialitza(dades))
       throw new DesquadreError(`${nom} no és el que surt de les còpies de les fonts.`);
   return { procedencia, fitxers: Object.keys(fitxers) };
 }

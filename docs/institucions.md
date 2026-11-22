@@ -34,10 +34,11 @@ Hi ha tres comprovacions, i les pot fer qualsevol persona.
 git clone https://github.com/Gonvar/finestra-oberta.git
 cd finestra-oberta
 git clone --branch dades https://github.com/Gonvar/finestra-oberta.git dades
+git checkout <commit>   # el que enllaça «Codi:» al missatge de l'últim commit de dades
 npm run verifica-dades
 ```
 
-Cal el codi de `main` amb què es van generar, que enllaça el missatge del commit de `dades`.
+Cal el codi de `main` amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera.
 
 **2. Les ha generat la tasca automàtica, i no una persona.** Cada actualització porta una [attestation de GitHub](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations) que diu quin workflow, quin commit de `main` i quina execució han produït aquests fitxers. Es desa al registre públic de [Sigstore](https://www.sigstore.dev/), que no controla aquest projecte i on no es pot esborrar res:
 

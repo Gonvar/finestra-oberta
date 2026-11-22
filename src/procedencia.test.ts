@@ -100,3 +100,11 @@ test('la verificació falla si sobra una còpia', async () => {
   await assert.rejects(verifica(carpeta, construeix), /només en fan servir 2/);
   await rm(carpeta, { recursive: true });
 });
+
+test('la verificació falla si falta una còpia', async () => {
+  const carpeta = await carpetaGenerada();
+  const { captures } = await llegeixProcedencia(carpeta);
+  await rm(join(carpeta, 'captures', captures[0]!.sha256));
+  await assert.rejects(verifica(carpeta, construeix), DesquadreError);
+  await rm(carpeta, { recursive: true });
+});
