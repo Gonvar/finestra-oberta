@@ -1,0 +1,216 @@
+.cercador {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  height: 3.5rem;
+  padding: 0 0.375rem 0 1.125rem;
+  background: var(--bg-2);
+  border-radius: 14px;
+  transition: box-shadow var(--t-bloc) var(--ease-out);
+}
+
+/* L'ombra és l'únic estat amb ombra de la web (§2.3). */
+.cercador:focus-within {
+  box-shadow: 0 6px 24px rgba(29, 29, 31, 0.1);
+}
+
+.lupa {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--ink-3);
+}
+
+.cercador input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-overflow: ellipsis;
+}
+
+.cercador input:focus {
+  outline: none;
+}
+
+.cercador input::placeholder {
+  color: var(--ink-2);
+}
+
+.cercador input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.pregunta {
+  flex: none;
+  height: 2.75rem;
+  padding: 0 1.125rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: transform var(--t-boto) var(--ease-out);
+}
+
+.pregunta:active,
+.xip:active {
+  transform: scale(0.97);
+}
+
+.xips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.875rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.xips li {
+  max-width: 100%;
+}
+
+.xip {
+  max-width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--bg-2);
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-align: left;
+  cursor: pointer;
+  transition: transform var(--t-boto) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .xip:hover {
+    color: var(--ink);
+  }
+}
+
+.paleta-fons {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(29, 29, 31, 0.24);
+  transition: opacity var(--t-bloc) var(--ease-out);
+}
+
+.paleta-fons[data-starting-style],
+.paleta-fons[data-ending-style] {
+  opacity: 0;
+}
+
+.paleta {
+  position: fixed;
+  z-index: 21;
+  top: max(12vh, 1rem);
+  left: 50%;
+  width: min(40rem, calc(100vw - 2rem));
+  margin-left: calc(min(40rem, calc(100vw - 2rem)) / -2);
+  background: var(--bg);
+  border-radius: 22px;
+  box-shadow: 0 24px 64px rgba(29, 29, 31, 0.2);
+  overflow: hidden;
+  transition:
+    opacity var(--t-bloc) var(--ease-out),
+    transform var(--t-bloc) var(--ease-out);
+}
+
+/* Entra des d'una mica més petita i amunt; mai des de zero (§2.4). */
+.paleta[data-starting-style],
+.paleta[data-ending-style] {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+}
+
+.paleta:focus-visible {
+  outline: none;
+}
+
+.paleta-camp {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  height: 3.5rem;
+  padding: 0 1.125rem;
+  box-shadow: inset 0 -1px 0 var(--hair);
+}
+
+.paleta-camp input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+
+.paleta-camp input:focus {
+  outline: none;
+}
+
+.paleta-camp:has(input:focus-visible) {
+  box-shadow: inset 0 -2px 0 var(--gov);
+}
+
+.paleta-camp input::placeholder {
+  color: var(--ink-3);
+}
+
+.paleta-llista {
+  max-height: min(24rem, 60vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.5rem;
+}
+
+.paleta [cmdk-group-heading] {
+  padding: 0.75rem 0.75rem 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
+.paleta [cmdk-item] {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.paleta [cmdk-item][data-selected='true'] {
+  background: var(--bg-2);
+}
+
+.paleta [cmdk-list] > [cmdk-list-sizer] > [cmdk-item] {
+  margin-top: 0.25rem;
+  color: var(--gov);
+  font-weight: 600;
+}
+
+.cercador:has(input:focus-visible) {
+  outline: 2px solid var(--gov);
+  outline-offset: 3px;
+}
