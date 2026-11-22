@@ -12,6 +12,16 @@ Els servidors MCP s'executen a l'ordinador de qui els fa servir, per stdio. No h
 
 El que demana l'assistent sí que arriba a l'API oficial: per exemple, el nom d'un municipi o el text d'una consulta SoQL. No escriguis dades personals en aquestes consultes.
 
+## Com es publica la web
+
+La web de `web/` és estàtica i no té codi de servidor: Cloudflare Workers serveix els fitxers que genera Astro.
+
+- Workers Builds, connectat a aquest repositori, publica [finestraoberta.cat](https://finestraoberta.cat) cada vegada que canvia la branca `main`. El repositori no té cap ordre per publicar a mà, però la persona que administra el compte de Cloudflare encara ho podria fer amb `wrangler deploy`.
+- `main` està protegida i els canvis hi arriben per pull requests que han passat la CI. Els administradors del repositori es poden saltar aquesta protecció.
+- Cloudflare desa el commit de cada versió publicada. Ara per ara, aquest registre només es veu al tauler de Cloudflare, no a la web.
+- El repositori no conté secrets i el codi de `web/` no llegeix cap variable d'entorn. Workers Builds publica amb un token d'API que guarda Cloudflare.
+- La branca de producció i les previsualitzacions es configuren al tauler de Cloudflare (Workers, `finestra-oberta`, Configuració, Compilacions), no en aquest repositori.
+
 ## Fiabilitat de les dades
 
 Les respostes contenen dades oficials, però un assistent les pot interpretar malament. Cada resposta porta la font i la data de les dades perquè es puguin comprovar. Si trobes una dada mal presentada, obre una issue.
