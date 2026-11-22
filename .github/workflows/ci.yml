@@ -15,7 +15,7 @@ jobs:
     name: Proves, tipus i format
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # El commit de fusió i el seu primer pare, la base: n'hi ha prou per saber què canvia la pull request.
           fetch-depth: 2
@@ -49,7 +49,7 @@ jobs:
       run:
         working-directory: web
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
