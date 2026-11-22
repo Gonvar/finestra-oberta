@@ -271,7 +271,7 @@ const perfil = (nom: string, carrec: string, fotos = 1) => ({
   nom,
   carrec,
   fotos: Array.from({ length: fotos }, (_, i) => `https://govern.cat/govern/docs/${nom}-${i}.png`),
-  cv: `<p><strong>Nascuda a Lleida.</strong></p><p>Llicenciada&nbsp;en <em>Dret</em>, a Lleida.</p>`,
+  cv: `<p><strong>Nascuda a Lleida.</strong></p><p>Llicenciada&nbsp;en <em>Dret</em>, a Lleida, al<em>Campus</em>.</p>`,
 });
 
 /** govern.cat fa servir el nom amb què es coneix cada persona, que pot no ser l'oficial. */
@@ -321,7 +321,7 @@ test('el Govern dona el president i un conseller per departament, amb el nom ben
     carrec_oficial: 'PRESIDENT DE LA GENERALITAT DE CATALUNYA',
     retribucio_anual: 1,
     foto: 'https://govern.cat/govern/docs/Anna Exemple i U-0.png',
-    cv: ['Nascuda a Lleida.', 'Llicenciada en Dret, a Lleida.'],
+    cv: ['Nascuda a Lleida.', 'Llicenciada en Dret, a Lleida, alCampus.'],
   });
   assert.deepEqual(
     resultat.consellers.map((c) => [c.nom, c.carrec]),
@@ -538,6 +538,17 @@ test('qui fa poc que és al càrrec i no surt a l’agenda no en té cap xifra',
   ];
   const resultat = await construirTransparencia(
     transparencia(declaracions, VIATGES_FILES, agenda),
+    MEMBRES,
+  );
+  assert.equal('agenda' in resultat.persones[0]!, false);
+});
+
+test('amb tot el Govern nomenat fa poc, una agenda buida no és cap error', async () => {
+  const declaracions = [
+    declaracio('Berta Exemple Dos', 'Consellera', 'Actiu', { data_nomenament: '1/11/2026' }),
+  ];
+  const resultat = await construirTransparencia(
+    transparencia(declaracions, VIATGES_FILES, []),
     MEMBRES,
   );
   assert.equal('agenda' in resultat.persones[0]!, false);

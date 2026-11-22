@@ -429,7 +429,9 @@ export function llegirPerfils(json: string): PerfilsDesats {
 function paragrafs(html: string) {
   return (
     html
-      // Les etiquetes de dins d'una frase no separen paraules: «XXI</em>, de» és «XXI, de».
+      // Una etiqueta de dins d'una frase no separa paraules: «XXI</em>, de» és «XXI, de», i
+      // «al<em>Manual» es llegeix «alManual» també a govern.cat. No s'hi afegeix cap espai que la
+      // font no té.
       .replace(/<\/?(?:a|b|em|i|span|strong|sub|sup|u)\b[^>]*>/gi, '')
       .split(/<\/(?:p|h\d)>/)
       .map(text)
@@ -624,10 +626,11 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     $order: 'inici_viatge DESC',
   });
 
-  // Hi ha qui hi és des d'abans de l'estiu del 2024: una agenda buida és una consulta que ha fallat.
-  if (agenda.length === 0)
+  // Si el primer nomenament ja fa dos trimestres, l'agenda ha de tenir alguna fila: buida, és una
+  // consulta que ha fallat. Abans, tot un Govern nou encara pot no sortir-hi.
+  if (agenda.length === 0 && afegirDies(desDe, MARGE_AGENDA_DIES) < dia(metaAgenda))
     throw new SourceError(`L'agenda de grups d'interès no té cap fila des del ${desDe}.`);
-  const darreraAgenda = diaDeSocrata(agenda[0]!.data);
+  const darreraAgenda = agenda.length ? diaDeSocrata(agenda[0]!.data) : desDe;
 
   const persones = membres.map((m, i) => {
     const declaracio = nomenaments[i]!;
@@ -701,7 +704,7 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     declaracions: font(metaDecl, DECLARACIONS),
     agenda: font(metaAgenda, AGENDA),
     viatges: font(metaViatges, VIATGES),
-    nota: 'L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva.',
+    nota: 'L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva. Qui encara no surt a l’agenda, que es publica per trimestres, no té el camp agenda.',
     persones,
   };
 }
