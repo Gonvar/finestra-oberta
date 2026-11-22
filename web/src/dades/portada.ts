@@ -6,7 +6,6 @@ export type Institucio = 'gov' | 'par' | 'dad';
 
 export type Font = { nom: string; url: string };
 
-/** Una xifra publicable: el valor, què compta, el període i d'on surt. */
 export type Xifra = { valor: string; que: string; periode: string; font: Font };
 
 export type Bloc = {
@@ -18,7 +17,6 @@ export type Bloc = {
 };
 
 export type Fet = {
-  /** Data ISO (AAAA-MM-DD). */
   data: string;
   institucio: Institucio;
   /** El nom del tipus, perquè el color no sigui l'únic indicador. */
@@ -57,7 +55,6 @@ export const respostes: { nom: string; href: string }[] = [
   },
 ];
 
-/** Les preguntes d'exemple del README. */
 export const preguntes = [
   "Quantes dones vivien a Osona l'1 de gener de 2025?",
   'Quina comarca va tenir més morts en accidents de trànsit el 2023?',

@@ -1,4 +1,4 @@
-import { toast, Toaster } from 'sonner';
+import { toast } from 'sonner';
 
 type Props = { text: string };
 
@@ -14,24 +14,8 @@ export default function Copia({ text }: Props) {
   }
 
   return (
-    <>
-      <button type="button" className="copia" onClick={copia}>
-        Copia
-      </button>
-      <Toaster
-        position="bottom-center"
-        duration={2000}
-        toastOptions={{
-          style: {
-            background: 'var(--ink)',
-            color: '#fff',
-            border: 0,
-            borderRadius: '14px',
-            fontFamily: 'var(--font)',
-            fontSize: '0.9375rem',
-          },
-        }}
-      />
-    </>
+    <button type="button" className="copia" onClick={copia}>
+      Copia
+    </button>
   );
 }

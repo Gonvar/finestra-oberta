@@ -34,8 +34,10 @@ export default function Cercador({ exemple, preguntes, respostes, llocs }: Props
 
   useEffect(() => {
     function tecla(e: KeyboardEvent) {
-      if (e.key.toLowerCase() === 'k' && (e.metaKey || e.ctrlKey)) {
+      // L'emplenament automàtic de Chrome envia keydown sense `key`, i cridar-hi un mètode petaria.
+      if ((e.key === 'k' || e.key === 'K') && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
+        setConsulta('');
         setObert((ara) => !ara);
       }
     }

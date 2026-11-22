@@ -7,11 +7,12 @@ import Cronologia from '../components/Cronologia.astro';
 import Xifra from '../components/Xifra.astro';
 import BlocIA from '../components/BlocIA.astro';
 import Peu from '../components/Peu.astro';
+import Avisos from '../components/Avisos.tsx';
 import { blocs, cronologia, preguntes, respostes, xifra } from '../dades/portada.ts';
 
 const llocs = [
   { nom: 'Què ha passat', href: '#cronologia' },
-  ...blocs.flatMap((b) => (b.href ? [{ nom: b.titol, href: b.href }] : [])),
+  ...blocs.flatMap((b) => (b.href?.startsWith('#') ? [{ nom: b.titol, href: b.href }] : [])),
 ];
 ---
 
@@ -53,6 +54,7 @@ const llocs = [
       <BlocIA />
     </main>
     <Peu />
+    <Avisos client:idle />
   </body>
 </html>
 
