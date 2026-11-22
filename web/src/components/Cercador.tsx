@@ -45,6 +45,9 @@ export default function Cercador({ exemple, preguntes, respostes, llocs }: Props
     }
     document.addEventListener('keydown', tecla);
     document.addEventListener('obre-cercador', boto);
+    // Els botons de la barra surten desactivats de l'HTML perquè un clic abans que l'illa escolti es perdria.
+    for (const b of document.querySelectorAll<HTMLButtonElement>('[data-obre-cercador]'))
+      b.disabled = false;
     return () => {
       document.removeEventListener('keydown', tecla);
       document.removeEventListener('obre-cercador', boto);
@@ -81,7 +84,8 @@ export default function Cercador({ exemple, preguntes, respostes, llocs }: Props
 
   return (
     <>
-      <form className="cercador" role="search" onSubmit={envia}>
+      {/* Sense JavaScript, o abans que s'hidrati, enviar porta al bloc on es pot preguntar a una IA. */}
+      <form className="cercador" role="search" action="#ia" onSubmit={envia}>
         <Lupa />
         <input
           type="search"

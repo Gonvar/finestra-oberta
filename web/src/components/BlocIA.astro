@@ -5,6 +5,7 @@ import { REPO } from '../dades/portada.ts';
 const ordres = [
   `git clone ${REPO}.git`,
   'cd finestra-oberta && npm install',
+  'claude mcp add idescat -- node "$PWD/src/index.ts" idescat',
   'claude mcp add dades-obertes -- node "$PWD/src/index.ts" dades-obertes',
 ].join('\n');
 ---
@@ -14,7 +15,7 @@ const ordres = [
     <div class="connecta">
       <h2 class="titol-seccio" id="ia-titol">Per a la teva IA</h2>
       <p class="frase">
-        Amb aquestes ordres, Claude Code pot consultar les dades obertes de la Generalitat. Cal
+        Amb aquestes ordres, Claude Code pot consultar les dades obertes de la Generalitat i les estadístiques de l'Idescat. Cal
         Node.js 24.
       </p>
       <div class="codi">
