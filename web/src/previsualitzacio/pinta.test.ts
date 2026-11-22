@@ -19,13 +19,33 @@ test('la previsualització és un PNG de la mida que diu l’Open Graph', async 
   assert.equal(height, ALT);
 });
 
-test('un nom llarg es parteix en dues línies en lloc de sortir de la imatge', async () => {
+// Els exemples no fan servir noms ni grups reals (DESIGN.md §4, neutralitat).
+const LLARG = 'Nom de prova molt llarg que no cap en una sola línia de la imatge';
+
+test('un títol llarg es parteix en dues línies sense sortir de la imatge', async () => {
   const png = await pintaPrevisualitzacio({
     institucio: 'par',
-    titol: 'Maria Dolors Montserrat i Culleré de Llorenç i Vilanova de la Barca',
-    frase: 'Diputada del Grup Parlamentari Socialistes i Units per Avançar, per Barcelona.',
+    titol: LLARG,
+    frase: 'Frase de prova.',
   });
+  // La columna de píxels just abans del marge dret ha de quedar blanca: cap lletra hi arriba.
+  const { data, info } = await sharp(png)
+    .extract({ left: AMPLE - 80, top: 0, width: 80, height: ALT })
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  assert.ok(
+    data.every((v) => v === 255),
+    `hi ha text dins del marge dret (${info.width} px)`,
+  );
+});
+
+test('una paraula sola més ampla que la imatge fa baixar la mida, o atura el build', async () => {
+  const png = await pintaPrevisualitzacio({ titol: 'Interdepartamentalització', frase: 'Frase.' });
   assert.equal((await sharp(png).metadata()).width, AMPLE);
+  await assert.rejects(
+    pintaPrevisualitzacio({ titol: 'Interdepartamentalitzacions'.repeat(3), frase: 'Frase.' }),
+    /no cap a la imatge/,
+  );
 });
 
 test('un text que no hi cap atura el build', async () => {

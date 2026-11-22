@@ -43,7 +43,11 @@ export default function Comparteix({ url, titol }: Props) {
   const [obert, setObert] = useState(false);
 
   useEffect(() => {
-    setNatiu('share' in navigator && navigator.canShare({ url, title: titol }));
+    // Alguns navegadors tenen `share` però no `canShare` (Chrome Android < 89, Safari iOS < 14).
+    setNatiu(
+      'share' in navigator &&
+        (!('canShare' in navigator) || navigator.canShare({ url, title: titol })),
+    );
   }, [url, titol]);
 
   async function comparteixNatiu() {
@@ -51,7 +55,10 @@ export default function Comparteix({ url, titol }: Props) {
       await navigator.share({ url, title: titol });
     } catch (e) {
       // Tancar el full sense triar res també és un AbortError, i no és cap error.
-      if (!(e instanceof DOMException && e.name === 'AbortError')) throw e;
+      if (e instanceof DOMException && e.name === 'AbortError') return;
+      // El navegador pot negar el full (p. ex. NotAllowedError si no veu el gest): queda el menú.
+      if (e instanceof DOMException) setObert(true);
+      else throw e;
     }
   }
 
@@ -59,8 +66,9 @@ export default function Comparteix({ url, titol }: Props) {
     try {
       await navigator.clipboard.writeText(url);
       toast('Enllaç copiat');
-    } catch {
+    } catch (e) {
       // El navegador pot negar el porta-retalls (permisos, pàgina sense focus).
+      if (!(e instanceof DOMException)) throw e;
       toast("No s'ha pogut copiar. Copia l'adreça de la barra del navegador.");
     }
   }

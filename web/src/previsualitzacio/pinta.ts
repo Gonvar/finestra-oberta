@@ -104,20 +104,25 @@ async function pintaText({ trossos, tipus, mida, espaiat, interlineat, maxLinies
   await comprovaTipografia();
   for (let ara = mida; ara >= Math.round(mida * 0.6); ara -= 2) {
     const linies: string[] = [];
+    let massaAmple = false;
     for (const { text, color } of trossos) {
       let linia = '';
       for (const paraula of text.split(' ')) {
         const prova = linia ? `${linia} ${paraula}` : paraula;
         const { ample } = await renderitza(markup(prova, color, espaiat), tipus, ara);
-        if (ample <= AMPLE_TEXT || !linia) linia = prova;
-        else {
+        if (ample <= AMPLE_TEXT) linia = prova;
+        else if (!linia) {
+          // Una sola paraula que ja no hi cap: no es pot partir, cal una mida més petita.
+          massaAmple = true;
+          linia = prova;
+        } else {
           linies.push(markup(linia, color, espaiat));
           linia = paraula;
         }
       }
       linies.push(markup(linia, color, espaiat));
     }
-    if (linies.length <= maxLinies) {
+    if (!massaAmple && linies.length <= maxLinies) {
       return renderitza(linies.join('\n'), tipus, ara, Math.round(ara * (interlineat - 1)));
     }
   }
@@ -197,7 +202,7 @@ export async function pintaPrevisualitzacio(p: Previsualitzacio): Promise<Buffer
   });
   blocs.push({ ...frase, abans: 32, esquerra: MARGE });
 
-  // El bloc central queda centrat entre la marca i el peu.
+  // Centrat entre la marca i el peu, perquè l'aire de dalt i de baix sigui el mateix sigui quin sigui el text.
   const dalt = 72 + 40;
   const baix = ALT - 72 - peu.alt;
   const total = blocs.reduce((suma, b) => suma + b.abans + b.alt, 0);

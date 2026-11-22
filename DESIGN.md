@@ -77,7 +77,7 @@ No es carrega cap font externa. La del sistema ja té els ajustos òptics de cad
 - **Contingut:** 1.080 px d'amplada màxima, amb un marge lateral de 20 px com a mínim (`max(20px, env(safe-area-inset-*))`).
 - **Separació entre seccions:** 104 px a l'escriptori i 72 px al mòbil. El blanc separa; no calen línies.
 - **Radis:** 22 px per als blocs d'institució, 28 px per al bloc de la IA, 14 px per al cercador, 12 px per al codi i 999 px per als xips i els botons rodons.
-- **Sense vores ni ombres en repòs.** Una fila es separa de la següent amb una línia interior d'1 px en `--hair` (`box-shadow: inset 0 1px 0`). L'ombra només apareix en un estat: el cercador quan té el focus.
+- **Sense vores ni ombres en repòs.** Una fila es separa de la següent amb una línia interior d'1 px en `--hair` (`box-shadow: inset 0 1px 0`). L'ombra només apareix en dos casos: el cercador quan té el focus i les capes que s'obren damunt de la pàgina (la paleta de cerca i el menú de compartir), que sense ombra es confondrien amb el fons.
 - **Barra de navegació translúcida:** `rgba(255,255,255,0.72)` amb `backdrop-filter: saturate(180%) blur(20px)`, i el contingut passa per sota.
 
 ### 2.4 Moviment

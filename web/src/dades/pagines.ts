@@ -28,13 +28,18 @@ export const pagines: Pagina[] = [
   },
 ];
 
-export function pagina(ruta: string): Pagina {
+/**
+ * Astro dona la ruta codificada (accents en %C3%B3) i, a `astro dev`, tant amb barra final com sense.
+ * Totes dues formes són la mateixa pàgina.
+ */
+export function pagina(rutaDemanada: string): Pagina {
+  const ruta = decodeURI(rutaDemanada).replace(/\/?$/, '/');
   const trobada = pagines.find((p) => p.ruta === ruta);
   if (!trobada) throw new Error(`La ruta ${ruta} no és a src/dades/pagines.ts`);
   return trobada;
 }
 
-/** «/» → «portada», «/parlament/» → «parlament». */
+// El nom de la imatge segueix la ruta perquè es pugui trobar a dist/ sense consultar la llista.
 export function nomImatge(ruta: string): string {
   return ruta === '/' ? 'portada' : ruta.slice(1, -1);
 }
