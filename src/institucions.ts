@@ -3,6 +3,7 @@
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
 import { construirAjuntaments } from './ajuntaments.ts';
+import { construirMunicipis } from './municipis.ts';
 import {
   dia,
   getJson,
@@ -324,9 +325,14 @@ export async function construirGovern(fetchImpl: Fetch) {
 
 /** Tot el que es publica, pel nom del fitxer, en un ordre fix: l'ordre de les crides es reprodueix. */
 export async function construirInstitucions(fetchImpl: Fetch, avui: string, pausaMs: number) {
+  const govern = await construirGovern(fetchImpl);
+  const parlament = await construirParlament(fetchImpl, avui, pausaMs);
+  const ajuntaments = await construirAjuntaments(fetchImpl);
+  const codis = new Set(ajuntaments.municipis.map((m) => m.codi));
   return {
-    'govern.json': await construirGovern(fetchImpl),
-    'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
-    'ajuntaments.json': await construirAjuntaments(fetchImpl),
+    'govern.json': govern,
+    'parlament.json': parlament,
+    'ajuntaments.json': ajuntaments,
+    'municipis.json': await construirMunicipis(fetchImpl, codis),
   };
 }

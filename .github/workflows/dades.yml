@@ -70,8 +70,8 @@ jobs:
         run: |
           git add -A
           # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
-          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json parlament.json ajuntaments.json; then
-            echo "Cap composició no ha canviat."
+          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json parlament.json ajuntaments.json municipis.json; then
+            echo "No ha canviat res."
           else
             echo "hi-ha=true" >> "$GITHUB_OUTPUT"
           fi
