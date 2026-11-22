@@ -3,7 +3,17 @@
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
 import { readFile } from 'node:fs/promises';
-import { fold, getJson, getText, SourceError, words, type Fetch } from './comun.ts';
+import { construirAgenda } from './agenda.ts';
+import {
+  comprovaCodificacio,
+  fold,
+  getJson,
+  getText,
+  SourceError,
+  text,
+  words,
+  type Fetch,
+} from './comun.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
 export const MAPA_ESCONS = `${PARLAMENT}/web/composicio/distribucio-escons/index.html`;
@@ -31,32 +41,6 @@ export type Esco = {
   /** El color del grup al mapa del Parlament: «#C70A08» o un nom de CSS com «grey». */
   color: string;
 };
-
-const ENTITATS: Record<string, string> = {
-  nbsp: ' ',
-  amp: '&',
-  quot: '"',
-  '#39': "'",
-  '#039': "'",
-  '#038': '&',
-};
-
-/** El text d'un tros d'HTML. Una entitat desconeguda és un error: no es pot endevinar. */
-function text(html: string) {
-  return html
-    .replace(/<[^>]*>/g, ' ')
-    .replace(/&([#\w]+);/g, (whole, name: string) => {
-      const value = ENTITATS[name];
-      if (value === undefined) throw new SourceError(`Entitat HTML desconeguda: ${whole}.`);
-      return value;
-    })
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function comprovaCodificacio(html: string, url: string) {
-  if (html.includes('�')) throw new SourceError(`${url} té caràcters mal codificats.`);
-}
 
 /** Els escons del mapa: una crida `afegirEsco(...)` per escó, amb el color de la llegenda. */
 export function llegirMapa(html: string): Esco[] {
@@ -687,5 +671,6 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
       ...govern.consellers,
     ]),
     'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
+    'agenda.json': await construirAgenda(fetchImpl, avui, pausaMs),
   };
 }

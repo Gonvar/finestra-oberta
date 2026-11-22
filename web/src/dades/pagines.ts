@@ -47,6 +47,15 @@ export const pagines: Pagina[] = [
       institucio: 'gov',
     },
   },
+  {
+    ruta: '/agenda/',
+    titol: 'Agenda · Finestra Oberta',
+    descripcio: 'Els actes públics del Govern i del Parlament de Catalunya, dia a dia.',
+    previsualitzacio: {
+      titol: 'Agenda',
+      frase: 'Què fan el Govern i el Parlament, dia a dia.',
+    },
+  },
   ...membres.map((m) => ({
     ruta: `/govern/${slug(m.nom)}/`,
     titol: `${m.nom} · Finestra Oberta`,
