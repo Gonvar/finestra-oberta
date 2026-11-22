@@ -32,6 +32,10 @@ Exemples de preguntes:
 
 A [docs/exemples.md](docs/exemples.md) hi ha aquestes preguntes resoltes amb les crides i les respostes reals dels servidors.
 
+## El Govern i el Parlament
+
+A [`dades/`](dades/) hi ha la composició del Govern i la del Parlament en JSON, cadascuna amb la seva font i la data de les dades. `npm run dades` les torna a generar des de les fonts oficials. Vegeu [docs/institucions.md](docs/institucions.md).
+
 ## Com fer-los servir
 
 Cal **Node.js 24 o posterior**.

@@ -1,0 +1,1414 @@
+{
+  "font": "Parlament de Catalunya: distribució d’escons i fitxes de les persones diputades",
+  "url": "https://www.parlament.cat/web/composicio/distribucio-escons/index.html",
+  "data_consulta": "2026-11-22",
+  "nota": "El Parlament no publica la data d’actualització de la composició: data_consulta és el dia en què es va llegir aquesta composició. Els grups són els d’avui, que poden no coincidir amb els resultats de les eleccions.",
+  "legislatura": {
+    "numero": "XV",
+    "inici": 2024
+  },
+  "escons": 135,
+  "grups": [
+    {
+      "nom": "Grup Parlamentari Socialistes i Units per Avançar",
+      "sigla": "GP PSC-Units",
+      "escons": 42
+    },
+    {
+      "nom": "Grup Parlamentari de Junts",
+      "sigla": "GP Junts",
+      "escons": 35
+    },
+    {
+      "nom": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "sigla": "GP ERC",
+      "escons": 20
+    },
+    {
+      "nom": "Grup Parlamentari del Partit Popular de Catalunya",
+      "sigla": "GP PPC",
+      "escons": 15
+    },
+    {
+      "nom": "Grup Parlamentari de VOX en Cataluña",
+      "sigla": "GP VOX",
+      "escons": 11
+    },
+    {
+      "nom": "Grup Parlamentari Comuns",
+      "sigla": "GP Comuns",
+      "escons": 6
+    },
+    {
+      "nom": "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra",
+      "sigla": "GP CUP-DT",
+      "escons": 4,
+      "subgrups": [
+        {
+          "nom": "Subgrup Parlamentari de la Candidatura d'Unitat Popular - Crida Constituent",
+          "escons": 3
+        }
+      ]
+    },
+    {
+      "nom": "Grup Mixt",
+      "sigla": "G Mixt",
+      "escons": 2
+    }
+  ],
+  "diputats": [
+    {
+      "nom": "Isaac Padrós i Suarez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 1,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2545"
+    },
+    {
+      "nom": "Carme Renedo i Puig",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 2,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2546"
+    },
+    {
+      "nom": "Ignasi Prat i Sarri",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 3,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2539"
+    },
+    {
+      "nom": "Jordi Bertran i Luengo",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 4,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2541"
+    },
+    {
+      "nom": "Judith Toronjo i Nofuentes",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 5,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2232"
+    },
+    {
+      "nom": "Ennatu Domingo i Soler",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 6,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2548"
+    },
+    {
+      "nom": "Anna Erra i Solà",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 7,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2125"
+    },
+    {
+      "nom": "Jeannine Abella i Chica",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 8,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2334"
+    },
+    {
+      "nom": "Josep Rius i Alcaraz",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 9,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2040"
+    },
+    {
+      "nom": "Salvador Vergés i Tejero",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 10,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2233"
+    },
+    {
+      "nom": "Mònica Sales de la Cruz",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 11,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2036"
+    },
+    {
+      "nom": "Carles Puigdemont i Casamajó",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 12,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1176"
+    },
+    {
+      "nom": "Ferran Pedret i Santos",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 13,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1602"
+    },
+    {
+      "nom": "Elena Díaz Torrevejano",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 14,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2256"
+    },
+    {
+      "nom": "Jordi Riba Colom",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 15,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2252"
+    },
+    {
+      "nom": "Sara Jaurrieta Guarner",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 16,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2532"
+    },
+    {
+      "nom": "Rocio Garcia Pérez",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 17,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2250"
+    },
+    {
+      "nom": "Eva Candela López",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 18,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2248"
+    },
+    {
+      "nom": "Cristòfol Gimeno Iglesias",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 19,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1691"
+    },
+    {
+      "nom": "Beatriz Silva Gallardo",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 20,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2015"
+    },
+    {
+      "nom": "Lluís Mijoler Martínez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Comuns",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Comuns Sumar",
+      "partit": "Catalunya en Comú",
+      "esco": 21,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2511"
+    },
+    {
+      "nom": "Susanna Segovia Sánchez",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Comuns",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Comuns Sumar",
+      "partit": "Catalunya en Comú",
+      "esco": 22,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2012"
+    },
+    {
+      "nom": "David Cid Colomer",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Comuns",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Comuns Sumar",
+      "partit": "Catalunya en Comú",
+      "esco": 23,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1078"
+    },
+    {
+      "nom": "Jéssica Albiach Satorres",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Comuns",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Comuns Sumar",
+      "partit": "Catalunya en Comú",
+      "esco": 24,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1850"
+    },
+    {
+      "nom": "Jordi Fàbrega i Sabaté",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 25,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2236"
+    },
+    {
+      "nom": "Maite Selva i Huertas",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 26,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2358"
+    },
+    {
+      "nom": "Noemí Nieto i Fumanal",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 27,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2540"
+    },
+    {
+      "nom": "Toni Castellà i Clavé",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 28,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=720"
+    },
+    {
+      "nom": "Montse Ortiz i Martí",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 29,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1640"
+    },
+    {
+      "nom": "Anna Feliu i Moragues",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 30,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2237"
+    },
+    {
+      "nom": "Sònia Martínez i Juli",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 31,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2544"
+    },
+    {
+      "nom": "Joaquim Calatayud Casals",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 32,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2310"
+    },
+    {
+      "nom": "Mercè Esteve i Pi",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 33,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2231"
+    },
+    {
+      "nom": "Agustí Colomines i Companys",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 34,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2538"
+    },
+    {
+      "nom": "Albert Batet i Canadell",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 35,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1573"
+    },
+    {
+      "nom": "Alberto Bondesio Martínez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 36,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2528"
+    },
+    {
+      "nom": "Imma Ferret Raventós",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 37,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2522"
+    },
+    {
+      "nom": "David González Chanca",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 38,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2270"
+    },
+    {
+      "nom": "Guillem Mateo Sellas",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Units per Avançar",
+      "esco": 39,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2582"
+    },
+    {
+      "nom": "Mónica Ríos García",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 40,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2253"
+    },
+    {
+      "nom": "Guillem Sánchez Prat",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 41,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2535"
+    },
+    {
+      "nom": "Sabrin Araibi Marachi",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 42,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2526"
+    },
+    {
+      "nom": "Manel Ezquerra Tomàs",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 43,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2520"
+    },
+    {
+      "nom": "Ivana Martínez Valverde",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 44,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2534"
+    },
+    {
+      "nom": "Núria Lozano Montoya",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Comuns",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Comuns Sumar",
+      "partit": "Esquerra Unida i Alternativa",
+      "esco": 45,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2447"
+    },
+    {
+      "nom": "Andrés Garcia Berrio",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Comuns",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Comuns Sumar",
+      "partit": "Independent",
+      "esco": 46,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2512"
+    },
+    {
+      "nom": "Jordi Munell i Garcia",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 47,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1832"
+    },
+    {
+      "nom": "Mònica Gallardo Montornès",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 48,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2699"
+    },
+    {
+      "nom": "Laura Martínez Portell",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 49,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2651"
+    },
+    {
+      "nom": "Ariadna Urroz Segura",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 50,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2458"
+    },
+    {
+      "nom": "Rosa Jové i Montañola",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 51,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2547"
+    },
+    {
+      "nom": "M. Àngels Planas i Crous",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 52,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2543"
+    },
+    {
+      "nom": "Irene Negre i Estorach",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 53,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2313"
+    },
+    {
+      "nom": "Francesc de Dalmases i Thió",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 54,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2031"
+    },
+    {
+      "nom": "Joan Canadell i Bruguera",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 55,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2228"
+    },
+    {
+      "nom": "Lluís Puig Gordi",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 56,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1961"
+    },
+    {
+      "nom": "Josep M. Jové Lladó",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 57,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1985"
+    },
+    {
+      "nom": "Ester Capella i Farré",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 58,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1669"
+    },
+    {
+      "nom": "Jordi Albert i Caballero",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 59,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1971"
+    },
+    {
+      "nom": "Ana Balsera i Marín",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 60,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2241"
+    },
+    {
+      "nom": "Conchi Jiménez Cruz",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 61,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2521"
+    },
+    {
+      "nom": "Joaquim Paladella Curto",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 62,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1007"
+    },
+    {
+      "nom": "Neus Comes Pon",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 63,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2529"
+    },
+    {
+      "nom": "Francesc Jesús Becerra Ramírez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 64,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2527"
+    },
+    {
+      "nom": "Lídia Ferré Ferré",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 65,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2531"
+    },
+    {
+      "nom": "Míriam Casanova Domènech",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 68,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2554"
+    },
+    {
+      "nom": "Eva García Rodríguez",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 69,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=937"
+    },
+    {
+      "nom": "Hugo Manchón García",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 70,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2559"
+    },
+    {
+      "nom": "Àngels Esteller Ruedas",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 71,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=725"
+    },
+    {
+      "nom": "Manuel Reyes López",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 72,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1644"
+    },
+    {
+      "nom": "Juan Fernández Benítez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 73,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2557"
+    },
+    {
+      "nom": "Lorena Roldán Suárez",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 74,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1875"
+    },
+    {
+      "nom": "Alejandro Fernández Álvarez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 75,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1061"
+    },
+    {
+      "nom": "Marta Vilalta i Torres",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 76,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1614"
+    },
+    {
+      "nom": "Najat Driouech Ben Moussa",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 77,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1976"
+    },
+    {
+      "nom": "Laia Cañigueral Olivé",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 78,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2517"
+    },
+    {
+      "nom": "Joan Ignasi Elena Garcia",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 79,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=115"
+    },
+    {
+      "nom": "Albert Salvadó Fernàndez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 80,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2515"
+    },
+    {
+      "nom": "Ernesto Carrión Sablich",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 81,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2469"
+    },
+    {
+      "nom": "Andrea Zapata Alfonso",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 82,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2537"
+    },
+    {
+      "nom": "Mario García Gómez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 83,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2249"
+    },
+    {
+      "nom": "Sílvia Orriols Serra",
+      "carrec": "Diputada",
+      "grup": "Grup Mixt",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Aliança Catalana",
+      "partit": "Aliança Catalana",
+      "esco": 85,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510"
+    },
+    {
+      "nom": "Rosa Maria Soberana i Bonet",
+      "carrec": "Diputada",
+      "grup": "Grup Mixt",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Aliança Catalana",
+      "partit": "Aliança Catalana",
+      "esco": 86,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2602"
+    },
+    {
+      "nom": "M. Belén Pajares Ribas",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 87,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=965"
+    },
+    {
+      "nom": "Pau Ferran Navarro",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 88,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2565"
+    },
+    {
+      "nom": "Cristian Escribano Ramírez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 89,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2558"
+    },
+    {
+      "nom": "Alberto Villagrasa Gil",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 90,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1891"
+    },
+    {
+      "nom": "Pere Lluís Huguet Tous",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 91,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2552"
+    },
+    {
+      "nom": "Montserrat Berenguer Messeguer",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 92,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2556"
+    },
+    {
+      "nom": "Jaume Veray Cama",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari del Partit Popular de Catalunya",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Partit Popular / Partido Popular",
+      "partit": "Partit Popular",
+      "esco": 93,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2553"
+    },
+    {
+      "nom": "Mar Besses Casanovas",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 94,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2518"
+    },
+    {
+      "nom": "Lluïsa Llop Fernàndez",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 95,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2127"
+    },
+    {
+      "nom": "Carles Campuzano i Canadés",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 96,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=92"
+    },
+    {
+      "nom": "Irene Aragonès Gràcia",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 97,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2259"
+    },
+    {
+      "nom": "Montse Bergés i Saura",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 98,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2514"
+    },
+    {
+      "nom": "Antoni Poyato Rodríguez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 99,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2525"
+    },
+    {
+      "nom": "Susana Martínez Heredia",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 100,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2533"
+    },
+    {
+      "nom": "Christian Soriano García",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 101,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2536"
+    },
+    {
+      "nom": "Natàlia Fabian Corbacho",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 102,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2530"
+    },
+    {
+      "nom": "Mónica Lora Cisquer",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 103,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2277"
+    },
+    {
+      "nom": "Javier Ramírez Gutiérrez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 104,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2550"
+    },
+    {
+      "nom": "Manuel Jesús Acosta Elías",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 105,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2279"
+    },
+    {
+      "nom": "María Elisa García Fuster",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 106,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2276"
+    },
+    {
+      "nom": "Sergio Macián de Greef",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 107,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2283"
+    },
+    {
+      "nom": "Joan Garriga Doménech",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 108,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2275"
+    },
+    {
+      "nom": "Ignacio Garriga Vaz de Concicao",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 109,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2274"
+    },
+    {
+      "nom": "Oriol López Mayolas",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 110,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2655"
+    },
+    {
+      "nom": "Josep Vidal Bringué",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 111,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2513"
+    },
+    {
+      "nom": "Jordi Viñas i Xifra",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 112,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2516"
+    },
+    {
+      "nom": "Alba Camps i Roca",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 113,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2312"
+    },
+    {
+      "nom": "Gisela Navarro Fuster",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 114,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2583"
+    },
+    {
+      "nom": "José Ignacio Aparicio Ciria",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 115,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2519"
+    },
+    {
+      "nom": "Núria Navarro Hurtado",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 116,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2584"
+    },
+    {
+      "nom": "Rafael Villafranca Mercé",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 119,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2549"
+    },
+    {
+      "nom": "Alberto Tarradas Paneque",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Girona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 120,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2280"
+    },
+    {
+      "nom": "Andrés Bello Sanz",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 121,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2278"
+    },
+    {
+      "nom": "Júlia Calvet Puig",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de VOX en Cataluña",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "VOX",
+      "partit": "VOX",
+      "esco": 122,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2551"
+    },
+    {
+      "nom": "Maria Pilar Castillejo Medina",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra",
+      "subgrup": "Subgrup Parlamentari de la Candidatura d'Unitat Popular - Crida Constituent",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
+      "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
+      "esco": 123,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1921"
+    },
+    {
+      "nom": "Laura Fernández Vega",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra",
+      "subgrup": "Subgrup Parlamentari de la Candidatura d'Unitat Popular - Crida Constituent",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
+      "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
+      "esco": 124,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2485"
+    },
+    {
+      "nom": "Xavier Pellicer Pareja",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
+      "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
+      "esco": 125,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2262"
+    },
+    {
+      "nom": "Dani Cornellà Detrell",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra",
+      "subgrup": "Subgrup Parlamentari de la Candidatura d'Unitat Popular - Crida Constituent",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
+      "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
+      "esco": 126,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2264"
+    },
+    {
+      "nom": "Rosa Maria Ibarra Ollé",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 129,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1885"
+    },
+    {
+      "nom": "Glòria Freixa i Vilardell",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 130,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2187"
+    },
+    {
+      "nom": "Raquel Sans Guerra",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Tarragona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 131,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2133"
+    },
+    {
+      "nom": "Josep Rull i Andreu",
+      "carrec": "President del Parlament",
+      "grup": "Grup Parlamentari de Junts",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Junts per Catalunya",
+      "partit": "Junts per Catalunya",
+      "esco": 132,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=683"
+    },
+    {
+      "nom": "David Pérez Ibáñez",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 133,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=756"
+    },
+    {
+      "nom": "Juli Fernàndez Olivares",
+      "carrec": "Diputat",
+      "grup": "Grup Parlamentari d'Esquerra Republicana de Catalunya",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Esquerra Republicana de Catalunya",
+      "partit": "Esquerra Republicana de Catalunya",
+      "esco": 134,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2240"
+    },
+    {
+      "nom": "Judit Alcalá González",
+      "carrec": "Diputada",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 135,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2246"
+    },
+    {
+      "nom": "Òscar Ordeig i Molist",
+      "carrec": "Conseller",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Lleida",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 139,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1685"
+    },
+    {
+      "nom": "Eva M. Menor Cantador",
+      "carrec": "Consellera",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 142,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2523"
+    },
+    {
+      "nom": "Salvador Illa Roca",
+      "carrec": "President de la Generalitat",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 145,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2255"
+    },
+    {
+      "nom": "Alícia Romero Llano",
+      "carrec": "Consellera",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 147,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1603"
+    },
+    {
+      "nom": "Ramon Espadaler Parcerisas",
+      "carrec": "Conseller",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Units per Avançar",
+      "esco": 149,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=117"
+    },
+    {
+      "nom": "Silvia Paneque Sureda",
+      "carrec": "Consellera",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Girona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 150,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2251"
+    },
+    {
+      "nom": "Esther Niubó Cidoncha",
+      "carrec": "Consellera",
+      "grup": "Grup Parlamentari Socialistes i Units per Avançar",
+      "circumscripcio": "Barcelona",
+      "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+      "esco": 152,
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1877"
+    }
+  ]
+}

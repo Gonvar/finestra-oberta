@@ -14,19 +14,28 @@ export class SourceError extends Error {}
 
 export type Fetch = typeof fetch;
 
-/** GET amb temps límit: el JSON si la resposta és 2xx; si no, un SourceError amb el codi. */
-export async function getJson<T>(fetchImpl: Fetch, url: string) {
+/** GET amb temps límit: la resposta si és 2xx; si no, un SourceError amb el codi. */
+async function get(fetchImpl: Fetch, url: string, accept: string) {
   let response: Response;
   try {
     response = await fetchImpl(url, {
-      headers: { Accept: 'application/json' },
+      headers: { Accept: accept },
       signal: AbortSignal.timeout(20_000),
     });
   } catch {
     throw new SourceError('La font no respon. Torna-ho a provar més tard.');
   }
   if (!response.ok) throw new SourceError(`La font ha respost ${response.status}.`);
-  return (await response.json()) as T;
+  return response;
+}
+
+export async function getJson<T>(fetchImpl: Fetch, url: string) {
+  return (await (await get(fetchImpl, url, 'application/json')).json()) as T;
+}
+
+/** Per a les fonts que només publiquen pàgines web, com el Parlament. */
+export async function getText(fetchImpl: Fetch, url: string) {
+  return (await get(fetchImpl, url, 'text/html')).text();
 }
 
 /** Executa una eina: el resultat en JSON amb la font al final, o l'error per a l'assistent. */

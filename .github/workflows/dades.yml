@@ -1,0 +1,42 @@
+name: Dades del Govern i del Parlament
+
+# Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, la desa a main.
+# Si una font falla o una comprovació no quadra, src/dades.ts surt amb un error: la tasca falla i
+# GitHub ho notifica, i les dades publicades es queden com estaven.
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dades
+  cancel-in-progress: false
+
+jobs:
+  actualitza:
+    name: Actualitza dades/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run dades
+      - run: npx prettier --write dades/
+      - name: Desa els canvis
+        run: |
+          git add dades/
+          # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
+          if git diff --cached --quiet -I '"data_consulta"'; then
+            echo "La composició no ha canviat."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore(dades): actualitza el Govern i el Parlament'
+          git push

@@ -12,7 +12,8 @@
     "typecheck": "tsc",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "barcelona": "node src/index.ts barcelona"
+    "barcelona": "node src/index.ts barcelona",
+    "dades": "node src/dades.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.4.0",
