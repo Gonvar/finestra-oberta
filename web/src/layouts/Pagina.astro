@@ -1,0 +1,54 @@
+---
+// La carcassa de cada pàgina: el <head> amb el que veu qui rep l'enllaç, la navegació i el peu.
+// El títol, la descripció i la imatge surten de src/dades/pagines.ts a partir de la ruta.
+import '../styles/global.css';
+import Navegacio from '../components/Navegacio.astro';
+import Peu from '../components/Peu.astro';
+import Avisos from '../components/Avisos.tsx';
+import { AMPLE, ALT } from '../previsualitzacio/pinta.ts';
+import { nomImatge, pagina } from '../dades/pagines.ts';
+
+const { ruta, titol, descripcio, previsualitzacio } = pagina(Astro.url.pathname);
+const canonica = new URL(ruta, Astro.site).href;
+const imatge = new URL(`/previsualitzacions/${nomImatge(ruta)}.png`, Astro.site).href;
+// La imatge només té text: el text alternatiu és el mateix.
+const textImatge = [previsualitzacio.titol, previsualitzacio.destacat, previsualitzacio.frase]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>{titol}</title>
+    <meta name="description" content={descripcio} />
+    <link rel="canonical" href={canonica} />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/icona.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Finestra Oberta" />
+    <meta property="og:locale" content="ca_ES" />
+    <meta property="og:url" content={canonica} />
+    <meta property="og:title" content={titol} />
+    <meta property="og:description" content={descripcio} />
+    <meta property="og:image" content={imatge} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content={String(AMPLE)} />
+    <meta property="og:image:height" content={String(ALT)} />
+    <meta property="og:image:alt" content={textImatge} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <Navegacio url={canonica} titol={titol} />
+    <slot />
+    <Peu />
+    <Avisos client:idle />
+  </body>
+</html>

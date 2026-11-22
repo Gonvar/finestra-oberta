@@ -1,0 +1,85 @@
+.comparteix {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 44px;
+  padding: 0 0.625rem;
+  font: inherit;
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+  color: var(--ink-2);
+  background: none;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform var(--t-boto) var(--ease-out);
+}
+
+.comparteix:hover,
+.comparteix[data-popup-open] {
+  color: var(--ink);
+}
+
+.comparteix:active {
+  transform: scale(0.97);
+}
+
+.comparteix svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+@media (max-width: 479px) {
+  /* Al mòbil només hi cap la icona; el text queda per als lectors de pantalla. */
+  .etiqueta-comparteix {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.comparteix-posicio {
+  z-index: 21;
+}
+
+.comparteix-menu {
+  min-width: 12rem;
+  padding: 0.375rem;
+  background: var(--bg);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(29, 29, 31, 0.16);
+  transform-origin: var(--transform-origin);
+  transition:
+    opacity var(--t-bloc) var(--ease-out),
+    transform var(--t-bloc) var(--ease-out);
+}
+
+.comparteix-menu[data-starting-style],
+.comparteix-menu[data-ending-style] {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.comparteix-menu:focus-visible {
+  outline: none;
+}
+
+.comparteix-opcio {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.comparteix-opcio[data-highlighted] {
+  background: var(--bg-2);
+}
