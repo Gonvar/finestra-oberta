@@ -35,7 +35,8 @@ La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 
 - **Comprovacions:**
   - Hi ha d'haver 135 persones i 135 escons diferents.
   - Totes les còpies d'un escó al mapa han de coincidir.
-  - Cada fitxa ha de donar la circumscripció i la foto. Una persona sense foto atura l'script.
+  - Cada fitxa ha de donar la circumscripció.
+  - Almenys una fitxa ha de donar la foto, i dues fitxes no poden donar la mateixa. Una persona que encara no té foto surt sense `foto`, i la composició s'actualitza igualment.
   - Si una fitxa dona el grup, ha de ser el mateix que diu el mapa.
   - Les fitxes han de donar una sola legislatura en curs.
 - **Grups:** són els d'avui, que poden no coincidir amb els resultats de les eleccions.

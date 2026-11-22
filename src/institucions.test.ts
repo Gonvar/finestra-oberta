@@ -41,11 +41,12 @@ function mapa({ persones = ESCONS, extra = '' } = {}) {
 
 const fitxa = ({
   nom = 'Persona Exemple',
+  foto = '42',
   circumscripcio = 'Circumscripció electoral de Lleida',
   grup = '',
   legislatura = true,
 } = {}) =>
-  `<h1 class="titol_pagina"><span>Sr. ${nom}</span></h1><img loading="lazy" src="https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=42 " alt="Fotografia de ${nom}" class="foto_fitxa" ><dl><dt>Llista Electoral: </dt><dd>Llista d&#039;Exemple&nbsp;</dd><dt>Circumscripció: </dt><dd>${circumscripcio}&nbsp;</dd><dt>Partit Polític: </dt><dd>Partit Exemple&nbsp;</dd>${grup && `<dt>Grup parlamentari: </dt><dd><a href="#">${grup}</a> . Membre. Alta: 18.06.2024, BOPC, 3.</dd>`}</dl>${legislatura ? '<dl><dt>Membre de la legislatura: </dt><dd><p><a href="#">XV (2024-actualitat)</a>, <a href="#">XIV (2021-2024)</a>, </p></dd></dl>' : ''}`;
+  `<h1 class="titol_pagina"><span>Sr. ${nom}</span></h1><img loading="lazy" src="https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=${foto} " alt="Fotografia de ${nom}" class="foto_fitxa" ><dl><dt>Llista Electoral: </dt><dd>Llista d&#039;Exemple&nbsp;</dd><dt>Circumscripció: </dt><dd>${circumscripcio}&nbsp;</dd><dt>Partit Polític: </dt><dd>Partit Exemple&nbsp;</dd>${grup && `<dt>Grup parlamentari: </dt><dd><a href="#">${grup}</a> . Membre. Alta: 18.06.2024, BOPC, 3.</dd>`}</dl>${legislatura ? '<dl><dt>Membre de la legislatura: </dt><dd><p><a href="#">XV (2024-actualitat)</a>, <a href="#">XIV (2021-2024)</a>, </p></dd></dl>' : ''}`;
 
 /** Un `fetch` que respon segons la URL. */
 function fake(respon: (url: string) => string | object) {
@@ -93,7 +94,7 @@ test('el mapa falla si un color no és a la llegenda', () => {
   assert.throws(() => llegirMapa(html), /llegenda/);
 });
 
-test('la fitxa dona el nom, la circumscripció, la llista, el grup i la legislatura', () => {
+test('la fitxa dona el nom, la foto, la circumscripció, la llista, el grup i la legislatura', () => {
   assert.deepEqual(llegirFitxa(fitxa({ grup: GRUP_A }), 'u'), {
     nom: 'Persona Exemple',
     foto: 'https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=42',
@@ -110,9 +111,19 @@ test('la fitxa falla si no hi ha circumscripció', () => {
   assert.throws(() => llegirFitxa(html, 'u'), /circumscripció/);
 });
 
-test('la fitxa falla si no hi ha foto', () => {
-  const html = fitxa().replace(/<img[^>]*>/, '');
-  assert.throws(() => llegirFitxa(html, 'u'), /foto/);
+test('la fitxa sense foto dona el nom i cap foto', () => {
+  const html = fitxa().replace(/src="[^"]*"/, 'src="/img/sense-foto.png"');
+  const resultat = llegirFitxa(html, 'u');
+  assert.equal(resultat.nom, 'Persona Exemple');
+  assert.equal('foto' in resultat, false);
+});
+
+test('la fitxa llegeix la foto encara que l’URL escrigui &amp;', () => {
+  const html = fitxa().replace('&p_id=', '&amp;p_id=');
+  assert.equal(
+    llegirFitxa(html, 'u').foto,
+    'https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=42',
+  );
 });
 
 test('la fitxa falla amb caràcters mal codificats', () => {
@@ -121,9 +132,16 @@ test('la fitxa falla amb caràcters mal codificats', () => {
 
 test('el Parlament suma els escons per grup i subgrup', async () => {
   const fetchImpl = fake((url) =>
-    url === MAPA_ESCONS ? mapa() : fitxa({ legislatura: url === fitxaUrl('3') }),
+    url === MAPA_ESCONS
+      ? mapa()
+      : fitxa({ legislatura: url === fitxaUrl('3'), foto: url.split('=')[1]! }),
   );
   const parlament = await construirParlament(fetchImpl, '2026-11-22', 0);
+  assert.match(parlament.fotos, /Foto: Parlament de Catalunya/);
+  assert.equal(
+    parlament.diputats[0]!.foto,
+    'https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=1',
+  );
   assert.equal(parlament.data_consulta, '2026-11-22');
   assert.deepEqual(parlament.legislatura, { numero: 'XV', inici: 2024 });
   assert.deepEqual(parlament.grups, [
@@ -139,8 +157,26 @@ test('el Parlament falla si la fitxa i el mapa no donen el mateix grup', async (
   await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /la fitxa .* diu/i);
 });
 
+test('el Parlament falla si cap fitxa no dona la foto', async () => {
+  const fetchImpl = fake((url) =>
+    url === MAPA_ESCONS
+      ? mapa()
+      : fitxa({ legislatura: url === fitxaUrl('3') }).replace(/src="[^"]*"/, 'src="x"'),
+  );
+  await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /Cap fitxa no dona la foto/);
+});
+
+test('el Parlament falla si dues fitxes donen la mateixa foto', async () => {
+  const fetchImpl = fake((url) =>
+    url === MAPA_ESCONS ? mapa() : fitxa({ legislatura: url === fitxaUrl('3') }),
+  );
+  await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /mateixa foto/);
+});
+
 test('el Parlament falla si cap fitxa dona la legislatura en curs', async () => {
-  const fetchImpl = fake((url) => (url === MAPA_ESCONS ? mapa() : fitxa({ legislatura: false })));
+  const fetchImpl = fake((url) =>
+    url === MAPA_ESCONS ? mapa() : fitxa({ legislatura: false, foto: url.split('=')[1]! }),
+  );
   await assert.rejects(construirParlament(fetchImpl, '2026-11-22', 0), /0 legislatures/);
 });
 

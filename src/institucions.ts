@@ -98,7 +98,7 @@ export function llegirMapa(html: string): Esco[] {
 /** El que diu la fitxa d'una persona diputada. */
 export type Fitxa = {
   nom: string;
-  foto: string;
+  foto?: string;
   circumscripcio: string;
   llista_electoral: string;
   partit?: string;
@@ -108,20 +108,17 @@ export type Fitxa = {
 
 export function llegirFitxa(html: string, url: string): Fitxa {
   comprovaCodificacio(html, url);
-  // L'URL de la foto porta un espai al final: «…p_id=799545 ».
-  const imatge = html.match(
-    /<img[^>]*src="[^"]*\/apl\/gimg\/imatgeweb\?p_mida=\w+&p_id=(\d+)\s*"[^>]*alt="Fotografia de ([^"]+)"/,
-  );
+  const nom = html.match(/alt="Fotografia de ([^"]+)"/)?.[1];
+  // Una persona que acaba d'entrar pot no tenir foto encara: llavors no en té, i la composició
+  // s'actualitza igualment. construirParlament comprova que la forma de l'URL no ha canviat.
+  const foto = html.match(/\/apl\/gimg\/imatgeweb\?p_mida=\w+&(?:amp;)?p_id=(\d+)/)?.[1];
   const camps = new Map(
     [...html.matchAll(/<dt>([^<]*?):\s*<\/dt><dd>(.*?)<\/dd>/g)].map((m) => [m[1]!, m[2]!]),
   );
   const circumscripcio = camps.get('Circumscripció');
   const llista = camps.get('Llista Electoral');
-  if (imatge === null || circumscripcio === undefined || llista === undefined)
-    throw new SourceError(
-      `A la fitxa ${url} hi falta la foto, el nom, la circumscripció o la llista.`,
-    );
-  const [, foto, nom] = imatge as unknown as [string, string, string];
+  if (nom === undefined || circumscripcio === undefined || llista === undefined)
+    throw new SourceError(`A la fitxa ${url} hi falta el nom, la circumscripció o la llista.`);
   const lloc = text(circumscripcio).match(/^Circumscripció electoral de (.+)$/)?.[1];
   if (lloc === undefined)
     throw new SourceError(`La circumscripció de ${url} no té la forma esperada.`);
@@ -133,7 +130,7 @@ export function llegirFitxa(html: string, url: string): Fitxa {
     ?.match(/>\s*([IVXLC-]+) \((\d{4})-actualitat\)/);
   return {
     nom: text(nom),
-    foto: fotoUrl(foto),
+    ...(foto && { foto: fotoUrl(foto) }),
     circumscripcio: lloc,
     llista_electoral: text(llista),
     ...(partit && { partit: text(partit) }),
@@ -157,6 +154,13 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
       throw new SourceError(`La fitxa ${url} diu ${fitxa.grup}, i el mapa, ${esco.grup}.`);
     diputats.push({ esco, fitxa, url });
   }
+
+  // Si cap fitxa no dona foto, el més probable és que el web n'hagi canviat la forma. Una foto
+  // repetida seria una imatge genèrica, no la de la persona.
+  const fotos = diputats.flatMap(({ fitxa: f }) => (f.foto ? [f.foto] : []));
+  if (fotos.length === 0) throw new SourceError('Cap fitxa no dona la foto.');
+  if (new Set(fotos).size !== fotos.length)
+    throw new SourceError('Hi ha fitxes que donen la mateixa foto.');
 
   // La legislatura en curs només surt a les fitxes de qui ja havia estat diputat en una altra.
   const legislatures = new Set(
@@ -208,7 +212,7 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
       ...(fitxa.partit && { partit: fitxa.partit }),
       esco: esco.esco,
       fitxa: url,
-      foto: fitxa.foto,
+      ...(fitxa.foto && { foto: fitxa.foto }),
     })),
   };
 }
