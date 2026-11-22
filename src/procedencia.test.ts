@@ -128,6 +128,18 @@ test('genera esborra els JSON que ja no es generen', async () => {
   await rm(carpeta, { recursive: true });
 });
 
+test('genera no toca una carpeta que no és de dades', async () => {
+  const carpeta = await carpetaGenerada();
+  await writeFile(join(carpeta, 'tsconfig.json'), '{}');
+  await writeFile(join(carpeta, 'README.md'), 'no és una dada');
+  await assert.rejects(
+    genera(carpeta, font, '2026-11-23', construeix, 0),
+    /no és una carpeta de dades/,
+  );
+  assert.equal(await readFile(join(carpeta, 'tsconfig.json'), 'utf8'), '{}');
+  await rm(carpeta, { recursive: true });
+});
+
 test('la verificació falla, sense petar, si procedencia.json no és JSON', async () => {
   const carpeta = await carpetaGenerada();
   await writeFile(join(carpeta, 'procedencia.json'), 'null');

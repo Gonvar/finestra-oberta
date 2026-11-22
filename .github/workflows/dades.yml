@@ -30,6 +30,7 @@ jobs:
       contents: read
     outputs:
       hi-ha: ${{ steps.canvis.outputs.hi-ha }}
+      bones: ${{ steps.publicades.outputs.bones }}
     steps:
       # Les accions es fixen pel commit: una etiqueta es pot moure.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -42,11 +43,14 @@ jobs:
           node-version-file: .nvmrc
       - name: Baixa la branca dades
         run: |
-          if git ls-remote --exit-code --heads origin dades; then
-            git fetch --depth=1 origin dades
+          # --exit-code torna 2 si la branca no existeix. Qualsevol altre error para la tasca.
+          if git ls-remote --exit-code origin refs/heads/dades; then
+            git fetch --depth=1 origin refs/heads/dades
             git worktree add -B dades dades FETCH_HEAD
-          else
+          elif [ $? -eq 2 ]; then
             git worktree add --orphan -b dades dades
+          else
+            exit 1
           fi
       # Si el que hi ha publicat no es pot reproduir (s'ha tocat a mà, o el codi ha canviat la manera
       # de llegir les fonts), es torna a publicar encara que la composició sigui la mateixa.
@@ -98,6 +102,7 @@ jobs:
       - name: Comprova que són les dades més noves
         env:
           CLAU: ${{ secrets.DADES_CLAU_DESPLEGAMENT }}
+          BONES: ${{ needs.genera.outputs.bones }}
         run: |
           install -m 700 -d ~/.ssh
           printf '%s\n' "$CLAU" > ~/.ssh/dades && chmod 600 ~/.ssh/dades
@@ -107,20 +112,28 @@ jobs:
           REPO="git@github.com:$GITHUB_REPOSITORY.git"
           # Tornar a executar una execució antiga de main la tornaria a obrir l'entorn: només publica
           # l'execució del commit que avui és el cap de main.
-          if [ "$(git ls-remote "$REPO" refs/heads/main | cut -f1)" != "$GITHUB_SHA" ]; then
+          MAIN=$(git ls-remote "$REPO" refs/heads/main)
+          if [ "$(cut -f1 <<< "$MAIN")" != "$GITHUB_SHA" ]; then
             echo "::error::main ja no és a $GITHUB_SHA. Aquesta execució no publica."
             exit 1
           fi
-          if git ls-remote --exit-code --heads "$REPO" dades; then
+          if git ls-remote --exit-code "$REPO" refs/heads/dades; then
             git clone --depth=1 --branch dades "$REPO" dades
-            ARA=$(jq -r .data_consulta nou/procedencia.json)
-            PUBLICADA=$(jq -r .data_consulta dades/procedencia.json)
-            if [[ "$ARA" < "$PUBLICADA" ]]; then
-              echo "::error::Les dades publicades són del $PUBLICADA, i aquestes, del $ARA."
-              exit 1
+            # Es compara l'hora de l'última consulta, no el dia: dues execucions del mateix dia
+            # també tenen un ordre. Si el que hi ha publicat no es podia reproduir, la seva hora no
+            # val res, i les dades noves el substitueixen.
+            if [ "$BONES" = true ]; then
+              ARA=$(jq -r '[.captures[].consultat] | max' nou/procedencia.json)
+              PUBLICADA=$(jq -r '[.captures[].consultat] | max' dades/procedencia.json)
+              if [[ ! "$ARA" > "$PUBLICADA" ]]; then
+                echo "::error::Les dades publicades són de $PUBLICADA, i aquestes, de $ARA."
+                exit 1
+              fi
             fi
-          else
+          elif [ $? -eq 2 ]; then
             git init -b dades dades && git -C dades remote add origin "$REPO"
+          else
+            exit 1
           fi
       # procedencia.json porta l'empremta dels JSON i de cada còpia. Signar-lo els signa tots junts.
       - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2

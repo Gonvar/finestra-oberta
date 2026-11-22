@@ -95,7 +95,16 @@ export async function genera<T extends Record<string, unknown>>(
   };
   const fitxers = await construeix(enregistrat, data, pausaMs);
 
-  // Les còpies i els JSON d'una actualització anterior ja no corresponen a aquestes dades.
+  // Les còpies i els JSON d'una actualització anterior ja no corresponen a aquestes dades. Abans
+  // d'esborrar-los, es comprova que la carpeta només té dades: una altra carpeta perdria fitxers.
+  // `.git` és el de la branca `dades` quan la carpeta n'és un worktree.
+  await mkdir(carpeta, { recursive: true });
+  const aliens = (await readdir(carpeta)).filter(
+    (nom) => nom !== '.git' && nom !== 'captures' && !nom.endsWith('.json'),
+  );
+  if (aliens.length > 0) {
+    throw new Error(`${carpeta} no és una carpeta de dades: hi ha ${aliens.join(', ')}.`);
+  }
   await rm(join(carpeta, 'captures'), { recursive: true, force: true });
   await mkdir(join(carpeta, 'captures'), { recursive: true });
   for (const nom of await readdir(carpeta)) if (nom.endsWith('.json')) await rm(join(carpeta, nom));
@@ -186,8 +195,14 @@ export async function verifica(carpeta: string, construeix: Construeix) {
     throw new DesquadreError(`procedencia.json no dona l'empremta de ${noms.join(' i ')}.`);
   for (const [nom, dades] of Object.entries(fitxers)) {
     const publicat = await llegeix(nom);
-    if (String(publicat) !== serialitza(dades))
-      throw new DesquadreError(`${nom} no és el que surt de les còpies de les fonts.`);
+    if (String(publicat) !== serialitza(dades)) {
+      // Una altra versió de Node pot ordenar els noms d'una altra manera: no vol dir que s'hagin tocat.
+      const versio =
+        procedencia.node === process.version
+          ? ''
+          : ` Les dades es van generar amb Node ${procedencia.node} i ara és ${process.version}: torna-ho a provar amb la mateixa versió.`;
+      throw new DesquadreError(`${nom} no és el que surt de les còpies de les fonts.${versio}`);
+    }
     if (empremta(publicat) !== procedencia.fitxers[nom])
       throw new DesquadreError(`${nom} no té l'empremta que diu procedencia.json.`);
   }

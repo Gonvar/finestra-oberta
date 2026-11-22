@@ -18,18 +18,18 @@ La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 
 - Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
 - Llançada des d'una branca que no és `main`, la tasca llegeix les fonts i ho comprova tot, però no signa ni publica res. Serveix per provar un canvi abans de fusionar-lo.
 
-Les dades no passen per pull request perquè no les escriu cap persona. El codi que les genera sí: tot canvi a `main` el revisa algú que manté el projecte.
+Les dades no passen per pull request perquè no les escriu cap persona. El codi que les genera sí: un ruleset de `main` hi impedeix el push directe, el force push i l'esborrat, i tot canvi hi entra per una pull request pública, també els de qui administra el repositori.
 
 ### Qui pot escriure a `dades`
 
 Ho decideix GitHub, no el workflow, que qualsevol branca podria canviar:
 
-- Un ruleset de la branca `dades` hi impedeix el force push i l'esborrat, i només hi deixa fer push a la clau de desplegament del repositori. No hi té excepció ningú més, tampoc qui administra el repositori.
+- Un ruleset de la branca `dades` hi impedeix el push, el force push i l'esborrat. L'única excepció són les claus de desplegament del repositori, i el repositori només en té una, la del workflow. No hi té excepció ningú més, tampoc qui administra el repositori.
 - La clau privada és un secret de l'entorn `dades` de GitHub, i aquest entorn només s'obre per a execucions de la branca `main`. Una execució des d'una altra branca no la pot llegir.
 
-- El job que publica comprova que el seu commit encara és el cap de `main` i que les dades no són més antigues que les publicades. Així, tornar a executar una execució antiga no torna a publicar dades velles.
+- El job que publica comprova que el seu commit encara és el cap de `main` i que les fonts s'han consultat després de les dades publicades. Així, tornar a executar una execució antiga no torna a publicar dades velles.
 
-Per tant, a `dades` només hi pot escriure el workflow de `main`, i el codi de `main` només canvia amb una pull request revisada.
+Per tant, a `dades` només hi pot escriure el workflow de `main`, i el codi de `main` només canvia amb una pull request pública.
 
 ## Com comprovar que les dades són de la font
 
