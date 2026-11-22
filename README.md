@@ -22,6 +22,7 @@ Un servidor [MCP](https://modelcontextprotocol.io) deixa que un assistent (Claud
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | [`idescat`](docs/idescat.md)             | [API Taules v2](https://www.idescat.cat/dev/api/taules/) de l'Institut d'Estadística de Catalunya | Població per comarca o municipi, naixements, PIB trimestral, usos lingüístics, afiliació…             |
 | [`dades-obertes`](docs/dades-obertes.md) | [Dades obertes de Catalunya](https://analisi.transparenciacatalunya.cat), de la Generalitat       | Els conjunts dels departaments: accidents, salut, educació, medi ambient, contractació, pressupostos… |
+| [`barcelona`](docs/barcelona.md)         | [Open Data BCN](https://opendata-ajuntament.barcelona.cat), de l'Ajuntament de Barcelona          | Barcelona per barri i districte: padró, qualitat de l'aire, soroll, equipaments, accidents…           |
 
 Exemples de preguntes:
 
@@ -46,6 +47,7 @@ Cada servidor s'executa per stdio amb el seu nom. Per afegir-los a Claude Code:
 ```sh
 claude mcp add idescat -- node "$PWD/src/index.ts" idescat
 claude mcp add dades-obertes -- node "$PWD/src/index.ts" dades-obertes
+claude mcp add barcelona -- node "$PWD/src/index.ts" barcelona
 ```
 
 En altres clients (Claude Desktop, Cursor…), configura un servidor stdio amb l'ordre `node` i els arguments `/camí/a/finestreta-oberta/src/index.ts` i el nom del servidor:
@@ -79,7 +81,6 @@ Node executa el TypeScript directament, sense compilar. Les proves fan servir da
 
 ## Properes fonts
 
-- [Open Data BCN](https://opendata-ajuntament.barcelona.cat), de l'Ajuntament de Barcelona
 - Parlament de Catalunya: diputats, iniciatives i votacions
 - DOGC: disposicions i normativa
 
@@ -91,8 +92,8 @@ Node executa el TypeScript directament, sense compilar. Les proves fan servir da
 
 ## En castellano
 
-Finestreta Oberta conecta asistentes de IA con los datos abiertos oficiales de Cataluña: las estadísticas del Idescat y los conjuntos de datos de la Generalitat, mediante servidores MCP de solo lectura que citan siempre la fuente y la fecha de los datos. Se inspira en [Reforma Digital](https://github.com/samuelcorsan/reforma-digital). **El idioma del proyecto es el catalán**: la documentación y las contribuciones están en catalán, pero puedes abrir una issue en castellano.
+Finestreta Oberta conecta asistentes de IA con los datos abiertos oficiales de Cataluña: las estadísticas del Idescat, los conjuntos de datos de la Generalitat y los del Ajuntament de Barcelona, mediante servidores MCP de solo lectura que citan siempre la fuente y la fecha de los datos. Se inspira en [Reforma Digital](https://github.com/samuelcorsan/reforma-digital). **El idioma del proyecto es el catalán**: la documentación y las contribuciones están en catalán, pero puedes abrir una issue en castellano.
 
 ## In English
 
-Finestreta Oberta connects AI assistants to Catalonia's official open data, Idescat statistics and Generalitat datasets, through read-only MCP servers that always cite the source and the date of the data. It is inspired by [Reforma Digital](https://github.com/samuelcorsan/reforma-digital). **The project's language is Catalan**: documentation and contributions are in Catalan, but you can open an issue in English.
+Finestreta Oberta connects AI assistants to Catalonia's official open data, Idescat statistics, Generalitat datasets and Barcelona City Council data, through read-only MCP servers that always cite the source and the date of the data. It is inspired by [Reforma Digital](https://github.com/samuelcorsan/reforma-digital). **The project's language is Catalan**: documentation and contributions are in Catalan, but you can open an issue in English.

@@ -10,7 +10,7 @@ body:
     id: servidor
     attributes:
       label: Servidor
-      options: [idescat, dades-obertes, Un altre]
+      options: [idescat, dades-obertes, barcelona, Un altre]
     validations:
       required: true
   - type: textarea

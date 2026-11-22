@@ -1,8 +1,13 @@
 import { serveStdio } from '@modelcontextprotocol/server/stdio';
+import { createBarcelonaServer } from './barcelona.ts';
 import { createDadesObertesServer } from './dadesobertes.ts';
 import { createIdescatServer } from './idescat.ts';
 
-const servers = { idescat: createIdescatServer, 'dades-obertes': createDadesObertesServer };
+const servers = {
+  idescat: createIdescatServer,
+  'dades-obertes': createDadesObertesServer,
+  barcelona: createBarcelonaServer,
+};
 const name = process.argv[2];
 
 if (!(name && name in servers)) {

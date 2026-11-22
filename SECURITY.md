@@ -4,7 +4,7 @@
 
 Els servidors MCP s'executen a l'ordinador de qui els fa servir, per stdio. No hi ha cap servidor nostre al mig.
 
-- Només llegeixen APIs públiques i sense clau: `api.idescat.cat` i `analisi.transparenciacatalunya.cat`.
+- Només llegeixen APIs públiques i sense clau: `api.idescat.cat`, `analisi.transparenciacatalunya.cat` i `opendata-ajuntament.barcelona.cat`.
 - Totes les eines són de només lectura (`readOnlyHint`). Cap eina escriu, envia formularis ni fa tràmits.
 - No guarden res: ni les preguntes, ni les respostes, ni cap dada de qui els fa servir.
 - No hi ha analítica ni telemetria.

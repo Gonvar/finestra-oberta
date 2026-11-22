@@ -11,7 +11,8 @@
     "test": "node --test src/*.test.ts",
     "typecheck": "tsc",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "barcelona": "node src/index.ts barcelona"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.4.0",
