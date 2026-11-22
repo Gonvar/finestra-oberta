@@ -159,8 +159,11 @@ export async function construirActivitat(fetchImpl: Fetch, avui: string, pausaMs
     llista.push(...llegirLlista(await getText(fetchImpl, url), url).sessions);
   }
   const numeros = llista.map((s) => s.numero);
-  if (new Set(numeros).size !== numeros.length)
-    throw new SourceError('La llista de sessions del Ple repeteix sessions.');
+  const repetides = numeros.filter((n, i) => numeros.indexOf(n) !== i);
+  if (repetides.length > 0)
+    throw new SourceError(
+      `La llista de sessions del Ple repeteix les sessions ${[...new Set(repetides)].join(', ')} (llegides: ${numeros.join(', ')}).`,
+    );
 
   const sessions = [];
   for (const sessio of llista) {
