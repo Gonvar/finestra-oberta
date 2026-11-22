@@ -1,6 +1,6 @@
 # Instruccions per a agents
 
-Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegir un servidor i els criteris del projecte. Per als límits de seguretat, [SECURITY.md](SECURITY.md).
+Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegir un servidor i els criteris del projecte. Per als límits de seguretat, [SECURITY.md](SECURITY.md). Per a qualsevol canvi visual o de text de la interfície, [DESIGN.md](DESIGN.md).
 
 ## Idioma: català
 

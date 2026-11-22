@@ -25,6 +25,10 @@ npm run typecheck    # TypeScript
 npm run format       # Prettier
 ```
 
+## Canviar la interfície
+
+Tot el que es veu a la web (colors, tipografia, components i textos) segueix [DESIGN.md](DESIGN.md). Si un canvi necessita una regla que no hi és, proposa-la a la mateixa pull request.
+
 ## Afegir un servidor MCP
 
 Cada servidor és un fitxer a `src/` que exporta una funció `create…Server(fetchImpl = fetch)` i torna un `McpServer`. Per exemple, [src/idescat.ts](src/idescat.ts) o [src/dadesobertes.ts](src/dadesobertes.ts).
