@@ -3,6 +3,7 @@
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
 import { construirAjuntaments } from './ajuntaments.ts';
+import { construirAjuts } from './ajuts.ts';
 import {
   dia,
   getJson,
@@ -328,5 +329,6 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
     'govern.json': await construirGovern(fetchImpl),
     'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
     'ajuntaments.json': await construirAjuntaments(fetchImpl),
+    'ajuts.json': await construirAjuts(fetchImpl, avui),
   };
 }

@@ -1,4 +1,4 @@
-// Regenera govern.json, parlament.json i ajuntaments.json des de les fonts oficials, amb la còpia de cada resposta:
+// Regenera govern.json, parlament.json, ajuntaments.json i ajuts.json des de les fonts oficials, amb la còpia de cada resposta:
 //   node src/dades.ts [carpeta]
 // La carpeta és dades/ si no se'n diu cap altra. Primer ho llegeix i ho comprova tot; només escriu
 // si tot quadra. Si una font falla, surt amb un error i deixa la carpeta com estava, perquè es pugui
@@ -15,13 +15,15 @@ try {
     'govern.json': govern,
     'parlament.json': parlament,
     'ajuntaments.json': ajuntaments,
+    'ajuts.json': ajuts,
   } = await genera(carpeta, fetch, avui, construirInstitucions);
   console.log(
     `Govern: ${govern.consellers.length} consellers (dades del ${govern.data_dades}). ` +
       `Parlament: ${parlament.diputats.length} diputats en ${parlament.grups.length} grups. ` +
       `Ajuntaments: ${ajuntaments.municipis.length} municipis i ` +
       `${ajuntaments.municipis.reduce((n, m) => n + m.ple.length, 0)} persones als plens ` +
-      `(dades del ${ajuntaments.data_dades}).`,
+      `(dades del ${ajuntaments.data_dades}). ` +
+      `Ajuts: ${ajuts.convocatories.length} convocatòries amb el termini sense acabar (dades del ${ajuts.data_dades}).`,
   );
 } catch (error) {
   if (!(error instanceof SourceError)) throw error;

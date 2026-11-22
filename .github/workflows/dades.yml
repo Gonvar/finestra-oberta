@@ -70,7 +70,7 @@ jobs:
         run: |
           git add -A
           # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
-          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json parlament.json ajuntaments.json; then
+          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json parlament.json ajuntaments.json ajuts.json; then
             echo "Cap composició no ha canviat."
           else
             echo "hi-ha=true" >> "$GITHUB_OUTPUT"
@@ -148,6 +148,6 @@ jobs:
           git add -A
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'chore(dades): actualitza el Govern, el Parlament i els ajuntaments' \
+          git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments i els ajuts' \
             -m "Execució: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           git push origin dades
