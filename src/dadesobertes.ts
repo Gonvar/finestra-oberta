@@ -180,7 +180,7 @@ export async function consultarDades(fetchImpl: Fetch, conjunt: string, soql: So
 export function createDadesObertesServer(fetchImpl: Fetch = fetch) {
   const s = new McpServer(
     {
-      name: 'finestreta-oberta-dades-obertes',
+      name: 'finestra-oberta-dades-obertes',
       title: 'Dades obertes de Catalunya',
       version: '0.1.0',
     },

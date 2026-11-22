@@ -276,7 +276,7 @@ export async function consultarDades(
 
 export function createBarcelonaServer(fetchImpl: Fetch = fetch) {
   const s = new McpServer(
-    { name: 'finestreta-oberta-barcelona', title: 'Open Data BCN', version: '0.1.0' },
+    { name: 'finestra-oberta-barcelona', title: 'Open Data BCN', version: '0.1.0' },
     { instructions: INSTRUCTIONS },
   );
   s.registerTool(

@@ -208,7 +208,7 @@ export async function dadesTaula(
 
 export function createIdescatServer(fetchImpl: Fetch = fetch) {
   const s = new McpServer(
-    { name: 'finestreta-oberta-idescat', title: 'Idescat', version: '0.1.0' },
+    { name: 'finestra-oberta-idescat', title: 'Idescat', version: '0.1.0' },
     { instructions: INSTRUCTIONS },
   );
   s.registerTool(

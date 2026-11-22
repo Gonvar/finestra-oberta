@@ -6,7 +6,7 @@ Gràcies per voler ajudar. Pots contribuir sense escriure codi:
 - Proposa una font de dades obertes que valgui la pena connectar.
 - Revisa les respostes d'un servidor: una dada mal interpretada, una nota que no s'explica, una data que falta.
 
-Obre una [issue](https://github.com/Gonvar/finestreta-oberta/issues) per a qualsevol d'aquestes coses.
+Obre una [issue](https://github.com/Gonvar/finestra-oberta/issues) per a qualsevol d'aquestes coses.
 
 ## L'idioma del projecte és el català
 

@@ -18,6 +18,6 @@ Les respostes contenen dades oficials, però un assistent les pot interpretar ma
 
 ## Informar d'un problema de seguretat
 
-Fes servir el [canal privat de GitHub](https://github.com/Gonvar/finestreta-oberta/security/advisories/new). No publiquis els detalls en una issue oberta.
+Fes servir el [canal privat de GitHub](https://github.com/Gonvar/finestra-oberta/security/advisories/new). No publiquis els detalls en una issue oberta.
 
 No incloguis dades personals, tokens ni sessions en issues, proves ni captures.
