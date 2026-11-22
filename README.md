@@ -34,7 +34,7 @@ A [docs/exemples.md](docs/exemples.md) hi ha aquestes preguntes resoltes amb les
 
 ## El Govern i el Parlament
 
-A [`dades/`](dades/) hi ha la composició del Govern i la del Parlament en JSON, cadascuna amb la seva font i la data de les dades. `npm run dades` les torna a generar des de les fonts oficials. Vegeu [docs/institucions.md](docs/institucions.md).
+A la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades) hi ha la composició del Govern i la del Parlament en JSON, cadascuna amb la seva font i la data de les dades, i la còpia de cada resposta de les fonts oficials. Una tasca automàtica les actualitza cada dia i les signa. `npm run dades` les torna a generar des de les fonts i `npm run verifica-dades` comprova que no s'han retocat. Vegeu [docs/institucions.md](docs/institucions.md).
 
 ## Com fer-los servir
 
@@ -81,6 +81,7 @@ Node executa el TypeScript directament, sense compilar. Les proves fan servir da
 
 - [CONTRIBUTING.md](CONTRIBUTING.md): com contribuir, com proposar un canvi i com afegir un servidor.
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md): el codi de conducta del projecte.
+- [NEUTRALITAT.md](NEUTRALITAT.md): només fonts oficials, cap dada editada a mà i res que afavoreixi cap partit.
 - [SECURITY.md](SECURITY.md): què fan els servidors amb les dades i com informar d'un problema.
 - [DESIGN.md](DESIGN.md): el sistema de disseny de la web (colors, tipografia, components i to).
 - [AGENTS.md](AGENTS.md): instruccions per als agents d'IA que hi treballen.

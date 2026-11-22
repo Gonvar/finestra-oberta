@@ -1,32 +1,22 @@
-// Regenera dades/govern.json, dades/transparencia.json i dades/parlament.json des de les fonts oficials:
-//   node src/dades.ts
-// Primer ho llegeix i ho comprova tot; només escriu si tot quadra. Si una font falla, surt amb un
-// error i deixa els fitxers com estaven, perquè es pugui executar sense ningú al davant.
-import { readFile, writeFile } from 'node:fs/promises';
+// Regenera govern.json i parlament.json des de les fonts oficials, amb la còpia de cada resposta:
+//   node src/dades.ts [carpeta]
+// La carpeta és dades/ si no se'n diu cap altra. Primer ho llegeix i ho comprova tot; només escriu
+// si tot quadra. Si una font falla, surt amb un error i deixa la carpeta com estava, perquè es pugui
+// executar sense ningú al davant.
+import { fileURLToPath } from 'node:url';
 import { SourceError } from './comun.ts';
-import {
-  construirGovern,
-  construirParlament,
-  construirTransparencia,
-  llegirPerfils,
-} from './institucions.ts';
+import { construirInstitucions } from './institucions.ts';
+import { genera } from './procedencia.ts';
 
+const carpeta = process.argv[2] ?? fileURLToPath(new URL('../dades', import.meta.url));
 const avui = new Date().toISOString().slice(0, 10);
-const dades = (nom: string) => new URL(`../dades/${nom}`, import.meta.url);
 try {
-  // govern.cat no respon als scripts: les fotos i els currículums es copien a mà (docs/institucions.md).
-  const perfils = llegirPerfils(await readFile(dades('perfils-govern.json'), 'utf8'));
-  const govern = await construirGovern(fetch, perfils);
-  const transparencia = await construirTransparencia(fetch, [
-    govern.president,
-    ...govern.consellers,
-  ]);
-  const parlament = await construirParlament(fetch, avui);
-  const desa = (nom: string, contingut: unknown) =>
-    writeFile(dades(nom), `${JSON.stringify(contingut, null, 2)}\n`);
-  await desa('govern.json', govern);
-  await desa('transparencia.json', transparencia);
-  await desa('parlament.json', parlament);
+  const { 'govern.json': govern, 'parlament.json': parlament } = await genera(
+    carpeta,
+    fetch,
+    avui,
+    construirInstitucions,
+  );
   console.log(
     `Govern: ${govern.consellers.length} consellers (dades del ${govern.data_dades}). ` +
       `Parlament: ${parlament.diputats.length} diputats en ${parlament.grups.length} grups.`,

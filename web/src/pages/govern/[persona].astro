@@ -44,7 +44,7 @@ const desDe = `des del ${dia(t.nomenament)}`;
     <div class="xifres entra" style="--ordre: 3">
       <div>
         <p class="valor">{eurosRodons(membre.retribucio_anual)}</p>
-        <p class="que">Retribució anual prevista</p>
+        <p class="que">Sou anual previst</p>
         <p class="font-dada">
           <a href={govern.url}>Relació d'alts càrrecs</a>, {dia(govern.data_dades)}
         </p>
@@ -83,6 +83,9 @@ const desDe = `des del ${dia(t.nomenament)}`;
 
   <section class="seccio" aria-labelledby="activitats-titol">
     <h2 class="titol-seccio" id="activitats-titol">Altres activitats que declara</h2>
+    <p class="explica">
+      Els alts càrrecs han de declarar qualsevol altra activitat que facin a més del càrrec, pública o privada.
+    </p>
     {
       t.activitats.length === 0 ? (
         <p class="buit">No declara cap altra activitat, pública ni privada.</p>
@@ -118,6 +121,10 @@ const desDe = `des del ${dia(t.nomenament)}`;
 
   <section class="seccio" aria-labelledby="agenda-titol">
     <h2 class="titol-seccio" id="agenda-titol">Amb qui s'ha reunit</h2>
+    <p class="explica">
+      Els grups d'interès són empreses, entitats i associacions que volen influir en les decisions públiques. Les
+      reunions que hi tenen els alts càrrecs es publiquen en una agenda.
+    </p>
     {
       agenda.darreres.length === 0 ? (
         <p class="buit">L'agenda pública no té cap reunió amb grups d'interès {desDe}.</p>
@@ -226,6 +233,12 @@ const desDe = `des del ${dia(t.nomenament)}`;
     min-height: 44px;
     color: inherit;
     text-decoration: none;
+  }
+
+  .explica {
+    margin-top: 1rem;
+    max-width: 44rem;
+    color: var(--ink-2);
   }
 
   .buit {

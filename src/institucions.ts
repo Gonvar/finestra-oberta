@@ -1,8 +1,8 @@
 // Les dades que canvien poc: el Govern i la composició del Parlament. No és un servidor MCP:
-// src/dades.ts les desa en JSON a dades/ perquè la web les pugui mostrar sense consultar les fonts.
+// src/dades.ts les desa en JSON a la branca `dades` perquè la web les pugui mostrar sense consultar les fonts.
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
-import { z } from 'zod';
+import { readFile } from 'node:fs/promises';
 import { fold, getJson, getText, SourceError, words, type Fetch } from './comun.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
@@ -362,7 +362,9 @@ export async function construirGovern(fetchImpl: Fetch, perfilsDesats: PerfilsDe
     url_noms: `${SOCRATA}/d/${INTERVENCIONS}`,
     data_noms: dia(metaNoms),
     nota: 'Qui forma el Govern i el departament que porta surten de la relació d’alts càrrecs. El nom ben escrit surt de les intervencions del Govern al Parlament, perquè la relació l’escriu en majúscules i a vegades sense accents; el nom i el càrrec tal com els escriu la relació són a nom_oficial i carrec_oficial.',
-    font_perfils: 'govern.cat: el Consell Executiu',
+    // L'única entrada que no surt d'una resposta desada a captures/: es diu on és i quan es va copiar.
+    font_perfils:
+      'govern.cat: el Consell Executiu, copiat a mà des del navegador a fonts/perfils-govern.json',
     url_perfils: CONSELL_EXECUTIU,
     data_perfils: perfilsDesats.consultat,
     llicencia_perfils: `CC0, segons l’avís legal de govern.cat (${AVIS_GOVERN})`,
@@ -371,6 +373,7 @@ export async function construirGovern(fetchImpl: Fetch, perfilsDesats: PerfilsDe
   };
 }
 
+export const PERFILS_GOVERN = new URL('../fonts/perfils-govern.json', import.meta.url);
 export const AVIS_GOVERN = 'https://govern.cat/gov/avis-legal';
 export const CONSELL_EXECUTIU = 'https://govern.cat/gov/consell-executiu';
 
@@ -378,20 +381,35 @@ export const CONSELL_EXECUTIU = 'https://govern.cat/gov/consell-executiu';
  * Les fitxes del Consell Executiu tal com les copia, des d'un navegador, la línia de
  * docs/institucions.md. govern.cat no respon als scripts, i per això no es llegeixen aquí.
  */
-const perfilsDesats = z.object({
-  consultat: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  total: z.number().int(),
-  fitxes: z.array(
-    z.object({ nom: z.string(), carrec: z.string(), fotos: z.array(z.string()), cv: z.string() }),
-  ),
-});
-export type PerfilsDesats = z.infer<typeof perfilsDesats>;
+export type PerfilsDesats = {
+  consultat: string;
+  total: number;
+  fitxes: { nom: string; carrec: string; fotos: string[]; cv: string }[];
+};
+
+// Sense zod: la tasca de dades no instal·la cap dependència (vegeu .github/workflows/dades.yml).
+const esText = (x: unknown) => typeof x === 'string';
+const esFitxa = (f: Record<string, unknown>) =>
+  esText(f.nom) &&
+  esText(f.carrec) &&
+  esText(f.cv) &&
+  Array.isArray(f.fotos) &&
+  f.fotos.every(esText) &&
+  Object.keys(f).length === 4;
 
 export function llegirPerfils(json: string): PerfilsDesats {
-  const desats = perfilsDesats.parse(JSON.parse(json));
+  const d = JSON.parse(json) as Record<string, unknown>;
+  if (
+    !(typeof d.consultat === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d.consultat)) ||
+    !Number.isInteger(d.total) ||
+    !Array.isArray(d.fitxes) ||
+    !d.fitxes.every((f) => typeof f === 'object' && f !== null && esFitxa(f))
+  )
+    throw new SourceError('fonts/perfils-govern.json no té la forma del fragment documentat.');
+  const desats = d as PerfilsDesats;
   if (desats.fitxes.length !== desats.total)
     throw new SourceError(
-      `dades/perfils-govern.json té ${desats.fitxes.length} fitxes de les ${desats.total} de govern.cat.`,
+      `fonts/perfils-govern.json té ${desats.fitxes.length} fitxes de les ${desats.total} de govern.cat.`,
     );
   return desats;
 }
@@ -548,11 +566,10 @@ const font = (meta: Meta, id: string) => ({
  * d'activitats, l'agenda amb grups d'interès i els viatges a l'estranger des del nomenament.
  */
 export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]) {
-  const [metaDecl, metaAgenda, metaViatges] = await Promise.all([
-    metadades(fetchImpl, DECLARACIONS),
-    metadades(fetchImpl, AGENDA),
-    metadades(fetchImpl, VIATGES),
-  ]);
+  // D'una en una: la verificació torna a servir les còpies en l'ordre en què es van demanar.
+  const metaDecl = await metadades(fetchImpl, DECLARACIONS);
+  const metaAgenda = await metadades(fetchImpl, AGENDA);
+  const metaViatges = await metadades(fetchImpl, VIATGES);
 
   const columnes = apartats(metaDecl);
   const declaracions = await totes<Declaracio>(fetchImpl, DECLARACIONS, {});
@@ -655,5 +672,20 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     viatges: font(metaViatges, VIATGES),
     nota: 'L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva.',
     persones,
+  };
+}
+
+/** Tot el que es publica, pel nom del fitxer. El Govern primer: l'ordre de les crides es reprodueix. */
+export async function construirInstitucions(fetchImpl: Fetch, avui: string, pausaMs: number) {
+  // govern.cat no respon als scripts: les fitxes es copien a mà (NEUTRALITAT.md §2).
+  const perfils = llegirPerfils(await readFile(PERFILS_GOVERN, 'utf8'));
+  const govern = await construirGovern(fetchImpl, perfils);
+  return {
+    'govern.json': govern,
+    'transparencia.json': await construirTransparencia(fetchImpl, [
+      govern.president,
+      ...govern.consellers,
+    ]),
+    'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
   };
 }

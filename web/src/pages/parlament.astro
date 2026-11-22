@@ -97,6 +97,11 @@ const ressalta = grups
         }
       </ol>
     </div>
+    <p class="explica">
+      Cada punt és un escó, al lloc on seu cada diputat. Els diputats d'un mateix partit o coalició formen un
+      grup parlamentari, i els que no en formen cap van al Grup Mixt. La majoria absoluta és la meitat dels escons
+      més un.
+    </p>
     <p class="font-dada">
       Font: <a href={parlament.url}>mapa d'escons del Parlament de Catalunya</a>, amb els seus colors, consultat
       el {dia(parlament.data_consulta)}. Els grups són els d'avui, que poden no coincidir amb els resultats de
@@ -270,6 +275,12 @@ const ressalta = grups
     background:
       linear-gradient(var(--color), var(--color)) no-repeat 0 0 / calc(var(--part) * 100%) 100%,
       var(--bg-2);
+  }
+
+  .explica {
+    margin-top: 2rem;
+    max-width: 44rem;
+    color: var(--ink-2);
   }
 
   .parlament > .font-dada {

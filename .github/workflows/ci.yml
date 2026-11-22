@@ -4,8 +4,6 @@ on:
   push:
     branches: [main]
   pull_request:
-  # El workflow de dades la llança a mà perquè les seves pull requests passin les comprovacions.
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,6 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # El commit de fusió i el seu primer pare, la base: n'hi ha prou per saber què canvia la pull request.
+          fetch-depth: 2
+      # NEUTRALITAT.md §2: les dades les escriu el workflow de dades, mai una pull request.
+      - name: Cap dada escrita a mà
+        if: github.event_name == 'pull_request'
+        run: |
+          dades=$(git diff --name-only --diff-filter=d HEAD^1 HEAD -- dades/)
+          if [ -n "$dades" ]; then
+            for f in $dades; do
+              echo "::error file=$f::Cap pull request no pot canviar dades/: les genera el workflow de dades. Vegeu NEUTRALITAT.md."
+            done
+            exit 1
+          fi
+          for f in $(git diff --name-only HEAD^1 HEAD -- fonts/); do
+            echo "::warning file=$f::És una còpia feta a mà. Abans d'aprovar, cal tornar-la a generar amb el fragment de docs/institucions.md, passar-hi Prettier i comprovar que surt igual, llevat de la data de consulta. Vegeu NEUTRALITAT.md."
+          done
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
@@ -39,5 +54,8 @@ jobs:
           cache: npm
           cache-dependency-path: web/package-lock.json
       - run: npm ci
+      # La web es construeix amb les dades que genera el codi d'aquesta pull request, no amb les
+      # publicades a la branca dades, que surten del codi de main i poden tenir una altra forma.
+      - run: node ../src/dades.ts ../dades
       - run: npm test
       - run: npm run build

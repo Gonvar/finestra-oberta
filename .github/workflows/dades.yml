@@ -1,57 +1,153 @@
 name: Dades del Govern i del Parlament
 
-# Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, obre una pull request
-# que s'integra sola quan la CI passa. main està protegida i no accepta pushes directes de les Actions.
-# Si una font falla o una comprovació no quadra, src/dades.ts surt amb un error: la tasca falla i
-# GitHub ho notifica, i les dades publicades es queden com estaven.
+# Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, la desa a la branca
+# `dades` amb la còpia de cada resposta. Les dades no passen per pull request perquè no les escriu
+# ningú: les escriu aquesta tasca, i cada actualització queda signada amb una atestació de GitHub
+# que diu quin workflow i quin commit de main les han generat. Vegeu docs/institucions.md.
+# Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i la branca
+# `dades` es queda com estava.
+#
+# Qui pot escriure a `dades` no ho decideix aquest fitxer, que qualsevol branca pot canviar, sinó
+# GitHub: el ruleset de `dades` només deixa fer-hi push a la clau de desplegament, i la clau és un
+# secret de l'entorn `dades`, que només s'obre per a execucions de main.
 on:
   schedule:
     - cron: '0 5 * * *'
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: write
-  actions: write
+permissions: {}
 
+# Per branca: una prova des d'una altra branca no ha de cancel·lar l'execució de main en cua.
 concurrency:
-  group: dades
+  group: dades-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  actualitza:
-    name: Actualitza dades/
+  genera:
+    name: Llegeix les fonts
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      hi-ha: ${{ steps.canvis.outputs.hi-ha }}
+      bones: ${{ steps.publicades.outputs.bones }}
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      # Les accions es fixen pel commit: una etiqueta es pot moure.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Sense npm ci: llegir les fonts no necessita cap dependència, i així no s'executa cap paquet
+      # de tercers.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
-      - run: npm run dades
-      - run: npx prettier --write dades/
-      - name: Desa els canvis
+      - name: Baixa la branca dades
         run: |
-          git add dades/
-          # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
-          if git diff --cached --quiet -I '"data_consulta"'; then
-            echo "La composició no ha canviat."
-            exit 0
+          # --exit-code torna 2 si la branca no existeix. Qualsevol altre error para la tasca.
+          if git ls-remote --exit-code origin refs/heads/dades; then
+            git fetch --depth=1 origin refs/heads/dades
+            git worktree add -B dades dades FETCH_HEAD
+          elif [ $? -eq 2 ]; then
+            git worktree add --orphan -b dades dades
+          else
+            exit 1
           fi
+      # Si el que hi ha publicat no es pot reproduir (s'ha tocat a mà, o el codi ha canviat la manera
+      # de llegir les fonts), es torna a publicar encara que la composició sigui la mateixa.
+      - name: Comprova les dades publicades
+        id: publicades
+        run: |
+          if [ -f dades/procedencia.json ] && node src/verifica-dades.ts dades; then
+            echo "bones=true" >> "$GITHUB_OUTPUT"
+          fi
+      - run: node src/dades.ts dades
+      - run: node src/verifica-dades.ts dades
+      - name: Mira si han canviat
+        id: canvis
+        working-directory: dades
+        env:
+          BONES: ${{ steps.publicades.outputs.bones }}
+        run: |
+          git add -A
+          # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
+          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json parlament.json; then
+            echo "La composició no ha canviat."
+          else
+            echo "hi-ha=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.canvis.outputs.hi-ha
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dades
+          path: |
+            dades/*.json
+            dades/captures/
+          if-no-files-found: error
+          retention-days: 7
+
+  publica:
+    name: Signa i publica
+    needs: genera
+    if: needs.genera.outputs.hi-ha && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: dades
+    permissions:
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dades
+          path: nou
+      - name: Comprova que són les dades més noves
+        env:
+          CLAU: ${{ secrets.DADES_CLAU_DESPLEGAMENT }}
+          BONES: ${{ needs.genera.outputs.bones }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$CLAU" > ~/.ssh/dades && chmod 600 ~/.ssh/dades
+          # La clau de github.com, de https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
+          echo 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl' > ~/.ssh/known_hosts
+          export GIT_SSH_COMMAND='ssh -i ~/.ssh/dades -o IdentitiesOnly=yes'
+          REPO="git@github.com:$GITHUB_REPOSITORY.git"
+          # Tornar a executar una execució antiga de main la tornaria a obrir l'entorn: només publica
+          # l'execució del commit que avui és el cap de main.
+          MAIN=$(git ls-remote "$REPO" refs/heads/main)
+          if [ "$(cut -f1 <<< "$MAIN")" != "$GITHUB_SHA" ]; then
+            echo "::error::main ja no és a $GITHUB_SHA. Aquesta execució no publica."
+            exit 1
+          fi
+          if git ls-remote --exit-code "$REPO" refs/heads/dades; then
+            git clone --depth=1 --branch dades "$REPO" dades
+            # Es compara l'hora de l'última consulta, no el dia: dues execucions del mateix dia
+            # també tenen un ordre. Si el que hi ha publicat no es podia reproduir, la seva hora no
+            # val res, i les dades noves el substitueixen.
+            if [ "$BONES" = true ]; then
+              ARA=$(jq -r '[.captures[].consultat] | max' nou/procedencia.json)
+              PUBLICADA=$(jq -r '[.captures[].consultat] | max' dades/procedencia.json)
+              if [[ ! "$ARA" > "$PUBLICADA" ]]; then
+                echo "::error::Les dades publicades són de $PUBLICADA, i aquestes, de $ARA."
+                exit 1
+              fi
+            fi
+          elif [ $? -eq 2 ]; then
+            git init -b dades dades && git -C dades remote add origin "$REPO"
+          else
+            exit 1
+          fi
+      # procedencia.json porta l'empremta dels JSON i de cada còpia. Signar-lo els signa tots junts.
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: nou/procedencia.json
+      - name: Desa les dades
+        working-directory: dades
+        run: |
+          export GIT_SSH_COMMAND='ssh -i ~/.ssh/dades -o IdentitiesOnly=yes'
+          git rm -rq --ignore-unmatch .
+          cp -R ../nou/. .
+          git add -A
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git switch -C "$BRANCA"
-          git commit -m "$TITOL"
-          git push --force origin "$BRANCA"
-          if [ -z "$(gh pr list --head "$BRANCA" --state open --json number --jq '.[].number')" ]; then
-            gh pr create --head "$BRANCA" --title "$TITOL" --label dades \
-              --body "Actualització automàtica des de les fonts oficials. La genera el workflow de dades."
-          fi
-          # Les pull requests obertes amb GITHUB_TOKEN no disparen la CI, però workflow_dispatch sí.
-          gh workflow run ci.yml --ref "$BRANCA"
-          gh pr merge "$BRANCA" --auto --squash
-        env:
-          GH_TOKEN: ${{ github.token }}
-          BRANCA: dades/actualitzacio
-          TITOL: 'chore(dades): actualitza el Govern i el Parlament'
+          git commit -m 'chore(dades): actualitza el Govern i el Parlament' \
+            -m "Execució: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          git push origin dades
