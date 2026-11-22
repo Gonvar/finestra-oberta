@@ -9,6 +9,10 @@ export const MAPA_ESCONS = `${PARLAMENT}/web/composicio/distribucio-escons/index
 export const fitxaUrl = (codi: string) =>
   `${PARLAMENT}/web/composicio/diputats-fitxa/index.html?p_codi=${codi}`;
 export const ESCONS = 135;
+// La fitxa mostra la foto petita (B, 175 px d'ample). El mateix servei la dona fins a 600 px pel
+// costat llarg (M, uns 50 kB) i l'original (A), d'uns 1.600 x 2.400 px, passa d'1 MB.
+export const fotoUrl = (id: string) => `${PARLAMENT}/apl/gimg/imatgeweb?p_mida=M&p_id=${id}`;
+export const AVIS_LEGAL = `${PARLAMENT}/pcat/serveis-parlament/avis-legal`;
 
 const SOCRATA = 'https://analisi.transparenciacatalunya.cat';
 export const ALTS_CARRECS = 'x9au-abcn';
@@ -94,6 +98,7 @@ export function llegirMapa(html: string): Esco[] {
 /** El que diu la fitxa d'una persona diputada. */
 export type Fitxa = {
   nom: string;
+  foto: string;
   circumscripcio: string;
   llista_electoral: string;
   partit?: string;
@@ -103,14 +108,20 @@ export type Fitxa = {
 
 export function llegirFitxa(html: string, url: string): Fitxa {
   comprovaCodificacio(html, url);
-  const nom = html.match(/alt="Fotografia de ([^"]+)"/)?.[1];
+  // L'URL de la foto porta un espai al final: «…p_id=799545 ».
+  const imatge = html.match(
+    /<img[^>]*src="[^"]*\/apl\/gimg\/imatgeweb\?p_mida=\w+&p_id=(\d+)\s*"[^>]*alt="Fotografia de ([^"]+)"/,
+  );
   const camps = new Map(
     [...html.matchAll(/<dt>([^<]*?):\s*<\/dt><dd>(.*?)<\/dd>/g)].map((m) => [m[1]!, m[2]!]),
   );
   const circumscripcio = camps.get('Circumscripció');
   const llista = camps.get('Llista Electoral');
-  if (nom === undefined || circumscripcio === undefined || llista === undefined)
-    throw new SourceError(`A la fitxa ${url} hi falta el nom, la circumscripció o la llista.`);
+  if (imatge === null || circumscripcio === undefined || llista === undefined)
+    throw new SourceError(
+      `A la fitxa ${url} hi falta la foto, el nom, la circumscripció o la llista.`,
+    );
+  const [, foto, nom] = imatge as unknown as [string, string, string];
   const lloc = text(circumscripcio).match(/^Circumscripció electoral de (.+)$/)?.[1];
   if (lloc === undefined)
     throw new SourceError(`La circumscripció de ${url} no té la forma esperada.`);
@@ -122,6 +133,7 @@ export function llegirFitxa(html: string, url: string): Fitxa {
     ?.match(/>\s*([IVXLC-]+) \((\d{4})-actualitat\)/);
   return {
     nom: text(nom),
+    foto: fotoUrl(foto),
     circumscripcio: lloc,
     llista_electoral: text(llista),
     ...(partit && { partit: text(partit) }),
@@ -175,6 +187,7 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
     url: MAPA_ESCONS,
     data_consulta: avui,
     nota: 'El Parlament no publica la data d’actualització de la composició: data_consulta és el dia en què es va llegir aquesta composició. Els grups són els d’avui, que poden no coincidir amb els resultats de les eleccions.',
+    fotos: `Les fotos són del Parlament de Catalunya i s’enllacen al seu web, sense copiar-les. El seu avís legal (${AVIS_LEGAL}) en permet la reutilització si se’n cita la font, no se n’altera el sentit i no es presenten com una versió oficial ni avalada pel Parlament. Cal mostrar-les amb «Foto: Parlament de Catalunya».`,
     legislatura,
     escons: ESCONS,
     grups: [...grups.values()]
@@ -195,6 +208,7 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
       ...(fitxa.partit && { partit: fitxa.partit }),
       esco: esco.esco,
       fitxa: url,
+      foto: fitxa.foto,
     })),
   };
 }

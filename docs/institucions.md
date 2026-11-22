@@ -31,17 +31,18 @@ La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 
 
 - **Font:** la [distribució d'escons](https://www.parlament.cat/web/composicio/distribucio-escons/index.html) del Parlament de Catalunya i la fitxa de cada persona diputada. El Parlament no té cap API amb la composició: les dades es llegeixen de les pàgines web.
 - **Data:** el Parlament no publica quan va canviar la composició per última vegada. Per això `data_consulta` és el dia en què es van llegir les pàgines i hi va sortir la composició que hi ha al fitxer. Com que la tasca automàtica només desa els canvis, pot ser anterior a l'última comprovació.
-- **Contingut:** la legislatura, els grups amb els escons i els subgrups, i cada persona amb el càrrec, el grup, la circumscripció, la llista electoral, el partit i l'enllaç a la seva fitxa.
+- **Contingut:** la legislatura, els grups amb els escons i els subgrups, i cada persona amb el càrrec, el grup, la circumscripció, la llista electoral, el partit, l'enllaç a la seva fitxa i l'enllaç a la seva foto.
 - **Comprovacions:**
   - Hi ha d'haver 135 persones i 135 escons diferents.
   - Totes les còpies d'un escó al mapa han de coincidir.
-  - Cada fitxa ha de donar la circumscripció.
+  - Cada fitxa ha de donar la circumscripció i la foto. Una persona sense foto atura l'script.
   - Si una fitxa dona el grup, ha de ser el mateix que diu el mapa.
   - Les fitxes han de donar una sola legislatura en curs.
 - **Grups:** són els d'avui, que poden no coincidir amb els resultats de les eleccions.
+- **Fotos:** `foto` és l'enllaç a la foto oficial al web del Parlament, a la mida mitjana (fins a 600 px pel costat llarg). No se'n desa cap còpia. L'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) del Parlament en permet la reutilització si se'n cita la font, no se n'altera el sentit i no es presenten com una versió oficial ni avalada pel Parlament. Cal mostrar-les amb «Foto: Parlament de Catalunya». Les condicions també són al camp `fotos` del fitxer.
 - **Subgrups:** el mapa mostra els membres d'un subgrup dues vegades, una amb el grup i una altra amb el subgrup. Es comptabilitzen al grup i, a més, al subgrup.
 
 ## Pendent
 
 - Els escons que va obtenir cada candidatura a les eleccions del 12 de maig de 2024 s'han de treure dels resultats oficials, que són una altra font.
-- Les fotos de les persones diputades no s'hi inclouen fins que se'n comprovi la llicència.
+- Falten les fotos dels membres del Govern que no són diputats. [govern.cat](https://govern.cat/gov/consell-executiu) en publica sota CC0, però de mides i enquadraments diferents.

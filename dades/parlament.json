@@ -3,6 +3,7 @@
   "url": "https://www.parlament.cat/web/composicio/distribucio-escons/index.html",
   "data_consulta": "2026-11-22",
   "nota": "El Parlament no publica la data d’actualització de la composició: data_consulta és el dia en què es va llegir aquesta composició. Els grups són els d’avui, que poden no coincidir amb els resultats de les eleccions.",
+  "fotos": "Les fotos són del Parlament de Catalunya i s’enllacen al seu web, sense copiar-les. El seu avís legal (https://www.parlament.cat/pcat/serveis-parlament/avis-legal) en permet la reutilització si se’n cita la font, no se n’altera el sentit i no es presenten com una versió oficial ni avalada pel Parlament. Cal mostrar-les amb «Foto: Parlament de Catalunya».",
   "legislatura": {
     "numero": "XV",
     "inici": 2024
@@ -65,7 +66,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 1,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2545"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2545",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799545"
     },
     {
       "nom": "Carme Renedo i Puig",
@@ -75,7 +77,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 2,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2546"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2546",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799563"
     },
     {
       "nom": "Ignasi Prat i Sarri",
@@ -85,7 +88,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 3,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2539"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2539",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799557"
     },
     {
       "nom": "Jordi Bertran i Luengo",
@@ -95,7 +99,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 4,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2541"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2541",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798521"
     },
     {
       "nom": "Judith Toronjo i Nofuentes",
@@ -105,7 +110,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 5,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2232"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2232",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799594"
     },
     {
       "nom": "Ennatu Domingo i Soler",
@@ -115,7 +121,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 6,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2548"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2548",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799489"
     },
     {
       "nom": "Anna Erra i Solà",
@@ -125,7 +132,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 7,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2125"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2125",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793845"
     },
     {
       "nom": "Jeannine Abella i Chica",
@@ -135,7 +143,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 8,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2334"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2334",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798620"
     },
     {
       "nom": "Josep Rius i Alcaraz",
@@ -145,7 +154,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 9,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2040"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2040",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793864"
     },
     {
       "nom": "Salvador Vergés i Tejero",
@@ -155,7 +165,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 10,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2233"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2233",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799600"
     },
     {
       "nom": "Mònica Sales de la Cruz",
@@ -165,7 +176,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 11,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2036"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2036",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799575"
     },
     {
       "nom": "Carles Puigdemont i Casamajó",
@@ -175,7 +187,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 12,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1176"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1176",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799066"
     },
     {
       "nom": "Ferran Pedret i Santos",
@@ -185,7 +198,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 13,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1602"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1602",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=831006"
     },
     {
       "nom": "Elena Díaz Torrevejano",
@@ -195,7 +209,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 14,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2256"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2256",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821668"
     },
     {
       "nom": "Jordi Riba Colom",
@@ -205,7 +220,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 15,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2252"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2252",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821792"
     },
     {
       "nom": "Sara Jaurrieta Guarner",
@@ -215,7 +231,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 16,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2532"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2532",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821730"
     },
     {
       "nom": "Rocio Garcia Pérez",
@@ -225,7 +242,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 17,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2250"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2250",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821704"
     },
     {
       "nom": "Eva Candela López",
@@ -235,7 +253,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 18,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2248"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2248",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821650"
     },
     {
       "nom": "Cristòfol Gimeno Iglesias",
@@ -245,7 +264,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 19,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1691"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1691",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821710"
     },
     {
       "nom": "Beatriz Silva Gallardo",
@@ -255,7 +275,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 20,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2015"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2015",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821810"
     },
     {
       "nom": "Lluís Mijoler Martínez",
@@ -265,7 +286,8 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Catalunya en Comú",
       "esco": 21,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2511"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2511",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793010"
     },
     {
       "nom": "Susanna Segovia Sánchez",
@@ -275,7 +297,8 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Catalunya en Comú",
       "esco": 22,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2012"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2012",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880491"
     },
     {
       "nom": "David Cid Colomer",
@@ -285,7 +308,8 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Catalunya en Comú",
       "esco": 23,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1078"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1078",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792732"
     },
     {
       "nom": "Jéssica Albiach Satorres",
@@ -295,7 +319,8 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Catalunya en Comú",
       "esco": 24,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1850"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1850",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880616"
     },
     {
       "nom": "Jordi Fàbrega i Sabaté",
@@ -305,7 +330,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 25,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2236"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2236",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799501"
     },
     {
       "nom": "Maite Selva i Huertas",
@@ -315,7 +341,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 26,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2358"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2358",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=838374"
     },
     {
       "nom": "Noemí Nieto i Fumanal",
@@ -325,7 +352,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 27,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2540"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2540",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799328"
     },
     {
       "nom": "Toni Castellà i Clavé",
@@ -335,7 +363,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 28,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=720"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=720",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799469"
     },
     {
       "nom": "Montse Ortiz i Martí",
@@ -345,7 +374,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 29,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1640"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1640",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799539"
     },
     {
       "nom": "Anna Feliu i Moragues",
@@ -355,7 +385,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 30,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2237"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2237",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793839"
     },
     {
       "nom": "Sònia Martínez i Juli",
@@ -365,7 +396,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 31,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2544"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2544",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799526"
     },
     {
       "nom": "Joaquim Calatayud Casals",
@@ -375,7 +407,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 32,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2310"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2310",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=794349"
     },
     {
       "nom": "Mercè Esteve i Pi",
@@ -385,7 +418,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 33,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2231"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2231",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799495"
     },
     {
       "nom": "Agustí Colomines i Companys",
@@ -395,7 +429,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 34,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2538"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2538",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799476"
     },
     {
       "nom": "Albert Batet i Canadell",
@@ -405,7 +440,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 35,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1573"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1573",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=810481"
     },
     {
       "nom": "Alberto Bondesio Martínez",
@@ -415,7 +451,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 36,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2528"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2528",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821644"
     },
     {
       "nom": "Imma Ferret Raventós",
@@ -425,7 +462,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 37,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2522"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2522",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821692"
     },
     {
       "nom": "David González Chanca",
@@ -435,7 +473,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 38,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2270"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2270",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821717"
     },
     {
       "nom": "Guillem Mateo Sellas",
@@ -445,7 +484,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Units per Avançar",
       "esco": 39,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2582"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2582",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821754"
     },
     {
       "nom": "Mónica Ríos García",
@@ -455,7 +495,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 40,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2253"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2253",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821798"
     },
     {
       "nom": "Guillem Sánchez Prat",
@@ -465,7 +506,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 41,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2535"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2535",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821804"
     },
     {
       "nom": "Sabrin Araibi Marachi",
@@ -475,7 +517,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 42,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2526"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2526",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821632"
     },
     {
       "nom": "Manel Ezquerra Tomàs",
@@ -485,7 +528,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 43,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2520"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2520",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821674"
     },
     {
       "nom": "Ivana Martínez Valverde",
@@ -495,7 +539,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 44,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2534"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2534",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=967366"
     },
     {
       "nom": "Núria Lozano Montoya",
@@ -505,7 +550,8 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Esquerra Unida i Alternativa",
       "esco": 45,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2447"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2447",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880478"
     },
     {
       "nom": "Andrés Garcia Berrio",
@@ -515,7 +561,8 @@
       "llista_electoral": "Comuns Sumar",
       "partit": "Independent",
       "esco": 46,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2512"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2512",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793004"
     },
     {
       "nom": "Jordi Munell i Garcia",
@@ -525,7 +572,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 47,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1832"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1832",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799532"
     },
     {
       "nom": "Mònica Gallardo Montornès",
@@ -535,7 +583,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 48,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2699"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2699",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=980367"
     },
     {
       "nom": "Laura Martínez Portell",
@@ -545,7 +594,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 49,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2651"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2651",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=885944"
     },
     {
       "nom": "Ariadna Urroz Segura",
@@ -555,7 +605,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 50,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2458"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2458",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=875813"
     },
     {
       "nom": "Rosa Jové i Montañola",
@@ -565,7 +616,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 51,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2547"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2547",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=933059"
     },
     {
       "nom": "M. Àngels Planas i Crous",
@@ -575,7 +627,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 52,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2543"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2543",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799551"
     },
     {
       "nom": "Irene Negre i Estorach",
@@ -585,7 +638,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 53,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2313"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2313",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793858"
     },
     {
       "nom": "Francesc de Dalmases i Thió",
@@ -595,7 +649,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 54,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2031"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2031",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799482"
     },
     {
       "nom": "Joan Canadell i Bruguera",
@@ -605,7 +660,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 55,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2228"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2228",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799463"
     },
     {
       "nom": "Lluís Puig Gordi",
@@ -615,7 +671,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 56,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1961"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1961",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798614"
     },
     {
       "nom": "Josep M. Jové Lladó",
@@ -625,7 +682,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 57,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1985"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1985",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=705553"
     },
     {
       "nom": "Ester Capella i Farré",
@@ -635,7 +693,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 58,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1669"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1669",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792819"
     },
     {
       "nom": "Jordi Albert i Caballero",
@@ -645,7 +704,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 59,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1971"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1971",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840880"
     },
     {
       "nom": "Ana Balsera i Marín",
@@ -655,7 +715,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 60,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2241"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2241",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840893"
     },
     {
       "nom": "Conchi Jiménez Cruz",
@@ -665,7 +726,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 61,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2521"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2521",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821736"
     },
     {
       "nom": "Joaquim Paladella Curto",
@@ -675,7 +737,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 62,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1007"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1007",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821772"
     },
     {
       "nom": "Neus Comes Pon",
@@ -685,7 +748,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 63,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2529"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2529",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821662"
     },
     {
       "nom": "Francesc Jesús Becerra Ramírez",
@@ -695,7 +759,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 64,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2527"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2527",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821638"
     },
     {
       "nom": "Lídia Ferré Ferré",
@@ -705,7 +770,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 65,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2531"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2531",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821686"
     },
     {
       "nom": "Míriam Casanova Domènech",
@@ -715,7 +781,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 68,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2554"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2554",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798923"
     },
     {
       "nom": "Eva García Rodríguez",
@@ -725,7 +792,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 69,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=937"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=937",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880834"
     },
     {
       "nom": "Hugo Manchón García",
@@ -735,7 +803,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 70,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2559"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2559",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=803618"
     },
     {
       "nom": "Àngels Esteller Ruedas",
@@ -745,7 +814,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 71,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=725"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=725",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880850"
     },
     {
       "nom": "Manuel Reyes López",
@@ -755,7 +825,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 72,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1644"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1644",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=649975"
     },
     {
       "nom": "Juan Fernández Benítez",
@@ -765,7 +836,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 73,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2557"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2557",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=803594"
     },
     {
       "nom": "Lorena Roldán Suárez",
@@ -775,7 +847,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 74,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1875"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1875",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880858"
     },
     {
       "nom": "Alejandro Fernández Álvarez",
@@ -785,7 +858,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 75,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1061"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1061",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=489214"
     },
     {
       "nom": "Marta Vilalta i Torres",
@@ -795,7 +869,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 76,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1614"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1614",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=705776"
     },
     {
       "nom": "Najat Driouech Ben Moussa",
@@ -805,7 +880,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 77,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1976"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1976",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840918"
     },
     {
       "nom": "Laia Cañigueral Olivé",
@@ -815,7 +891,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 78,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2517"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2517",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840912"
     },
     {
       "nom": "Joan Ignasi Elena Garcia",
@@ -825,7 +902,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 79,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=115"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=115",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840925"
     },
     {
       "nom": "Albert Salvadó Fernàndez",
@@ -835,7 +913,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 80,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2515"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2515",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792824"
     },
     {
       "nom": "Ernesto Carrión Sablich",
@@ -845,7 +924,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 81,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2469"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2469",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821656"
     },
     {
       "nom": "Andrea Zapata Alfonso",
@@ -855,7 +935,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 82,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2537"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2537",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821823"
     },
     {
       "nom": "Mario García Gómez",
@@ -865,7 +946,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 83,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2249"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2249",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821698"
     },
     {
       "nom": "Sílvia Orriols Serra",
@@ -875,7 +957,8 @@
       "llista_electoral": "Aliança Catalana",
       "partit": "Aliança Catalana",
       "esco": 85,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880827"
     },
     {
       "nom": "Rosa Maria Soberana i Bonet",
@@ -885,7 +968,8 @@
       "llista_electoral": "Aliança Catalana",
       "partit": "Aliança Catalana",
       "esco": 86,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2602"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2602",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=881673"
     },
     {
       "nom": "M. Belén Pajares Ribas",
@@ -895,7 +979,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 87,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=965"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=965",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=847859"
     },
     {
       "nom": "Pau Ferran Navarro",
@@ -905,7 +990,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 88,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2565"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2565",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=801683"
     },
     {
       "nom": "Cristian Escribano Ramírez",
@@ -915,7 +1001,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 89,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2558"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2558",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=804391"
     },
     {
       "nom": "Alberto Villagrasa Gil",
@@ -925,7 +1012,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 90,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1891"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1891",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=880842"
     },
     {
       "nom": "Pere Lluís Huguet Tous",
@@ -935,7 +1023,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 91,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2552"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2552",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799053"
     },
     {
       "nom": "Montserrat Berenguer Messeguer",
@@ -945,7 +1034,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 92,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2556"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2556",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799432"
     },
     {
       "nom": "Jaume Veray Cama",
@@ -955,7 +1045,8 @@
       "llista_electoral": "Partit Popular / Partido Popular",
       "partit": "Partit Popular",
       "esco": 93,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2553"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2553",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799046"
     },
     {
       "nom": "Mar Besses Casanovas",
@@ -965,7 +1056,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 94,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2518"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2518",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840899"
     },
     {
       "nom": "Lluïsa Llop Fernàndez",
@@ -975,7 +1067,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 95,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2127"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2127",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=960720"
     },
     {
       "nom": "Carles Campuzano i Canadés",
@@ -985,7 +1078,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 96,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=92"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=92",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840905"
     },
     {
       "nom": "Irene Aragonès Gràcia",
@@ -995,7 +1089,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 97,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2259"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2259",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840887"
     },
     {
       "nom": "Montse Bergés i Saura",
@@ -1005,7 +1100,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 98,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2514"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2514",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792839"
     },
     {
       "nom": "Antoni Poyato Rodríguez",
@@ -1015,7 +1111,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 99,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2525"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2525",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821786"
     },
     {
       "nom": "Susana Martínez Heredia",
@@ -1025,7 +1122,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 100,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2533"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2533",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821742"
     },
     {
       "nom": "Christian Soriano García",
@@ -1035,7 +1133,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 101,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2536"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2536",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821817"
     },
     {
       "nom": "Natàlia Fabian Corbacho",
@@ -1045,7 +1144,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 102,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2530"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2530",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=938808"
     },
     {
       "nom": "Mónica Lora Cisquer",
@@ -1055,7 +1155,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 103,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2277"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2277",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659192"
     },
     {
       "nom": "Javier Ramírez Gutiérrez",
@@ -1065,7 +1166,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 104,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2550"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2550",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=799060"
     },
     {
       "nom": "Manuel Jesús Acosta Elías",
@@ -1075,7 +1177,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 105,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2279"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2279",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659464"
     },
     {
       "nom": "María Elisa García Fuster",
@@ -1085,7 +1188,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 106,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2276"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2276",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=710191"
     },
     {
       "nom": "Sergio Macián de Greef",
@@ -1095,7 +1199,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 107,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2283"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2283",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=663254"
     },
     {
       "nom": "Joan Garriga Doménech",
@@ -1105,7 +1210,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 108,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2275"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2275",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=663182"
     },
     {
       "nom": "Ignacio Garriga Vaz de Concicao",
@@ -1115,7 +1221,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 109,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2274"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2274",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659130"
     },
     {
       "nom": "Oriol López Mayolas",
@@ -1125,7 +1232,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 110,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2655"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2655",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=886241"
     },
     {
       "nom": "Josep Vidal Bringué",
@@ -1135,7 +1243,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 111,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2513"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2513",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793162"
     },
     {
       "nom": "Jordi Viñas i Xifra",
@@ -1145,7 +1254,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 112,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2516"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2516",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792809"
     },
     {
       "nom": "Alba Camps i Roca",
@@ -1155,7 +1265,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 113,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2312"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2312",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=929933"
     },
     {
       "nom": "Gisela Navarro Fuster",
@@ -1165,7 +1276,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 114,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2583"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2583",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821760"
     },
     {
       "nom": "José Ignacio Aparicio Ciria",
@@ -1175,7 +1287,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 115,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2519"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2519",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821587"
     },
     {
       "nom": "Núria Navarro Hurtado",
@@ -1185,7 +1298,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 116,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2584"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2584",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821766"
     },
     {
       "nom": "Rafael Villafranca Mercé",
@@ -1195,7 +1309,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 119,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2549"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2549",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=804127"
     },
     {
       "nom": "Alberto Tarradas Paneque",
@@ -1205,7 +1320,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 120,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2280"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2280",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=705763"
     },
     {
       "nom": "Andrés Bello Sanz",
@@ -1215,7 +1331,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 121,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2278"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2278",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659577"
     },
     {
       "nom": "Júlia Calvet Puig",
@@ -1225,7 +1342,8 @@
       "llista_electoral": "VOX",
       "partit": "VOX",
       "esco": 122,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2551"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2551",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798492"
     },
     {
       "nom": "Maria Pilar Castillejo Medina",
@@ -1236,7 +1354,8 @@
       "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
       "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
       "esco": 123,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1921"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1921",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798576"
     },
     {
       "nom": "Laura Fernández Vega",
@@ -1247,7 +1366,8 @@
       "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
       "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
       "esco": 124,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2485"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2485",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=798595"
     },
     {
       "nom": "Xavier Pellicer Pareja",
@@ -1257,7 +1377,8 @@
       "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
       "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
       "esco": 125,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2262"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2262",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=883204"
     },
     {
       "nom": "Dani Cornellà Detrell",
@@ -1268,7 +1389,8 @@
       "llista_electoral": "Candidatura d'Unitat Popular - Defensem la Terra",
       "partit": "Candidatura d'Unitat Popular - Defensem la Terra",
       "esco": 126,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2264"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2264",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792757"
     },
     {
       "nom": "Rosa Maria Ibarra Ollé",
@@ -1278,7 +1400,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 129,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1885"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1885",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821723"
     },
     {
       "nom": "Glòria Freixa i Vilardell",
@@ -1288,7 +1411,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 130,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2187"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2187",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=892494"
     },
     {
       "nom": "Raquel Sans Guerra",
@@ -1298,7 +1422,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 131,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2133"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2133",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=792814"
     },
     {
       "nom": "Josep Rull i Andreu",
@@ -1308,7 +1433,8 @@
       "llista_electoral": "Junts per Catalunya",
       "partit": "Junts per Catalunya",
       "esco": 132,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=683"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=683",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=802343"
     },
     {
       "nom": "David Pérez Ibáñez",
@@ -1318,7 +1444,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 133,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=756"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=756",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=660310"
     },
     {
       "nom": "Juli Fernàndez Olivares",
@@ -1328,7 +1455,8 @@
       "llista_electoral": "Esquerra Republicana de Catalunya",
       "partit": "Esquerra Republicana de Catalunya",
       "esco": 134,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2240"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2240",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=840932"
     },
     {
       "nom": "Judit Alcalá González",
@@ -1338,7 +1466,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 135,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2246"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2246",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=821577"
     },
     {
       "nom": "Òscar Ordeig i Molist",
@@ -1348,7 +1477,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 139,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1685"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1685",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=794083"
     },
     {
       "nom": "Eva M. Menor Cantador",
@@ -1358,7 +1488,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 142,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2523"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2523",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=831000"
     },
     {
       "nom": "Salvador Illa Roca",
@@ -1368,7 +1499,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 145,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2255"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2255",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=830994"
     },
     {
       "nom": "Alícia Romero Llano",
@@ -1378,7 +1510,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 147,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1603"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1603",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=793937"
     },
     {
       "nom": "Ramon Espadaler Parcerisas",
@@ -1388,7 +1521,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Units per Avançar",
       "esco": 149,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=117"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=117",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=794000"
     },
     {
       "nom": "Silvia Paneque Sureda",
@@ -1398,7 +1532,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 150,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2251"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2251",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=659478"
     },
     {
       "nom": "Esther Niubó Cidoncha",
@@ -1408,7 +1543,8 @@
       "llista_electoral": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "partit": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
       "esco": 152,
-      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1877"
+      "fitxa": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1877",
+      "foto": "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=663261"
     }
   ]
 }

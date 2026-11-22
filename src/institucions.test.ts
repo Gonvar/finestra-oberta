@@ -45,7 +45,7 @@ const fitxa = ({
   grup = '',
   legislatura = true,
 } = {}) =>
-  `<h1 class="titol_pagina"><span>Sr. ${nom}</span></h1><img src="x" alt="Fotografia de ${nom}" class="foto_fitxa" ><dl><dt>Llista Electoral: </dt><dd>Llista d&#039;Exemple&nbsp;</dd><dt>Circumscripció: </dt><dd>${circumscripcio}&nbsp;</dd><dt>Partit Polític: </dt><dd>Partit Exemple&nbsp;</dd>${grup && `<dt>Grup parlamentari: </dt><dd><a href="#">${grup}</a> . Membre. Alta: 18.06.2024, BOPC, 3.</dd>`}</dl>${legislatura ? '<dl><dt>Membre de la legislatura: </dt><dd><p><a href="#">XV (2024-actualitat)</a>, <a href="#">XIV (2021-2024)</a>, </p></dd></dl>' : ''}`;
+  `<h1 class="titol_pagina"><span>Sr. ${nom}</span></h1><img loading="lazy" src="https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=42 " alt="Fotografia de ${nom}" class="foto_fitxa" ><dl><dt>Llista Electoral: </dt><dd>Llista d&#039;Exemple&nbsp;</dd><dt>Circumscripció: </dt><dd>${circumscripcio}&nbsp;</dd><dt>Partit Polític: </dt><dd>Partit Exemple&nbsp;</dd>${grup && `<dt>Grup parlamentari: </dt><dd><a href="#">${grup}</a> . Membre. Alta: 18.06.2024, BOPC, 3.</dd>`}</dl>${legislatura ? '<dl><dt>Membre de la legislatura: </dt><dd><p><a href="#">XV (2024-actualitat)</a>, <a href="#">XIV (2021-2024)</a>, </p></dd></dl>' : ''}`;
 
 /** Un `fetch` que respon segons la URL. */
 function fake(respon: (url: string) => string | object) {
@@ -96,6 +96,7 @@ test('el mapa falla si un color no és a la llegenda', () => {
 test('la fitxa dona el nom, la circumscripció, la llista, el grup i la legislatura', () => {
   assert.deepEqual(llegirFitxa(fitxa({ grup: GRUP_A }), 'u'), {
     nom: 'Persona Exemple',
+    foto: 'https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=M&p_id=42',
     circumscripcio: 'Lleida',
     llista_electoral: "Llista d'Exemple",
     partit: 'Partit Exemple',
@@ -107,6 +108,11 @@ test('la fitxa dona el nom, la circumscripció, la llista, el grup i la legislat
 test('la fitxa falla si no hi ha circumscripció', () => {
   const html = fitxa().replace(/<dt>Circumscripció: <\/dt><dd>[^<]*<\/dd>/, '');
   assert.throws(() => llegirFitxa(html, 'u'), /circumscripció/);
+});
+
+test('la fitxa falla si no hi ha foto', () => {
+  const html = fitxa().replace(/<img[^>]*>/, '');
+  assert.throws(() => llegirFitxa(html, 'u'), /foto/);
 });
 
 test('la fitxa falla amb caràcters mal codificats', () => {
