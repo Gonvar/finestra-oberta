@@ -6,9 +6,12 @@
     "node": ">=22.18"
   },
   "scripts": {
-    "idescat": "node src/index.ts",
+    "idescat": "node src/index.ts idescat",
+    "dades-obertes": "node src/index.ts dades-obertes",
     "test": "node --test src/*.test.ts",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.4.0",
@@ -16,6 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
+    "prettier": "3.9.6",
     "typescript": "^5.9.0"
   }
 }

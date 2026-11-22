@@ -2,7 +2,7 @@
 
 **Les dades i els tràmits de l'Administració catalana, més clars i a l'abast de tothom.**
 
-Finestreta Oberta és una iniciativa oberta per fer més fàcil relacionar-se amb la Generalitat, els ajuntaments i els organismes públics de Catalunya. Comencem connectant assistents d'IA amb les dades obertes oficials, sempre amb la font citada.
+Finestreta Oberta és una iniciativa oberta per fer més fàcil relacionar-se amb la Generalitat, els ajuntaments i els organismes públics de Catalunya. Comencem connectant assistents d'IA amb les dades obertes oficials, sempre amb la font i la data de les dades.
 
 **Projecte independent, sense vinculació amb cap administració. És experimental.**
 
@@ -14,45 +14,67 @@ La idea i bona part de l'enfocament venen de [Reforma Digital](https://github.co
 
 Un servidor [MCP](https://modelcontextprotocol.io) deixa que un assistent (Claude, ChatGPT, Cursor…) consulti una font de dades oficial. Les eines són només de lectura i cada resposta porta la font.
 
-| Servidor   | Font                                                                      | Què s'hi pot preguntar                                                                                |
-| ---------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Idescat** | [API Taules v2](https://api.idescat.cat/taules/v2) de l'Institut d'Estadística de Catalunya | Població per comarca o municipi, naixements, PIB trimestral, usos lingüístics, afiliació… |
+| Servidor                                 | Font                                                                                              | Què s'hi pot preguntar                                                                                |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [`idescat`](docs/idescat.md)             | [API Taules v2](https://www.idescat.cat/dev/api/taules/) de l'Institut d'Estadística de Catalunya | Població per comarca o municipi, naixements, PIB trimestral, usos lingüístics, afiliació…             |
+| [`dades-obertes`](docs/dades-obertes.md) | [Dades obertes de Catalunya](https://analisi.transparenciacatalunya.cat), de la Generalitat       | Els conjunts dels departaments: accidents, salut, educació, medi ambient, contractació, pressupostos… |
 
-Exemples:
+Exemples de preguntes:
 
 - Quantes dones vivien a Osona l'1 de gener de 2025?
-- Quina població té Vic?
 - Com ha variat el PIB de Catalunya l'últim trimestre?
+- Quina comarca va tenir més morts en accidents de trànsit el 2023?
 
-### Com fer-lo servir
+## Com fer-los servir
 
 Cal **Node.js 22.18 o posterior**.
 
 ```sh
+git clone https://github.com/Gonvar/finestreta-oberta.git
+cd finestreta-oberta
 npm install
-npm run idescat    # servidor MCP per stdio
 ```
 
-Per afegir-lo a Claude Code:
+Cada servidor s'executa per stdio amb el seu nom. Per afegir-los a Claude Code:
 
 ```sh
-claude mcp add idescat -- node /camí/a/finestreta-oberta/src/index.ts
+claude mcp add idescat -- node "$PWD/src/index.ts" idescat
+claude mcp add dades-obertes -- node "$PWD/src/index.ts" dades-obertes
+```
+
+En altres clients (Claude Desktop, Cursor…), configura un servidor stdio amb l'ordre `node` i els arguments `/camí/a/finestreta-oberta/src/index.ts` i el nom del servidor:
+
+```json
+{
+  "mcpServers": {
+    "idescat": {
+      "command": "node",
+      "args": ["/camí/a/finestreta-oberta/src/index.ts", "idescat"]
+    }
+  }
+}
 ```
 
 ## Desenvolupament
 
 ```sh
-npm test           # proves amb dades sintètiques
-npm run typecheck
+npm test             # proves amb dades sintètiques
+npm run typecheck    # TypeScript
+npm run format       # Prettier
 ```
 
-Node executa el TypeScript directament, sense compilar: només s'hi pot fer servir sintaxi que es pugui esborrar (`erasableSyntaxOnly`) i els imports porten l'extensió `.ts`.
+Node executa el TypeScript directament, sense compilar. Les proves fan servir dades sintètiques amb la forma de cada API: no substitueixen una comprovació contra l'API real.
 
-Les proves fan servir dades sintètiques amb la forma de l'API. No substitueixen una comprovació contra l'API real.
+- [CONTRIBUTING.md](CONTRIBUTING.md): com contribuir i com afegir un servidor.
+- [SECURITY.md](SECURITY.md): què fan els servidors amb les dades i com informar d'un problema.
+- [AGENTS.md](AGENTS.md): instruccions per als agents d'IA que hi treballen.
 
 ## Properes fonts
 
-- [Dades obertes de la Generalitat](https://analisi.transparenciacatalunya.cat) (API Socrata)
+- [Open Data BCN](https://opendata-ajuntament.barcelona.cat), de l'Ajuntament de Barcelona
 - Parlament de Catalunya: diputats, iniciatives i votacions
 - DOGC: disposicions i normativa
-- [Open Data BCN](https://opendata-ajuntament.barcelona.cat)
+
+## Llicència
+
+[MIT](LICENSE).

@@ -80,8 +80,7 @@ const codes = ({ index }: Category) =>
         .sort(([, a], [, b]) => a - b)
         .map(([code]) => code);
 
-const meta = (fetchImpl: Fetch, path: string) =>
-  getJson<Meta>(fetchImpl, `${API}/${path}?lang=ca`);
+const meta = (fetchImpl: Fetch, path: string) => getJson<Meta>(fetchImpl, `${API}/${path}?lang=ca`);
 
 export async function veureTaula(fetchImpl: Fetch, path: string) {
   const m = await meta(fetchImpl, path);
