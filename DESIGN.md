@@ -105,6 +105,12 @@ Segueix les skills d'Emil Kowalski que hi ha a `.claude/skills/`.
 
 Quan es construeixi la web: es farà amb [Base UI](https://base-ui.com) per als components accessibles (diàlegs, menús i desplegables), [cmdk](https://cmdk.paco.me) per al cercador ⌘K i [Sonner](https://sonner.emilkowal.ski) per als avisos. Cap component no es fa a mà si una d'aquestes llibreries ja el resol.
 
+El moviment dels components de Base UI es fa amb [Animate UI](https://animate-ui.com), que s'hi afegeix sense canviar-ne l'estructura ni l'API. Té tres condicions:
+
+- **Les corbes i les durades són les de §2.4**, no pas les que porta Animate UI per defecte.
+- **Es fa servir com a paquet npm** (`@animate-ui/react`), sense copiar-ne els components al repo. La seva llicència (MIT amb la Commons Clause) no deixa redistribuir els components tal com són, i el repo és públic.
+- **Els estils surten dels tokens de §2**, no pas de Tailwind ni dels estils de shadcn/ui.
+
 ## 4. Text
 
 - **Tot en català**, amb frases curtes i paraules de tots els dies: «Què ha aprovat el Govern», no pas «Acords adoptats en sessió».

@@ -6,6 +6,10 @@ Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegi
 
 **L'idioma del projecte és el català, i tot es fa en català**: el codi que llegeixen els assistents, els noms de les eines i dels paràmetres, els comentaris, la documentació, els commits, les PR, les issues i les respostes a qui hi treballa. No escriguis en castellà ni en anglès encara que la persona o la font ho facin. Només es conserven els identificadors tècnics i els noms dels camps de les APIs.
 
+## Textos de la interfície
+
+- Cada vegada que escriguis o canviïs un text que llegirà la gent a la web (títols, etiquetes, botons, avisos, estats buits, descripcions), passa'l per la skill [`clean-copy`](.claude/skills/clean-copy/SKILL.md) abans de donar-lo per bo. Primer es decideix si el text ha d'existir i després com es diu, i el català i el to de [DESIGN.md](DESIGN.md) §4 també s'hi apliquen.
+
 ## Abast
 
 - Fes només el que se t'ha demanat. Res de neteges, canvis de format o refactoritzacions alienes a la tasca.
