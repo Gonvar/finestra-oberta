@@ -64,7 +64,7 @@ git checkout "$CODI"
 npm run verifica-dades
 ```
 
-Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups i dels departaments depèn de la versió.
+Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
 **3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json` i `/tmp/ara/ajuntaments.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
@@ -109,11 +109,13 @@ Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les 
 - **Data:** `data_dades` i `data_municipis` són la data de l'última actualització de cada conjunt. La freqüència que anuncia la composició dels plens és «variable».
 - **Contingut:** tots els municipis de Catalunya, per ordre alfabètic, i de cadascun les persones del ple en l'ordre que dona la font (`ordre`). Només els ajuntaments: els consells comarcals, les diputacions i les entitats municipals descentralitzades queden fora pel tipus d'ens que dona la font, no per qui les forma.
 - **Codi:** `codi` són les sis primeres xifres del codi de Municat, el codi del municipi de l'INE amb el dígit de control, el mateix que fa servir l'Idescat. És el que lliga les dues fonts.
-- **Noms, càrrecs i partits:** tal com els escriu la font, també quan són en majúscules. Si la font no dona un camp d'una persona (el nom, el càrrec, l'àrea o el partit), la persona surt sense aquest camp, igual per a tothom.
+- **Noms, càrrecs i partits:** tal com els escriu la font, també quan són en majúscules. Tots els municipis i totes les persones tenen els mateixos camps. Si la font no en dona un (els habitants, la web, o el nom, el càrrec, l'àrea, el partit o la data d'una persona), hi és amb `null`, igual per a tothom.
 - **Comprovacions:**
   - Cada municipi del registre ha de tenir ple, i cada ple ha de ser d'un municipi del registre.
   - Un municipi només pot sortir una vegada al registre, i un codi no pot correspondre a dos ajuntaments.
-  - Cada codi ha de tenir deu xifres, i els habitants, l'any i l'ordre han de ser nombres.
+  - Cada codi ha de tenir deu xifres, i els habitants, l'any i l'ordre han de ser nombres. Un municipi no pot tenir els habitants sense l'any del padró, ni al revés.
+  - Cada municipi ha de tenir nom, comarca i província, i dues persones del mateix ple no poden tenir el mateix ordre.
+- **Si falla:** com que els ajuntaments es generen amb el Govern i el Parlament, una comprovació que falla també atura l'actualització del Govern i el Parlament fins que es corregeix. És el mateix que passa avui entre el Govern i el Parlament.
 
 ## Pendent
 

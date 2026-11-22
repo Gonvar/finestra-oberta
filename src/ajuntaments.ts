@@ -1,35 +1,34 @@
 // Els ajuntaments de tots els municipis de Catalunya i qui forma el seu ple, del registre d'ens
 // locals de la Generalitat (Municat). No és un servidor MCP: src/dades.ts ho desa a la branca
 // `dades`. Totes dues fonts són de la Secretaria de Governs Locals, a Dades obertes de Catalunya.
-// Cada municipi es mostra amb els mateixos camps, i les persones del ple en l'ordre que dona la font.
+// Tots els municipis i totes les persones tenen els mateixos camps: el que la font no dona és null.
 import { dia, getJson, metadades, SOCRATA, SourceError, type Fetch } from './comun.ts';
 
 export const PLENS = 'nm3n-3vbj';
 export const ENS_LOCALS = '6nei-4b44';
 const LIMIT = 50_000;
 
-/** Una persona electa, tal com la dona la composició dels plens. */
-type Electe = {
-  codi_10: string;
-  nom_ens: string;
-  nom?: string;
-  carrec?: string;
-  area?: string;
-  partit_politic?: string;
-  ordre: string;
-  data_nomenament?: string;
-};
+type Fila = Record<string, unknown>;
 
-/** Un municipi, tal com el dona el registre d'ens locals. */
-type Municipi = {
-  codi_ens: string;
-  nom_complert: string;
-  comarca: string;
-  provincia: string;
-  cens?: string;
-  any_cens?: string;
-  web?: string;
-};
+/** Socrata omet els camps nuls: un camp que falta és null, i un d'obligatori que falta, un error. */
+function camp(fila: Fila, nom: string): string | null {
+  const valor = fila[nom];
+  if (valor === undefined) return null;
+  if (typeof valor !== 'string') throw new SourceError(`El camp ${nom} no és text: ${valor}.`);
+  return valor;
+}
+
+function obligatori(fila: Fila, nom: string, conjunt: string) {
+  const valor = camp(fila, nom);
+  if (valor === null || valor.trim() === '')
+    throw new SourceError(`Una fila de ${conjunt} no té ${nom}.`);
+  return valor;
+}
+
+function numero(text: string, nom: string) {
+  if (!/^\d+$/.test(text)) throw new SourceError(`${nom} no és un nombre: ${text}.`);
+  return Number(text);
+}
 
 /**
  * Els sis primers dígits dels codis de Municat són el codi del municipi de l'INE amb el dígit de
@@ -40,8 +39,8 @@ function codiMunicipi(codi: string) {
   return codi.slice(0, 6);
 }
 
-async function files<T>(fetchImpl: Fetch, id: string, params: Record<string, string>) {
-  const resultat = await getJson<T[]>(
+async function files(fetchImpl: Fetch, id: string, params: Record<string, string>) {
+  const resultat = await getJson<Fila[]>(
     fetchImpl,
     `${SOCRATA}/resource/${id}.json?${new URLSearchParams({ ...params, $limit: String(LIMIT) })}`,
   );
@@ -49,21 +48,27 @@ async function files<T>(fetchImpl: Fetch, id: string, params: Record<string, str
   return resultat;
 }
 
-const numero = (text: string, camp: string) => {
-  const n = Number(text);
-  if (!Number.isInteger(n) || n < 0) throw new SourceError(`${camp} no és un nombre: ${text}.`);
-  return n;
-};
+function persona(fila: Fila) {
+  const data = camp(fila, 'data_nomenament');
+  return {
+    nom: camp(fila, 'nom'),
+    carrec: camp(fila, 'carrec'),
+    area: camp(fila, 'area'),
+    partit: camp(fila, 'partit_politic'),
+    ordre: numero(obligatori(fila, 'ordre', PLENS), 'L’ordre'),
+    data_nomenament: data === null ? null : data.slice(0, 10),
+  };
+}
 
 export async function construirAjuntaments(fetchImpl: Fetch) {
   const metaEns = await metadades(fetchImpl, ENS_LOCALS);
-  const municipis = await files<Municipi>(fetchImpl, ENS_LOCALS, {
+  const municipis = await files(fetchImpl, ENS_LOCALS, {
     $select: 'codi_ens, nom_complert, comarca, provincia, cens, any_cens, web',
     $where: "nomtipus = 'Municipis'",
     $order: 'codi_ens',
   });
   const metaPlens = await metadades(fetchImpl, PLENS);
-  const electes = await files<Electe>(fetchImpl, PLENS, {
+  const electes = await files(fetchImpl, PLENS, {
     $select: 'codi_10, nom_ens, nom, carrec, area, partit_politic, ordre, data_nomenament',
     $where: "codi_tipus_ens = '2'",
     $order: 'codi_10, ordre',
@@ -71,46 +76,48 @@ export async function construirAjuntaments(fetchImpl: Fetch) {
   if (municipis.length === 0 || electes.length === 0)
     throw new SourceError('El registre d’ens locals o la composició dels plens són buits.');
 
-  const plens = new Map<string, { ens: string; ple: Electe[] }>();
-  for (const electe of electes) {
-    const codi = codiMunicipi(electe.codi_10);
-    const ple = plens.get(codi) ?? { ens: electe.nom_ens, ple: [] };
-    if (ple.ens !== electe.nom_ens)
-      throw new SourceError(`El codi ${codi} correspon a ${ple.ens} i a ${electe.nom_ens}.`);
-    ple.ple.push(electe);
+  const plens = new Map<string, { ajuntament: string; ple: ReturnType<typeof persona>[] }>();
+  for (const fila of electes) {
+    const codi = codiMunicipi(obligatori(fila, 'codi_10', PLENS));
+    const ajuntament = obligatori(fila, 'nom_ens', PLENS);
+    const ple = plens.get(codi) ?? { ajuntament, ple: [] };
+    if (ple.ajuntament !== ajuntament)
+      throw new SourceError(`El codi ${codi} correspon a ${ple.ajuntament} i a ${ajuntament}.`);
+    ple.ple.push(persona(fila));
     plens.set(codi, ple);
+  }
+  // L'ordre al ple és el de la font. Es posa aquí i no a la consulta: un municipi pot tenir diversos
+  // codi_10, i Socrata ordena primer per codi.
+  for (const { ajuntament, ple } of plens.values()) {
+    ple.sort((a, b) => a.ordre - b.ordre);
+    if (new Set(ple.map((p) => p.ordre)).size !== ple.length)
+      throw new SourceError(`El ple de ${ajuntament} té dues persones amb el mateix ordre.`);
   }
 
   const vistos = new Set<string>();
-  const resultat = municipis.map((m) => {
-    const codi = codiMunicipi(m.codi_ens);
+  const resultat = municipis.map((fila) => {
+    const codi = codiMunicipi(obligatori(fila, 'codi_ens', ENS_LOCALS));
+    const nom = obligatori(fila, 'nom_complert', ENS_LOCALS);
     if (vistos.has(codi)) throw new SourceError(`El municipi ${codi} surt dues vegades.`);
     vistos.add(codi);
     const ple = plens.get(codi);
     if (ple === undefined)
-      throw new SourceError(`${m.nom_complert} (${codi}) no té ple a la composició dels plens.`);
+      throw new SourceError(`${nom} (${codi}) no té ple a la composició dels plens.`);
+    const cens = camp(fila, 'cens');
+    const anyCens = camp(fila, 'any_cens');
+    // Uns habitants sense l'any, o un any sense habitants, no es poden mostrar bé.
+    if ((cens === null) !== (anyCens === null))
+      throw new SourceError(`${nom} té els habitants o l’any del padró, però no tots dos.`);
     return {
       codi,
-      nom: m.nom_complert,
-      ajuntament: ple.ens,
-      comarca: m.comarca,
-      provincia: m.provincia,
-      ...(m.cens !== undefined && {
-        habitants: numero(m.cens, 'El cens'),
-        ...(m.any_cens !== undefined && { any_habitants: numero(m.any_cens, 'L’any del cens') }),
-      }),
-      ...(m.web !== undefined && { web: m.web }),
-      // Un seient sense nom, càrrec o partit es publica igual, sense el camp que la font no dona.
-      ple: ple.ple.map((e) => ({
-        ...(e.nom !== undefined && { nom: e.nom }),
-        ...(e.carrec !== undefined && { carrec: e.carrec }),
-        ...(e.area !== undefined && { area: e.area }),
-        ...(e.partit_politic !== undefined && { partit: e.partit_politic }),
-        ordre: numero(e.ordre, 'L’ordre'),
-        ...(e.data_nomenament !== undefined && {
-          data_nomenament: e.data_nomenament.slice(0, 10),
-        }),
-      })),
+      nom,
+      ajuntament: ple.ajuntament,
+      comarca: obligatori(fila, 'comarca', ENS_LOCALS),
+      provincia: obligatori(fila, 'provincia', ENS_LOCALS),
+      habitants: cens === null ? null : numero(cens, 'El cens'),
+      any_habitants: anyCens === null ? null : numero(anyCens, 'L’any del cens'),
+      web: camp(fila, 'web'),
+      ple: ple.ple,
     };
   });
   const sensMunicipi = [...plens.keys()].filter((codi) => !vistos.has(codi));
@@ -126,7 +133,7 @@ export async function construirAjuntaments(fetchImpl: Fetch) {
     font_municipis: `Dades obertes de Catalunya: ${metaEns.name} (${metaEns.attribution})`,
     url_municipis: `${SOCRATA}/d/${ENS_LOCALS}`,
     data_municipis: dia(metaEns),
-    nota: 'Qui forma cada ple, amb el càrrec, l’àrea i el partit, surt de la composició dels plens. El nom del municipi, la comarca, la província, els habitants i la web surten del registre d’ens locals (Municat). Els noms, els càrrecs i els partits es publiquen tal com els escriu la font, i un camp que la font no dona no hi és.',
+    nota: 'Qui forma cada ple, amb el càrrec, l’àrea i el partit, surt de la composició dels plens. El nom del municipi, la comarca, la província, els habitants i la web surten del registre d’ens locals (Municat). Els noms, els càrrecs i els partits es publiquen tal com els escriu la font. Un camp que la font no dona és null, igual per a tothom.',
     municipis: resultat.sort((a, b) => a.nom.localeCompare(b.nom, 'ca')),
   };
 }

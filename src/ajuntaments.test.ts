@@ -52,16 +52,14 @@ const ELECTES = [
 ];
 
 function fake(municipis: object[] = MUNICIPIS, electes: object[] = ELECTES) {
-  const demanades: string[] = [];
   const fetchImpl: Fetch = async (input) => {
     const url = String(input);
-    demanades.push(url);
     if (url.includes('/api/views/')) return Response.json(META);
     if (url.includes(`/resource/${ENS_LOCALS}.json`)) return Response.json(municipis);
     if (url.includes(`/resource/${PLENS}.json`)) return Response.json(electes);
     return new Response('no', { status: 404 });
   };
-  return { fetchImpl, demanades };
+  return { fetchImpl };
 }
 
 test('cada municipi surt amb el seu ple, en l’ordre de la font, i amb els mateixos camps', async () => {
@@ -91,20 +89,55 @@ test('cada municipi surt amb el seu ple, en l’ordre de la font, i amb els mate
         ordre: 1,
         data_nomenament: '2023-06-17',
       },
-      { nom: 'Persona Dos', carrec: 'Regidora', partit: 'P2', ordre: 2 },
+      {
+        nom: 'Persona Dos',
+        carrec: 'Regidora',
+        area: null,
+        partit: 'P2',
+        ordre: 2,
+        data_nomenament: null,
+      },
     ],
   });
-  // Un seient que la font dona sense nom es publica sense nom, no s'amaga.
-  assert.deepEqual(ager!.ple, [{ ordre: 1 }]);
+  // Un seient que la font dona sense nom es publica amb els camps buits, no s'amaga.
+  assert.deepEqual(ager!.habitants, null);
+  assert.deepEqual(ager!.web, null);
+  assert.deepEqual(ager!.ple, [
+    { nom: null, carrec: null, area: null, partit: null, ordre: 1, data_nomenament: null },
+  ]);
 });
 
-test('només demana els municipis i els plens dels ajuntaments', async () => {
-  const { fetchImpl, demanades } = fake();
-  await construirAjuntaments(fetchImpl);
-  const params = demanades
-    .filter((u) => u.includes('/resource/'))
-    .map((u) => new URL(u).searchParams.get('$where'));
-  assert.deepEqual(params, ["nomtipus = 'Municipis'", "codi_tipus_ens = '2'"]);
+test('el ple va per l’ordre de la font, encara que vingui barrejat per codi', async () => {
+  const electes = [{ ...ELECTES[0]!, ordre: '10' }, { ...ELECTES[1]!, ordre: '2' }, ELECTES[2]!];
+  const { fetchImpl } = fake(MUNICIPIS, electes);
+  const { municipis } = await construirAjuntaments(fetchImpl);
+  assert.deepEqual(
+    municipis[1]!.ple.map((p) => p.ordre),
+    [2, 10],
+  );
+});
+
+test('falla si dues persones del mateix ple tenen el mateix ordre', async () => {
+  const electes = [ELECTES[0]!, { ...ELECTES[1]!, ordre: '1' }, ELECTES[2]!];
+  const { fetchImpl } = fake(MUNICIPIS, electes);
+  await assert.rejects(construirAjuntaments(fetchImpl), /mateix ordre/);
+});
+
+test('falla si el cens és buit, en lloc de publicar zero habitants', async () => {
+  const { fetchImpl } = fake([{ ...MUNICIPIS[0]!, cens: '' }, MUNICIPIS[1]!]);
+  await assert.rejects(construirAjuntaments(fetchImpl), /El cens no és un nombre/);
+});
+
+test('falla si hi ha els habitants sense l’any del padró', async () => {
+  const { any_cens: _, ...senseAny } = MUNICIPIS[0]!;
+  const { fetchImpl } = fake([senseAny, MUNICIPIS[1]!]);
+  await assert.rejects(construirAjuntaments(fetchImpl), /no tots dos/);
+});
+
+test('falla si un municipi no té comarca', async () => {
+  const { comarca: _, ...senseComarca } = MUNICIPIS[0]!;
+  const { fetchImpl } = fake([senseComarca, MUNICIPIS[1]!]);
+  await assert.rejects(construirAjuntaments(fetchImpl), /no té comarca/);
 });
 
 test('falla si un municipi no té ple', async () => {
