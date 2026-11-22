@@ -27,7 +27,7 @@ Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegi
 
 ## Verificació
 
-- Executa `npm test`, `npm run typecheck` i `npm run format:check`.
+- Executa `npm test`, `npm run typecheck` i `npm run format:check`. Si toques `web/`, executa-hi també `npm run build`.
 - Prova cada canvi d'un servidor contra l'API real per stdio. Si no ho has fet, digues-ho.
 - No afirmis mai que una prova o una comprovació s'ha fet si no s'ha fet. Distingeix les proves amb dades sintètiques de les proves contra l'API real.
 - Les proves cobreixen el comportament que canvia la tasca, no la forma de la implementació.

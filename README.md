@@ -4,7 +4,7 @@
 
 **Les dades i els tràmits de l'Administració catalana, més clars i a l'abast de tothom.**
 
-[Català](#finestra-oberta) · [Castellano](#en-castellano) · [English](#in-english)
+[finestraoberta.cat](https://finestraoberta.cat) · [Català](#finestra-oberta) · [Castellano](#en-castellano) · [English](#in-english)
 
 Finestra Oberta és una iniciativa oberta per fer més fàcil relacionar-se amb la Generalitat, els ajuntaments i els organismes públics de Catalunya. Comencem connectant assistents d'IA amb les dades obertes oficials, sempre amb la font i la data de les dades.
 
@@ -79,7 +79,8 @@ npm run format       # Prettier
 
 Node executa el TypeScript directament, sense compilar. Les proves fan servir dades sintètiques amb la forma de cada API: no substitueixen una comprovació contra l'API real.
 
-- [CONTRIBUTING.md](CONTRIBUTING.md): com contribuir i com afegir un servidor.
+- [CONTRIBUTING.md](CONTRIBUTING.md): com contribuir, com proposar un canvi i com afegir un servidor.
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md): el codi de conducta del projecte.
 - [SECURITY.md](SECURITY.md): què fan els servidors amb les dades i com informar d'un problema.
 - [DESIGN.md](DESIGN.md): el sistema de disseny de la web (colors, tipografia, components i to).
 - [AGENTS.md](AGENTS.md): instruccions per als agents d'IA que hi treballen.
