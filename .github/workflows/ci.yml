@@ -54,5 +54,8 @@ jobs:
           cache: npm
           cache-dependency-path: web/package-lock.json
       - run: npm ci
+      # La web es construeix amb les dades que genera el codi d'aquesta pull request, no amb les
+      # publicades a la branca dades, que surten del codi de main i poden tenir una altra forma.
+      - run: node ../src/dades.ts ../dades
       - run: npm test
       - run: npm run build

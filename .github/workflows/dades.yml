@@ -13,6 +13,11 @@ name: Dades del Govern, del Parlament i dels ajuntaments
 on:
   schedule:
     - cron: '0 5 * * *'
+  # Quan canvia la manera de llegir les fonts, la web necessita les dades amb la forma nova, i no
+  # pot esperar a l'endemà.
+  push:
+    branches: [main]
+    paths: ['src/**', 'fonts/**']
   workflow_dispatch:
 
 permissions: {}
@@ -70,7 +75,7 @@ jobs:
         run: |
           git add -A
           # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
-          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json parlament.json ajuntaments.json; then
+          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json ajuntaments.json; then
             echo "Cap composició no ha canviat."
           else
             echo "hi-ha=true" >> "$GITHUB_OUTPUT"
