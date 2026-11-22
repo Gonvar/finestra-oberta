@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Preguntes i idees
+    url: https://github.com/Gonvar/finestra-oberta/discussions
+    about: Per a dubtes, propostes obertes i converses que encara no són una tasca concreta.
   - name: Problema de seguretat
     url: https://github.com/Gonvar/finestra-oberta/security/advisories/new
     about: Informa'n pel canal privat, no en una issue pública.

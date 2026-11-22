@@ -1,0 +1,33 @@
+name: Web
+description: Alguna cosa de finestraoberta.cat no es veu bé, no s'entén o no funciona.
+labels: [web]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No hi posis dades personals. Pots escriure en castellà o en anglès; et respondrem en català.
+  - type: input
+    id: adreca
+    attributes:
+      label: Pàgina
+      description: L'adreça de la pàgina on passa.
+    validations:
+      required: true
+  - type: textarea
+    id: que-passa
+    attributes:
+      label: Què passa
+      description: Què esperaves i què has vist. Una captura ajuda molt.
+    validations:
+      required: true
+  - type: input
+    id: dispositiu
+    attributes:
+      label: Dispositiu i navegador
+      description: Per exemple, iPhone amb Safari o ordinador amb Firefox.
+  - type: checkboxes
+    id: accessibilitat
+    attributes:
+      label: Accessibilitat
+      options:
+        - label: Afecta l'ús amb un lector de pantalla, el teclat, el zoom o el contrast.

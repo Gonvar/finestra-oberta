@@ -1,6 +1,7 @@
 name: Dades del Govern i del Parlament
 
-# Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, la desa a main.
+# Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, obre una pull request
+# que s'integra sola quan la CI passa. main està protegida i no accepta pushes directes de les Actions.
 # Si una font falla o una comprovació no quadra, src/dades.ts surt amb un error: la tasca falla i
 # GitHub ho notifica, i les dades publicades es queden com estaven.
 on:
@@ -10,6 +11,8 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
+  actions: write
 
 concurrency:
   group: dades
@@ -38,5 +41,17 @@ jobs:
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'chore(dades): actualitza el Govern i el Parlament'
-          git push
+          git switch -C "$BRANCA"
+          git commit -m "$TITOL"
+          git push --force origin "$BRANCA"
+          if [ -z "$(gh pr list --head "$BRANCA" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head "$BRANCA" --title "$TITOL" --label dades \
+              --body "Actualització automàtica des de les fonts oficials. La genera el workflow de dades."
+          fi
+          # Les pull requests obertes amb GITHUB_TOKEN no disparen la CI, però workflow_dispatch sí.
+          gh workflow run ci.yml --ref "$BRANCA"
+          gh pr merge "$BRANCA" --auto --squash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCA: dades/actualitzacio
+          TITOL: 'chore(dades): actualitza el Govern i el Parlament'
