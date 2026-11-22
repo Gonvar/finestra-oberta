@@ -1,0 +1,170 @@
+---
+import Copia from './Copia.tsx';
+import { REPO } from '../dades/portada.ts';
+
+const ordres = [
+  `git clone ${REPO}.git`,
+  'cd finestra-oberta && npm install',
+  'claude mcp add idescat -- node "$PWD/src/index.ts" idescat',
+  'claude mcp add dades-obertes -- node "$PWD/src/index.ts" dades-obertes',
+].join('\n');
+---
+
+<section class="seccio" id="ia" aria-labelledby="ia-titol">
+  <div class="bloc-ia">
+    <div class="connecta">
+      <h2 class="titol-seccio" id="ia-titol">Per a la teva IA</h2>
+      <p class="frase">
+        Amb aquestes ordres, Claude Code pot consultar les dades obertes de la Generalitat i les estadístiques de l'Idescat. Cal
+        Node.js 24.
+      </p>
+      <div class="codi">
+        <pre><code>{ordres}</code></pre>
+        <Copia client:visible text={ordres} />
+      </div>
+      <p class="altres">
+        <a href={`${REPO}#com-fer-los-servir`}>Altres servidors i clients</a>
+      </p>
+    </div>
+
+    <figure class="conversa">
+      <p class="tu">Quina comarca va tenir més morts en accidents de trànsit el 2023?</p>
+      <p class="resposta">
+        El Barcelonès, amb 26 morts en 331 accidents greus. El segueixen el Vallès Oriental, amb 19,
+        i el Baix Llobregat, amb 18.
+      </p>
+      <figcaption class="font-dada">
+        Font: <a href="https://analisi.transparenciacatalunya.cat/d/rmgc-ncpb"
+          >Departament d'Interior, Dades obertes de Catalunya</a
+        >. Dades actualitzades el 5 de desembre de 2024 i consultades el 22 de novembre de 2026. El Servei Català de Trànsit compta els morts a 30 dies en un altre conjunt, i les xifres poden ser diferents.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .bloc-ia .font-dada {
+    color: var(--ink-2);
+  }
+
+  .bloc-ia {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    border-radius: 28px;
+    background: var(--gov-tint);
+  }
+
+  @media (min-width: 900px) {
+    .bloc-ia {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 3rem;
+    }
+  }
+
+  .connecta {
+    min-width: 0;
+  }
+
+  .frase {
+    margin-top: 1rem;
+    color: var(--ink-2);
+    max-width: 30rem;
+  }
+
+  .codi {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 0.75rem 0.75rem 1rem;
+    border-radius: 12px;
+    background: var(--bg);
+  }
+
+  @media (max-width: 479px) {
+    .codi {
+      flex-direction: column;
+    }
+
+    .codi :global(.copia) {
+      align-self: flex-end;
+    }
+  }
+
+  pre {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0.5rem 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: var(--mono);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+    color: var(--ink);
+  }
+
+  .codi :global(.copia) {
+    flex: none;
+    min-height: 44px;
+    padding: 0 1.125rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--gov);
+    color: #fff;
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    cursor: pointer;
+    transition: transform var(--t-boto) var(--ease-out);
+  }
+
+  .codi :global(.copia:active) {
+    transform: scale(0.97);
+  }
+
+  .altres {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+  }
+
+  .altres a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .conversa {
+    margin: 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tu,
+  .resposta {
+    padding: 0.875rem 1.125rem;
+    border-radius: 22px;
+    font-size: 1.0625rem;
+    line-height: 1.45;
+  }
+
+  .tu {
+    align-self: flex-end;
+    max-width: 85%;
+    background: var(--gov);
+    color: #fff;
+  }
+
+  .resposta {
+    align-self: flex-start;
+    max-width: 92%;
+    background: var(--bg);
+    color: var(--ink);
+  }
+</style>
