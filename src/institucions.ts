@@ -2,7 +2,17 @@
 // src/dades.ts les desa en JSON a la branca `dades` perquè la web les pugui mostrar sense consultar les fonts.
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
-import { getJson, getText, SourceError, words, type Fetch } from './comun.ts';
+import { construirAjuntaments } from './ajuntaments.ts';
+import {
+  dia,
+  getJson,
+  getText,
+  metadades,
+  SOCRATA,
+  SourceError,
+  words,
+  type Fetch,
+} from './comun.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
 export const MAPA_ESCONS = `${PARLAMENT}/web/composicio/distribucio-escons/index.html`;
@@ -14,7 +24,6 @@ export const ESCONS = 135;
 export const fotoUrl = (id: string) => `${PARLAMENT}/apl/gimg/imatgeweb?p_mida=M&p_id=${id}`;
 export const AVIS_LEGAL = `${PARLAMENT}/pcat/serveis-parlament/avis-legal`;
 
-const SOCRATA = 'https://analisi.transparenciacatalunya.cat';
 export const ALTS_CARRECS = 'x9au-abcn';
 export const INTERVENCIONS = '7chp-hkce';
 const PRESIDENT = 'PRESIDENT DE LA GENERALITAT DE CATALUNYA';
@@ -226,11 +235,6 @@ type AltCarrec = {
 
 const lloc = (fila: AltCarrec) => fila.denominacio_lloc.replace(/\s+/g, ' ').trim();
 
-type Meta = { name: string; rowsUpdatedAt: number; attribution: string };
-const metadades = (fetchImpl: Fetch, id: string) =>
-  getJson<Meta>(fetchImpl, `${SOCRATA}/api/views/${id}.json`);
-const dia = (meta: Meta) => new Date(meta.rowsUpdatedAt * 1000).toISOString().slice(0, 10);
-
 /**
  * El nom ben escrit, de les intervencions del Govern al Parlament. La relació d'alts càrrecs
  * l'escriu en majúscules i a vegades sense accents («PANE MENA, OLGA» per «Olga Pané i Mena»), i
@@ -318,10 +322,11 @@ export async function construirGovern(fetchImpl: Fetch) {
   };
 }
 
-/** Tot el que es publica, pel nom del fitxer. El Govern primer: l'ordre de les crides es reprodueix. */
+/** Tot el que es publica, pel nom del fitxer, en un ordre fix: l'ordre de les crides es reprodueix. */
 export async function construirInstitucions(fetchImpl: Fetch, avui: string, pausaMs: number) {
   return {
     'govern.json': await construirGovern(fetchImpl),
     'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
+    'ajuntaments.json': await construirAjuntaments(fetchImpl),
   };
 }

@@ -1,6 +1,6 @@
-# El Govern i el Parlament
+# El Govern, el Parlament i els ajuntaments
 
-Les dades que canvien poc: qui forma el Govern i com es reparteixen els 135 escons del Parlament. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que canvien poc: qui forma el Govern, com es reparteixen els 135 escons del Parlament i qui forma el ple de cada ajuntament. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -64,9 +64,9 @@ git checkout "$CODI"
 npm run verifica-dades
 ```
 
-Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups i dels departaments depèn de la versió.
+Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json` i `/tmp/ara/parlament.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json` i `/tmp/ara/ajuntaments.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -100,6 +100,22 @@ Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les 
 - **Grups:** són els d'avui, que poden no coincidir amb els resultats de les eleccions.
 - **Fotos:** `foto` és l'enllaç a la foto oficial al web del Parlament, a la mida mitjana (fins a 600 px pel costat llarg). No se'n desa cap còpia. L'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) del Parlament en permet la reutilització si se'n cita la font, no se n'altera el sentit i no es presenten com una versió oficial ni avalada pel Parlament. Cal mostrar-les amb «Foto: Parlament de Catalunya». Les condicions també són al camp `fotos` del fitxer.
 - **Subgrups:** el mapa mostra els membres d'un subgrup dues vegades, una amb el grup i una altra amb el subgrup. Es comptabilitzen al grup i, a més, al subgrup.
+
+## `ajuntaments.json`
+
+- **Fonts:** totes dues són de la Secretaria de Governs Locals i de Relacions amb l'Aran (Municat), a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/).
+  - La [composició dels plens](https://analisi.transparenciacatalunya.cat/d/nm3n-3vbj) (`nm3n-3vbj`): cada persona electa de cada ajuntament, amb el càrrec, l'àrea de govern, el partit, l'ordre al ple i la data del nomenament.
+  - Les [dades generals dels ens locals](https://analisi.transparenciacatalunya.cat/d/6nei-4b44) (`6nei-4b44`): el nom del municipi, la comarca, la província, els habitants, l'any del padró i la web.
+- **Data:** `data_dades` i `data_municipis` són la data de l'última actualització de cada conjunt. La freqüència que anuncia la composició dels plens és «variable».
+- **Contingut:** tots els municipis de Catalunya, per ordre alfabètic, i de cadascun les persones del ple en l'ordre que dona la font (`ordre`). Només els ajuntaments: els consells comarcals, les diputacions i les entitats municipals descentralitzades queden fora pel tipus d'ens que dona la font, no per qui les forma.
+- **Codi:** `codi` són les sis primeres xifres del codi de Municat, el codi del municipi de l'INE amb el dígit de control, el mateix que fa servir l'Idescat. És el que lliga les dues fonts.
+- **Noms, càrrecs i partits:** tal com els escriu la font, també quan són en majúscules. Tots els municipis i totes les persones tenen els mateixos camps. Si la font no en dona un (els habitants, la web, o el nom, el càrrec, l'àrea, el partit o la data d'una persona), hi és amb `null`, igual per a tothom.
+- **Comprovacions:**
+  - Cada municipi del registre ha de tenir ple, i cada ple ha de ser d'un municipi del registre.
+  - Un municipi només pot sortir una vegada al registre, i un codi no pot correspondre a dos ajuntaments.
+  - Cada codi ha de tenir deu xifres, i els habitants, l'any i l'ordre han de ser nombres. Un municipi no pot tenir els habitants sense l'any del padró, ni al revés.
+  - Cada municipi ha de tenir nom, comarca i província, i dues persones del mateix ple no poden tenir el mateix ordre.
+- **Si falla:** com que els ajuntaments es generen amb el Govern i el Parlament, una comprovació que falla també atura l'actualització del Govern i el Parlament fins que es corregeix. És el mateix que passa avui entre el Govern i el Parlament.
 
 ## Pendent
 
