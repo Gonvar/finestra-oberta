@@ -4,7 +4,7 @@
 
 ## Verificació
 
-<!-- Les ordres que has executat i el resultat, i les crides contra l'API real. Distingeix les proves amb dades sintètiques de les proves reals. No diguis que has fet una comprovació que no has fet. -->
+<!-- Les ordres que has executat i el resultat, i les crides contra l'API real. Distingeix les proves amb dades sintètiques de les proves reals. Si toques la web, afegeix captures d'abans i de després, al mòbil i a l'escriptori. No diguis que has fet una comprovació que no has fet. -->
 
 ## Impacte
 
