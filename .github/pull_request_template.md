@@ -16,6 +16,16 @@
 - [ ] Cap text, ordre, color ni resum afavoreix o perjudica cap partit, grup, persona o ideologia.
 - [ ] Si canvia `fonts/perfils-govern.json`: s'ha generat amb el fragment de docs/institucions.md, sense cap retoc més que Prettier, i dic quan.
 
+## Senzillesa
+
+<!-- Vegeu DESIGN.md §1.1. Només si la pull request toca la web; si no, esborra aquesta secció. -->
+
+- [ ] Una persona que no sap com funciona l'Administració entén cada pàgina a la primera.
+- [ ] Cada terme tècnic s'explica i cada frase és tan curta com pot.
+- [ ] Cada element respon una pregunta útil.
+- [ ] El que és visual ajuda a entendre una dada.
+- [ ] Funciona al mòbil, amb el teclat, amb un lector de pantalla i amb el text ampliat al 200 %, i compleix DESIGN.md §5.
+
 ## Impacte
 
 <!-- Canvis en les eines, les instruccions o les dades que reben els assistents, i limitacions conegudes. Esborra aquesta secció si no cal. -->
