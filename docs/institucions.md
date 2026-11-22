@@ -36,25 +36,24 @@ govern.cat no respon als scripts: la seva API, al darrere de CloudFront, torna 4
 
    ```js
    const r = await (await fetch('/gov/api/v1/consell-executiu?size=100')).json();
-   copy(
-     JSON.stringify(
-       {
-         consultat: new Date().toISOString().slice(0, 10),
-         total: r.totalElements,
-         fitxes: r.content.map((f) => ({
-           nom: f.consellerIdioma.nom,
-           carrec: f.consellerIdioma.carrec,
-           fotos: f.audiovisual.filter((a) => a.tipusImatge === 1).map((a) => a.data),
-           cv: f.consellerIdioma.descripcioCV,
-         })),
-       },
-       null,
-       2,
-     ),
-   );
+   const fitxes = r.content.map((f) => ({
+     nom: f.consellerIdioma.nom,
+     carrec: f.consellerIdioma.carrec,
+     fotos: f.audiovisual.filter((a) => a.tipusImatge === 1).map((a) => a.data),
+     cv: f.consellerIdioma.descripcioCV,
+   }));
+   const desats = {
+     consultat: new Date().toISOString().slice(0, 10),
+     total: r.totalElements,
+     fitxes,
+   };
+   const enllac = document.createElement('a');
+   enllac.download = 'perfils-govern.json';
+   enllac.href = URL.createObjectURL(new Blob([JSON.stringify(desats, null, 2)]));
+   enllac.click();
    ```
 
-2. Desa el que s'ha copiat a `dades/perfils-govern.json` (al Mac, `pbpaste > dades/perfils-govern.json`) i executa `npm run dades`.
+2. Mou el fitxer `perfils-govern.json` que s'ha descarregat a `dades/` i executa `npm run dades`. (La consola de govern.cat no té la funció `copy`, i per això es descarrega.)
 
 Només es copien aquests quatre camps. L'API en dona d'altres, com qui va publicar cada fitxa, que no s'han de desar.
 
