@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <title>Distribució d'escons - Parlament de Catalunya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="capgen" content="p4**24422*15/10/2025 14:01:21">
+    
+    <meta name="googlebot" content="noarchive">
+    
+    <meta name="author" content="Parlament de Catalunya">
+    <meta name="description" content="Composició del Parlament de Catalunya">
+    <meta name="keywords" content="parlament, catalunya, parlament de catalunya, política, política catalana, legislació, legislació catalana, diputat, diputada, llei, ple, comissions, administració, grup parlamentari">
+    <meta name="ICBM" content="41.3879700,2.1891760" />
+    <meta name="geo.position" content="41.3879700;2.1891760">
+    <meta name="geo.region" content="ES-CT">
+    <meta name="geo.placename" content="Barcelona">
+    <meta name="locality" content="Barcelona">
+    <meta name="owner" content="Parlament de Catalunya">
+    <meta name="copyright" content="&copy; Parlament de Catalunya">
+    <meta property="og:site_name" content="Parlament de Catalunya" />
+    <meta property="og:type" content="government" />
+    <meta property="og:locale" content="ca_ES" />
+    <meta property="og:title" content="Distribució d'escons" />
+    <meta property="og:description" content="Composició del Parlament de Catalunya" />
+    
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:image" content="https://www.parlament.cat/imatges/logos/logo_pcat_130x82.png" />
+    <meta property="og:image" content="/imatges/logos/logo_pcat_228x228.png">
+    <meta property="og:image:type" content="image/jpeg"/>
+    <meta property="twitter:site"  content="@parlament_cat" />
+    <meta name="twitter:creator" content="@parlament_cat">
+    <meta name="twitter:title" content="Distribució d'escons">
+    <meta name="twitter:description" content="Composició del Parlament de Catalunya">
+    <meta name="article:author" content="Parlament de Catalunya">
+    <meta name="article:publisher" content="https://www.facebook.com/parlamentcat">
+    <meta property="fb:app_id" content="220867610406">
+    <link rel="shortcut icon" href="/imatges/logos/logo.ico?v=2">
+    <link rel="icon" href="/imatges/logos/logo.ico?v=2">
+    <link rel="apple-touch-icon" href="/imatges/logos/logo_pcat_57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/imatges/logos/logo_pcat_72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/imatges/logos/logo_pcat_114x114.png">
+    <link rel="apple-touch-icon-precomposed" href="/imatges/logos/logo_pcat_114x114.png">
+    <link rel="stylesheet" href="https://www.parlament.cat/js/menu/style.css" />
+    <meta name="application-name" content="Parlament de Catalunya"/>
+    <meta name="msapplication-TileColor" content="#E42219"/>
+    <meta name="msapplication-TileImage" content="/imatges/logos/logo_pcat_144x144.png"/>
+    <meta name="google-translate-customization" content="d4d1c16226243b1d-c8a3835fc817605d-g18956c4e5dd808ee-17" />
+    <link rel="stylesheet" type="text/css" href="https://www.parlament.cat/css/pagina/versio_imprimible.css" media="print">
+	  <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="https://www.parlament.cat/css/bugs_ie_7.css" media="screen"><![endif]-->
+	  <!--[if IE]><link rel="stylesheet" type="text/css" href="https://www.parlament.cat/css/bugs_ie_tot.css" media="screen"><![endif]-->
+	  <script src="https://www.parlament.cat/js/portal.js" type="text/javascript"></script>
+	  <script type="text/javascript" src="https://www.parlament.cat/js/jquery/jquery.js" ></script>
+        <link rel="stylesheet" type="text/css" href="https://www.parlament.cat/css/dist_escons.css">
+        <script type="text/javascript" src="https://www.parlament.cat/js/dist_escons.js" ></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-HRTHBEW15D"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-HRTHBEW15D'); </script>
+    <link rel="stylesheet" href="https://www.parlament.cat/css/pcat_pagina.css" type="text/css">
+       
+          <script type="text/javascript" src="/js/google_translate_posicionar_head.js"></script>
+        <script type="text/javascript">function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'ca', autoDisplay: false}, 'google_translate_element'); }
+        </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script async="async" data-insuit-id="boto_insuit" type="text/javascript" src="https://www--parlament--cat.insuit.net/i4tservice/insuit-app.js"></script></head>
+  <body id="pcat" >
+    <div class="ocultar" aria-hidden="false"> 
+      <ul> 
+        <li><a href="#navbar" title="Aneu al menú principal">Aneu al menú principal</a></li> 
+        <li><a href="#main" title="Aneu al contingut de la pàgina">Aneu al contingut de la pàgina</a></li> 
+        <li><a href="#footer-info" title="Aneu al peu de la pàgina">Aneu al peu de la pàgina</a></li> 
+      </ul> 
+    </div>
+<div id="pcat-topbar" class="h-12 bg-black text-white w-full"></div>
+<div id="pcat-hero" data-pcat-hero-overlay data-pcat-hero-defer></div><table width="100%" cellspacing="0" cellpadding="0" border="0" summary=""> <tbody> <td valign="top" style="width:1%" id="cs_columna_esquerra" name="cs_columna_esquerra"> <a class="ocultar" name="contingut_esquerra"></a> </td> <td valign="top" style="width:100%" id="cs_area_continguts" name="cs_area_continguts"> <div class="separador_capcalera"></div> <a class="ocultar" name="contingut_centre"></a> <div class="ccentral"> 
+
+    <div class="ccentral">
+        <h1 class="titol_pagina"><span>Distribució d'escons</span></h1>
+    </div>
+    <div style="position:relative;height:600px;margin-left: auto;display: block;margin-right: auto;width: 850px;touch-action: pinch-zoom">        
+        <canvas id="canvasEscons" width="950" height="525" style="border:1px solid #d3d3d3;position: absolute; left: 0px; top: 0px; z-index: 0;">
+            El navegador no es compatible amb HTML5.
+        </canvas>
+
+        <canvas id="canvasOverlay" width="950" height="525" style="border:1px solid #d3d3d3;position: absolute; left: 0px; top: 0px; z-index: 1;">
+            El navegador no es compatible amb HTML5.
+        </canvas>
+
+        <div id="coord" style="border:1px solid #d3d3d3;position: absolute; left: 0; top: 0; z-index: 1;"> </div> 
+    </div>
+    <script src="/js/mapa-escons.js"></script>
+    <script>
+    window.onload = 
+         function() {
+           
+            afegirLlegenda("#C70A08", "GP PSC-Units");
+        
+            afegirLlegenda("#18BEA8", "GP Junts");
+        
+            afegirLlegenda("#fdb94d", "GP ERC");
+        
+            afegirLlegenda("grey", "GP PPC");
+        
+            afegirLlegenda("#7EC521", "GP VOX");
+        
+            afegirLlegenda("#C65777", "GP Comuns");
+        
+            afegirLlegenda("#FFFC0A", "GP CUP-DT");
+        
+            afegirLlegenda("#0D71BD", "G Mixt");
+        
+            afegirLlegenda("#A3E6F7", "No Adscrits");
+        
+            afegirEsco(midaEsco, "#7EC521", "104", "I. Sr. Javier Ramírez Gutiérrez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799060 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2550");
+        
+            afegirEsco(midaEsco, "#7EC521", "120", "I. Sr. Alberto Tarradas Paneque", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=705763 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2280");
+        
+            afegirEsco(midaEsco, "#7EC521", "108", "I. Sr. Joan Garriga Doménech", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=663182 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2275");
+        
+            afegirEsco(midaEsco, "#7EC521", "105", "I. Sr. Manuel Jesús Acosta Elías", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=659464 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2279");
+        
+            afegirEsco(midaEsco, "#7EC521", "109", "I. Sr. Ignacio Garriga Vaz de Concicao", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=659130 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2274");
+        
+            afegirEsco(midaEsco, "#7EC521", "119", "I. Sr. Rafael Villafranca Mercé", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=804127 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2549");
+        
+            afegirEsco(midaEsco, "#7EC521", "107", "I. Sr. Sergio Macián de Greef", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=663254 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2283");
+        
+            afegirEsco(midaEsco, "#7EC521", "121", "I. Sr. Andrés Bello Sanz", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=659577 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2278");
+        
+            afegirEsco(midaEsco, "#7EC521", "122", "I. Sra. Júlia Calvet Puig", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798492 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2551");
+        
+            afegirEsco(midaEsco, "#7EC521", "103", "I. Sra. Mónica Lora Cisquer", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=659192 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2277");
+        
+            afegirEsco(midaEsco, "#7EC521", "106", "I. Sra. María Elisa García Fuster", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=710191 ", "Grup Parlamentari de VOX en Cataluña", "/web/composicio/diputats-fitxa/index.html?p_codi=2276");
+        
+            afegirEsco(midaEsco, "#C70A08", "133", "I. Sr. David Pérez Ibáñez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=660310 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=756");
+        
+            afegirEsco(midaEsco, "#C70A08", "062", "I. Sr. Joaquim Paladella Curto", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821772 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1007");
+        
+            afegirEsco(midaEsco, "#C70A08", "013", "I. Sr. Ferran Pedret i Santos", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=831006 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1602");
+        
+            afegirEsco(midaEsco, "#C70A08", "015", "I. Sr. Jordi Riba Colom", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821792 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2252");
+        
+            afegirEsco(midaEsco, "#C70A08", "041", "I. Sr. Guillem Sánchez Prat", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821804 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2535");
+        
+            afegirEsco(midaEsco, "#C70A08", "101", "I. Sr. Christian Soriano García", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821817 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2536");
+        
+            afegirEsco(midaEsco, "#C70A08", "038", "I. Sr. David González Chanca", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821717 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2270");
+        
+            afegirEsco(midaEsco, "#C70A08", "013", "I. Sr. Ferran Pedret i Santos", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=831006 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1602");
+        
+            afegirEsco(midaEsco, "#C70A08", "036", "I. Sr. Alberto Bondesio Martínez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821644 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2528");
+        
+            afegirEsco(midaEsco, "#C70A08", "039", "I. Sr. Guillem Mateo Sellas", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821754 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2582");
+        
+            afegirEsco(midaEsco, "#C70A08", "043", "I. Sr. Manel Ezquerra Tomàs", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821674 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2520");
+        
+            afegirEsco(midaEsco, "#C70A08", "019", "I. Sr. Cristòfol Gimeno Iglesias", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821710 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1691");
+        
+            afegirEsco(midaEsco, "#C70A08", "081", "I. Sr. Ernesto Carrión Sablich", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821656 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2469");
+        
+            afegirEsco(midaEsco, "#C70A08", "064", "I. Sr. Francesc Jesús Becerra Ramírez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821638 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2527");
+        
+            afegirEsco(midaEsco, "#C70A08", "015", "I. Sr. Jordi Riba Colom", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821792 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2252");
+        
+            afegirEsco(midaEsco, "#C70A08", "115", "I. Sr. José Ignacio Aparicio Ciria", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821587 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2519");
+        
+            afegirEsco(midaEsco, "#C70A08", "099", "I. Sr. Antoni Poyato Rodríguez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821786 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2525");
+        
+            afegirEsco(midaEsco, "#C70A08", "083", "I. Sr. Mario García Gómez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821698 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2249");
+        
+            afegirEsco(midaEsco, "#C70A08", "061", "I. Sra. Conchi Jiménez Cruz", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821736 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2521");
+        
+            afegirEsco(midaEsco, "#C70A08", "129", "I. Sra. Rosa Maria Ibarra Ollé", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821723 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1885");
+        
+            afegirEsco(midaEsco, "#C70A08", "014", "I. Sra. Elena Díaz Torrevejano", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821668 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2256");
+        
+            afegirEsco(midaEsco, "#C70A08", "114", "I. Sra. Gisela Navarro Fuster", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821760 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2583");
+        
+            afegirEsco(midaEsco, "#C70A08", "116", "I. Sra. Núria Navarro Hurtado", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821766 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2584");
+        
+            afegirEsco(midaEsco, "#C70A08", "020", "I. Sra. Beatriz Silva Gallardo", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821810 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2015");
+        
+            afegirEsco(midaEsco, "#C70A08", "016", "I. Sra. Sara Jaurrieta Guarner", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821730 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2532");
+        
+            afegirEsco(midaEsco, "#C70A08", "018", "I. Sra. Eva Candela López", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821650 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2248");
+        
+            afegirEsco(midaEsco, "#C70A08", "017", "I. Sra. Rocio Garcia Pérez", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821704 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2250");
+        
+            afegirEsco(midaEsco, "#C70A08", "040", "I. Sra. Mónica Ríos García", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821798 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2253");
+        
+            afegirEsco(midaEsco, "#C70A08", "082", "I. Sra. Andrea Zapata Alfonso", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821823 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2537");
+        
+            afegirEsco(midaEsco, "#C70A08", "014", "I. Sra. Elena Díaz Torrevejano", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821668 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2256");
+        
+            afegirEsco(midaEsco, "#C70A08", "102", "I. Sra. Natàlia Fabian Corbacho", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=938808 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2530");
+        
+            afegirEsco(midaEsco, "#C70A08", "135", "I. Sra. Judit Alcalá González", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821577 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2246");
+        
+            afegirEsco(midaEsco, "#C70A08", "063", "I. Sra. Neus Comes Pon", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821662 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2529");
+        
+            afegirEsco(midaEsco, "#C70A08", "100", "I. Sra. Susana Martínez Heredia", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821742 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2533");
+        
+            afegirEsco(midaEsco, "#C70A08", "037", "I. Sra. Imma Ferret Raventós", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821692 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2522");
+        
+            afegirEsco(midaEsco, "#C70A08", "016", "I. Sra. Sara Jaurrieta Guarner", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821730 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2532");
+        
+            afegirEsco(midaEsco, "#C70A08", "044", "I. Sra. Ivana Martínez Valverde", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=967366 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2534");
+        
+            afegirEsco(midaEsco, "#C70A08", "065", "I. Sra. Lídia Ferré Ferré", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821686 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2531");
+        
+            afegirEsco(midaEsco, "#C70A08", "042", "I. Sra. Sabrin Araibi Marachi", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=821632 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2526");
+        
+            afegirEsco(midaEsco, "#C70A08", "145", "M. H. Sr. Salvador Illa Roca", "President de la Generalitat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=830994 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2255");
+        
+            afegirEsco(midaEsco, "#C70A08", "145", "M. H. Sr. Salvador Illa Roca", "President de la Generalitat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=830994 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2255");
+        
+            afegirEsco(midaEsco, "#C70A08", "149", "H. Sr. Ramon Espadaler Parcerisas", "Conseller", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=794000 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=117");
+        
+            afegirEsco(midaEsco, "#C70A08", "139", "H. Sr. Òscar Ordeig i Molist", "Conseller", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=794083 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1685");
+        
+            afegirEsco(midaEsco, "#C70A08", "142", "H. Sra. Eva M. Menor Cantador", "Consellera", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=831000 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2523");
+        
+            afegirEsco(midaEsco, "#C70A08", "152", "H. Sra. Esther Niubó Cidoncha", "Consellera", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=663261 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1877");
+        
+            afegirEsco(midaEsco, "#C70A08", "147", "H. Sra. Alícia Romero Llano", "Consellera", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793937 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1603");
+        
+            afegirEsco(midaEsco, "#C70A08", "152", "H. Sra. Esther Niubó Cidoncha", "Consellera", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=663261 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1877");
+        
+            afegirEsco(midaEsco, "#C70A08", "147", "H. Sra. Alícia Romero Llano", "Consellera", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793937 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1603");
+        
+            afegirEsco(midaEsco, "#C70A08", "152", "H. Sra. Esther Niubó Cidoncha", "Consellera", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=663261 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=1877");
+        
+            afegirEsco(midaEsco, "#C70A08", "150", "H. Sra. Silvia Paneque Sureda", "Consellera", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=659478 ", "Grup Parlamentari Socialistes i Units per Avançar", "/web/composicio/diputats-fitxa/index.html?p_codi=2251");
+        
+            afegirEsco(midaEsco, "#fdb94d", "057", "I. Sr. Josep M. Jové Lladó", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=705553 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1985");
+        
+            afegirEsco(midaEsco, "#fdb94d", "059", "I. Sr. Jordi Albert i Caballero", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840880 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1971");
+        
+            afegirEsco(midaEsco, "#fdb94d", "110", "I. Sr. Oriol López Mayolas", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=886241 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2655");
+        
+            afegirEsco(midaEsco, "#fdb94d", "080", "I. Sr. Albert Salvadó Fernàndez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792824 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2515");
+        
+            afegirEsco(midaEsco, "#fdb94d", "077", "I. Sra. Najat Driouech Ben Moussa", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840918 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1976");
+        
+            afegirEsco(midaEsco, "#fdb94d", "076", "I. Sra. Marta Vilalta i Torres", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=705776 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1614");
+        
+            afegirEsco(midaEsco, "#fdb94d", "131", "I. Sra. Raquel Sans Guerra", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792814 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2133");
+        
+            afegirEsco(midaEsco, "#fdb94d", "094", "I. Sra. Mar Besses Casanovas", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840899 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2518");
+        
+            afegirEsco(midaEsco, "#fdb94d", "098", "I. Sra. Montse Bergés i Saura", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792839 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2514");
+        
+            afegirEsco(midaEsco, "#fdb94d", "097", "I. Sra. Irene Aragonès Gràcia", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840887 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2259");
+        
+            afegirEsco(midaEsco, "#fdb94d", "113", "I. Sra. Alba Camps i Roca", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=929933 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2312");
+        
+            afegirEsco(midaEsco, "#fdb94d", "060", "I. Sra. Ana Balsera i Marín", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840893 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2241");
+        
+            afegirEsco(midaEsco, "#fdb94d", "095", "I. Sra. Lluïsa Llop Fernàndez", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=960720 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2127");
+        
+            afegirEsco(midaEsco, "#fdb94d", "060", "I. Sra. Ana Balsera i Marín", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840893 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2241");
+        
+            afegirEsco(midaEsco, "#fdb94d", "076", "I. Sra. Marta Vilalta i Torres", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=705776 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1614");
+        
+            afegirEsco(midaEsco, "#fdb94d", "078", "I. Sra. Laia Cañigueral Olivé", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840912 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2517");
+        
+            afegirEsco(midaEsco, "#fdb94d", "079", "H. Sr. Joan Ignasi Elena Garcia", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840925 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=115");
+        
+            afegirEsco(midaEsco, "#fdb94d", "134", "H. Sr. Juli Fernàndez Olivares", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840932 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2240");
+        
+            afegirEsco(midaEsco, "#fdb94d", "096", "H. Sr. Carles Campuzano i Canadés", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=840905 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=92");
+        
+            afegirEsco(midaEsco, "#fdb94d", "058", "H. Sra. Ester Capella i Farré", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792819 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1669");
+        
+            afegirEsco(midaEsco, "#fdb94d", "058", "H. Sra. Ester Capella i Farré", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792819 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1669");
+        
+            afegirEsco(midaEsco, "#fdb94d", "111", "Il·lm. Sr. Josep Vidal Bringué", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793162 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2513");
+        
+            afegirEsco(midaEsco, "#fdb94d", "112", "Il·lm. Sr. Jordi Viñas i Xifra", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792809 ", "Grup Parlamentari d'Esquerra Republicana de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2516");
+        
+            afegirEsco(midaEsco, "#0D71BD", "086", "I. Sra. Rosa Maria Soberana i Bonet", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=881673 ", "Grup Mixt", "/web/composicio/diputats-fitxa/index.html?p_codi=2602");
+        
+            afegirEsco(midaEsco, "#0D71BD", "085", "Il·lma Sra Sílvia Orriols Serra", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880827 ", "Grup Mixt", "/web/composicio/diputats-fitxa/index.html?p_codi=2510");
+        
+            afegirEsco(midaEsco, "#FFFC0A", "126", "Sr. Dani Cornellà Detrell", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792757 ", "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra", "/web/composicio/diputats-fitxa/index.html?p_codi=2264");
+        
+            afegirEsco(midaEsco, "#FFFC0A", "125", "Sr. Xavier Pellicer Pareja", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=883204 ", "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra", "/web/composicio/diputats-fitxa/index.html?p_codi=2262");
+        
+            afegirEsco(midaEsco, "#FFFC0A", "124", "Sra. Laura Fernández Vega", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798595 ", "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra", "/web/composicio/diputats-fitxa/index.html?p_codi=2485");
+        
+            afegirEsco(midaEsco, "#FFFC0A", "123", "Sra. Maria Pilar Castillejo Medina", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798576 ", "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra", "/web/composicio/diputats-fitxa/index.html?p_codi=1921");
+        
+            afegirEsco(midaEsco, "#FFFC0A", "123", "Sra. Maria Pilar Castillejo Medina", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798576 ", "Grup Parlamentari de la Candidatura d'Unitat Popular - Defensem la Terra", "/web/composicio/diputats-fitxa/index.html?p_codi=1921");
+        
+            afegirEsco(midaEsco, "grey", "090", "I. Sr. Alberto Villagrasa Gil", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880842 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1891");
+        
+            afegirEsco(midaEsco, "grey", "075", "I. Sr. Alejandro Fernández Álvarez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=489214 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1061");
+        
+            afegirEsco(midaEsco, "grey", "073", "I. Sr. Juan Fernández Benítez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=803594 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2557");
+        
+            afegirEsco(midaEsco, "grey", "089", "I. Sr. Cristian Escribano Ramírez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=804391 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2558");
+        
+            afegirEsco(midaEsco, "grey", "070", "I. Sr. Hugo Manchón García", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=803618 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2559");
+        
+            afegirEsco(midaEsco, "grey", "088", "I. Sr. Pau Ferran Navarro", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=801683 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2565");
+        
+            afegirEsco(midaEsco, "grey", "073", "I. Sr. Juan Fernández Benítez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=803594 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2557");
+        
+            afegirEsco(midaEsco, "grey", "093", "I. Sr. Jaume Veray Cama", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799046 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2553");
+        
+            afegirEsco(midaEsco, "grey", "087", "I. Sra. M. Belén Pajares Ribas", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=847859 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=965");
+        
+            afegirEsco(midaEsco, "grey", "069", "I. Sra. Eva García Rodríguez", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880834 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=937");
+        
+            afegirEsco(midaEsco, "grey", "071", "I. Sra. Àngels Esteller Ruedas", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880850 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=725");
+        
+            afegirEsco(midaEsco, "grey", "068", "I. Sra. Míriam Casanova Domènech", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798923 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2554");
+        
+            afegirEsco(midaEsco, "grey", "092", "I. Sra. Montserrat Berenguer Messeguer", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799432 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2556");
+        
+            afegirEsco(midaEsco, "grey", "091", "Excm. Sr. Pere Lluís Huguet Tous", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799053 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=2552");
+        
+            afegirEsco(midaEsco, "grey", "074", "Excma. Sra Lorena Roldán Suárez", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880858 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1875");
+        
+            afegirEsco(midaEsco, "grey", "074", "Excma. Sra Lorena Roldán Suárez", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880858 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1875");
+        
+            afegirEsco(midaEsco, "grey", "072", "Il·lm. Sr. Manuel Reyes López", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=649975 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1644");
+        
+            afegirEsco(midaEsco, "grey", "072", "Il·lm. Sr. Manuel Reyes López", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=649975 ", "Grup Parlamentari del Partit Popular de Catalunya", "/web/composicio/diputats-fitxa/index.html?p_codi=1644");
+        
+            afegirEsco(midaEsco, "#18BEA8", "034", "I. Sr. Agustí Colomines i Companys", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799476 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2538");
+        
+            afegirEsco(midaEsco, "#18BEA8", "010", "I. Sr. Salvador Vergés i Tejero", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799600 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2233");
+        
+            afegirEsco(midaEsco, "#18BEA8", "055", "I. Sr. Joan Canadell i Bruguera", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799463 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2228");
+        
+            afegirEsco(midaEsco, "#18BEA8", "047", "I. Sr. Jordi Munell i Garcia", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799532 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=1832");
+        
+            afegirEsco(midaEsco, "#18BEA8", "009", "I. Sr. Josep Rius i Alcaraz", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793864 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2040");
+        
+            afegirEsco(midaEsco, "#18BEA8", "054", "I. Sr. Francesc de Dalmases i Thió", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799482 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2031");
+        
+            afegirEsco(midaEsco, "#18BEA8", "035", "I. Sr. Albert Batet i Canadell", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=810481 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=1573");
+        
+            afegirEsco(midaEsco, "#18BEA8", "003", "I. Sr. Ignasi Prat i Sarri", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799557 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2539");
+        
+            afegirEsco(midaEsco, "#18BEA8", "028", "I. Sr. Toni Castellà i Clavé", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799469 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=720");
+        
+            afegirEsco(midaEsco, "#18BEA8", "001", "I. Sr. Isaac Padrós i Suarez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799545 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2545");
+        
+            afegirEsco(midaEsco, "#18BEA8", "025", "I. Sr. Jordi Fàbrega i Sabaté", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799501 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2236");
+        
+            afegirEsco(midaEsco, "#18BEA8", "035", "I. Sr. Albert Batet i Canadell", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=810481 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=1573");
+        
+            afegirEsco(midaEsco, "#18BEA8", "009", "I. Sr. Josep Rius i Alcaraz", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793864 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2040");
+        
+            afegirEsco(midaEsco, "#18BEA8", "004", "I. Sr. Jordi Bertran i Luengo", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798521 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2541");
+        
+            afegirEsco(midaEsco, "#18BEA8", "010", "I. Sr. Salvador Vergés i Tejero", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799600 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2233");
+        
+            afegirEsco(midaEsco, "#18BEA8", "130", "I. Sra. Glòria Freixa i Vilardell", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=892494 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2187");
+        
+            afegirEsco(midaEsco, "#18BEA8", "033", "I. Sra. Mercè Esteve i Pi", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799495 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2231");
+        
+            afegirEsco(midaEsco, "#18BEA8", "051", "I. Sra. Rosa Jové i Montañola", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=933059 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2547");
+        
+            afegirEsco(midaEsco, "#18BEA8", "005", "I. Sra. Judith Toronjo i Nofuentes", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799594 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2232");
+        
+            afegirEsco(midaEsco, "#18BEA8", "029", "I. Sra. Montse Ortiz i Martí", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799539 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=1640");
+        
+            afegirEsco(midaEsco, "#18BEA8", "011", "I. Sra. Mònica Sales de la Cruz", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799575 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2036");
+        
+            afegirEsco(midaEsco, "#18BEA8", "053", "I. Sra. Irene Negre i Estorach", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793858 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2313");
+        
+            afegirEsco(midaEsco, "#18BEA8", "006", "I. Sra. Ennatu Domingo i Soler", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799489 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2548");
+        
+            afegirEsco(midaEsco, "#18BEA8", "049", "I. Sra. Laura Martínez Portell", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=885944 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2651");
+        
+            afegirEsco(midaEsco, "#18BEA8", "048", "I. Sra. Mònica Gallardo Montornès", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=980367 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2699");
+        
+            afegirEsco(midaEsco, "#18BEA8", "031", "I. Sra. Sònia Martínez i Juli", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799526 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2544");
+        
+            afegirEsco(midaEsco, "#18BEA8", "027", "I. Sra. Noemí Nieto i Fumanal", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799328 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2540");
+        
+            afegirEsco(midaEsco, "#18BEA8", "052", "I. Sra. M. Àngels Planas i Crous", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799551 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2543");
+        
+            afegirEsco(midaEsco, "#18BEA8", "011", "I. Sra. Mònica Sales de la Cruz", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799575 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2036");
+        
+            afegirEsco(midaEsco, "#18BEA8", "002", "I. Sra. Carme Renedo i Puig", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799563 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2546");
+        
+            afegirEsco(midaEsco, "#18BEA8", "050", "I. Sra. Ariadna Urroz Segura", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=875813 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2458");
+        
+            afegirEsco(midaEsco, "#18BEA8", "012", "M. H. Sr. Carles Puigdemont i Casamajó", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=799066 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=1176");
+        
+            afegirEsco(midaEsco, "#18BEA8", "132", "M. H. Sr. Josep Rull i Andreu", "President del Parlament", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=802343 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=683");
+        
+            afegirEsco(midaEsco, "#18BEA8", "007", "M. H. Sra. Anna Erra i Solà", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793845 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2125");
+        
+            afegirEsco(midaEsco, "#18BEA8", "056", "H. Sr. Lluís Puig Gordi", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798614 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=1961");
+        
+            afegirEsco(midaEsco, "#18BEA8", "032", "Il·lm. Sr. Joaquim Calatayud Casals", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=794349 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2310");
+        
+            afegirEsco(midaEsco, "#18BEA8", "008", "Il·lma Sra Jeannine Abella i Chica", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798620 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2334");
+        
+            afegirEsco(midaEsco, "#18BEA8", "026", "Il·lma Sra Maite Selva i Huertas", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=838374 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2358");
+        
+            afegirEsco(midaEsco, "#18BEA8", "030", "Il·lma Sra Anna Feliu i Moragues", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793839 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2237");
+        
+            afegirEsco(midaEsco, "#18BEA8", "008", "Il·lma Sra Jeannine Abella i Chica", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798620 ", "Grup Parlamentari de Junts", "/web/composicio/diputats-fitxa/index.html?p_codi=2334");
+        
+            afegirEsco(midaEsco, "#C65777", "046", "I. Sr. Andrés Garcia Berrio", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793004 ", "Grup Parlamentari Comuns", "/web/composicio/diputats-fitxa/index.html?p_codi=2512");
+        
+            afegirEsco(midaEsco, "#C65777", "021", "I. Sr. Lluís Mijoler Martínez", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=793010 ", "Grup Parlamentari Comuns", "/web/composicio/diputats-fitxa/index.html?p_codi=2511");
+        
+            afegirEsco(midaEsco, "#C65777", "023", "I. Sr. David Cid Colomer", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792732 ", "Grup Parlamentari Comuns", "/web/composicio/diputats-fitxa/index.html?p_codi=1078");
+        
+            afegirEsco(midaEsco, "#C65777", "022", "I. Sra. Susanna Segovia Sánchez", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880491 ", "Grup Parlamentari Comuns", "/web/composicio/diputats-fitxa/index.html?p_codi=2012");
+        
+            afegirEsco(midaEsco, "#C65777", "045", "I. Sra. Núria Lozano Montoya", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880478 ", "Grup Parlamentari Comuns", "/web/composicio/diputats-fitxa/index.html?p_codi=2447");
+        
+            afegirEsco(midaEsco, "#C65777", "024", "I. Sra. Jéssica Albiach Satorres", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=880616 ", "Grup Parlamentari Comuns", "/web/composicio/diputats-fitxa/index.html?p_codi=1850");
+        
+            afegirEsco(midaEsco, "#FFFC0A", "126", "Sr. Dani Cornellà Detrell", "Diputat", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=792757 ", "Subgrup Parlamentari de la Candidatura d'Unitat Popular - Crida Constituent", "/web/composicio/diputats-fitxa/index.html?p_codi=2264");
+        
+            afegirEsco(midaEsco, "#FFFC0A", "123", "Sra. Maria Pilar Castillejo Medina", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798576 ", "Subgrup Parlamentari de la Candidatura d'Unitat Popular - Crida Constituent", "/web/composicio/diputats-fitxa/index.html?p_codi=1921");
+        
+            afegirEsco(midaEsco, "#FFFC0A", "124", "Sra. Laura Fernández Vega", "Diputada", "", "https://www.parlament.cat/apl/gimg/imatgeweb?p_mida=B&p_id=798595 ", "Subgrup Parlamentari de la Candidatura d'Unitat Popular - Crida Constituent", "/web/composicio/diputats-fitxa/index.html?p_codi=2485");
+        
+           inicialitzar(); 
+        };
+    </script>
+     </td> <td valign="top" style="width:1%" id="cs_columna_dreta" name="cs_columna_dreta"> <div class="separador_col_dreta"></div> <a class="ocultar" name="contingut_dreta"></a> </td> </tbody> </table><footer><div id="pcat-footer"></div></footer><!--endpage-->
+<div class="ocultar" aria-hidden="false"> 
+      <ul> 
+        <li><a href="#navbar" title="Aneu al menú principal">Aneu al menú principal</a></li> 
+        <li><a href="#main" title="Aneu al contingut de la pàgina">Aneu al contingut de la pàgina</a></li> 
+        <li><a href="#footer-info" title="Aneu al peu de la pàgina">Aneu al peu de la pàgina</a></li> 
+      </ul> 
+    </div>
+<div class="overlay"></div>
+<script type="module" src="https://www.parlament.cat/js/menu/pcat-menu-init.js"></script>
+<script src="/js/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/royalslider/jquery-1.8.3.min.js"></script>
+<script src="/js/royalslider/jquery.royalslider.min.js"></script>
+<script src="/js/custom.min.js"></script>
+<script src="/js/google_translate_posicionar_head.js"></script></body></html>

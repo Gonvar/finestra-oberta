@@ -1,0 +1,425 @@
+{
+  "id" : "x9au-abcn",
+  "name" : "Relació d’alts càrrecs dels departaments de la Generalitat de Catalunya i les seves retribucions",
+  "assetType" : "dataset",
+  "attribution" : "Secretaria d'Administració i Funció Pública",
+  "attributionLink" : "https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/",
+  "averageRating" : 0,
+  "category" : "Sector Públic",
+  "createdAt" : 1619169419,
+  "description" : "Relació d’òrgans superiors, alts càrrecs i personal directiu assimilats a efectes de la Llei 13/2005, corresponent als departaments de l’Administració de la Generalitat.\n\nEl personal directiu del sector públic instrumental s’exclou d’aquest conjunt de dades ja que queda recollit al conjunt de dades Relació del personal directiu de les entitats del sector públic i les seves retribucions anuals previstes. Per això, entre d'altres, no s'inclouen les entitats autònomes administratives.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 6556,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "SEE_TERMS_OF_USE",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 3140315,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1782392442,
+  "publicationGroup" : 1395245,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1790681702,
+  "rowsUpdatedBy" : "9rf2-9pth",
+  "tableId" : 2116772,
+  "totalTimesRated" : 0,
+  "viewCount" : 79413,
+  "viewLastModified" : 1790681702,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1782397650,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 1563879,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1782397650,
+    "targetAudience" : "public",
+    "workflowId" : 182,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1782397650,
+      "failureCount" : 0,
+      "startedAt" : 1782397650,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "3c3u-s965",
+      "displayName" : "SGOID"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 27378258,
+    "name" : "Cognoms i nom",
+    "dataTypeName" : "text",
+    "description" : "Nom i cognom de l’alt càrrec",
+    "fieldName" : "cognoms_nom",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 12775577,
+    "cachedContents" : {
+      "non_null" : "218",
+      "largest" : "VIVES TARRES, ANNA",
+      "null" : "0",
+      "top" : [ {
+        "item" : "SANCHEZ BRAUT, CAROLINA",
+        "count" : "1"
+      }, {
+        "item" : "RUIZ PERALTA, SANDRA",
+        "count" : "1"
+      }, {
+        "item" : "RUIZ ARANA, AYALA",
+        "count" : "1"
+      }, {
+        "item" : "MERCADO GARRIDO, KIRYAT",
+        "count" : "1"
+      }, {
+        "item" : "GIMENEZ DAPENA, M. DE LOS ANGELES",
+        "count" : "1"
+      }, {
+        "item" : "FERNANDEZ PEREZ, ANTONI",
+        "count" : "1"
+      }, {
+        "item" : "COMA MONTORO, RICARD",
+        "count" : "1"
+      }, {
+        "item" : "BRETXA I RIERA, VANESSA",
+        "count" : "1"
+      }, {
+        "item" : "QUIRANTE SORIANO, CLARA",
+        "count" : "1"
+      }, {
+        "item" : "TORT PUGIBET, ALBERT",
+        "count" : "1"
+      }, {
+        "item" : "DUCH GUILLOT, JAUME",
+        "count" : "1"
+      }, {
+        "item" : "VILAHUR CHIARAVIGLIO, MARC",
+        "count" : "1"
+      }, {
+        "item" : "MELILLAS ESQUIROL, MARCOS B.",
+        "count" : "1"
+      }, {
+        "item" : "RAMOS MARTIN, FRANCISCO",
+        "count" : "1"
+      }, {
+        "item" : "ESCOLA RIVAS, CARLOS",
+        "count" : "1"
+      }, {
+        "item" : "PANEQUE SUREDA, SILVIA",
+        "count" : "1"
+      }, {
+        "item" : "ESPUELAS PUIGDOLLERS, JOAN MANUEL",
+        "count" : "1"
+      }, {
+        "item" : "FERRERAS ROMAN, JONATAN",
+        "count" : "1"
+      }, {
+        "item" : "GODIA TRESANCHEZ, JOAN",
+        "count" : "1"
+      }, {
+        "item" : "ROMERO PERIZ, JAUME",
+        "count" : "1"
+      } ],
+      "smallest" : "AGUILAR JUNCOSA, IOLANDA MARIA",
+      "count" : "218",
+      "cardinality" : "218"
+    },
+    "format" : { }
+  }, {
+    "id" : 27378259,
+    "name" : "Sexe",
+    "dataTypeName" : "text",
+    "description" : "Sexe de l’alt càrrec",
+    "fieldName" : "sexe",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 12775576,
+    "cachedContents" : {
+      "non_null" : "218",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Home",
+        "count" : "109"
+      }, {
+        "item" : "Dona",
+        "count" : "108"
+      }, {
+        "item" : "N/A",
+        "count" : "1"
+      } ],
+      "smallest" : "Dona",
+      "count" : "218",
+      "cardinality" : "218"
+    },
+    "format" : { }
+  }, {
+    "id" : 27378260,
+    "name" : "Denominació del lloc",
+    "dataTypeName" : "text",
+    "description" : "Denominació del lloc de treball d’adscripció de l’alt càrrec",
+    "fieldName" : "denominacio_lloc",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 12775575,
+    "cachedContents" : {
+      "non_null" : "218",
+      "largest" : "SECRETARI/ÀRIA PER A L'ADMINISTRACIÓ DE JUSTÍCIA",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DIRECTOR/A DE SERVEIS",
+        "count" : "15"
+      }, {
+        "item" : "DIRECTOR/A GENERAL DE CENTRES CONCERTATS I CENTRES PRIVATS",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL DE LA POLICIA",
+        "count" : "1"
+      }, {
+        "item" : "SECRETARI/ÀRIA D'IGUALTAT DE DRETS I NO-DISCRIMINACIÓ",
+        "count" : "1"
+      }, {
+        "item" : "SECRETARI/ÀRIA DE SALUT PÚBLICA",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL DE SERVEIS DIGITALS I EXPERIÈNCIA CIUTADANA",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL DE CURRÍCULUM I DESENVOLUPAMENT PROFESSIONAL",
+        "count" : "1"
+      }, {
+        "item" : "DELEGAT/ADA DEL GOVERN DE LA GENERALITAT AL SUD-EST D'EUROPA",
+        "count" : "1"
+      }, {
+        "item" : "DELEGAT/ADA DEL GOVERN DE LA GENERALITAT ALS ESTATS UNITS I CANADÀ",
+        "count" : "1"
+      }, {
+        "item" : "CONSELLER/A DE POLÍTICA LINGÜÍSTICA",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL DE CANVI CLIMÀTIC I QUALITAT AMBIENTAL",
+        "count" : "1"
+      }, {
+        "item" : "SECRETARI/ÀRIA D'HABITATGE",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL DE DIFUSIÓ",
+        "count" : "1"
+      }, {
+        "item" : "DELEGAT/ADA DEL GOVERN DE LA GENERALITAT AL BRASIL",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL D'ADMINISTRACIO LOCAL",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL D'EMPRESES AGROALIMENTÀRIES, QUALITAT I GASTRONOMIA",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL COORDINACIÓ INSTITUCIONAL EN L'ÀMBIT DE L'ACCIÓ EXTERIOR",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL DE CONTRACTACIÓ PÚBLICA",
+        "count" : "1"
+      }, {
+        "item" : "SECRETARI/ÀRIA DE FEMINISME",
+        "count" : "1"
+      }, {
+        "item" : "DIRECTOR/A GENERAL DE CURES, ORGANITZACIÓ DEL TEMPS I EQUITAT EN ELS TREBALLS",
+        "count" : "1"
+      } ],
+      "smallest" : "ASSESSORIA JURIDICA",
+      "count" : "218",
+      "cardinality" : "218"
+    },
+    "format" : { }
+  }, {
+    "id" : 27378256,
+    "name" : "Departament",
+    "dataTypeName" : "text",
+    "description" : "Departament de la Generalitat de Catalunya",
+    "fieldName" : "departament",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 12775579,
+    "cachedContents" : {
+      "non_null" : "218",
+      "largest" : "Departament d'Unió Europea i Acció Exterior",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Departament de la Presidència",
+        "count" : "38"
+      }, {
+        "item" : "Departament d'Unió Europea i Acció Exterior",
+        "count" : "31"
+      }, {
+        "item" : "Departament de Territori, Habitatge i Transició Ecològica",
+        "count" : "21"
+      }, {
+        "item" : "Departament d'Economia i Finances",
+        "count" : "16"
+      }, {
+        "item" : "Departament de Drets Socials i Inclusió",
+        "count" : "14"
+      }, {
+        "item" : "Departament d'Empresa i Treball",
+        "count" : "14"
+      }, {
+        "item" : "Departament d'Educació i Formació Professional",
+        "count" : "14"
+      }, {
+        "item" : "Departament de Justícia i Qualitat Democràtica",
+        "count" : "12"
+      }, {
+        "item" : "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
+        "count" : "10"
+      }, {
+        "item" : "Departament d'Igualtat i Feminisme",
+        "count" : "9"
+      }, {
+        "item" : "Departament de Salut",
+        "count" : "9"
+      }, {
+        "item" : "Departament d'Interior i Seguretat Pública",
+        "count" : "9"
+      }, {
+        "item" : "Departament de Cultura",
+        "count" : "7"
+      }, {
+        "item" : "Departament de Recerca i Universitats",
+        "count" : "7"
+      }, {
+        "item" : "Departament de Política Lingüística",
+        "count" : "4"
+      }, {
+        "item" : "Departament d'Esports",
+        "count" : "3"
+      } ],
+      "smallest" : "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
+      "count" : "218",
+      "cardinality" : "218"
+    },
+    "format" : { }
+  }, {
+    "id" : 27378262,
+    "name" : "Retribució anual",
+    "dataTypeName" : "text",
+    "description" : "Retribució anual prevista, d’acord amb la informació de les taules retributives",
+    "fieldName" : "retribucio_anual_prevista",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16420553,
+    "cachedContents" : {
+      "non_null" : "218",
+      "largest" : "99.345,92 €",
+      "null" : "0",
+      "top" : [ {
+        "item" : "99.345,92 €",
+        "count" : "147"
+      }, {
+        "item" : "103.645,82 €",
+        "count" : "44"
+      }, {
+        "item" : "130.049,10 €",
+        "count" : "17"
+      }, {
+        "item" : "129.635,52 €",
+        "count" : "5"
+      }, {
+        "item" : "75.671,68 €",
+        "count" : "1"
+      }, {
+        "item" : "92.114,04 €",
+        "count" : "1"
+      }, {
+        "item" : "146.635,82 €",
+        "count" : "1"
+      }, {
+        "item" : "103.645,86 €",
+        "count" : "1"
+      }, {
+        "item" : "120.230,56 €",
+        "count" : "1"
+      } ],
+      "smallest" : "103.645,82 €",
+      "count" : "218",
+      "cardinality" : "218"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "See Terms of Use"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Freqüència d'actualització" : {
+        "Freqüència d'actualització" : "Mensual"
+      },
+      "Idioma" : {
+        "Idioma" : "Català",
+        "Dataset name (EN)" : "List of senior officials of the departments of the Generalitat of Catalonia and their salaries",
+        "Nombre del conjunto de datos (ES)" : "Relación de altos cargos de los departamentos de la Generalidad de Cataluña y sus retribuciones"
+      },
+      "Informació de gènere o sexe" : {
+        "Informació de gènere o sexe" : "Sí"
+      },
+      "Dades d'Alt Valor" : {
+        "Categoria" : "No són dades d’alt valor"
+      },
+      "Actors" : {
+        "Departament" : "Presidència",
+        "Tipus actor" : "Generalitat de Catalunya"
+      },
+      "Àmbit geogràfic" : {
+        "Informació geogràfica" : "Sense informació geogràfica",
+        "Àmbit geogràfic" : "Catalunya"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "administració pública", "administració de la generalitat alts càrrecs", "personal assimilat a alt càrrec del dexi retribucions", "ods16_pau justícies i institucions sòlides", "funció pública", "treballadors públics" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

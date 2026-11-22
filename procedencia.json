@@ -1,0 +1,1130 @@
+{
+  "data_consulta": "2026-11-22",
+  "node": "v24.22.3",
+  "fitxers": {
+    "govern.json": "0b2382e0e8f7eb6c5568b4b1d8a14a4fc5958b563dd5ac39275f29344afff6e3",
+    "parlament.json": "d55888fcbb8ddf86595c228c1621690f6e00b8c4d33ce4feb1e2822f31f4f6d6"
+  },
+  "captures": [
+    {
+      "url": "https://analisi.transparenciacatalunya.cat/api/views/x9au-abcn.json",
+      "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/x9au-abcn.json",
+      "consultat": "2026-11-22T22:17:58.868Z",
+      "estat": 200,
+      "tipus": "application/json; charset=utf-8",
+      "sha256": "e0955833cec07cee65ee1886410d6d579b09eaec006ce4cdabcbb93a6e6af1d9"
+    },
+    {
+      "url": "https://analisi.transparenciacatalunya.cat/resource/x9au-abcn.json?$limit=5000",
+      "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/x9au-abcn.json?$limit=5000",
+      "consultat": "2026-11-22T22:17:59.041Z",
+      "estat": 200,
+      "tipus": "application/json;charset=utf-8",
+      "sha256": "3a140d5668b04ec4f8942d6988948c215c05dc11ca7af996fe5c8077de3c0709"
+    },
+    {
+      "url": "https://analisi.transparenciacatalunya.cat/api/views/7chp-hkce.json",
+      "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/7chp-hkce.json",
+      "consultat": "2026-11-22T22:17:59.200Z",
+      "estat": 200,
+      "tipus": "application/json; charset=utf-8",
+      "sha256": "14bc4475e92700be0b72e6299df5f465537866e12aab4d1ba356cc78511d73de"
+    },
+    {
+      "url": "https://analisi.transparenciacatalunya.cat/resource/7chp-hkce.json?%24select=nom&%24group=nom&%24limit=5000",
+      "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/7chp-hkce.json?%24select=nom&%24group=nom&%24limit=5000",
+      "consultat": "2026-11-22T22:17:59.375Z",
+      "estat": 200,
+      "tipus": "application/json;charset=utf-8",
+      "sha256": "952013eb6c53d78914c602269930f19a3c370abf0832bc589437a9f038e8164f"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/distribucio-escons/index.html",
+      "url_resposta": "https://www.parlament.cat/web/composicio/distribucio-escons/index.html",
+      "consultat": "2026-11-22T22:18:04.535Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "8a877c61731e4c7a8fb84e29efb41d3ed557a28aeb5f2b8e4b752ad5349a797b"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2545",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2545",
+      "consultat": "2026-11-22T22:18:19.994Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "f28575030652456e8b250a5657ea4c7b927deca8e7e8230e6714239bac1c438d"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2546",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2546",
+      "consultat": "2026-11-22T22:18:20.703Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "a7e49c91d31ce731045058eac6f12bdeb578296dcf96b6306d26b58432fe54cd"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2539",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2539",
+      "consultat": "2026-11-22T22:18:21.403Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "74514197e286c706a93ba47cbc8ffe1c141fde48790aa148a34d2ab9eef152bd"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2541",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2541",
+      "consultat": "2026-11-22T22:18:22.176Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "f9dc1c533f6c7205e4b432462e2603939bd7af20f7ae7e72653e48d4a0d3dd14"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2232",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2232",
+      "consultat": "2026-11-22T22:18:22.891Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "c7f9efee725854282bfc4089d11d96d34508cb586850082241130138d6caf244"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2548",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2548",
+      "consultat": "2026-11-22T22:18:23.590Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "77ac9a299e0f1613a00373b473f80926bd21ef4220594d2fbfc223b523cffe3c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2125",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2125",
+      "consultat": "2026-11-22T22:18:24.299Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "f58b9ec52282d7063332015bf135779faf5b821b3c0ec7525cbe08fb932443c8"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2334",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2334",
+      "consultat": "2026-11-22T22:18:25.056Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6217f6b73a1e9b657997bf8484ea9b1d3863c9c098974ceedbc03ce1ea3ac346"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2040",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2040",
+      "consultat": "2026-11-22T22:18:25.788Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "127d28beb6d97325660e8a9650508e5bca2f751f06157d828a65b40a09390c10"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2233",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2233",
+      "consultat": "2026-11-22T22:18:26.547Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "e0279e96b3c5639cd029d712919d530f41687410e66db614667c774861ae1cae"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2036",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2036",
+      "consultat": "2026-11-22T22:18:27.262Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "9d63191965506bfc11ffd604d04f8d980878696c3709b0ae91b378dc1f80aa14"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1176",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1176",
+      "consultat": "2026-11-22T22:18:28.020Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "460685e32a99a2f916e8908877b971ed064af86cd85cc0f3fe4ced38bbceac64"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1602",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1602",
+      "consultat": "2026-11-22T22:18:28.732Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "e2d32b1330cf91197d58e72975b29aaa7fe9bb9a910bca57ea4829f1acab2559"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2256",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2256",
+      "consultat": "2026-11-22T22:18:29.445Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "c62532fb0dd00db1b5908ea773e0e75b1fcdc1ba3b6b56d0f33fcf1ce6055e9e"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2252",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2252",
+      "consultat": "2026-11-22T22:18:30.169Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "28c96bb6617c9f18c87abbfe206cb4217c127138cb73eebbba8f437ffb9bbcc1"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2532",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2532",
+      "consultat": "2026-11-22T22:18:30.927Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "0e01369a33319f071562c617325faab961c66e1103bc85860d45aef8f674e23f"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2250",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2250",
+      "consultat": "2026-11-22T22:18:31.643Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "79c7552280c7d79ccea1a382f82a25b95c725b74fd641e282708ef64413991df"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2248",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2248",
+      "consultat": "2026-11-22T22:18:32.358Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "38e6b9227d97cfd9f11a0e6378592fcd4f89837e31763dd535d1b397773da3b2"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1691",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1691",
+      "consultat": "2026-11-22T22:18:33.078Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "5384e4745485950a308aa9bfe097e2cbd5c3c1fbf91b1926eeb04d31c3ca67c4"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2015",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2015",
+      "consultat": "2026-11-22T22:18:33.799Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "ebbc0ac2447e7ffed1b0d163ddb07e000e525b39a059c151b2843b48f136b575"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2511",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2511",
+      "consultat": "2026-11-22T22:18:34.526Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "51d13e349917dfb84fe2f7028f5482147ccccd86f7f15cf3eda4e2c5d78616ef"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2012",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2012",
+      "consultat": "2026-11-22T22:18:35.257Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "617d04eff2784f3e02438170706409f8ffd12a988d2d170b6fa74f1a46012826"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1078",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1078",
+      "consultat": "2026-11-22T22:18:35.983Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "650b8d2696df23536a1bf859e032872ada327083964eb622f9191a55211cc748"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1850",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1850",
+      "consultat": "2026-11-22T22:18:36.691Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "5f92f54d9731d0f925bc8b83879f21f69e98e33fea0b8035e8f98584481332e1"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2236",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2236",
+      "consultat": "2026-11-22T22:18:37.403Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "c15ed7e3ff4ab1bd99fd0cf0324592be9f658ef9ee7ecd07843d5830700e55eb"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2358",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2358",
+      "consultat": "2026-11-22T22:18:38.115Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "30b2a19f0801ea4bb8254b109ac8e9c9b16ed218e51e88ccf003425d4f94154f"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2540",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2540",
+      "consultat": "2026-11-22T22:18:38.828Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "73ecd811ea85323a9e839e63e32478628ee42c3326701270a92ef8613495da2e"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=720",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=720",
+      "consultat": "2026-11-22T22:18:39.547Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "bf16fada7f9099a31ea65cd38a04f5e7b8e369c9d09d2b99f68e9a3ad5a8aca0"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1640",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1640",
+      "consultat": "2026-11-22T22:18:40.311Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "ffe0bac1f495616353ddceda626a6cdfe75371d95983bc555e34b1fce3e06b5a"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2237",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2237",
+      "consultat": "2026-11-22T22:18:41.021Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "2cf5d0686a0564047e11798f3ef380a779c726109afb822f3545913d252470f1"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2544",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2544",
+      "consultat": "2026-11-22T22:18:41.726Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "c26b8c71f2f140ee078872768c2935fb4c18e84f831a554292164e165409d407"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2310",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2310",
+      "consultat": "2026-11-22T22:18:42.434Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "da097b1b4df87e021ade1e5b61581b9db349299791a8b2ba88c1f676da8ca51b"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2231",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2231",
+      "consultat": "2026-11-22T22:18:43.153Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "21a435ed4fb44ae962ad02b77944f6d126fe74be027f19314fff5ff2fdf633fd"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2538",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2538",
+      "consultat": "2026-11-22T22:18:43.902Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "09a2a97473b6268b3511250664046d2d2c5396eca0c6cfb933726db4a201df8c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1573",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1573",
+      "consultat": "2026-11-22T22:18:44.610Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "d73b198fc43dcf0ab047df36c0a0469fd91d4b7e87d65020d9f6a75c855a0099"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2528",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2528",
+      "consultat": "2026-11-22T22:18:45.320Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "3eb4ec948c5c1e6842fca88b584971f328ec3cfdf99a515103ead295c6e15038"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2522",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2522",
+      "consultat": "2026-11-22T22:18:46.030Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "7b49b1da24f0a44127c61192ef32b75ef20e42795f1ea884d6040fe2542e1926"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2270",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2270",
+      "consultat": "2026-11-22T22:18:46.743Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "e36d5c9ce50a08688d409da105f5987788ea1631cd38b652bd0470c4142dca30"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2582",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2582",
+      "consultat": "2026-11-22T22:18:47.450Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "24723c07156628656386b271a053ffa8720ed769fa5cb6c509784868634e96f7"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2253",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2253",
+      "consultat": "2026-11-22T22:18:48.166Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "4ec9a8ef3f983faefc95cc0182e6b16512a62ff1f585198e826ee9f0d8d28c75"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2535",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2535",
+      "consultat": "2026-11-22T22:18:48.875Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "60e841814bf8af24ca326db085f0c0280e369a5235355800ac5e8fb71c57a38a"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2526",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2526",
+      "consultat": "2026-11-22T22:18:49.582Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "9335aab2f4a8ba9b996b27f39829d05f76672d5d5fc8cec098574c9b40077d35"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2520",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2520",
+      "consultat": "2026-11-22T22:18:50.313Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b8d848e6b31bcb3c5bcd9e10da16021328ddc75f67cf9657b09d8c813af8e9fb"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2534",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2534",
+      "consultat": "2026-11-22T22:18:51.043Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "fc4d458e66c47baf8f0beabc40f0199897778d442fb0eafcf30ff8806993fa13"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2447",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2447",
+      "consultat": "2026-11-22T22:18:51.770Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "478a31f5144bcd030ff677c24796dc838d2b078d7851afc29f8910a670cf67d5"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2512",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2512",
+      "consultat": "2026-11-22T22:18:52.489Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "ec1cf4e5e0f27e3593e93e05bcf72af6aa0a89b40756e8d2dc0e69e74e1a95c3"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1832",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1832",
+      "consultat": "2026-11-22T22:18:53.207Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "366b7e3d742572f80afd3e76cfd96bc37fc22ca2b665c72e0cf3bad969ce5a3c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2699",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2699",
+      "consultat": "2026-11-22T22:18:53.914Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6d04a9cffe6ccfbd54081c8b4721fabfae1de8d2214485fae4ef1c177ae3fd25"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2651",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2651",
+      "consultat": "2026-11-22T22:18:54.621Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "dbc18c212b4ef82124bcf0dc07c011f493575973ec17a8c55ad9cf973b488127"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2458",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2458",
+      "consultat": "2026-11-22T22:18:55.335Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "1bb80cfa0915b989dc448aa13e06ff0ed2cf3c8aadae2261b3d4997945082e8f"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2547",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2547",
+      "consultat": "2026-11-22T22:18:56.046Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6478cb492c0f1e47288f80831a9be24ab8c14e2b89f6d23be97eaaa8b4340e31"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2543",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2543",
+      "consultat": "2026-11-22T22:18:56.748Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "ac82a99e1ebe6116e8c72fc75395168141ca3de681987d7de5c2b7da0c10fc36"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2313",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2313",
+      "consultat": "2026-11-22T22:18:57.463Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "37be947b55b8b534fd8f949c1f62df394efc6cd996d26f41308e4a309764fb75"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2031",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2031",
+      "consultat": "2026-11-22T22:18:58.184Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "dd923e5482477893e9ec7227922a3a9225284c826da0d051f487d6ec7eaad8b0"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2228",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2228",
+      "consultat": "2026-11-22T22:18:58.911Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "cdf1565f14685e094899507ccb21b26068b173b0b90572427f0db6351b261905"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1961",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1961",
+      "consultat": "2026-11-22T22:18:59.629Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "d11cd516211a165019d9622dad90cd4d83c3034ada0ff4fc3e275550ad1433b7"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1985",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1985",
+      "consultat": "2026-11-22T22:19:00.336Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "268d4d4522a2ea862763ba82d895d8c35fa9ab55eed249889e878cadd3c72258"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1669",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1669",
+      "consultat": "2026-11-22T22:19:01.044Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "dc9994c5d80bf5ee7069d3daff81fd82975a7370b28f8be504645b8f428cc513"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1971",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1971",
+      "consultat": "2026-11-22T22:19:02.682Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "62550e050ec2c713690ae919047dc116209cfe6a08181960d18b4113981a200e"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2241",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2241",
+      "consultat": "2026-11-22T22:19:03.397Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "176c66d91831eea5252b5210f66309a74f3278821d8fb84623dcf4470fd2e421"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2521",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2521",
+      "consultat": "2026-11-22T22:19:04.101Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6bb7b71a7831384898aa80c5991c551c95ef9936747f811a77ad51f535650ede"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1007",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1007",
+      "consultat": "2026-11-22T22:19:04.813Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "c0fc8384b80db6fc7bd809ffe8d90136f8bfd5c3ece8661a4a51d7145bb9ad35"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2529",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2529",
+      "consultat": "2026-11-22T22:19:05.525Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "d7e0ee5cea73e17445861f7918f0694bbf8a26fa7008303d35385a0277d8b5e7"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2527",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2527",
+      "consultat": "2026-11-22T22:19:06.251Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "86ef2cd9810eeac5f146a0b05cd59e231e6c29af3f688c3c6bc303bd5edd7ca5"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2531",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2531",
+      "consultat": "2026-11-22T22:19:06.958Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "f9bbfc91ef3a9b1e24939441667f46913154ec275039c8c3f527ce66d7f8af57"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2554",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2554",
+      "consultat": "2026-11-22T22:19:07.667Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "afa851fb6ae9b48804e64a334e74ff77d95fb6c8bc178b0f636c87a9e2c6b891"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=937",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=937",
+      "consultat": "2026-11-22T22:19:08.386Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "dee4faa5c9b319cae9cb7e9a29b604f1fe03796e09f09eadd9647855ef0e08e3"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2559",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2559",
+      "consultat": "2026-11-22T22:19:09.097Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "c37c426b9aa6f5fcba54300b0bbd3f014238d79b9054f449fe91a9b918b7a064"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=725",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=725",
+      "consultat": "2026-11-22T22:19:09.815Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "8ae714b6b7d8b81a2d9aa986bc9bcd7549e4bc5d21f7db0b35eff8b188d190c5"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1644",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1644",
+      "consultat": "2026-11-22T22:19:10.528Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "9e24084b98c346d6cc2405a0cbfede4353c3f9fedb91c07ebfad9964a4b8dece"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2557",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2557",
+      "consultat": "2026-11-22T22:19:11.233Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "78d92ba11b36e5fad0616386b64d184c703e898546a5841a81b065e8c1330e85"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1875",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1875",
+      "consultat": "2026-11-22T22:19:11.955Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "419bdabefb020c7bcb900bc658ff70f269b97e2daa2340f9c097b807e61021b3"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1061",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1061",
+      "consultat": "2026-11-22T22:19:12.671Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "e81a7c6cc094d3f67433978b5d523fe2d7df3e74478e108a887483f430b380e6"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1614",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1614",
+      "consultat": "2026-11-22T22:19:13.381Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "afb6531c0aec99832e605e911b7e447509dc688868d658e14f1537c622b3d2df"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1976",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1976",
+      "consultat": "2026-11-22T22:19:14.092Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "bc291ffe238ca306c210d2896de354740feeb54404d9c8f94a7ea119f7518c66"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2517",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2517",
+      "consultat": "2026-11-22T22:19:14.805Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "a9ebfb7883ee740c63f1e4a9d4ff8f3cf91c5d551a7446151a29f7c4203598f5"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=115",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=115",
+      "consultat": "2026-11-22T22:19:15.527Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "3b2c68069d91299c9fa1da8b10ee6701fe1b6d226611f2985597771aaa1077d4"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2515",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2515",
+      "consultat": "2026-11-22T22:19:16.241Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "e3517435a8536924d8ef88a53de1528101e4545c76c8b1f4348f3093184e6ba1"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2469",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2469",
+      "consultat": "2026-11-22T22:19:16.961Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "284346b7e2cc64f76d130efe423a8354b34d9a6c74ab0ac732a6b8cd67970898"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2537",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2537",
+      "consultat": "2026-11-22T22:19:17.673Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "18387a2488b3d5cb6ddb5ec7f1096110138f854ac8bd3bc2933b7e33d6ec1aa6"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2249",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2249",
+      "consultat": "2026-11-22T22:19:18.396Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "396fdc28588358419e9ec029fb77fa06ca50205dcb1f7390d9216079c1c134f0"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510",
+      "consultat": "2026-11-22T22:19:19.113Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "1afb295714e31f307e0251090361dd3ca81a8177814b534247690c43ae8b18e9"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2602",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2602",
+      "consultat": "2026-11-22T22:19:19.836Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6432b7f9b38eb3cf54348d97760e64f3988432a0f6685e36086e91812209529c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=965",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=965",
+      "consultat": "2026-11-22T22:19:20.560Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b6424d56553459f54716a1e7777999c2f951666b592cb0d040532c1820b0386a"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2565",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2565",
+      "consultat": "2026-11-22T22:19:21.266Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "4575c2721e6b26fe351cc21bf9fbe3e6dee9f3555c2c8a751a3f7d487245a892"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2558",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2558",
+      "consultat": "2026-11-22T22:19:21.978Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "2dc6a052dddbb18eb49e7f4d4649b75aab6e40fb1a3eae7707d55933eb63d49e"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1891",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1891",
+      "consultat": "2026-11-22T22:19:22.692Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "ae62317d3f836e2d2482e64fc1caff9f6e701c13dcd882b687ad9cba43cf9d75"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2552",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2552",
+      "consultat": "2026-11-22T22:19:23.417Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "05cab8e33d51fc746a19cf2688d67590c12923c926761199c86f9a3ea1495274"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2556",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2556",
+      "consultat": "2026-11-22T22:19:24.153Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "f0a4264ee88bc0e0e2dfbc731f54661b7447d0137b99ef93fafaf0a0df4803bc"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2553",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2553",
+      "consultat": "2026-11-22T22:19:24.865Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "41d3d976197691702141a6b0ba5d96bcad1c355221544dc40673243f49536514"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2518",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2518",
+      "consultat": "2026-11-22T22:19:25.577Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6e65d97f0c6f31e59cddacb9b5ff0ee10e45d33d43a926a2524212088ae1ae6c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2127",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2127",
+      "consultat": "2026-11-22T22:19:26.300Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "17fc447d9335b2382079cb16f6ceea08ec177d89df2de810235baa341562a1f9"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=92",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=92",
+      "consultat": "2026-11-22T22:19:27.038Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "af8c3282a17469ba58b60360c56917f496d20fe1c9d755a978017fb231e121bf"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2259",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2259",
+      "consultat": "2026-11-22T22:19:27.761Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "2e3a75e9ffaa4586cc3cd4a34416f9331ef8b0d22de361dfad0d6005e64182c5"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2514",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2514",
+      "consultat": "2026-11-22T22:19:28.474Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "91f4cf42cfce3cd458fe59de45c3620ff496e49f757c23b6a1c74627708b9426"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2525",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2525",
+      "consultat": "2026-11-22T22:19:29.181Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "37a893a6321c839a86b4f3fb1c6dbc8d33f0bec11ceadd1460457031fbc033a6"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2533",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2533",
+      "consultat": "2026-11-22T22:19:29.889Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6c71358297d566ceaa840f2a4a0b715d710bbd02d6563cf94760372767a3e1cc"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2536",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2536",
+      "consultat": "2026-11-22T22:19:30.596Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "f642c1eda1596601bb0c288383a485c9b79a4f0e1363b29f743faf6d67b3f766"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2530",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2530",
+      "consultat": "2026-11-22T22:19:31.308Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6527dae503958d2bd45f4e254433ac67683203fb2bea12bcb3ff68cbffd04158"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2277",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2277",
+      "consultat": "2026-11-22T22:19:32.031Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "eee05ff9241a32d1e3f1b40e664edba6bd744e28169e89468a47283a9b5152f4"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2550",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2550",
+      "consultat": "2026-11-22T22:19:32.734Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "720c20256780f394d58eea9a389b739378b78c6659f08ce769e7f9ac6f0b4900"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2279",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2279",
+      "consultat": "2026-11-22T22:19:35.009Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b05dc200a01f58387c456cfa115ec6e2748561497e216c64aa2f65fd1ae292de"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2276",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2276",
+      "consultat": "2026-11-22T22:19:35.734Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "bf67c41ca85255165dcb17d22c3f55915aa2862185bcf4f3a7484e65a8f1fc4e"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2283",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2283",
+      "consultat": "2026-11-22T22:19:36.457Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "924690622e005b93970b96cd98125de57f01cb84dd059ff6035f4cd32e9935e1"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2275",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2275",
+      "consultat": "2026-11-22T22:19:37.181Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "453438551b6755d0dbea8763c82da724cf892d70c5b6f48a2494148ce5ffc0f4"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2274",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2274",
+      "consultat": "2026-11-22T22:19:37.905Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "76a76eff64d028316ff20dcf080ef2717b3638fda4614c6007def5741bb4351a"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2655",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2655",
+      "consultat": "2026-11-22T22:19:38.611Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "f503b3c0520fab3869fdedb2daaaa18f2e8e20c61cfb71877357bbad6fd2dbdb"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2513",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2513",
+      "consultat": "2026-11-22T22:19:39.316Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "3d90ba366685ec65d92e874bdd38fdb0dabb8069fa55d2277e4d9f1627af372d"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2516",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2516",
+      "consultat": "2026-11-22T22:19:40.027Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "dd56d4cb1a720e2c6912061fb1d1ab5633103dd8ca786a126801e76dda7cb294"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2312",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2312",
+      "consultat": "2026-11-22T22:19:40.752Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b1b833f27de909bdb238f3fce1323dabc15d3dad0242ff3b3a72ee465f980736"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2583",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2583",
+      "consultat": "2026-11-22T22:19:41.458Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "0588842bafb9d80b537f527fe36f6c005ea7e1d0ea1fbec2e751513413df9e2b"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2519",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2519",
+      "consultat": "2026-11-22T22:19:42.176Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "3164fb0f5bf10e2a1b63d3eb1ad55e763b6238ccb7af53cf41e37d768e3ea556"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2584",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2584",
+      "consultat": "2026-11-22T22:19:42.889Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "effbd3079f3a80dd1812fbed00651eaecdd8fcec40214a851fadea3115e44763"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2549",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2549",
+      "consultat": "2026-11-22T22:19:43.605Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6ca56ebc87fc761f5ddce565c4701a3c3b9714067899ff1b20d21f54218b3fb6"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2280",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2280",
+      "consultat": "2026-11-22T22:19:44.325Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "79a6ab9635c614cfbfc3bc10907dc1682c43c40f855076ed433d4baeb20e285c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2278",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2278",
+      "consultat": "2026-11-22T22:19:45.047Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "2b79dd05adbb927c861296bd0257ea283cd9bbce8832e579f3d8270ca05e002c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2551",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2551",
+      "consultat": "2026-11-22T22:19:45.761Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "ba09b77d02d2c8c7a7d35e363079550c7d26e869768cd603edc820da57abe9e4"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1921",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1921",
+      "consultat": "2026-11-22T22:19:46.491Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b693174b1800f385cd6f06ef777aaa9ea72ee7eac8efb547ed7f864aef7a8555"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2485",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2485",
+      "consultat": "2026-11-22T22:19:47.222Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "a2fdaaddcea8c475bd79f6903f2ca8efefc7a892f629d6d2b6a1236a4a29b5b1"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2262",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2262",
+      "consultat": "2026-11-22T22:19:47.946Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "7793ae2e7fc0cc2330313ec4b05bcf568b4cb7ab6686b065957133ef5a847541"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2264",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2264",
+      "consultat": "2026-11-22T22:19:48.669Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "d27803bb9c09d73d8470e561991bea83e773cf253907e5e2e9de446ecf94748d"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1885",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1885",
+      "consultat": "2026-11-22T22:19:49.449Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "796647c6ef9fdf932a92c321d8900d7c73cf0bdb6bddf571c923ca3270eff79e"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2187",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2187",
+      "consultat": "2026-11-22T22:19:50.165Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "4ff05b32455e7f01d47a2dd91fc19df3b85f104dd8c2a33f0e1e60a2c1b5234b"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2133",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2133",
+      "consultat": "2026-11-22T22:19:50.916Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "ed011f820627d0ae49fd8d53e059e01e7666fdb748901574f32b094b74bb411f"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=683",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=683",
+      "consultat": "2026-11-22T22:19:51.710Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b9c04399320c5ce6ca64ff9d2ad331f45ae4f329412a64505cf29fa838d03b16"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=756",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=756",
+      "consultat": "2026-11-22T22:19:52.446Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6a4e728594db672894b420563bec84489ac497445a2c4086f8dd344e5bab3d11"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2240",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2240",
+      "consultat": "2026-11-22T22:19:53.179Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "6131559e248e11663c61d1d1cefa9728fba2cb6abe482407f0737ae7079c58b5"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2246",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2246",
+      "consultat": "2026-11-22T22:19:53.894Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "a4447d1259b080a246fc4b46d9897620cddc6f0d12522e162a7bdd187ad20f30"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1685",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1685",
+      "consultat": "2026-11-22T22:19:54.545Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "ae1270ee4ae851f04370189526cdf765bb176fdb7501125224b93b5492786822"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2523",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2523",
+      "consultat": "2026-11-22T22:19:55.190Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b43f6be4ff96aa8e0477872198127d28aba9592cc001371c425944834367d855"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2255",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2255",
+      "consultat": "2026-11-22T22:19:55.841Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "8e3b4612d7dfe8f8ac0bf1512a78f703e0aa42db637fb72b1388c6f46ee2ab5c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1603",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1603",
+      "consultat": "2026-11-22T22:19:56.487Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "c6f7c943c0295a51f1605637afb2f5060922a3ced73ba68550eca7ab1bb4aa32"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=117",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=117",
+      "consultat": "2026-11-22T22:19:57.153Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "96b122d575eeab34ece38d0ddb470918cd81a1949c8c47c08e513d1d0b8e783c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2251",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2251",
+      "consultat": "2026-11-22T22:19:57.816Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "87ce07d8c261c1cffda6dd292282c03ab97de12a1717c1bdbdeb22ee16aac55a"
+    },
+    {
+      "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1877",
+      "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1877",
+      "consultat": "2026-11-22T22:19:58.480Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "cb048a9b3eb9226e51e41c30e031c15f11d5fe36d1bc3a0f96613e243282ffeb"
+    }
+  ]
+}
