@@ -3,7 +3,18 @@
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
 import { readFile } from 'node:fs/promises';
-import { fold, getJson, getText, SourceError, words, type Fetch } from './comun.ts';
+import { construirAjuntaments } from './ajuntaments.ts';
+import {
+  dia,
+  fold,
+  getJson,
+  getText,
+  metadades,
+  SOCRATA,
+  SourceError,
+  words,
+  type Fetch,
+} from './comun.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
 export const MAPA_ESCONS = `${PARLAMENT}/web/composicio/distribucio-escons/index.html`;
@@ -15,7 +26,6 @@ export const ESCONS = 135;
 export const fotoUrl = (id: string) => `${PARLAMENT}/apl/gimg/imatgeweb?p_mida=M&p_id=${id}`;
 export const AVIS_LEGAL = `${PARLAMENT}/pcat/serveis-parlament/avis-legal`;
 
-const SOCRATA = 'https://analisi.transparenciacatalunya.cat';
 export const ALTS_CARRECS = 'x9au-abcn';
 export const INTERVENCIONS = '7chp-hkce';
 const PRESIDENT = 'PRESIDENT DE LA GENERALITAT DE CATALUNYA';
@@ -274,13 +284,12 @@ export function euros(text: string) {
 
 const lloc = (fila: AltCarrec) => fila.denominacio_lloc.replace(/\s+/g, ' ').trim();
 
-type Meta = { name: string; rowsUpdatedAt: number; attribution: string };
+type Meta = Awaited<ReturnType<typeof metadades>>;
 type MetaAmbColumnes = Meta & {
   columns: { fieldName: string; name: string; description: string }[];
 };
-const metadades = (fetchImpl: Fetch, id: string) =>
+const metadadesAmbColumnes = (fetchImpl: Fetch, id: string) =>
   getJson<MetaAmbColumnes>(fetchImpl, `${SOCRATA}/api/views/${id}.json`);
-const dia = (meta: Meta) => new Date(meta.rowsUpdatedAt * 1000).toISOString().slice(0, 10);
 
 /**
  * El nom ben escrit, de les intervencions del Govern al Parlament. La relació d'alts càrrecs
@@ -594,7 +603,7 @@ const font = (meta: Meta, id: string) => ({
  */
 export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]) {
   // D'una en una: la verificació torna a servir les còpies en l'ordre en què es van demanar.
-  const metaDecl = await metadades(fetchImpl, DECLARACIONS);
+  const metaDecl = await metadadesAmbColumnes(fetchImpl, DECLARACIONS);
   const metaAgenda = await metadades(fetchImpl, AGENDA);
   const metaViatges = await metadades(fetchImpl, VIATGES);
 
@@ -709,7 +718,7 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
   };
 }
 
-/** Tot el que es publica, pel nom del fitxer. El Govern primer: l'ordre de les crides es reprodueix. */
+/** Tot el que es publica, pel nom del fitxer, en un ordre fix: l'ordre de les crides es reprodueix. */
 export async function construirInstitucions(fetchImpl: Fetch, avui: string, pausaMs: number) {
   // govern.cat no respon als scripts: les fitxes es copien a mà (NEUTRALITAT.md §2).
   const perfils = llegirPerfils(await readFile(PERFILS_GOVERN, 'utf8'));
@@ -721,5 +730,6 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
       ...govern.consellers,
     ]),
     'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
+    'ajuntaments.json': await construirAjuntaments(fetchImpl),
   };
 }
