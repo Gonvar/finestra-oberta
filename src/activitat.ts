@@ -78,15 +78,15 @@ export function llegirLlista(html: string, url: string) {
   return { pagines: Number(pagines[1]), sessions };
 }
 
-/** Els punts de l'ordre del dia d'una sessió, amb l'acord tal com l'escriu el Parlament. */
+/** Una pàgina dels punts de l'ordre del dia d'una sessió, amb l'acord tal com l'escriu el Parlament. */
 export function llegirAcords(html: string, url: string) {
   comprovaCodificacio(html, url);
-  if (!/Pàgina 1 de 1</.test(html))
-    throw new SourceError(`Els acords de ${url} ocupen més d'una pàgina.`);
+  const pagines = html.match(/Pàgina \d+ de (\d+)</);
+  if (pagines === null) throw new SourceError(`${url} no diu quantes pàgines té.`);
   const llista = html.match(/<ul class="llista_numerada">([\s\S]*?)<\/ul>/);
   if (llista === null) throw new SourceError(`${url} no té la llista de punts.`);
   const elements = llista[1]!.split('<li>').slice(1);
-  return elements.map((li) => {
+  const punts = elements.map((li) => {
     const m = li.match(
       /<strong class="punt_ordre">(\d+)<\/strong>\s*<div>\s*<p>([\s\S]*?)<\/p>\s*<p>Número d'expedient: <a [^>]*href="([^"]+)"[^>]*>([^<]+)<\/a><\/p>\s*<p><i>([^<]*)<\/i><\/p>/,
     );
@@ -102,6 +102,7 @@ export function llegirAcords(html: string, url: string) {
       resultat: resultat(net),
     };
   });
+  return { pagines: Number(pagines[1]), punts };
 }
 
 type Norma = {
@@ -148,8 +149,6 @@ export async function construirNormes(fetchImpl: Fetch, des_de: string) {
   };
 }
 
-type Convocatoria = { caracter: string; data: string; hora: string };
-
 /** Totes les sessions del Ple de la legislatura en curs, de la més nova a la més antiga. */
 export async function construirActivitat(fetchImpl: Fetch, avui: string, pausaMs = 300) {
   const ple = await llistaDelPle(fetchImpl);
@@ -160,30 +159,34 @@ export async function construirActivitat(fetchImpl: Fetch, avui: string, pausaMs
     await pausa(pausaMs);
     llista.push(...llegirLlista(await getText(fetchImpl, url), url).sessions);
   }
-  // Una sessió que dura més d'un dia, o que es reprèn un altre dia, surt una vegada per dia, amb el
-  // mateix enllaç als acords: es desa una sola vegada, amb cada convocatòria.
-  const perNumero = new Map<
-    number,
-    { numero: number; url: string; convocatories: Convocatoria[] }
-  >();
-  for (const { numero, url, ...convocatoria } of llista) {
-    const sessio = perNumero.get(numero) ?? { numero, url, convocatories: [] };
-    if (sessio.url !== url)
-      throw new SourceError(`La sessió ${numero} del Ple té dos enllaços d'acords diferents.`);
-    sessio.convocatories.push(convocatoria);
-    perNumero.set(numero, sessio);
+  // La llista repeteix algunes sessions, amb la mateixa data i el mateix enllaç. Una repetició
+  // idèntica es desa una vegada; dues files diferents amb el mateix número són un error.
+  const perNumero = new Map<number, (typeof llista)[number]>();
+  for (const sessio of llista) {
+    const vista = perNumero.get(sessio.numero);
+    if (vista !== undefined && JSON.stringify(vista) !== JSON.stringify(sessio))
+      throw new SourceError(
+        `La sessió ${sessio.numero} del Ple surt dues vegades amb dades diferents.`,
+      );
+    perNumero.set(sessio.numero, sessio);
   }
 
   const sessions = [];
   for (const sessio of [...perNumero.values()].sort((a, b) => b.numero - a.numero)) {
     await pausa(pausaMs);
-    sessio.convocatories.sort((a, b) => `${a.data} ${a.hora}`.localeCompare(`${b.data} ${b.hora}`));
-    sessions.push({
-      ...sessio,
-      punts: llegirAcords(await getText(fetchImpl, sessio.url), sessio.url),
-    });
+    const primeraPagina = llegirAcords(await getText(fetchImpl, sessio.url), sessio.url);
+    const punts = [...primeraPagina.punts];
+    for (let pagina = 2; pagina <= primeraPagina.pagines; pagina++) {
+      const url = `${sessio.url}&p_pagina=${pagina}`;
+      await pausa(pausaMs);
+      punts.push(...llegirAcords(await getText(fetchImpl, url), url).punts);
+    }
+    const ordres = punts.map((p) => p.ordre);
+    if (ordres.some((ordre, i) => ordre !== i + 1))
+      throw new SourceError(`Els punts de ${sessio.url} no van d'1 a ${punts.length} seguits.`);
+    sessions.push({ ...sessio, punts });
   }
-  const constitutiva = sessions.at(-1)!.convocatories[0]!;
+  const constitutiva = sessions.at(-1)!;
 
   return {
     font: 'Parlament de Catalunya: sessions tingudes i acords del Ple',

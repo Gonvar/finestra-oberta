@@ -41,8 +41,8 @@ const punt = (ordre: number, titol: string, expedient: string, acord: string) =>
     <p>Número d'expedient: <a target="_blank" title="Vegeu &quot;tramitació&quot;" href="https://www.parlament.cat/ext/f?p=siap-cerca:expedient:::::p15_num_expedient:${expedient}">${expedient}</a></p>    <p><i>${acord}</i></p>  </div>
 </li>`;
 
-const acords = (punts: string[], pagines = 1) =>
-  `<dl class="dades_convocatoria"><dt>Dia:</dt><dd>Dimecres, 4 de novembre de 2026</dd></dl><div class="paginacio pagines_top"><div><p class="pagines_num">Pàgina 1 de ${pagines}</p></div></div><ul class="llista_numerada">${punts.join('')}</ul><div class="paginacio"><p class="pagines_num">Pàgina 1 de ${pagines}</p></div>`;
+const acords = (punts: string[], pagina = 1, pagines = 1) =>
+  `<dl class="dades_convocatoria"><dt>Dia:</dt><dd>Dimecres, 4 de novembre de 2026</dd></dl><div class="paginacio pagines_top"><div><p class="pagines_num">Pàgina ${pagina} de ${pagines}</p></div></div><ul class="llista_numerada">${punts.join('')}</ul><div class="paginacio"><p class="pagines_num">Pàgina ${pagina} de ${pagines}</p></div>`;
 
 test('la llista de sessions dona el número, el caràcter, la data, l’hora i els acords', () => {
   const html = llista(1, 2, [
@@ -67,7 +67,7 @@ test('la llista de sessions falla si una fila no es pot llegir', () => {
 });
 
 test('els acords conserven el text oficial i només donen el resultat quan és clar', () => {
-  const punts = llegirAcords(
+  const { pagines, punts } = llegirAcords(
     acords([
       punt(1, 'Pregunta al Govern sobre l&#039;exemple', '310-00001/15', 'Se substancia.'),
       punt(2, 'Moció subsegüent sobre l’exemple', '302-00001/15', "S'aprova la Moció."),
@@ -114,20 +114,17 @@ test('els acords conserven el text oficial i només donen el resultat quan és c
     [null, 'aprovat', 'rebutjat', null, null, 'convalidat', 'aprovat', null],
   );
   assert.equal(punts[6]!.acord, "S'aprova la Llei. Comissió d'Exemple");
+  assert.equal(pagines, 1);
 });
 
-test('els acords fallen si ocupen més d’una pàgina o un punt no té la forma esperada', () => {
-  assert.throws(
-    () => llegirAcords(acords([punt(1, 'T', '302-00001/15', 'Es rebutja.')], 2), 'u'),
-    /més d'una pàgina/,
-  );
+test('els acords fallen si un punt no té la forma esperada', () => {
   const sense = acords([
     punt(1, 'T', '302-00001/15', 'Es rebutja.').replace(/<p>Número[\s\S]*?<\/p>/, ''),
   ]);
   assert.throws(() => llegirAcords(sense, 'u'), /forma esperada/);
 });
 
-test('l’activitat llegeix totes les pàgines, ajunta els dies d’una sessió i llegeix les normes', async () => {
+test('l’activitat llegeix totes les pàgines, desa una vegada les sessions repetides i llegeix les normes', async () => {
   const consultes: string[] = [];
   const fetchImpl: Fetch = async (input) => {
     const url = String(input);
@@ -138,13 +135,17 @@ test('l’activitat llegeix totes les pàgines, ajunta els dies d’una sessió 
       return new Response(
         llista(1, 2, [
           fila(3, 'ordinària', '04/11/2026'),
-          fila(2, 'ordinària', '21/10/2026'),
+          fila(2, 'ordinària', '20/10/2026'),
           fila(2, 'ordinària', '20/10/2026'),
         ]),
       );
     if (url === `${LLISTA}&p_pagina=2`)
       return new Response(llista(2, 2, [fila(1, 'constitutiva', '10/06/2024')]));
-    for (const n of [1, 2, 3])
+    if (url === acordsUrl(3))
+      return new Response(acords([punt(1, 'Punt 3', '302-00003/15', 'Es rebutja.')], 1, 2));
+    if (url === `${acordsUrl(3)}&p_pagina=2`)
+      return new Response(acords([punt(2, 'Punt 3b', '302-00004/15', "S'aprova la Moció.")], 2, 2));
+    for (const n of [1, 2])
       if (url === acordsUrl(n))
         return new Response(acords([punt(1, `Punt ${n}`, `302-0000${n}/15`, 'Es rebutja.')]));
     if (url.endsWith(`/api/views/${NORMATIVA}.json`))
@@ -175,13 +176,11 @@ test('l’activitat llegeix totes les pàgines, ajunta els dies d’una sessió 
     activitat.sessions.map((s) => s.numero),
     [3, 2, 1],
   );
-  assert.equal(activitat.sessions[0]!.punts[0]!.resultat, 'rebutjat');
-  // Els acords d'una sessió de dos dies es llegeixen una sola vegada.
+  assert.deepEqual(
+    activitat.sessions[0]!.punts.map((p) => p.resultat),
+    ['rebutjat', 'aprovat'],
+  );
   assert.equal(consultes.filter((u) => u === acordsUrl(2)).length, 1);
-  assert.deepEqual(activitat.sessions[1]!.convocatories, [
-    { caracter: 'ordinària', data: '2026-10-20', hora: '15:00' },
-    { caracter: 'ordinària', data: '2026-10-21', hora: '15:00' },
-  ]);
   const normes = consultes.find((u) => u.includes(`/resource/${NORMATIVA}.json`))!;
   assert.match(
     new URL(normes).searchParams.get('$where')!,
@@ -197,4 +196,18 @@ test('l’activitat llegeix totes les pàgines, ajunta els dies d’una sessió 
     url: 'https://portaljuridic.gencat.cat/eli/es-ct/l/2026/01/02/1',
   });
   assert.equal(activitat.normes.data_dades, '2026-11-23');
+});
+
+test('l’activitat falla si una sessió surt dues vegades amb dades diferents', async () => {
+  const fetchImpl: Fetch = async (input) => {
+    const url = String(input);
+    if (url === SESSIONS_ORGANS) return new Response(index);
+    if (url === `${BASE}/XV-legislatura/index.html`) return new Response(organs);
+    if (url === LLISTA)
+      return new Response(
+        llista(1, 1, [fila(2, 'ordinària', '21/10/2026'), fila(2, 'ordinària', '20/10/2026')]),
+      );
+    return new Response('', { status: 404 });
+  };
+  await assert.rejects(construirActivitat(fetchImpl, '2026-11-22', 0), /dades diferents/);
 });
