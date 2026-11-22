@@ -12,6 +12,16 @@ Els servidors MCP s'executen a l'ordinador de qui els fa servir, per stdio. No h
 
 El que demana l'assistent sí que arriba a l'API oficial: per exemple, el nom d'un municipi o el text d'una consulta SoQL. No escriguis dades personals en aquestes consultes.
 
+## Com es publica la web
+
+La web de `web/` és estàtica i no té codi de servidor: Cloudflare Workers serveix els fitxers que genera Astro.
+
+- Només es publica a [finestraoberta.cat](https://finestraoberta.cat) des de la branca `main`, i només ho fa Workers Builds, connectat a aquest repositori. Ningú la publica a mà.
+- `main` està protegida: tot canvi hi arriba per una pull request que ha passat la CI.
+- Cada versió publicada porta el commit del qual surt, i per tant es pot comparar amb el codi públic.
+- La compilació no fa servir cap secret ni cap variable d'entorn. Al repositori no n'hi ha cap.
+- Les pull requests que venen de forks no es compilen a Cloudflare.
+
 ## Fiabilitat de les dades
 
 Les respostes contenen dades oficials, però un assistent les pot interpretar malament. Cada resposta porta la font i la data de les dades perquè es puguin comprovar. Si trobes una dada mal presentada, obre una issue.
