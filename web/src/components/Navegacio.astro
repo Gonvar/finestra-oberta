@@ -1,8 +1,10 @@
 ---
+import Comparteix from './Comparteix.tsx';
+
 // El botó de cerca és fora de l'illa de React perquè la barra es pinti sense esperar JavaScript;
 // l'illa del cercador escolta l'esdeveniment que envia. Les pàgines sense cercador no el mostren.
-type Props = { cerca?: boolean };
-const { cerca = true } = Astro.props;
+type Props = { url: string; titol: string; cerca: boolean };
+const { url, titol, cerca } = Astro.props;
 ---
 
 <header class="nav">
@@ -30,11 +32,14 @@ const { cerca = true } = Astro.props;
                   <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6" />
                   <path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
                 </svg>
-                Cerca
+                <span class="etiqueta-cerca">Cerca</span>
               </button>
             </li>
           )
         }
+        <li>
+          <Comparteix client:load url={url} titol={titol} />
+        </li>
         <li>
           <a class="codi" href="https://github.com/Gonvar/finestra-oberta">
             <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -138,6 +143,18 @@ const { cerca = true } = Astro.props;
     transition: transform var(--t-boto) var(--ease-out);
   }
 
+  /* A 320 px, a les pàgines de secció no hi cabrien els dos enllaços i els dos botons. */
+  @media (max-width: 359px) {
+    ul {
+      gap: 0;
+    }
+
+    nav a,
+    .cerca {
+      padding: 0 0.375rem;
+    }
+  }
+
   @media (max-width: 767px) {
     .nomes-escriptori {
       display: none;
@@ -151,6 +168,18 @@ const { cerca = true } = Astro.props;
 
     /* Al mòbil només hi cap la icona; el text queda per als lectors de pantalla. */
     .etiqueta-codi {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+
+  /* Per sota de 380 px, ni amb «Cerca» com a únic botó amb text hi cap la marca en una línia. */
+  @media (max-width: 379px) {
+    .etiqueta-cerca {
       position: absolute;
       width: 1px;
       height: 1px;

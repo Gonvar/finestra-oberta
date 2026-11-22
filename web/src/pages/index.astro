@@ -1,13 +1,10 @@
 ---
-import '../styles/global.css';
-import Navegacio from '../components/Navegacio.astro';
+import Pagina from '../layouts/Pagina.astro';
 import Cercador from '../components/Cercador.tsx';
 import BlocInstitucio from '../components/BlocInstitucio.astro';
 import Cronologia from '../components/Cronologia.astro';
 import Xifra from '../components/Xifra.astro';
 import BlocIA from '../components/BlocIA.astro';
-import Peu from '../components/Peu.astro';
-import Avisos from '../components/Avisos.tsx';
 import { blocs, cronologia, preguntes, respostes, xifra } from '../dades/portada.ts';
 
 const llocs = [
@@ -16,47 +13,31 @@ const llocs = [
 ];
 ---
 
-<!doctype html>
-<html lang="ca">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#ffffff" />
-    <title>Finestra Oberta</title>
-    <meta
-      name="description"
-      content="Les dades obertes de les institucions catalanes, amb la font i la data de cada dada."
-    />
-  </head>
-  <body>
-    <Navegacio />
-    <main class="contingut">
-      <section class="portada" aria-labelledby="portada-titol">
-        <h1 id="portada-titol" class="entra">
-          Què decideix el Govern.<br /><span class="segona">Ara, a la vista.</span>
-        </h1>
-        <p class="entradeta entra" style="--ordre: 1">
-          Les dades obertes de les institucions catalanes, amb la font i la data de cada dada.
-        </p>
-        <div class="entra" style="--ordre: 2">
-          <Cercador client:load exemple="Quanta gent viu al meu municipi?" preguntes={preguntes} respostes={respostes} llocs={llocs} />
-        </div>
-      </section>
+<Pagina cerca>
+  <main class="contingut">
+    <section class="portada" aria-labelledby="portada-titol">
+      <h1 id="portada-titol" class="entra">
+        Què decideix el Govern.<br /><span class="segona">Ara, a la vista.</span>
+      </h1>
+      <p class="entradeta entra" style="--ordre: 1">
+        Les dades obertes de les institucions catalanes, amb la font i la data de cada dada.
+      </p>
+      <div class="entra" style="--ordre: 2">
+        <Cercador client:load exemple="Quanta gent viu al meu municipi?" preguntes={preguntes} respostes={respostes} llocs={llocs} />
+      </div>
+    </section>
 
-      <section class="seccio" aria-label="Institucions">
-        <div class="blocs">
-          {blocs.map((bloc, i) => <BlocInstitucio bloc={bloc} ordre={3 + i} />)}
-        </div>
-      </section>
+    <section class="seccio" aria-label="Institucions">
+      <div class="blocs">
+        {blocs.map((bloc, i) => <BlocInstitucio bloc={bloc} ordre={3 + i} />)}
+      </div>
+    </section>
 
-      <Cronologia fets={cronologia} />
-      <Xifra xifra={xifra} />
-      <BlocIA />
-    </main>
-    <Peu />
-    <Avisos client:idle />
-  </body>
-</html>
+    <Cronologia fets={cronologia} />
+    <Xifra xifra={xifra} />
+    <BlocIA />
+  </main>
+</Pagina>
 
 <style>
   .portada {

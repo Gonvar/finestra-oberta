@@ -1,5 +1,6 @@
 ---
 import Pagina from '../../layouts/Pagina.astro';
+import '../../styles/subpagines.css';
 import {
   dia,
   diaCurt,
@@ -28,7 +29,8 @@ const privades = t.activitats.filter((a) => a.tipus === 'privada');
 const desDe = `des del ${dia(t.nomenament)}`;
 ---
 
-<Pagina titol={membre.nom} descripcio={`${membre.carrec}: retribució, activitats, agenda i viatges.`}>
+<Pagina>
+  <main class="contingut">
   <section class="capcalera" aria-labelledby="titol">
     <p class="etiqueta entra"><a href="/govern"><span class="punt gov" aria-hidden="true"></span>Govern</a></p>
     <div class="persona">
@@ -175,6 +177,7 @@ const desDe = `des del ${dia(t.nomenament)}`;
       }.
     </p>
   </section>
+  </main>
 </Pagina>
 
 <style>

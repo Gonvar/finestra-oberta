@@ -1,5 +1,6 @@
 ---
 import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
 import { dia, parlament } from '../dades/institucions.ts';
 
 const grups = parlament.grups.map((g, i) => ({
@@ -32,10 +33,8 @@ const ressalta = grups
   .join('\n');
 ---
 
-<Pagina
-  titol="Parlament"
-  descripcio="Els grups, els escons i les persones diputades del Parlament de Catalunya."
->
+<Pagina>
+  <main class="contingut">
   <section class="capcalera" aria-labelledby="titol">
     <p class="etiqueta entra"><span class="punt par" aria-hidden="true"></span>Parlament de Catalunya</p>
     <h1 id="titol" class="entra" style="--ordre: 1">Qui seu al Parlament</h1>
@@ -143,6 +142,7 @@ const ressalta = grups
   <p class="font-dada credit">
     Fotos: Parlament de Catalunya. Cada fitxa enllaça a la del <a href={parlament.url}>web del Parlament</a>.
   </p>
+  </main>
 </Pagina>
 
 <style is:inline set:html={ressalta} />

@@ -1,12 +1,11 @@
 ---
 import Pagina from '../../layouts/Pagina.astro';
+import '../../styles/subpagines.css';
 import { dia, euros, govern, membres, slug } from '../../dades/institucions.ts';
 ---
 
-<Pagina
-  titol="Govern"
-  descripcio="Qui forma el Govern de la Generalitat, què cobra cadascú i què declara."
->
+<Pagina>
+  <main class="contingut">
   <section class="capcalera" aria-labelledby="titol">
     <p class="etiqueta entra"><span class="punt gov" aria-hidden="true"></span>Govern de la Generalitat</p>
     <h1 id="titol" class="entra" style="--ordre: 1">Qui forma el Govern</h1>
@@ -39,6 +38,7 @@ import { dia, euros, govern, membres, slug } from '../../dades/institucions.ts';
       }. Fotos: <a href={govern.url_perfils}>govern.cat</a>.
     </p>
   </section>
+  </main>
 </Pagina>
 
 <style>
