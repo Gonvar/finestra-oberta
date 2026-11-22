@@ -19,7 +19,7 @@ Les issues amb l'etiqueta [`good first issue`](https://github.com/Gonvar/finestr
 1. Fes un fork del repositori i crea-hi una branca amb un nom curt que digui què fa, per exemple `fix/idescat-dates`.
 2. Fes el canvi, amb les proves que calguin (vegeu [Preparar l'entorn](#preparar-lentorn)).
 3. Obre una pull request contra `main` i omple la plantilla.
-4. La CI comprova les proves, els tipus, el format i la compilació de la web. Si toques `web/`, Cloudflare publica una previsualització de la branca i n'enllaça l'adreça a la pull request.
+4. La CI comprova les proves, els tipus, el format i la compilació de la web. Si toques `web/` des d'una branca d'aquest repositori (no d'un fork), Cloudflare publica una previsualització de la branca i n'enllaça l'adreça a la pull request.
 5. Una persona que manté el projecte la revisa. Tota pull request entra a `main` amb la CI en verd.
 
 ## L'idioma del projecte és el català
@@ -88,8 +88,10 @@ Aquest projecte publica dades públiques. Una dada falsa que sembla real és des
 
 - Títols amb el format `tipus(àmbit): resultat concret`, en català. Per exemple: `feat(idescat): afegeix els indicadors anuals`. Els tipus són `feat`, `fix`, `docs`, `refactor`, `test`, `perf` i `chore`.
 - Els àmbits són el nom del servidor (`idescat`, `dades-obertes`, `barcelona`), `web`, `dades`, `design`, `ci` o `docs`.
+- Les pull requests de Dependabot són l'excepció: el títol i l'àmbit (`deps`) els genera Dependabot, en anglès («bump … from … to …»).
 - Un objectiu per pull request. Les pull requests s'integren amb _squash_, i el títol de la pull request és el del commit final.
 - Omple la [plantilla](.github/pull_request_template.md): què canvia, com ho has comprovat i si t'ha ajudat un agent d'IA.
 - No diguis que has provat una cosa que no has provat. Les proves amb dades sintètiques no substitueixen una prova contra l'API real.
+- Abans de la revisió, qui manté el projecte passa `/code-review` de Claude Code a cada pull request nova, en una sessió independent i mai en la que ha escrit el canvi, també quan la pull request l'obre una sessió de Claude. Se'n revisen les troballes i se'n corregeixen les que siguin correctes.
 
 Si treballes amb un agent d'IA, llegeix també [AGENTS.md](AGENTS.md).

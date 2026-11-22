@@ -1,0 +1,148 @@
+---
+// El botó de cerca és fora de l'illa de React perquè la barra es pinti sense esperar JavaScript;
+// l'illa del cercador escolta l'esdeveniment que envia.
+---
+
+<header class="nav">
+  <div class="contingut nav-interior">
+    <a class="marca" href="/">
+      <svg class="logotip" viewBox="0 0 20 20" aria-hidden="true">
+        <rect x="0" y="0" width="9" height="9" rx="2" fill="var(--gov)"></rect>
+        <rect x="11" y="0" width="9" height="9" rx="2" fill="var(--par)"></rect>
+        <rect x="0" y="11" width="9" height="9" rx="2" fill="var(--dad)"></rect>
+        <rect x="11" y="11" width="9" height="9" rx="2" fill="var(--ink)"></rect>
+      </svg>
+      Finestra Oberta
+    </a>
+    <nav aria-label="Seccions">
+      <ul>
+        <li class="nomes-ample"><a href="#cronologia">Cronologia</a></li>
+        <li class="nomes-ample"><a href="#ia">Per a la IA</a></li>
+        <li>
+          <button type="button" class="cerca" data-obre-cercador disabled aria-keyshortcuts="Meta+K Control+K">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+              <path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+            </svg>
+            Cerca
+          </button>
+        </li>
+        <li>
+          <a class="codi" href="https://github.com/Gonvar/finestra-oberta">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+              ></path>
+            </svg>
+            <span class="etiqueta-codi">Contribueix</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  for (const boto of document.querySelectorAll('[data-obre-cercador]')) {
+    boto.addEventListener('click', () => document.dispatchEvent(new CustomEvent('obre-cercador')));
+  }
+</script>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .nav-interior {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    min-height: 44px;
+  }
+
+  .logotip {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a,
+  .cerca {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-height: 44px;
+    padding: 0 0.625rem;
+    font: inherit;
+    font-size: 0.8125rem;
+    letter-spacing: 0;
+    color: var(--ink-2);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  nav a:hover,
+  .cerca:hover {
+    color: var(--ink);
+  }
+
+  .cerca svg,
+  .codi svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .cerca:active {
+    transform: scale(0.97);
+  }
+
+  .cerca {
+    transition: transform var(--t-boto) var(--ease-out);
+  }
+
+  @media (max-width: 479px) {
+    .nomes-ample {
+      display: none;
+    }
+
+    /* Al mòbil només hi cap la icona; el text queda per als lectors de pantalla. */
+    .etiqueta-codi {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+</style>

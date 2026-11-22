@@ -1,0 +1,138 @@
+---
+import type { Bloc } from '../dades/portada.ts';
+
+type Props = { bloc: Bloc; ordre: number };
+const { bloc, ordre } = Astro.props;
+const Etiqueta = bloc.href ? 'a' : 'div';
+---
+
+<Etiqueta class:list={['bloc', bloc.institucio, 'entra']} href={bloc.href} style={`--ordre: ${ordre}`}>
+  {
+    bloc.href && (
+      <span class="fletxa" aria-hidden="true">
+        <svg viewBox="0 0 16 16">
+          <path
+            d="M5 11 11 5M6 5h5v5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+    )
+  }
+  <h3>{bloc.titol}</h3>
+  <p class="frase">{bloc.frase}</p>
+  {
+    bloc.xifra && (
+      <p class="xifra">
+        <span class="valor">{bloc.xifra.valor}</span>
+        <span class="que">
+          {bloc.xifra.que} · {bloc.xifra.periode}
+        </span>
+        <span class="font">Font: {bloc.xifra.font.nom}</span>
+      </p>
+    )
+  }
+</Etiqueta>
+
+<style>
+  .bloc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 11rem;
+    padding: 1.75rem;
+    border-radius: 22px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform var(--t-bloc) var(--ease-out);
+  }
+
+  @media (min-width: 900px) {
+    .bloc {
+      min-height: 15rem;
+    }
+  }
+
+  a.bloc:active {
+    transform: scale(0.985);
+  }
+
+  .gov {
+    background: var(--gov);
+  }
+  .par {
+    background: var(--par);
+  }
+  .dad {
+    background: var(--dad);
+  }
+
+  h3 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    padding-right: 3rem;
+  }
+
+  .frase {
+    font-size: 1.0625rem;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    max-width: 22rem;
+  }
+
+  .fletxa {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    transition: transform var(--t-bloc) var(--ease-out);
+  }
+
+  .fletxa svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  @media (hover: hover) {
+    a.bloc:hover .fletxa {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  .xifra {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .valor {
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .que {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  .font {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+</style>
