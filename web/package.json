@@ -9,8 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "test": "node --test \"src/**/*.test.ts\"",
-    "preview": "astro build && wrangler dev",
-    "deploy": "astro build && wrangler deploy"
+    "preview": "astro build && wrangler dev"
   },
   "dependencies": {
     "@astrojs/react": "7.1.9",
