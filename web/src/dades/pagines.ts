@@ -4,6 +4,7 @@
 import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
 import { decretsLlei, lleis } from './activitat.ts';
 import { govern, membres, nombre, parlament, slug } from './institucions.ts';
+import { contractes, resum } from './contractes.ts';
 import { municipis } from './municipis.ts';
 import { despesa, milions, pressupost, seccionsGeneralitat } from './pressupost.ts';
 
@@ -76,6 +77,16 @@ export const pagines: Pagina[] = [
     previsualitzacio: {
       titol: 'On van els diners de la Generalitat',
       frase: `${milions(despesa(seccionsGeneralitat(pressupost.despeses.seccions)).total)} d’euros el ${pressupost.despeses.exercici}.`,
+      institucio: 'dad',
+    },
+  },
+  {
+    ruta: '/contractes/',
+    titol: 'Com contracten les administracions · Finestra Oberta',
+    descripcio: `Quants contractes han donat a empreses les administracions de Catalunya el ${contractes.any}, per quants diners i com han triat l’empresa.`,
+    previsualitzacio: {
+      titol: 'Com contracten les administracions',
+      frase: `${nombre(resum(contractes.files).total.contractes)} contractes el ${contractes.any}.`,
       institucio: 'dad',
     },
   },
