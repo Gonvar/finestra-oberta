@@ -14,10 +14,10 @@ import {
   type Fetch,
 } from './comun.ts';
 
-const FGC = 'https://dadesobertes.fgc.cat/api/explore/v2.1/catalog/datasets';
-const RENFE_RT = 'https://gtfsrt.renfe.com';
+export const FGC = 'https://dadesobertes.fgc.cat/api/explore/v2.1/catalog/datasets';
+export const RENFE_RT = 'https://gtfsrt.renfe.com';
 const RENFE_CKAN = 'https://data.renfe.com/api/3/action';
-const TMB = 'https://api.tmb.cat/v1';
+export const TMB = 'https://api.tmb.cat/v1';
 
 const SOURCE =
   "Font: Renfe, dades obertes (data.renfe.com i gtfsrt.renfe.com); Ferrocarrils de la Generalitat de Catalunya (dadesobertes.fgc.cat), amb llicència CC BY 4.0; i Transports Metropolitans de Barcelona (developer.tmb.cat). Cita l'operador i la data de les dades.";
@@ -57,8 +57,8 @@ function agrupa<T>(xs: T[], clau: (x: T) => string) {
 
 // --- Renfe ---
 
-type RenfeFeed<E> = { header: { timestamp: string }; entity: E[] };
-type TripUpdate = {
+export type RenfeFeed<E> = { header: { timestamp: string }; entity: E[] };
+export type TripUpdate = {
   id: string;
   tripUpdate: {
     trip: { tripId: string; scheduleRelationship?: string };
@@ -82,7 +82,7 @@ type Alert = {
  * nucli de rodalies, i el 51 és el de Barcelona, és a dir, Rodalies de Catalunya: «5126L28416R2N»,
  * «SPECIAL_51_91025R2», «51T0025R2». Després hi ha el número del tren i, al final, la línia: R2N, R2.
  */
-const NUCLI_RODALIES = '51';
+export const NUCLI_RODALIES = '51';
 const VIATGE = /^(?:SPECIAL_(\d{2})_|(\d{2})\d{2}L)\d+([A-Z][A-Za-z0-9]*)$/;
 const RUTA = /^(\d{2})T\d+([A-Z][A-Za-z0-9]*)$/;
 
@@ -97,7 +97,7 @@ export function liniaViatge(tripId: string) {
 }
 
 /** El retard que dona Renfe: el del viatge o, si no en té, el de la primera parada. */
-function retardSegons(u: TripUpdate['tripUpdate']) {
+export function retardSegons(u: TripUpdate['tripUpdate']) {
   if (u.delay !== undefined) return u.delay;
   const parada = u.stopTimeUpdate?.[0]?.arrival?.delay;
   return parada ?? null;
@@ -286,21 +286,29 @@ async function dataFgc(fetchImpl: Fetch, conjunt: string) {
 /** Els textos d'ODSQL van entre cometes simples, i una cometa s'escriu doblada. */
 const cometes = (text: string) => `'${text.replaceAll("'", "''")}'`;
 
-type Tren = { lin: string; en_hora: string | null };
+export type Tren = { id: string; lin: string; en_hora: string | null };
+
+/** El camp en_hora del Geotren: «True», «False» o buit. Un altre valor és un error. */
+export function enHora(t: Tren) {
+  if (t.en_hora === 'True') return true;
+  if (t.en_hora === 'False') return false;
+  if (t.en_hora === null) return null;
+  throw new SourceError(`FGC ha publicat un valor inesperat a en_hora: ${t.en_hora}.`);
+}
 
 export async function retardsFgc(fetchImpl: Fetch) {
   const [trens, dades_de] = await Promise.all([
-    exportFgc<Tren>(fetchImpl, 'posicionament-dels-trens', { select: 'lin,en_hora' }),
+    exportFgc<Tren>(fetchImpl, 'posicionament-dels-trens', { select: 'id,lin,en_hora' }),
     dataFgc(fetchImpl, 'posicionament-dels-trens'),
   ]);
   const perLinia = new Map<string, { en_hora: number; fora_d_hora: number; sense_dada: number }>();
   for (const t of trens) {
     const l = perLinia.get(t.lin) ?? { en_hora: 0, fora_d_hora: 0, sense_dada: 0 };
     perLinia.set(t.lin, l);
-    if (t.en_hora === 'True') l.en_hora++;
-    else if (t.en_hora === 'False') l.fora_d_hora++;
-    else if (t.en_hora === null) l.sense_dada++;
-    else throw new SourceError(`FGC ha publicat un valor inesperat a en_hora: ${t.en_hora}.`);
+    const h = enHora(t);
+    if (h === true) l.en_hora++;
+    else if (h === false) l.fora_d_hora++;
+    else l.sense_dada++;
   }
   return {
     operador: 'Ferrocarrils de la Generalitat de Catalunya',
@@ -476,27 +484,31 @@ export async function horarisFgc(
 // --- TMB ---
 
 /** Una crida a l'API de TMB amb la clau de l'entorn. La clau no surt mai en cap missatge. */
-function tmb<T>(fetchImpl: Fetch, cami: string, params: Record<string, string> = {}) {
+export function clauTmb() {
   const app_id = process.env.TMB_APP_ID;
   const app_key = process.env.TMB_APP_KEY;
   if (!app_id || !app_key)
     throw new SourceError(
       'Aquest servidor no té la clau de TMB: cal definir TMB_APP_ID i TMB_APP_KEY (es demanen a developer.tmb.cat).',
     );
+  return { app_id, app_key };
+}
+
+function tmb<T>(fetchImpl: Fetch, cami: string, params: Record<string, string> = {}) {
   return getJson<T>(
     fetchImpl,
-    `${TMB}/${cami}?${new URLSearchParams({ ...params, app_id, app_key })}`,
+    `${TMB}/${cami}?${new URLSearchParams({ ...params, ...clauTmb() })}`,
   );
 }
 
 type Geo<P> = { features: { properties: P }[] };
-type AlertaMetro = {
+export type AlertaMetro = {
   id: number;
   disruption_dates: { begin_date: number; end_date: number | null }[];
   entities: { line_name: string; station_name: string | null }[];
   publications: { headerCa: string; textCa: string }[];
 };
-type AlertaBus = {
+export type AlertaBus = {
   id: number;
   begin: number;
   end: number | null;
@@ -505,7 +517,7 @@ type AlertaBus = {
   linesAffected: { commercialLineId: string }[];
   channelInfoTO: { textCa: string };
 };
-type Estat<T> = { status: string; data: T };
+export type Estat<T> = { status: string; data: T };
 
 const iso = (ms: number | null) => (ms === null ? null : new Date(ms).toISOString());
 const unics = (xs: (string | null)[]) => [...new Set(xs.filter((x) => x !== null))] as string[];
@@ -515,11 +527,21 @@ export async function avisosTmb(fetchImpl: Fetch, ara = new Date()) {
     tmb<Estat<{ alerts: AlertaMetro[] }>>(fetchImpl, 'alerts/metro/channels/WEB'),
     tmb<Estat<{ alerts: AlertaBus[] }>>(fetchImpl, 'alerts/bus/channels/WEB'),
   ]);
-  for (const r of [metro, bus])
-    if (r.status !== 'success') throw new SourceError(`TMB ha respost l'estat ${r.status}.`);
   return {
     operador: 'Transports Metropolitans de Barcelona',
     dades_de: ara.toISOString(),
+    ...llegeixAvisosTmb(metro, bus),
+  };
+}
+
+/** Els avisos de metro i de bus tal com els publica TMB, amb el text sense HTML. */
+export function llegeixAvisosTmb(
+  metro: Estat<{ alerts: AlertaMetro[] }>,
+  bus: Estat<{ alerts: AlertaBus[] }>,
+) {
+  for (const r of [metro, bus])
+    if (r.status !== 'success') throw new SourceError(`TMB ha respost l'estat ${r.status}.`);
+  return {
     metro: metro.data.alerts.map((a) => ({
       id: a.id,
       inici: iso(a.disruption_dates[0]?.begin_date ?? null),

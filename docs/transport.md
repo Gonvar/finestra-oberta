@@ -41,7 +41,38 @@ Sense `TMB_APP_ID` i `TMB_APP_KEY`, les eines de Rodalies i d'FGC funcionen igua
 - **Els textos dels avisos de TMB porten HTML** (`<br>`). Se'n treuen les etiquetes. Una entitat HTML que no es coneix és un error, com a la resta de fonts: no es pot endevinar quin caràcter és. El 23/11/2026 cap avís de TMB en portava.
 - **Un codi de parada de bus que no existeix** torna la mateixa resposta que una parada sense cap bus previst. El servidor ho diu a la nota.
 
+## Històric i pàgina «Com van els trens»
+
+El workflow [`transport.yml`](../.github/workflows/transport.yml) fa una foto cada mitja hora (als minuts 7 i 37) i la publica a [historic.finestraoberta.cat](https://historic.finestraoberta.cat), un bucket R2 de Cloudflare de lectura pública. La pàgina [finestraoberta.cat/transport](https://finestraoberta.cat/transport/) en llegeix el resum des del navegador, perquè la web només es compila un cop al dia.
+
+Cada foto ([src/foto-transport.ts](../src/foto-transport.ts)) llegeix les mateixes fonts que les eines `retards` i `avisos`: el GTFS-RT de Renfe, el Geotren d'FGC i els avisos de metro i de bus de TMB.
+
+| Fitxer                                    | Què hi ha                                                                                                                                  | Quant temps es guarda   |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
+| `captures/AAAA-MM-DD/HHMM-<font>.json.gz` | La resposta de cada font, comprimida i tal com va arribar                                                                                  | 30 dies                 |
+| `fotos/AAAA-MM-DD/HHMM.json`              | Els trens de cada línia i el seu retard, amb l'empremta SHA-256 de cada còpia                                                              | 30 dies                 |
+| `dies/AAAA-MM-DD.json`                    | El dia acumulat, tren a tren: el retard més gran de cada tren de Rodalies, si algun cop un tren d'FGC no anava en hora i els avisos de TMB | Per sempre              |
+| `resum.json`                              | El que llegeix la web: l'última foto i el resum de cada dia                                                                                | Es reescriu a cada foto |
+
+- **Un tren compta un cop per dia.** De Rodalies, «amb retard» vol dir que en alguna foto portava 5 minuts o més. D'FGC, que en alguna foto no anava en hora.
+- **Els dies van pel dia a Catalunya**, no pel dia en UTC.
+- **La web no mostra el percentatge d'una línia amb menys de 10 trens** en el període, perquè exageraria: 2 de 2 seria un 100 %.
+- **Les claus** de TMB (`TMB_APP_ID`, `TMB_APP_KEY`) i d'R2 (`R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_ENDPOINT`) són secrets de l'entorn `dades` de GitHub, que només s'obre per a `main`. L'adreça de TMB es desa sense la clau.
+
+### Com comprovar una foto
+
+Cada execució signa la foto, el dia i el resum amb una atestació de GitHub. Per comprovar una foto dels últims 30 dies, baixa-la amb les seves còpies, amb la mateixa estructura de carpetes, i executa:
+
+```sh
+node src/verifica-foto.ts <carpeta> fotos/2026-11-23/0937.json
+gh attestation verify <carpeta>/fotos/2026-11-23/0937.json --repo Gonvar/finestra-oberta
+```
+
+El primer torna a fer la foto a partir de les còpies i comprova que surt igual, i que cada còpia té la seva empremta. El segon comprova que la foto la va publicar el workflow de `main`.
+
 ## Proves
 
 - [src/transport.test.ts](../src/transport.test.ts): proves sense xarxa amb dades sintètiques amb la forma de cada API.
+- [src/historic.test.ts](../src/historic.test.ts) i [web/src/dades/transport.test.ts](../web/src/dades/transport.test.ts): l'històric i la pàgina, amb dades sintètiques.
+- L'històric s'ha comprovat contra les fonts reals el 23 de novembre de 2026: dues fotos seguides, la segona sobre el resum de la primera, i `verifica-foto.ts`. No s'ha provat la pujada a R2, que només fa el workflow de `main`.
 - Comprovat contra les APIs reals per stdio el 23 de novembre de 2026: els retards de Rodalies i d'FGC, els avisos dels tres operadors, la cerca d'estacions dels tres operadors, les línies d'FGC, els horaris de Sarrià (i «Sarria» sense accent, que falla amb el motiu), els propers metros a Catalunya i busos a la parada 108, una crida amb estació i parada alhora, la demanda de Sant Cugat el 2024 i de Sants, una estació inexistent, TMB sense clau i TMB amb una clau falsa (401).
