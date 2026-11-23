@@ -2,11 +2,13 @@ import { serveStdio } from '@modelcontextprotocol/server/stdio';
 import { createBarcelonaServer } from './barcelona.ts';
 import { createDadesObertesServer } from './dadesobertes.ts';
 import { createIdescatServer } from './idescat.ts';
+import { createTransportServer } from './transport.ts';
 
 const servers = {
   idescat: createIdescatServer,
   'dades-obertes': createDadesObertesServer,
   barcelona: createBarcelonaServer,
+  transport: createTransportServer,
 };
 const name = process.argv[2];
 
