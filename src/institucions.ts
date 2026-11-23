@@ -5,6 +5,7 @@
 import { readFile } from 'node:fs/promises';
 import { construirAgenda } from './agenda.ts';
 import { construirAjuntaments } from './ajuntaments.ts';
+import { construirMunicipis } from './municipis.ts';
 import {
   comprovaCodificacio,
   dia,
@@ -700,14 +701,20 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
   // govern.cat no respon als scripts: les fitxes es copien a mà (NEUTRALITAT.md §2).
   const perfils = llegirPerfils(await readFile(PERFILS_GOVERN, 'utf8'));
   const govern = await construirGovern(fetchImpl, perfils);
+  const transparencia = await construirTransparencia(fetchImpl, [
+    govern.president,
+    ...govern.consellers,
+  ]);
+  const parlament = await construirParlament(fetchImpl, avui, pausaMs);
+  const agenda = await construirAgenda(fetchImpl, avui, pausaMs);
+  const ajuntaments = await construirAjuntaments(fetchImpl);
+  const codis = new Set(ajuntaments.municipis.map((m) => m.codi));
   return {
     'govern.json': govern,
-    'transparencia.json': await construirTransparencia(fetchImpl, [
-      govern.president,
-      ...govern.consellers,
-    ]),
-    'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
-    'agenda.json': await construirAgenda(fetchImpl, avui, pausaMs),
-    'ajuntaments.json': await construirAjuntaments(fetchImpl),
+    'transparencia.json': transparencia,
+    'parlament.json': parlament,
+    'agenda.json': agenda,
+    'ajuntaments.json': ajuntaments,
+    'municipis.json': await construirMunicipis(fetchImpl, codis),
   };
 }
