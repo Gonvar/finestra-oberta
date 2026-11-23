@@ -136,6 +136,7 @@ test("s'atura si un procés no és obert o li falta un camp obligatori o té un 
     [{ tipusPersonal: 3 }, /no és text/],
     [{ tipusPersonal: undefined }, /no porta tipusPersonal/],
     [{ dataInici: '2026-02-30' }, /no és una data/],
+    [{ dataInici: '2026-13-01' }, /no és una data/],
   ];
   for (const [atributs, error] of casos) {
     const { fetchImpl } = font([proces('10', atributs)]);
