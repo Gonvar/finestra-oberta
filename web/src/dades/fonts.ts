@@ -132,7 +132,7 @@ export const seccions: Seccio[] = [
     ruta: '/municipis/',
     fonts: [
       {
-        que: 'Les xifres de cada municipi, com la població',
+        que: 'Les xifres de cada municipi, com la població, i el nom a la llista dels municipis',
         nom: indicadors.font,
         url: indicadors.url,
         // Cada indicador té la seva data; la de la secció és la de l'últim que s'ha actualitzat.
@@ -148,7 +148,7 @@ export const seccions: Seccio[] = [
         data: { tipus: 'dades', dia: ajuntaments.data_dades },
       },
       {
-        que: 'La comarca i la província',
+        que: 'La comarca, la província i el web de l’ajuntament',
         nom: ajuntaments.font_municipis,
         url: ajuntaments.url_municipis,
         data: { tipus: 'dades', dia: ajuntaments.data_municipis },
@@ -160,8 +160,9 @@ export const seccions: Seccio[] = [
         data: { tipus: 'dades', dia: eleccions.data_dades },
       },
       {
-        que: 'El nom i els límits de cada municipi, per al mapa',
+        que: 'El nom de cada fitxa i els límits del mapa',
         nom: mapa.font,
+        // L'enllaç és el servei d'on es llegeixen les dades. Les condicions d'ús de l'ICGC són en http.
         url: mapa.url,
         data: { tipus: 'consulta', dia: mapa.data_consulta },
       },
