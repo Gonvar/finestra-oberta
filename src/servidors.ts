@@ -39,8 +39,7 @@ export const servidors: Servidor[] = [
     nom: 'dades-obertes',
     organisme: 'Generalitat de Catalunya (Dades obertes)',
     domini: 'transparenciacatalunya.cat',
-    llicencia:
-      'https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/',
+    llicencia: 'https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes/llicencies',
     docs: 'docs/dades-obertes.md',
     proves: 'src/dadesobertes.test.ts',
     crea: createDadesObertesServer,
