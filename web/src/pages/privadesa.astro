@@ -1,0 +1,73 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+---
+
+<Pagina>
+  <main class="contingut" id="principal">
+    <section class="capcalera" aria-labelledby="titol">
+      <h1 id="titol" class="entra">Privadesa</h1>
+      <p class="entradeta entra" style="--ordre: 1">
+        Aquest web no recull cap dada teva. No té galetes, ni analítica, ni formularis, ni comptes.
+      </p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="qui-rep">
+      <h2 class="titol-seccio" id="qui-rep">Qui rep alguna dada quan visites el web</h2>
+      <p>
+        Quan obres una pàgina, el teu navegador la demana a un servidor. Aquest servidor veu la teva adreça IP i
+        quin navegador fas servir, com passa amb qualsevol web. En aquest cas, hi ha tres llocs que ho veuen:
+      </p>
+      <dl class="paraules">
+        <dt>Cloudflare</dt>
+        <dd>
+          Serveix totes les pàgines, i també l'històric dels trens. Guarda registres tècnics de les peticions uns
+          quants dies, per detectar errors. Ho explica la seva <a href="https://www.cloudflare.com/privacypolicy/"
+            >política de privadesa</a
+          >.
+        </dd>
+        <dt>govern.cat i parlament.cat</dt>
+        <dd>
+          Les fotos del Govern i del Parlament es carreguen directament dels seus webs, sense còpia. Per això el teu
+          navegador també els demana la foto.
+        </dd>
+        <dt>GitHub</dt>
+        <dd>
+          Només si hi entres, per exemple per <a href="/correccions/">avisar d'un error</a>. Llavors s'apliquen les
+          seves condicions, i el que hi escriguis és públic.
+        </dd>
+      </dl>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="ia">
+      <h2 class="titol-seccio" id="ia">Si fas servir els servidors per a la IA</h2>
+      <p>
+        S'executen al teu ordinador i no guarden res. El que preguntes a l'assistent sí que arriba a l'organisme que
+        publica les dades, per exemple el nom d'un municipi. No hi escriguis dades personals.
+      </p>
+    </section>
+  </main>
+</Pagina>
+
+<style>
+  .prosa > p {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+
+  .paraules {
+    margin: 1.5rem 0 0;
+    max-width: 40rem;
+  }
+
+  .paraules dt {
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .paraules dd {
+    margin: 0.25rem 0 0;
+    color: var(--ink-2);
+  }
+</style>
