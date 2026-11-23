@@ -1,6 +1,6 @@
-# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, el mapa, els ajuts, el pressupost, els contractes i les oposicions
+# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, el mapa, els ajuts, el pressupost, els contractes, els adjudicataris i les oposicions
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi, com s'hi va votar a les últimes municipals i els seus límits per al mapa, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat, quantes adjudicacions fa cada organisme i quins processos de selecció de personal tenen el termini obert. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi, com s'hi va votar a les últimes municipals i els seus límits per al mapa, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat, quantes adjudicacions fa cada organisme i a qui, i quins processos de selecció de personal tenen el termini obert. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. La web les publica tal com hi són a `https://finestraoberta.cat/dades/`, i el servidor MCP [`finestra-oberta`](dades-publicades.md) les serveix als assistents. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -16,7 +16,8 @@ La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 
 - Si la composició ha canviat, o si el que hi ha publicat ja no es pot reproduir, signa `procedencia.json` amb una atestació i en fa un commit a `dades`. El missatge del commit enllaça l'execució de la tasca.
 - Després de desar les dades, crida el deploy hook de Workers Builds perquè Cloudflare torni a compilar la web amb les dades noves. Sense aquest pas, la web només es tornaria a compilar quan canviés `main`. L'URL del hook és el secret `CLOUDFLARE_DEPLOY_HOOK` de l'entorn `dades`. Si Cloudflare falla, es pot tornar a llançar només el job «Torna a compilar la web».
 - Si l'únic canvi és `data_consulta`, no fa cap commit: la composició és la mateixa.
-- Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
+- Si una font no respon (la connexió no arriba, o respon 429 o 5xx després de tres intents), se'n mantenen les dades de l'última vegada que va respondre, i les altres fonts s'actualitzen igual. Si respon però amb una forma o un contingut que no quadra, la tasca s'atura: aquest cas no s'amaga. Un JSON mantingut conserva les dates que porta (`data_dades`, `data_consulta` o les pròpies del fitxer), i la web mostra aquestes dates i no la de l'execució: les dades d'una font caiguda no semblen d'avui. `procedencia.json` diu de quin dia són les dades de cada font i, si no ha respost, des de quin dia i amb quin error; l'execució ho mostra com un avís. Només es manté el que encara es pot reproduir a partir de les seves còpies amb el codi i la versió de Node d'ara: si s'ha canviat la versió de Node i l'ordre dels noms en surt diferent, una font caiguda atura la tasca.
+- Si una font no respon i no se'n pot mantenir res, si no respon cap font o si una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
 - Llançada des d'una branca que no és `main`, la tasca llegeix les fonts i ho comprova tot, però no signa ni publica res. Serveix per provar un canvi abans de fusionar-lo.
 
 Les dades no passen per pull request perquè no les escriu cap persona. El codi que les genera sí: un ruleset de `main` hi impedeix el push directe, el force push i l'esborrat, i tot canvi hi entra per una pull request pública, també els de qui administra el repositori.
@@ -37,9 +38,9 @@ Per tant, a `dades` només hi pot escriure el workflow de `main`, i el codi de `
 Al costat de cada JSON hi ha:
 
 - `captures/`: la resposta de cada font oficial tal com va arribar, sense cap canvi. Cada fitxer es diu com la seva empremta SHA-256.
-- `procedencia.json`: l'empremta de cada JSON publicat i, de cada resposta, l'URL demanat, l'URL que la va servir després de les redireccions, l'hora de la consulta, el codi HTTP, el tipus de contingut i l'empremta, en l'ordre en què es van demanar.
+- `procedencia.json`: un grup per font (les institucions, l'activitat del Parlament, els ajuts, el pressupost, els contractes i les oposicions). Cada grup diu el dia de la consulta, la versió de Node, l'empremta de cada JSON que en surt i, de cada resposta, l'URL demanat, l'URL que la va servir després de les redireccions, l'hora de la consulta, el codi HTTP, el tipus de contingut i l'empremta, en l'ordre en què es van demanar. Si el dia de l'última execució la font no va respondre, `fallada` en diu des de quin dia i amb quin error, i el grup és el de l'última vegada que sí que va respondre.
 
-L'atestació signa `procedencia.json`. Com que aquest fitxer porta l'empremta dels JSON i de cada còpia, els signa tots alhora: no es poden barrejar fitxers de dues execucions.
+L'atestació signa `procedencia.json`. Com que aquest fitxer porta l'empremta dels JSON i de cada còpia, els signa tots alhora: no es poden barrejar fitxers i còpies de dues execucions dins d'una mateixa font.
 
 Hi ha tres comprovacions, i les pot fer qualsevol persona. Cal [`gh`](https://cli.github.com/), Git i Node.js 24.
 
@@ -65,9 +66,9 @@ git checkout "$CODI"
 npm run verifica-dades
 ```
 
-Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
+Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a cada grup de `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/diputats.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/mapa-municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json`, `/tmp/ara/contractes.json` i `/tmp/ara/oposicions.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/diputats.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/mapa-municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json`, `/tmp/ara/contractes.json`, `/tmp/ara/adjudicataris.json` i `/tmp/ara/oposicions.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -299,7 +300,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 ## `ajuts.json`
 
 - **Font:** les [convocatòries del RAISC](https://analisi.transparenciacatalunya.cat/d/khxn-nv6a) (`khxn-nv6a`), el Registre de subvencions i ajuts de Catalunya, del Departament d'Economia i Finances, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/). Recull les convocatòries de totes les administracions de Catalunya, no només de la Generalitat.
-- **Data:** `data_dades` és la data de l'última actualització del conjunt, que s'actualitza cada dia.
+- **Data:** `data_dades` és la data de l'última actualització del conjunt, que s'actualitza cada dia. `data_consulta` és el dia de la consulta, del qual depèn quines convocatòries són obertes: si el RAISC deixa de respondre i se'n mantenen les dades anteriors, aquesta data diu de quin dia són.
 - **Contingut:** les convocatòries que el dia de la consulta, a l'hora de Catalunya, encara no han acabat el termini de presentació de sol·licituds (`fi` és avui o més endavant). Hi són també les que encara no l'han obert (`inici` és més endavant). Van ordenades pel final del termini i, després, pel codi RAISC.
 - **Les que queden fora:** les que la font dona sense final de termini, o amb un final que no és una data (el conjunt en té, per exemple, amb «-»), perquè no es pot dir si són obertes. `finals_no_llegibles` diu quins valors tenen i quantes convocatòries n'hi ha de cadascun, perquè es vegi què s'ha deixat fora.
 - **Dates:** el RAISC les escriu com a text, «19/10/2026». `inici` i `fi` són les mateixes dates en la forma `2026-10-19`; les originals són a `inici_font` i `fi_font`. Si l'inici no és una data, `inici` és `null` i el valor de la font és a `inici_font`.
@@ -309,7 +310,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
   - Hi ha d'haver almenys un final de termini d'avui o més endavant. El RAISC sempre té convocatòries obertes: si no en surt cap, la font ha canviat la forma de les dates, i una llista buida diria que no se'n pot demanar cap.
   - Cada convocatòria ha de tenir codi RAISC, i un codi només pot sortir una vegada. L'import ha de ser un nombre.
 - **Cada dia canvia:** com que les convocatòries tanquen i n'obren de noves, `ajuts.json` canvia gairebé cada dia, i la branca `dades` té una actualització signada gairebé cada dia.
-- **Si falla:** com els ajuntaments, atura també l'actualització del Govern i el Parlament fins que es corregeix.
+- **Si falla:** com les altres fonts, si no respon se'n mantenen les dades anteriors, i si en canvia la forma la tasca s'atura.
 
 ## `pressupost.json`
 
@@ -333,18 +334,29 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 
 - **Font:** les [inscripcions al Registre públic de contractes](https://analisi.transparenciacatalunya.cat/d/hb6v-jcbf) (`hb6v-jcbf`), del Departament d'Economia i Finances, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/). Hi ha els contractes de la Generalitat i el seu sector públic, dels ens locals i de les universitats.
 - **Període:** les adjudicacions des de l'1 de gener fins al dia de l'última actualització de la font a Catalunya (`data_dades`), i no fins al dia de la consulta. Així el fitxer només canvia quan canvia la font, i els primers dies de gener encara és el de l'any anterior.
-- **Contingut:** per àmbit, departament o ens (`agrupacio_organisme`) i procediment d'adjudicació, quantes inscripcions d'adjudicació hi ha i per quin import. Cada inscripció és un contracte o un lot d'un contracte. No es publica cap contracte ni cap adjudicatari un per un.
+- **Contingut:** per àmbit, departament o ens (`agrupacio_organisme`) i procediment d'adjudicació, quantes inscripcions d'adjudicació hi ha i per quin import. Cada inscripció és un contracte o un lot d'un contracte. No es publica cap contracte un per un; a qui s'adjudica és a `adjudicataris.json`.
 - **Què es compta:** només les inscripcions d'adjudicació i les de contractes menors.
   - Les liquidacions repeteixen el contracte. El 23/11/2026 se'n van comparar tres de l'any amb les inscripcions del mateix expedient, organisme i lot, i cadascuna tenia una inscripció de menor amb el mateix import i la mateixa data.
   - Les pròrrogues i les modificacions porten l'import de la pròrroga o de la modificació, no el del contracte.
 - **Imports:** els d'adjudicació, en euros, tal com els dona la font. La font no diu si porten IVA. El 23/11/2026, totes les inscripcions d'adjudicació i de menors de l'any tenien import, cap no era sense data d'adjudicació i cap data no tenia hora.
-- **Sumes:** les fa l'API de la font, amb `count(*)` i `sum()`. El codi no suma res. Es demana una consulta per àmbit, perquè una de sola per a tot l'any passa del temps límit; cada grup surt sencer d'una sola consulta.
+- **Sumes:** les fa l'API de la font, amb `count(*)` i `sum()`. El codi no suma res. Es demana una consulta per àmbit, perquè una de sola per a tot l'any passa del temps límit; cada grup surt sencer d'una sola fila de la font. Si els grups d'un àmbit passen d'una pàgina de 50.000, es demanen més pàgines, ordenades per tota la clau del grup perquè no es trepitgin.
 - **Dates posteriors:** la font té inscripcions amb una data d'adjudicació posterior a la de les dades (més de 2.000 el novembre del 2026, algunes del 2029). No hi són, i es compten a `adjudicacions_posteriors`. Les que no tenen data es compten a `adjudicacions_sense_data`.
 - **Ordre i noms:** per àmbit, codi de l'organisme (com a text), nom i procediment. Els noms són tal com els escriu la font. Si un organisme canvia de nom o d'àmbit durant l'any, surt en una fila per a cada nom. Les adjudicacions sense procediment tenen `procediment` a `null` i van al final del seu organisme.
 - **Comprovacions:**
+  - Cap grup no pot sortir dues vegades: voldria dir que les pàgines es trepitgen.
   - Cada fila ha de tenir l'àmbit, el codi i el nom de l'organisme, un recompte que sigui un nombre i un import, i totes les inscripcions del grup han de tenir import: `sum()` se salta les que no en tenen.
   - A partir del 15 de gener, hi ha d'haver inscripcions d'adjudicació i de menors de l'any. Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en donaria només una part.
-  - Cada inscripció de l'any, també les liquidacions, ha de tenir la situació, i cada consulta d'àmbit ha de cabre en una pàgina.
+  - Cada inscripció de l'any, també les liquidacions, ha de tenir la situació.
+- **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
+
+## `adjudicataris.json`
+
+- **Font i període:** els de `contractes.json`, amb les mateixes inscripcions (adjudicacions i contractes menors de l'any fins a `data_dades`) i els mateixos `adjudicacions_posteriors` i `adjudicacions_sense_data`.
+- **Contingut:** per àmbit, departament o ens (`agrupacio_organisme`) i adjudicatari, quantes inscripcions hi ha i per quin import. Les sumes les fa l'API de la font, amb una consulta per àmbit i pàgines de 50.000 grups.
+- **Adjudicatari:** el nom tal com l'escriu la font, que no en publica el NIF. Una mateixa empresa escrita de dues maneres surt en dues files, i dues empreses amb el mateix nom surten en una. Les inscripcions sense adjudicatari tenen `adjudicatari` a `null` i van al final del seu organisme.
+- **Persones físiques:** en els contractes menors hi pot haver persones físiques. El nom es publica tal com el publica la font, sense creuar-lo amb cap altra dada.
+- **Ordre:** per àmbit, codi de l'organisme (com a text), nom de l'organisme i adjudicatari.
+- **Comprovacions:** cap grup no pot sortir dues vegades: voldria dir que les pàgines es trepitgen. Les de `contractes.json` per a cada fila (àmbit, codi i nom de l'organisme, recomptes, imports i que totes les inscripcions del grup tinguin import). A més, la suma de les inscripcions per adjudicatari ha de ser la mateixa que per procediment: són dues agrupacions de les mateixes inscripcions, i si no lliguen, la font ha canviat entre consultes o una agrupació en perd.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## `oposicions.json`

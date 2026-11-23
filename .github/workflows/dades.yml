@@ -4,8 +4,9 @@ name: Dades del Govern, del Parlament, dels ajuntaments, de l'activitat del Parl
 # `dades` amb la còpia de cada resposta. Les dades no passen per pull request perquè no les escriu
 # ningú: les escriu aquesta tasca, i cada actualització queda signada amb una atestació de GitHub
 # que diu quin workflow i quin commit de main les han generat. Vegeu docs/institucions.md.
-# Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i la branca
-# `dades` es queda com estava.
+# Si una font no respon, se'n mantenen les dades anteriors amb un avís, i les altres s'actualitzen.
+# Si no se'n pot mantenir res o una comprovació no quadra, la tasca falla, GitHub ho notifica i la
+# branca `dades` es queda com estava.
 #
 # Qui pot escriure a `dades` no ho decideix aquest fitxer, que qualsevol branca pot canviar, sinó
 # GitHub: el ruleset de `dades` només deixa fer-hi push a la clau de desplegament, i la clau és un
@@ -17,20 +18,25 @@ on:
   # pot esperar a l'endemà.
   push:
     branches: [main]
-    paths: ['src/**', 'fonts/**']
+    paths: ['src/**', 'fonts/**', '!src/**/*.test.ts']
   workflow_dispatch:
 
 permissions: {}
 
-# Per branca: una prova des d'una altra branca no ha de cancel·lar l'execució de main en cua.
+# Per branca: una prova des d'una altra branca no ha de cancel·lar l'execució de main en cua. A main
+# cada execució espera l'anterior, perquè publiquen per ordre. A una altra branca, que només prova,
+# una execució nova fa inútil l'anterior.
 concurrency:
   group: dades-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   genera:
     name: Llegeix les fonts
     runs-on: ubuntu-latest
+    # El p95 ha estat de 9 minuts, i algunes execucions n'han durat 15. Una font penjada fa fallar la
+    # tasca, en lloc d'ocupar el runner 6 hores.
+    timeout-minutes: 30
     permissions:
       contents: read
     outputs:
@@ -77,8 +83,12 @@ jobs:
           # data_consulta canvia cada dia. Si és l'únic que ha canviat a la composició, no hi ha res de
           # nou per desar. L'agenda sí que es desa cada dia: la web en treu quins actes ja han passat.
           # Per això també es tornen a provar cada dia els resums que no s'han pogut fer.
-          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json diputats.json ajuntaments.json activitat.json ajuts.json pressupost.json municipis.json eleccions-municipals.json mapa-municipis.json contractes.json oposicions.json \
-            && git diff --cached --quiet -- agenda.json; then
+          # Una font que deixa de respondre, o que hi torna, també és un canvi: procedencia.json ho diu,
+          # encara que els JSON siguin els mateixos.
+          FALLADES='[.grups | to_entries[] | [.key, .value.fallada]]'
+          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json diputats.json ajuntaments.json activitat.json ajuts.json pressupost.json municipis.json eleccions-municipals.json mapa-municipis.json contractes.json adjudicataris.json oposicions.json \
+            && git diff --cached --quiet -- agenda.json \
+            && [ "$(git show HEAD:procedencia.json | jq -c "$FALLADES")" = "$(jq -c "$FALLADES" procedencia.json)" ]; then
             echo "Ni la composició ni l'agenda han canviat."
           else
             echo "hi-ha=true" >> "$GITHUB_OUTPUT"
@@ -98,6 +108,9 @@ jobs:
     needs: genera
     if: needs.genera.outputs.hi-ha && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    # Inclou els resums de les sessions noves amb l'API d'Anthropic. La primera vegada en són unes 60,
+    # d'uns 20 s cadascun: amb un límit massa curt no es publicarien mai, perquè no es desen fins al final.
+    timeout-minutes: 60
     environment: dades
     permissions:
       id-token: write
@@ -164,8 +177,8 @@ jobs:
             # també tenen un ordre. Si el que hi ha publicat no es podia reproduir, la seva hora no
             # val res, i les dades noves el substitueixen.
             if [ "$BONES" = true ]; then
-              ARA=$(jq -r '[.captures[].consultat] | max' nou/procedencia.json)
-              PUBLICADA=$(jq -r '[.captures[].consultat] | max' dades/procedencia.json)
+              ARA=$(jq -r '[.grups[].captures[].consultat] | max' nou/procedencia.json)
+              PUBLICADA=$(jq -r '[.grups[].captures[].consultat] | max' dades/procedencia.json)
               if [[ ! "$ARA" > "$PUBLICADA" ]]; then
                 echo "::error::Les dades publicades són de $PUBLICADA, i aquestes, de $ARA."
                 exit 1
@@ -204,6 +217,7 @@ jobs:
     name: Torna a compilar la web
     needs: publica
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     environment: dades
     permissions: {}
     steps:

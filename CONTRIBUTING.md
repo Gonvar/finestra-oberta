@@ -60,19 +60,37 @@ Cada pàgina fa servir la plantilla `web/src/layouts/Pagina.astro` i ha de ser a
 - Comprova el canvi a 320 px d'amplada i a l'escriptori, amb el teclat i amb el contrast de DESIGN.md §5.
 - Afegeix captures d'abans i de després a la pull request quan el canvi es vegi.
 
-## Afegir un servidor MCP
+## Afegir una font
 
-Cada servidor és un fitxer a `src/` que exporta una funció `create…Server(fetchImpl = fetch)` i torna un `McpServer`. Per exemple, [src/idescat.ts](src/idescat.ts) o [src/dadesobertes.ts](src/dadesobertes.ts).
+Cada font té el seu servidor MCP: un fitxer a `src/`, amb les seves proves i la seva documentació, i una entrada al registre, [src/servidors.ts](src/servidors.ts). Per exemple, [src/idescat.ts](src/idescat.ts) o [src/dadesobertes.ts](src/dadesobertes.ts). Qualsevol persona en pot proposar una de nova amb una pull request.
 
-1. **Estudia l'API real abans d'escriure.** Fes algunes crides a mà i apunta què passa amb un paràmetre que no existeix, un identificador inexistent, una consulta massa gran i les dades provisionals o antigues.
-2. **Escriu el servidor a `src/<font>.ts`.**
+1. **Comprova que la font és oficial.** Ha de ser d'un organisme públic, pública i sense clau. Si el domini no és a la taula de [NEUTRALITAT.md](NEUTRALITAT.md), la pull request l'hi afegeix i explica per què cal i per què no serveix cap de les fonts que ja hi ha.
+2. **Estudia l'API real abans d'escriure.** Fes algunes crides a mà i apunta què passa amb un paràmetre que no existeix, un identificador inexistent, una consulta massa gran i les dades provisionals o antigues. Busca la pàgina oficial de la llicència o les condicions d'ús.
+3. **Prepara els fitxers amb la plantilla:**
+
+   ```sh
+   npm run nova-font -- <nom> --organisme "Ajuntament de Girona" --domini girona.cat
+   ```
+
+   Crea `src/<nom>.ts`, `src/<nom>.test.ts` i `docs/<nom>.md`, i els afegeix al registre, a `package.json` i a la taula del README.
+
+4. **Omple cada `TODO`.**
    - Fes servir `run`, `getJson`, `SourceError` i `READ_ONLY_EXTERNAL` de [src/comun.ts](src/comun.ts).
    - Escriu les instruccions, les descripcions de les eines, els errors i els noms de les eines i dels paràmetres en català.
    - Tota eina és de només lectura.
-3. **Registra'l a [src/index.ts](src/index.ts)** i afegeix-ne l'script a `package.json`.
-4. **Afegeix proves a `src/<font>.test.ts`** amb `node:test` i un `fetch` fals. Fes servir dades sintètiques amb la forma de l'API, no captures reals.
-5. **Prova'l contra l'API real** per stdio, amb una crida que funcioni i amb una que hauria de fallar.
-6. **Documenta'l a `docs/<font>.md`** i afegeix-lo a la taula del [README](README.md).
+   - Les proves fan servir `node:test` i un `fetch` fals amb dades sintètiques amb la forma de l'API, no captures reals.
+5. **Prova'l contra l'API real** per stdio (`node src/index.ts <nom>`), amb una crida que funcioni i amb una que hauria de fallar, i explica-ho a la documentació i a la pull request.
+
+La CI comprova cada font del registre amb [src/servidors.test.ts](src/servidors.test.ts) i no la deixa entrar si:
+
+- El domini no és a la taula de NEUTRALITAT.md, o el codi consulta una adreça d'un altre domini.
+- La llicència no és una pàgina d'un domini de la taula, o la documentació no l'enllaça. Si el portal dona una llicència a cada conjunt (`'per conjunt'`), la documentació ho ha d'explicar, i qui revisa comprova que el servidor la torna.
+- Falten les proves, la documentació, l'ordre de `package.json` o la fila del README.
+- Queda algun `TODO` o marcador de la plantilla.
+- Hi ha un servidor a `src/` que no és al registre.
+- Alguna eina no és de només lectura, o no té títol ni descripció, o el servidor no té instruccions.
+
+El que la CI no pot comprovar ho mira qui revisa: que la font es llegeixi bé, que les dades no es canviïn i que cap text afavoreixi ningú.
 
 ## Criteris
 
@@ -96,6 +114,7 @@ Aquest projecte publica dades públiques. Una dada falsa que sembla real és des
 - Les pull requests de Dependabot són l'excepció: el títol i l'àmbit (`deps`) els genera Dependabot, en anglès («bump … from … to …»).
 - Un objectiu per pull request. Les pull requests s'integren amb _squash_, i el títol de la pull request és el del commit final.
 - Omple la [plantilla](.github/pull_request_template.md): què canvia, com ho has comprovat i si t'ha ajudat un agent d'IA.
+- Cap enllaç a una sessió de Claude Code (`claude.ai/code/session_…` o la línia `Claude-Session:`) ni a un projecte de Claude (`claude.ai/project/…`, `claude.ai/code/project/…`) als commits, a les pull requests, a les issues ni als comentaris. El repositori és públic i aquests enllaços porten a converses privades. L'ajuda d'un agent es diu a la secció «Ajuda d'un agent» de la plantilla, sense enllaços. La CI rebutja una pull request que en tingui al títol o a la descripció.
 - No diguis que has provat una cosa que no has provat. Les proves amb dades sintètiques no substitueixen una prova contra l'API real.
 - Abans de la revisió, qui manté el projecte passa `/code-review` de Claude Code a cada pull request nova, en una sessió independent i mai en la que ha escrit el canvi, també quan la pull request l'obre una sessió de Claude. Se'n revisen les troballes i se'n corregeixen les que siguin correctes. Cada revisió, de persona o d'agent, fa les comprovacions de [NEUTRALITAT.md](NEUTRALITAT.md) §4 i, si toca la web, les de [DESIGN.md](DESIGN.md) §1.1.
 

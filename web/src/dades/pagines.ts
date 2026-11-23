@@ -5,6 +5,7 @@ import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
 import { decretsLlei, lleis } from './activitat.ts';
 import { perfils, presentacio } from './diputats.ts';
 import { govern, membres, nombre, parlament, slug } from './institucions.ts';
+import { contractes, resum } from './contractes.ts';
 import { municipis } from './municipis.ts';
 import { despesa, milions, pressupost, seccionsGeneralitat } from './pressupost.ts';
 
@@ -81,6 +82,16 @@ export const pagines: Pagina[] = [
     },
   },
   {
+    ruta: '/contractes/',
+    titol: 'Com contracten les administracions · Finestra Oberta',
+    descripcio: `Quants contractes han donat a empreses les administracions de Catalunya el ${contractes.any}, per quants diners i com han triat l’empresa.`,
+    previsualitzacio: {
+      titol: 'Com contracten les administracions',
+      frase: `${nombre(resum(contractes.files).total.contractes)} contractes el ${contractes.any}.`,
+      institucio: 'dad',
+    },
+  },
+  {
     ruta: '/transport/',
     titol: 'Com van els trens · Finestra Oberta',
     descripcio:
@@ -99,6 +110,15 @@ export const pagines: Pagina[] = [
     previsualitzacio: {
       titol: 'D’on surten les dades',
       frase: 'Totes les dades les publiquen organismes públics. No n’escrivim cap a mà.',
+    },
+  },
+  {
+    ruta: '/correccions/',
+    titol: 'Avisa d’un error · Finestra Oberta',
+    descripcio: 'Com avisar d’una dada equivocada i què en fem.',
+    previsualitzacio: {
+      titol: 'Avisa d’un error',
+      frase: 'Si una dada és equivocada, és antiga o no s’entén, digues-nos-ho.',
     },
   },
   {

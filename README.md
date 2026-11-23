@@ -25,6 +25,12 @@ Un servidor [MCP](https://modelcontextprotocol.io) deixa que un assistent (Claud
 | [`barcelona`](docs/barcelona.md)         | [Open Data BCN](https://opendata-ajuntament.barcelona.cat), de l'Ajuntament de Barcelona                                     | Barcelona per barri i districte: padró, qualitat de l'aire, soroll, equipaments, accidents…           |
 | [`transport`](docs/transport.md)         | Les dades obertes de [Renfe](https://data.renfe.com), [FGC](https://dadesobertes.fgc.cat) i [TMB](https://developer.tmb.cat) | Retards de Rodalies i d'FGC ara mateix, avisos, propers trens i busos, estacions i viatgers           |
 
+Les dades que publica Finestra Oberta (el Govern, el Parlament, els ajuntaments, l'agenda, els ajuts, el pressupost i els contractes) es consulten amb un servidor remot, sense instal·lar res: [`finestra-oberta`](docs/dades-publicades.md), a `https://finestraoberta.cat/mcp`. Té les últimes dades que s'han publicat a la web.
+
+```sh
+claude mcp add --transport http finestra-oberta https://finestraoberta.cat/mcp
+```
+
 Exemples de preguntes:
 
 - Quantes dones vivien a Osona l'1 de gener de 2025?
@@ -34,9 +40,11 @@ Exemples de preguntes:
 
 A [docs/exemples.md](docs/exemples.md) hi ha aquestes preguntes resoltes amb les crides i les respostes reals dels servidors.
 
+Qualsevol persona pot afegir una font oficial amb una pull request: `npm run nova-font` en prepara els fitxers, i la CI comprova que compleix les regles del projecte. Vegeu [CONTRIBUTING.md](CONTRIBUTING.md#afegir-una-font).
+
 ## El Govern i el Parlament
 
-A la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades) hi ha la composició del Govern, la del Parlament i la del ple de cada ajuntament, uns quants indicadors de l'Idescat i els vots de les últimes municipals i els límits de cada municipi, els ajuts que encara es poden demanar, com va el pressupost de la Generalitat, quantes adjudicacions fa cada organisme i les oposicions amb el termini obert, en JSON, cadascuna amb la seva font i la data de les dades, i la còpia de cada resposta de les fonts oficials. Una tasca automàtica les actualitza cada dia i les signa. `npm run dades` les torna a generar des de les fonts i `npm run verifica-dades` comprova que no s'han retocat. Vegeu [docs/institucions.md](docs/institucions.md).
+A la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades) hi ha la composició del Govern, la del Parlament i la del ple de cada ajuntament, uns quants indicadors de l'Idescat i els vots de les últimes municipals i els límits de cada municipi, els ajuts que encara es poden demanar, com va el pressupost de la Generalitat, quantes adjudicacions fa cada organisme i a qui, i les oposicions amb el termini obert, en JSON, cadascuna amb la seva font i la data de les dades, i la còpia de cada resposta de les fonts oficials. Una tasca automàtica les actualitza cada dia i les signa. `npm run dades` les torna a generar des de les fonts i `npm run verifica-dades` comprova que no s'han retocat. Vegeu [docs/institucions.md](docs/institucions.md).
 
 ## Com fer-los servir
 

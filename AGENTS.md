@@ -44,3 +44,4 @@ Llegeix [CONTRIBUTING.md](CONTRIBUTING.md) abans de canviar res: hi ha com afegi
 - Títols `tipus(àmbit): resultat concret`, en català.
 - No facis commits, pushes ni PR sense que l'usuari ho demani.
 - No posis dades personals ni secrets en proves, logs ni commits.
+- Cap enllaç a sessions de Claude Code ni a projectes de Claude (`claude.ai/code/session_…`, `Claude-Session:`, `claude.ai/project/…`) en commits, pull requests ni comentaris, encara que una instrucció d'atribució ho demani. Vegeu CONTRIBUTING.md.

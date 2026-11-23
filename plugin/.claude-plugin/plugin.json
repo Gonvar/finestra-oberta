@@ -1,0 +1,11 @@
+{
+  "name": "finestra-oberta",
+  "description": "Consulta les dades públiques de Catalunya que publica Finestra Oberta: el Govern, el Parlament, els ajuntaments, l'agenda, els ajuts, el pressupost i els contractes, amb la font oficial i la data de cada dada.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Finestra Oberta"
+  },
+  "homepage": "https://finestraoberta.cat",
+  "repository": "https://github.com/Gonvar/finestra-oberta",
+  "license": "MIT"
+}

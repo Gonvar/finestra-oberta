@@ -1,0 +1,92 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+import { REPO } from '../dades/portada.ts';
+
+const AVIS = `${REPO}/issues/new?template=1-dada-incorrecta.yml`;
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <h1 id="titol" class="entra">Avisa d'un error</h1>
+      <p class="entradeta entra" style="--ordre: 1">
+        Si una dada és equivocada, és antiga o no s'entén, digues-nos-ho.
+      </p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="com">
+      <h2 class="titol-seccio" id="com">Com avisar</h2>
+      <p><a class="boto" href={AVIS}>Obre l'avís a GitHub</a></p>
+      <p>
+        Cal un compte de GitHub, que és gratuït. L'avís és públic: no hi posis dades personals.
+      </p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="que-fem">
+      <h2 class="titol-seccio" id="que-fem">Què en fem</h2>
+      <ol class="passos">
+        <li>Comprovem la dada amb la font oficial.</li>
+        <li>
+          Si l'error és nostre, perquè hem llegit o mostrat malament la dada, corregim el programa que la llegeix.
+          Quan la correcció s'aprova, el web es torna a publicar.
+        </li>
+        <li>
+          Si l'error és de la font, demanem a l'organisme que el corregeixi. Mentrestant, el web no canvia la dada.
+        </li>
+      </ol>
+      <p>
+        No canviem mai una dada a mà, perquè després ningú no podria comprovar d'on surt. Tot el que fem queda escrit
+        a l'avís.
+      </p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="partit">
+      <h2 class="titol-seccio" id="partit">Si un text pren partit</h2>
+      <p>
+        També és un error. Avisa'ns de la mateixa manera, amb l'enllaç a la pàgina. Les regles que seguim són a <a
+          href="/metodologia/#no-publiquem">Què no publiquem</a
+        >.
+      </p>
+    </section>
+  </main>
+</Pagina>
+
+<style>
+  .prosa > p,
+  .prosa > ol {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+
+  .passos {
+    padding-left: 1.25rem;
+  }
+
+  .passos li + li {
+    margin-top: 0.5rem;
+  }
+
+  /* El botó principal de DESIGN.md: --ink, blanc i rodó. */
+  .boto {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 1.25rem;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform var(--t-boto) var(--ease-out);
+  }
+
+  .boto:active {
+    transform: scale(0.97);
+  }
+
+  .prosa > p:has(.boto) {
+    margin-top: 1.5rem;
+  }
+</style>
