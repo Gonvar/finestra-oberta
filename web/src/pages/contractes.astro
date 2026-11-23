@@ -1,0 +1,319 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+import { dia, eurosRodons, nombre } from '../dades/institucions.ts';
+import { milions, percentatge } from '../dades/pressupost.ts';
+import { REPO } from '../dades/portada.ts';
+import { PROCEDIMENTS, contractes, resum } from '../dades/contractes.ts';
+
+const r = resum(contractes.files);
+const fins = dia(contractes.data_dades);
+const organismes = new Set(contractes.files.map((f) => f.organisme_codi)).size;
+const DADES = `${REPO}/blob/dades/contractes.json`;
+const amplada = (part: number) => `width: ${part * 100}%`;
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <p class="etiqueta entra"><span class="punt dad" aria-hidden="true"></span>Administracions de Catalunya</p>
+      <h1 id="titol" class="entra" style="--ordre: 1">Com contracten les administracions</h1>
+      <p class="entradeta entra" style="--ordre: 2">
+        Quants contractes han donat a empreses el {contractes.any}, per quants diners i com han triat l'empresa.
+      </p>
+    </section>
+
+    <section class="seccio entra" style="--ordre: 3" aria-labelledby="total-titol">
+      <h2 class="visualment-amagat" id="total-titol">Quants contractes</h2>
+      <p class="valor">{nombre(r.total.contractes)} contractes</p>
+      <p class="que">
+        per {milions(r.total.import)} d'euros. Els han donat la Generalitat, els ajuntaments i altres ens locals, i
+        les universitats, de l'1 de gener al {fins}.
+      </p>
+      <p class="font-dada">
+        Font: <a href={contractes.url}>Registre públic de contractes</a>, Departament d'Economia i Finances,
+        actualitzat el {fins}.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="procediments-titol">
+      <h2 class="titol-seccio" id="procediments-titol">Com es tria l'empresa</h2>
+      <p class="explica">
+        La llei fixa diverses maneres de triar l'empresa. Per a cadascuna, la primera barra és la part dels
+        contractes i la segona, la part dels diners. Van de més a menys diners.
+      </p>
+      <ol class="grups">
+        {
+          r.procediments.map((p) => (
+            <li>
+              <p class="nom">{p.nom}</p>
+              {p.nom in PROCEDIMENTS && <p class="secundari explicacio">{PROCEDIMENTS[p.nom]}</p>}
+              <div class="parella" aria-hidden="true">
+                <span class="rotul">Contractes</span>
+                <span class="pista">
+                  <span class="ple" style={amplada(p.partContractes)} />
+                </span>
+                <span class="rotul">Diners</span>
+                <span class="pista">
+                  <span class="ple" style={amplada(p.partImport)} />
+                </span>
+              </div>
+              <p class="xifra">
+                {nombre(p.contractes)} contractes ({percentatge(p.partContractes)}) · {milions(p.import)} ({percentatge(p.partImport)} dels diners)
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="font-dada">
+        Font: <a href={contractes.url}>Registre públic de contractes</a>, actualitzat el {fins}. Imports en milions
+        d'euros.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="ambits-titol">
+      <h2 class="titol-seccio" id="ambits-titol">Qui contracta</h2>
+      <p class="explica">Les mateixes dues barres per a cada tipus d'administració.</p>
+      <ol class="grups">
+        {
+          r.ambits.map((a) => (
+            <li>
+              <p class="nom">{a.nom}</p>
+              <div class="parella" aria-hidden="true">
+                <span class="rotul">Contractes</span>
+                <span class="pista">
+                  <span class="ple" style={amplada(a.partContractes)} />
+                </span>
+                <span class="rotul">Diners</span>
+                <span class="pista">
+                  <span class="ple" style={amplada(a.partImport)} />
+                </span>
+              </div>
+              <p class="xifra">
+                {nombre(a.contractes)} contractes ({percentatge(a.partContractes)}) · {milions(a.import)} ({percentatge(a.partImport)} dels diners)
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="font-dada">
+        Font: <a href={contractes.url}>Registre públic de contractes</a>, actualitzat el {fins}.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="detall-titol">
+      <h2 class="titol-seccio" id="detall-titol">Totes les xifres</h2>
+      <dl class="paraules">
+        <dt>Contracte</dt>
+        <dd>Cada contracte, o cada part d'un contracte gran (un lot), adjudicat aquest any.</dd>
+        <dt>Import</dt>
+        <dd>El preu pel qual s'ha adjudicat, tal com el publica la font, que no diu si porta IVA.</dd>
+      </dl>
+
+      <div class="taula" tabindex="0" role="region" aria-labelledby="taula-procediments">
+        <table>
+          <caption id="taula-procediments">
+            Contractes per procediment, de l'1 de gener al {fins}
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Procediment</th>
+              <th scope="col">Contractes</th>
+              <th scope="col">Import</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              r.procediments.map((p) => (
+                <tr>
+                  <th scope="row">{p.nom}</th>
+                  <td>{nombre(p.contractes)}</td>
+                  <td>{eurosRodons(p.import)}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td>{nombre(r.total.contractes)}</td>
+              <td>{eurosRodons(r.total.import)}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <p class="explica">
+        A les <a href={DADES}>dades completes</a> hi ha quants contractes ha fet cadascun dels {nombre(organismes)}
+        organismes. No hi ha cap contracte un per un ni el nom de cap empresa. Hi falten {nombre(contractes.adjudicacions_posteriors)}
+        contractes que a la font tenen una data d'adjudicació posterior al {fins}.
+      </p>
+      <p class="font-dada">
+        Font: <a href={contractes.url}>Registre públic de contractes</a>, de Dades obertes de Catalunya.
+      </p>
+    </section>
+  </main>
+</Pagina>
+
+<style>
+  .punt.dad {
+    background: var(--dad);
+  }
+
+  .valor {
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    text-wrap: balance;
+  }
+
+  .que {
+    margin-top: 0.75rem;
+    max-width: 38rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+
+  .explica {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+
+  .grups {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    max-width: 48rem;
+  }
+
+  .grups > li {
+    padding: 1rem 0;
+    box-shadow: inset 0 1px 0 var(--hair);
+  }
+
+  .nom {
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+
+  .explicacio {
+    margin-top: 0.125rem;
+  }
+
+  .parella {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.375rem 0.75rem;
+    margin-top: 0.625rem;
+  }
+
+  .rotul {
+    font-size: 0.8125rem;
+    color: var(--ink-3);
+  }
+
+  /* El fons clar és la resta del total; el contorn fa que es vegi sobre el blanc (WCAG 1.4.11). */
+  .pista {
+    display: block;
+    height: 0.75rem;
+    border-radius: 999px;
+    background: var(--dad-tint);
+    box-shadow: inset 0 0 0 1px var(--dad);
+    overflow: hidden;
+  }
+
+  .ple {
+    display: block;
+    min-width: 3px;
+    height: 100%;
+    background: var(--dad);
+  }
+
+  .xifra {
+    margin-top: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .seccio > .font-dada {
+    margin-top: 1.5rem;
+  }
+
+  .paraules {
+    margin: 1.5rem 0 0;
+    max-width: 40rem;
+  }
+
+  .paraules dt {
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .paraules dd {
+    margin: 0.25rem 0 0;
+    color: var(--ink-2);
+  }
+
+  /* Només la taula es desplaça en horitzontal, mai la pàgina (§5). */
+  .taula {
+    margin-top: 2.5rem;
+    overflow-x: auto;
+  }
+
+  .taula:focus-visible {
+    outline: 2px solid var(--gov);
+    outline-offset: 3px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  caption {
+    text-align: left;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+  }
+
+  th,
+  td {
+    padding: 0.625rem 0.75rem 0.625rem 0;
+    box-shadow: inset 0 -1px 0 var(--hair);
+    vertical-align: top;
+  }
+
+  thead th {
+    color: var(--ink-3);
+    font-weight: 400;
+  }
+
+  th[scope='row'] {
+    font-weight: 400;
+    text-align: left;
+    min-width: 12rem;
+  }
+
+  td,
+  thead th:not(:first-child) {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  thead th:first-child {
+    text-align: left;
+  }
+
+  tfoot th,
+  tfoot td {
+    font-weight: 600;
+  }
+</style>
