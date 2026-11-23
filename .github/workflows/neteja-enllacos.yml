@@ -26,8 +26,8 @@ jobs:
             return r.json();
           };
           const totes = async (p) => { const out = []; for (let page = 1; ; page++) { const d = await api(`${p}${p.includes('?') ? '&' : '?'}per_page=100&page=${page}`); out.push(...d); if (d.length < 100) return out; } };
-          const privat = /claude\.ai\/(code\/)?(session_|project)|claude-projects-attribution|^Claude-Session:/;
-          const neteja = (text) => text.split('\n').filter((l) => !privat.test(l)).join('\n').replace(/\n{3,}/g, '\n\n').replace(/^\s+/, '').replace(/\s+$/, '\n');
+          const privat = /claude\.ai\/(code\/)?(session_|project)|claude-projects-attribution|^Claude-Session:|^[^A-Za-z]*Generated (with|by) \[Claude Code\]/;
+          const neteja = (text) => text.split('\n').filter((l) => !privat.test(l)).join('\n').replace(/(\n\s*-{3,}\s*)+$/, '').replace(/\n{3,}/g, '\n\n').replace(/^\s+/, '').replace(/\s+$/, '\n');
           const escriu = process.env.ESCRIU === 'si';
           let canvis = 0;
           const revisa = async (on, text, patch) => {
