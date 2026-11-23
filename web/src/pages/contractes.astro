@@ -4,7 +4,7 @@ import '../styles/subpagines.css';
 import { dia, eurosRodons, nombre } from '../dades/institucions.ts';
 import { milions } from '../dades/pressupost.ts';
 import { REPO } from '../dades/portada.ts';
-import { PROCEDIMENTS, contractes, part, resum } from '../dades/contractes.ts';
+import { PROCEDIMENTS, alDia, contractes, contractesEnText, part, resum } from '../dades/contractes.ts';
 
 const r = resum(contractes.files);
 const fins = dia(contractes.data_dades);
@@ -12,6 +12,12 @@ const organismes = new Set(contractes.files.map((f) => f.organisme_codi)).size;
 const DADES = `${REPO}/blob/dades/contractes.json`;
 const amplada = (valor: number) => `width: ${valor * 100}%`;
 const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseData } = contractes;
+const noComptats = [
+  ...(posteriors > 0
+    ? [`${contractesEnText(posteriors, nombre)} amb una data d'adjudicació posterior ${alDia(fins)}`]
+    : []),
+  ...(senseData > 0 ? [`${contractesEnText(senseData, nombre)} sense data`] : []),
+];
 ---
 
 <Pagina>
@@ -35,9 +41,9 @@ const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseDat
         <Fragment>
     <section class="seccio entra" style="--ordre: 3" aria-labelledby="total-titol">
       <h2 class="visualment-amagat" id="total-titol">Quants contractes</h2>
-      <p class="valor">{nombre(r.total.contractes)} contractes</p>
+      <p class="valor">{contractesEnText(r.total.contractes, nombre)}</p>
       <p class="que">
-        per {milions(r.total.import)} d'euros, de l'1 de gener al {fins}. Cada contracte, o cada part (lot) d'un
+        per {milions(r.total.import)} d'euros, de l'1 de gener {alDia(fins)}. Cada contracte, o cada part (lot) d'un
         contracte gran, compta com un.
       </p>
       <p class="font-dada">
@@ -49,7 +55,7 @@ const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseDat
     <section class="seccio" aria-labelledby="procediments-titol">
       <h2 class="titol-seccio" id="procediments-titol">Com es tria l'empresa</h2>
       <p class="explica">
-        La llei fixa diverses maneres de triar l'empresa. Per a cadascuna, la primera barra és la part dels
+        Hi ha diverses maneres de triar l'empresa. Per a cadascuna, la primera barra és la part dels
         contractes i la segona, la part dels diners. Van de més a menys diners.
       </p>
       <ol class="grups">
@@ -61,15 +67,15 @@ const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseDat
               <div class="parella" aria-hidden="true">
                 <span class="rotul">Contractes</span>
                 <span class="pista">
-                  <span class="ple" style={amplada(p.partContractes)} />
+                  {p.partContractes > 0 && <span class="ple" style={amplada(p.partContractes)} />}
                 </span>
                 <span class="rotul">Diners</span>
                 <span class="pista">
-                  <span class="ple" style={amplada(p.partImport)} />
+                  {p.partImport > 0 && <span class="ple" style={amplada(p.partImport)} />}
                 </span>
               </div>
               <p class="xifra">
-                {nombre(p.contractes)} contractes ({part(p.partContractes)}) · {milions(p.import)} ({part(p.partImport)} dels diners)
+                {contractesEnText(p.contractes, nombre)} ({part(p.partContractes)}) · {milions(p.import)} ({part(p.partImport)} dels diners)
               </p>
             </li>
           ))
@@ -92,15 +98,15 @@ const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseDat
               <div class="parella" aria-hidden="true">
                 <span class="rotul">Contractes</span>
                 <span class="pista">
-                  <span class="ple" style={amplada(a.partContractes)} />
+                  {a.partContractes > 0 && <span class="ple" style={amplada(a.partContractes)} />}
                 </span>
                 <span class="rotul">Diners</span>
                 <span class="pista">
-                  <span class="ple" style={amplada(a.partImport)} />
+                  {a.partImport > 0 && <span class="ple" style={amplada(a.partImport)} />}
                 </span>
               </div>
               <p class="xifra">
-                {nombre(a.contractes)} contractes ({part(a.partContractes)}) · {milions(a.import)} ({part(a.partImport)} dels diners)
+                {contractesEnText(a.contractes, nombre)} ({part(a.partContractes)}) · {milions(a.import)} ({part(a.partImport)} dels diners)
               </p>
             </li>
           ))
@@ -114,8 +120,6 @@ const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseDat
     <section class="seccio" aria-labelledby="detall-titol">
       <h2 class="titol-seccio" id="detall-titol">Totes les xifres</h2>
       <dl class="paraules">
-        <dt>Contracte</dt>
-        <dd>Cada contracte, o cada part d'un contracte gran (un lot), adjudicat aquest any.</dd>
         <dt>Import</dt>
         <dd>El preu pel qual s'ha adjudicat, tal com el publica la font, que no diu si porta IVA.</dd>
       </dl>
@@ -123,7 +127,7 @@ const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseDat
       <div class="taula" tabindex="0" role="region" aria-labelledby="taula-procediments">
         <table>
           <caption id="taula-procediments">
-            Contractes per procediment, de l'1 de gener al {fins}
+            Contractes per procediment, de l'1 de gener {alDia(fins)}
           </caption>
           <thead>
             <tr>
@@ -158,11 +162,8 @@ const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseDat
         {nombre(organismes)} organismes. No hi ha cap contracte un per un ni el nom de cap empresa.
       </p>
       {
-        (posteriors > 0 || senseData > 0) && (
-          <p class="explica">
-            A la font n'hi ha {nombre(posteriors)} més amb una data d'adjudicació posterior al {fins}, i{' '}
-            {nombre(senseData)} sense data. No es compten.
-          </p>
+        noComptats.length > 0 && (
+          <p class="explica">A la font també hi ha {noComptats.join(' i ')}, que no es compten.</p>
         )
       }
       <p class="font-dada">

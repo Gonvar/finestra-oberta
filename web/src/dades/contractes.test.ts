@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { part, resum, SENSE_PROCEDIMENT } from './contractes.ts';
+import { alDia, contractesEnText, part, resum, SENSE_PROCEDIMENT } from './contractes.ts';
 import { percentatge } from './pressupost.ts';
 
 const fila = (ambit: string, procediment: string | null, inscripcions: number, import_: number) => ({
@@ -54,4 +54,16 @@ test('una part petita no surt com a zero', () => {
 
 test('un procediment amb el nom d’una propietat d’objecte no passa per explicat', () => {
   assert.throws(() => resum([fila('A', 'constructor', 1, 1)] as Parameters<typeof resum>[0]), /sense explicar/);
+});
+
+test('contractes sense cap import aturen el build', () => {
+  assert.throws(() => resum([fila('A', 'Menor', 3, 0)] as Parameters<typeof resum>[0]), /cap import/);
+});
+
+test('«al» i «a l’» davant del dia, i el singular', () => {
+  assert.equal(alDia('10 de novembre del 2026'), 'al 10 de novembre del 2026');
+  assert.equal(alDia('1 de desembre del 2026'), 'a l’1 de desembre del 2026');
+  assert.equal(alDia('11 de desembre del 2026'), 'a l’11 de desembre del 2026');
+  assert.equal(contractesEnText(1, String), '1 contracte');
+  assert.equal(contractesEnText(2, String), '2 contractes');
 });

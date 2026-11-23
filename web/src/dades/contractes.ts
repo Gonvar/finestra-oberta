@@ -15,23 +15,23 @@ type Fila = (typeof contractes.files)[number];
 export const PROCEDIMENTS: Record<string, string> = {
   Obert: "S'anuncia públicament i qualsevol empresa hi pot presentar una oferta.",
   'Basat en acord marc':
-    "L'Administració compra a empreses que s'havien triat abans en una licitació general, l'acord marc.",
+    "L'Administració compra a empreses triades abans en una licitació, amb unes condicions ja pactades (l'acord marc).",
   Menor:
-    'Contractes petits que es poden donar directament: de menys de 40.000 € en obres i de menys de 15.000 € en serveis i compres, i d’un any com a màxim.',
+    'Contractes petits, per sota d’un import màxim que fixa la llei, que es poden donar directament i duren un any com a màxim.',
   'Negociat sense publicitat':
-    "L'Administració negocia amb una o poques empreses, sense anunci previ. La llei només ho permet en casos concrets. L'adjudicació sí que es publica.",
+    "L'Administració negocia amb una o poques empreses, sense anunci previ. La llei només ho permet en casos concrets.",
   'Específic de sistema dinàmic de contractació':
     "Compres a empreses d'una llista oberta, on qualsevol empresa que compleixi les condicions s'hi pot apuntar.",
   "Contractes d'emergències":
     'Quan cal actuar de seguida per una situació greu, es contracta sense els tràmits habituals.',
   Restringit:
-    "S'anuncia públicament i qualsevol empresa pot demanar participar-hi. Només fan oferta les que l'Administració selecciona.",
+    "S'anuncia públicament i qualsevol empresa pot demanar participar-hi. Fan oferta les que compleixen els criteris publicats a l'anunci.",
   'Altres adjudicacions segons instruccions internes aprovades':
     'Empreses i fundacions públiques que contracten amb unes normes pròpies. Aquestes normes es publiquen i han de garantir la publicitat i la competència.',
   'Adjudicacions directes no menors':
     'Contractes donats directament a una empresa que la font no classifica com a menors. La font no en dona més detall.',
   'Licitació amb negociació':
-    "S'anuncia, les empreses fan ofertes i després l'Administració en negocia les condicions. La llei només ho permet en casos concrets.",
+    "S'anuncia, les empreses seleccionades fan ofertes i després l'Administració en negocia les condicions. La llei només ho permet en casos concrets.",
   'Concurs de projectes': "Un concurs per triar un projecte, com el d'un edifici o d'un espai públic.",
 };
 
@@ -74,6 +74,8 @@ export function resum(files: Fila[]) {
     total.contractes += f.inscripcions;
     total.import += f.import;
   }
+  if (total.contractes > 0 && total.import <= 0)
+    throw new Error('contractes.json té contractes però cap import: les parts dels diners no tindrien sentit.');
   const amb = (grups: Grup[]) =>
     grups
       .sort((a, b) => b.import - a.import)
@@ -92,3 +94,9 @@ export function resum(files: Fila[]) {
 /** Una part petita però no nul·la no s'arrodoneix a zero: «0 %» diria que no n'hi ha cap. */
 export const part = (valor: number) =>
   valor > 0 && valor < 0.005 ? 'menys de l’1\u00a0%' : percentatge(valor);
+
+/** «al 10 de novembre», però «a l’1 de desembre» i «a l’11 de desembre». */
+export const alDia = (dia: string) => (/^1?1 /.test(dia) ? `a l’${dia}` : `al ${dia}`);
+
+export const contractesEnText = (n: number, nombre: (n: number) => string) =>
+  `${nombre(n)} ${n === 1 ? 'contracte' : 'contractes'}`;
