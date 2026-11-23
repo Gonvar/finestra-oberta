@@ -7,14 +7,14 @@
   "agenda": {
     "font": "Dades obertes de Catalunya: Agenda pública amb grups d’interès dels alts càrrecs i personal directiu; subdirectors/es i llocs assimilats de la Generalitat de Catalunya (Direcció General de Govern Obert)",
     "url": "https://analisi.transparenciacatalunya.cat/d/hd8k-y28e",
-    "data_dades": "2026-11-20"
+    "data_dades": "2026-11-23"
   },
   "viatges": {
     "font": "Dades obertes de Catalunya: Viatges a l’estranger dels alts càrrecs i personal directiu de la Generalitat de Catalunya (Direcció General de Govern Obert)",
     "url": "https://analisi.transparenciacatalunya.cat/d/5kte-hque",
     "data_dades": "2026-11-18"
   },
-  "nota": "L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva. Qui encara no surt a l’agenda, que es publica per trimestres, no té el camp agenda.",
+  "nota": "L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva. Qui encara no surt a l’agenda, que es publica per trimestres, no té el camp agenda. darrera_entrada és el dia de la fila més recent de cada persona, també si és «-».",
   "persones": [
     {
       "nom": "Salvador Illa Roca",
@@ -75,6 +75,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-09-10",
         "contactes": 469,
         "darrers": [
           {
@@ -221,6 +222,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-11-13",
         "contactes": 1220,
         "darrers": [
           {
@@ -355,6 +357,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-11-13",
         "contactes": 414,
         "darrers": [
           {
@@ -430,6 +433,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-10-23",
         "contactes": 162,
         "darrers": [
           {
@@ -539,6 +543,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-09-29",
         "contactes": 282,
         "darrers": [
           {
@@ -631,6 +636,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-10-27",
         "contactes": 434,
         "darrers": [
           {
@@ -745,6 +751,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-11-06",
         "contactes": 229,
         "darrers": [
           {
@@ -838,6 +845,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-10-15",
         "contactes": 52,
         "darrers": [
           {
@@ -914,6 +922,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-09-14",
         "contactes": 64,
         "darrers": [
           {
@@ -1073,6 +1082,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-09-15",
         "contactes": 236,
         "darrers": [
           {
@@ -1202,8 +1212,21 @@
         }
       ],
       "agenda": {
-        "contactes": 23,
+        "darrera_entrada": "2026-11-16",
+        "contactes": 25,
         "darrers": [
+          {
+            "data": "2026-11-16",
+            "grup": "Federació Catalana de Voluntariat Social",
+            "activitat": "Reunió",
+            "tema": "El valor del voluntariat en el context actual i en el venidor i la voluntat de treball coordinat i complementari en favor de les entitats i el voluntariat, Avançament en la certificació de competències adquirides en l’exercici del voluntariat"
+          },
+          {
+            "data": "2026-11-12",
+            "grup": "Associació de Municipis de l'Arc Metropolità de Barcelona",
+            "activitat": "Reunió",
+            "tema": "Finançament polítiques socials; criteris accès subvencions famílies (beques menjador, escoles bressol...), llei sensellarisme i l'afectació al  món local"
+          },
           {
             "data": "2026-11-06",
             "grup": "Fundació Privada Pere Closa per a la formació i la promoció dels gitanos a Catalunya",
@@ -1219,18 +1242,6 @@
           {
             "data": "2026-11-04",
             "grup": "Associació NOVACT",
-            "activitat": "Reunió",
-            "tema": "Preocupacions i recomanacions sobre la situació humanitària que afronten actualment la ciutat autònoma de Ceuta i les persones que hi viuen. Transmetre les propostes d’accions que podria desplegar la Generalitat en aquest sentit."
-          },
-          {
-            "data": "2026-11-04",
-            "grup": "Oxfam Intermon Fundació Privada",
-            "activitat": "Reunió",
-            "tema": "Preocupacions i recomanacions sobre la situació humanitària que afronten actualment la ciutat autònoma de Ceuta i les persones que hi viuen. Transmetre les propostes d’accions que podria desplegar la Generalitat en aquest sentit."
-          },
-          {
-            "data": "2026-11-04",
-            "grup": "Associació Irídia Centre per la Defensa dels Drets Humans",
             "activitat": "Reunió",
             "tema": "Preocupacions i recomanacions sobre la situació humanitària que afronten actualment la ciutat autònoma de Ceuta i les persones que hi viuen. Transmetre les propostes d’accions que podria desplegar la Generalitat en aquest sentit."
           }
@@ -1287,6 +1298,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-10-24",
         "contactes": 206,
         "darrers": [
           {
@@ -1403,6 +1415,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-07-29",
         "contactes": 125,
         "darrers": [
           {
@@ -1498,6 +1511,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-08-23",
         "contactes": 277,
         "darrers": [
           {
@@ -1640,6 +1654,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-07-27",
         "contactes": 134,
         "darrers": [
           {
@@ -1740,6 +1755,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-05-08",
         "contactes": 253,
         "darrers": [
           {
@@ -1886,6 +1902,7 @@
         }
       ],
       "agenda": {
+        "darrera_entrada": "2026-03-04",
         "contactes": 512,
         "darrers": [
           {
