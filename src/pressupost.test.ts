@@ -67,7 +67,7 @@ function font({
   return { fetchImpl, urls };
 }
 
-test("publica les despeses per secció i els ingressos per capítol de l'últim mes, amb l'ordre de la font", async () => {
+test("publica les despeses per secció i els ingressos per capítol de l'últim mes", async () => {
   const { fetchImpl, urls } = font();
   const pressupost = await construirPressupost(fetchImpl);
   // Les sumes es demanen a l'API, només de l'últim mes.
@@ -81,12 +81,12 @@ test("publica les despeses per secció i els ingressos per capítol de l'últim 
   assert.match(despeses.searchParams.get('$select')!, /sum\(obligacions_reconegudes\)/);
   assert.equal(pressupost.despeses.exercici, 2026);
   assert.equal(pressupost.despeses.mes, '10 Octubre');
-  // L'ordre és el que torna la font: el codi no reordena.
+  // L'ordre de protocol mana sobre l'ordre en què arriben les files.
   assert.deepEqual(
     pressupost.despeses.seccions.map((s) => s.seccio_codi),
-    ['SB', 'SA'],
+    ['SA', 'SB'],
   );
-  assert.deepEqual(pressupost.despeses.seccions[0], {
+  assert.deepEqual(pressupost.despeses.seccions[1], {
     entitat_codi: '1000',
     entitat: 'Entitat A',
     seccio_codi: 'SB',
@@ -131,4 +131,22 @@ test("s'atura si una entitat i una secció surten dues vegades, o si la consulta
   await assert.rejects(construirPressupost(doble.fetchImpl), /repeteix 1000\/SB/);
   const buida = font({ capitols: [] });
   await assert.rejects(construirPressupost(buida.fetchImpl), /no té cap fila/);
+});
+
+test("ordena per l'ordre de protocol i el capítol com a nombres, i s'atura si no ho són", async () => {
+  const deu = { ...SECCIONS[0], ordre_protocol_secci: '10', secci_codi: 'SC' };
+  const dos = { ...SECCIONS[1], ordre_protocol_secci: '2' };
+  const capitol10 = { ...CAPITOLS[0], cap_tol_codi: '10', cap_tol: 'Capítol deu' };
+  const { fetchImpl } = font({ seccions: [deu, dos], capitols: [capitol10, CAPITOLS[0]] });
+  const pressupost = await construirPressupost(fetchImpl);
+  assert.deepEqual(
+    pressupost.despeses.seccions.map((s) => s.ordre_protocol),
+    ['2', '10'],
+  );
+  assert.deepEqual(
+    pressupost.ingressos.capitols.map((c) => c.capitol_codi),
+    ['1', '10'],
+  );
+  const lletra = font({ seccions: [{ ...SECCIONS[0], ordre_protocol_secci: 'A' }] });
+  await assert.rejects(construirPressupost(lletra.fetchImpl), /no és un nombre/);
 });

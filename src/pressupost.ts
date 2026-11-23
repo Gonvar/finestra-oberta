@@ -1,20 +1,20 @@
 // Com va el pressupost de la Generalitat: quant té cada secció per gastar i quant n'ha gastat, i
 // quant ha ingressat, de l'execució mensual que publica el Departament d'Economia i Finances. No és
 // un servidor MCP: src/dades.ts ho desa a la branca `dades`. Les sumes les fa l'API de la font.
-import { dia, getJson, metadades, SOCRATA, SourceError, type Fetch } from './comun.ts';
+import {
+  dia,
+  getJson,
+  metadades,
+  obligatori as text,
+  SOCRATA,
+  SourceError,
+  type Fetch,
+  type Fila,
+} from './comun.ts';
 
 export const DESPESES = 'ajns-4mi7';
 export const INGRESSOS = '42am-vra2';
 const LIMIT = 50_000;
-
-type Fila = Record<string, unknown>;
-
-function text(fila: Fila, nom: string, conjunt: string) {
-  const valor = fila[nom];
-  if (typeof valor !== 'string' || valor.trim() === '')
-    throw new SourceError(`Una fila de ${conjunt} no té ${nom}.`);
-  return valor;
-}
 
 /** Les sumes arriben com a text amb punt decimal, «72760194753.04». */
 export function euros(fila: Fila, nom: string, conjunt: string) {
@@ -56,7 +56,7 @@ async function ultimMes(fetchImpl: Fetch, id: string) {
   return { exercici, mes };
 }
 
-/** Cada clau (entitat i secció, o entitat i capítol) només pot sortir una vegada. */
+/** Dues files amb la mateixa clau voldrien dir que la font dona dos noms per a un mateix codi. */
 function unica(claus: string[], conjunt: string) {
   const vistes = new Set<string>();
   for (const clau of claus) {
@@ -86,7 +86,7 @@ export async function construirPressupost(fetchImpl: Fetch) {
     ].join(', '),
     $where: periode(mesDespeses),
     $group: 'entitat_codi, entitat, ordre_protocol_secci, secci_codi, secci',
-    $order: 'entitat_codi, ordre_protocol_secci, secci_codi',
+    $order: 'entitat_codi, secci_codi',
   });
   const despeses = seccions.map((f) => ({
     entitat_codi: text(f, 'entitat_codi', DESPESES),
@@ -99,6 +99,19 @@ export async function construirPressupost(fetchImpl: Fetch) {
     obligacions_reconegudes: euros(f, 'reconegut', DESPESES),
     obligacions_pagades: euros(f, 'pagat', DESPESES),
   }));
+  // L'ordre de protocol i el codi del capítol són text: si els ordenés la consulta, «10» aniria
+  // abans que «2».
+  for (const d of despeses)
+    if (!/^\d+$/.test(d.ordre_protocol))
+      throw new SourceError(
+        `L’ordre de protocol de ${d.seccio} no és un nombre: ${d.ordre_protocol}.`,
+      );
+  despeses.sort(
+    (a, b) =>
+      a.entitat_codi.localeCompare(b.entitat_codi, 'ca') ||
+      Number(a.ordre_protocol) - Number(b.ordre_protocol) ||
+      a.seccio_codi.localeCompare(b.seccio_codi, 'ca'),
+  );
   unica(
     despeses.map((d) => `${d.entitat_codi}/${d.seccio_codi}`),
     'L’execució de despeses',
@@ -131,6 +144,14 @@ export async function construirPressupost(fetchImpl: Fetch) {
     drets_reconeguts_nets: euros(f, 'reconegut', INGRESSOS),
     recaptacio_neta: euros(f, 'recaptat', INGRESSOS),
   }));
+  for (const i of ingressos)
+    if (!/^\d+$/.test(i.capitol_codi))
+      throw new SourceError(`El codi del capítol ${i.capitol} no és un nombre: ${i.capitol_codi}.`);
+  ingressos.sort(
+    (a, b) =>
+      a.entitat_codi.localeCompare(b.entitat_codi, 'ca') ||
+      Number(a.capitol_codi) - Number(b.capitol_codi),
+  );
   unica(
     ingressos.map((i) => `${i.entitat_codi}/${i.capitol_codi}`),
     'L’execució d’ingressos',
@@ -143,7 +164,7 @@ export async function construirPressupost(fetchImpl: Fetch) {
     font_ingressos: `Dades obertes de Catalunya: ${metaIngressos.name} (${metaIngressos.attribution})`,
     url_ingressos: `${SOCRATA}/d/${INGRESSOS}`,
     data_ingressos: dia(metaIngressos),
-    nota: 'L’execució del pressupost de la Generalitat i del seu sector públic a l’últim mes publicat. Segons la font, els imports són els acumulats des de l’1 de gener fins a l’últim dia del mes. Les despeses se sumen per entitat i secció, i els ingressos per entitat i capítol; les sumes les fa l’API de la font. No hi ha cap total de totes les entitats, perquè les transferències d’una entitat a una altra hi serien dues vegades. Els noms són tal com els escriu la font, i l’ordre és el seu: el codi de l’entitat i, després, l’ordre de protocol de la secció o el codi del capítol. Els imports són en euros.',
+    nota: 'L’execució del pressupost de la Generalitat i del seu sector públic a l’últim mes publicat. Segons la font, els imports són els acumulats des de l’1 de gener fins a l’últim dia del mes. Les despeses se sumen per entitat i secció, i els ingressos per entitat i capítol; les sumes les fa l’API de la font. No hi ha cap total de totes les entitats, perquè les transferències d’una entitat a una altra hi serien dues vegades. Els noms són tal com els escriu la font. L’ordre és el dels seus codis: el de l’entitat i, després, l’ordre de protocol de la secció o el número del capítol. Els imports són en euros.',
     despeses: { exercici: Number(mesDespeses.exercici), mes: mesDespeses.mes, seccions: despeses },
     ingressos: {
       exercici: Number(mesIngressos.exercici),

@@ -29,8 +29,8 @@ try {
       `(dades del ${ajuntaments.data_dades}). ` +
       `Activitat: ${activitat.sessions.length} sessions del Ple i ${activitat.normes.normes.length} normes. ` +
       `Ajuts: ${ajuts.convocatories.length} convocatòries amb el termini sense acabar (dades del ${ajuts.data_dades}). ` +
-      `Pressupost: ${pressupost.despeses.seccions.length} seccions (${pressupost.despeses.mes} ${pressupost.despeses.exercici}) i ` +
-      `${pressupost.ingressos.capitols.length} capítols d’ingressos (${pressupost.ingressos.mes} ${pressupost.ingressos.exercici}).`,
+      `Pressupost: ${pressupost.despeses.seccions.length} files d’entitat i secció (${pressupost.despeses.mes} ${pressupost.despeses.exercici}) i ` +
+      `${pressupost.ingressos.capitols.length} d’entitat i capítol d’ingressos (${pressupost.ingressos.mes} ${pressupost.ingressos.exercici}).`,
   );
 } catch (error) {
   if (!(error instanceof SourceError)) throw error;
