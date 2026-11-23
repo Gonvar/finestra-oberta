@@ -18,8 +18,13 @@ Aquests són els dominis que el codi de `src/` pot consultar. [src/fonts.test.ts
 | `barcelona.cat`              | Ajuntament de Barcelona (Open Data BCN)      |
 | `icgc.cat`                   | Institut Cartogràfic i Geològic de Catalunya |
 | `diba.cat`                   | Diputació de Barcelona (CIDO)                |
+| `fgc.cat`                    | Ferrocarrils de la Generalitat de Catalunya  |
+| `renfe.com`                  | Renfe (Rodalies de Catalunya)                |
+| `tmb.cat`                    | Transports Metropolitans de Barcelona        |
 
 Un domini inclou els seus subdominis: `api.idescat.cat` entra amb `idescat.cat`.
+
+`fgc.cat`, `renfe.com` i `tmb.cat` són els operadors públics de transport: FGC és de la Generalitat, Renfe de l'Estat i TMB de l'Àrea Metropolitana de Barcelona. Només ells publiquen l'estat del servei en temps real (retards, avisos i propers trens), que no és a cap de les altres fonts. Vegeu [docs/transport.md](docs/transport.md).
 
 **Per afegir una font**, la pull request ha de:
 

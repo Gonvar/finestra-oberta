@@ -4,7 +4,8 @@
 
 Els servidors MCP s'executen a l'ordinador de qui els fa servir, per stdio. No hi ha cap servidor nostre al mig.
 
-- Només llegeixen APIs públiques i sense clau: `api.idescat.cat`, `analisi.transparenciacatalunya.cat` i `opendata-ajuntament.barcelona.cat`.
+- Només llegeixen APIs públiques: `api.idescat.cat`, `analisi.transparenciacatalunya.cat`, `opendata-ajuntament.barcelona.cat`, `dadesobertes.fgc.cat`, `data.renfe.com` i `gtfsrt.renfe.com`, sense clau, i `api.tmb.cat`, amb la clau gratuïta de qui fa servir el servidor.
+- La clau de TMB es llegeix de les variables d'entorn `TMB_APP_ID` i `TMB_APP_KEY`. Viatja a TMB a l'adreça de cada crida, com demana la seva API, i no surt mai en cap resposta ni en cap error.
 - Totes les eines són de només lectura (`readOnlyHint`). Cap eina escriu, envia formularis ni fa tràmits.
 - No guarden res: ni les preguntes, ni les respostes, ni cap dada de qui els fa servir.
 - No hi ha analítica ni telemetria.
