@@ -44,6 +44,23 @@ export const metadades = (fetchImpl: Fetch, id: string) =>
 /** El dia de l'última actualització de les files d'un conjunt, no el de la consulta. */
 export const dia = (meta: Meta) => new Date(meta.rowsUpdatedAt * 1000).toISOString().slice(0, 10);
 
+export type Fila = Record<string, unknown>;
+
+/** Socrata omet els camps nuls: un camp que falta és null, i un d'obligatori que falta, un error. */
+export function camp(fila: Fila, nom: string): string | null {
+  const valor = fila[nom];
+  if (valor === undefined) return null;
+  if (typeof valor !== 'string') throw new SourceError(`El camp ${nom} no és text: ${valor}.`);
+  return valor;
+}
+
+export function obligatori(fila: Fila, nom: string, conjunt: string) {
+  const valor = camp(fila, nom);
+  if (valor === null || valor.trim() === '')
+    throw new SourceError(`Una fila de ${conjunt} no té ${nom}.`);
+  return valor;
+}
+
 /** Per a les fonts que només publiquen pàgines web, com el Parlament. */
 export async function getText(fetchImpl: Fetch, url: string) {
   return (await get(fetchImpl, url, 'text/html')).text();

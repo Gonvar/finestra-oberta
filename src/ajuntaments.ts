@@ -2,28 +2,21 @@
 // locals de la Generalitat (Municat). No és un servidor MCP: src/dades.ts ho desa a la branca
 // `dades`. Totes dues fonts són de la Secretaria de Governs Locals, a Dades obertes de Catalunya.
 // Tots els municipis i totes les persones tenen els mateixos camps: el que la font no dona és null.
-import { dia, getJson, metadades, SOCRATA, SourceError, type Fetch } from './comun.ts';
+import {
+  camp,
+  dia,
+  getJson,
+  metadades,
+  obligatori,
+  SOCRATA,
+  SourceError,
+  type Fetch,
+  type Fila,
+} from './comun.ts';
 
 export const PLENS = 'nm3n-3vbj';
 export const ENS_LOCALS = '6nei-4b44';
 const LIMIT = 50_000;
-
-export type Fila = Record<string, unknown>;
-
-/** Socrata omet els camps nuls: un camp que falta és null, i un d'obligatori que falta, un error. */
-export function camp(fila: Fila, nom: string): string | null {
-  const valor = fila[nom];
-  if (valor === undefined) return null;
-  if (typeof valor !== 'string') throw new SourceError(`El camp ${nom} no és text: ${valor}.`);
-  return valor;
-}
-
-export function obligatori(fila: Fila, nom: string, conjunt: string) {
-  const valor = camp(fila, nom);
-  if (valor === null || valor.trim() === '')
-    throw new SourceError(`Una fila de ${conjunt} no té ${nom}.`);
-  return valor;
-}
 
 function numero(text: string, nom: string) {
   if (!/^\d+$/.test(text)) throw new SourceError(`${nom} no és un nombre: ${text}.`);
