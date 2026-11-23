@@ -5,6 +5,7 @@ import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
 import { decretsLlei, lleis } from './activitat.ts';
 import { govern, membres, nombre, parlament, slug } from './institucions.ts';
 import { municipis } from './municipis.ts';
+import { despesa, milions, pressupost, seccionsGeneralitat } from './pressupost.ts';
 
 export type Pagina = {
   /** Comença i acaba amb barra, com les rutes que genera Astro: «/», «/parlament/». */
@@ -69,19 +70,30 @@ export const pagines: Pagina[] = [
     },
   },
   {
-    ruta: '/municipis/',
+    ruta: '/pressupost/',
+    titol: 'On van els diners de la Generalitat · Finestra Oberta',
+    descripcio: `Quant pot gastar la Generalitat el ${pressupost.despeses.exercici}, a què ho dedica i d’on surten els diners.`,
+    previsualitzacio: {
+      titol: 'On van els diners de la Generalitat',
+      frase: `${milions(despesa(seccionsGeneralitat(pressupost.despeses.seccions)).total)} d’euros el ${pressupost.despeses.exercici}.`,
+      institucio: 'dad',
+    },
+  },
+  {
+ruta: '/municipis/',
     titol: 'Municipis · Finestra Oberta',
     descripcio: 'Qui hi viu, qui governa l’ajuntament i com s’hi va votar, municipi a municipi.',
     previsualitzacio: {
       titol: 'Com és el teu municipi',
       frase: `Els ${nombre(municipis.length)} municipis de Catalunya, amb dades oficials.`,
+      institucio: 'dad',
     },
   },
   ...municipis.map((m) => ({
     ruta: m.ruta,
     titol: `${m.nom} · Finestra Oberta`,
     descripcio: `${m.nom}: qui hi viu, qui governa l’ajuntament i com s’hi va votar.`,
-    previsualitzacio: { titol: m.nom, frase: `${m.comarca}, província de ${m.provincia}.` },
+    previsualitzacio: { titol: m.nom, frase: `${m.comarca}, província de ${m.provincia}.`, institucio: 'dad' as const },
   })),
   ...membres.map((m) => ({
     ruta: `/govern/${slug(m.nom)}/`,

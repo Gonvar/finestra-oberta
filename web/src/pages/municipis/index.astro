@@ -2,13 +2,13 @@
 import Pagina from '../../layouts/Pagina.astro';
 import '../../styles/subpagines.css';
 import { dia, nombre } from '../../dades/institucions.ts';
-import { ajuntaments, mapa, municipis } from '../../dades/municipis.ts';
+import { indicadors, mapa, municipis } from '../../dades/municipis.ts';
 import { cami, marc } from '../../dades/mapa.ts';
 
-const perNom = [...municipis].sort((a, b) => a.nom.localeCompare(b.nom, 'ca'));
-// Les lletres de la llista, com a l'índex d'un llibre: «À» va amb la «A».
-const inicial = (nom: string) => nom.normalize('NFD')[0]!.toUpperCase();
-const lletres = [...new Set(perNom.map((m) => inicial(m.nom)))];
+// Ordenats com a l'índex d'un llibre, amb el nom que dona l'Idescat: «Albagés, l'» va a la «A».
+const perNom = [...municipis].sort((a, b) => a.nomOrdenat.localeCompare(b.nomOrdenat, 'ca'));
+const inicial = (nom: string) => nom.normalize('NFD').charAt(0).toUpperCase();
+const lletres = [...new Set(perNom.map((m) => inicial(m.nomOrdenat)))];
 ---
 
 <Pagina>
@@ -55,10 +55,10 @@ const lletres = [...new Set(perNom.map((m) => inicial(m.nom)))];
             <h3 class="titol-bloc" id={`lletra-${l}`}>{l}</h3>
             <ul class="noms">
               {perNom
-                .filter((m) => inicial(m.nom) === l)
+                .filter((m) => inicial(m.nomOrdenat) === l)
                 .map((m) => (
                   <li>
-                    <a href={m.ruta}>{m.nom}</a>
+                    <a href={m.ruta}>{m.nomOrdenat}</a>
                   </li>
                 ))}
             </ul>
@@ -66,7 +66,7 @@ const lletres = [...new Set(perNom.map((m) => inicial(m.nom)))];
         ))
       }
       <p class="font-dada">
-        Font: <a href={ajuntaments.url_municipis}>registre d'ens locals de la Generalitat</a>, {dia(ajuntaments.data_municipis)}.
+        Noms: <a href={indicadors.url}>Idescat, El municipi en xifres</a>.
       </p>
     </section>
   </main>
@@ -122,6 +122,10 @@ const lletres = [...new Set(perNom.map((m) => inicial(m.nom)))];
 
   .lletra {
     margin-top: 2rem;
+  }
+
+  /* L'enllaç de cada lletra porta al títol, que no ha de quedar sota la barra fixa. */
+  .lletra h3 {
     scroll-margin-top: 4.5rem;
   }
 

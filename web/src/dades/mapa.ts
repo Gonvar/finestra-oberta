@@ -1,6 +1,6 @@
 // Dibuixa els límits de l'ICGC en SVG. Només canvia com es veuen, no la dada: la geometria original
 // és a dades/mapa-municipis.json, i aquí es projecta i es treuen els punts que no es veurien.
-type Posicio = number[];
+type Posicio = [number, number];
 type Geometria = { type: string; coordinates: unknown };
 
 // Una projecció plana amb el cosinus de la latitud del centre de Catalunya: a aquesta escala no es
@@ -11,7 +11,7 @@ const COS = Math.cos((LAT_CENTRE * Math.PI) / 180);
 // Un punt a menys d'aquesta distància de l'anterior no es veu a la mida del mapa.
 const DISTANCIA_MINIMA = 1.2;
 
-const projecta = ([lon, lat]: Posicio) => [lon! * COS * ESCALA, -lat! * ESCALA] as const;
+const projecta = ([lon, lat]: Posicio) => [lon * COS * ESCALA, -lat * ESCALA] as const;
 
 function anells(g: Geometria): Posicio[][] {
   if (g.type === 'Polygon') return g.coordinates as Posicio[][];

@@ -5,8 +5,11 @@ import { dia, eurosRodons, nombre, slug } from '../../dades/institucions.ts';
 import {
   ajuntaments,
   eleccions,
+  enllacWeb,
   indicador,
   indicadors,
+  llistesObertes,
+  mapa,
   municipis,
   percentatge,
   type IdIndicador,
@@ -57,10 +60,13 @@ const feina: Fila[] = [
     quan: any('f385'),
   },
 ];
+const obertes = llistesObertes(m.candidatures);
 const vots = m.candidatures.reduce((n, c) => n + c.vots, 0);
-// Amb llistes obertes, cada persona pot votar candidats de llistes diferents, i la font calcula cada
-// percentatge sobre qui va votar: la suma passa de 100 i cal dir per què.
-const llistesObertes = m.candidatures.reduce((n, c) => n + c.percentatge, 0) > 100.5;
+// Si l'Idescat no dona una participació, es diu, igual per a tots els municipis.
+const participacio = (valor: number | null, eleccions: string) =>
+  valor === null
+    ? `L'Idescat no dona quanta gent hi va votar a ${eleccions}.`
+    : `A ${eleccions}, hi va votar el ${decimal(valor)} % del cens.`;
 const ple = m.ple;
 ---
 
@@ -70,6 +76,9 @@ const ple = m.ple;
       <p class="etiqueta entra"><a href="/municipis"><span class="punt dad" aria-hidden="true"></span>Municipis</a></p>
       <h1 id="titol" class="entra" style="--ordre: 1">{m.nom}</h1>
       <p class="entradeta entra" style="--ordre: 2">{m.comarca}, província de {m.provincia}.</p>
+      <p class="font-dada">
+        Nom: <a href={mapa.condicions}>ICGC</a>. Comarca i província: <a href={ajuntaments.url_municipis}>registre d'ens locals</a>, {dia(ajuntaments.data_municipis)}.
+      </p>
     </section>
 
     <section class="seccio" aria-labelledby="qui-titol">
@@ -85,6 +94,10 @@ const ple = m.ple;
           ))
         }
       </dl>
+      <p class="font-dada">
+        Font: <a href={`${indicadors.url}?id=${m.codi}`}>Idescat, El municipi en xifres</a>. «Sense dada» vol dir que
+        l'Idescat no la publica per a aquest municipi.
+      </p>
     </section>
 
     <section class="seccio" aria-labelledby="feina-titol">
@@ -101,8 +114,7 @@ const ple = m.ple;
         }
       </dl>
       <p class="font-dada">
-        Font: <a href={`${indicadors.url}?id=${m.codi}`}>Idescat, El municipi en xifres</a>. «Sense dada» vol dir que
-        l'Idescat no la publica per a aquest municipi.
+        Font: <a href={`${indicadors.url}?id=${m.codi}`}>Idescat, El municipi en xifres</a>.
       </p>
     </section>
 
@@ -121,7 +133,7 @@ const ple = m.ple;
       </ul>
       <p class="font-dada">
         Font: <a href={ajuntaments.url}>composició dels plens</a>, {dia(ajuntaments.data_dades)}.
-        {m.web !== null && <> Web de l'ajuntament: <a href={m.web}>{m.web.replace(/^https?:\/\//, '')}</a>.</>}
+        {m.web !== null && <> Web de l'ajuntament: <a href={enllacWeb(m.web)}>{m.web.replace(/^https?:\/\//, '')}</a>.</>}
       </p>
     </section>
 
@@ -142,20 +154,20 @@ const ple = m.ple;
         }
       </ol>
       {
-        llistesObertes && (
+        obertes && (
           <p class="secundari participacio">
-            Aquí es vota amb llistes obertes, com als municipis més petits: cada persona pot triar candidats de llistes
-            diferents, i per això els percentatges sumen més de 100.
+            Aquí es vota amb llistes obertes, com a tots els municipis amb 5 regidors o menys: cada persona pot triar
+            candidats de llistes diferents. Per això els vots i els percentatges no sumen el total de votants.
           </p>
         )
       }
       <p class="secundari participacio">
-        {v.f149 === null ? null : <>Hi va votar el {decimal(v.f149)} % del cens. </>}
-        {v.f254 === null ? null : <>A les eleccions al Parlament del {any('f254')}, el {decimal(v.f254)} %.</>}
+        {participacio(v.f149, `aquestes municipals`)}
+        {` ${participacio(v.f254, `les eleccions al Parlament del ${any('f254')}`)}`}
       </p>
       <p class="font-dada">
         Font: <a href={eleccions.url}>vots de les eleccions municipals</a>, Generalitat de Catalunya, {dia(eleccions.data_dades)}.
-        En total, {nombre(vots)} vots a candidatures. La participació és de l'Idescat.
+        {!obertes && `En total, ${nombre(vots)} vots a candidatures.`} La participació és de l'Idescat.
       </p>
     </section>
   </main>

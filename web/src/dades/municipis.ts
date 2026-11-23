@@ -10,13 +10,20 @@ import { slug } from './institucions.ts';
 export { ajuntaments, eleccions, indicadors, mapa };
 
 type Ajuntament = (typeof ajuntaments.municipis)[number];
-type Indicadors = (typeof indicadors.municipis)[number];
 type Eleccio = (typeof eleccions.municipis)[number];
 type Limits = (typeof mapa.municipis)[number];
+export type IdIndicador = keyof (typeof indicadors.municipis)[number]['valors'];
 
-export type Municipi = Ajuntament & {
+// El tipus que TypeScript dedueix del JSON només coneix els valors d'avui. src/ajuntaments.ts i
+// src/municipis.ts publiquen null quan la font no dona la dada, i la web ho ha de saber mostrar.
+export type Municipi = Omit<Ajuntament, 'web'> & {
+  web: string | null;
+  /** Com l'escriu l'ICGC, per al títol: «l'Albagés». */
+  nom: string;
+  /** Com l'escriu l'Idescat, per ordenar: «Albagés, l'». */
+  nomOrdenat: string;
   ruta: string;
-  valors: Indicadors['valors'];
+  valors: Record<IdIndicador, number | null>;
   candidatures: Eleccio['candidatures'];
   geometria: Limits['geometria'];
 };
@@ -45,12 +52,13 @@ for (const [fitxer, n] of [
       `${fitxer} té ${n} municipis i ajuntaments.json en té ${ajuntaments.municipis.length}.`,
     );
 
-// Municat diu «Ajuntament de Barcelona» tant al nom de l'ens com al de l'ajuntament; el nom del
-// municipi és el de l'Idescat.
+// Municat diu «Ajuntament de Barcelona» tant al nom de l'ens com al de l'ajuntament. El nom del
+// municipi és el de l'ICGC, que és qui fixa la toponímia oficial.
 export const municipis: Municipi[] = ajuntaments.municipis.map((m) => ({
   ...m,
-  nom: deIndicadors(m.codi).nom,
-  ruta: `/municipis/${slug(deIndicadors(m.codi).nom)}/`,
+  nom: deMapa(m.codi).nom,
+  nomOrdenat: deIndicadors(m.codi).nom,
+  ruta: `/municipis/${slug(deMapa(m.codi).nom)}/`,
   valors: deIndicadors(m.codi).valors,
   candidatures: deEleccions(m.codi).candidatures,
   geometria: deMapa(m.codi).geometria,
@@ -58,8 +66,6 @@ export const municipis: Municipi[] = ajuntaments.municipis.map((m) => ({
 
 if (new Set(municipis.map((m) => m.ruta)).size !== municipis.length)
   throw new Error('Dos municipis tenen la mateixa adreça.');
-
-export type IdIndicador = keyof Indicadors['valors'];
 
 export function indicador(id: IdIndicador) {
   const trobat = indicadors.indicadors.find((i) => i.id === id);
@@ -73,3 +79,13 @@ export function percentatge(part: number | null, total: number | null) {
   if (total <= 0) throw new Error(`Un total de l'Idescat és ${total}.`);
   return Math.round((part / total) * 1000) / 10;
 }
+
+/**
+ * Els municipis de 5 regidors o menys (els de 250 habitants o menys) voten amb llistes obertes: cada
+ * persona pot triar candidats de llistes diferents, i els vots de les candidatures no es poden sumar.
+ */
+export const llistesObertes = (candidatures: Municipi['candidatures']) =>
+  candidatures.reduce((n, c) => n + c.regidors, 0) <= 5;
+
+/** Municat dona algunes webs sense «https://»; sense, l'enllaç portaria a una pàgina d'aquest lloc. */
+export const enllacWeb = (web: string) => (/^https?:\/\//i.test(web) ? web : `https://${web}`);
