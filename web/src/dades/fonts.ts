@@ -132,7 +132,7 @@ export const seccions: Seccio[] = [
     ruta: '/contractes/',
     fonts: [
       {
-        que: 'Quants contractes han adjudicat les administracions, per quin import i amb quin procediment',
+        que: 'Quants contractes han donat a empreses les administracions, per quants diners i com han triat l’empresa',
         nom: contractes.font,
         url: contractes.url,
         data: { tipus: 'dades', dia: contractes.data_dades },
