@@ -132,17 +132,14 @@ jobs:
       # la clau de l'API, que és un secret de l'entorn `dades`, com la de desplegament, i només s'obre
       # per a main. Els resums publicats es llegeixen de la branca pública sense credencials (el
       # repositori és públic, com suposa la compilació de la web), i es reaprofiten els que encara
-      # corresponen a la seva sessió (vegeu src/resums.ts). Una execució antiga de main no gasta crides:
-      # el pas següent no la deixaria publicar.
+      # corresponen a la seva sessió (vegeu src/resums.ts). Una execució amb un codi de dades que ja no
+      # és el de main no gasta crides: no la deixaria publicar.
       - name: Resumeix les sessions del Ple
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           REPO="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
-          if [ "$(git ls-remote "$REPO" refs/heads/main | cut -f1)" != "$GITHUB_SHA" ]; then
-            echo "::error::main ja no és a $GITHUB_SHA. Aquesta execució no publica."
-            exit 1
-          fi
+          codi/.github/codi-de-dades-de-main.sh codi
           if git ls-remote --exit-code "$REPO" refs/heads/dades; then
             git clone --depth=1 --branch dades "$REPO" publicades
           elif [ $? -ne 2 ]; then
@@ -164,13 +161,10 @@ jobs:
           echo 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl' > ~/.ssh/known_hosts
           export GIT_SSH_COMMAND='ssh -i ~/.ssh/dades -o IdentitiesOnly=yes'
           REPO="git@github.com:$GITHUB_REPOSITORY.git"
-          # Tornar a executar una execució antiga de main la tornaria a obrir l'entorn: només publica
-          # l'execució del commit que avui és el cap de main.
-          MAIN=$(git ls-remote "$REPO" refs/heads/main)
-          if [ "$(cut -f1 <<< "$MAIN")" != "$GITHUB_SHA" ]; then
-            echo "::error::main ja no és a $GITHUB_SHA. Aquesta execució no publica."
-            exit 1
-          fi
+          # Tornar a executar una execució antiga de main la tornaria a obrir l'entorn: només publica si
+          # el codi que genera les dades és el que avui hi ha a main. Es torna a mirar just abans de
+          # publicar, perquè main es pot haver mogut mentre es feien els resums.
+          codi/.github/codi-de-dades-de-main.sh codi
           if git ls-remote --exit-code "$REPO" refs/heads/dades; then
             git clone --depth=1 --branch dades "$REPO" dades
             # Es compara l'hora de l'última consulta, no el dia: dues execucions del mateix dia
