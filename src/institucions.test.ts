@@ -2,7 +2,7 @@
 // Els noms són inventats.
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import type { Fetch } from './comun.ts';
+import { euros, type Fetch } from './comun.ts';
 import {
   AGENDA,
   ALTS_CARRECS,
@@ -10,7 +10,6 @@ import {
   construirParlament,
   construirTransparencia,
   DECLARACIONS,
-  euros,
   ESCONS,
   fitxaUrl,
   INTERVENCIONS,
@@ -186,7 +185,7 @@ test('el Parlament suma els escons per grup i subgrup', async () => {
         ? mapa()
         : fitxa({ legislatura: url === fitxaUrl('3'), foto: url.split('=')[1]! }),
   );
-  const parlament = await construirParlament(fetchImpl, '2026-11-22', 0);
+  const { parlament } = await construirParlament(fetchImpl, '2026-11-22', 0);
   assert.match(parlament.fotos, /Foto: Parlament de Catalunya/);
   assert.equal(
     parlament.diputats[0]!.foto,
