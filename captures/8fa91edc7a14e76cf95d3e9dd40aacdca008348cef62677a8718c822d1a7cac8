@@ -140,7 +140,7 @@ Elhusseini</strong></p></td></tr><tr><td class="tema_acte"><p>Despatx d'audiènc
             <input type="hidden" value="C" name="p_mode">
             <input type="hidden" value="AGENDA" name="p_hr">
             <input name="p_organ" value="" type="hidden">
-            <input name="p_galeta" value="ZHTD13LB7qxtK4A5KELE74kk1ia3A93JS2CU4KV6e6ai1YLJLPEFmp11z3hbCP!" type="hidden">
+            <input name="p_galeta" value="QMD2ZI78al0e88F6WE2Ehhxw6gu3IR6BLGNTHA6HxliyF2BYGBVPiymx275i9D!" type="hidden">
             <p>
               <label class="label_13" for="titol">El títol conté:
               </label>
