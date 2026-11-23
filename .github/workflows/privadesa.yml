@@ -1,0 +1,33 @@
+name: Privadesa de les pull requests
+
+# El repositori és públic, i un enllaç a una sessió de Claude Code o a un projecte de Claude porta a
+# una conversa privada. Es comprova cada vegada que canvia el títol o la descripció, i no només amb
+# cada commit: per això és un workflow a part, que no torna a executar la CI sencera.
+# Els commits no es comproven: els que ja hi ha a les branques obertes no es poden canviar sense
+# reescriure l'historial.
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions: {}
+
+concurrency:
+  group: privadesa-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  enllacos:
+    name: Sense enllaços privats
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      # El text arriba per l'entorn, no dins de l'ordre, perquè no es pugui executar.
+      - env:
+          TITOL: ${{ github.event.pull_request.title }}
+          DESCRIPCIO: ${{ github.event.pull_request.body }}
+        run: |
+          patro='claude\.ai/(code/)?(session_|project/)|^[[:space:]>]*Claude-Session:|claude-projects-attribution'
+          if printf '%s\n%s\n' "$TITOL" "$DESCRIPCIO" | grep -Eiq -- "$patro"; then
+            echo "::error::El títol o la descripció enllacen una sessió de Claude Code o un projecte de Claude. Treu-ne la línia. Vegeu CONTRIBUTING.md."
+            exit 1
+          fi

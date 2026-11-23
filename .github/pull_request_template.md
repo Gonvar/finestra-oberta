@@ -40,6 +40,6 @@
 
 ## Ajuda d'un agent
 
-<!-- Si un agent d'IA hi ha contribuït de manera important, digues quin i què ha fet (codi, proves o revisió). Si no, escriu «No». -->
+<!-- Si un agent d'IA hi ha contribuït de manera important, digues quin i què ha fet (codi, proves o revisió). Si no, escriu «No». Sense enllaços a sessions de Claude Code ni a projectes de Claude: porten a converses privades. -->
 
 <!-- Digues si s'hi ha passat `/code-review` en una sessió independent i què se n'ha corregit. -->
