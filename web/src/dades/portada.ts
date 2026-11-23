@@ -3,13 +3,26 @@
 // ho diu, en lloc d'omplir-los amb exemples.
 
 import { dia } from './institucions.ts';
-import { despesa, finsA, milions, percentatge, pressupost, seccionsGeneralitat } from './pressupost.ts';
+import {
+  despesa,
+  finsA,
+  milions,
+  percentatge,
+  pressupost,
+  seccionsGeneralitat,
+} from './pressupost.ts';
 
 export type Institucio = 'gov' | 'par' | 'dad';
 
 export type Font = { nom: string; url: string };
 
-export type Xifra = { valor: string; que: string; periode: string; font: Font; mes?: { text: string; href: string } };
+export type Xifra = {
+  valor: string;
+  que: string;
+  periode: string;
+  font: Font;
+  mes?: { text: string; href: string };
+};
 
 export type Bloc = {
   institucio: Institucio;
@@ -43,6 +56,12 @@ export const blocs: Bloc[] = [
     titol: 'Parlament',
     frase: 'Qui seu a cada escó i de quin grup és.',
     href: '/parlament',
+  },
+  {
+    institucio: 'dad',
+    titol: 'Municipis',
+    frase: 'Qui hi viu, qui governa l’ajuntament i com s’hi va votar, en un mapa.',
+    href: '/municipis',
   },
   {
     institucio: 'dad',

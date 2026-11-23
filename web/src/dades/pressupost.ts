@@ -14,7 +14,8 @@ export const GENERALITAT = '1000';
 export function numeroMes(mes: string): number {
   const coincidencia = /^(\d{1,2}) /.exec(mes);
   const numero = coincidencia === null ? NaN : Number(coincidencia[1]);
-  if (!(numero >= 1 && numero <= 12)) throw new Error(`pressupost.json té un mes que no s'entén: ${mes}.`);
+  if (!(numero >= 1 && numero <= 12))
+    throw new Error(`pressupost.json té un mes que no s'entén: ${mes}.`);
   return numero;
 }
 
@@ -42,7 +43,7 @@ export const CAPITOLS: Record<string, string> = {
   '4': "Diners que rep d'altres administracions, com l'Estat, i d'altres organismes per a la despesa de cada dia.",
   '5': 'Interessos, lloguers i altres rendes dels béns de la Generalitat.',
   '6': 'La venda de béns, com edificis o terrenys.',
-  '7': "Diners que envien altres administracions per fer inversions.",
+  '7': 'Diners que envien altres administracions per fer inversions.',
   '8': 'Préstecs que la Generalitat havia fet i li tornen, i la venda de participacions.',
   '9': 'Préstecs i deute nou que demana la Generalitat, també per tornar el deute que venç.',
 };
@@ -55,16 +56,23 @@ export function seccionsGeneralitat(seccions: Seccio[]): Seccio[] {
 
 export function capitolsGeneralitat(capitols: Capitol[]): Capitol[] {
   const nostres = capitols.filter((c) => c.entitat_codi === GENERALITAT);
-  if (nostres.length === 0) throw new Error('pressupost.json no té cap capítol d’ingressos de la Generalitat.');
+  if (nostres.length === 0)
+    throw new Error('pressupost.json no té cap capítol d’ingressos de la Generalitat.');
   for (const c of nostres) {
-    if (c.capitol === null) throw new Error(`pressupost.json té el capítol ${c.capitol_codi} de la Generalitat sense nom.`);
+    if (c.capitol === null)
+      throw new Error(
+        `pressupost.json té el capítol ${c.capitol_codi} de la Generalitat sense nom.`,
+      );
     if (!(c.capitol_codi in CAPITOLS))
-      throw new Error(`pressupost.json té un capítol d'ingressos sense explicar: ${c.capitol_codi}.`);
+      throw new Error(
+        `pressupost.json té un capítol d'ingressos sense explicar: ${c.capitol_codi}.`,
+      );
   }
   return nostres;
 }
 
-const suma = <T>(files: T[], camp: (f: T) => number) => files.reduce((total, f) => total + camp(f), 0);
+const suma = <T>(files: T[], camp: (f: T) => number) =>
+  files.reduce((total, f) => total + camp(f), 0);
 
 /**
  * La mateixa regla per a totes les seccions: de més a menys pressupost. Les que no tenen pressupost

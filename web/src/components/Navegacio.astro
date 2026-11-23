@@ -24,6 +24,8 @@ const { url, titol, cerca } = Astro.props;
         <li class:list={{ 'nomes-escriptori': cerca }}><a href="/govern">Govern</a></li>
         <li class:list={{ 'nomes-escriptori': cerca }}><a href="/parlament">Parlament</a></li>
         <li class:list={{ 'nomes-escriptori': cerca }}><a href="/agenda">Agenda</a></li>
+        {/* Per sota de 800 px no hi cap, ni amb el botó de cerca; la portada hi té el seu bloc. */}
+        <li class="nomes-gran"><a href="/municipis">Municipis</a></li>
         <li class="nomes-ample"><a href="/#ia">Per a la IA</a></li>
         {
           cerca && (
@@ -153,6 +155,12 @@ const { url, titol, cerca } = Astro.props;
     nav a,
     .cerca {
       padding: 0 0.375rem;
+    }
+  }
+
+  @media (max-width: 799px) {
+    .nomes-gran {
+      display: none;
     }
   }
 

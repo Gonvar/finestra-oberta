@@ -1,6 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { capitolsGeneralitat, despesa, finsA, ingressos, milions, numeroMes, seccionsGeneralitat } from './pressupost.ts';
+import {
+  capitolsGeneralitat,
+  despesa,
+  finsA,
+  ingressos,
+  milions,
+  numeroMes,
+  seccionsGeneralitat,
+} from './pressupost.ts';
 
 const seccio = (codi: string, entitat: string, pressupost: number, gastat: number) => ({
   entitat_codi: entitat,
@@ -43,7 +51,11 @@ test("només es mostra l'entitat Generalitat, i sense cap secció el build s'atu
 });
 
 test('les seccions van de més a menys pressupost, i les que no en tenen només surten al total', () => {
-  const d = despesa([seccio('A', '1000', 100, 50), seccio('B', '1000', 300, 30), seccio('C', '1000', 0, 0)]);
+  const d = despesa([
+    seccio('A', '1000', 100, 50),
+    seccio('B', '1000', 300, 30),
+    seccio('C', '1000', 0, 0),
+  ]);
   assert.deepEqual(
     d.barres.map((b) => b.codi),
     ['B', 'A'],
@@ -56,8 +68,17 @@ test('les seccions van de més a menys pressupost, i les que no en tenen només 
 
 test("un capítol d'ingressos sense explicació atura el build", () => {
   assert.throws(() => capitolsGeneralitat([capitol('10', '1000', 1)]), /sense explicar: 10/);
-  assert.throws(() => capitolsGeneralitat([{ ...capitol('1', '1000', 1), capitol: null }]), /sense nom/);
-  const ing = ingressos(capitolsGeneralitat([capitol('1', '1000', 30), capitol('9', '1000', 70), capitol('6', '1000', 0)]));
+  assert.throws(
+    () => capitolsGeneralitat([{ ...capitol('1', '1000', 1), capitol: null }]),
+    /sense nom/,
+  );
+  const ing = ingressos(
+    capitolsGeneralitat([
+      capitol('1', '1000', 30),
+      capitol('9', '1000', 70),
+      capitol('6', '1000', 0),
+    ]),
+  );
   assert.deepEqual(
     ing.barres.map((b) => [b.codi, b.partDelTotal, b.partIngressada]),
     [
