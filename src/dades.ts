@@ -1,4 +1,4 @@
-// Regenera govern.json, parlament.json, ajuntaments.json, activitat.json i ajuts.json des de les fonts oficials, amb la còpia de cada resposta:
+// Regenera govern.json, parlament.json, ajuntaments.json, activitat.json, ajuts.json i pressupost.json des de les fonts oficials, amb la còpia de cada resposta:
 //   node src/dades.ts [carpeta]
 // La carpeta és dades/ si no se'n diu cap altra. Primer ho llegeix i ho comprova tot; només escriu
 // si tot quadra. Si una font falla, surt amb un error i deixa la carpeta com estava, perquè es pugui
@@ -19,6 +19,7 @@ try {
     'ajuntaments.json': ajuntaments,
     'activitat.json': activitat,
     'ajuts.json': ajuts,
+    'pressupost.json': pressupost,
   } = await genera(carpeta, fetch, avui, construirDades);
   console.log(
     `Govern: ${govern.consellers.length} consellers (dades del ${govern.data_dades}). ` +
@@ -27,7 +28,9 @@ try {
       `${ajuntaments.municipis.reduce((n, m) => n + m.ple.length, 0)} persones als plens ` +
       `(dades del ${ajuntaments.data_dades}). ` +
       `Activitat: ${activitat.sessions.length} sessions del Ple i ${activitat.normes.normes.length} normes. ` +
-      `Ajuts: ${ajuts.convocatories.length} convocatòries amb el termini sense acabar (dades del ${ajuts.data_dades}).`,
+      `Ajuts: ${ajuts.convocatories.length} convocatòries amb el termini sense acabar (dades del ${ajuts.data_dades}). ` +
+      `Pressupost: ${pressupost.despeses.seccions.length} seccions (${pressupost.despeses.mes} ${pressupost.despeses.exercici}) i ` +
+      `${pressupost.ingressos.capitols.length} capítols d’ingressos (${pressupost.ingressos.mes} ${pressupost.ingressos.exercici}).`,
   );
 } catch (error) {
   if (!(error instanceof SourceError)) throw error;
