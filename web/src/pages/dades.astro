@@ -1,20 +1,20 @@
 ---
 import Pagina from '../layouts/Pagina.astro';
 import '../styles/subpagines.css';
-import { pagina } from '../dades/pagines.ts';
+import { pagines } from '../dades/pagines.ts';
 import { REPO } from '../dades/portada.ts';
 
-// El títol i la frase de cada pàgina són els de pagines.ts, perquè no en puguin dir una altra cosa.
-const visualitzacions = ['/pressupost/', '/contractes/', '/transport/', '/municipis/'].map(pagina);
+// Les pàgines de primer nivell amb dades, amb el títol de la previsualització i la descripció de
+// pagines.ts: una pàgina nova hi surt sola i la llista no pot dir una altra cosa que la pàgina.
+const visualitzacions = pagines.filter(
+  (p) => p.previsualitzacio.institucio === 'dad' && p.ruta !== '/dades/' && /^\/[^/]+\/$/.test(p.ruta),
+);
 ---
 
 <Pagina>
   <main class="contingut">
     <section class="capcalera" aria-labelledby="titol">
       <h1 id="titol" class="entra">Dades</h1>
-      <p class="entradeta entra" style="--ordre: 1">
-        Cada pàgina respon una pregunta amb les dades oficials i en diu la font.
-      </p>
     </section>
 
     <section class="seccio" aria-labelledby="visualitzacions-titol">
@@ -38,7 +38,7 @@ const visualitzacions = ['/pressupost/', '/contractes/', '/transport/', '/munici
       <ul class="files">
         <li>
           <h3 class="titol-bloc"><a href="/metodologia/">D'on surten les dades</a></h3>
-          <p class="secundari">D'on surt cada dada, cada quant s'actualitza i com es pot comprovar.</p>
+          <p class="secundari">Cada quant s'actualitza cada font i com es pot comprovar.</p>
         </li>
         <li>
           <h3 class="titol-bloc"><a href={`${REPO}/blob/main/docs/dades-obertes.md`}>Dades obertes</a></h3>

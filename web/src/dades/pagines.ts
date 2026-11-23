@@ -73,10 +73,10 @@ export const pagines: Pagina[] = [
   {
     ruta: '/dades/',
     titol: 'Dades · Finestra Oberta',
-    descripcio: 'Els diners de la Generalitat, els contractes públics, els trens i els municipis, explicats amb gràfics.',
+    descripcio: 'Els diners de la Generalitat, els contractes públics, els trens i els municipis.',
     previsualitzacio: {
       titol: 'Dades',
-      frase: 'Les dades oficials, explicades amb gràfics i amb la font de cadascuna.',
+      frase: 'Les dades oficials, amb la font de cadascuna.',
       institucio: 'dad',
     },
   },
