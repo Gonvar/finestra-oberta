@@ -9,32 +9,32 @@ Només els punts de la sessió tal com són a `activitat.json`: el número, el c
 ## Com es fa
 
 - **Model:** Claude Haiku 5.5 (`claude-haiku-5-5`), d'Anthropic, amb l'esforç baix (`effort: low`). És el model petit i barat: per resumir una llista de punts n'hi ha prou.
-- **Instruccions:** `INSTRUCCIONS` a [src/resums.ts](../src/resums.ts). Es publiquen tal com són a `resums.json` i a la web.
+- **Instruccions i paràmetres:** `INSTRUCCIONS` i `PARAMETRES` a [src/resums.ts](../src/resums.ts). Es publiquen tal com són a `resums.json`, i la web els ha d'enllaçar quan mostri els resums.
 - **Quan:** el [workflow de dades](../.github/workflows/dades.yml), al job que publica, després de llegir les fonts i abans d'escriure la clau de la branca `dades`. La clau de l'API és el secret `ANTHROPIC_API_KEY` de l'entorn `dades`, que només s'obre per a `main`. Sense la clau es tornen a publicar els resums vigents i les sessions noves es queden sense resum.
-- **Quan es torna a fer:** un resum es reaprofita mentre no canviïn els punts de la sessió, les instruccions ni el model. Si canvia qualsevol d'aquestes tres coses, es torna a fer. Així el text d'una sessió no canvia cada dia i només es paga el que és nou.
+- **Quan es torna a fer:** un resum es reaprofita mentre no canviïn els punts de la sessió, les instruccions, els paràmetres ni el model. Si canvia qualsevol d'aquestes coses, es torna a fer. Així el text d'una sessió no canvia cada dia i només es paga el que és nou.
 
 ## Què es comprova
 
-Si l'API no respon bé (no hi ha connexió, torna un error o una resposta sense la forma esperada), la sessió es queda sense resum i l'endemà es torna a provar.
+Si l'API no respon bé (no hi ha connexió, torna un error o una resposta sense la forma esperada), la sessió es queda sense resum i es torna a provar a l'execució següent, que és l'endemà: l'agenda canvia cada dia i les dades es publiquen cada dia. Si l'API rebutja la petició o la clau (400, 401, 403 o 404) o falta la clau, el registre de la tasca ho marca com a error, perquè no s'arregla sol.
 
 Si el model respon però el resum no es pot publicar, la sessió surt a `sense_resum` amb el motiu, i no es torna a demanar fins que canviïn els punts, les instruccions o el model, perquè amb la mateixa entrada el resultat seria el mateix. Passa quan:
 
 - el model s'atura abans d'acabar;
 - el text és buit o té més de 2.500 caràcters;
-- el text fa servir una de les paraules que jutgen de `VALORACIONS` («polèmic», «històric», «fracàs»…) i aquesta paraula no surt als punts oficials. «Memòria històrica» en el títol d'una llei no és una valoració.
+- el text fa servir una de les paraules que jutgen de `VALORACIONS` («polèmic», «històric», «fracàs»…) i no surt als punts oficials amb la mateixa paraula al davant. «Memòria històrica» en el títol d'una llei no és una valoració; «una sessió històrica», sí.
 
 Els resums que es reaprofiten també passen aquestes comprovacions cada dia: si se n'afegeix una de nova, un resum publicat que no la passa es torna a fer. Cap sessió sense resum no atura la publicació de les dades oficials. El registre de la tasca ho avisa amb un `warning`.
 
 ## Camps
 
 - `avis`: que el text és d'una IA i com es calcula l'empremta.
-- `model` i `instruccions`: el model demanat i les instruccions exactes.
+- `model`, `parametres` i `instruccions`: el model demanat, la resta de la petició i les instruccions exactes.
 - `resums`: un per sessió, de la més nova a la més antiga.
   - `sessio` i `data`: el número i el dia de la sessió, com a `activitat.json`.
   - `font`: els acords de la sessió al web del Parlament.
   - `model`: el model que ha respost, tal com el diu l'API.
   - `generat`: el dia que es va fer el resum.
-  - `empremta`: el SHA-256 de `JSON.stringify([model, instruccions, entrada])`.
+  - `empremta`: el SHA-256 de `JSON.stringify([model, parametres, instruccions, entrada])`.
   - `text`: el resum.
 - `sense_resum`: les sessions que el model ha resumit però el resum no s'ha publicat, amb `sessio`, `empremta` i `motiu`.
 

@@ -65,37 +65,21 @@ jobs:
           if [ -f dades/procedencia.json ] && node src/verifica-dades.ts dades; then
             echo "bones=true" >> "$GITHUB_OUTPUT"
           fi
-      # src/dades.ts esborra els JSON de la carpeta, i resums.json no surt de les fonts: se'n guarda la
-      # còpia per saber si falten resums (vegeu src/resums.ts).
-      - name: Guarda els resums publicats
-        run: if [ -f dades/resums.json ]; then cp dades/resums.json "$RUNNER_TEMP/resums.json"; fi
       - run: node src/dades.ts dades
       - run: node src/verifica-dades.ts dades
-      # Una sessió nova, o una que ahir no es va poder resumir, necessita publicar encara que les dades
-      # no hagin canviat. Aquí no es crida l'API: només es compara amb el que hi ha publicat.
-      - name: Mira si falten resums
-        id: resums
-        run: |
-          if [ -f "$RUNNER_TEMP/resums.json" ]; then
-            PENDENTS=$(node src/resumeix.ts pendents dades "$RUNNER_TEMP/resums.json")
-          else
-            PENDENTS=$(node src/resumeix.ts pendents dades)
-          fi
-          echo "Sessions sense resum: $PENDENTS"
-          echo "pendents=$PENDENTS" >> "$GITHUB_OUTPUT"
       - name: Mira si han canviat
         id: canvis
         working-directory: dades
         env:
           BONES: ${{ steps.publicades.outputs.bones }}
-          PENDENTS: ${{ steps.resums.outputs.pendents }}
         run: |
           git add -A
           # data_consulta canvia cada dia. Si és l'únic que ha canviat a la composició, no hi ha res de
           # nou per desar. L'agenda sí que es desa cada dia: la web en treu quins actes ja han passat.
+          # Per això també es tornen a provar cada dia els resums que no s'han pogut fer.
           if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json ajuntaments.json activitat.json ajuts.json pressupost.json municipis.json eleccions-municipals.json mapa-municipis.json contractes.json \
-            && git diff --cached --quiet -- agenda.json && [ "$PENDENTS" = 0 ]; then
-            echo "Ni la composició ni l'agenda han canviat, i totes les sessions tenen resum."
+            && git diff --cached --quiet -- agenda.json; then
+            echo "Ni la composició ni l'agenda han canviat."
           else
             echo "hi-ha=true" >> "$GITHUB_OUTPUT"
           fi
@@ -133,22 +117,28 @@ jobs:
           path: nou
       # Abans d'escriure la clau de `dades`: aquest pas executa codi del repositori i només ha de veure
       # la clau de l'API, que és un secret de l'entorn `dades`, com la de desplegament, i només s'obre
-      # per a main. Els resums publicats es llegeixen de la branca pública, sense credencials, i es
-      # reaprofiten els que encara corresponen a la seva sessió (vegeu src/resums.ts).
+      # per a main. Els resums publicats es llegeixen de la branca pública sense credencials (el
+      # repositori és públic, com suposa la compilació de la web), i es reaprofiten els que encara
+      # corresponen a la seva sessió (vegeu src/resums.ts). Una execució antiga de main no gasta crides:
+      # el pas següent no la deixaria publicar.
       - name: Resumeix les sessions del Ple
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           REPO="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
+          if [ "$(git ls-remote "$REPO" refs/heads/main | cut -f1)" != "$GITHUB_SHA" ]; then
+            echo "::error::main ja no és a $GITHUB_SHA. Aquesta execució no publica."
+            exit 1
+          fi
           if git ls-remote --exit-code "$REPO" refs/heads/dades; then
             git clone --depth=1 --branch dades "$REPO" publicades
           elif [ $? -ne 2 ]; then
             exit 1
           fi
           if [ -f publicades/resums.json ]; then
-            node codi/src/resumeix.ts genera nou publicades/resums.json
+            node codi/src/resumeix.ts nou publicades/resums.json
           else
-            node codi/src/resumeix.ts genera nou
+            node codi/src/resumeix.ts nou
           fi
       - name: Comprova que són les dades més noves
         env:
