@@ -1,4 +1,5 @@
 // Fonts i dades sintètiques: dues URL inventades i un JSON que en depèn.
+import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -236,7 +237,21 @@ test('reprodueix genera les dades amb el codi nou a partir de les còpies, sense
     'text.json': { text: await getText(fetchImpl, B), data },
   });
   await reprodueix(publicada, desti, { font: nou });
-  assert.deepEqual((await readdir(desti)).sort(), ['resultat.json', 'text.json']);
+  assert.deepEqual((await readdir(desti)).sort(), [
+    'procedencia.json',
+    'resultat.json',
+    'text.json',
+  ]);
+  // La web hi llegeix el dia de cada font i l'empremta de cada fitxer nou.
+  const { grups } = await llegeixProcedencia(desti);
+  assert.equal(grups.font!.data_consulta, '2026-11-22');
+  assert.deepEqual(Object.keys(grups.font!.fitxers), ['resultat.json', 'text.json']);
+  assert.equal(
+    grups.font!.fitxers['resultat.json'],
+    createHash('sha256')
+      .update(await readFile(join(desti, 'resultat.json')))
+      .digest('hex'),
+  );
   assert.deepEqual(JSON.parse(await readFile(join(desti, 'resultat.json'), 'utf8')), { doble: 14 });
   assert.deepEqual(JSON.parse(await readFile(join(desti, 'text.json'), 'utf8')), {
     text: '<p>Hola</p>',
