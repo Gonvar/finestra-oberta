@@ -1,4 +1,4 @@
-name: Dades del Govern, del Parlament, dels ajuntaments, de l'activitat del Parlament, dels ajuts, del pressupost i dels contractes
+name: Dades del Govern, del Parlament, dels ajuntaments, de l'activitat del Parlament, dels ajuts, del pressupost, dels contractes i de les oposicions
 
 # Cada dia torna a llegir les fonts oficials i, si la composició o l'agenda han canviat, la desa a la branca
 # `dades` amb la còpia de cada resposta. Les dades no passen per pull request perquè no les escriu
@@ -76,7 +76,7 @@ jobs:
           git add -A
           # data_consulta canvia cada dia. Si és l'únic que ha canviat a la composició, no hi ha res de
           # nou per desar. L'agenda sí que es desa cada dia: la web en treu quins actes ja han passat.
-          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json ajuntaments.json activitat.json ajuts.json pressupost.json municipis.json eleccions-municipals.json contractes.json \
+          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json ajuntaments.json activitat.json ajuts.json pressupost.json municipis.json eleccions-municipals.json contractes.json oposicions.json \
             && git diff --cached --quiet -- agenda.json; then
             echo "Ni la composició ni l'agenda han canviat."
           else
@@ -155,7 +155,7 @@ jobs:
           git add -A
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments, l’agenda, l’activitat del Parlament, els ajuts, el pressupost i els contractes' \
+          git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments, l’agenda, l’activitat del Parlament, els ajuts, el pressupost, els contractes i les oposicions' \
             -m "Execució: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           git push origin dades
 

@@ -1,6 +1,6 @@
-# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, els ajuts, el pressupost i els contractes
+# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, els ajuts, el pressupost, els contractes i les oposicions
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi i com s'hi va votar a les últimes municipals, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat i quantes adjudicacions fa cada organisme. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi i com s'hi va votar a les últimes municipals, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat, quantes adjudicacions fa cada organisme i quins processos de selecció de personal tenen el termini obert. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -67,7 +67,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json`, `/tmp/ara/contractes.json` i `/tmp/ara/oposicions.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -308,6 +308,22 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
   - Cada fila ha de tenir l'àmbit, el codi i el nom de l'organisme, un recompte que sigui un nombre i un import, i totes les inscripcions del grup han de tenir import: `sum()` se salta les que no en tenen.
   - A partir del 15 de gener, hi ha d'haver inscripcions d'adjudicació i de menors de l'any. Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en donaria només una part.
   - Cada inscripció de l'any, també les liquidacions, ha de tenir la situació, i cada consulta d'àmbit ha de cabre en una pàgina.
+- **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
+
+## `oposicions.json`
+
+- **Font:** els [processos de selecció de personal del CIDO](https://cido.diba.cat/oposicions), el Cercador d'informació i documentació oficials de la Diputació de Barcelona, llegits de la seva [API de dades obertes](https://dadesobertes.diba.cat/sites/default/files/public/documentacio_api_cido.pdf). La [nota legal del CIDO](https://cido.diba.cat/nota-legal) en permet la reutilització si no se n'altera el contingut ni el sentit i se'n cita la font i la data. Recull les convocatòries de tot Catalunya, no només de la província de Barcelona: de la Generalitat, dels ajuntaments de les quatre províncies, dels consells comarcals, de les diputacions i d'altres entitats públiques.
+- **Per què aquesta font:** cap de les altres de NEUTRALITAT.md no publica les oposicions i les borses de treball de les administracions catalanes en una sola llista que es pugui llegir.
+- **Data:** l'API no diu quan es van actualitzar les dades. `data_consulta` és el dia de la consulta, a l'hora de Catalunya, i el fitxer només es torna a publicar quan canvia alguna altra cosa.
+- **Contingut:** els processos que el CIDO marca amb l'estat «Termini obert» (`idEstat` 3) el dia de la consulta. L'estat el posa el CIDO i no es compara amb les dates. El 23/11/2026 n'hi havia 1.572, i cap no tenia una data de finalització passada.
+- **Camps:** el títol, la institució, l'àmbit, si és una borsa de treball, el tipus de personal, el grup de titulació, el sistema de selecció, el nombre de places, les dates d'inici i de finalització, l'hora i les observacions del termini, i l'enllaç a la fitxa del CIDO. Tal com els escriu la font; el que no dona és `null`. Les borses de treball solen tenir `places` a 0. Si no hi ha data de finalització, `observacions_termini` sol dir per què (per exemple, que és obert permanentment).
+- **Ordre:** per la data de finalització, els que no en tenen al final, i després per l'identificador del CIDO.
+- **Com es llegeix:** es demanen els processos amb el termini obert ordenats per identificador, en pàgines de 2.000, fins al total que diu la font.
+- **Comprovacions:**
+  - El nombre de processos ha de ser el total que diu la font, i el total no pot canviar entre pàgines.
+  - Hi ha d'haver almenys un procés obert. El CIDO sempre en té: una llista buida voldria dir que la consulta ja no filtra com s'espera.
+  - Cada procés ha de tenir l'estat obert, un identificador que no surti dues vegades, el títol, la institució, l'àmbit i l'enllaç. Les dates han de tenir la forma `AAAA-MM-DD` i les places han de ser un nombre.
+- **Cada dia canvia:** com els ajuts, `oposicions.json` canvia gairebé cada dia.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## Pendent

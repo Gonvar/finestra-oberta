@@ -16,6 +16,7 @@ Aquests són els dominis que el codi de `src/` pot consultar. [src/fonts.test.ts
 | `gencat.cat`                 | Generalitat de Catalunya                 |
 | `parlament.cat`              | Parlament de Catalunya                   |
 | `barcelona.cat`              | Ajuntament de Barcelona (Open Data BCN)  |
+| `diba.cat`                   | Diputació de Barcelona (CIDO)            |
 
 Un domini inclou els seus subdominis: `api.idescat.cat` entra amb `idescat.cat`.
 
@@ -27,7 +28,7 @@ Un domini inclou els seus subdominis: `api.idescat.cat` entra amb `idescat.cat`.
 
 ## 2. Les dades no les escriu ningú a mà
 
-Les dades del Govern, del Parlament, dels ajuntaments, dels municipis, de les eleccions municipals, dels ajuts, del pressupost i dels contractes les genera el [workflow de dades](.github/workflows/dades.yml) a partir de les fonts i es publiquen a la branca `dades`, amb una còpia de cada resposta oficial i una atestació de GitHub. Qualsevol persona pot comprovar que surten de la font (vegeu [docs/institucions.md](docs/institucions.md)), llevat de les fitxes de govern.cat, que es copien a mà i no tenen aquesta còpia (vegeu més avall).
+Les dades del Govern, del Parlament, dels ajuntaments, dels municipis, de les eleccions municipals, dels ajuts, del pressupost, dels contractes i de les oposicions les genera el [workflow de dades](.github/workflows/dades.yml) a partir de les fonts i es publiquen a la branca `dades`, amb una còpia de cada resposta oficial i una atestació de GitHub. Qualsevol persona pot comprovar que surten de la font (vegeu [docs/institucions.md](docs/institucions.md)), llevat de les fitxes de govern.cat, que es copien a mà i no tenen aquesta còpia (vegeu més avall).
 
 - **Cap pull request no pot afegir ni canviar fitxers a `dades/`.** La CI ho comprova i falla.
 - **El codi no pot corregir la font.** Res de taules que reescriguin un nom, un càrrec, un grup, un partit, un escó o una xifra que la font dona d'una altra manera. Si la font s'equivoca, es demana a l'organisme que la corregeixi, i mentrestant es mostra tal com és, o l'script s'atura.
