@@ -123,6 +123,14 @@ test("publica les adjudicacions d'aquest any per organisme i procediment, fins a
       ['200', 'Obert'],
     ],
   );
+  assert.deepEqual(Object.keys(contractes.files[2]!), [
+    'ambit',
+    'organisme_codi',
+    'organisme',
+    'procediment',
+    'inscripcions',
+    'import',
+  ]);
   assert.deepEqual(contractes.files[2], {
     ambit: 'Universitats',
     organisme_codi: '200',
@@ -216,6 +224,8 @@ test('publica qui guanya a cada organisme, amb les mateixes inscripcions que per
   assert.equal(fitxer.data_dades, fitxers['contractes.json'].data_dades);
   assert.equal(fitxer.adjudicacions_posteriors, 7);
   // Si les dues agrupacions no sumen el mateix, la font ha canviat entre consultes.
+  const repetit = font({ adjudicataris: [adjudicataris[0], ...adjudicataris] });
+  await assert.rejects(construirContractes(repetit.fetchImpl), /repeteix el grup/);
   const menys = font({ adjudicataris: adjudicataris.slice(1) });
   await assert.rejects(
     construirContractes(menys.fetchImpl),

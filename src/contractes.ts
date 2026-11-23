@@ -83,6 +83,7 @@ export async function construirContractes(fetchImpl: Fetch) {
   const perAmbit = async (columna: string) => {
     const clau = `subjecte_ambit, id_agrupacio_organisme, agrupacio_organisme, ${columna}`;
     const grups: Fila[] = [];
+    const vistes = new Set<string>();
     for (const ambit of ambits) {
       // Els grups d'un àmbit poden passar d'una pàgina. L'ordre per tota la clau fa que les
       // pàgines no es trepitgin.
@@ -104,6 +105,14 @@ export async function construirContractes(fetchImpl: Fetch) {
             $offset: String(delAmbit.length),
           }),
         );
+        // Una clau repetida voldria dir que les pàgines es trepitgen, i que n'hi ha una altra que
+        // falta; si la font no fes cas de $offset, també atura el bucle.
+        for (const f of pagina) {
+          const k = JSON.stringify(clau.split(', ').map((c) => f[c]));
+          if (vistes.has(k))
+            throw new SourceError(`El registre de contractes repeteix el grup ${k}.`);
+          vistes.add(k);
+        }
         delAmbit.push(...pagina);
         if (pagina.length < LIMIT) break;
       }
@@ -127,7 +136,8 @@ export async function construirContractes(fetchImpl: Fetch) {
   const posteriors = await compta(`data_adjudicacio >= '${limit}'`);
   const senseData = await compta('data_adjudicacio IS NULL');
 
-  const grup = (f: Fila) => {
+  // El camp de l'agrupació va just després de l'organisme, com sempre a contractes.json.
+  const grup = <K extends string>(f: Fila, nom: K, columna: string) => {
     const inscripcions = recompte(f, 'inscripcions');
     const organisme = obligatori(f, 'agrupacio_organisme', REGISTRE);
     // sum() se salta els imports que falten: la suma seria d'unes inscripcions i el recompte d'unes altres.
@@ -137,15 +147,13 @@ export async function construirContractes(fetchImpl: Fetch) {
       ambit: obligatori(f, 'subjecte_ambit', REGISTRE),
       organisme_codi: obligatori(f, 'id_agrupacio_organisme', REGISTRE),
       organisme,
+      ...({ [nom]: camp(f, columna) } as Record<K, string | null>),
       inscripcions,
       import: euros(f, 'import', REGISTRE),
     };
   };
-  const files = grups.map((f) => ({ ...grup(f), procediment: camp(f, 'procediment_adjudicacio') }));
-  const adjudicataris = grupsAdjudicataris.map((f) => ({
-    ...grup(f),
-    adjudicatari: camp(f, 'adjudicatari'),
-  }));
+  const files = grups.map((f) => grup(f, 'procediment', 'procediment_adjudicacio'));
+  const adjudicataris = grupsAdjudicataris.map((f) => grup(f, 'adjudicatari', 'adjudicatari'));
   // Les dues agrupacions són de les mateixes inscripcions: si no sumen el mateix, la font ha canviat
   // entre consultes o una de les agrupacions perd files.
   const total = (llista: { inscripcions: number }[]) =>

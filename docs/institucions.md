@@ -1,4 +1,4 @@
-# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, el mapa, els ajuts, el pressupost, els contractes i les oposicions
+# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, el mapa, els ajuts, el pressupost, els contractes, els adjudicataris i les oposicions
 
 Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi, com s'hi va votar a les últimes municipals i els seus límits per al mapa, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat, quantes adjudicacions fa cada organisme i a qui, i quins processos de selecció de personal tenen el termini obert. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
@@ -329,7 +329,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 - **Adjudicatari:** el nom tal com l'escriu la font, que no en publica el NIF. Una mateixa empresa escrita de dues maneres surt en dues files, i dues empreses amb el mateix nom surten en una. Les inscripcions sense adjudicatari tenen `adjudicatari` a `null` i van al final del seu organisme.
 - **Persones físiques:** en els contractes menors hi pot haver persones físiques. El nom es publica tal com el publica la font, sense creuar-lo amb cap altra dada.
 - **Ordre:** per àmbit, codi de l'organisme (com a text), nom de l'organisme i adjudicatari.
-- **Comprovacions:** les de `contractes.json` per a cada fila (àmbit, codi i nom de l'organisme, recomptes, imports i que totes les inscripcions del grup tinguin import). A més, la suma de les inscripcions per adjudicatari ha de ser la mateixa que per procediment: són dues agrupacions de les mateixes inscripcions, i si no lliguen, la font ha canviat entre consultes o una agrupació en perd.
+- **Comprovacions:** cap grup no pot sortir dues vegades: voldria dir que les pàgines es trepitgen. Les de `contractes.json` per a cada fila (àmbit, codi i nom de l'organisme, recomptes, imports i que totes les inscripcions del grup tinguin import). A més, la suma de les inscripcions per adjudicatari ha de ser la mateixa que per procediment: són dues agrupacions de les mateixes inscripcions, i si no lliguen, la font ha canviat entre consultes o una agrupació en perd.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## `oposicions.json`
