@@ -6,7 +6,7 @@ import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { gunzipSync } from 'node:zlib';
 import { SourceError } from './comun.ts';
-import { construeixFoto, empremta, FONTS, type Font, type Foto } from './historic.ts';
+import { construeixFoto, decodifica, empremta, FONTS, type Font, type Foto } from './historic.ts';
 
 export async function verificaFoto(carpeta: string, fitxer: string) {
   const foto = JSON.parse(await readFile(join(carpeta, fitxer), 'utf8')) as Foto;
@@ -17,10 +17,12 @@ export async function verificaFoto(carpeta: string, fitxer: string) {
     const bytes = gunzipSync(await readFile(join(carpeta, c.fitxer)));
     if (empremta(bytes) !== c.sha256)
       throw new SourceError(`${c.fitxer} no té l'empremta que diu la foto.`);
-    respostes[c.font] = bytes.toString('utf8');
+    respostes[c.font] = decodifica(bytes, c.font);
   }
   const { captures, ...resta } = foto;
-  if (!isDeepStrictEqual(construeixFoto(respostes, foto.consultat), resta))
+  // Es compara tal com quedaria escrita: el JSON no guarda els camps sense valor.
+  const refeta = JSON.parse(JSON.stringify(construeixFoto(respostes, foto.consultat))) as unknown;
+  if (!isDeepStrictEqual(refeta, resta))
     throw new SourceError(`${fitxer} no surt de les seves còpies.`);
   return foto;
 }

@@ -2,12 +2,12 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import type { Fetch } from './comun.ts';
+import { liniaViatge } from './operadors.ts';
 import {
   avisosRodalies,
   estacionsFgc,
   avisosTmb,
   horarisFgc,
-  liniaViatge,
   propersTmb,
   retardsFgc,
   retardsRodalies,

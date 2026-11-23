@@ -12,6 +12,7 @@ import {
   afegeixFoto,
   baixa,
   construeixFoto,
+  decodifica,
   empremta,
   FONTS,
   type Captura,
@@ -20,7 +21,7 @@ import {
   type Foto,
   type Resum,
 } from './historic.ts';
-import { clauTmb } from './transport.ts';
+import { clauTmb } from './operadors.ts';
 
 const carpeta = process.argv[2];
 if (!carpeta) {
@@ -47,17 +48,21 @@ try {
   const consultat = new Date().toISOString();
   const tmb = clauTmb();
   const fonts = Object.keys(FONTS) as Font[];
-  const textos = await Promise.all(
+  const bytes = await Promise.all(
     fonts.map((f) => baixa(fetch, FONTS[f], f.startsWith('tmb') ? tmb : {})),
   );
-  const respostes = Object.fromEntries(fonts.map((f, i) => [f, textos[i]])) as Record<Font, string>;
+  const cossos = Object.fromEntries(fonts.map((f, i) => [f, bytes[i]])) as Record<Font, Uint8Array>;
+  const respostes = Object.fromEntries(fonts.map((f) => [f, decodifica(cossos[f], f)])) as Record<
+    Font,
+    string
+  >;
   const sense = construeixFoto(respostes, consultat);
-  const { dia, hora } = sense;
-  const prefix = `${dia}/${hora.replace(':', '')}`;
+  const { dia, hora, instant } = sense;
+  const prefix = `${dia}/${instant}`;
   const captures: Captura[] = fonts.map((font) => ({
     font,
     url: FONTS[font],
-    sha256: empremta(respostes[font]),
+    sha256: empremta(cossos[font]),
     fitxer: `captures/${prefix}-${font}.json.gz`,
   }));
   const foto: Foto = { ...sense, captures };
@@ -69,7 +74,7 @@ try {
   const resum = actualitzaResum(resumAnterior, diaNou, foto);
 
   const sortida = join(carpeta, 'sortida');
-  for (const c of captures) await escriu(join(sortida, c.fitxer), gzipSync(respostes[c.font]));
+  for (const c of captures) await escriu(join(sortida, c.fitxer), gzipSync(cossos[c.font]));
   await escriu(join(sortida, 'fotos', `${prefix}.json`), JSON.stringify(foto));
   await escriu(join(sortida, 'dies', `${dia}.json`), JSON.stringify(diaNou));
   await escriu(join(sortida, 'resum.json'), JSON.stringify(resum));

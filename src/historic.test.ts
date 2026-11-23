@@ -9,6 +9,7 @@ import {
   actualitzaResum,
   afegeixFoto,
   construeixFoto,
+  decodifica,
   diaHora,
   empremta,
   FONTS,
@@ -53,8 +54,16 @@ const metro = (id: number, linia: string, text: string) => ({
 });
 
 test('agrupa les fotos pel dia a Catalunya, no pel dia en UTC', () => {
-  assert.deepEqual(diaHora(new Date('2026-11-23T23:20:00Z')), { dia: '2026-11-24', hora: '00:20' });
-  assert.deepEqual(diaHora(new Date('2026-07-01T21:59:00Z')), { dia: '2026-07-01', hora: '23:59' });
+  assert.deepEqual(diaHora(new Date('2026-11-23T23:20:00Z')), {
+    dia: '2026-11-24',
+    hora: '00:20',
+    instant: '002000',
+  });
+  assert.deepEqual(diaHora(new Date('2026-07-01T21:59:00Z')), {
+    dia: '2026-07-01',
+    hora: '23:59',
+    instant: '235900',
+  });
 });
 
 test('compta cada tren un sol cop al dia, amb el retard més gran que se n’ha vist', () => {
@@ -95,11 +104,42 @@ test('compta cada tren un sol cop al dia, amb el retard més gran que se n’ha 
   });
   assert.deepEqual(r.fgc, {
     S1: { trens: 2, fora_d_hora: 1, sense_dada: 0 },
-    S2: { trens: 1, fora_d_hora: 0, sense_dada: 1 },
+    S2: { trens: 0, fora_d_hora: 0, sense_dada: 1 },
   });
   assert.deepEqual(r.tmb, { metro: { L1: 1, L3: 1 }, bus: {} });
   assert.equal(dia.tmb['metro-1']!.primer, '2026-11-23T08:00:00Z');
   assert.equal(dia.tmb['metro-1']!.darrer, '2026-11-23T08:30:00Z');
+});
+
+test('un tren que acaba cancel·lat compta com a cancel·lat, i no també com a circulant', () => {
+  const abans = foto(respostes([viatge('5126L1R2N', 600)], []), '2026-11-23T08:00:00Z');
+  const despres = foto(
+    respostes([viatge('5126L1R2N', undefined, 'CANCELED')], []),
+    '2026-11-23T08:30:00Z',
+  );
+  const r = resumDia(afegeixFoto(afegeixFoto(null, abans), despres));
+  assert.deepEqual(r.rodalies.R2N, {
+    trens: 0,
+    amb_retard_de_5_min_o_mes: 0,
+    sense_retard_publicat: 0,
+    cancellats: 1,
+  });
+});
+
+test('un tren sense dada no compta al total, perquè no faci semblar la línia més puntual', () => {
+  const f = foto(
+    respostes(
+      [viatge('5126L1R1', 600), viatge('5126L2R1'), viatge('5126L3R1'), viatge('5126L4R1', 0)],
+      [],
+    ),
+    '2026-11-23T08:00:00Z',
+  );
+  assert.deepEqual(resumDia(afegeixFoto(null, f)).rodalies.R1, {
+    trens: 2,
+    amb_retard_de_5_min_o_mes: 1,
+    sense_retard_publicat: 2,
+    cancellats: 0,
+  });
 });
 
 test("no barreja una foto amb el resum d'un altre dia", () => {
@@ -125,18 +165,45 @@ test('el resum general substitueix el dia d’avui i deixa els altres, del més 
   assert.equal(resum.actualitzat, '2026-11-23T08:30:00Z');
 });
 
+test('el resum només guarda els últims 30 dies', () => {
+  let resum = null;
+  for (let i = 1; i <= 35; i++) {
+    const f = foto(respostes([], []), new Date(Date.UTC(2026, 9, i, 10)).toISOString());
+    resum = actualitzaResum(resum, afegeixFoto(null, f), f);
+  }
+  assert.equal(resum!.dies.length, 30);
+  assert.equal(resum!.dies[0]!.dia, '2026-11-04');
+});
+
 test('una foto es pot tornar a fer amb les còpies, i una còpia tocada es detecta', async () => {
   const carpeta = await mkdtemp(join(tmpdir(), 'foto-'));
-  const r = respostes([viatge('5126L1R2N', 120)], [{ id: 'a', lin: 'S1', en_hora: 'True' }]);
+  // Un avís de bus sense causa: el camp no es desa al JSON, i la foto ha de quadrar igualment.
+  const bus = [
+    {
+      id: 7,
+      begin: 1795000000000,
+      end: null,
+      typeName: 'Desviament',
+      linesAffected: [{ commercialLineId: 'H12' }],
+      channelInfoTO: { textCa: 'Desviament.' },
+    },
+  ];
+  const r = respostes(
+    [viatge('5126L1R2N', 120)],
+    [{ id: 'a', lin: 'S1', en_hora: 'True' }],
+    [],
+    bus,
+  );
   const fonts = Object.keys(FONTS) as Font[];
   const captures = fonts.map((font) => ({
     font,
     url: FONTS[font],
-    sha256: empremta(r[font]),
+    sha256: empremta(Buffer.from(r[font])),
     fitxer: `captures/${font}.json.gz`,
   }));
   await mkdir(join(carpeta, 'captures'));
-  for (const c of captures) await writeFile(join(carpeta, c.fitxer), gzipSync(r[c.font]));
+  for (const c of captures)
+    await writeFile(join(carpeta, c.fitxer), gzipSync(Buffer.from(r[c.font])));
   const f = { ...construeixFoto(r, '2026-11-23T08:00:00Z'), captures };
   await writeFile(join(carpeta, 'foto.json'), JSON.stringify(f));
   await verificaFoto(carpeta, 'foto.json');
@@ -148,4 +215,9 @@ test('una foto es pot tornar a fer amb les còpies, i una còpia tocada es detec
 
   await writeFile(join(carpeta, 'captures/fgc.json.gz'), gzipSync('[]'));
   await assert.rejects(verificaFoto(carpeta, 'foto.json'), /no té l'empremta/);
+});
+
+test('una resposta que no és UTF-8 és un error, no un caràcter canviat', () => {
+  assert.equal(decodifica(Buffer.from('{"a":"è"}'), 'fgc'), '{"a":"è"}');
+  assert.throws(() => decodifica(new Uint8Array([0x7b, 0xff, 0x7d]), 'fgc'), /no és UTF-8/);
 });

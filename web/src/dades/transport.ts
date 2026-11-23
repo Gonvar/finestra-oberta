@@ -4,12 +4,15 @@
 
 export const HISTORIC = 'https://historic.finestraoberta.cat';
 
+/** `trens` només compta els que tenen el retard publicat; els altres van a `sense_retard_publicat`. */
 export type LiniaRodalies = {
   trens: number;
   amb_retard_de_5_min_o_mes: number;
+  sense_retard_publicat: number;
   cancellats: number;
 };
-export type LiniaFgc = { trens: number; fora_d_hora: number };
+/** `trens` només compta els que FGC diu si van en hora; els altres van a `sense_dada`. */
+export type LiniaFgc = { trens: number; fora_d_hora: number; sense_dada: number };
 type AvisMetro = { id: number; linies: string[]; estacions: string[]; textos: string[] };
 type AvisBus = { id: number; linies: string[]; causa: string; tipus: string; text: string };
 
@@ -18,8 +21,8 @@ export type Dia = {
   fotos: number;
   primera: string;
   darrera: string;
-  rodalies: Record<string, LiniaRodalies & { sense_retard_publicat: number }>;
-  fgc: Record<string, LiniaFgc & { sense_dada: number }>;
+  rodalies: Record<string, LiniaRodalies>;
+  fgc: Record<string, LiniaFgc>;
   tmb: { metro: Record<string, number>; bus: Record<string, number> };
 };
 
@@ -52,7 +55,7 @@ export function sumaLinies<T extends Record<string, number>>(
   for (const d of dies)
     for (const [linia, xifres] of Object.entries(d[operador])) {
       const s = suma.get(linia) ?? {};
-      for (const [k, v] of Object.entries(xifres)) s[k] = (s[k] ?? 0) + v;
+      for (const [k, v] of Object.entries(xifres as Record<string, number>)) s[k] = (s[k] ?? 0) + v;
       suma.set(linia, s);
     }
   return [...suma].sort(([a], [b]) => ordreLinies(a, b)).map(([l, s]) => [l, s as T]);
@@ -86,6 +89,10 @@ const diaCurt = new Intl.DateTimeFormat('ca', {
   day: 'numeric',
   month: 'numeric',
 });
+
+/** El dia d'avui a Catalunya, «AAAA-MM-DD», com els dies del resum. */
+export const avui = (ara = new Date()) =>
+  new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(ara);
 
 export const horaDe = (iso: string) => hora.format(new Date(iso)).replace(':', '.');
 /** Els dies del resum són «AAAA-MM-DD» a Catalunya: es llegeixen a migdia perquè no canviïn de dia. */

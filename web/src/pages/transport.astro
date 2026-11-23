@@ -36,7 +36,9 @@ import { HISTORIC } from '../dades/transport.ts';
           el criteri que fa servir. Per això Rodalies i FGC no es poden comparar.
         </dd>
         <dt>Cancel·lat</dt>
-        <dd>Un tren que Renfe marca com a suprimit en alguna foto.</dd>
+        <dd>Un tren que Renfe marca com a suprimit en alguna foto. Es compta a part.</dd>
+        <dt>Sense dada</dt>
+        <dd>Un tren del qual l'operador no publica el retard. No compta al total, i es diu a part.</dd>
         <dt>Pocs trens</dt>
         <dd>
           Una línia amb menys de 10 trens en el període. Amb tan pocs, un percentatge exagera: 2 de 2 seria
@@ -44,9 +46,9 @@ import { HISTORIC } from '../dades/transport.ts';
         </dd>
       </dl>
       <p class="explica">
-        Cada foto es desa amb una còpia de les respostes dels operadors, que es pot baixar durant 30 dies
-        a <a href={HISTORIC}>historic.finestraoberta.cat</a>, i se signa perquè qualsevol persona pugui
-        comprovar que no s'ha tocat. <a
+        Cada foto es desa amb una còpia de les respostes dels operadors, i se signa. Les còpies es poden
+        baixar durant 30 dies a <a href={HISTORIC}>historic.finestraoberta.cat</a>, per comprovar que
+        les xifres no s'han tocat. <a
           href="https://github.com/Gonvar/finestra-oberta/blob/main/docs/transport.md">Com comprovar-ho</a
         >.
       </p>

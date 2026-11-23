@@ -4,6 +4,7 @@
 // llegir com si es poguessin comparar.
 import { useEffect, useId, useState } from 'react';
 import {
+  avui,
   HISTORIC,
   horaDe,
   momentDe,
@@ -23,10 +24,13 @@ type Estat = { tipus: 'carregant' } | { tipus: 'error' } | { tipus: 'llest'; res
 type Dies = 1 | 7 | 30;
 
 const PERIODES: { dies: Dies; nom: string }[] = [
-  { dies: 1, nom: 'Avui' },
+  { dies: 1, nom: '1 dia' },
   { dies: 7, nom: '7 dies' },
   { dies: 30, nom: '30 dies' },
 ];
+
+/** «Avui» només si el dia més recent és avui: si el workflow s'ha aturat, és un altre dia. */
+const elDia = (dia: string) => (dia === avui() ? 'Avui' : `El ${nomDia(dia)}`);
 
 /**
  * Amb pocs trens, un percentatge exagera: 2 de 2 és un 100 % que pesa més a la vista que 5 de 22.
@@ -85,6 +89,8 @@ export default function Transport() {
           {rod.cancellats === 0
             ? 'Cap no estava cancel·lat.'
             : `N'hi havia ${rod.cancellats} més de cancel·lats.`}
+          {rod.sense_retard_publicat > 0 &&
+            ` De ${trens(rod.sense_retard_publicat)} més, Renfe no en publicava el retard.`}
         </p>
         <h3 className="titol-bloc">Trens amb 5 minuts o més de retard, per línia</h3>
         <Periode {...selector} />
@@ -93,11 +99,17 @@ export default function Transport() {
             linia,
             part: l.amb_retard_de_5_min_o_mes,
             total: l.trens,
-            nota: l.cancellats ? `i ${l.cancellats} cancel·lats` : undefined,
+            nota: [
+              l.cancellats && `${l.cancellats} cancel·lats`,
+              l.sense_retard_publicat && `${l.sense_retard_publicat} sense dada`,
+            ]
+              .filter(Boolean)
+              .join(' · '),
           }))}
         />
         <Columnes
           titol="Dia a dia"
+          etiqueta="Amb 5 min o més"
           dies={trentaDies}
           xifra={(d) => {
             const t = totals(Object.entries(d.rodalies));
@@ -115,6 +127,7 @@ export default function Transport() {
         </p>
         <p className="que">
           trens que circulaven a les {horaDe(ara.consultat)} no anaven en hora, segons FGC.
+          {fgc.sense_dada > 0 && ` De ${trens(fgc.sense_dada)} més, FGC no ho deia.`}
         </p>
         <h3 className="titol-bloc">Trens que no han anat en hora, per línia</h3>
         <Periode {...selector} />
@@ -123,10 +136,12 @@ export default function Transport() {
             linia,
             part: l.fora_d_hora,
             total: l.trens,
+            nota: l.sense_dada ? `${l.sense_dada} sense dada` : '',
           }))}
         />
         <Columnes
           titol="Dia a dia"
+          etiqueta="Fora d'hora"
           dies={trentaDies}
           xifra={(d) => {
             const t = totals(Object.entries(d.fgc));
@@ -148,7 +163,7 @@ export default function Transport() {
       </section>
 
       <p className="font-dada">
-        Fonts: <a href="https://data.renfe.com/dataset/incidencias-avisos">Renfe</a>,{' '}
+        Fonts: <a href="https://data.renfe.com/dataset/horarios-viaje-cercanias">Renfe</a>,{' '}
         <a href="https://dadesobertes.fgc.cat/explore/dataset/posicionament-dels-trens/">FGC</a> i{' '}
         <a href="https://developer.tmb.cat">TMB</a>. Darrera foto {momentDe(ara.consultat)}.
       </p>
@@ -179,7 +194,7 @@ function Periode(props: { dies: Dies; setDies: (d: Dies) => void; periode: Dia[]
       {primer && darrer && (
         <p className="secundari">
           {primer === darrer
-            ? `El ${nomDia(primer.dia)}, fins a les ${horaDe(primer.darrera)}.`
+            ? `${elDia(primer.dia)}, fins a les ${horaDe(primer.darrera)}.`
             : `Del ${nomDia(primer.dia)} al ${nomDia(darrer.dia)}, fins a les ${horaDe(darrer.darrera)}.`}
         </p>
       )}
@@ -187,7 +202,7 @@ function Periode(props: { dies: Dies; setDies: (d: Dies) => void; periode: Dia[]
   );
 }
 
-type Fila = { linia: string; part: number; total: number; nota?: string };
+type Fila = { linia: string; part: number; total: number; nota: string };
 
 /** Una fila per línia: el codi, la barra i la xifra. Amb pocs trens, només la xifra. */
 function Linies({ linies }: { linies: Fila[] }) {
@@ -208,7 +223,7 @@ function Linies({ linies }: { linies: Fila[] }) {
             <span className="xifra">
               {part} de {trens(total)}
               {!pocs && <strong> · {percentatge(part, total)}</strong>}
-              {nota && <span className="secundari"> {nota}</span>}
+              {nota && <span className="secundari"> · {nota}</span>}
             </span>
           </li>
         );
@@ -217,12 +232,17 @@ function Linies({ linies }: { linies: Fila[] }) {
   );
 }
 
-function Columnes(props: { titol: string; dies: Dia[]; xifra: (d: Dia) => [number, number] }) {
+function Columnes(props: {
+  titol: string;
+  etiqueta: string;
+  dies: Dia[];
+  xifra: (d: Dia) => [number, number];
+}) {
   const files = props.dies.map((d) => {
     const [part, total] = props.xifra(d);
     return { d, part, total, p: percentatge(part, total) };
   });
-  const avui = files.at(-1);
+  const darrer = files.at(-1);
   return (
     <figure className="columnes">
       <figcaption className="titol-bloc">{props.titol}</figcaption>
@@ -242,7 +262,7 @@ function Columnes(props: { titol: string; dies: Dia[]; xifra: (d: Dia) => [numbe
       </div>
       <p className="secundari eix-dates" aria-hidden="true">
         <span>{files[0] && nomDiaCurt(files[0].d.dia)}</span>
-        <span>{avui && `Avui, fins a les ${horaDe(avui.d.darrera)}`}</span>
+        <span>{darrer && `${elDia(darrer.d.dia)}, fins a les ${horaDe(darrer.d.darrera)}`}</span>
       </p>
       <details>
         <summary>Les xifres de cada dia</summary>
@@ -251,7 +271,7 @@ function Columnes(props: { titol: string; dies: Dia[]; xifra: (d: Dia) => [numbe
             <thead>
               <tr>
                 <th scope="col">Dia</th>
-                <th scope="col">Amb retard</th>
+                <th scope="col">{props.etiqueta}</th>
                 <th scope="col">Trens</th>
                 <th scope="col">Part</th>
               </tr>
@@ -275,29 +295,37 @@ function Columnes(props: { titol: string; dies: Dia[]; xifra: (d: Dia) => [numbe
 
 type AvisMetro = Resum['ara']['tmb']['metro'][number];
 
-/** Els avisos agrupats per línia, i un mateix text un sol cop per línia. */
+/**
+ * Els avisos per línia, tal com els publica TMB. Un avís que afecta dues línies surt a totes dues, i
+ * un que no en diu cap surt a part: la llista té tots els avisos de la xifra de dalt.
+ */
 function AvisosMetro({ avisos }: { avisos: AvisMetro[] }) {
-  const perLinia = new Map<string, Set<string>>();
+  const perLinia = new Map<string, AvisMetro[]>();
   for (const a of avisos)
-    for (const l of a.linies) {
-      const textos = perLinia.get(l) ?? new Set<string>();
-      a.textos.forEach((t) => textos.add(t));
-      perLinia.set(l, textos);
+    for (const l of a.linies.length ? a.linies : ['Sense línia']) {
+      perLinia.set(l, [...(perLinia.get(l) ?? []), a]);
     }
-  const linies = [...perLinia].sort(([a], [b]) => a.localeCompare(b, 'ca', { numeric: true }));
+  const linies = [...perLinia].sort(([a], [b]) =>
+    a === 'Sense línia'
+      ? 1
+      : b === 'Sense línia'
+        ? -1
+        : a.localeCompare(b, 'ca', { numeric: true }),
+  );
   return (
     <ul className="avisos">
-      {linies.map(([linia, textos]) => (
+      {linies.map(([linia, llista]) => (
         <li key={linia}>
           <details>
             <summary>
               <span className="codi-linia">{linia}</span>
-              {textos.size === 1 ? '1 avís' : `${textos.size} avisos`}
+              {llista.length === 1 ? '1 avís' : `${llista.length} avisos`}
             </summary>
             <ul>
-              {[...textos].map((t) => (
-                <li key={t} className="secundari">
-                  {t}
+              {llista.map((a) => (
+                <li key={a.id} className="secundari">
+                  {a.estacions.length > 0 && `${a.estacions.join(', ')}: `}
+                  {a.textos.join(' ')}
                 </li>
               ))}
             </ul>

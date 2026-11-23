@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import {
+  avui,
   momentDe,
   nomDia,
   percentatge,
@@ -62,4 +63,8 @@ test('sense trens no hi ha percentatge, i no és un zero', () => {
 test('les dates i les hores són les de Catalunya', () => {
   assert.equal(nomDia('2026-11-23'), '23 de novembre');
   assert.equal(momentDe('2026-11-23T23:20:00Z'), 'el 24 de novembre a les 00.20');
+});
+
+test('avui és el dia a Catalunya', () => {
+  assert.equal(avui(new Date('2026-11-23T23:20:00Z')), '2026-11-24');
 });

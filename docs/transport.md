@@ -47,14 +47,19 @@ El workflow [`transport.yml`](../.github/workflows/transport.yml) fa una foto ca
 
 Cada foto ([src/foto-transport.ts](../src/foto-transport.ts)) llegeix les mateixes fonts que les eines `retards` i `avisos`: el GTFS-RT de Renfe, el Geotren d'FGC i els avisos de metro i de bus de TMB.
 
-| Fitxer                                    | Què hi ha                                                                                                                                  | Quant temps es guarda   |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
-| `captures/AAAA-MM-DD/HHMM-<font>.json.gz` | La resposta de cada font, comprimida i tal com va arribar                                                                                  | 30 dies                 |
-| `fotos/AAAA-MM-DD/HHMM.json`              | Els trens de cada línia i el seu retard, amb l'empremta SHA-256 de cada còpia                                                              | 30 dies                 |
-| `dies/AAAA-MM-DD.json`                    | El dia acumulat, tren a tren: el retard més gran de cada tren de Rodalies, si algun cop un tren d'FGC no anava en hora i els avisos de TMB | Per sempre              |
-| `resum.json`                              | El que llegeix la web: l'última foto i el resum de cada dia                                                                                | Es reescriu a cada foto |
+| Fitxer                                      | Què hi ha                                                                                                                                  | Quant temps es guarda   |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
+| `captures/AAAA-MM-DD/HHMMSS-<font>.json.gz` | Els bytes de la resposta de cada font, comprimits i tal com van arribar                                                                    | 30 dies                 |
+| `fotos/AAAA-MM-DD/HHMMSS.json`              | Els trens de cada línia i el seu retard, amb l'empremta SHA-256 de cada còpia                                                              | 30 dies                 |
+| `dies/AAAA-MM-DD.json`                      | El dia acumulat, tren a tren: el retard més gran de cada tren de Rodalies, si algun cop un tren d'FGC no anava en hora i els avisos de TMB | Per sempre              |
+| `resum.json`                                | El que llegeix la web: l'última foto i el resum dels últims 30 dies                                                                        | Es reescriu a cada foto |
 
 - **Un tren compta un cop per dia.** De Rodalies, «amb retard» vol dir que en alguna foto portava 5 minuts o més. D'FGC, que en alguna foto no anava en hora.
+- **Un tren de Rodalies que en alguna foto surt cancel·lat compta com a cancel·lat**, i no també com a tren en circulació.
+- **Un tren sense dada no compta al total.** Si Renfe no en publica el retard, o FGC no diu si va en hora, el tren no pot sumar a la part amb retard. Si comptés al total, faria semblar la línia més puntual. Es dona a part (`sense_retard_publicat`, `sense_dada`).
+- **Si `resum.json` no hi és però sí que hi ha dies publicats, el workflow s'atura** en lloc de començar un resum nou només amb avui.
+- **Les còpies es desen tal com van arribar, byte a byte.** Una resposta que no és UTF-8 és un error.
+- **El workflow no instal·la cap paquet de tercers.** La foto només fa servir `src/historic.ts` i `src/operadors.ts`, que no tenen dependències. Cada clau només arriba als passos que la necessiten. Si la clau de TMB surt en algun fitxer que s'havia de publicar, no es publica res.
 - **Els dies van pel dia a Catalunya**, no pel dia en UTC.
 - **La web no mostra el percentatge d'una línia amb menys de 10 trens** en el període, perquè exageraria: 2 de 2 seria un 100 %.
 - **Les claus** de TMB (`TMB_APP_ID`, `TMB_APP_KEY`) i d'R2 (`R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_ENDPOINT`) són secrets de l'entorn `dades` de GitHub, que només s'obre per a `main`. L'adreça de TMB es desa sense la clau.
@@ -64,8 +69,8 @@ Cada foto ([src/foto-transport.ts](../src/foto-transport.ts)) llegeix les mateix
 Cada execució signa la foto, el dia i el resum amb una atestació de GitHub. Per comprovar una foto dels últims 30 dies, baixa-la amb les seves còpies, amb la mateixa estructura de carpetes, i executa:
 
 ```sh
-node src/verifica-foto.ts <carpeta> fotos/2026-11-23/0937.json
-gh attestation verify <carpeta>/fotos/2026-11-23/0937.json --repo Gonvar/finestra-oberta
+node src/verifica-foto.ts <carpeta> fotos/2026-11-23/093712.json
+gh attestation verify <carpeta>/fotos/2026-11-23/093712.json --repo Gonvar/finestra-oberta
 ```
 
 El primer torna a fer la foto a partir de les còpies i comprova que surt igual, i que cada còpia té la seva empremta. El segon comprova que la foto la va publicar el workflow de `main`.
