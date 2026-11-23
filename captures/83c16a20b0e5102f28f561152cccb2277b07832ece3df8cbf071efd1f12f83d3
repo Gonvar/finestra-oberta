@@ -10,7 +10,7 @@
   "description" : "Publicitat activa de l'agenda pública amb grups d’interès dels alts càrrecs i personal directiu; subdirectors/es i llocs assimilats de la Generalitat de Catalunya.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 5566,
+  "downloadCount" : 5568,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",
@@ -28,7 +28,7 @@
   "rowsUpdatedBy" : "ayxa-4tpi",
   "tableId" : 1765861,
   "totalTimesRated" : 0,
-  "viewCount" : 61618,
+  "viewCount" : 61622,
   "viewLastModified" : 1766474882,
   "viewType" : "tabular",
   "approvals" : [ {

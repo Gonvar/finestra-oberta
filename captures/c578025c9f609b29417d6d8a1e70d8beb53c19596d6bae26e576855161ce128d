@@ -23,12 +23,12 @@
   "publicationDate" : 1794298762,
   "publicationGroup" : 1176077,
   "publicationStage" : "published",
-  "rowsUpdatedAt" : 1795325490,
+  "rowsUpdatedAt" : 1795411866,
   "rowsUpdatedBy" : "a4b5-gx6v",
   "tableId" : 2159321,
   "totalTimesRated" : 0,
-  "viewCount" : 30690,
-  "viewLastModified" : 1795325486,
+  "viewCount" : 30698,
+  "viewLastModified" : 1795411861,
   "viewType" : "tabular",
   "approvals" : [ {
     "reviewedAt" : 1605542939,
@@ -151,64 +151,64 @@
       "largest" : "4390760001799",
       "null" : "732",
       "top" : [ {
-        "item" : "0800180013600",
+        "item" : "2520940008101",
         "count" : "1"
       }, {
-        "item" : "0800180013601",
+        "item" : "1709320000000",
         "count" : "1"
       }, {
-        "item" : "0800180013602",
+        "item" : "4300810000000",
         "count" : "1"
       }, {
-        "item" : "0800180013603",
+        "item" : "4305090007500",
         "count" : "1"
       }, {
-        "item" : "0800180013604",
+        "item" : "4313840001700",
         "count" : "1"
       }, {
-        "item" : "0800180013605",
+        "item" : "0811730011599",
         "count" : "1"
       }, {
-        "item" : "0800180013699",
+        "item" : "1790110301401",
         "count" : "1"
       }, {
-        "item" : "0800180014100",
+        "item" : "4315360004301",
         "count" : "1"
       }, {
-        "item" : "0800180014101",
+        "item" : "2513990003801",
         "count" : "1"
       }, {
-        "item" : "0800180014102",
+        "item" : "4303320002201",
         "count" : "1"
       }, {
-        "item" : "0800180014103",
+        "item" : "4314010001700",
         "count" : "1"
       }, {
-        "item" : "0800180014104",
+        "item" : "0890580000000",
         "count" : "1"
       }, {
-        "item" : "0800180014199",
+        "item" : "0804250002200",
         "count" : "1"
       }, {
-        "item" : "0800230000000",
+        "item" : "0802350010801",
         "count" : "1"
       }, {
-        "item" : "0800230001700",
+        "item" : "2517060000000",
         "count" : "1"
       }, {
-        "item" : "0800230001701",
+        "item" : "2520170016701",
         "count" : "1"
       }, {
-        "item" : "0800230001799",
+        "item" : "1701600002299",
         "count" : "1"
       }, {
-        "item" : "0800230002200",
+        "item" : "0823460007599",
         "count" : "1"
       }, {
-        "item" : "0800230002201",
+        "item" : "0801420001799",
         "count" : "1"
       }, {
-        "item" : "0800180000000",
+        "item" : "0808470002299",
         "count" : "1"
       } ],
       "smallest" : "0800180000000",
@@ -488,10 +488,10 @@
         "item" : "0829560009",
         "count" : "51"
       }, {
-        "item" : "1707920002",
+        "item" : "0829170005",
         "count" : "51"
       }, {
-        "item" : "0829170005",
+        "item" : "1707920002",
         "count" : "51"
       }, {
         "item" : "2524300000",
@@ -503,10 +503,10 @@
         "item" : "2523980001",
         "count" : "45"
       }, {
-        "item" : "2512070005",
+        "item" : "2520940003",
         "count" : "44"
       }, {
-        "item" : "2505180001",
+        "item" : "1703400000",
         "count" : "44"
       } ],
       "smallest" : "0800180001",
@@ -555,19 +555,19 @@
         "item" : "Pont de Suert",
         "count" : "59"
       }, {
-        "item" : "Torre de Cabdella",
+        "item" : "Artesa de Segre",
         "count" : "56"
       }, {
-        "item" : "Artesa de Segre",
+        "item" : "Torre de Cabdella",
         "count" : "56"
       }, {
         "item" : "Piera",
         "count" : "55"
       }, {
-        "item" : "Girona",
+        "item" : "Vacarisses",
         "count" : "51"
       }, {
-        "item" : "Vacarisses",
+        "item" : "Girona",
         "count" : "51"
       }, {
         "item" : "Vallirana",
@@ -576,16 +576,16 @@
         "item" : "Vielha e Mijaran",
         "count" : "48"
       }, {
-        "item" : "Sant Pere de Ribes",
-        "count" : "45"
-      }, {
         "item" : "Valls de Valira",
         "count" : "45"
       }, {
-        "item" : "Sant Martí Sarroca",
+        "item" : "Sant Pere de Ribes",
+        "count" : "45"
+      }, {
+        "item" : "Sort",
         "count" : "44"
       }, {
-        "item" : "Calonge i Sant Antoni",
+        "item" : "Lleida",
         "count" : "44"
       } ],
       "smallest" : "Abella de la Conca",
@@ -2364,16 +2364,16 @@
         "item" : "Sant Pere de Ribes",
         "count" : "45"
       }, {
-        "item" : "Sant Martí Sarroca",
+        "item" : "Sort",
         "count" : "44"
       }, {
-        "item" : "Sort",
+        "item" : "Sant Martí Sarroca",
         "count" : "44"
       }, {
         "item" : "Bellver de Cerdanya",
         "count" : "43"
       }, {
-        "item" : "Castellbell i el Vilar",
+        "item" : "Font-rubí",
         "count" : "42"
       } ],
       "smallest" : "Abella de la Conca",
@@ -3757,61 +3757,61 @@
         "item" : "-",
         "count" : "11711"
       }, {
-        "item" : "1096 - 09-SEP-97",
-        "count" : "1"
-      }, {
-        "item" : "1702 - 22-OCT-02",
-        "count" : "1"
-      }, {
-        "item" : "1173 - 08-MAY-98",
-        "count" : "1"
-      }, {
-        "item" : "1181 - 09-JUN-98",
-        "count" : "1"
-      }, {
-        "item" : "1237 - 04-DEC-98",
-        "count" : "1"
-      }, {
-        "item" : "1244 - 18-JAN-99",
-        "count" : "1"
-      }, {
-        "item" : "1354 - 23-DEC-99",
-        "count" : "1"
-      }, {
-        "item" : "1357 - 14-JAN-00",
-        "count" : "1"
-      }, {
-        "item" : "1405 - 24-MAY-00",
-        "count" : "1"
-      }, {
-        "item" : "1478 - 04-DEC-00",
-        "count" : "1"
-      }, {
         "item" : "1521 - 19-MAR-01",
         "count" : "1"
       }, {
-        "item" : "1615 - 29-JAN-02",
+        "item" : "2412 - 10-MAR-08",
         "count" : "1"
       }, {
-        "item" : "1698 - 08-OCT-02",
+        "item" : "791 - 27-MAY-94",
         "count" : "1"
       }, {
         "item" : "1133 - 25-MAY-10",
         "count" : "1"
       }, {
-        "item" : "1708 - 03-JUN-97",
+        "item" : "2236 - 27-JUL-06",
         "count" : "1"
       }, {
-        "item" : "1746 - 13-JAN-13",
+        "item" : "331 - 02-NOV-87",
         "count" : "1"
       }, {
-        "item" : "1775 - 11-MAR-03",
+        "item" : "2755 - 21-JAN-13",
         "count" : "1"
       }, {
         "item" : "1837 - 11-JUL-03",
         "count" : "1"
       }, {
-        "item" : "1062 - 10-APR-97",
+        "item" : "1173 - 08-MAY-98",
+        "count" : "1"
+      }, {
+        "item" : "2108 - 20-JUL-05",
+        "count" : "1"
+      }, {
+        "item" : "1708 - 03-JUN-97",
+        "count" : "1"
+      }, {
+        "item" : "1615 - 29-JAN-02",
+        "count" : "1"
+      }, {
+        "item" : "1405 - 24-MAY-00",
+        "count" : "1"
+      }, {
+        "item" : "2781 - 30-SEP-13",
+        "count" : "1"
+      }, {
+        "item" : "2435 - 06-MAY-08",
+        "count" : "1"
+      }, {
+        "item" : "2447 - 20-MAY-08",
+        "count" : "1"
+      }, {
+        "item" : "2717 - 29-MAR-12",
+        "count" : "1"
+      }, {
+        "item" : "397 - 18-MAY-88",
+        "count" : "1"
+      }, {
+        "item" : "1354 - 23-DEC-99",
         "count" : "1"
       } ],
       "smallest" : "-",
@@ -3939,13 +3939,13 @@
         "item" : "2023-09-27T00:00:00.000",
         "count" : "21"
       }, {
-        "item" : "2026-02-20T00:00:00.000",
+        "item" : "2022-02-12T00:00:00.000",
         "count" : "18"
       }, {
         "item" : "2021-04-01T00:00:00.000",
         "count" : "18"
       }, {
-        "item" : "2022-02-12T00:00:00.000",
+        "item" : "2026-02-20T00:00:00.000",
         "count" : "18"
       }, {
         "item" : "2026-10-13T00:00:00.000",
@@ -3963,13 +3963,13 @@
         "item" : "2025-05-06T00:00:00.000",
         "count" : "14"
       }, {
-        "item" : "2024-03-21T00:00:00.000",
-        "count" : "13"
-      }, {
-        "item" : "2023-12-12T00:00:00.000",
+        "item" : "2026-11-20T00:00:00.000",
         "count" : "13"
       }, {
         "item" : "2026-02-13T00:00:00.000",
+        "count" : "13"
+      }, {
+        "item" : "2024-03-21T00:00:00.000",
         "count" : "13"
       } ],
       "smallest" : "1998-03-02T00:00:00.000",

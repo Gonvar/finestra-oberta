@@ -10,7 +10,7 @@
   "description" : "Declaracions d'activitats professionals, mercantils o industrials que podrien conduir a incompatibilitats d’alts càrrecs i directius públics de la Generalitat de Catalunya. Inclou també les declaracions que certifiquen la no realització de cap activitat considerada incompatible i les declaracions sobre les activitats que podrien ser compatibles, presentades pels alts càrrecs i directius públics subjectes a la Llei 13/2005, de 27 de desembre. Aquesta llei regula el règim d'incompatibilitats dels alts càrrecs que serveixen a la Generalitat.\n\nEls alts càrrecs i directius al servei de la Generalitat han d’informar de les seves activitats en el moment del nomenament i del cessament en el seu càrrec, i cada cop que es produeixin variacions respecte de les dades declarades. Disposen d’un termini de 3 mesos per presentar la documentació prevista a la Llei 13/2005.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 478,
+  "downloadCount" : 479,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",

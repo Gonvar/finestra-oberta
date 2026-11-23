@@ -19977,8 +19977,17 @@
   "normes": {
     "font": "Dades obertes de Catalunya: Normativa del DOGC i del Portal Jurídic de Catalunya (Entitat Autònoma del Diari Oficial i de Publicacions de la Generalitat de Catalunya (EADOP))",
     "url": "https://analisi.transparenciacatalunya.cat/d/n6hn-rmy7",
-    "data_dades": "2026-11-22",
+    "data_dades": "2026-11-23",
     "normes": [
+      {
+        "titol": "Llei 16/2026, de 20 de novembre, de protecció de l'agricultura professional directa",
+        "rang": "Llei",
+        "data": "2026-11-20",
+        "data_publicacio": "2026-11-23",
+        "dogc": "9800",
+        "vigencia": "Vigent",
+        "url": "https://portaljuridic.gencat.cat/eli/es-ct/l/2026/11/20/16"
+      },
       {
         "titol": "Llei 15/2026, de 6 de novembre, d'actualització de la legislació amb relació als termes emprats per a referir-se a les persones amb discapacitat",
         "rang": "Llei",

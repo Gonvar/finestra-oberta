@@ -10,7 +10,7 @@
   "description" : "Documents normatius amb rang de llei, Decrets i Ordres, vigents i derogats, tant en català com en castellà, publicats a la secció 1 del DOGC des del 5/12/1977 en diferents formats. S’inclou també la versió en català de la darrera versió de la norma publicada al Portal Jurídic de Catalunya.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 3319,
+  "downloadCount" : 3320,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",
@@ -23,12 +23,12 @@
   "publicationDate" : 1704976862,
   "publicationGroup" : 1231467,
   "publicationStage" : "published",
-  "rowsUpdatedAt" : 1795323657,
+  "rowsUpdatedAt" : 1795410052,
   "rowsUpdatedBy" : "a4b5-gx6v",
   "tableId" : 1917815,
   "totalTimesRated" : 0,
-  "viewCount" : 22323,
-  "viewLastModified" : 1795323619,
+  "viewCount" : 22329,
+  "viewLastModified" : 1795410015,
   "viewType" : "tabular",
   "approvals" : [ {
     "reviewedAt" : 1641918969,
@@ -68,7 +68,7 @@
     "renderTypeName" : "number",
     "tableColumnId" : 10540150,
     "cachedContents" : {
-      "non_null" : "31144",
+      "non_null" : "31146",
       "largest" : "2026",
       "null" : "0",
       "top" : [ {
@@ -133,8 +133,8 @@
         "count" : "658"
       } ],
       "smallest" : "1977",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : {
       "noCommas" : "true"
@@ -149,7 +149,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 10540151,
     "cachedContents" : {
-      "non_null" : "31144",
+      "non_null" : "31146",
       "largest" : "XXXX-82",
       "null" : "0",
       "top" : [ {
@@ -214,8 +214,8 @@
         "count" : "1"
       } ],
       "smallest" : "00003002",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : { }
   }, {
@@ -228,18 +228,18 @@
     "renderTypeName" : "text",
     "tableColumnId" : 10540152,
     "cachedContents" : {
-      "non_null" : "31144",
+      "non_null" : "31146",
       "largest" : "Ordre",
       "null" : "0",
       "top" : [ {
         "item" : "Ordre",
-        "count" : "20926"
+        "count" : "20927"
       }, {
         "item" : "Decret",
         "count" : "9072"
       }, {
         "item" : "Llei",
-        "count" : "874"
+        "count" : "875"
       }, {
         "item" : "Decret llei",
         "count" : "221"
@@ -248,8 +248,8 @@
         "count" : "51"
       } ],
       "smallest" : "Decret",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : { }
   }, {
@@ -262,7 +262,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 10540153,
     "cachedContents" : {
-      "non_null" : "31144",
+      "non_null" : "31146",
       "largest" : "ORDRE XGO/174/2022, de 15 de juliol, per la qual s'aproven les bases reguladores per a la concessió de subvencions per promoure la internacionalització dels ens de l'Administració local de Catalunya.",
       "null" : "0",
       "top" : [ {
@@ -327,8 +327,8 @@
         "count" : "2"
       } ],
       "smallest" : "ACORD de la Mesa del Parlament pel qual s'aprova la versió en occità (aranès) de la Llei 10/2017, del 27 de juny, de les voluntats digitals i de modificació dels llibres segon i quart del Codi civil de Catalunya.",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : { }
   }, {
@@ -341,7 +341,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13949951,
     "cachedContents" : {
-      "non_null" : "31144",
+      "non_null" : "31146",
       "largest" : "RESOLUCIÓN de 28 de enero de 1986, de regulación de la Comisión de seguimiento de la adecuación a las Comunidades Económicas Europeas.",
       "null" : "0",
       "top" : [ {
@@ -406,8 +406,8 @@
         "count" : "2"
       } ],
       "smallest" : "ACUERDO de la Mesa del Parlamento por el que se aprueba la versión en occitano (aranés) de la Ley 10/2017, de 27 de junio, de las voluntades digitales y de modificación de los libros segundo y cuarto del Código civil de Cataluña.",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : { }
   }, {
@@ -420,8 +420,8 @@
     "renderTypeName" : "calendar_date",
     "tableColumnId" : 10540157,
     "cachedContents" : {
-      "non_null" : "31144",
-      "largest" : "2026-11-17T00:00:00.000",
+      "non_null" : "31146",
+      "largest" : "2026-11-20T00:00:00.000",
       "null" : "0",
       "top" : [ {
         "item" : "1998-07-30T00:00:00.000",
@@ -485,8 +485,8 @@
         "count" : "28"
       } ],
       "smallest" : "1977-12-03T00:00:00.000",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : {
       "view" : "date_dmy"
@@ -501,16 +501,16 @@
     "renderTypeName" : "text",
     "tableColumnId" : 10540154,
     "cachedContents" : {
-      "non_null" : "31144",
+      "non_null" : "31146",
       "largest" : "DOGC",
       "null" : "0",
       "top" : [ {
         "item" : "DOGC",
-        "count" : "31144"
+        "count" : "31146"
       } ],
       "smallest" : "DOGC",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : { }
   }, {
@@ -523,7 +523,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 10540149,
     "cachedContents" : {
-      "non_null" : "31144",
+      "non_null" : "31146",
       "largest" : "999",
       "null" : "0",
       "top" : [ {
@@ -588,8 +588,8 @@
         "count" : "27"
       } ],
       "smallest" : "1",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : { }
   }, {
@@ -602,8 +602,8 @@
     "renderTypeName" : "calendar_date",
     "tableColumnId" : 10540158,
     "cachedContents" : {
-      "non_null" : "31144",
-      "largest" : "2026-11-20T00:00:00.000",
+      "non_null" : "31146",
+      "largest" : "2026-11-23T00:00:00.000",
       "null" : "0",
       "top" : [ {
         "item" : "1983-12-31T00:00:00.000",
@@ -667,8 +667,8 @@
         "count" : "28"
       } ],
       "smallest" : "1977-12-05T00:00:00.000",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : {
       "view" : "date_dmy"
@@ -683,19 +683,19 @@
     "renderTypeName" : "text",
     "tableColumnId" : 10540155,
     "cachedContents" : {
-      "non_null" : "31144",
+      "non_null" : "31146",
       "largest" : "Vigent",
       "null" : "0",
       "top" : [ {
         "item" : "Vigent",
-        "count" : "21180"
+        "count" : "21182"
       }, {
         "item" : "Derogada",
         "count" : "9964"
       } ],
       "smallest" : "Derogada",
-      "count" : "31144",
-      "cardinality" : "31144"
+      "count" : "31146",
+      "cardinality" : "31146"
     },
     "format" : { }
   }, {

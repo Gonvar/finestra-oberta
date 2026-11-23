@@ -10,7 +10,7 @@
   "description" : "Relació d’òrgans superiors, alts càrrecs i personal directiu assimilats a efectes de la Llei 13/2005, corresponent als departaments de l’Administració de la Generalitat.\n\nEl personal directiu del sector públic instrumental s’exclou d’aquest conjunt de dades ja que queda recollit al conjunt de dades Relació del personal directiu de les entitats del sector públic i les seves retribucions anuals previstes. Per això, entre d'altres, no s'inclouen les entitats autònomes administratives.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 6556,
+  "downloadCount" : 6557,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",
@@ -27,7 +27,7 @@
   "rowsUpdatedBy" : "9rf2-9pth",
   "tableId" : 2116772,
   "totalTimesRated" : 0,
-  "viewCount" : 79423,
+  "viewCount" : 79424,
   "viewLastModified" : 1790681702,
   "viewType" : "tabular",
   "approvals" : [ {
