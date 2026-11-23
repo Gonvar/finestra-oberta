@@ -2,6 +2,7 @@
 // Mentre el repo no tingui les dades del Govern i del Parlament, els camps queden buits i la portada
 // ho diu, en lloc d'omplir-los amb exemples.
 
+import { dia } from './institucions.ts';
 import { despesa, finsA, milions, percentatge, pressupost, seccionsGeneralitat } from './pressupost.ts';
 
 export type Institucio = 'gov' | 'par' | 'dad';
@@ -57,8 +58,8 @@ const despesaGeneralitat = despesa(seccionsGeneralitat(pressupost.despeses.secci
 
 export const xifra: Xifra | undefined = {
   valor: `${milions(despesaGeneralitat.total)} d’euros`,
-  que: 'és el que pot gastar la Generalitat',
-  periode: `${pressupost.despeses.exercici}, gastat fins al ${finsA(pressupost.despeses.exercici, pressupost.despeses.mes)}: ${percentatge(despesaGeneralitat.partGastada)}`,
+  que: `és el que pot gastar la Generalitat el ${pressupost.despeses.exercici}`,
+  periode: `n’ha gastat el ${percentatge(despesaGeneralitat.partGastada)} fins al ${dia(finsA(pressupost.despeses.exercici, pressupost.despeses.mes))}`,
   font: { nom: 'execució mensual del pressupost', url: pressupost.url_despeses },
   mes: { text: 'On van els diners', href: '/pressupost' },
 };

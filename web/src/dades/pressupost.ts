@@ -8,22 +8,7 @@ export { pressupost };
 type Seccio = (typeof pressupost.despeses.seccions)[number];
 type Capitol = (typeof pressupost.ingressos.capitols)[number];
 
-const GENERALITAT = '1000';
-
-const MESOS = [
-  'gener',
-  'febrer',
-  'març',
-  'abril',
-  'maig',
-  'juny',
-  'juliol',
-  'agost',
-  'setembre',
-  'octubre',
-  'novembre',
-  'desembre',
-];
+export const GENERALITAT = '1000';
 
 /** «10 Octubre» → 10. Un altre format atura el build: les xifres dirien un període que no és el seu. */
 export function numeroMes(mes: string): number {
@@ -33,13 +18,9 @@ export function numeroMes(mes: string): number {
   return numero;
 }
 
-/** «Fins al 31 d'octubre de 2026», l'últim dia del mes, que és fins on arriben els acumulats. */
+/** L'últim dia del mes en ISO, que és fins on arriben els acumulats: «2026-10-31». */
 export function finsA(exercici: number, mes: string): string {
-  const numero = numeroMes(mes);
-  const ultimDia = new Date(Date.UTC(exercici, numero, 0)).getUTCDate();
-  const nom = MESOS[numero - 1]!;
-  const de = /^[aeiouàèéíòóú]/.test(nom) ? "d'" : 'de ';
-  return `${ultimDia} ${de}${nom} de ${exercici}`;
+  return new Date(Date.UTC(exercici, numeroMes(mes), 0)).toISOString().slice(0, 10);
 }
 
 /**
@@ -57,13 +38,13 @@ export const QUE_ES: Record<string, string> = {
 export const CAPITOLS: Record<string, string> = {
   '1': "Impostos sobre el que es guanya o es té, com la part de l'IRPF que va a la Generalitat.",
   '2': "Impostos sobre el que es compra, com la part de l'IVA que va a la Generalitat.",
-  '3': 'El que es paga per alguns serveis, com les taxes i els preus públics.',
-  '4': "Diners que envien altres administracions, com l'Estat, per a la despesa de cada dia.",
+  '3': 'Taxes, preus públics, vendes i altres ingressos pels serveis que dona.',
+  '4': "Diners que rep d'altres administracions, com l'Estat, i d'altres organismes per a la despesa de cada dia.",
   '5': 'Interessos, lloguers i altres rendes dels béns de la Generalitat.',
   '6': 'La venda de béns, com edificis o terrenys.',
   '7': "Diners que envien altres administracions per fer inversions.",
   '8': 'Préstecs que la Generalitat havia fet i li tornen, i la venda de participacions.',
-  '9': 'Préstecs i deute nou que demana la Generalitat.',
+  '9': 'Préstecs i deute nou que demana la Generalitat, també per tornar el deute que venç.',
 };
 
 export function seccionsGeneralitat(seccions: Seccio[]): Seccio[] {
@@ -75,9 +56,11 @@ export function seccionsGeneralitat(seccions: Seccio[]): Seccio[] {
 export function capitolsGeneralitat(capitols: Capitol[]): Capitol[] {
   const nostres = capitols.filter((c) => c.entitat_codi === GENERALITAT);
   if (nostres.length === 0) throw new Error('pressupost.json no té cap capítol d’ingressos de la Generalitat.');
-  for (const c of nostres)
+  for (const c of nostres) {
+    if (c.capitol === null) throw new Error(`pressupost.json té el capítol ${c.capitol_codi} de la Generalitat sense nom.`);
     if (!(c.capitol_codi in CAPITOLS))
       throw new Error(`pressupost.json té un capítol d'ingressos sense explicar: ${c.capitol_codi}.`);
+  }
   return nostres;
 }
 
@@ -100,7 +83,6 @@ export function despesa(seccions: Seccio[]) {
       pressupost: s.pressupost_definitiu,
       gastat: s.obligacions_reconegudes,
       partGastada: s.obligacions_reconegudes / s.pressupost_definitiu,
-      partDelTotal: s.pressupost_definitiu / total,
     }));
   return { total, gastat, pagat, partGastada: gastat / total, barres };
 }
@@ -108,6 +90,8 @@ export function despesa(seccions: Seccio[]) {
 /** D'on surten els diners: la previsió de tot l'any de cada capítol, de més a menys. */
 export function ingressos(capitols: Capitol[]) {
   const total = suma(capitols, (c) => c.previsio_final);
+  const reconegut = suma(capitols, (c) => c.drets_reconeguts_nets);
+  const cobrat = suma(capitols, (c) => c.recaptacio_neta);
   const barres = capitols
     .filter((c) => c.previsio_final > 0)
     .sort((a, b) => b.previsio_final - a.previsio_final)
@@ -115,9 +99,10 @@ export function ingressos(capitols: Capitol[]) {
       codi: c.capitol_codi,
       nom: c.capitol,
       previsio: c.previsio_final,
+      partIngressada: c.drets_reconeguts_nets / c.previsio_final,
       partDelTotal: c.previsio_final / total,
     }));
-  return { total, barres };
+  return { total, reconegut, cobrat, barres };
 }
 
 /** «64.612 milions d'euros» o «4.169 milions»: el milió és la unitat que s'entén en un pressupost. */

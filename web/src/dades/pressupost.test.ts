@@ -27,8 +27,8 @@ const capitol = (codi: string, entitat: string, previsio: number) => ({
 
 test('el mes de la font dona fins on arriben els acumulats', () => {
   assert.equal(numeroMes('10 Octubre'), 10);
-  assert.equal(finsA(2026, '10 Octubre'), "31 d'octubre de 2026");
-  assert.equal(finsA(2028, '02 Febrer'), '29 de febrer de 2028');
+  assert.equal(finsA(2026, '10 Octubre'), '2026-10-31');
+  assert.equal(finsA(2028, '02 Febrer'), '2028-02-29');
   assert.throws(() => numeroMes('Octubre'), /no s'entén/);
   assert.throws(() => numeroMes('13 Tretzembre'), /no s'entén/);
 });
@@ -56,12 +56,13 @@ test('les seccions van de més a menys pressupost, i les que no en tenen només 
 
 test("un capítol d'ingressos sense explicació atura el build", () => {
   assert.throws(() => capitolsGeneralitat([capitol('10', '1000', 1)]), /sense explicar: 10/);
+  assert.throws(() => capitolsGeneralitat([{ ...capitol('1', '1000', 1), capitol: null }]), /sense nom/);
   const ing = ingressos(capitolsGeneralitat([capitol('1', '1000', 30), capitol('9', '1000', 70), capitol('6', '1000', 0)]));
   assert.deepEqual(
-    ing.barres.map((b) => [b.codi, b.partDelTotal]),
+    ing.barres.map((b) => [b.codi, b.partDelTotal, b.partIngressada]),
     [
-      ['9', 0.7],
-      ['1', 0.3],
+      ['9', 0.7, 1],
+      ['1', 0.3, 1],
     ],
   );
 });

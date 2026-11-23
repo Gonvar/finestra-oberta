@@ -71,7 +71,7 @@ export const pagines: Pagina[] = [
   {
     ruta: '/pressupost/',
     titol: 'On van els diners de la Generalitat · Finestra Oberta',
-    descripcio: 'Quant pot gastar la Generalitat aquest any, a què ho dedica i d’on surten els diners.',
+    descripcio: `Quant pot gastar la Generalitat el ${pressupost.despeses.exercici}, a què ho dedica i d’on surten els diners.`,
     previsualitzacio: {
       titol: 'On van els diners de la Generalitat',
       frase: `${milions(despesa(seccionsGeneralitat(pressupost.despeses.seccions)).total)} d’euros el ${pressupost.despeses.exercici}.`,

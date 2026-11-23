@@ -6,6 +6,7 @@ import {
   CAPITOLS,
   QUE_ES,
   capitolsGeneralitat,
+  GENERALITAT,
   despesa,
   finsA,
   ingressos,
@@ -20,15 +21,19 @@ const seccions = seccionsGeneralitat(despeses.seccions);
 const capitols = capitolsGeneralitat(pressupost.ingressos.capitols);
 const d = despesa(seccions);
 const ing = ingressos(capitols);
-const fins = finsA(despeses.exercici, despeses.mes);
+const fins = dia(finsA(despeses.exercici, despeses.mes));
+const { exercici: anyIngressos, mes: mesIngressos } = pressupost.ingressos;
+const finsIngressos = dia(finsA(anyIngressos, mesIngressos));
 const altresEntitats = new Set(
-  despeses.seccions.filter((s) => s.entitat_codi !== '1000').map((s) => s.entitat_codi),
+  despeses.seccions.filter((s) => s.entitat_codi !== GENERALITAT).map((s) => s.entitat_codi),
 ).size;
 // L'amplada de cada barra és la seva part del pressupost, comparada amb la secció més gran, perquè les
 // petites es vegin petites sense que la gran ocupi tota la pàgina amb una sola barra.
 const mesGran = d.barres[0]!.pressupost;
 const amplada = (euros: number) => `${(euros / mesGran) * 100}%`;
 const mesGranIngres = ing.barres[0]!.previsio;
+// Hi ha capítols que ingressen més del que preveien; la barra s'omple sencera i el text diu la part exacta.
+const ple = (part: number) => `width: ${Math.min(part, 1) * 100}%`;
 ---
 
 <Pagina>
@@ -61,7 +66,7 @@ const mesGranIngres = ing.barres[0]!.previsio;
     <section class="seccio" aria-labelledby="despesa-titol">
       <h2 class="titol-seccio" id="despesa-titol">A què es dedica</h2>
       <p class="explica">
-        Cada barra és el que té una secció per gastar aquest any. La part fosca és el que ja n'ha gastat fins al {
+        Cada barra és el que té una secció per gastar el {despeses.exercici}. La part fosca és el que ja n'ha gastat fins al {
           fins
         }. Van de més a menys pressupost.
       </p>
@@ -69,10 +74,8 @@ const mesGranIngres = ing.barres[0]!.previsio;
         {
           d.barres.map((b) => (
             <li>
-              <p class="nom">
-                {b.nom}
-                {b.codi in QUE_ES && <span class="secundari"> {QUE_ES[b.codi]}</span>}
-              </p>
+              <p class="nom">{b.nom}</p>
+              {b.codi in QUE_ES && <p class="secundari explicacio">{QUE_ES[b.codi]}</p>}
               <div class="barra" style={`width: ${amplada(b.pressupost)}`} aria-hidden="true">
                 <span class="ple" style={`width: ${b.partGastada * 100}%`} />
               </div>
@@ -93,22 +96,19 @@ const mesGranIngres = ing.barres[0]!.previsio;
     <section class="seccio" aria-labelledby="ingressos-titol">
       <h2 class="titol-seccio" id="ingressos-titol">D'on surten els diners</h2>
       <p class="explica">
-        El que la Generalitat preveu ingressar el {despeses.exercici}: {milions(ing.total)} d'euros. Van de més a
-        menys.
+        Cada barra és el que la Generalitat preveu ingressar el {anyIngressos} per una via, en total {milions(ing.total)} d'euros. La part fosca és el que ja ha ingressat fins al {finsIngressos}. Van de més a menys.
       </p>
       <ol class="barres">
         {
           ing.barres.map((b) => (
             <li>
-              <p class="nom">
-                {b.nom}
-                <span class="secundari"> {CAPITOLS[b.codi]}</span>
-              </p>
+              <p class="nom">{b.nom}</p>
+              <p class="secundari explicacio">{CAPITOLS[b.codi]}</p>
               <div class="barra" style={`width: ${(b.previsio / mesGranIngres) * 100}%`} aria-hidden="true">
-                <span class="ple" style="width: 100%" />
+                <span class="ple" style={ple(b.partIngressada)} />
               </div>
               <p class="xifra">
-                {milions(b.previsio)} · el {percentatge(b.partDelTotal)} del total
+                {milions(b.previsio)} · el {percentatge(b.partDelTotal)} del total · ingressat el {percentatge(b.partIngressada)}
               </p>
             </li>
           ))
@@ -125,19 +125,24 @@ const mesGranIngres = ing.barres[0]!.previsio;
       <h2 class="titol-seccio" id="detall-titol">Totes les xifres</h2>
       <dl class="paraules">
         <dt>Pressupost</dt>
-        <dd>El que la secció pot gastar aquest any, amb els canvis que s'hi han fet des de l'1 de gener.</dd>
+        <dd>El que la secció pot gastar el {despeses.exercici}, amb els canvis que s'hi han fet des de l'1 de gener.</dd>
         <dt>Gastat</dt>
         <dd>
-          El que la Generalitat ja ha reconegut que ha de pagar, perquè s'ha fet la feina o s'ha rebut la compra. La
-          font en diu «obligacions reconegudes».
+          El que la Generalitat ja ha de pagar: una feina feta, una compra rebuda, una subvenció concedida o una quota del deute que venç. La font en diu «obligacions reconegudes».
         </dd>
         <dt>Pagat</dt>
         <dd>La part del que s'ha gastat que ja s'ha pagat.</dd>
+        <dt>Previsió de l'any</dt>
+        <dd>El que la Generalitat preveu ingressar per aquella via, amb els canvis que s'hi han fet des de l'1 de gener.</dd>
+        <dt>Ingressat</dt>
+        <dd>El que ja té dret a cobrar. La font en diu «drets reconeguts nets».</dd>
+        <dt>Cobrat</dt>
+        <dd>La part del que s'ha ingressat que ja ha arribat al compte. La font en diu «recaptació neta».</dd>
       </dl>
 
-      <div class="taula">
+      <div class="taula" tabindex="0" role="region" aria-labelledby="taula-despeses">
         <table>
-          <caption>Despeses de la Generalitat per secció, fins al {fins}, en euros</caption>
+          <caption id="taula-despeses">Despeses de la Generalitat per secció, fins al {fins}, en euros</caption>
           <thead>
             <tr>
               <th scope="col">Secció</th>
@@ -169,14 +174,14 @@ const mesGranIngres = ing.barres[0]!.previsio;
         </table>
       </div>
 
-      <div class="taula">
+      <div class="taula" tabindex="0" role="region" aria-labelledby="taula-ingressos">
         <table>
-          <caption>Ingressos de la Generalitat per capítol, fins al {fins}, en euros</caption>
+          <caption id="taula-ingressos">Ingressos de la Generalitat per capítol, fins al {finsIngressos}, en euros</caption>
           <thead>
             <tr>
               <th scope="col">Capítol</th>
               <th scope="col">Previsió de l'any</th>
-              <th scope="col">Reconegut</th>
+              <th scope="col">Ingressat</th>
               <th scope="col">Cobrat</th>
             </tr>
           </thead>
@@ -192,9 +197,21 @@ const mesGranIngres = ing.barres[0]!.previsio;
               ))
             }
           </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td>{eurosRodons(ing.total)}</td>
+              <td>{eurosRodons(ing.reconegut)}</td>
+              <td>{eurosRodons(ing.cobrat)}</td>
+            </tr>
+          </tfoot>
         </table>
       </div>
 
+      <p class="explica">
+        La previsió d'ingressos i el pressupost de despeses no sumen el mateix: tots dos canvien durant l'any, i la
+        font els publica per separat.
+      </p>
       <p class="explica">
         Aquí només hi ha la Generalitat. Té {nombre(altresEntitats)} entitats més amb pressupost propi, com hospitals
         o agències, que són a les dades de la font. No se sumen, perquè els diners que passen d'una a una altra hi
@@ -277,8 +294,13 @@ const mesGranIngres = ing.barres[0]!.previsio;
     line-height: 1.4;
   }
 
-  .nom .secundari {
-    display: block;
+  .explicacio {
+    margin-top: 0.125rem;
+  }
+
+  .taula:focus-visible {
+    outline: 2px solid var(--gov);
+    outline-offset: 3px;
   }
 
   .xifra {
