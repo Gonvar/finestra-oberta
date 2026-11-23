@@ -10,7 +10,7 @@
   "description" : "Informació general referent als ens locals de Catalunya, tant d’àmbit territorial com administratiu.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 33774,
+  "downloadCount" : 33775,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",
