@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { capitolsGeneralitat, despesa, finsA, ingressos, milions, numeroMes, percentatge, seccionsGeneralitat } from './pressupost.ts';
+import { capitolsGeneralitat, despesa, finsA, ingressos, milions, numeroMes, seccionsGeneralitat } from './pressupost.ts';
 
 const seccio = (codi: string, entitat: string, pressupost: number, gastat: number) => ({
   entitat_codi: entitat,
@@ -71,6 +71,4 @@ test('els imports es diuen en milions', () => {
   assert.equal(milions(64_612_000_000), '64.612 milions');
   assert.equal(milions(1_200_000), '1 milió');
   assert.equal(milions(400_000), 'menys d’un milió');
-  assert.equal(percentatge(0.004), 'menys de l’1 %');
-  assert.match(percentatge(0), /^0\s%$/);
 });

@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { resum, SENSE_PROCEDIMENT } from './contractes.ts';
+import { part, resum, SENSE_PROCEDIMENT } from './contractes.ts';
+import { percentatge } from './pressupost.ts';
 
 const fila = (ambit: string, procediment: string | null, inscripcions: number, import_: number) => ({
   ambit,
@@ -40,6 +41,17 @@ test('un procediment sense explicar atura el build, i sense procediment té nom 
   assert.equal(r.procediments[0]!.nom, SENSE_PROCEDIMENT);
 });
 
-test('sense cap fila, el build s’atura', () => {
-  assert.throws(() => resum([]), /cap fila/);
+test('sense cap fila (els primers dies de gener) no hi ha cap grup', () => {
+  const r = resum([]);
+  assert.deepEqual(r.total, { contractes: 0, import: 0 });
+  assert.deepEqual(r.procediments, []);
+});
+
+test('una part petita no surt com a zero', () => {
+  assert.equal(part(0.004), 'menys de l’1\u00a0%');
+  assert.equal(part(0.5), percentatge(0.5));
+});
+
+test('un procediment amb el nom d’una propietat d’objecte no passa per explicat', () => {
+  assert.throws(() => resum([fila('A', 'constructor', 1, 1)] as Parameters<typeof resum>[0]), /sense explicar/);
 });

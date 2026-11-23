@@ -2,15 +2,16 @@
 import Pagina from '../layouts/Pagina.astro';
 import '../styles/subpagines.css';
 import { dia, eurosRodons, nombre } from '../dades/institucions.ts';
-import { milions, percentatge } from '../dades/pressupost.ts';
+import { milions } from '../dades/pressupost.ts';
 import { REPO } from '../dades/portada.ts';
-import { PROCEDIMENTS, contractes, resum } from '../dades/contractes.ts';
+import { PROCEDIMENTS, contractes, part, resum } from '../dades/contractes.ts';
 
 const r = resum(contractes.files);
 const fins = dia(contractes.data_dades);
 const organismes = new Set(contractes.files.map((f) => f.organisme_codi)).size;
 const DADES = `${REPO}/blob/dades/contractes.json`;
-const amplada = (part: number) => `width: ${part * 100}%`;
+const amplada = (valor: number) => `width: ${valor * 100}%`;
+const { adjudicacions_posteriors: posteriors, adjudicacions_sense_data: senseData } = contractes;
 ---
 
 <Pagina>
@@ -23,12 +24,21 @@ const amplada = (part: number) => `width: ${part * 100}%`;
       </p>
     </section>
 
+    {
+      r.total.contractes === 0 ? (
+        <section class="seccio">
+          <p class="explica">
+            La font encara no té cap contracte adjudicat el {contractes.any}. Dades actualitzades el {fins}.
+          </p>
+        </section>
+      ) : (
+        <Fragment>
     <section class="seccio entra" style="--ordre: 3" aria-labelledby="total-titol">
       <h2 class="visualment-amagat" id="total-titol">Quants contractes</h2>
       <p class="valor">{nombre(r.total.contractes)} contractes</p>
       <p class="que">
-        per {milions(r.total.import)} d'euros. Els han donat la Generalitat, els ajuntaments i altres ens locals, i
-        les universitats, de l'1 de gener al {fins}.
+        per {milions(r.total.import)} d'euros, de l'1 de gener al {fins}. Cada contracte, o cada part (lot) d'un
+        contracte gran, compta com un.
       </p>
       <p class="font-dada">
         Font: <a href={contractes.url}>Registre públic de contractes</a>, Departament d'Economia i Finances,
@@ -46,8 +56,8 @@ const amplada = (part: number) => `width: ${part * 100}%`;
         {
           r.procediments.map((p) => (
             <li>
-              <p class="nom">{p.nom}</p>
-              {p.nom in PROCEDIMENTS && <p class="secundari explicacio">{PROCEDIMENTS[p.nom]}</p>}
+              <h3 class="nom">{p.nom}</h3>
+              {Object.hasOwn(PROCEDIMENTS, p.nom) && <p class="secundari explicacio">{PROCEDIMENTS[p.nom]}</p>}
               <div class="parella" aria-hidden="true">
                 <span class="rotul">Contractes</span>
                 <span class="pista">
@@ -59,7 +69,7 @@ const amplada = (part: number) => `width: ${part * 100}%`;
                 </span>
               </div>
               <p class="xifra">
-                {nombre(p.contractes)} contractes ({percentatge(p.partContractes)}) · {milions(p.import)} ({percentatge(p.partImport)} dels diners)
+                {nombre(p.contractes)} contractes ({part(p.partContractes)}) · {milions(p.import)} ({part(p.partImport)} dels diners)
               </p>
             </li>
           ))
@@ -78,7 +88,7 @@ const amplada = (part: number) => `width: ${part * 100}%`;
         {
           r.ambits.map((a) => (
             <li>
-              <p class="nom">{a.nom}</p>
+              <h3 class="nom">{a.nom}</h3>
               <div class="parella" aria-hidden="true">
                 <span class="rotul">Contractes</span>
                 <span class="pista">
@@ -90,7 +100,7 @@ const amplada = (part: number) => `width: ${part * 100}%`;
                 </span>
               </div>
               <p class="xifra">
-                {nombre(a.contractes)} contractes ({percentatge(a.partContractes)}) · {milions(a.import)} ({percentatge(a.partImport)} dels diners)
+                {nombre(a.contractes)} contractes ({part(a.partContractes)}) · {milions(a.import)} ({part(a.partImport)} dels diners)
               </p>
             </li>
           ))
@@ -144,14 +154,24 @@ const amplada = (part: number) => `width: ${part * 100}%`;
       </div>
 
       <p class="explica">
-        A les <a href={DADES}>dades completes</a> hi ha quants contractes ha fet cadascun dels {nombre(organismes)}
-        organismes. No hi ha cap contracte un per un ni el nom de cap empresa. Hi falten {nombre(contractes.adjudicacions_posteriors)}
-        contractes que a la font tenen una data d'adjudicació posterior al {fins}.
+        A les <a href={DADES}>dades completes</a> hi ha quants contractes ha fet cadascun dels{' '}
+        {nombre(organismes)} organismes. No hi ha cap contracte un per un ni el nom de cap empresa.
       </p>
+      {
+        (posteriors > 0 || senseData > 0) && (
+          <p class="explica">
+            A la font n'hi ha {nombre(posteriors)} més amb una data d'adjudicació posterior al {fins}, i{' '}
+            {nombre(senseData)} sense data. No es compten.
+          </p>
+        )
+      }
       <p class="font-dada">
         Font: <a href={contractes.url}>Registre públic de contractes</a>, de Dades obertes de Catalunya.
       </p>
     </section>
+        </Fragment>
+      )
+    }
   </main>
 </Pagina>
 

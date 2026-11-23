@@ -112,8 +112,5 @@ export function milions(euros: number): string {
   return `${new Intl.NumberFormat('ca', { maximumFractionDigits: 0 }).format(m)} ${Math.round(m) === 1 ? 'milió' : 'milions'}`;
 }
 
-/** Una part petita però no nul·la no s'arrodoneix a zero: «0 %» diria que no n'hi ha cap. */
 export const percentatge = (part: number) =>
-  part > 0 && part < 0.005
-    ? 'menys de l’1 %'
-    : new Intl.NumberFormat('ca', { style: 'percent', maximumFractionDigits: 0 }).format(part);
+  new Intl.NumberFormat('ca', { style: 'percent', maximumFractionDigits: 0 }).format(part);
