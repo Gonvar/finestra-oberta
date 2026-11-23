@@ -1,6 +1,6 @@
-# El Govern, el Parlament, els ajuntaments i els ajuts
+# El Govern, el Parlament, els ajuntaments, els ajuts i el pressupost
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament i els ajuts i les subvencions que encara es poden demanar. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, els ajuts i les subvencions que encara es poden demanar i com va el pressupost de la Generalitat. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -66,7 +66,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/activitat.json` i `/tmp/ara/ajuts.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json` i `/tmp/ara/pressupost.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -209,6 +209,24 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
   - Cada convocatòria ha de tenir codi RAISC, i un codi només pot sortir una vegada. L'import ha de ser un nombre.
 - **Cada dia canvia:** com que les convocatòries tanquen i n'obren de noves, `ajuts.json` canvia gairebé cada dia, i la branca `dades` té una actualització signada gairebé cada dia.
 - **Si falla:** com els ajuntaments, atura també l'actualització del Govern i el Parlament fins que es corregeix.
+
+## `pressupost.json`
+
+- **Fonts:** l'execució mensual del pressupost de la Generalitat de Catalunya, del Departament d'Economia i Finances, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/):
+  - [Despeses](https://analisi.transparenciacatalunya.cat/d/ajns-4mi7) (`ajns-4mi7`).
+  - [Ingressos](https://analisi.transparenciacatalunya.cat/d/42am-vra2) (`42am-vra2`).
+- **Període:** l'últim mes publicat de cada conjunt (`exercici` i `mes`, tal com els escriu la font, per exemple «10 Octubre»). Segons la font, els imports són els acumulats des de l'1 de gener fins a l'últim dia d'aquell mes. Els dos conjunts poden anar per mesos diferents. Només hi surten les entitats que tenen files en aquell mes: a l'octubre del 2026 n'eren 82, i d'un mes a l'altre en varien una o dues.
+- **Despeses:** per entitat i secció, el crèdit inicial, el pressupost definitiu, les obligacions reconegudes (el que ja s'ha de pagar) i les obligacions pagades.
+- **Ingressos:** per entitat i capítol, la previsió inicial, la previsió final, els drets reconeguts nets i la recaptació neta.
+- **Sumes:** les fa l'API de la font, amb `sum()` sobre totes les files de cada grup. El codi no suma res.
+- **Sense total:** el fitxer no té cap total de totes les entitats. Les transferències d'una entitat a una altra hi comptarien dues vegades, a la que dona i a la que rep.
+- **Ordre i noms:** el dels codis de la font. Primer el codi de l'entitat i després l'ordre de protocol de la secció o el número del capítol, tots dos com a nombres. Les seccions sense ordre de protocol van al final de la seva entitat, i quan l'ordre coincideix o falta, s'ordenen pel codi de la secció. Els noms són tal com els escriu la font, també quan són abreujats («Territori, Habitatge i Transició Ecol.»).
+- **Comprovacions:**
+  - El període ha de tenir un any de quatre xifres i un mes de la forma «10 Octubre».
+  - Cada import, cada ordre de protocol i cada codi de capítol ha de ser un nombre, i cada fila ha de tenir el codi i el nom de l'entitat, i el codi i el nom de la secció o el codi del capítol. L'ordre de protocol i el nom del capítol poden faltar, i llavors són `null`: a l'octubre del 2026, 49 entitats no donaven l'ordre de cap secció.
+  - Una entitat i una secció, o una entitat i un capítol, només poden sortir una vegada.
+  - Cada consulta ha de tornar alguna fila i cabre en una pàgina.
+- **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## Pendent
 
