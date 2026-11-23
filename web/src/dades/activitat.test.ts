@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { decisions, type Sessio } from './activitat.ts';
+import { decisions, temes, type Sessio } from './activitat.ts';
 
 const punt = (ordre: number, resultat: string | null) => ({
   ordre,
@@ -26,4 +26,11 @@ test('només surten els punts amb resultat, en l’ordre del dia', () => {
 
 test('un resultat que la web no sap dir atura el build', () => {
   assert.throws(() => decisions(sessio([punt(1, 'ajornat')])), /resultat desconegut: ajornat/);
+});
+
+test('una sessió sense decisions diu els primers temes i quants punts queden fora', () => {
+  const p = (ordre: number, titol: string) => ({ ...punt(ordre, null), titol });
+  const s = sessio([p(1, 'Composició del Ple'), p(2, 'Composició del Ple'), p(3, 'Composició de la Mesa'), p(4, 'Pregunta'), p(5, 'Pregunta')]);
+  assert.deepEqual(temes(s, 2), { mostrats: ['Composició del Ple', 'Composició de la Mesa'], mes: 2 });
+  assert.deepEqual(temes(s, 5), { mostrats: ['Composició del Ple', 'Composició de la Mesa', 'Pregunta'], mes: 0 });
 });

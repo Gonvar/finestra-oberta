@@ -1,5 +1,5 @@
 ---
-import { VERB, type Punt, type Resultat, type Sessio } from '../dades/activitat.ts';
+import { temes, type Punt, type Resultat, type Sessio } from '../dades/activitat.ts';
 import { dia } from '../dades/institucions.ts';
 
 type Props = {
@@ -7,9 +7,8 @@ type Props = {
 };
 const { s } = Astro.props;
 // Una sessió sense cap iniciativa aprovada o rebutjada sí que va tractar alguna cosa, com una investidura: se'n diu el tema.
-const temes = [...new Set(s.punts.map((p) => p.titol))];
-const TEMES = 5;
-const mes = s.fetes.length > 0 ? s.altres : Math.max(temes.length - TEMES, 0);
+const tractats = temes(s, 5);
+const mes = s.fetes.length > 0 ? s.altres : tractats.mes;
 ---
 
 <section class="sessio" aria-labelledby={`sessio-${s.numero}`}>
@@ -20,7 +19,7 @@ const mes = s.fetes.length > 0 ? s.altres : Math.max(temes.length - TEMES, 0);
       <>
         <p class="buit">Es va tractar:</p>
         <ul class="temes">
-          {temes.slice(0, TEMES).map((t) => (
+          {tractats.mostrats.map((t) => (
             <li>{t}</li>
           ))}
         </ul>
@@ -29,7 +28,7 @@ const mes = s.fetes.length > 0 ? s.altres : Math.max(temes.length - TEMES, 0);
       <ol class="files">
         {s.fetes.map((p) => (
           <li>
-            <p class="verb">{VERB[p.resultat]}</p>
+            <p class="verb">{p.acord}</p>
             <p class="titol">
               <a href={p.url_expedient}>{p.titol}</a>
             </p>

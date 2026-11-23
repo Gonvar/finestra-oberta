@@ -8,23 +8,26 @@ export type Punt = Sessio['punts'][number];
 export type Resultat = 'aprovat' | 'convalidat' | 'derogat' | 'rebutjat';
 export type Norma = (typeof activitat.normes.normes)[number];
 
-/** Com es diu cada resultat a la web: el verb que fa servir la majoria d'acords del Parlament amb aquest resultat. */
-export const VERB: Record<Resultat, string> = {
-  aprovat: "S'aprova",
-  convalidat: 'Es convalida',
-  derogat: 'Es deroga',
-  rebutjat: 'Es rebutja',
-};
+const RESULTATS: readonly string[] = ['aprovat', 'convalidat', 'derogat', 'rebutjat'] satisfies Resultat[];
 
-// Un resultat que la web no sap dir atura el build: no es mostra mai una decisió sense nom.
+// Un resultat que la web no coneix atura el build: vol dir que src/activitat.ts ha començat a classificar acords nous.
 function resultat(valor: string): Resultat {
-  if (!Object.hasOwn(VERB, valor)) throw new Error(`activitat.json té un resultat desconegut: ${valor}.`);
+  if (!RESULTATS.includes(valor)) throw new Error(`activitat.json té un resultat desconegut: ${valor}.`);
   return valor as Resultat;
 }
 
 /** Els punts on el Ple decideix una iniciativa, en l'ordre del dia. */
 export const decisions = (sessio: Sessio) =>
   sessio.punts.flatMap((p) => (p.resultat === null ? [] : [{ ...p, resultat: resultat(p.resultat) }]));
+
+/**
+ * Els primers temes d'una sessió sense cap decisió, sense repetir títols, i quants punts de l'ordre del dia
+ * queden fora d'aquests temes.
+ */
+export function temes(sessio: Sessio, quants: number) {
+  const mostrats = [...new Set(sessio.punts.map((p) => p.titol))].slice(0, quants);
+  return { mostrats, mes: sessio.punts.filter((p) => !mostrats.includes(p.titol)).length };
+}
 
 export const lleis = activitat.normes.normes.filter((n) => n.rang === 'Llei');
 export const decretsLlei = activitat.normes.normes.filter((n) => n.rang === 'Decret llei');
