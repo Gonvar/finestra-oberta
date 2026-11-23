@@ -5,6 +5,7 @@
     "govern.json": "a7de240ebf93479387711da31cbaa8660fd834078ac3c8506ca735f1ad708ec1",
     "transparencia.json": "ae143c3c48ec4c2c1d6533bfcac17b0667661de4f7cbaae3cca19de18d6bcfce",
     "parlament.json": "002bd78862578592fb80282803c39354f13c44ec3f838c36cb01cce5ef3da6af",
+    "agenda.json": "c94dea8c2e9249b0f44a1d110b4736eab67ae97fd4a6e9b13aa09b6d07ab2adc",
     "ajuntaments.json": "5873210f99fa7b547f8e7f7a6ee6e6015867c734d2332f36db11193ccea142ff",
     "municipis.json": "90c630762a8050f7643e14d7ac5480642f850f6021f00c8921cfa4ef5c9e2f67",
     "activitat.json": "1df2678a2945efe5813ed5856fa2f595ba9f922bde409451ddcc3a14b60401cf",
@@ -15,7 +16,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/x9au-abcn.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/x9au-abcn.json",
-      "consultat": "2026-11-23T05:58:26.876Z",
+      "consultat": "2026-11-23T06:03:49.717Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "2c6a1a24c419a5fdd63aba647fc7f9afb824b7055dc858068e8c01a590fa7807"
@@ -23,7 +24,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/x9au-abcn.json?$limit=5000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/x9au-abcn.json?$limit=5000",
-      "consultat": "2026-11-23T05:58:27.040Z",
+      "consultat": "2026-11-23T06:03:49.984Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "3a140d5668b04ec4f8942d6988948c215c05dc11ca7af996fe5c8077de3c0709"
@@ -31,7 +32,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/7chp-hkce.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/7chp-hkce.json",
-      "consultat": "2026-11-23T05:58:27.187Z",
+      "consultat": "2026-11-23T06:03:50.149Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "9534c2d235dbe276c76c1b1f440118f8f357abc16eaeab5b3c71b9d7d7486c22"
@@ -39,7 +40,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/7chp-hkce.json?%24select=nom&%24group=nom&%24limit=5000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/7chp-hkce.json?%24select=nom&%24group=nom&%24limit=5000",
-      "consultat": "2026-11-23T05:58:27.348Z",
+      "consultat": "2026-11-23T06:03:50.549Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "952013eb6c53d78914c602269930f19a3c370abf0832bc589437a9f038e8164f"
@@ -47,7 +48,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/vdss-2ppz.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/vdss-2ppz.json",
-      "consultat": "2026-11-23T05:58:27.621Z",
+      "consultat": "2026-11-23T06:03:50.860Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "7dfc0fa408bd9f483b38b99ea1fe81570e7b2e020dbbb09d3245b72bb8662d5b"
@@ -55,7 +56,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/hd8k-y28e.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/hd8k-y28e.json",
-      "consultat": "2026-11-23T05:58:27.776Z",
+      "consultat": "2026-11-23T06:03:51.029Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "83c16a20b0e5102f28f561152cccb2277b07832ece3df8cbf071efd1f12f83d3"
@@ -63,7 +64,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/5kte-hque.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/5kte-hque.json",
-      "consultat": "2026-11-23T05:58:27.929Z",
+      "consultat": "2026-11-23T06:03:51.207Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "9d03f08fc3d06db5c13d5b611c15f320b5c3783c09a821892a7bfdb635ee4420"
@@ -71,7 +72,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/vdss-2ppz.json?%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/vdss-2ppz.json?%24limit=50000",
-      "consultat": "2026-11-23T05:58:28.270Z",
+      "consultat": "2026-11-23T06:03:51.563Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "3574e1f695d76e490202b2e534dddf7651e002e477624b12cb2a1ecde8e7ef13"
@@ -79,7 +80,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/hd8k-y28e.json?%24select=data%2Cgrup_d_inter_s%2Cactivitat%2Ctema%2Cnom_i_cognoms%2Cc_rrec&%24where=data+%3E%3D+%272024-08-10%27&%24order=data+DESC&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hd8k-y28e.json?%24select=data%2Cgrup_d_inter_s%2Cactivitat%2Ctema%2Cnom_i_cognoms%2Cc_rrec&%24where=data+%3E%3D+%272024-08-10%27&%24order=data+DESC&%24limit=50000",
-      "consultat": "2026-11-23T05:58:29.138Z",
+      "consultat": "2026-11-23T06:03:52.509Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "02afbb2c04624bcf2ae32ca456d7e64eb116d52b9bae3ef20e37d9835e52d755"
@@ -87,15 +88,15 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/5kte-hque.json?%24select=nom_i_cognoms%2Cc_rrec%2Cinici_viatge%2Cfi_viatge%2Cdestinaci%2Cmotiu%2Ctotal_despeses&%24where=inici_viatge+%3E%3D+%272024-08-10%27&%24order=inici_viatge+DESC&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/5kte-hque.json?%24select=nom_i_cognoms%2Cc_rrec%2Cinici_viatge%2Cfi_viatge%2Cdestinaci%2Cmotiu%2Ctotal_despeses&%24where=inici_viatge+%3E%3D+%272024-08-10%27&%24order=inici_viatge+DESC&%24limit=50000",
-      "consultat": "2026-11-23T05:58:29.430Z",
+      "consultat": "2026-11-23T06:03:52.789Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
-      "sha256": "5ade943d03aef0e395081bc16b4baa347176ca49baa4364c4faf46fabad36056"
+      "sha256": "1bfc0e8e5eb161e92cbb3151ecd35645070eebbd911c44b74de5a7f88dd6c18e"
     },
     {
       "url": "https://www.parlament.cat/web/composicio/distribucio-escons/index.html",
       "url_resposta": "https://www.parlament.cat/web/composicio/distribucio-escons/index.html",
-      "consultat": "2026-11-23T05:58:31.479Z",
+      "consultat": "2026-11-23T06:03:54.813Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "a7d552c1f22d18175ad9afd5d42a6698dd5799a65c1ed8ede56eba4039f93f9b"
@@ -103,7 +104,7 @@
     {
       "url": "https://www.parlament.cat/js/mapa-escons.js",
       "url_resposta": "https://www.parlament.cat/js/mapa-escons.js",
-      "consultat": "2026-11-23T05:58:32.221Z",
+      "consultat": "2026-11-23T06:03:55.612Z",
       "estat": 200,
       "tipus": "application/x-javascript",
       "sha256": "d47cc2d4a828b6d66d4d3c6d727105071b2c200952d30d98c3ebffc629a5abee"
@@ -111,7 +112,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2545",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2545",
-      "consultat": "2026-11-23T05:58:32.604Z",
+      "consultat": "2026-11-23T06:03:55.999Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f28575030652456e8b250a5657ea4c7b927deca8e7e8230e6714239bac1c438d"
@@ -119,7 +120,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2546",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2546",
-      "consultat": "2026-11-23T05:58:33.283Z",
+      "consultat": "2026-11-23T06:03:56.702Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "a7e49c91d31ce731045058eac6f12bdeb578296dcf96b6306d26b58432fe54cd"
@@ -127,7 +128,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2539",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2539",
-      "consultat": "2026-11-23T05:58:33.950Z",
+      "consultat": "2026-11-23T06:03:57.392Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "74514197e286c706a93ba47cbc8ffe1c141fde48790aa148a34d2ab9eef152bd"
@@ -135,7 +136,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2541",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2541",
-      "consultat": "2026-11-23T05:58:34.628Z",
+      "consultat": "2026-11-23T06:03:58.107Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "0d289259de739c32984da7d7c33cb15750eb5c1f8fe7633ccd579fb524ec23b9"
@@ -143,7 +144,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2232",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2232",
-      "consultat": "2026-11-23T05:58:35.323Z",
+      "consultat": "2026-11-23T06:03:58.818Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c7f9efee725854282bfc4089d11d96d34508cb586850082241130138d6caf244"
@@ -151,7 +152,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2548",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2548",
-      "consultat": "2026-11-23T05:58:36.023Z",
+      "consultat": "2026-11-23T06:03:59.509Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "77ac9a299e0f1613a00373b473f80926bd21ef4220594d2fbfc223b523cffe3c"
@@ -159,7 +160,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2125",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2125",
-      "consultat": "2026-11-23T05:58:36.723Z",
+      "consultat": "2026-11-23T06:04:00.220Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f58b9ec52282d7063332015bf135779faf5b821b3c0ec7525cbe08fb932443c8"
@@ -167,7 +168,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2334",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2334",
-      "consultat": "2026-11-23T05:58:37.426Z",
+      "consultat": "2026-11-23T06:04:00.980Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "7ebcabc2338c7d55ca30cb736ee3e9a67fa2f85ec18bd1bfa08ad546b43545f1"
@@ -175,7 +176,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2040",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2040",
-      "consultat": "2026-11-23T05:58:38.100Z",
+      "consultat": "2026-11-23T06:04:01.688Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "127d28beb6d97325660e8a9650508e5bca2f751f06157d828a65b40a09390c10"
@@ -183,7 +184,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2233",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2233",
-      "consultat": "2026-11-23T05:58:38.797Z",
+      "consultat": "2026-11-23T06:04:02.465Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "dd8e66903b0b483937aebb6e65eb3cd6d8385333a628ea15edf6dd36e1547142"
@@ -191,7 +192,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2036",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2036",
-      "consultat": "2026-11-23T05:58:39.536Z",
+      "consultat": "2026-11-23T06:04:03.181Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "9d63191965506bfc11ffd604d04f8d980878696c3709b0ae91b378dc1f80aa14"
@@ -199,7 +200,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1176",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1176",
-      "consultat": "2026-11-23T05:58:40.222Z",
+      "consultat": "2026-11-23T06:04:03.884Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "460685e32a99a2f916e8908877b971ed064af86cd85cc0f3fe4ced38bbceac64"
@@ -207,7 +208,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1602",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1602",
-      "consultat": "2026-11-23T05:58:40.923Z",
+      "consultat": "2026-11-23T06:04:04.566Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "e2d32b1330cf91197d58e72975b29aaa7fe9bb9a910bca57ea4829f1acab2559"
@@ -215,7 +216,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2256",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2256",
-      "consultat": "2026-11-23T05:58:41.617Z",
+      "consultat": "2026-11-23T06:04:05.264Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c62532fb0dd00db1b5908ea773e0e75b1fcdc1ba3b6b56d0f33fcf1ce6055e9e"
@@ -223,7 +224,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2252",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2252",
-      "consultat": "2026-11-23T05:58:42.297Z",
+      "consultat": "2026-11-23T06:04:05.973Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "28c96bb6617c9f18c87abbfe206cb4217c127138cb73eebbba8f437ffb9bbcc1"
@@ -231,7 +232,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2532",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2532",
-      "consultat": "2026-11-23T05:58:42.968Z",
+      "consultat": "2026-11-23T06:04:06.672Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "5792960521cec8596d0fc2df3ddc58daff075e8b248a0f27843cc6de142bcbba"
@@ -239,7 +240,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2250",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2250",
-      "consultat": "2026-11-23T05:58:43.654Z",
+      "consultat": "2026-11-23T06:04:07.378Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "79c7552280c7d79ccea1a382f82a25b95c725b74fd641e282708ef64413991df"
@@ -247,7 +248,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2248",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2248",
-      "consultat": "2026-11-23T05:58:44.358Z",
+      "consultat": "2026-11-23T06:04:08.083Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "38e6b9227d97cfd9f11a0e6378592fcd4f89837e31763dd535d1b397773da3b2"
@@ -255,7 +256,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1691",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1691",
-      "consultat": "2026-11-23T05:58:45.108Z",
+      "consultat": "2026-11-23T06:04:08.770Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "5384e4745485950a308aa9bfe097e2cbd5c3c1fbf91b1926eeb04d31c3ca67c4"
@@ -263,7 +264,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2015",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2015",
-      "consultat": "2026-11-23T05:58:45.853Z",
+      "consultat": "2026-11-23T06:04:09.546Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "709174306819fa6c652aa9546be781a98d6eab93723a5108b10e99212fe68dbb"
@@ -271,7 +272,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2511",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2511",
-      "consultat": "2026-11-23T05:58:46.564Z",
+      "consultat": "2026-11-23T06:04:10.244Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "51d13e349917dfb84fe2f7028f5482147ccccd86f7f15cf3eda4e2c5d78616ef"
@@ -279,7 +280,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2012",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2012",
-      "consultat": "2026-11-23T05:58:47.301Z",
+      "consultat": "2026-11-23T06:04:11.009Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "bf285bf109b2e39c5710367b490ff5a2d4210e588c55473c1109e508de7a2383"
@@ -287,7 +288,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1078",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1078",
-      "consultat": "2026-11-23T05:58:47.983Z",
+      "consultat": "2026-11-23T06:04:11.719Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "650b8d2696df23536a1bf859e032872ada327083964eb622f9191a55211cc748"
@@ -295,7 +296,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1850",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1850",
-      "consultat": "2026-11-23T05:58:48.668Z",
+      "consultat": "2026-11-23T06:04:12.429Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "5f92f54d9731d0f925bc8b83879f21f69e98e33fea0b8035e8f98584481332e1"
@@ -303,7 +304,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2236",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2236",
-      "consultat": "2026-11-23T05:58:49.352Z",
+      "consultat": "2026-11-23T06:04:13.134Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c15ed7e3ff4ab1bd99fd0cf0324592be9f658ef9ee7ecd07843d5830700e55eb"
@@ -311,7 +312,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2358",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2358",
-      "consultat": "2026-11-23T05:58:50.035Z",
+      "consultat": "2026-11-23T06:04:13.844Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "30b2a19f0801ea4bb8254b109ac8e9c9b16ed218e51e88ccf003425d4f94154f"
@@ -319,7 +320,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2540",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2540",
-      "consultat": "2026-11-23T05:58:50.711Z",
+      "consultat": "2026-11-23T06:04:14.537Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "73ecd811ea85323a9e839e63e32478628ee42c3326701270a92ef8613495da2e"
@@ -327,7 +328,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=720",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=720",
-      "consultat": "2026-11-23T05:58:51.401Z",
+      "consultat": "2026-11-23T06:04:15.238Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "bf16fada7f9099a31ea65cd38a04f5e7b8e369c9d09d2b99f68e9a3ad5a8aca0"
@@ -335,7 +336,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1640",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1640",
-      "consultat": "2026-11-23T05:58:52.075Z",
+      "consultat": "2026-11-23T06:04:15.938Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "97f2b03a650cdc5f80640cdbb372e418ea1df2918a71a9cb4d481403d98f58e6"
@@ -343,7 +344,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2237",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2237",
-      "consultat": "2026-11-23T05:58:52.784Z",
+      "consultat": "2026-11-23T06:04:16.642Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "2cf5d0686a0564047e11798f3ef380a779c726109afb822f3545913d252470f1"
@@ -351,7 +352,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2544",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2544",
-      "consultat": "2026-11-23T05:58:53.471Z",
+      "consultat": "2026-11-23T06:04:17.357Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c26b8c71f2f140ee078872768c2935fb4c18e84f831a554292164e165409d407"
@@ -359,7 +360,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2310",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2310",
-      "consultat": "2026-11-23T05:58:54.154Z",
+      "consultat": "2026-11-23T06:04:18.057Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "da097b1b4df87e021ade1e5b61581b9db349299791a8b2ba88c1f676da8ca51b"
@@ -367,7 +368,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2231",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2231",
-      "consultat": "2026-11-23T05:58:54.838Z",
+      "consultat": "2026-11-23T06:04:18.786Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "21a435ed4fb44ae962ad02b77944f6d126fe74be027f19314fff5ff2fdf633fd"
@@ -375,7 +376,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2538",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2538",
-      "consultat": "2026-11-23T05:58:55.537Z",
+      "consultat": "2026-11-23T06:04:19.493Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "09a2a97473b6268b3511250664046d2d2c5396eca0c6cfb933726db4a201df8c"
@@ -383,7 +384,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1573",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1573",
-      "consultat": "2026-11-23T05:58:56.219Z",
+      "consultat": "2026-11-23T06:04:20.188Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "d73b198fc43dcf0ab047df36c0a0469fd91d4b7e87d65020d9f6a75c855a0099"
@@ -391,7 +392,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2528",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2528",
-      "consultat": "2026-11-23T05:58:56.953Z",
+      "consultat": "2026-11-23T06:04:20.959Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c91e4354ae11044ddc888652677769eeeb307bbf75920d59e1ce75af5e8b9bdf"
@@ -399,7 +400,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2522",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2522",
-      "consultat": "2026-11-23T05:58:57.634Z",
+      "consultat": "2026-11-23T06:04:21.652Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "7b49b1da24f0a44127c61192ef32b75ef20e42795f1ea884d6040fe2542e1926"
@@ -407,7 +408,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2270",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2270",
-      "consultat": "2026-11-23T05:58:58.326Z",
+      "consultat": "2026-11-23T06:04:22.356Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "e36d5c9ce50a08688d409da105f5987788ea1631cd38b652bd0470c4142dca30"
@@ -415,7 +416,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2582",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2582",
-      "consultat": "2026-11-23T05:58:59.001Z",
+      "consultat": "2026-11-23T06:04:23.051Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "24723c07156628656386b271a053ffa8720ed769fa5cb6c509784868634e96f7"
@@ -423,7 +424,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2253",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2253",
-      "consultat": "2026-11-23T05:58:59.684Z",
+      "consultat": "2026-11-23T06:04:23.757Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "4ec9a8ef3f983faefc95cc0182e6b16512a62ff1f585198e826ee9f0d8d28c75"
@@ -431,7 +432,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2535",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2535",
-      "consultat": "2026-11-23T05:59:00.429Z",
+      "consultat": "2026-11-23T06:04:24.458Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "60e841814bf8af24ca326db085f0c0280e369a5235355800ac5e8fb71c57a38a"
@@ -439,7 +440,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2526",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2526",
-      "consultat": "2026-11-23T05:59:01.113Z",
+      "consultat": "2026-11-23T06:04:25.168Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "9335aab2f4a8ba9b996b27f39829d05f76672d5d5fc8cec098574c9b40077d35"
@@ -447,7 +448,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2520",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2520",
-      "consultat": "2026-11-23T05:59:01.800Z",
+      "consultat": "2026-11-23T06:04:25.866Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "b8d848e6b31bcb3c5bcd9e10da16021328ddc75f67cf9657b09d8c813af8e9fb"
@@ -455,7 +456,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2534",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2534",
-      "consultat": "2026-11-23T05:59:02.485Z",
+      "consultat": "2026-11-23T06:04:26.568Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "fc4d458e66c47baf8f0beabc40f0199897778d442fb0eafcf30ff8806993fa13"
@@ -463,7 +464,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2447",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2447",
-      "consultat": "2026-11-23T05:59:03.171Z",
+      "consultat": "2026-11-23T06:04:27.316Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "478a31f5144bcd030ff677c24796dc838d2b078d7851afc29f8910a670cf67d5"
@@ -471,7 +472,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2512",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2512",
-      "consultat": "2026-11-23T05:59:03.902Z",
+      "consultat": "2026-11-23T06:04:28.077Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "eb6269580b94baf42ad46b5b9305bf4ed2dcd8f6b22794bf6f549ed4954aec9f"
@@ -479,7 +480,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1832",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1832",
-      "consultat": "2026-11-23T05:59:04.587Z",
+      "consultat": "2026-11-23T06:04:28.792Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "366b7e3d742572f80afd3e76cfd96bc37fc22ca2b665c72e0cf3bad969ce5a3c"
@@ -487,7 +488,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2699",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2699",
-      "consultat": "2026-11-23T05:59:05.268Z",
+      "consultat": "2026-11-23T06:04:29.485Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6d04a9cffe6ccfbd54081c8b4721fabfae1de8d2214485fae4ef1c177ae3fd25"
@@ -495,7 +496,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2651",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2651",
-      "consultat": "2026-11-23T05:59:06.001Z",
+      "consultat": "2026-11-23T06:04:30.239Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "438c910b77cc6e37d87fcaff4da2e977a956a1bc399aa1384468ca0f4c3ae3d7"
@@ -503,7 +504,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2458",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2458",
-      "consultat": "2026-11-23T05:59:06.680Z",
+      "consultat": "2026-11-23T06:04:31.028Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "1bb80cfa0915b989dc448aa13e06ff0ed2cf3c8aadae2261b3d4997945082e8f"
@@ -511,7 +512,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2547",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2547",
-      "consultat": "2026-11-23T05:59:07.379Z",
+      "consultat": "2026-11-23T06:04:31.717Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6478cb492c0f1e47288f80831a9be24ab8c14e2b89f6d23be97eaaa8b4340e31"
@@ -519,7 +520,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2543",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2543",
-      "consultat": "2026-11-23T05:59:08.060Z",
+      "consultat": "2026-11-23T06:04:32.438Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "ac82a99e1ebe6116e8c72fc75395168141ca3de681987d7de5c2b7da0c10fc36"
@@ -527,7 +528,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2313",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2313",
-      "consultat": "2026-11-23T05:59:08.752Z",
+      "consultat": "2026-11-23T06:04:33.154Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "37be947b55b8b534fd8f949c1f62df394efc6cd996d26f41308e4a309764fb75"
@@ -535,7 +536,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2031",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2031",
-      "consultat": "2026-11-23T05:59:09.437Z",
+      "consultat": "2026-11-23T06:04:33.855Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "dd923e5482477893e9ec7227922a3a9225284c826da0d051f487d6ec7eaad8b0"
@@ -543,7 +544,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2228",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2228",
-      "consultat": "2026-11-23T05:59:10.130Z",
+      "consultat": "2026-11-23T06:04:34.556Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "cdf1565f14685e094899507ccb21b26068b173b0b90572427f0db6351b261905"
@@ -551,7 +552,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1961",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1961",
-      "consultat": "2026-11-23T05:59:10.816Z",
+      "consultat": "2026-11-23T06:04:35.255Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "d11cd516211a165019d9622dad90cd4d83c3034ada0ff4fc3e275550ad1433b7"
@@ -559,7 +560,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1985",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1985",
-      "consultat": "2026-11-23T05:59:11.507Z",
+      "consultat": "2026-11-23T06:04:35.979Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "268d4d4522a2ea862763ba82d895d8c35fa9ab55eed249889e878cadd3c72258"
@@ -567,7 +568,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1669",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1669",
-      "consultat": "2026-11-23T05:59:12.183Z",
+      "consultat": "2026-11-23T06:04:36.680Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "dc9994c5d80bf5ee7069d3daff81fd82975a7370b28f8be504645b8f428cc513"
@@ -575,7 +576,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1971",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1971",
-      "consultat": "2026-11-23T05:59:12.877Z",
+      "consultat": "2026-11-23T06:04:37.377Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "62550e050ec2c713690ae919047dc116209cfe6a08181960d18b4113981a200e"
@@ -583,7 +584,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2241",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2241",
-      "consultat": "2026-11-23T05:59:13.624Z",
+      "consultat": "2026-11-23T06:04:38.134Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "279c434f2f61a0949705c6a264fedd5cc670bb822e50c2801a549547c9ce9c45"
@@ -591,7 +592,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2521",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2521",
-      "consultat": "2026-11-23T05:59:14.313Z",
+      "consultat": "2026-11-23T06:04:38.828Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6bb7b71a7831384898aa80c5991c551c95ef9936747f811a77ad51f535650ede"
@@ -599,7 +600,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1007",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1007",
-      "consultat": "2026-11-23T05:59:15.010Z",
+      "consultat": "2026-11-23T06:04:39.559Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c0fc8384b80db6fc7bd809ffe8d90136f8bfd5c3ece8661a4a51d7145bb9ad35"
@@ -607,7 +608,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2529",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2529",
-      "consultat": "2026-11-23T05:59:15.708Z",
+      "consultat": "2026-11-23T06:04:40.237Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "d7e0ee5cea73e17445861f7918f0694bbf8a26fa7008303d35385a0277d8b5e7"
@@ -615,7 +616,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2527",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2527",
-      "consultat": "2026-11-23T05:59:16.411Z",
+      "consultat": "2026-11-23T06:04:40.955Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "86ef2cd9810eeac5f146a0b05cd59e231e6c29af3f688c3c6bc303bd5edd7ca5"
@@ -623,7 +624,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2531",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2531",
-      "consultat": "2026-11-23T05:59:17.091Z",
+      "consultat": "2026-11-23T06:04:41.655Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f9bbfc91ef3a9b1e24939441667f46913154ec275039c8c3f527ce66d7f8af57"
@@ -631,7 +632,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2554",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2554",
-      "consultat": "2026-11-23T05:59:17.789Z",
+      "consultat": "2026-11-23T06:04:42.350Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "afa851fb6ae9b48804e64a334e74ff77d95fb6c8bc178b0f636c87a9e2c6b891"
@@ -639,7 +640,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=937",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=937",
-      "consultat": "2026-11-23T05:59:18.482Z",
+      "consultat": "2026-11-23T06:04:43.054Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "dee4faa5c9b319cae9cb7e9a29b604f1fe03796e09f09eadd9647855ef0e08e3"
@@ -647,7 +648,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2559",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2559",
-      "consultat": "2026-11-23T05:59:19.178Z",
+      "consultat": "2026-11-23T06:04:43.774Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c37c426b9aa6f5fcba54300b0bbd3f014238d79b9054f449fe91a9b918b7a064"
@@ -655,7 +656,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=725",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=725",
-      "consultat": "2026-11-23T05:59:19.880Z",
+      "consultat": "2026-11-23T06:04:44.477Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "8ae714b6b7d8b81a2d9aa986bc9bcd7549e4bc5d21f7db0b35eff8b188d190c5"
@@ -663,7 +664,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1644",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1644",
-      "consultat": "2026-11-23T05:59:20.588Z",
+      "consultat": "2026-11-23T06:04:45.185Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "9e24084b98c346d6cc2405a0cbfede4353c3f9fedb91c07ebfad9964a4b8dece"
@@ -671,7 +672,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2557",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2557",
-      "consultat": "2026-11-23T05:59:21.280Z",
+      "consultat": "2026-11-23T06:04:45.877Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "78d92ba11b36e5fad0616386b64d184c703e898546a5841a81b065e8c1330e85"
@@ -679,7 +680,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1875",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1875",
-      "consultat": "2026-11-23T05:59:21.983Z",
+      "consultat": "2026-11-23T06:04:46.590Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "419bdabefb020c7bcb900bc658ff70f269b97e2daa2340f9c097b807e61021b3"
@@ -687,7 +688,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1061",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1061",
-      "consultat": "2026-11-23T05:59:22.661Z",
+      "consultat": "2026-11-23T06:04:47.332Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "e81a7c6cc094d3f67433978b5d523fe2d7df3e74478e108a887483f430b380e6"
@@ -695,7 +696,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1614",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1614",
-      "consultat": "2026-11-23T05:59:23.337Z",
+      "consultat": "2026-11-23T06:04:48.027Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "afb6531c0aec99832e605e911b7e447509dc688868d658e14f1537c622b3d2df"
@@ -703,7 +704,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1976",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1976",
-      "consultat": "2026-11-23T05:59:24.048Z",
+      "consultat": "2026-11-23T06:04:48.744Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "bc291ffe238ca306c210d2896de354740feeb54404d9c8f94a7ea119f7518c66"
@@ -711,7 +712,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2517",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2517",
-      "consultat": "2026-11-23T05:59:24.740Z",
+      "consultat": "2026-11-23T06:04:49.454Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "a9ebfb7883ee740c63f1e4a9d4ff8f3cf91c5d551a7446151a29f7c4203598f5"
@@ -719,7 +720,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=115",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=115",
-      "consultat": "2026-11-23T05:59:25.494Z",
+      "consultat": "2026-11-23T06:04:50.168Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "3b2c68069d91299c9fa1da8b10ee6701fe1b6d226611f2985597771aaa1077d4"
@@ -727,7 +728,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2515",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2515",
-      "consultat": "2026-11-23T05:59:26.174Z",
+      "consultat": "2026-11-23T06:04:50.882Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "e3517435a8536924d8ef88a53de1528101e4545c76c8b1f4348f3093184e6ba1"
@@ -735,7 +736,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2469",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2469",
-      "consultat": "2026-11-23T05:59:26.864Z",
+      "consultat": "2026-11-23T06:04:51.585Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "284346b7e2cc64f76d130efe423a8354b34d9a6c74ab0ac732a6b8cd67970898"
@@ -743,7 +744,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2537",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2537",
-      "consultat": "2026-11-23T05:59:27.559Z",
+      "consultat": "2026-11-23T06:04:52.278Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "18387a2488b3d5cb6ddb5ec7f1096110138f854ac8bd3bc2933b7e33d6ec1aa6"
@@ -751,7 +752,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2249",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2249",
-      "consultat": "2026-11-23T05:59:28.266Z",
+      "consultat": "2026-11-23T06:04:52.966Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "396fdc28588358419e9ec029fb77fa06ca50205dcb1f7390d9216079c1c134f0"
@@ -759,7 +760,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510",
-      "consultat": "2026-11-23T05:59:28.980Z",
+      "consultat": "2026-11-23T06:04:53.664Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "1afb295714e31f307e0251090361dd3ca81a8177814b534247690c43ae8b18e9"
@@ -767,7 +768,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2602",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2602",
-      "consultat": "2026-11-23T05:59:29.659Z",
+      "consultat": "2026-11-23T06:04:54.351Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6432b7f9b38eb3cf54348d97760e64f3988432a0f6685e36086e91812209529c"
@@ -775,7 +776,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=965",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=965",
-      "consultat": "2026-11-23T05:59:30.403Z",
+      "consultat": "2026-11-23T06:04:55.069Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "b6424d56553459f54716a1e7777999c2f951666b592cb0d040532c1820b0386a"
@@ -783,7 +784,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2565",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2565",
-      "consultat": "2026-11-23T05:59:31.094Z",
+      "consultat": "2026-11-23T06:04:55.777Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "4575c2721e6b26fe351cc21bf9fbe3e6dee9f3555c2c8a751a3f7d487245a892"
@@ -791,7 +792,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2558",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2558",
-      "consultat": "2026-11-23T05:59:31.779Z",
+      "consultat": "2026-11-23T06:04:56.477Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "2dc6a052dddbb18eb49e7f4d4649b75aab6e40fb1a3eae7707d55933eb63d49e"
@@ -799,7 +800,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1891",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1891",
-      "consultat": "2026-11-23T05:59:32.473Z",
+      "consultat": "2026-11-23T06:04:57.196Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "ae62317d3f836e2d2482e64fc1caff9f6e701c13dcd882b687ad9cba43cf9d75"
@@ -807,7 +808,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2552",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2552",
-      "consultat": "2026-11-23T05:59:33.174Z",
+      "consultat": "2026-11-23T06:04:57.923Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "05cab8e33d51fc746a19cf2688d67590c12923c926761199c86f9a3ea1495274"
@@ -815,7 +816,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2556",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2556",
-      "consultat": "2026-11-23T05:59:33.869Z",
+      "consultat": "2026-11-23T06:04:58.635Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f0a4264ee88bc0e0e2dfbc731f54661b7447d0137b99ef93fafaf0a0df4803bc"
@@ -823,7 +824,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2553",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2553",
-      "consultat": "2026-11-23T05:59:34.551Z",
+      "consultat": "2026-11-23T06:04:59.345Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "41d3d976197691702141a6b0ba5d96bcad1c355221544dc40673243f49536514"
@@ -831,7 +832,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2518",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2518",
-      "consultat": "2026-11-23T05:59:35.229Z",
+      "consultat": "2026-11-23T06:05:00.037Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6e65d97f0c6f31e59cddacb9b5ff0ee10e45d33d43a926a2524212088ae1ae6c"
@@ -839,7 +840,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2127",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2127",
-      "consultat": "2026-11-23T05:59:35.915Z",
+      "consultat": "2026-11-23T06:05:00.756Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "17fc447d9335b2382079cb16f6ceea08ec177d89df2de810235baa341562a1f9"
@@ -847,7 +848,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=92",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=92",
-      "consultat": "2026-11-23T05:59:36.597Z",
+      "consultat": "2026-11-23T06:05:01.485Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "af8c3282a17469ba58b60360c56917f496d20fe1c9d755a978017fb231e121bf"
@@ -855,7 +856,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2259",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2259",
-      "consultat": "2026-11-23T05:59:37.282Z",
+      "consultat": "2026-11-23T06:05:02.193Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "2e3a75e9ffaa4586cc3cd4a34416f9331ef8b0d22de361dfad0d6005e64182c5"
@@ -863,7 +864,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2514",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2514",
-      "consultat": "2026-11-23T05:59:37.964Z",
+      "consultat": "2026-11-23T06:05:02.896Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "91f4cf42cfce3cd458fe59de45c3620ff496e49f757c23b6a1c74627708b9426"
@@ -871,7 +872,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2525",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2525",
-      "consultat": "2026-11-23T05:59:38.637Z",
+      "consultat": "2026-11-23T06:05:03.605Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "37a893a6321c839a86b4f3fb1c6dbc8d33f0bec11ceadd1460457031fbc033a6"
@@ -879,7 +880,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2533",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2533",
-      "consultat": "2026-11-23T05:59:39.315Z",
+      "consultat": "2026-11-23T06:05:04.323Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6c71358297d566ceaa840f2a4a0b715d710bbd02d6563cf94760372767a3e1cc"
@@ -887,7 +888,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2536",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2536",
-      "consultat": "2026-11-23T05:59:40.003Z",
+      "consultat": "2026-11-23T06:05:05.025Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f642c1eda1596601bb0c288383a485c9b79a4f0e1363b29f743faf6d67b3f766"
@@ -895,7 +896,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2530",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2530",
-      "consultat": "2026-11-23T05:59:40.753Z",
+      "consultat": "2026-11-23T06:05:05.784Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "84102fa392abfc9d0bfcf1b0aa960d1aed204f650dbd9a0de15eedbc649b8a8b"
@@ -903,7 +904,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2277",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2277",
-      "consultat": "2026-11-23T05:59:41.456Z",
+      "consultat": "2026-11-23T06:05:06.505Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "eee05ff9241a32d1e3f1b40e664edba6bd744e28169e89468a47283a9b5152f4"
@@ -911,7 +912,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2550",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2550",
-      "consultat": "2026-11-23T05:59:42.578Z",
+      "consultat": "2026-11-23T06:05:07.996Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "720c20256780f394d58eea9a389b739378b78c6659f08ce769e7f9ac6f0b4900"
@@ -919,7 +920,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2279",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2279",
-      "consultat": "2026-11-23T05:59:43.266Z",
+      "consultat": "2026-11-23T06:05:08.713Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "b05dc200a01f58387c456cfa115ec6e2748561497e216c64aa2f65fd1ae292de"
@@ -927,7 +928,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2276",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2276",
-      "consultat": "2026-11-23T05:59:43.967Z",
+      "consultat": "2026-11-23T06:05:09.446Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "bf67c41ca85255165dcb17d22c3f55915aa2862185bcf4f3a7484e65a8f1fc4e"
@@ -935,7 +936,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2283",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2283",
-      "consultat": "2026-11-23T05:59:44.656Z",
+      "consultat": "2026-11-23T06:05:10.163Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "924690622e005b93970b96cd98125de57f01cb84dd059ff6035f4cd32e9935e1"
@@ -943,7 +944,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2275",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2275",
-      "consultat": "2026-11-23T05:59:45.353Z",
+      "consultat": "2026-11-23T06:05:10.860Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "453438551b6755d0dbea8763c82da724cf892d70c5b6f48a2494148ce5ffc0f4"
@@ -951,7 +952,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2274",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2274",
-      "consultat": "2026-11-23T05:59:46.053Z",
+      "consultat": "2026-11-23T06:05:11.562Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "76a76eff64d028316ff20dcf080ef2717b3638fda4614c6007def5741bb4351a"
@@ -959,7 +960,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2655",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2655",
-      "consultat": "2026-11-23T05:59:46.731Z",
+      "consultat": "2026-11-23T06:05:12.253Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f503b3c0520fab3869fdedb2daaaa18f2e8e20c61cfb71877357bbad6fd2dbdb"
@@ -967,7 +968,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2513",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2513",
-      "consultat": "2026-11-23T05:59:47.408Z",
+      "consultat": "2026-11-23T06:05:12.968Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "3d90ba366685ec65d92e874bdd38fdb0dabb8069fa55d2277e4d9f1627af372d"
@@ -975,7 +976,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2516",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2516",
-      "consultat": "2026-11-23T05:59:48.093Z",
+      "consultat": "2026-11-23T06:05:13.652Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "dd56d4cb1a720e2c6912061fb1d1ab5633103dd8ca786a126801e76dda7cb294"
@@ -983,7 +984,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2312",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2312",
-      "consultat": "2026-11-23T05:59:48.792Z",
+      "consultat": "2026-11-23T06:05:14.356Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "b1b833f27de909bdb238f3fce1323dabc15d3dad0242ff3b3a72ee465f980736"
@@ -991,7 +992,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2583",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2583",
-      "consultat": "2026-11-23T05:59:49.491Z",
+      "consultat": "2026-11-23T06:05:15.046Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "0588842bafb9d80b537f527fe36f6c005ea7e1d0ea1fbec2e751513413df9e2b"
@@ -999,7 +1000,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2519",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2519",
-      "consultat": "2026-11-23T05:59:50.191Z",
+      "consultat": "2026-11-23T06:05:15.772Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "3164fb0f5bf10e2a1b63d3eb1ad55e763b6238ccb7af53cf41e37d768e3ea556"
@@ -1007,7 +1008,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2584",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2584",
-      "consultat": "2026-11-23T05:59:50.875Z",
+      "consultat": "2026-11-23T06:05:16.504Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "effbd3079f3a80dd1812fbed00651eaecdd8fcec40214a851fadea3115e44763"
@@ -1015,7 +1016,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2549",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2549",
-      "consultat": "2026-11-23T05:59:51.561Z",
+      "consultat": "2026-11-23T06:05:17.204Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6ca56ebc87fc761f5ddce565c4701a3c3b9714067899ff1b20d21f54218b3fb6"
@@ -1023,7 +1024,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2280",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2280",
-      "consultat": "2026-11-23T05:59:52.249Z",
+      "consultat": "2026-11-23T06:05:17.941Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "79a6ab9635c614cfbfc3bc10907dc1682c43c40f855076ed433d4baeb20e285c"
@@ -1031,7 +1032,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2278",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2278",
-      "consultat": "2026-11-23T05:59:52.978Z",
+      "consultat": "2026-11-23T06:05:18.643Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "2b79dd05adbb927c861296bd0257ea283cd9bbce8832e579f3d8270ca05e002c"
@@ -1039,7 +1040,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2551",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2551",
-      "consultat": "2026-11-23T05:59:53.732Z",
+      "consultat": "2026-11-23T06:05:19.401Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "2ec89e5b209a7d537c6a353eccf7fc0f1cfb46cca20c4e2b8a5573052ffd49ab"
@@ -1047,7 +1048,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1921",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1921",
-      "consultat": "2026-11-23T05:59:54.508Z",
+      "consultat": "2026-11-23T06:05:20.168Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "bb4b550275281b2dc45c5cdfad203e3f2432516929cfb5e45bd865b44131089b"
@@ -1055,7 +1056,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2485",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2485",
-      "consultat": "2026-11-23T05:59:55.213Z",
+      "consultat": "2026-11-23T06:05:20.876Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "a2fdaaddcea8c475bd79f6903f2ca8efefc7a892f629d6d2b6a1236a4a29b5b1"
@@ -1063,7 +1064,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2262",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2262",
-      "consultat": "2026-11-23T05:59:55.938Z",
+      "consultat": "2026-11-23T06:05:21.580Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "7793ae2e7fc0cc2330313ec4b05bcf568b4cb7ab6686b065957133ef5a847541"
@@ -1071,7 +1072,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2264",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2264",
-      "consultat": "2026-11-23T05:59:56.643Z",
+      "consultat": "2026-11-23T06:05:22.279Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "d27803bb9c09d73d8470e561991bea83e773cf253907e5e2e9de446ecf94748d"
@@ -1079,7 +1080,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1885",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1885",
-      "consultat": "2026-11-23T05:59:57.343Z",
+      "consultat": "2026-11-23T06:05:22.998Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "28cf89c4aef2a72fe4d33dcea98d9bdf8d82e1b8cdcb50e31e3eb3aedd63b454"
@@ -1087,7 +1088,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2187",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2187",
-      "consultat": "2026-11-23T05:59:58.040Z",
+      "consultat": "2026-11-23T06:05:23.703Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "4ff05b32455e7f01d47a2dd91fc19df3b85f104dd8c2a33f0e1e60a2c1b5234b"
@@ -1095,7 +1096,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2133",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2133",
-      "consultat": "2026-11-23T05:59:58.796Z",
+      "consultat": "2026-11-23T06:05:24.471Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "9f0f788e0864c639bbb3081ad711f4ebb0aff541954e78b77260572a68587530"
@@ -1103,7 +1104,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=683",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=683",
-      "consultat": "2026-11-23T05:59:59.567Z",
+      "consultat": "2026-11-23T06:05:25.232Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6b64de9029c36cfac0cb0d1cc588cb60d76aeae92803e7419456e650d7c08b64"
@@ -1111,7 +1112,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=756",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=756",
-      "consultat": "2026-11-23T06:00:00.248Z",
+      "consultat": "2026-11-23T06:05:25.937Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6a4e728594db672894b420563bec84489ac497445a2c4086f8dd344e5bab3d11"
@@ -1119,7 +1120,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2240",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2240",
-      "consultat": "2026-11-23T06:00:00.946Z",
+      "consultat": "2026-11-23T06:05:26.653Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6131559e248e11663c61d1d1cefa9728fba2cb6abe482407f0737ae7079c58b5"
@@ -1127,7 +1128,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2246",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2246",
-      "consultat": "2026-11-23T06:00:01.652Z",
+      "consultat": "2026-11-23T06:05:27.352Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "a4447d1259b080a246fc4b46d9897620cddc6f0d12522e162a7bdd187ad20f30"
@@ -1135,7 +1136,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1685",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1685",
-      "consultat": "2026-11-23T06:00:02.275Z",
+      "consultat": "2026-11-23T06:05:27.981Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "ae1270ee4ae851f04370189526cdf765bb176fdb7501125224b93b5492786822"
@@ -1143,7 +1144,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2523",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2523",
-      "consultat": "2026-11-23T06:00:02.890Z",
+      "consultat": "2026-11-23T06:05:28.618Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "b43f6be4ff96aa8e0477872198127d28aba9592cc001371c425944834367d855"
@@ -1151,7 +1152,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2255",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2255",
-      "consultat": "2026-11-23T06:00:03.520Z",
+      "consultat": "2026-11-23T06:05:29.252Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "8e3b4612d7dfe8f8ac0bf1512a78f703e0aa42db637fb72b1388c6f46ee2ab5c"
@@ -1159,7 +1160,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1603",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1603",
-      "consultat": "2026-11-23T06:00:04.146Z",
+      "consultat": "2026-11-23T06:05:29.880Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c6f7c943c0295a51f1605637afb2f5060922a3ced73ba68550eca7ab1bb4aa32"
@@ -1167,7 +1168,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=117",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=117",
-      "consultat": "2026-11-23T06:00:04.778Z",
+      "consultat": "2026-11-23T06:05:30.527Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "96b122d575eeab34ece38d0ddb470918cd81a1949c8c47c08e513d1d0b8e783c"
@@ -1175,7 +1176,7 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2251",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2251",
-      "consultat": "2026-11-23T06:00:05.404Z",
+      "consultat": "2026-11-23T06:05:31.160Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "87ce07d8c261c1cffda6dd292282c03ab97de12a1717c1bdbdeb22ee16aac55a"
@@ -1183,15 +1184,151 @@
     {
       "url": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1877",
       "url_resposta": "https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=1877",
-      "consultat": "2026-11-23T06:00:06.027Z",
+      "consultat": "2026-11-23T06:05:31.824Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "cb048a9b3eb9226e51e41c30e031c15f11d5fe36d1bc3a0f96613e243282ffeb"
     },
     {
+      "url": "https://analisi.transparenciacatalunya.cat/api/views/wf87-e34n.json",
+      "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/wf87-e34n.json",
+      "consultat": "2026-11-23T06:05:32.896Z",
+      "estat": 200,
+      "tipus": "application/json; charset=utf-8",
+      "sha256": "a20bb0eee8a4dcea55aa9a1ae998df28998ba9dd93d015fcf5c11161a6628483"
+    },
+    {
+      "url": "https://analisi.transparenciacatalunya.cat/resource/wf87-e34n.json?%24where=data_acte+%3E%3D+%272026-10-01%27+AND+data_acte+%3C%3D+%272026-12-31%27+AND+autoritat+in+%28%27President%27%2C%27Consellers%27%2C%27Portaveu+del+Govern%27%29&%24order=data_acte%2Chora_acte%2Cid&%24limit=5000",
+      "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/wf87-e34n.json?%24where=data_acte+%3E%3D+%272026-10-01%27+AND+data_acte+%3C%3D+%272026-12-31%27+AND+autoritat+in+%28%27President%27%2C%27Consellers%27%2C%27Portaveu+del+Govern%27%29&%24order=data_acte%2Chora_acte%2Cid&%24limit=5000",
+      "consultat": "2026-11-23T06:05:33.373Z",
+      "estat": 200,
+      "tipus": "application/json;charset=utf-8",
+      "sha256": "1087ca354b5b01ec06fedc6d7879cabff66744e5815bf0658ac54785ac16543c"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "consultat": "2026-11-23T06:05:34.098Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "7589c0cb9ff7ae4bfa00c6b04a58217772acef90252791864c1fc64dea8b8fe1"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=ACTE_INSTITUCIONAL&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=ACTE_INSTITUCIONAL&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "consultat": "2026-11-23T06:05:34.867Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "95f777718078004c44026b137dac75d27b83c10140554affbf256688356bfc7f"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=CONFERENCIA_PREMSA&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=CONFERENCIA_PREMSA&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "consultat": "2026-11-23T06:05:35.548Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "a53f93e690285b83ef1cedefcc2eb1340a6602962658b07a5eaf47307288a288"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=REUNIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=REUNIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "consultat": "2026-11-23T06:05:36.222Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "2bc00ba0836de172fbfa8a461b43fee8cb9f15458ed239ca1d7c49f9874510da"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=SESSIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=SESSIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01102026",
+      "consultat": "2026-11-23T06:05:37.144Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "680523093e2111afe365dd0beb143234dcc51a012db5183740b9553ea318cef6"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "consultat": "2026-11-23T06:05:37.963Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "72ffe0dab36a8262fff5e957b1f02591cf42fd9dd11f31ea253b8ad3c7a5b274"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=ACTE_INSTITUCIONAL&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=ACTE_INSTITUCIONAL&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "consultat": "2026-11-23T06:05:38.635Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "7d2feda79772063679a16b7e85ac0a3c15f3651fc9e3fc90efed1216fe0f8c71"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=CONFERENCIA_PREMSA&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=CONFERENCIA_PREMSA&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "consultat": "2026-11-23T06:05:39.274Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "89ef95172259d07971d28ca47caac06510c9d3c5b8531ea73310158c8519f704"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=REUNIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=REUNIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "consultat": "2026-11-23T06:05:39.853Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "d41b439d16a7c28b1c371694abc24b3703acf5b1f09604aa3512808c4552bc1b"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=SESSIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=SESSIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01112026",
+      "consultat": "2026-11-23T06:05:40.597Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "3b854ea1be7eba18827bff3e5cc55c411991c2cbddf5858c8999d6b77434373d"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "consultat": "2026-11-23T06:05:41.250Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b5f8f673697eac1e574d0be052c28245da3290c9e08b07bf90e86fe172509cc8"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=ACTE_INSTITUCIONAL&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=ACTE_INSTITUCIONAL&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "consultat": "2026-11-23T06:05:41.819Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "aea5f947a4bb327dc5dd53e95ec26f74300271fec4d375cef5261938bea43a36"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=CONFERENCIA_PREMSA&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=CONFERENCIA_PREMSA&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "consultat": "2026-11-23T06:05:42.385Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "b651c84dd6e102bc712b3c081efb707fc1bccaed31a61ed495717cadfac1721a"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=REUNIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=REUNIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "consultat": "2026-11-23T06:05:42.950Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "4dd1cbe99ba74215edb8a94a85d696dc76df431a455b089bb855ee36d3769087"
+    },
+    {
+      "url": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=SESSIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "url_resposta": "https://www.parlament.cat/web/actualitat/agenda/index.html?p_categoria=SESSIO&p_hr=AGENDA&p_organ=&p_mode=M&p_data=01122026",
+      "consultat": "2026-11-23T06:05:43.575Z",
+      "estat": 200,
+      "tipus": "text/html; charset=UTF-8",
+      "sha256": "46af660f6e7068423d8777eaa4c76de22c2352ffa988ef0d4be828b27d8fb02e"
+    },
+    {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/6nei-4b44.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/6nei-4b44.json",
-      "consultat": "2026-11-23T06:00:07.224Z",
+      "consultat": "2026-11-23T06:05:44.374Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "c578025c9f609b29417d6d8a1e70d8beb53c19596d6bae26e576855161ce128d"
@@ -1199,7 +1336,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/6nei-4b44.json?%24select=codi_ens%2C+nom_complert%2C+comarca%2C+provincia%2C+cens%2C+any_cens%2C+web&%24where=nomtipus+%3D+%27Municipis%27&%24order=codi_ens&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/6nei-4b44.json?%24select=codi_ens%2C+nom_complert%2C+comarca%2C+provincia%2C+cens%2C+any_cens%2C+web&%24where=nomtipus+%3D+%27Municipis%27&%24order=codi_ens&%24limit=50000",
-      "consultat": "2026-11-23T06:00:07.441Z",
+      "consultat": "2026-11-23T06:05:44.588Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "c6e70d9b63cd6a801eeb8370b29682d1db385573888f9059ba7020bffc347135"
@@ -1207,7 +1344,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/nm3n-3vbj.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/nm3n-3vbj.json",
-      "consultat": "2026-11-23T06:00:07.590Z",
+      "consultat": "2026-11-23T06:05:44.753Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "23699435d2dab2ecfd4e97d11b70f952a37d405de318bd8d08fb6345f8bb397f"
@@ -1215,7 +1352,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/nm3n-3vbj.json?%24select=codi_10%2C+nom_ens%2C+nom%2C+carrec%2C+area%2C+partit_politic%2C+ordre%2C+data_nomenament&%24where=codi_tipus_ens+%3D+%272%27&%24order=codi_10%2C+ordre&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/nm3n-3vbj.json?%24select=codi_10%2C+nom_ens%2C+nom%2C+carrec%2C+area%2C+partit_politic%2C+ordre%2C+data_nomenament&%24where=codi_tipus_ens+%3D+%272%27&%24order=codi_10%2C+ordre&%24limit=50000",
-      "consultat": "2026-11-23T06:00:08.319Z",
+      "consultat": "2026-11-23T06:05:45.258Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "3d5ab69187d927873a3cd42e9c9ad5b80571e2d7827eba3fe833be38401aeb6d"
@@ -1223,7 +1360,7 @@
     {
       "url": "https://api.idescat.cat/emex/v1/dades.json?i=f171%2Cf184%2Cf263%2Cf73%2Cf74&tipus=mun&lang=ca",
       "url_resposta": "https://api.idescat.cat/emex/v1/dades.json?i=f171%2Cf184%2Cf263%2Cf73%2Cf74&tipus=mun&lang=ca",
-      "consultat": "2026-11-23T06:00:09.109Z",
+      "consultat": "2026-11-23T06:05:45.960Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "6170f7e1d88d5e6dd5b4eb4d6cbcaa3fb98810f2f7eea9930e08938a4114b149"
@@ -1231,7 +1368,7 @@
     {
       "url": "https://api.idescat.cat/emex/v1/dades.json?i=f92%2Cf96%2Cf242%2Cf10%2Cf385&tipus=mun&lang=ca",
       "url_resposta": "https://api.idescat.cat/emex/v1/dades.json?i=f92%2Cf96%2Cf242%2Cf10%2Cf385&tipus=mun&lang=ca",
-      "consultat": "2026-11-23T06:00:09.548Z",
+      "consultat": "2026-11-23T06:05:46.632Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "7c70df9b9d042d94b9a237515063148f3b232593de34aefe1f243c1e48e56872"
@@ -1239,7 +1376,7 @@
     {
       "url": "https://api.idescat.cat/emex/v1/dades.json?i=f149%2Cf254&tipus=mun&lang=ca",
       "url_resposta": "https://api.idescat.cat/emex/v1/dades.json?i=f149%2Cf254&tipus=mun&lang=ca",
-      "consultat": "2026-11-23T06:00:10.037Z",
+      "consultat": "2026-11-23T06:05:47.152Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "fac49d85a5a5f940c142f28725908c737778876df4f7daed6ba6566a0890b648"
@@ -1247,7 +1384,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/index.html",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/index.html",
-      "consultat": "2026-11-23T06:00:10.800Z",
+      "consultat": "2026-11-23T06:05:50.214Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "0c3717c3e6f723d8fa673a6abecee73e2217d68063417aea432ab51d77b05086"
@@ -1255,15 +1392,15 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/XV-legislatura/index.html",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/XV-legislatura/index.html",
-      "consultat": "2026-11-23T06:00:11.870Z",
+      "consultat": "2026-11-23T06:05:51.574Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
-      "sha256": "4eba74441b3e937818850de86b45ce5ede76f1d795d108883fa820bb31871ede"
+      "sha256": "0922c5c54da890015c629393c99c1035aafd439e5f47e94343bcdc5051369951"
     },
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&p_codi=46",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&p_codi=46",
-      "consultat": "2026-11-23T06:00:12.073Z",
+      "consultat": "2026-11-23T06:05:51.781Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "4914eea970b3cae00d1bac3c641627c997a9cbe15be4f323fc35c4ba39bbb64e"
@@ -1271,7 +1408,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&p_codi=46&p_pagina=2",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&p_codi=46&p_pagina=2",
-      "consultat": "2026-11-23T06:00:12.553Z",
+      "consultat": "2026-11-23T06:05:52.264Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "81d8d785ad17c1222d75e03bab40b9eefca33004e6493e1943366bee6dd6a375"
@@ -1279,7 +1416,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&p_codi=46&p_pagina=3",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&p_codi=46&p_pagina=3",
-      "consultat": "2026-11-23T06:00:13.027Z",
+      "consultat": "2026-11-23T06:05:52.742Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "091423dced9be83dfb1040d1a51dbf77392ed60508e34cb1db4ef2a791adc376"
@@ -1287,7 +1424,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=56",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=56",
-      "consultat": "2026-11-23T06:00:13.504Z",
+      "consultat": "2026-11-23T06:05:53.266Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "083c90a5069ad700595aab5f5966cb30f45df7c5f2c15bfae3babf17b5947415"
@@ -1295,7 +1432,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=55",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=55",
-      "consultat": "2026-11-23T06:00:13.982Z",
+      "consultat": "2026-11-23T06:05:53.749Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "ead1cef7e35dbd0b1d07c5f3751e124db2ae5463f7f649bb1bd429d676f8096c"
@@ -1303,7 +1440,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=54",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=54",
-      "consultat": "2026-11-23T06:00:14.456Z",
+      "consultat": "2026-11-23T06:05:54.228Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "26f39da0dfa51d72133055a59ba9c9e63ba021e3dd3f6916e01777bece0cf7a6"
@@ -1311,7 +1448,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=53",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=53",
-      "consultat": "2026-11-23T06:00:14.934Z",
+      "consultat": "2026-11-23T06:05:54.710Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f14952979bafa45712a351945e06594c4bc6337506abfa815e2a8e1683061a3e"
@@ -1319,7 +1456,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=52",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=52",
-      "consultat": "2026-11-23T06:00:15.427Z",
+      "consultat": "2026-11-23T06:05:55.193Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "b1c1fd0e7032163b0e83b616cefc6ef3848b290fbc7644e55bc4c7f10f53e709"
@@ -1327,7 +1464,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=51",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=51",
-      "consultat": "2026-11-23T06:00:15.900Z",
+      "consultat": "2026-11-23T06:05:55.667Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "7b6c24fccb484265e232c8a7a8c8e77b0d9389d21ea12cd6a54b0ffe994ed70f"
@@ -1335,7 +1472,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=50",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=50",
-      "consultat": "2026-11-23T06:00:16.380Z",
+      "consultat": "2026-11-23T06:05:56.151Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "3af2dd2ac9618c3d769d2c43ba937400ed030809eae4db1b5aa8576044340dfc"
@@ -1343,7 +1480,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=49",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=49",
-      "consultat": "2026-11-23T06:00:16.854Z",
+      "consultat": "2026-11-23T06:05:56.738Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "e883eeee751ec75e91674e443b0acca9257d966eafa551ba32688444f57cf8aa"
@@ -1351,7 +1488,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=48",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=48",
-      "consultat": "2026-11-23T06:00:17.329Z",
+      "consultat": "2026-11-23T06:05:57.234Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "9f22b7cb0b8ef59266df37b1825585ae5ae93a878a6488b339ee93faec7fdb4b"
@@ -1359,7 +1496,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=47",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=47",
-      "consultat": "2026-11-23T06:00:17.806Z",
+      "consultat": "2026-11-23T06:05:57.712Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "e5a82abd61827fd99f60f41678d66292aa3a1635e99488bf0736054a6fc0d54c"
@@ -1367,7 +1504,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=46",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=46",
-      "consultat": "2026-11-23T06:00:18.278Z",
+      "consultat": "2026-11-23T06:05:58.201Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f47a158840b4fef3d366d9e3df23ed935ae73c5980d99188e488b4870259d7ca"
@@ -1375,7 +1512,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=45",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=45",
-      "consultat": "2026-11-23T06:00:18.754Z",
+      "consultat": "2026-11-23T06:05:58.687Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6597cbd75b0c32d70a005ee73aed9c75d692bc4f27b15f209020ca7c0467fe41"
@@ -1383,7 +1520,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=44",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=44",
-      "consultat": "2026-11-23T06:00:19.233Z",
+      "consultat": "2026-11-23T06:05:59.173Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "57fd36ecae2095e99832023fe9c689d5745f75eee0f14ad0a2585d62bd87640a"
@@ -1391,7 +1528,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=43",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=43",
-      "consultat": "2026-11-23T06:00:19.715Z",
+      "consultat": "2026-11-23T06:05:59.656Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "34481788a302be0438798a627089b0d5f04fd7513825daa9daaea7995cf7a9fd"
@@ -1399,7 +1536,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=42",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=42",
-      "consultat": "2026-11-23T06:00:20.190Z",
+      "consultat": "2026-11-23T06:06:00.145Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "592a64bf13203f3cfb2a0bff3a693a74e5fd92a03583bc4a5797e05b80965854"
@@ -1407,7 +1544,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=41",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=41",
-      "consultat": "2026-11-23T06:00:20.668Z",
+      "consultat": "2026-11-23T06:06:00.630Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "559528adc40cbf02a0ff8c16eb3d906d1ed87e786dd1c149f18c0fe73aa9631b"
@@ -1415,7 +1552,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=40",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=40",
-      "consultat": "2026-11-23T06:00:21.144Z",
+      "consultat": "2026-11-23T06:06:01.117Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "946288c24e3782947c228efb9cfb3a64686951a4893be615e3acea2e452b000d"
@@ -1423,7 +1560,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=39",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=39",
-      "consultat": "2026-11-23T06:00:21.625Z",
+      "consultat": "2026-11-23T06:06:01.598Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "d92d1f80148ae2c77d00e6f7b7c65fee25ed2920641661036e8125cf71ea9d87"
@@ -1431,7 +1568,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=38",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=38",
-      "consultat": "2026-11-23T06:00:22.102Z",
+      "consultat": "2026-11-23T06:06:02.078Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "36b0f1e6c1fa45750cf55476c05f0b33590dda57f4de8d8d80e8d0d024a64c23"
@@ -1439,7 +1576,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=37",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=37",
-      "consultat": "2026-11-23T06:00:22.586Z",
+      "consultat": "2026-11-23T06:06:02.576Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f14bf1e1978d9a40d0c25491daebb7b40d1320248aa07a7f01066f499d1124eb"
@@ -1447,7 +1584,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=36",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=36",
-      "consultat": "2026-11-23T06:00:23.065Z",
+      "consultat": "2026-11-23T06:06:03.060Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "4725b67a74901a497a31fc8cc0f208e4280310322b5b9330baf81080dd8872a2"
@@ -1455,7 +1592,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=35",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=35",
-      "consultat": "2026-11-23T06:00:23.538Z",
+      "consultat": "2026-11-23T06:06:03.537Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "842177295099ade580789b3f5ac2cbb35aaf7a0c05c04da26d603b71c33a2ce2"
@@ -1463,7 +1600,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=34",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=34",
-      "consultat": "2026-11-23T06:00:24.020Z",
+      "consultat": "2026-11-23T06:06:04.025Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "86cd926e01284865028ef46bf4903b783d213ab8d7e8c5c431f9e6dd2c743f7e"
@@ -1471,7 +1608,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=33",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=33",
-      "consultat": "2026-11-23T06:00:24.504Z",
+      "consultat": "2026-11-23T06:06:04.509Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "ffd6c49f5c7d8e651421b3dbe51e8e2058a58f7b05d42a7a28aefd58a757b0ad"
@@ -1479,7 +1616,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=32",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=32",
-      "consultat": "2026-11-23T06:00:24.980Z",
+      "consultat": "2026-11-23T06:06:04.984Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "d6ed3b22af876bec0e5433c19db87147f19aa462af9d83d732ba48507ffd65bb"
@@ -1487,7 +1624,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=31",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=31",
-      "consultat": "2026-11-23T06:00:25.459Z",
+      "consultat": "2026-11-23T06:06:05.459Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "8fe3da0c55efec449e7ab5fcfb69f234c13a416eaa131b6b5039d7c6e83e3454"
@@ -1495,7 +1632,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=30",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=30",
-      "consultat": "2026-11-23T06:00:25.929Z",
+      "consultat": "2026-11-23T06:06:05.934Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "eca3fec3f24c0aa35a29420a5a267c2b0df14d1c399809fd4c02b2ee04fa2bcf"
@@ -1503,7 +1640,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=29",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=29",
-      "consultat": "2026-11-23T06:00:26.411Z",
+      "consultat": "2026-11-23T06:06:06.416Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c58d845cdf46af7bc46b263237d024869ea841c42808f0d6b828c6ff874214b4"
@@ -1511,7 +1648,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=28",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=28",
-      "consultat": "2026-11-23T06:00:26.888Z",
+      "consultat": "2026-11-23T06:06:06.901Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6f0665a2d44c4e5420f799d9b14b533c2b97978608958dbab12d719286713349"
@@ -1519,7 +1656,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=27",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=27",
-      "consultat": "2026-11-23T06:00:27.366Z",
+      "consultat": "2026-11-23T06:06:07.383Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "e380ccf0e22ddc9abe409c4e101a781a0475de3d9b5db93331025b5fe5d9aa1d"
@@ -1527,7 +1664,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=26",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=26",
-      "consultat": "2026-11-23T06:00:27.843Z",
+      "consultat": "2026-11-23T06:06:07.869Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "4b6ff35fea416ccae762c11ef4458ec3acd4cbac29cf038d2755f85a173719a0"
@@ -1535,7 +1672,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=25",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=25",
-      "consultat": "2026-11-23T06:00:28.319Z",
+      "consultat": "2026-11-23T06:06:08.353Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "6829ef90c4231a7441cde81640ef87170e0832c90721a2086db58d9c4db2642a"
@@ -1543,7 +1680,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=24",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=24",
-      "consultat": "2026-11-23T06:00:28.795Z",
+      "consultat": "2026-11-23T06:06:08.840Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "b23f2b3b2ee80f016cff78926843751556202722535b0038b419cd95c1cfb99c"
@@ -1551,7 +1688,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=23",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=23",
-      "consultat": "2026-11-23T06:00:29.276Z",
+      "consultat": "2026-11-23T06:06:09.328Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "9e057e411e4d40d61b3f53bf71df71bac0515510712cbc128e49d2f720d6cf04"
@@ -1559,7 +1696,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=22",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=22",
-      "consultat": "2026-11-23T06:00:29.753Z",
+      "consultat": "2026-11-23T06:06:09.811Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "3e0f181d9ee813ff9a0fa59253a2e2137c77a9b349747c54d13a50b11799e89a"
@@ -1567,7 +1704,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=21",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=21",
-      "consultat": "2026-11-23T06:00:30.227Z",
+      "consultat": "2026-11-23T06:06:10.295Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "d443546643e38b400d812d447b98e2d3a616401d530a3fb8af733d9ea963b7ee"
@@ -1575,7 +1712,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=20",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=20",
-      "consultat": "2026-11-23T06:00:30.710Z",
+      "consultat": "2026-11-23T06:06:10.778Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "f3e60ba83601218db15d2ff442816fe9a025cf8656c923c63bbed5fc276bbbd6"
@@ -1583,7 +1720,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=19",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=19",
-      "consultat": "2026-11-23T06:00:31.187Z",
+      "consultat": "2026-11-23T06:06:11.258Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "31136b27aec0ad813debddaa70af9b5a9f8e8ea439dac90072a29e480ed4def3"
@@ -1591,7 +1728,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=18",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=18",
-      "consultat": "2026-11-23T06:00:31.664Z",
+      "consultat": "2026-11-23T06:06:11.742Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "033eaf6fa49277ad46f7e9b655649c6bc2676c1dc3d6feac83a112edb8318962"
@@ -1599,7 +1736,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=17",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=17",
-      "consultat": "2026-11-23T06:00:32.148Z",
+      "consultat": "2026-11-23T06:06:12.230Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "58af8c3849d32812329408b5c7c7c7a6ad0484ee344a53198451019adcacdafa"
@@ -1607,7 +1744,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=16",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=16",
-      "consultat": "2026-11-23T06:00:32.629Z",
+      "consultat": "2026-11-23T06:06:12.716Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "503daac5ff2ba698059dc1946aa48d152b8d48d72e351926df024e919e4e59c0"
@@ -1615,7 +1752,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=15",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=15",
-      "consultat": "2026-11-23T06:00:33.111Z",
+      "consultat": "2026-11-23T06:06:13.205Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "c934e439144fef5233745b8312e1620c57dc9913c6e7f3313f1cdb7c519a18c9"
@@ -1623,7 +1760,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=15&p_pagina=2",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=15&p_pagina=2",
-      "consultat": "2026-11-23T06:00:33.594Z",
+      "consultat": "2026-11-23T06:06:13.694Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "615d29d40cfe0622755d172f778c3a0a99663d25612dd38966200df09fb0649e"
@@ -1631,7 +1768,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=14",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=14",
-      "consultat": "2026-11-23T06:00:34.071Z",
+      "consultat": "2026-11-23T06:06:14.180Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "b76b421f8d96b044cec887eed54d5eff9c9ea6fce4eb15b3bf52e9267e66d2e1"
@@ -1639,7 +1776,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=13",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=13",
-      "consultat": "2026-11-23T06:00:34.543Z",
+      "consultat": "2026-11-23T06:06:14.669Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "3e3b1cec19441e4106bee5a35502cc8f35b4d46905b8e2f67004827bbf250d78"
@@ -1647,7 +1784,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=12",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=12",
-      "consultat": "2026-11-23T06:00:35.018Z",
+      "consultat": "2026-11-23T06:06:15.157Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "08e75260394305b3ce1c9a17b288eac071042f2eb1fcccc51cd7da97404a7f0e"
@@ -1655,7 +1792,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=11",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=11",
-      "consultat": "2026-11-23T06:00:35.495Z",
+      "consultat": "2026-11-23T06:06:15.648Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "67f90d7c92ba2a1b3da1bbaa33a7f74858edfc165e7307206500012b59b4f065"
@@ -1663,7 +1800,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=10",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=10",
-      "consultat": "2026-11-23T06:00:35.964Z",
+      "consultat": "2026-11-23T06:06:16.130Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "a914c037937a09fadc6d8b2873a174cbc7cc2284c0147f64080992dfcdf50dcb"
@@ -1671,7 +1808,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=9",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=9",
-      "consultat": "2026-11-23T06:00:36.435Z",
+      "consultat": "2026-11-23T06:06:16.614Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "ad688caf60fd1ab9b798205a37cfa444bb84f3bc998960e30e21cc5dbf7ba528"
@@ -1679,7 +1816,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=8",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=8",
-      "consultat": "2026-11-23T06:00:36.991Z",
+      "consultat": "2026-11-23T06:06:17.091Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "db53117ce56e6afceb1aaffe2f163b72b488973bac7b8de82bb6f631e37c5b2b"
@@ -1687,7 +1824,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=7",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=7",
-      "consultat": "2026-11-23T06:00:37.461Z",
+      "consultat": "2026-11-23T06:06:17.577Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "ca2613603483d17cc1806f8e09b844ae36190fa064afc8d10adfaf71866a8075"
@@ -1695,7 +1832,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=6",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=6",
-      "consultat": "2026-11-23T06:00:37.939Z",
+      "consultat": "2026-11-23T06:06:18.055Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "2f8bfcebbb81f006c0a86d4a75d6caf9e59f96911e347e2e46c8f917c9374131"
@@ -1703,7 +1840,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=5",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=5",
-      "consultat": "2026-11-23T06:00:38.416Z",
+      "consultat": "2026-11-23T06:06:18.535Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "e713ff70f94af57644b7aaf479c3e7580009e40968ed1af080340f44fd0c1b49"
@@ -1711,7 +1848,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=4",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=4",
-      "consultat": "2026-11-23T06:00:38.891Z",
+      "consultat": "2026-11-23T06:06:19.015Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "7a475b78017756eaaaacf3ff9d7c2fa827a1c72ab4c8afa9d00313c2b791f66b"
@@ -1719,7 +1856,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=3",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=3",
-      "consultat": "2026-11-23T06:00:39.365Z",
+      "consultat": "2026-11-23T06:06:19.497Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "db06a6bb3647cc5b879bf4e0db718610bb68f66f6b67ed9a6d66f3169d6dd428"
@@ -1727,7 +1864,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=2",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=2",
-      "consultat": "2026-11-23T06:00:39.838Z",
+      "consultat": "2026-11-23T06:06:19.980Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "717c6858b23c707c73c8033dbe60bde6cd297d3ca610d7f616950e773a46df60"
@@ -1735,7 +1872,7 @@
     {
       "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=1",
       "url_resposta": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=1",
-      "consultat": "2026-11-23T06:00:40.310Z",
+      "consultat": "2026-11-23T06:06:20.466Z",
       "estat": 200,
       "tipus": "text/html; charset=UTF-8",
       "sha256": "2d94295be23b60134a16d753260035026dd0cd4d07a118c11480b28cde8786c7"
@@ -1743,7 +1880,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/n6hn-rmy7.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/n6hn-rmy7.json",
-      "consultat": "2026-11-23T06:00:40.896Z",
+      "consultat": "2026-11-23T06:06:21.109Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "cd671c7d976abc31d815137bbbcae3a33d4a7d6d4ac28c40f79bd19c25c55cae"
@@ -1751,7 +1888,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/n6hn-rmy7.json?%24select=t_tol_de_la_norma%2Crang_de_norma%2Cdata_del_document%2Cdata_de_publicaci_del_diari%2Cn_mero_de_diari%2Cvig_ncia_de_la_norma%2Curl_ltima_versi_format_html&%24where=rang_de_norma+in+%28%27Llei%27%2C%27Decret+llei%27%29+AND+data_de_publicaci_del_diari+%3E%3D+%272024-06-10%27&%24order=data_de_publicaci_del_diari+DESC%2C+n_mero_de_control+DESC&%24limit=1000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/n6hn-rmy7.json?%24select=t_tol_de_la_norma%2Crang_de_norma%2Cdata_del_document%2Cdata_de_publicaci_del_diari%2Cn_mero_de_diari%2Cvig_ncia_de_la_norma%2Curl_ltima_versi_format_html&%24where=rang_de_norma+in+%28%27Llei%27%2C%27Decret+llei%27%29+AND+data_de_publicaci_del_diari+%3E%3D+%272024-06-10%27&%24order=data_de_publicaci_del_diari+DESC%2C+n_mero_de_control+DESC&%24limit=1000",
-      "consultat": "2026-11-23T06:00:41.059Z",
+      "consultat": "2026-11-23T06:06:21.304Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "db4f735925bda55a3eda933c988d31c3de62b1ffea4778648e8f3dfb035bfbe5"
@@ -1759,7 +1896,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/khxn-nv6a.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/khxn-nv6a.json",
-      "consultat": "2026-11-23T06:00:41.349Z",
+      "consultat": "2026-11-23T06:06:21.634Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "24b91bd7b19000199b75b227a1b9744b37bfd261521e3e20d7e34ffbeef9f237"
@@ -1767,7 +1904,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=data_fi_presentaci_sol%2C+count%28*%29+as+n&%24group=data_fi_presentaci_sol&%24order=data_fi_presentaci_sol&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=data_fi_presentaci_sol%2C+count%28*%29+as+n&%24group=data_fi_presentaci_sol&%24order=data_fi_presentaci_sol&%24limit=50000",
-      "consultat": "2026-11-23T06:00:41.866Z",
+      "consultat": "2026-11-23T06:06:22.010Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "ca9fb2234c22beea186dca4cecd5cab75ce779b3f2fc9e80d4e91d00a84addad"
@@ -1775,7 +1912,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2701%2F01%2F2027%27%2C+%2701%2F03%2F2027%27%2C+%2701%2F04%2F2027%27%2C+%2701%2F09%2F2027%27%2C+%2701%2F12%2F2026%27%2C+%2702%2F03%2F2027%27%2C+%2702%2F12%2F2026%27%2C+%2703%2F07%2F2029%27%2C+%2703%2F12%2F2026%27%2C+%2704%2F12%2F2026%27%2C+%2705%2F01%2F2027%27%2C+%2705%2F02%2F2027%27%2C+%2705%2F06%2F2027%27%2C+%2705%2F11%2F2027%27%2C+%2705%2F12%2F2026%27%2C+%2706%2F01%2F2027%27%2C+%2707%2F07%2F2029%27%2C+%2707%2F10%2F2027%27%2C+%2707%2F12%2F2026%27%2C+%2708%2F01%2F2027%27%2C+%2708%2F12%2F2026%27%2C+%2709%2F12%2F2026%27%2C+%2710%2F01%2F2027%27%2C+%2710%2F03%2F2027%27%2C+%2710%2F12%2F2026%27%2C+%2710%2F12%2F2027%27%2C+%2711%2F12%2F2026%27%2C+%2712%2F01%2F2027%27%2C+%2712%2F02%2F2027%27%2C+%2712%2F03%2F2027%27%2C+%2712%2F11%2F2027%27%2C+%2713%2F06%2F2029%27%2C+%2713%2F12%2F2026%27%2C+%2714%2F08%2F2027%27%2C+%2714%2F12%2F2026%27%2C+%2715%2F01%2F2027%27%2C+%2715%2F02%2F2027%27%2C+%2715%2F04%2F2027%27%2C+%2715%2F05%2F2027%27%2C+%2715%2F06%2F2027%27%2C+%2715%2F10%2F2027%27%2C+%2715%2F11%2F2027%27%2C+%2715%2F12%2F2026%27%2C+%2716%2F05%2F2027%27%2C+%2716%2F12%2F2026%27%2C+%2717%2F06%2F2027%27%2C+%2717%2F10%2F2029%27%2C+%2717%2F12%2F2026%27%2C+%2718%2F06%2F2027%27%2C+%2718%2F12%2F2026%27%2C+%2718%2F12%2F2029%27%2C+%2719%2F02%2F2027%27%2C+%2719%2F03%2F2027%27%2C+%2719%2F12%2F2026%27%2C+%2720%2F12%2F2026%27%2C+%2721%2F06%2F2027%27%2C+%2721%2F12%2F2026%27%2C+%2722%2F01%2F2027%27%2C+%2722%2F06%2F2027%27%2C+%2722%2F11%2F2027%27%2C+%2722%2F12%2F2026%27%2C+%2723%2F01%2F2027%27%2C+%2723%2F11%2F2026%27%2C+%2723%2F12%2F2026%27%2C+%2724%2F02%2F2028%27%2C+%2724%2F11%2F2026%27%2C+%2724%2F12%2F2026%27%2C+%2725%2F03%2F2028%27%2C+%2725%2F11%2F2026%27%2C+%2726%2F02%2F2027%27%2C+%2726%2F11%2F2026%27%2C+%2727%2F02%2F2027%27%2C+%2727%2F11%2F2026%27%2C+%2728%2F01%2F2027%27%2C+%2728%2F02%2F2027%27%2C+%2728%2F05%2F2027%27%2C+%2728%2F10%2F2028%27%2C+%2728%2F12%2F2026%27%2C+%2729%2F01%2F2027%27%2C+%2729%2F07%2F2027%27%2C+%2729%2F11%2F2026%27%2C+%2729%2F12%2F2026%27%2C+%2730%2F04%2F2027%27%2C+%2730%2F06%2F2027%27%2C+%2730%2F09%2F2027%27%2C+%2730%2F09%2F2028%27%2C+%2730%2F11%2F2026%27%2C+%2730%2F11%2F2027%27%2C+%2730%2F11%2F2028%27%2C+%2730%2F12%2F2026%27%2C+%2730%2F12%2F2027%27%2C+%2731%2F01%2F2027%27%2C+%2731%2F01%2F2028%27%2C+%2731%2F03%2F2027%27%2C+%2731%2F05%2F2027%27%2C+%2731%2F07%2F2027%27%2C+%2731%2F08%2F2027%27%2C+%2731%2F10%2F2027%27%2C+%2731%2F12%2F2026%27%2C+%2731%2F12%2F2027%27%29&%24order=codi_raisc&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2701%2F01%2F2027%27%2C+%2701%2F03%2F2027%27%2C+%2701%2F04%2F2027%27%2C+%2701%2F09%2F2027%27%2C+%2701%2F12%2F2026%27%2C+%2702%2F03%2F2027%27%2C+%2702%2F12%2F2026%27%2C+%2703%2F07%2F2029%27%2C+%2703%2F12%2F2026%27%2C+%2704%2F12%2F2026%27%2C+%2705%2F01%2F2027%27%2C+%2705%2F02%2F2027%27%2C+%2705%2F06%2F2027%27%2C+%2705%2F11%2F2027%27%2C+%2705%2F12%2F2026%27%2C+%2706%2F01%2F2027%27%2C+%2707%2F07%2F2029%27%2C+%2707%2F10%2F2027%27%2C+%2707%2F12%2F2026%27%2C+%2708%2F01%2F2027%27%2C+%2708%2F12%2F2026%27%2C+%2709%2F12%2F2026%27%2C+%2710%2F01%2F2027%27%2C+%2710%2F03%2F2027%27%2C+%2710%2F12%2F2026%27%2C+%2710%2F12%2F2027%27%2C+%2711%2F12%2F2026%27%2C+%2712%2F01%2F2027%27%2C+%2712%2F02%2F2027%27%2C+%2712%2F03%2F2027%27%2C+%2712%2F11%2F2027%27%2C+%2713%2F06%2F2029%27%2C+%2713%2F12%2F2026%27%2C+%2714%2F08%2F2027%27%2C+%2714%2F12%2F2026%27%2C+%2715%2F01%2F2027%27%2C+%2715%2F02%2F2027%27%2C+%2715%2F04%2F2027%27%2C+%2715%2F05%2F2027%27%2C+%2715%2F06%2F2027%27%2C+%2715%2F10%2F2027%27%2C+%2715%2F11%2F2027%27%2C+%2715%2F12%2F2026%27%2C+%2716%2F05%2F2027%27%2C+%2716%2F12%2F2026%27%2C+%2717%2F06%2F2027%27%2C+%2717%2F10%2F2029%27%2C+%2717%2F12%2F2026%27%2C+%2718%2F06%2F2027%27%2C+%2718%2F12%2F2026%27%2C+%2718%2F12%2F2029%27%2C+%2719%2F02%2F2027%27%2C+%2719%2F03%2F2027%27%2C+%2719%2F12%2F2026%27%2C+%2720%2F12%2F2026%27%2C+%2721%2F06%2F2027%27%2C+%2721%2F12%2F2026%27%2C+%2722%2F01%2F2027%27%2C+%2722%2F06%2F2027%27%2C+%2722%2F11%2F2027%27%2C+%2722%2F12%2F2026%27%2C+%2723%2F01%2F2027%27%2C+%2723%2F11%2F2026%27%2C+%2723%2F12%2F2026%27%2C+%2724%2F02%2F2028%27%2C+%2724%2F11%2F2026%27%2C+%2724%2F12%2F2026%27%2C+%2725%2F03%2F2028%27%2C+%2725%2F11%2F2026%27%2C+%2726%2F02%2F2027%27%2C+%2726%2F11%2F2026%27%2C+%2727%2F02%2F2027%27%2C+%2727%2F11%2F2026%27%2C+%2728%2F01%2F2027%27%2C+%2728%2F02%2F2027%27%2C+%2728%2F05%2F2027%27%2C+%2728%2F10%2F2028%27%2C+%2728%2F12%2F2026%27%2C+%2729%2F01%2F2027%27%2C+%2729%2F07%2F2027%27%2C+%2729%2F11%2F2026%27%2C+%2729%2F12%2F2026%27%2C+%2730%2F04%2F2027%27%2C+%2730%2F06%2F2027%27%2C+%2730%2F09%2F2027%27%2C+%2730%2F09%2F2028%27%2C+%2730%2F11%2F2026%27%2C+%2730%2F11%2F2027%27%2C+%2730%2F11%2F2028%27%2C+%2730%2F12%2F2026%27%2C+%2730%2F12%2F2027%27%2C+%2731%2F01%2F2027%27%2C+%2731%2F01%2F2028%27%2C+%2731%2F03%2F2027%27%2C+%2731%2F05%2F2027%27%2C+%2731%2F07%2F2027%27%2C+%2731%2F08%2F2027%27%2C+%2731%2F10%2F2027%27%2C+%2731%2F12%2F2026%27%2C+%2731%2F12%2F2027%27%29&%24order=codi_raisc&%24limit=50000",
-      "consultat": "2026-11-23T06:00:42.337Z",
+      "consultat": "2026-11-23T06:06:22.428Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "bc0d70e629f78d125bbad8586a42cd665679abc41a9f020a5cede311eba79fee"
@@ -1783,7 +1920,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2731%2F12%2F2028%27%2C+%2731%2F12%2F2029%27%2C+%2731%2F12%2F2032%27%2C+%2731%2F12%2F2033%27%29&%24order=codi_raisc&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2731%2F12%2F2028%27%2C+%2731%2F12%2F2029%27%2C+%2731%2F12%2F2032%27%2C+%2731%2F12%2F2033%27%29&%24order=codi_raisc&%24limit=50000",
-      "consultat": "2026-11-23T06:00:42.528Z",
+      "consultat": "2026-11-23T06:06:22.633Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "2ff5d7c3386db25893490ba842e459dee58bb769782d78d19c88db115339f1dd"
@@ -1791,7 +1928,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/ajns-4mi7.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/ajns-4mi7.json",
-      "consultat": "2026-11-23T06:00:42.706Z",
+      "consultat": "2026-11-23T06:06:22.840Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "f0162ff894c6cc55a94c89835c70c65b781064f25f8a5e3f6b47fc86e4f582a9"
@@ -1799,7 +1936,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/ajns-4mi7.json?%24select=exercici%2C+mes&%24where=exercici+IS+NOT+NULL+AND+mes+IS+NOT+NULL&%24group=exercici%2C+mes&%24order=exercici+DESC%2C+mes+DESC&%24limit=1",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/ajns-4mi7.json?%24select=exercici%2C+mes&%24where=exercici+IS+NOT+NULL+AND+mes+IS+NOT+NULL&%24group=exercici%2C+mes&%24order=exercici+DESC%2C+mes+DESC&%24limit=1",
-      "consultat": "2026-11-23T06:00:42.938Z",
+      "consultat": "2026-11-23T06:06:23.075Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "ad6358c49b44ce30595c3878559bdd283e4de36b4af3aad3b6d498c8bd6f9348"
@@ -1807,7 +1944,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/ajns-4mi7.json?%24select=entitat_codi%2C+entitat%2C+ordre_protocol_secci%2C+secci_codi%2C+secci%2C+sum%28cr_dits_inicials%29+as+inicial%2C+sum%28pressupost_definitiu%29+as+definitiu%2C+sum%28obligacions_reconegudes%29+as+reconegut%2C+sum%28obligacions_pagades%29+as+pagat&%24where=exercici+%3D+2026+and+mes+%3D+%2710+Octubre%27&%24group=entitat_codi%2C+entitat%2C+ordre_protocol_secci%2C+secci_codi%2C+secci&%24order=entitat_codi%2C+secci_codi&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/ajns-4mi7.json?%24select=entitat_codi%2C+entitat%2C+ordre_protocol_secci%2C+secci_codi%2C+secci%2C+sum%28cr_dits_inicials%29+as+inicial%2C+sum%28pressupost_definitiu%29+as+definitiu%2C+sum%28obligacions_reconegudes%29+as+reconegut%2C+sum%28obligacions_pagades%29+as+pagat&%24where=exercici+%3D+2026+and+mes+%3D+%2710+Octubre%27&%24group=entitat_codi%2C+entitat%2C+ordre_protocol_secci%2C+secci_codi%2C+secci&%24order=entitat_codi%2C+secci_codi&%24limit=50000",
-      "consultat": "2026-11-23T06:00:43.148Z",
+      "consultat": "2026-11-23T06:06:23.288Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "55601ec4609ada1bb3394efd4681a49b3a362463d27dee8accf7c4713d2cfa7e"
@@ -1815,7 +1952,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/api/views/42am-vra2.json",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/42am-vra2.json",
-      "consultat": "2026-11-23T06:00:43.338Z",
+      "consultat": "2026-11-23T06:06:23.484Z",
       "estat": 200,
       "tipus": "application/json; charset=utf-8",
       "sha256": "9b083449ebd65e40752a0892dda46541a109b1c237aded460af70d5b4884809d"
@@ -1823,7 +1960,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/42am-vra2.json?%24select=exercici%2C+mes&%24where=exercici+IS+NOT+NULL+AND+mes+IS+NOT+NULL&%24group=exercici%2C+mes&%24order=exercici+DESC%2C+mes+DESC&%24limit=1",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/42am-vra2.json?%24select=exercici%2C+mes&%24where=exercici+IS+NOT+NULL+AND+mes+IS+NOT+NULL&%24group=exercici%2C+mes&%24order=exercici+DESC%2C+mes+DESC&%24limit=1",
-      "consultat": "2026-11-23T06:00:43.520Z",
+      "consultat": "2026-11-23T06:06:23.687Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "ad6358c49b44ce30595c3878559bdd283e4de36b4af3aad3b6d498c8bd6f9348"
@@ -1831,7 +1968,7 @@
     {
       "url": "https://analisi.transparenciacatalunya.cat/resource/42am-vra2.json?%24select=entitat_codi%2C+entitat%2C+cap_tol_codi%2C+cap_tol%2C+sum%28previsions_pressupost_ries%29+as+inicial%2C+sum%28previsions_finals%29+as+finals%2C+sum%28drets_reconeguts_nets%29+as+reconegut%2C+sum%28recaptaci_neta%29+as+recaptat&%24where=exercici+%3D+2026+and+mes+%3D+%2710+Octubre%27&%24group=entitat_codi%2C+entitat%2C+cap_tol_codi%2C+cap_tol&%24order=entitat_codi%2C+cap_tol_codi&%24limit=50000",
       "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/42am-vra2.json?%24select=entitat_codi%2C+entitat%2C+cap_tol_codi%2C+cap_tol%2C+sum%28previsions_pressupost_ries%29+as+inicial%2C+sum%28previsions_finals%29+as+finals%2C+sum%28drets_reconeguts_nets%29+as+reconegut%2C+sum%28recaptaci_neta%29+as+recaptat&%24where=exercici+%3D+2026+and+mes+%3D+%2710+Octubre%27&%24group=entitat_codi%2C+entitat%2C+cap_tol_codi%2C+cap_tol&%24order=entitat_codi%2C+cap_tol_codi&%24limit=50000",
-      "consultat": "2026-11-23T06:00:43.700Z",
+      "consultat": "2026-11-23T06:06:23.884Z",
       "estat": 200,
       "tipus": "application/json;charset=utf-8",
       "sha256": "afb2d60e6ba785fd95715a76b96c24927e45299e1a653bb085f75fb0582791c3"
