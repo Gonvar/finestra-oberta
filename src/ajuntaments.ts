@@ -8,17 +8,17 @@ export const PLENS = 'nm3n-3vbj';
 export const ENS_LOCALS = '6nei-4b44';
 const LIMIT = 50_000;
 
-type Fila = Record<string, unknown>;
+export type Fila = Record<string, unknown>;
 
 /** Socrata omet els camps nuls: un camp que falta és null, i un d'obligatori que falta, un error. */
-function camp(fila: Fila, nom: string): string | null {
+export function camp(fila: Fila, nom: string): string | null {
   const valor = fila[nom];
   if (valor === undefined) return null;
   if (typeof valor !== 'string') throw new SourceError(`El camp ${nom} no és text: ${valor}.`);
   return valor;
 }
 
-function obligatori(fila: Fila, nom: string, conjunt: string) {
+export function obligatori(fila: Fila, nom: string, conjunt: string) {
   const valor = camp(fila, nom);
   if (valor === null || valor.trim() === '')
     throw new SourceError(`Una fila de ${conjunt} no té ${nom}.`);

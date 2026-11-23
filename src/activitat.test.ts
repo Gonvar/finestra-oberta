@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import {
   construirActivitat,
+  construirNormes,
   llegirAcords,
   llegirLlista,
   NORMATIVA,
@@ -16,7 +17,7 @@ const LLISTA = `${BASE}/sessions-tingudes/index.html?p_legislatura=15&p_codi=46`
 const acordsUrl = (n: number) =>
   `${BASE}/sessions-tingudes/acords-sessions/index.html?p_legislatura=15&p_codi=46&p_sessio=${n}`;
 
-const index = `<ul class="pagina_llistat"><li><a href="/web/activitat-parlamentaria/sessions-organs/XV-legislatura/index.html" title="Vegeu XV legislatura">XV legislatura</a></li><li><a href="/web/activitat-parlamentaria/sessions-organs/XIII-legislatura/index.html" title="Vegeu XIII - XIV legislatura">XIII - XIV legislatura</a></li></ul>`;
+const index = `<nav><a href="/web/activitat-parlamentaria/sessions-organs/XIII-legislatura/index.html">Anterior</a></nav><ul class="pagina_llistat"><li><a href="/web/activitat-parlamentaria/sessions-organs/XV-legislatura/index.html" title="Vegeu XV legislatura">XV legislatura</a></li><li><a href="/web/activitat-parlamentaria/sessions-organs/XIII-legislatura/index.html" title="Vegeu XIII - XIV legislatura">XIII - XIV legislatura</a></li></ul>`;
 const organs = `<li><h3> <a href="/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&amp;p_codi=46" title="Vegeu la informació de Ple del Parlament">Ple del Parlament</a></h3></li><li><h3> <a href="/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&amp;p_codi=1314" title="Vegeu la informació de Comissió d'Exemple">Comissió d'Exemple</a></h3></li>`;
 
 const fila = (n: number, caracter: string, data: string) => `
@@ -97,6 +98,7 @@ test('els acords conserven el text oficial i només donen el resultat quan és c
         "S'aprova la Llei. Comissió d'Exemple",
       ),
       punt(8, 'Moció subsegüent sobre l’exemple', '390-00001/15', ''),
+      punt(9, 'Decret llei d’un altre exemple', '203-00002/15', 'Es deroga el Decret llei.'),
     ]),
     'u',
   );
@@ -111,7 +113,7 @@ test('els acords conserven el text oficial i només donen el resultat quan és c
   });
   assert.deepEqual(
     punts.map((p) => p.resultat),
-    [null, 'aprovat', 'rebutjat', null, null, 'convalidat', 'aprovat', null],
+    [null, 'aprovat', 'rebutjat', null, null, 'convalidat', 'aprovat', null, 'derogat'],
   );
   assert.equal(punts[6]!.acord, "S'aprova la Llei. Comissió d'Exemple");
   assert.equal(pagines, 1);
@@ -122,6 +124,15 @@ test('els acords fallen si un punt no té la forma esperada', () => {
     punt(1, 'T', '302-00001/15', 'Es rebutja.').replace(/<p>Número[\s\S]*?<\/p>/, ''),
   ]);
   assert.throws(() => llegirAcords(sense, 'u'), /forma esperada/);
+});
+
+test('els acords fallen si no es llegeixen tots els punts numerats o si no n’hi ha cap', () => {
+  const tallada = acords([punt(1, 'T', '302-00001/15', 'Es rebutja.')]).replace(
+    '</ul>',
+    '</ul><ul><li><strong class="punt_ordre">2</strong></li></ul>',
+  );
+  assert.throws(() => llegirAcords(tallada, 'u'), /té 2 punts i se n'han trobat 1/);
+  assert.throws(() => llegirAcords(acords([]), 'u'), /té 0 punts/);
 });
 
 test('l’activitat llegeix totes les pàgines, desa una vegada les sessions repetides i llegeix les normes', async () => {
@@ -210,4 +221,25 @@ test('l’activitat falla si una sessió surt dues vegades amb dades diferents',
     return new Response('', { status: 404 });
   };
   await assert.rejects(construirActivitat(fetchImpl, '2026-11-22', 0), /dades diferents/);
+});
+
+test('les normes fallen si a una fila li falta un camp', async () => {
+  const fetchImpl: Fetch = async (input) => {
+    const url = String(input);
+    if (url.endsWith(`/api/views/${NORMATIVA}.json`))
+      return Response.json({ name: 'Normativa', attribution: 'Generalitat', rowsUpdatedAt: 1 });
+    return Response.json([
+      {
+        t_tol_de_la_norma: 'Llei 1/2026, d’exemple',
+        rang_de_norma: 'Llei',
+        data_del_document: '2026-01-02T00:00:00.000',
+        data_de_publicaci_del_diari: '2026-01-05T00:00:00.000',
+        n_mero_de_diari: '9000',
+        url_ltima_versi_format_html: {
+          url: 'https://portaljuridic.gencat.cat/eli/es-ct/l/2026/01/02/1',
+        },
+      },
+    ]);
+  };
+  await assert.rejects(construirNormes(fetchImpl, '2024-06-10'), /no té vig_ncia_de_la_norma/);
 });

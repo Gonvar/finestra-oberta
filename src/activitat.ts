@@ -5,30 +5,34 @@
 // El Parlament no publica qui ha votat què ni l'assistència de cada persona diputada (ho diu el seu
 // portal de transparència), i el recompte de vots només és dins el PDF del Diari de Sessions. Per
 // això aquí no hi ha vots: el que no publica la font no s'endevina.
-import { getJson, getText, SourceError, type Fetch } from './comun.ts';
+import { obligatori, type Fila } from './ajuntaments.ts';
+import { dia, getJson, getText, metadades, SOCRATA, SourceError, type Fetch } from './comun.ts';
 import { comprovaCodificacio, pausa, text } from './institucions.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
 export const SESSIONS_ORGANS = `${PARLAMENT}/web/activitat-parlamentaria/sessions-organs/index.html`;
-const SOCRATA = 'https://analisi.transparenciacatalunya.cat';
 export const NORMATIVA = 'n6hn-rmy7';
 /** Les normes amb rang de llei que publica el DOGC: les lleis del Parlament i els decrets llei del Govern. */
 export const RANGS = ['Llei', 'Decret llei'] as const;
 
 /**
  * Quin resultat vol dir cada acord, per l'inici del text oficial. Només hi ha els acords que diuen
- * sense dubte que el Ple ha aprovat, convalidat o rebutjat la iniciativa. «S'aprova l'esmena a la
+ * sense dubte que el Ple ha aprovat, convalidat, derogat o rebutjat la iniciativa. «S'aprova l'esmena a la
  * totalitat» o «Es rebutja l'esmena a la totalitat» parlen d'una esmena, no de la iniciativa, i
  * queden sense resultat, com la resta: el text oficial és sempre a `acord`.
  */
-export const RESULTATS: [string, 'aprovat' | 'convalidat' | 'rebutjat'][] = [
+export const RESULTATS: [string, 'aprovat' | 'convalidat' | 'derogat' | 'rebutjat'][] = [
   ["S'aprova la Llei.", 'aprovat'],
   ["S'aprova la Moció.", 'aprovat'],
+  ["S'aprova el Reglament.", 'aprovat'],
   ["S'adopta la Resolució.", 'aprovat'],
   ["S'aprova.", 'aprovat'],
   ["S'adopta.", 'aprovat'],
+  ['Aprovació pel Ple del projecte de pressupost.', 'aprovat'],
   ['Es convalida el Decret llei', 'convalidat'],
   ['Es valida el Decret llei', 'convalidat'],
+  // Un decret llei que el Ple no convalida queda derogat.
+  ['Es deroga el Decret llei.', 'derogat'],
   ['Es rebutja.', 'rebutjat'],
 ];
 
@@ -41,7 +45,7 @@ const absoluta = (href: string) => new URL(href.replaceAll('&amp;', '&'), PARLAM
 export async function llistaDelPle(fetchImpl: Fetch) {
   const index = await getText(fetchImpl, SESSIONS_ORGANS);
   const legislatura = index.match(
-    /href="([^"]*\/sessions-organs\/[\w-]+-legislatura\/index\.html)"/,
+    /<ul class="pagina_llistat">\s*<li>\s*<a href="([^"]*\/sessions-organs\/[\w-]+-legislatura\/index\.html)"/,
   );
   if (legislatura === null) throw new SourceError('La llista de legislatures no té cap enllaç.');
   const url = absoluta(legislatura[1]!);
@@ -86,6 +90,10 @@ export function llegirAcords(html: string, url: string) {
   const llista = html.match(/<ul class="llista_numerada">([\s\S]*?)<\/ul>/);
   if (llista === null) throw new SourceError(`${url} no té la llista de punts.`);
   const elements = llista[1]!.split('<li>').slice(1);
+  // Si la llista no es llegeix sencera (una etiqueta nova, una llista dins un punt), falten punts.
+  const numerats = (html.match(/class="punt_ordre"/g) ?? []).length;
+  if (elements.length === 0 || elements.length !== numerats)
+    throw new SourceError(`${url} té ${numerats} punts i se n'han trobat ${elements.length}.`);
   const punts = elements.map((li) => {
     const m = li.match(
       /<strong class="punt_ordre">(\d+)<\/strong>\s*<div>\s*<p>([\s\S]*?)<\/p>\s*<p>Número d'expedient: <a [^>]*href="([^"]+)"[^>]*>([^<]+)<\/a><\/p>\s*<p><i>([^<]*)<\/i><\/p>/,
@@ -105,21 +113,17 @@ export function llegirAcords(html: string, url: string) {
   return { pagines: Number(pagines[1]), punts };
 }
 
-type Norma = {
-  t_tol_de_la_norma: string;
-  rang_de_norma: string;
-  data_del_document: string;
-  data_de_publicaci_del_diari: string;
-  n_mero_de_diari: string;
-  vig_ncia_de_la_norma: string;
-  url_ltima_versi_format_html: { url: string };
-};
-
-type Meta = { name: string; rowsUpdatedAt: number; attribution: string };
+/** L'enllaç a l'última versió és un objecte amb `url`. */
+function enllac(fila: Fila) {
+  const valor = fila.url_ltima_versi_format_html;
+  if (typeof valor !== 'object' || valor === null || typeof (valor as Fila).url !== 'string')
+    throw new SourceError('Una norma del DOGC no té enllaç a l’última versió.');
+  return (valor as { url: string }).url;
+}
 
 /** Les lleis i els decrets llei publicats al DOGC des de `des_de`, del més nou al més antic. */
 export async function construirNormes(fetchImpl: Fetch, des_de: string) {
-  const meta = await getJson<Meta>(fetchImpl, `${SOCRATA}/api/views/${NORMATIVA}.json`);
+  const meta = await metadades(fetchImpl, NORMATIVA);
   const limit = 1000;
   const consulta = new URLSearchParams({
     $select:
@@ -128,7 +132,7 @@ export async function construirNormes(fetchImpl: Fetch, des_de: string) {
     $order: 'data_de_publicaci_del_diari DESC, n_mero_de_control DESC',
     $limit: String(limit),
   });
-  const files = await getJson<Norma[]>(
+  const files = await getJson<Fila[]>(
     fetchImpl,
     `${SOCRATA}/resource/${NORMATIVA}.json?${consulta}`,
   );
@@ -136,16 +140,19 @@ export async function construirNormes(fetchImpl: Fetch, des_de: string) {
   return {
     font: `Dades obertes de Catalunya: ${meta.name} (${meta.attribution})`,
     url: `${SOCRATA}/d/${NORMATIVA}`,
-    data_dades: new Date(meta.rowsUpdatedAt * 1000).toISOString().slice(0, 10),
-    normes: files.map((f) => ({
-      titol: f.t_tol_de_la_norma.trim(),
-      rang: f.rang_de_norma,
-      data: f.data_del_document.slice(0, 10),
-      data_publicacio: f.data_de_publicaci_del_diari.slice(0, 10),
-      dogc: f.n_mero_de_diari,
-      vigencia: f.vig_ncia_de_la_norma,
-      url: f.url_ltima_versi_format_html.url,
-    })),
+    data_dades: dia(meta),
+    normes: files.map((f) => {
+      const camp = (nom: string) => obligatori(f, nom, `la normativa del DOGC (${NORMATIVA})`);
+      return {
+        titol: camp('t_tol_de_la_norma').trim(),
+        rang: camp('rang_de_norma'),
+        data: camp('data_del_document').slice(0, 10),
+        data_publicacio: camp('data_de_publicaci_del_diari').slice(0, 10),
+        dogc: camp('n_mero_de_diari'),
+        vigencia: camp('vig_ncia_de_la_norma'),
+        url: enllac(f),
+      };
+    }),
   };
 }
 
@@ -192,7 +199,7 @@ export async function construirActivitat(fetchImpl: Fetch, avui: string, pausaMs
     font: 'Parlament de Catalunya: sessions tingudes i acords del Ple',
     url: ple.url,
     data_consulta: avui,
-    nota: 'El Parlament no publica qui ha votat què ni l’assistència de cada persona diputada, i el recompte de vots només surt al Diari de Sessions, en PDF. Per això aquí hi ha el resultat de cada punt, però no els vots. `acord` és el text del Parlament; `resultat` només hi és quan l’acord diu que la iniciativa s’aprova, es convalida o es rebutja (vegeu RESULTATS a src/activitat.ts). Les normes són les lleis i els decrets llei publicats al DOGC des de la sessió constitutiva de la legislatura.',
+    nota: 'El Parlament no publica qui ha votat què ni l’assistència de cada persona diputada, i el recompte de vots només surt al Diari de Sessions, en PDF. Per això aquí hi ha el resultat de cada punt, però no els vots. `acord` és el text del Parlament; `resultat` només hi és quan l’acord diu que la iniciativa s’aprova, es convalida, es deroga o es rebutja (vegeu RESULTATS a src/activitat.ts). Les normes són les lleis i els decrets llei publicats al DOGC des de la sessió constitutiva de la legislatura.',
     legislatura: ple.legislatura,
     sessions,
     normes: await construirNormes(fetchImpl, constitutiva.data),
