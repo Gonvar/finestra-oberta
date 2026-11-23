@@ -100,6 +100,8 @@ test('la biografia surt per apartats, una línia per salt de línia', () => {
   assert.equal(llegirBiografia(fitxa({ biografia: false }), FITXA), undefined);
   const solt = fitxa().replace('<p class="text">Un altre paràgraf.</p>', 'Un text solt.');
   assert.throws(() => llegirBiografia(solt, FITXA), /forma inesperada/);
+  const abans = fitxa().replace('<p class="text"><h3', '<p class="text">Un text abans.<h3');
+  assert.throws(() => llegirBiografia(abans, FITXA), /forma inesperada/);
 });
 
 test('una declaració que no es coneix atura la lectura', () => {

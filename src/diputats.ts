@@ -161,7 +161,8 @@ export function llegirBiografia(html: string, url: string): Biografia | undefine
       throw new SourceError(`La biografia de ${url} té una forma inesperada.`);
     return { titol: text(m[1]!), linies: paragrafs.flatMap((p) => linies(p[1]!)) };
   });
-  if (apartats.length !== (tros.match(/<h3/g) ?? []).length || apartats.length === 0)
+  const abans = tros.slice(tros.indexOf('</h2>'), tros.indexOf('<h3'));
+  if (apartats.length !== (tros.match(/<h3/g) ?? []).length || apartats.length === 0 || text(abans))
     throw new SourceError(`La biografia de ${url} té una forma inesperada.`);
   return {
     data: { que: data[1] as 'Presentació' | 'Actualització', dia: diaDelWeb(data[2]!, url) },
@@ -215,8 +216,8 @@ function taula(html: string, url: string) {
   if (capcalera === undefined || cos === undefined)
     throw new SourceError(`${url} té una taula sense capçalera o sense files.`);
   const columnes = celes(capcalera, 'th');
-  const files = [...cos.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)].map((m) => celes(m[1]!, 'td'));
-  if (files.length !== (cos.match(/<tr\b/g) ?? []).length)
+  const files = [...cos.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map((m) => celes(m[1]!, 'td'));
+  if (files.length !== (cos.match(/<tr\b/gi) ?? []).length)
     throw new SourceError(`${url} té una taula amb files que no es llegeixen.`);
   if (files.some((f) => f.length !== columnes.length))
     throw new SourceError(
