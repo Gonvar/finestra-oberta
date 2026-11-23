@@ -18,8 +18,13 @@ Aquests són els dominis que el codi de `src/` pot consultar. [src/fonts.test.ts
 | `barcelona.cat`              | Ajuntament de Barcelona (Open Data BCN)      |
 | `icgc.cat`                   | Institut Cartogràfic i Geològic de Catalunya |
 | `diba.cat`                   | Diputació de Barcelona (CIDO)                |
+| `fgc.cat`                    | Ferrocarrils de la Generalitat de Catalunya  |
+| `renfe.com`                  | Renfe (Rodalies de Catalunya)                |
+| `tmb.cat`                    | Transports Metropolitans de Barcelona        |
 
 Un domini inclou els seus subdominis: `api.idescat.cat` entra amb `idescat.cat`.
+
+`fgc.cat`, `renfe.com` i `tmb.cat` són els operadors públics de transport: FGC és de la Generalitat, Renfe de l'Estat i TMB de l'Àrea Metropolitana de Barcelona. Només ells publiquen l'estat del servei en temps real (retards, avisos i propers trens), que no és a cap de les altres fonts. Vegeu [docs/transport.md](docs/transport.md).
 
 **Per afegir una font**, la pull request ha de:
 
@@ -30,6 +35,8 @@ Un domini inclou els seus subdominis: `api.idescat.cat` entra amb `idescat.cat`.
 ## 2. Les dades no les escriu ningú a mà
 
 Les dades del Govern, del Parlament, dels ajuntaments, dels municipis, de les eleccions municipals, del mapa dels municipis, dels ajuts, del pressupost, dels contractes i de les oposicions les genera el [workflow de dades](.github/workflows/dades.yml) a partir de les fonts i es publiquen a la branca `dades`, amb una còpia de cada resposta oficial i una atestació de GitHub. Qualsevol persona pot comprovar que surten de la font (vegeu [docs/institucions.md](docs/institucions.md)), llevat de les fitxes de govern.cat, que es copien a mà i no tenen aquesta còpia (vegeu més avall).
+
+L'històric del transport públic segueix les mateixes regles, però es publica a `historic.finestraoberta.cat` i no a la branca `dades`, perquè es fa una foto cada mitja hora. El genera el [workflow de transport](.github/workflows/transport.yml), amb una còpia de cada resposta durant 30 dies i una atestació de GitHub (vegeu [docs/transport.md](docs/transport.md)).
 
 - **Cap pull request no pot afegir ni canviar fitxers a `dades/`.** La CI ho comprova i falla.
 - **El codi no pot corregir la font.** Res de taules que reescriguin un nom, un càrrec, un grup, un partit, un escó o una xifra que la font dona d'una altra manera. Si la font s'equivoca, es demana a l'organisme que la corregeixi, i mentrestant es mostra tal com és, o l'script s'atura.

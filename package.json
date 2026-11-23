@@ -13,6 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "barcelona": "node src/index.ts barcelona",
+    "transport": "node src/index.ts transport",
     "dades": "node src/dades.ts",
     "verifica-dades": "node src/verifica-dades.ts"
   },
