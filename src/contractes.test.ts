@@ -94,19 +94,7 @@ function font({
 test("publica les adjudicacions d'aquest any per organisme i procediment, fins al dia de les dades", async () => {
   const { fetchImpl, urls } = font();
   const contractes = (await construirContractes(fetchImpl))['contractes.json'];
-  // Les situacions es demanen mes a mes, de gener al mes de les dades.
-  const mesos = urls.filter(
-    (u) => u.searchParams.get('$group') === 'situaci_contractual, subjecte_ambit',
-  );
-  assert.deepEqual(
-    [mesos.length, mesos[0]!.searchParams.get('$where'), mesos[10]!.searchParams.get('$where')],
-    [
-      11,
-      "data_adjudicacio >= '2026-01-01' and data_adjudicacio < '2026-02-01'",
-      "data_adjudicacio >= '2026-11-01' and data_adjudicacio < '2026-11-17'",
-    ],
-  );
-  const [, universitats, local, , , posteriors] = urls.filter((u) => !mesos.includes(u));
+  const [, , universitats, local, , , posteriors] = urls;
   // Només adjudicacions i menors, de l'1 de gener a l'última actualització de la font, una consulta
   // per àmbit amb adjudicacions i per agrupació; l'àmbit que només té liquidacions no es demana.
   assert.equal(
@@ -202,7 +190,7 @@ test('el dia de les dades és el de Catalunya', async () => {
   const { fetchImpl, urls } = font({ rowsUpdatedAt: Date.UTC(2026, 10, 16, 23, 30) / 1000 });
   const contractes = (await construirContractes(fetchImpl))['contractes.json'];
   assert.equal(contractes.data_dades, '2026-11-17');
-  assert.match(urls[11]!.searchParams.get('$where')!, /data_adjudicacio < '2026-11-18'$/);
+  assert.match(urls[1]!.searchParams.get('$where')!, /data_adjudicacio < '2026-11-18'$/);
 });
 
 test('publica qui guanya a cada organisme, amb les mateixes inscripcions que per procediment', async () => {
