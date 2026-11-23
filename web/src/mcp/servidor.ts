@@ -43,7 +43,7 @@ export function creaServidor(dades: Dades) {
     {
       title: 'Llistar els conjunts',
       description:
-        "Els conjunts de dades publicats, amb la font oficial, l'enllaç i la data de cadascun, i el dia de l'última consulta a les fonts.",
+        "Els conjunts de dades publicats, amb la font oficial, l'enllaç, la data de cadascun i el dia en què es va consultar la seva font.",
       inputSchema: z.object({}),
       annotations: NOMES_LECTURA,
     },

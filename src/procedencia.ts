@@ -396,7 +396,8 @@ export async function reprodueix(origen: string, desti: string, fonts: Fonts) {
     );
   // Primer es construeix tot, sense escriure res: una reproducció que no quadra no ha de deixar
   // `desti` a mitges. La web llegeix de procedencia.json el dia de cada font i l'empremta de cada
-  // fitxer: s'hi desa la publicada amb les empremtes dels fitxers nous. Les còpies no s'hi copien.
+  // fitxer: s'hi desa la publicada amb les empremtes dels fitxers nous. `captures` hi continua
+  // dient les còpies de la carpeta publicada, que no es copien a `desti`.
   const fitxers: Record<string, unknown> = {};
   const grups: Record<string, Grup> = {};
   for (const [nom, construeix] of Object.entries(fonts)) {

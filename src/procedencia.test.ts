@@ -1,5 +1,5 @@
-import { createHash } from 'node:crypto';
 // Fonts i dades sintètiques: dues URL inventades i un JSON que en depèn.
+import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
