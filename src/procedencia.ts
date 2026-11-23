@@ -211,8 +211,16 @@ async function reprodueixCopies<T extends Record<string, unknown>>(
 
   let seguent = 0;
   let desquadre: DesquadreError | undefined;
-  const reproduit: Fetch = async (input) => {
+  // Les còpies només guarden l'URL de cada petició, no el mètode ni el cos: una petició que no sigui
+  // un GET sense cos no es pot servir des d'una còpia.
+  const reproduit: Fetch = async (input, init) => {
     const captura = procedencia.captures[seguent];
+    if (init !== undefined && ((init.method !== undefined && init.method !== 'GET') || init.body)) {
+      desquadre = new DesquadreError(
+        `Les dades fan un ${init.method} a ${String(input)}, i les còpies només són de GET.`,
+      );
+      throw desquadre;
+    }
     if (captura === undefined || captura.url !== String(input)) {
       desquadre = new DesquadreError(
         `Les dades demanen ${String(input)}, però la còpia següent és ${captura === undefined ? 'cap' : `de ${captura.url}`}.`,
@@ -269,7 +277,14 @@ export async function verifica(carpeta: string, construeix: Construeix) {
  * fonts. Falla amb DesquadreError si el codi d'ara no demana les mateixes URL que les còpies.
  */
 export async function reprodueix(origen: string, desti: string, construeix: Construeix) {
+  // Primer es comprova que el codi fa servir exactament les còpies, sense escriure res: genera buida
+  // `desti`, i una reproducció que no quadra no l'ha de deixar a mitges.
+  await reprodueixCopies(origen, (fetchImpl, data) => construeix(fetchImpl, data, 0));
   await reprodueixCopies(origen, (fetchImpl, data) =>
     genera(desti, fetchImpl, data, construeix, 0),
   );
+  // genera hi desa una procedència amb l'hora d'ara i sense l'adreça de cada resposta. No és la de
+  // cap consulta a les fonts, i no s'ha de poder confondre amb una.
+  await rm(join(desti, 'procedencia.json'));
+  await rm(join(desti, 'captures'), { recursive: true });
 }

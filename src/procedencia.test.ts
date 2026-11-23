@@ -1,6 +1,6 @@
 // Fonts i dades sintètiques: dues URL inventades i un JSON que en depèn.
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
@@ -238,6 +238,7 @@ test('reprodueix genera les dades amb el codi nou a partir de les còpies, sense
     'text.json': { text: await getText(fetchImpl, B), data },
   });
   await reprodueix(publicada, desti, nou);
+  assert.deepEqual((await readdir(desti)).sort(), ['resultat.json', 'text.json']);
   assert.deepEqual(JSON.parse(await readFile(join(desti, 'resultat.json'), 'utf8')), { doble: 14 });
   assert.deepEqual(JSON.parse(await readFile(join(desti, 'text.json'), 'utf8')), {
     text: '<p>Hola</p>',
@@ -255,8 +256,35 @@ test('reprodueix falla si el codi nou demana una URL que no és a les còpies', 
   });
   await assert.rejects(
     reprodueix(publicada, desti, nou),
-    /demanen https:\/\/font\.example\/c\.json/,
+    (error) =>
+      error instanceof DesquadreError &&
+      /demanen https:\/\/font\.example\/c\.json/.test(error.message),
   );
+  await rm(publicada, { recursive: true });
+  await rm(desti, { recursive: true });
+});
+
+test('reprodueix no toca la carpeta nova si el codi nou fa servir menys còpies', async () => {
+  const publicada = await carpetaGenerada();
+  const desti = await mkdtemp(join(tmpdir(), 'reproduides-'));
+  await writeFile(join(desti, 'anterior.json'), '{}\n');
+  const nou: Construeix = async (fetchImpl) => ({
+    'resultat.json': await getJson(fetchImpl, A),
+  });
+  await assert.rejects(reprodueix(publicada, desti, nou), DesquadreError);
+  assert.deepEqual(await readdir(desti), ['anterior.json']);
+  await rm(publicada, { recursive: true });
+  await rm(desti, { recursive: true });
+});
+
+test('reprodueix no serveix una còpia a una petició que no és un GET', async () => {
+  const publicada = await carpetaGenerada();
+  const desti = await mkdtemp(join(tmpdir(), 'reproduides-'));
+  const nou: Construeix = async (fetchImpl) => {
+    const resposta = await fetchImpl(A, { method: 'POST', body: '{}' });
+    return { 'resultat.json': await resposta.json() };
+  };
+  await assert.rejects(reprodueix(publicada, desti, nou), DesquadreError);
   await rm(publicada, { recursive: true });
   await rm(desti, { recursive: true });
 });

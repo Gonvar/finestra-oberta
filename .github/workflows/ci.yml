@@ -43,29 +43,30 @@ jobs:
         id: node
         with:
           node-version-file: .nvmrc
-      # node_modules sencer, no la memòria cau de npm: npm ci se'l salta si el lockfile i Node són els
-      # mateixos. Les pull requests fan servir la que desa main.
+      # node_modules sencer, no la memòria cau de npm: npm ci se'l salta si package.json, el lockfile i
+      # Node són els mateixos. package.json hi és perquè npm ci és el que avisa quan no quadra amb el
+      # lockfile. Les pull requests fan servir la que desa main.
       - uses: actions/cache@v5
         id: dependencies
         with:
           path: node_modules
-          key: node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('package-lock.json') }}
+          key: node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('package.json', 'package-lock.json') }}
       - id: install
         if: steps.dependencies.outputs.cache-hit != 'true'
         run: npm ci
       # Cada comprovació s'executa encara que falli l'anterior, perquè el resultat les digui totes.
-      - if: ${{ !cancelled() && steps.install.outcome != 'failure' }}
+      - if: ${{ !cancelled() && steps.dependencies.outcome == 'success' && steps.install.outcome != 'failure' }}
         run: npm test
-      - if: ${{ !cancelled() && steps.install.outcome != 'failure' }}
+      - if: ${{ !cancelled() && steps.dependencies.outcome == 'success' && steps.install.outcome != 'failure' }}
         run: npm run typecheck
-      - if: ${{ !cancelled() && steps.install.outcome != 'failure' }}
+      - if: ${{ !cancelled() && steps.dependencies.outcome == 'success' && steps.install.outcome != 'failure' }}
         run: npm run format:check
 
   web:
     name: Web
     runs-on: ubuntu-latest
-    # Amb les còpies publicades n'hi ha prou amb uns 2 minuts. Consultar les fonts arriba als 14 al p95.
-    timeout-minutes: 20
+    # Amb les còpies publicades n'hi ha prou amb uns 2 minuts. Consultar les fonts ha arribat als 15.
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: web
@@ -79,21 +80,21 @@ jobs:
         id: dependencies
         with:
           path: web/node_modules
-          key: web-node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('web/package-lock.json') }}
+          key: web-node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('web/package.json', 'web/package-lock.json') }}
       - if: steps.dependencies.outputs.cache-hit != 'true'
         run: npm ci
       # La web es construeix amb les dades que genera el codi d'aquesta pull request, no amb les
       # publicades a la branca dades, que surten del codi de main i poden tenir una altra forma. El codi
       # nou es fa passar per les còpies de les fonts publicades, sense consultar-les: dona el mateix en
       # segons, i no depèn de si una font respon. Només si el codi demana altres URL que les de les
-      # còpies (el codi 3) cal consultar les fonts.
+      # còpies, o no sap llegir alguna còpia (el codi 3), cal consultar les fonts.
       - name: Genera les dades amb el codi de la pull request
         run: |
           git clone --depth 1 --branch dades "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git" ../publicades
           node ../src/reprodueix-dades.ts ../publicades ../dades || {
             estat=$?
             if [ "$estat" -ne 3 ]; then exit "$estat"; fi
-            echo "::notice::El codi demana altres URL que les còpies publicades: es consulten les fonts."
+            echo "::notice::Les còpies publicades no serveixen per al codi d'aquesta pull request: es consulten les fonts."
             node ../src/dades.ts ../dades
           }
       - run: npm test
@@ -116,7 +117,7 @@ jobs:
         id: dependencies
         with:
           path: web/node_modules
-          key: web-node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('web/package-lock.json') }}
+          key: web-node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('web/package.json', 'web/package-lock.json') }}
       - if: steps.dependencies.outputs.cache-hit != 'true'
         run: npm ci
       # Cloudflare construeix la web amb la branca dades tal com està publicada, que el workflow de
