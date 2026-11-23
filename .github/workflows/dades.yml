@@ -158,3 +158,20 @@ jobs:
           git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments, l’agenda, l’activitat del Parlament, els ajuts i el pressupost' \
             -m "Execució: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           git push origin dades
+
+  # Workers Builds només compila la web quan canvia main, i la web llegeix les dades en compilar-se.
+  # Sense aquest job, la web es quedaria amb les dades d'abans fins al canvi de codi següent. Va a part
+  # perquè, si Cloudflare falla, es pugui tornar a llançar sol: tornar a llançar `publica` no ho
+  # permetria, perquè les dades ja no serien més noves que les publicades.
+  web:
+    name: Torna a compilar la web
+    needs: publica
+    runs-on: ubuntu-latest
+    environment: dades
+    permissions: {}
+    steps:
+      - env:
+          # L'URL del deploy hook de Workers Builds, que compila main. Qui la té pot llançar
+          # compilacions, per això és un secret.
+          HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: curl -fsS --retry 3 -X POST "$HOOK" > /dev/null

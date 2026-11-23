@@ -14,6 +14,7 @@ La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 
 
 - Primer comprova que el que hi ha publicat a `dades` encara es pot reproduir. Després executa `npm run dades` i comprova que el resultat nou també es pot reproduir a partir de les còpies de les fonts.
 - Si la composició ha canviat, o si el que hi ha publicat ja no es pot reproduir, signa `procedencia.json` amb una atestació i en fa un commit a `dades`. El missatge del commit enllaça l'execució de la tasca.
+- Després de desar les dades, crida el deploy hook de Workers Builds perquè Cloudflare torni a compilar la web amb les dades noves. Sense aquest pas, la web només es tornaria a compilar quan canviés `main`. L'URL del hook és el secret `CLOUDFLARE_DEPLOY_HOOK` de l'entorn `dades`. Si Cloudflare falla, es pot tornar a llançar només el job «Torna a compilar la web».
 - Si l'únic canvi és `data_consulta`, no fa cap commit: la composició és la mateixa.
 - Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
 - Llançada des d'una branca que no és `main`, la tasca llegeix les fonts i ho comprova tot, però no signa ni publica res. Serveix per provar un canvi abans de fusionar-lo.
