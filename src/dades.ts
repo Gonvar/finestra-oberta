@@ -1,11 +1,11 @@
 // Regenera govern.json, parlament.json, diputats.json, ajuntaments.json, municipis.json, eleccions-municipals.json, mapa-municipis.json, agenda.json, activitat.json, ajuts.json, pressupost.json, contractes.json, adjudicataris.json i oposicions.json des de les fonts oficials, amb la còpia de cada resposta:
 //   node src/dades.ts [carpeta]
 // La carpeta és dades/ si no se'n diu cap altra. Primer ho llegeix i ho comprova tot; només escriu
-// si tot quadra. Si una font falla, surt amb un error i deixa la carpeta com estava, perquè es pugui
-// executar sense ningú al davant.
+// si tot quadra. Si una font no respon, se'n manté el que s'hi va publicar l'última vegada i se'n
+// deixa un avís; si no se'n pot mantenir res, surt amb un error i deixa la carpeta com estava.
 import { fileURLToPath } from 'node:url';
 import { SourceError } from './comun.ts';
-import { construirDades } from './construeix.ts';
+import { FONTS } from './construeix.ts';
 import { genera } from './procedencia.ts';
 
 const carpeta = process.argv[2] ?? fileURLToPath(new URL('../dades', import.meta.url));
@@ -14,21 +14,29 @@ const carpeta = process.argv[2] ?? fileURLToPath(new URL('../dades', import.meta
 const avui = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(new Date());
 try {
   const {
-    'govern.json': govern,
-    'parlament.json': parlament,
-    'diputats.json': diputats,
-    'ajuntaments.json': ajuntaments,
-    'municipis.json': municipis,
-    'eleccions-municipals.json': eleccions,
-    'mapa-municipis.json': mapa,
-    'agenda.json': agenda,
-    'activitat.json': activitat,
-    'ajuts.json': ajuts,
-    'pressupost.json': pressupost,
-    'contractes.json': contractes,
-    'adjudicataris.json': adjudicataris,
-    'oposicions.json': oposicions,
-  } = await genera(carpeta, fetch, avui, construirDades);
+    fitxers: {
+      'govern.json': govern,
+      'parlament.json': parlament,
+      'diputats.json': diputats,
+      'ajuntaments.json': ajuntaments,
+      'municipis.json': municipis,
+      'eleccions-municipals.json': eleccions,
+      'mapa-municipis.json': mapa,
+      'agenda.json': agenda,
+      'activitat.json': activitat,
+      'ajuts.json': ajuts,
+      'pressupost.json': pressupost,
+      'contractes.json': contractes,
+      'adjudicataris.json': adjudicataris,
+      'oposicions.json': oposicions,
+    },
+    fallades,
+  } = await genera(carpeta, fetch, avui, FONTS);
+  // GitHub mostra aquestes línies com a avisos de l'execució.
+  for (const [font, missatge] of Object.entries(fallades))
+    console.log(
+      `::warning::${font} no ha respost i se'n mantenen les dades anteriors: ${missatge}`,
+    );
   console.log(
     `Govern: ${govern.consellers.length} consellers (dades del ${govern.data_dades}). ` +
       `Parlament: ${parlament.diputats.length} diputats en ${parlament.grups.length} grups, amb ${diputats.diputats.reduce((n, d) => n + d.declaracions.length, 0)} declaracions i ${diputats.diputats.reduce((n, d) => n + d.agenda.actes.length, 0)} actes a les agendes del mes. ` +

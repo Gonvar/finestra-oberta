@@ -4,8 +4,9 @@ name: Dades del Govern, del Parlament, dels ajuntaments, de l'activitat del Parl
 # `dades` amb la còpia de cada resposta. Les dades no passen per pull request perquè no les escriu
 # ningú: les escriu aquesta tasca, i cada actualització queda signada amb una atestació de GitHub
 # que diu quin workflow i quin commit de main les han generat. Vegeu docs/institucions.md.
-# Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i la branca
-# `dades` es queda com estava.
+# Si una font no respon, se'n mantenen les dades anteriors amb un avís, i les altres s'actualitzen.
+# Si no se'n pot mantenir res o una comprovació no quadra, la tasca falla, GitHub ho notifica i la
+# branca `dades` es queda com estava.
 #
 # Qui pot escriure a `dades` no ho decideix aquest fitxer, que qualsevol branca pot canviar, sinó
 # GitHub: el ruleset de `dades` només deixa fer-hi push a la clau de desplegament, i la clau és un
@@ -172,8 +173,8 @@ jobs:
             # també tenen un ordre. Si el que hi ha publicat no es podia reproduir, la seva hora no
             # val res, i les dades noves el substitueixen.
             if [ "$BONES" = true ]; then
-              ARA=$(jq -r '[.captures[].consultat] | max' nou/procedencia.json)
-              PUBLICADA=$(jq -r '[.captures[].consultat] | max' dades/procedencia.json)
+              ARA=$(jq -r '[.grups[].captures[].consultat] | max' nou/procedencia.json)
+              PUBLICADA=$(jq -r '[.grups[].captures[].consultat] | max' dades/procedencia.json)
               if [[ ! "$ARA" > "$PUBLICADA" ]]; then
                 echo "::error::Les dades publicades són de $PUBLICADA, i aquestes, de $ARA."
                 exit 1
