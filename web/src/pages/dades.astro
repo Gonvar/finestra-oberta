@@ -1,0 +1,50 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+import { pagina } from '../dades/pagines.ts';
+import { REPO } from '../dades/portada.ts';
+
+// El títol i la frase de cada pàgina són els de pagines.ts, perquè no en puguin dir una altra cosa.
+const visualitzacions = ['/pressupost/', '/contractes/', '/transport/', '/municipis/'].map(pagina);
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <h1 id="titol" class="entra">Dades</h1>
+      <p class="entradeta entra" style="--ordre: 1">
+        Cada pàgina respon una pregunta amb les dades oficials i en diu la font.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="visualitzacions-titol">
+      <h2 class="visualment-amagat" id="visualitzacions-titol">Pàgines</h2>
+      <ul class="files">
+        {
+          visualitzacions.map((p) => (
+            <li>
+              <h3 class="titol-bloc">
+                <a href={p.ruta}>{p.previsualitzacio.titol}</a>
+              </h3>
+              <p class="secundari">{p.descripcio}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="seccio" aria-labelledby="mes-titol">
+      <h2 class="titol-seccio" id="mes-titol">Per anar més a fons</h2>
+      <ul class="files">
+        <li>
+          <h3 class="titol-bloc"><a href="/metodologia/">D'on surten les dades</a></h3>
+          <p class="secundari">D'on surt cada dada, cada quant s'actualitza i com es pot comprovar.</p>
+        </li>
+        <li>
+          <h3 class="titol-bloc"><a href={`${REPO}/blob/main/docs/dades-obertes.md`}>Dades obertes</a></h3>
+          <p class="secundari">Els conjunts de dades oberts de la Generalitat, l'Idescat i Barcelona.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+</Pagina>

@@ -2,6 +2,7 @@
 // que publica el workflow, i així la pàgina no pot dir una font o una data diferent de la que fa servir.
 import agenda from '../../../dades/agenda.json' with { type: 'json' };
 import { activitat } from './activitat.ts';
+import { contractes } from './contractes.ts';
 import { govern, parlament, transparencia } from './institucions.ts';
 import { pressupost } from './pressupost.ts';
 
@@ -123,6 +124,18 @@ export const seccions: Seccio[] = [
         nom: pressupost.font_ingressos,
         url: pressupost.url_ingressos,
         data: { tipus: 'dades', dia: pressupost.data_ingressos },
+      },
+    ],
+  },
+  {
+    titol: 'Com contracten les administracions',
+    ruta: '/contractes/',
+    fonts: [
+      {
+        que: 'Quants contractes han adjudicat les administracions, per quin import i amb quin procediment',
+        nom: contractes.font,
+        url: contractes.url,
+        data: { tipus: 'dades', dia: contractes.data_dades },
       },
     ],
   },
