@@ -65,20 +65,37 @@ jobs:
           if [ -f dades/procedencia.json ] && node src/verifica-dades.ts dades; then
             echo "bones=true" >> "$GITHUB_OUTPUT"
           fi
+      # src/dades.ts esborra els JSON de la carpeta, i resums.json no surt de les fonts: se'n guarda la
+      # còpia per saber si falten resums (vegeu src/resums.ts).
+      - name: Guarda els resums publicats
+        run: if [ -f dades/resums.json ]; then cp dades/resums.json "$RUNNER_TEMP/resums.json"; fi
       - run: node src/dades.ts dades
       - run: node src/verifica-dades.ts dades
+      # Una sessió nova, o una que ahir no es va poder resumir, necessita publicar encara que les dades
+      # no hagin canviat. Aquí no es crida l'API: només es compara amb el que hi ha publicat.
+      - name: Mira si falten resums
+        id: resums
+        run: |
+          if [ -f "$RUNNER_TEMP/resums.json" ]; then
+            PENDENTS=$(node src/resumeix.ts pendents dades "$RUNNER_TEMP/resums.json")
+          else
+            PENDENTS=$(node src/resumeix.ts pendents dades)
+          fi
+          echo "Sessions sense resum: $PENDENTS"
+          echo "pendents=$PENDENTS" >> "$GITHUB_OUTPUT"
       - name: Mira si han canviat
         id: canvis
         working-directory: dades
         env:
           BONES: ${{ steps.publicades.outputs.bones }}
+          PENDENTS: ${{ steps.resums.outputs.pendents }}
         run: |
           git add -A
           # data_consulta canvia cada dia. Si és l'únic que ha canviat a la composició, no hi ha res de
           # nou per desar. L'agenda sí que es desa cada dia: la web en treu quins actes ja han passat.
           if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json ajuntaments.json activitat.json ajuts.json pressupost.json municipis.json eleccions-municipals.json mapa-municipis.json contractes.json \
-            && git diff --cached --quiet -- agenda.json; then
-            echo "Ni la composició ni l'agenda han canviat."
+            && git diff --cached --quiet -- agenda.json && [ "$PENDENTS" = 0 ]; then
+            echo "Ni la composició ni l'agenda han canviat, i totes les sessions tenen resum."
           else
             echo "hi-ha=true" >> "$GITHUB_OUTPUT"
           fi
@@ -102,6 +119,14 @@ jobs:
       id-token: write
       attestations: write
     steps:
+      # El codi de main, per fer els resums. Sense credencials: aquest job ja té la clau de `dades`.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: codi
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: codi/.nvmrc
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: dades
@@ -142,10 +167,26 @@ jobs:
           else
             exit 1
           fi
+      # Es fa aquí perquè la clau de l'API, com la de `dades`, és un secret de l'entorn `dades`, que
+      # només s'obre per a main. Es reaprofiten els resums publicats que encara corresponen a la seva
+      # sessió, llevat que les dades publicades no es poguessin reproduir.
+      - name: Resumeix les sessions del Ple
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BONES: ${{ needs.genera.outputs.bones }}
+        run: |
+          if [ "$BONES" = true ] && [ -f dades/resums.json ]; then
+            node codi/src/resumeix.ts genera nou dades/resums.json
+          else
+            node codi/src/resumeix.ts genera nou
+          fi
       # procedencia.json porta l'empremta dels JSON i de cada còpia. Signar-lo els signa tots junts.
+      # resums.json no surt de les fonts i se signa a part.
       - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
-          subject-path: nou/procedencia.json
+          subject-path: |
+            nou/procedencia.json
+            nou/resums.json
       - name: Desa les dades
         working-directory: dades
         run: |
@@ -155,7 +196,7 @@ jobs:
           git add -A
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments, l’agenda, l’activitat del Parlament, els ajuts, el pressupost i els contractes' \
+          git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments, l’agenda, l’activitat i els resums del Parlament, els ajuts, el pressupost i els contractes' \
             -m "Execució: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           git push origin dades
 
