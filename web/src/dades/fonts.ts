@@ -35,7 +35,8 @@ export const seccions: Seccio[] = [
       },
       {
         que: 'La foto i el currículum',
-        nom: govern.font_perfils,
+        // font_perfils explica com es copia, amb la ruta del repositori; aquí només cal d'on surt.
+        nom: 'govern.cat: el Consell Executiu',
         url: govern.url_perfils,
         data: { tipus: 'copia', dia: govern.data_perfils },
       },

@@ -6,9 +6,9 @@ import { dia } from '../dades/institucions.ts';
 import { REPO } from '../dades/portada.ts';
 
 const QUAN: Record<Data['tipus'], string> = {
-  dades: 'Actualitzada per la font el',
-  consulta: 'Consultada el',
-  copia: 'Copiada a mà el',
+  dades: 'Dades actualitzades el',
+  consulta: 'Llegides el',
+  copia: 'Copiades a mà el',
 };
 ---
 
@@ -25,7 +25,7 @@ const QUAN: Record<Data['tipus'], string> = {
     <section class="seccio prosa" aria-labelledby="cada-dada">
       <h2 class="titol-seccio" id="cada-dada">D'on surt cada dada</h2>
       <p>
-        Cada dada diu de quan és. Si la font no publica quan la va actualitzar, hi posem el dia en què la vam
+        Si la font no publica quan la va actualitzar, hi posem el dia en què la vam
         consultar.
       </p>
       {
@@ -56,8 +56,7 @@ const QUAN: Record<Data['tipus'], string> = {
         web es torna a publicar amb les dades noves.
       </p>
       <p>
-        Cada organisme actualitza les seves dades al seu ritme. Per exemple, les reunions amb grups d'interès es
-        publiquen cada tres mesos.
+        Cada organisme actualitza les seves dades al seu ritme. Per això cada dada té la seva data.
       </p>
       <p>
         Hi ha una sola excepció. Les fotos i els currículums del Govern es copien a mà des de govern.cat, perquè
@@ -83,13 +82,17 @@ const QUAN: Record<Data['tipus'], string> = {
         surten iguals.
       </p>
       <p>
+        Les fotos i els currículums del Govern no es poden comprovar així, perquè es copien a mà i no tenen la
+        resposta de la font.
+      </p>
+      <p>
         <a href={`${REPO}/blob/main/docs/institucions.md#com-comprovar-que-les-dades-són-de-la-font`}
           >Com fer la comprovació pas a pas</a
         >. Cal saber fer servir la línia d'ordres.
       </p>
       <p>
-        La comprovació demostra que les dades són les que va publicar la font. No demostra que la font tingui raó:
-        si la font s'equivoca, l'error també surt aquí.
+        La comprovació demostra que les dades surten, sense retocs, de les respostes que el programa va rebre de
+        cada font. No demostra que la font tingui raó: si s'equivoca, l'error també surt aquí.
       </p>
     </section>
 
@@ -98,7 +101,7 @@ const QUAN: Record<Data['tipus'], string> = {
       <dl class="paraules">
         <dt>Dades que no siguin oficials</dt>
         <dd>
-          Ni notícies, ni dades de partits, ni enquestes privades. Així tothom s'hi pot fiar, voti el que voti.
+          Ni notícies, ni dades de partits, ni enquestes privades.
         </dd>
         <dt>Opinions</dt>
         <dd>
