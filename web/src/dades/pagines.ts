@@ -80,7 +80,17 @@ export const pagines: Pagina[] = [
     },
   },
   {
-ruta: '/municipis/',
+    ruta: '/metodologia/',
+    titol: 'D’on surten les dades · Finestra Oberta',
+    descripcio:
+      'D’on surt cada dada, cada quant s’actualitza, com es pot comprovar i què no publiquem.',
+    previsualitzacio: {
+      titol: 'D’on surten les dades',
+      frase: 'Totes les dades les publiquen organismes públics. No n’escrivim cap a mà.',
+    },
+  },
+  {
+    ruta: '/municipis/',
     titol: 'Municipis · Finestra Oberta',
     descripcio: 'Qui hi viu, qui governa l’ajuntament i com s’hi va votar, municipi a municipi.',
     previsualitzacio: {
@@ -93,7 +103,11 @@ ruta: '/municipis/',
     ruta: m.ruta,
     titol: `${m.nom} · Finestra Oberta`,
     descripcio: `${m.nom}: qui hi viu, qui governa l’ajuntament i com s’hi va votar.`,
-    previsualitzacio: { titol: m.nom, frase: `${m.comarca}, província de ${m.provincia}.`, institucio: 'dad' as const },
+    previsualitzacio: {
+      titol: m.nom,
+      frase: `${m.comarca}, província de ${m.provincia}.`,
+      institucio: 'dad' as const,
+    },
   })),
   ...membres.map((m) => ({
     ruta: `/govern/${slug(m.nom)}/`,

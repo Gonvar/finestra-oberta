@@ -1,4 +1,4 @@
-// Regenera govern.json, parlament.json, ajuntaments.json, municipis.json, eleccions-municipals.json, mapa-municipis.json, agenda.json, activitat.json, ajuts.json, pressupost.json i contractes.json des de les fonts oficials, amb la còpia de cada resposta:
+// Regenera govern.json, parlament.json, ajuntaments.json, municipis.json, eleccions-municipals.json, mapa-municipis.json, agenda.json, activitat.json, ajuts.json, pressupost.json, contractes.json i oposicions.json des de les fonts oficials, amb la còpia de cada resposta:
 //   node src/dades.ts [carpeta]
 // La carpeta és dades/ si no se'n diu cap altra. Primer ho llegeix i ho comprova tot; només escriu
 // si tot quadra. Si una font falla, surt amb un error i deixa la carpeta com estava, perquè es pugui
@@ -25,6 +25,7 @@ try {
     'ajuts.json': ajuts,
     'pressupost.json': pressupost,
     'contractes.json': contractes,
+    'oposicions.json': oposicions,
   } = await genera(carpeta, fetch, avui, construirDades);
   console.log(
     `Govern: ${govern.consellers.length} consellers (dades del ${govern.data_dades}). ` +
@@ -40,7 +41,8 @@ try {
       `Ajuts: ${ajuts.convocatories.length} convocatòries amb el termini sense acabar (dades del ${ajuts.data_dades}). ` +
       `Pressupost: ${pressupost.despeses.seccions.length} files d’entitat i secció (${pressupost.despeses.mes} ${pressupost.despeses.exercici}) i ` +
       `${pressupost.ingressos.capitols.length} d’entitat i capítol d’ingressos (${pressupost.ingressos.mes} ${pressupost.ingressos.exercici}). ` +
-      `Contractes: ${contractes.files.reduce((n, f) => n + f.inscripcions, 0)} adjudicacions del ${contractes.any} en ${contractes.files.length} files d’organisme i procediment (dades del ${contractes.data_dades}).`,
+      `Contractes: ${contractes.files.reduce((n, f) => n + f.inscripcions, 0)} adjudicacions del ${contractes.any} en ${contractes.files.length} files d’organisme i procediment (dades del ${contractes.data_dades}). ` +
+      `Oposicions: ${oposicions.processos.length} processos de selecció amb el termini obert al CIDO.`,
   );
 } catch (error) {
   if (!(error instanceof SourceError)) throw error;
