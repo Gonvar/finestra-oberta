@@ -1,4 +1,4 @@
-// Regenera govern.json, parlament.json, ajuntaments.json, activitat.json, ajuts.json, pressupost.json i contractes.json des de les fonts oficials, amb la còpia de cada resposta:
+// Regenera govern.json, parlament.json, ajuntaments.json, municipis.json, agenda.json, activitat.json, ajuts.json, pressupost.json i contractes.json des de les fonts oficials, amb la còpia de cada resposta:
 //   node src/dades.ts [carpeta]
 // La carpeta és dades/ si no se'n diu cap altra. Primer ho llegeix i ho comprova tot; només escriu
 // si tot quadra. Si una font falla, surt amb un error i deixa la carpeta com estava, perquè es pugui
@@ -17,6 +17,8 @@ try {
     'govern.json': govern,
     'parlament.json': parlament,
     'ajuntaments.json': ajuntaments,
+    'municipis.json': municipis,
+    'agenda.json': agenda,
     'activitat.json': activitat,
     'ajuts.json': ajuts,
     'pressupost.json': pressupost,
@@ -28,6 +30,8 @@ try {
       `Ajuntaments: ${ajuntaments.municipis.length} municipis i ` +
       `${ajuntaments.municipis.reduce((n, m) => n + m.ple.length, 0)} persones als plens ` +
       `(dades del ${ajuntaments.data_dades}). ` +
+      `Municipis: ${municipis.indicadors.length} indicadors de l'Idescat per a ${municipis.municipis.length} municipis. ` +
+      `Agenda: ${agenda.govern.actes.length} actes del Govern i ${agenda.parlament.actes.length} del Parlament. ` +
       `Activitat: ${activitat.sessions.length} sessions del Ple i ${activitat.normes.normes.length} normes. ` +
       `Ajuts: ${ajuts.convocatories.length} convocatòries amb el termini sense acabar (dades del ${ajuts.data_dades}). ` +
       `Pressupost: ${pressupost.despeses.seccions.length} files d’entitat i secció (${pressupost.despeses.mes} ${pressupost.despeses.exercici}) i ` +

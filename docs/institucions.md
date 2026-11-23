@@ -1,4 +1,4 @@
-# El Govern, el Parlament, els ajuntaments, els ajuts, el pressupost i els contractes
+# El Govern, el Parlament, els ajuntaments, els municipis, els ajuts, el pressupost i els contractes
 
 Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat i quantes adjudicacions fa cada organisme. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
@@ -66,7 +66,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -170,6 +170,54 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
   - Cada codi ha de tenir deu xifres, i els habitants, l'any i l'ordre han de ser nombres. Un municipi no pot tenir els habitants sense l'any del padró, ni al revés.
   - Cada municipi ha de tenir nom, comarca i província, i dues persones del mateix ple no poden tenir el mateix ordre.
 - **Si falla:** com que els ajuntaments es generen amb el Govern i el Parlament, una comprovació que falla també atura l'actualització del Govern i el Parlament fins que es corregeix. És el mateix que passa avui entre el Govern i el Parlament.
+
+## `municipis.json`
+
+- **Font:** [El municipi en xifres](https://www.idescat.cat/emex/) de l'Idescat, per la seva [API EMEX](https://www.idescat.cat/dev/api/emex/). Les [condicions d'ús](https://www.idescat.cat/dev/api/#cdu) en permeten la reutilització si se'n cita la font i no s'alteren les dades.
+- **Contingut:** de cada municipi, els mateixos indicadors: la població, la població de nacionalitat estrangera, la nascuda a l'estranger, la que sap parlar català, l'atur registrat, la base imposable de l'IRPF per declarant, l'índex socioeconòmic territorial i la participació a les últimes eleccions municipals i al Parlament. De les taules de població també hi ha el total, perquè se'n pugui calcular el percentatge.
+- **Per què aquests:** són els que l'Idescat dona per a tots els municipis sobre els temes que es van demanar per a la fitxa de cada municipi: la població i el seu origen, la llengua, la feina, la renda i la participació electoral. Tots els municipis tenen els mateixos, i a la llista d'`INDICADORS` de [src/municipis.ts](../src/municipis.ts) no hi ha cap tria per municipi. La renda familiar disponible no hi és perquè l'Idescat només la dona per als municipis de més de 1.000 habitants.
+- **Forma:** cada indicador ha de dir l'any (quatre xifres, o amb «(p)» al darrere si l'Idescat diu que la dada és provisional, com «2024 (p)»), la taula i la data d'actualització. Si l'API els torna en un altre ordre, es desen en el d'`INDICADORS`.
+- **Data:** cada indicador té el seu any (`any`) i la data en què l'Idescat el va actualitzar (`actualitzat`), els mateixos per a tots els municipis. El coneixement del català per municipi és del cens del 2011, l'últim que el dona per a tots.
+- **Valors:** tal com els dona l'Idescat. Un valor que l'Idescat no dona per a un municipi és `null`, no un zero.
+- **Comprovacions:**
+  - Totes les crides han de tornar els mateixos municipis, en el mateix ordre, només municipis i cap de repetit.
+  - Han de ser els mateixos municipis que els de Municat (`ajuntaments.json`), pel mateix codi.
+  - Cada indicador ha de tenir un valor per municipi, i cada valor ha de ser un nombre o «_» (no hi és).
+- **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
+
+## `agenda.json`
+
+Els actes públics del Govern i del Parlament del mes passat, l'actual i el següent. La web els mostra a [/agenda](https://finestraoberta.cat/agenda).
+
+### `govern`
+
+- **Font:** el conjunt [Actes del Govern](https://analisi.transparenciacatalunya.cat/d/wf87-e34n) (`wf87-e34n`), que publica la Direcció General de Comunicació a Dades obertes de Catalunya. Es demana amb una sola consulta, ordenada per data, hora i identificador perquè es pugui reproduir.
+- **Data:** `data_dades` és la data de l'última actualització del conjunt.
+- **Qui hi surt:** només els actes que el conjunt atribueix a `President`, `Consellers` o `Portaveu del Govern`, és a dir, al Consell Executiu. Les altres autoritats del conjunt (secretaris, directors i delegats) no hi surten. El criteri és a `autoritats`.
+- **Només actes fets:** el conjunt publica els actes quan ja han passat. Els que encara no s'han fet no hi són, i la web ho diu.
+- **Text:** el títol, la descripció, l'adreça, el municipi, l'autoritat i el departament són els de la font, amb les entitats HTML (`&nbsp;`, `&quot;`…) convertides en caràcters i els espais i salts de línia seguits convertits en un sol espai.
+- **Comprovacions:**
+  - El conjunt repeteix algunes files idèntiques: se'n deixa una. Si dues files amb el mateix `id` no són idèntiques, l'script s'atura.
+  - Cada acte ha de tenir la data i l'hora en el format del conjunt.
+  - Els actes han de cabre en una pàgina de 5.000 files.
+
+### `parlament`
+
+- **Font:** l'[agenda parlamentària](https://www.parlament.cat/web/actualitat/agenda/index.html) del web del Parlament, mes a mes. El Parlament no la publica en cap format de dades.
+- **Data:** com a `parlament.json`, `data_consulta` és el dia en què es va llegir.
+- **Categoria:** el web no la diu a cada acte, però la deixa filtrar. Per a cada mes es llegeix l'agenda sencera i després la de cada categoria del desplegable (sessions dels òrgans, actes institucionals, conferències de premsa i reunions de treball), i cada acte ha de sortir en una sola categoria.
+- **Contingut:** la data, l'hora, el títol, els paràgrafs de l'acte tal com surten al web (`detalls`: el tipus de sessió, la sala, si s'emet en directe), els enllaços de l'acte (l'ordre del dia, el vídeo, el programa), el dia en què es va publicar i, si s'ha desconvocat, quan. La icona de càmera del costat de l'hora no es desa: enllaça la portada del Canal Parlament, no el vídeo de l'acte.
+- **Ordre:** el del web. Els actes sense hora van just després de l'acte que els precedeix al web.
+- **Sense hora:** alguns actes no en tenen perquè comencen en acabar-ne un altre, i el web ho diu a `detalls`.
+- **Comprovacions:**
+  - Cada pàgina ha de ser del mes demanat, i el dia de la setmana de cada data ha de coincidir.
+  - Totes les files d'actes s'han de poder llegir: si en sobra alguna, l'script s'atura.
+  - L'hora ha de ser `HH:MMh` o estar buida.
+  - Tots els enllaços i paràgrafs de cada acte s'han de poder llegir.
+  - Cada acte de l'agenda sencera ha de sortir en una categoria, i només en una.
+- **Si una font falla:** l'agenda es genera amb la resta de dades, i si no es pot llegir, tampoc s'actualitzen el Govern ni el Parlament aquell dia. Així totes les dades d'un dia surten d'una mateixa execució i es poden comprovar juntes.
+- **Cada dia:** a diferència de la composició, `agenda.json` es desa encara que l'únic canvi sigui `data_consulta`, perquè la web en treu quins actes ja han passat.
+- **Reutilització:** la mateixa que la de les fotos: l'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) del Parlament en permet la reutilització si se'n cita la font, no se n'altera el sentit i no es presenta com una versió oficial ni avalada pel Parlament.
 
 ## `activitat.json`
 

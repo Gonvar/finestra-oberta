@@ -3,8 +3,11 @@
 // Abans de tornar res, cada funció comprova que el que ha llegit quadra. Si la font canvia de forma,
 // val més aturar-se que publicar una composició incompleta.
 import { readFile } from 'node:fs/promises';
+import { construirAgenda } from './agenda.ts';
 import { construirAjuntaments } from './ajuntaments.ts';
+import { construirMunicipis } from './municipis.ts';
 import {
+  comprovaCodificacio,
   dia,
   fold,
   getJson,
@@ -12,6 +15,7 @@ import {
   metadades,
   SOCRATA,
   SourceError,
+  text,
   words,
   type Fetch,
 } from './comun.ts';
@@ -41,32 +45,6 @@ export type Esco = {
   /** El color del grup al mapa del Parlament: «#C70A08» o un nom de CSS com «grey». */
   color: string;
 };
-
-const ENTITATS: Record<string, string> = {
-  nbsp: ' ',
-  amp: '&',
-  quot: '"',
-  '#39': "'",
-  '#039': "'",
-  '#038': '&',
-};
-
-/** El text d'un tros d'HTML. Una entitat desconeguda és un error: no es pot endevinar. */
-export function text(html: string) {
-  return html
-    .replace(/<[^>]*>/g, ' ')
-    .replace(/&([#\w]+);/g, (whole, name: string) => {
-      const value = ENTITATS[name];
-      if (value === undefined) throw new SourceError(`Entitat HTML desconeguda: ${whole}.`);
-      return value;
-    })
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-export function comprovaCodificacio(html: string, url: string) {
-  if (html.includes('�')) throw new SourceError(`${url} té caràcters mal codificats.`);
-}
 
 /** Els escons del mapa: una crida `afegirEsco(...)` per escó, amb el color de la llegenda. */
 export function llegirMapa(html: string): Esco[] {
@@ -723,13 +701,20 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
   // govern.cat no respon als scripts: les fitxes es copien a mà (NEUTRALITAT.md §2).
   const perfils = llegirPerfils(await readFile(PERFILS_GOVERN, 'utf8'));
   const govern = await construirGovern(fetchImpl, perfils);
+  const transparencia = await construirTransparencia(fetchImpl, [
+    govern.president,
+    ...govern.consellers,
+  ]);
+  const parlament = await construirParlament(fetchImpl, avui, pausaMs);
+  const agenda = await construirAgenda(fetchImpl, avui, pausaMs);
+  const ajuntaments = await construirAjuntaments(fetchImpl);
+  const codis = new Set(ajuntaments.municipis.map((m) => m.codi));
   return {
     'govern.json': govern,
-    'transparencia.json': await construirTransparencia(fetchImpl, [
-      govern.president,
-      ...govern.consellers,
-    ]),
-    'parlament.json': await construirParlament(fetchImpl, avui, pausaMs),
-    'ajuntaments.json': await construirAjuntaments(fetchImpl),
+    'transparencia.json': transparencia,
+    'parlament.json': parlament,
+    'agenda.json': agenda,
+    'ajuntaments.json': ajuntaments,
+    'municipis.json': await construirMunicipis(fetchImpl, codis),
   };
 }

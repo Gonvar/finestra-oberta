@@ -23,6 +23,7 @@ const { url, titol, cerca } = Astro.props;
         {/* A la portada, en pantalles estretes no hi cabrien; el Govern i el Parlament ja hi tenen el seu bloc. */}
         <li class:list={{ 'nomes-escriptori': cerca }}><a href="/govern">Govern</a></li>
         <li class:list={{ 'nomes-escriptori': cerca }}><a href="/parlament">Parlament</a></li>
+        <li class:list={{ 'nomes-escriptori': cerca }}><a href="/agenda">Agenda</a></li>
         <li class="nomes-ample"><a href="/#ia">Per a la IA</a></li>
         {
           cerca && (
