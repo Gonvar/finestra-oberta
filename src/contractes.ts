@@ -55,14 +55,25 @@ export async function construirContractes(fetchImpl: Fetch) {
 
   // Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en
   // donaria només una part sense cap error.
-  const perSituacio = await getJson<Fila[]>(
-    fetchImpl,
-    consulta({
-      $select: 'situaci_contractual, subjecte_ambit, count(*) as inscripcions',
-      $where: periode,
-      $group: 'situaci_contractual, subjecte_ambit',
-    }),
-  );
+  // Per a tot l'any, aquesta consulta de vegades passa del temps límit de la font; un mes cada vegada
+  // hi cap. Només se'n treu quines situacions i quins àmbits hi ha, i per això no cal sumar res.
+  const perSituacio: Fila[] = [];
+  for (let mes = 1; mes <= Number(fins.slice(5, 7)); mes++) {
+    const inici = `${any}-${String(mes).padStart(2, '0')}-01`;
+    const seguent =
+      mes === 12 ? `${Number(any) + 1}-01-01` : `${any}-${String(mes + 1).padStart(2, '0')}-01`;
+    const fi = seguent < limit ? seguent : limit;
+    perSituacio.push(
+      ...(await getJson<Fila[]>(
+        fetchImpl,
+        consulta({
+          $select: 'situaci_contractual, subjecte_ambit, count(*) as inscripcions',
+          $where: `data_adjudicacio >= '${inici}' and data_adjudicacio < '${fi}'`,
+          $group: 'situaci_contractual, subjecte_ambit',
+        }),
+      )),
+    );
+  }
   if (fins.slice(5) >= PRIMERS_DIES)
     for (const situacio of SITUACIONS)
       if (!perSituacio.some((f) => camp(f, 'situaci_contractual') === situacio))
