@@ -306,7 +306,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 - **Comprovacions:**
   - Cada fila ha de tenir l'àmbit, el codi i el nom de l'organisme, un recompte que sigui un nombre i un import, i totes les inscripcions del grup han de tenir import: `sum()` se salta les que no en tenen.
   - A partir del 15 de gener, hi ha d'haver inscripcions d'adjudicació i de menors de l'any. Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en donaria només una part.
-  - La consulta ha de cabre en una pàgina.
+  - Cada inscripció de l'any, també les liquidacions, ha de tenir la situació, i cada consulta d'àmbit ha de cabre en una pàgina.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## Pendent
