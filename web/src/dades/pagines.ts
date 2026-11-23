@@ -88,6 +88,15 @@ export const pagines: Pagina[] = [
       frase: 'Totes les dades les publiquen organismes públics. No n’escrivim cap a mà.',
     },
   },
+  {
+    ruta: '/correccions/',
+    titol: 'Avisa d’un error · Finestra Oberta',
+    descripcio: 'Com avisar d’una dada equivocada i què en fem.',
+    previsualitzacio: {
+      titol: 'Avisa d’un error',
+      frase: 'Si una dada és equivocada, és antiga o no s’entén, digues-nos-ho.',
+    },
+  },
   ...membres.map((m) => ({
     ruta: `/govern/${slug(m.nom)}/`,
     titol: `${m.nom} · Finestra Oberta`,
