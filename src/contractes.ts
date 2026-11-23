@@ -54,12 +54,14 @@ export async function construirContractes(fetchImpl: Fetch) {
   const periode = `data_adjudicacio >= '${any}-01-01' and data_adjudicacio < '${limit}'`;
 
   // Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en
-  // donaria només una part sense cap error.
+  // donaria només una part sense cap error. Només es demanen les situacions que es fan servir: sense
+  // aquest filtre, la font agrupa tot el registre de l'any i triga més que el temps límit (35 s, el
+  // 23/11/2026, contra 3 s amb el filtre).
   const perSituacio = await getJson<Fila[]>(
     fetchImpl,
     consulta({
       $select: 'situaci_contractual, subjecte_ambit, count(*) as inscripcions',
-      $where: periode,
+      $where: `${situacions} and ${periode}`,
       $group: 'situaci_contractual, subjecte_ambit',
     }),
   );
