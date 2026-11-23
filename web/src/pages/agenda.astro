@@ -54,7 +54,7 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
       <p class="font-dada entra" style="--ordre: 2">
         Govern: <a href={agenda.govern.url}>Actes del Govern</a>, de Dades obertes de Catalunya, actualitzat el {
           dia(agenda.govern.data_dades)
-        }. Només hi ha els actes que ja s’han fet. Parlament:
+        }. Parlament:
         <a href={agenda.parlament.url}>agenda parlamentària</a>, consultada el {dia(avui)}.
       </p>
     </section>
@@ -79,6 +79,12 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
           <h2 class="titol-seccio" id={`${s.id}-titol`}>
             {s.titol}
           </h2>
+          {/* Sense aquesta nota, «Totes dues» sembla que només mostri el Parlament. */}
+          {s.id === 'previst' && (
+            <p class="nota" data-nota-govern>
+              El Govern només publica els seus actes quan ja s’han fet. Són a «Què han fet».
+            </p>
+          )}
           {s.dies.length === 0 ? (
             <p class="buit">{s.buit}</p>
           ) : (
@@ -140,6 +146,7 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
     s.querySelector('[data-dia]'),
   );
   const cap = form.querySelector<HTMLElement>('[data-cap]')!;
+  const notes = [...document.querySelectorAll<HTMLElement>('[data-nota-govern]')];
 
   function filtra() {
     const dades = new FormData(form);
@@ -152,7 +159,9 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
       if (es) visibles++;
     }
     for (const d of dies) d.hidden = !d.querySelector('.acte:not([hidden])');
-    for (const s of seccions) s.hidden = !s.querySelector('[data-dia]:not([hidden])');
+    for (const n of notes) n.hidden = institucio === 'par';
+    for (const s of seccions)
+      s.hidden = !s.querySelector('[data-dia]:not([hidden]), [data-nota-govern]:not([hidden])');
     // Un missatge que canvia de text, perquè el lector de pantalla l'anunciï.
     cap.textContent = visibles > 0 ? '' : 'Cap acte no coincideix amb la cerca.';
   }
@@ -223,6 +232,11 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
 
   .filtre .secundari {
     flex-basis: 100%;
+  }
+
+  .nota {
+    margin-top: 0.75rem;
+    color: var(--ink-2);
   }
 
   .buit {
