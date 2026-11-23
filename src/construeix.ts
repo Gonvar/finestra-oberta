@@ -3,6 +3,7 @@
 import { construirActivitat } from './activitat.ts';
 import { construirAjuts } from './ajuts.ts';
 import type { Fetch } from './comun.ts';
+import { construirContractes } from './contractes.ts';
 import { construirInstitucions } from './institucions.ts';
 import { construirPressupost } from './pressupost.ts';
 
@@ -12,5 +13,6 @@ export async function construirDades(fetchImpl: Fetch, avui: string, pausaMs: nu
     'activitat.json': await construirActivitat(fetchImpl, avui, pausaMs),
     'ajuts.json': await construirAjuts(fetchImpl, avui),
     'pressupost.json': await construirPressupost(fetchImpl),
+    'contractes.json': await construirContractes(fetchImpl),
   };
 }
