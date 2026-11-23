@@ -131,6 +131,25 @@ jobs:
         with:
           name: dades
           path: nou
+      # Abans d'escriure la clau de `dades`: aquest pas executa codi del repositori i només ha de veure
+      # la clau de l'API, que és un secret de l'entorn `dades`, com la de desplegament, i només s'obre
+      # per a main. Els resums publicats es llegeixen de la branca pública, sense credencials, i es
+      # reaprofiten els que encara corresponen a la seva sessió (vegeu src/resums.ts).
+      - name: Resumeix les sessions del Ple
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          REPO="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
+          if git ls-remote --exit-code "$REPO" refs/heads/dades; then
+            git clone --depth=1 --branch dades "$REPO" publicades
+          elif [ $? -ne 2 ]; then
+            exit 1
+          fi
+          if [ -f publicades/resums.json ]; then
+            node codi/src/resumeix.ts genera nou publicades/resums.json
+          else
+            node codi/src/resumeix.ts genera nou
+          fi
       - name: Comprova que són les dades més noves
         env:
           CLAU: ${{ secrets.DADES_CLAU_DESPLEGAMENT }}
@@ -166,19 +185,6 @@ jobs:
             git init -b dades dades && git -C dades remote add origin "$REPO"
           else
             exit 1
-          fi
-      # Es fa aquí perquè la clau de l'API, com la de `dades`, és un secret de l'entorn `dades`, que
-      # només s'obre per a main. Es reaprofiten els resums publicats que encara corresponen a la seva
-      # sessió, llevat que les dades publicades no es poguessin reproduir.
-      - name: Resumeix les sessions del Ple
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          BONES: ${{ needs.genera.outputs.bones }}
-        run: |
-          if [ "$BONES" = true ] && [ -f dades/resums.json ]; then
-            node codi/src/resumeix.ts genera nou dades/resums.json
-          else
-            node codi/src/resumeix.ts genera nou
           fi
       # procedencia.json porta l'empremta dels JSON i de cada còpia. Signar-lo els signa tots junts.
       # resums.json no surt de les fonts i se signa a part.

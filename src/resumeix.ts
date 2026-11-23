@@ -7,7 +7,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { serialitza } from './procedencia.ts';
-import { construirResums, pendents, type Resum, type Resums, type Sessio } from './resums.ts';
+import { BUITS, construirResums, pendents, type Resums, type Sessio } from './resums.ts';
 
 const [ordre, carpeta, publicat] = process.argv.slice(2);
 if ((ordre !== 'pendents' && ordre !== 'genera') || carpeta === undefined) {
@@ -19,17 +19,14 @@ const activitat = JSON.parse(await readFile(join(carpeta, 'activitat.json'), 'ut
   sessions: Sessio[];
 };
 // La primera vegada no hi ha resums publicats, i no se n'indica cap fitxer.
-const publicats: Resum[] =
-  publicat === undefined ? [] : (JSON.parse(await readFile(publicat, 'utf8')) as Resums).resums;
+const publicats: Resums =
+  publicat === undefined ? BUITS : JSON.parse(await readFile(publicat, 'utf8'));
 
 if (ordre === 'pendents') {
   console.log(pendents(activitat.sessions, publicats).length);
 } else {
-  const clau = process.env.ANTHROPIC_API_KEY;
-  if (clau === undefined || clau === '') {
-    console.error('Falta la clau de l’API a ANTHROPIC_API_KEY.');
-    process.exit(1);
-  }
+  // Un secret que no existeix arriba com a text buit. Sense clau es publiquen els resums vigents.
+  const clau = process.env.ANTHROPIC_API_KEY || undefined;
   const avui = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(new Date());
   const { fitxer, errors } = await construirResums(
     fetch,
@@ -39,8 +36,9 @@ if (ordre === 'pendents') {
     avui,
   );
   await writeFile(join(carpeta, 'resums.json'), serialitza(fitxer));
-  // Una sessió sense resum no atura la publicació de les dades: queda pendent per a l'execució següent.
+  // Una sessió sense resum no atura la publicació de les dades oficials.
   for (const { sessio, missatge } of errors)
-    console.log(`::warning::La sessió ${sessio} no té resum: ${missatge}`);
+    // Una línia per avís: un salt de línia del missatge de l'API podria començar una ordre del workflow.
+    console.log(`::warning::La sessió ${sessio} no té resum: ${missatge.replace(/\s+/g, ' ')}`);
   console.log(`Resums: ${fitxer.resums.length} de ${activitat.sessions.length} sessions del Ple.`);
 }

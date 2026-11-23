@@ -75,7 +75,8 @@ La web pot mostrar un resum en llenguatge planer de cada sessió del Ple. No és
 - **Tot és públic.** `resums.json` porta les instruccions exactes que rep el model, el model que ha respost, el dia i l'empremta del que ha llegit, i enllaça els acords de la sessió al web del Parlament. Qualsevol persona pot comprovar que el resum correspon a la sessió publicada.
 - **Es diu que és d'una IA.** A la web, cada resum diu que l'ha escrit un model d'IA, quin, i enllaça el text oficial, que és el que val.
 - **Ningú no el retoca.** Un resum no s'edita a mà. Si està malament, es canvien les instruccions en una pull request i es tornen a fer tots.
-- **Si valora, no es publica.** Les instruccions demanen descriure sense valorar i tractar igual tothom (§3). Si el resum fa servir una de les paraules que jutgen de `VALORACIONS`, es descarta i la sessió es queda sense resum.
+- **No tria.** Les instruccions demanen el mateix per a tots els punts: de què tracten i què se'n va decidir els que l'acord diu que s'aproven, es convaliden, es deroguen o es rebutgen, i només de quin tipus són els altres. El model no ha de triar temes ni afegir-hi definicions.
+- **Si valora, no es publica.** Les instruccions demanen descriure sense valorar i tractar igual tothom (§3). Si el resum fa servir una de les paraules que jutgen de `VALORACIONS` i no surt als punts oficials, es descarta i la sessió surt a `sense_resum` amb el motiu.
 
 El model és un servei, no una font. L'únic fitxer de `src/` que el pot cridar és [src/resums.ts](src/resums.ts), i l'única adreça és `https://api.anthropic.com/v1/messages`. [src/fonts.test.ts](src/fonts.test.ts) ho comprova. Canviar de model o de servei es fa en una pull request pròpia que ho justifiqui.
 

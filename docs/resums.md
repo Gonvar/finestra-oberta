@@ -10,18 +10,20 @@ Només els punts de la sessió tal com són a `activitat.json`: el número, el c
 
 - **Model:** Claude Haiku 5.5 (`claude-haiku-5-5`), d'Anthropic, amb l'esforç baix (`effort: low`). És el model petit i barat: per resumir una llista de punts n'hi ha prou.
 - **Instruccions:** `INSTRUCCIONS` a [src/resums.ts](../src/resums.ts). Es publiquen tal com són a `resums.json` i a la web.
-- **Quan:** el [workflow de dades](../.github/workflows/dades.yml), al job que publica, després de llegir les fonts. La clau de l'API és el secret `ANTHROPIC_API_KEY` de l'entorn `dades`, que només s'obre per a `main`.
+- **Quan:** el [workflow de dades](../.github/workflows/dades.yml), al job que publica, després de llegir les fonts i abans d'escriure la clau de la branca `dades`. La clau de l'API és el secret `ANTHROPIC_API_KEY` de l'entorn `dades`, que només s'obre per a `main`. Sense la clau es tornen a publicar els resums vigents i les sessions noves es queden sense resum.
 - **Quan es torna a fer:** un resum es reaprofita mentre no canviïn els punts de la sessió, les instruccions ni el model. Si canvia qualsevol d'aquestes tres coses, es torna a fer. Així el text d'una sessió no canvia cada dia i només es paga el que és nou.
 
 ## Què es comprova
 
-Un resum no es publica, i la sessió es queda sense resum fins a l'execució següent, si:
+Si l'API no respon bé (no hi ha connexió, torna un error o una resposta sense la forma esperada), la sessió es queda sense resum i l'endemà es torna a provar.
 
-- l'API falla o el model s'atura abans d'acabar;
-- el text és buit o té més de 1.500 caràcters;
-- el text fa servir una de les paraules que jutgen de `VALORACIONS` («polèmic», «històric», «fracàs»…).
+Si el model respon però el resum no es pot publicar, la sessió surt a `sense_resum` amb el motiu, i no es torna a demanar fins que canviïn els punts, les instruccions o el model, perquè amb la mateixa entrada el resultat seria el mateix. Passa quan:
 
-Una sessió sense resum no atura la publicació de les dades oficials: el registre de la tasca ho avisa amb un `warning`, i l'endemà es torna a provar.
+- el model s'atura abans d'acabar;
+- el text és buit o té més de 2.500 caràcters;
+- el text fa servir una de les paraules que jutgen de `VALORACIONS` («polèmic», «històric», «fracàs»…) i aquesta paraula no surt als punts oficials. «Memòria històrica» en el títol d'una llei no és una valoració.
+
+Els resums que es reaprofiten també passen aquestes comprovacions cada dia: si se n'afegeix una de nova, un resum publicat que no la passa es torna a fer. Cap sessió sense resum no atura la publicació de les dades oficials. El registre de la tasca ho avisa amb un `warning`.
 
 ## Camps
 
@@ -34,6 +36,7 @@ Una sessió sense resum no atura la publicació de les dades oficials: el regist
   - `generat`: el dia que es va fer el resum.
   - `empremta`: el SHA-256 de `JSON.stringify([model, instruccions, entrada])`.
   - `text`: el resum.
+- `sense_resum`: les sessions que el model ha resumit però el resum no s'ha publicat, amb `sessio`, `empremta` i `motiu`.
 
 ## Com comprovar un resum
 
