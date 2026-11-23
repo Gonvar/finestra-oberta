@@ -1,6 +1,6 @@
 # El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, els ajuts i el pressupost
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, els ajuts i les subvencions que encara es poden demanar i com va el pressupost de la Generalitat. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi i com s'hi va votar a les últimes municipals, els ajuts i les subvencions que encara es poden demanar i com va el pressupost de la Generalitat. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -188,8 +188,8 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
 ## `eleccions-municipals.json`
 
 - **Font:** [Eleccions municipals. Vots](https://analisi.transparenciacatalunya.cat/d/vq27-2ky2) (`vq27-2ky2`), de la Secretaria de Governs Locals, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/).
-- **Elecció:** les últimes municipals que té el conjunt (`any`). Es busca l'any més alt cada vegada, i quan la font hi afegeixi unes eleccions noves el fitxer passarà a ser el d'aquestes.
-- **Contingut:** de cada municipi, totes les candidatures que la font dona, amb les sigles, els vots, el percentatge sobre el total de vots i els regidors. Totes tenen els mateixos camps.
+- **Elecció:** les últimes municipals que té el conjunt (`any`). Es busca l'any més alt cada vegada, i quan la font hi afegeixi unes eleccions noves el fitxer passarà a ser el d'aquestes. El conjunt no diu si unes eleccions són generals o parcials: si algun dia hi surten unes de parcials amb un any nou, faltaran municipis, la comprovació fallarà i caldrà decidir com tractar-les.
+- **Contingut:** de cada municipi, totes les candidatures que la font dona, amb les sigles, els vots, el percentatge (el que calcula la font) i els regidors. Totes tenen els mateixos camps.
 - **Ordre:** de més a menys vots, i, amb els mateixos vots, per les sigles en ordre alfabètic. És la mateixa regla per a totes les candidatures.
 - **Valors:** tal com els dona la font. L'única conversió és el percentatge: la font el dona en centèsimes («2268») i es publica com a percentatge (22,68). Les sigles són les de la font, que pot escriure el mateix partit de maneres diferents en municipis o anys diferents: no s'unifiquen.
 - **Què no hi és:** les eleccions al Parlament per municipi. Aquest conjunt només té les municipals.
@@ -199,6 +199,40 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
   - Un codi només pot correspondre a un municipi, i una candidatura només pot sortir una vegada a cada municipi.
   - Les files de l'elecció han de cabre en una sola consulta.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
+
+## `agenda.json`
+
+Els actes públics del Govern i del Parlament del mes passat, l'actual i el següent. La web els mostra a [/agenda](https://finestraoberta.cat/agenda).
+
+### `govern`
+
+- **Font:** el conjunt [Actes del Govern](https://analisi.transparenciacatalunya.cat/d/wf87-e34n) (`wf87-e34n`), que publica la Direcció General de Comunicació a Dades obertes de Catalunya. Es demana amb una sola consulta, ordenada per data, hora i identificador perquè es pugui reproduir.
+- **Data:** `data_dades` és la data de l'última actualització del conjunt.
+- **Qui hi surt:** només els actes que el conjunt atribueix a `President`, `Consellers` o `Portaveu del Govern`, és a dir, al Consell Executiu. Les altres autoritats del conjunt (secretaris, directors i delegats) no hi surten. El criteri és a `autoritats`.
+- **Només actes fets:** el conjunt publica els actes quan ja han passat. Els que encara no s'han fet no hi són, i la web ho diu.
+- **Text:** el títol, la descripció, l'adreça, el municipi, l'autoritat i el departament són els de la font, amb les entitats HTML (`&nbsp;`, `&quot;`…) convertides en caràcters i els espais i salts de línia seguits convertits en un sol espai.
+- **Comprovacions:**
+  - El conjunt repeteix algunes files idèntiques: se'n deixa una. Si dues files amb el mateix `id` no són idèntiques, l'script s'atura.
+  - Cada acte ha de tenir la data i l'hora en el format del conjunt.
+  - Els actes han de cabre en una pàgina de 5.000 files.
+
+### `parlament`
+
+- **Font:** l'[agenda parlamentària](https://www.parlament.cat/web/actualitat/agenda/index.html) del web del Parlament, mes a mes. El Parlament no la publica en cap format de dades.
+- **Data:** com a `parlament.json`, `data_consulta` és el dia en què es va llegir.
+- **Categoria:** el web no la diu a cada acte, però la deixa filtrar. Per a cada mes es llegeix l'agenda sencera i després la de cada categoria del desplegable (sessions dels òrgans, actes institucionals, conferències de premsa i reunions de treball), i cada acte ha de sortir en una sola categoria.
+- **Contingut:** la data, l'hora, el títol, els paràgrafs de l'acte tal com surten al web (`detalls`: el tipus de sessió, la sala, si s'emet en directe), els enllaços de l'acte (l'ordre del dia, el vídeo, el programa), el dia en què es va publicar i, si s'ha desconvocat, quan. La icona de càmera del costat de l'hora no es desa: enllaça la portada del Canal Parlament, no el vídeo de l'acte.
+- **Ordre:** el del web. Els actes sense hora van just després de l'acte que els precedeix al web.
+- **Sense hora:** alguns actes no en tenen perquè comencen en acabar-ne un altre, i el web ho diu a `detalls`.
+- **Comprovacions:**
+  - Cada pàgina ha de ser del mes demanat, i el dia de la setmana de cada data ha de coincidir.
+  - Totes les files d'actes s'han de poder llegir: si en sobra alguna, l'script s'atura.
+  - L'hora ha de ser `HH:MMh` o estar buida.
+  - Tots els enllaços i paràgrafs de cada acte s'han de poder llegir.
+  - Cada acte de l'agenda sencera ha de sortir en una categoria, i només en una.
+- **Si una font falla:** l'agenda es genera amb la resta de dades, i si no es pot llegir, tampoc s'actualitzen el Govern ni el Parlament aquell dia. Així totes les dades d'un dia surten d'una mateixa execució i es poden comprovar juntes.
+- **Cada dia:** a diferència de la composició, `agenda.json` es desa encara que l'únic canvi sigui `data_consulta`, perquè la web en treu quins actes ja han passat.
+- **Reutilització:** la mateixa que la de les fotos: l'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) del Parlament en permet la reutilització si se'n cita la font, no se n'altera el sentit i no es presenta com una versió oficial ni avalada pel Parlament.
 
 ## `activitat.json`
 

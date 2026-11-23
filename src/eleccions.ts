@@ -2,33 +2,21 @@
 // Governs Locals a Dades obertes de Catalunya. No és un servidor MCP: src/dades.ts ho desa a la
 // branca `dades`. Totes les candidatures tenen els mateixos camps i van en l'ordre dels vots.
 import {
+  codiMunicipi,
   dia,
-  getJson,
+  filesSocrata,
   metadades,
+  numero,
   obligatori,
   SOCRATA,
   SourceError,
   type Fetch,
-  type Fila,
 } from './comun.ts';
 
 export const VOTS_MUNICIPALS = 'vq27-2ky2';
-const LIMIT = 50_000;
 
-function enter(text: string, nom: string) {
-  if (!/^\d+$/.test(text)) throw new SourceError(`${nom} no és un nombre: ${text}.`);
-  return Number(text);
-}
-
-async function files(fetchImpl: Fetch, params: Record<string, string>) {
-  const resultat = await getJson<Fila[]>(
-    fetchImpl,
-    `${SOCRATA}/resource/${VOTS_MUNICIPALS}.json?${new URLSearchParams({ ...params, $limit: String(LIMIT) })}`,
-  );
-  if (resultat.length === LIMIT)
-    throw new SourceError(`El conjunt ${VOTS_MUNICIPALS} no cap en una pàgina.`);
-  return resultat;
-}
+const files = (fetchImpl: Fetch, params: Record<string, string>) =>
+  filesSocrata(fetchImpl, VOTS_MUNICIPALS, params);
 
 /**
  * `codis` són els municipis de Municat: cada un ha de tenir resultats, i no n'hi pot haver de cap
@@ -37,7 +25,7 @@ async function files(fetchImpl: Fetch, params: Record<string, string>) {
 export async function construirEleccionsMunicipals(fetchImpl: Fetch, codis: Set<string>) {
   const meta = await metadades(fetchImpl, VOTS_MUNICIPALS);
   const anys = (await files(fetchImpl, { $select: 'distinct any_eleccio' })).map((f) =>
-    enter(obligatori(f, 'any_eleccio', VOTS_MUNICIPALS), 'L’any de l’elecció'),
+    numero(obligatori(f, 'any_eleccio', VOTS_MUNICIPALS), 'L’any de l’elecció'),
   );
   if (anys.length === 0) throw new SourceError(`El conjunt ${VOTS_MUNICIPALS} és buit.`);
   const any = Math.max(...anys);
@@ -55,9 +43,7 @@ export async function construirEleccionsMunicipals(fetchImpl: Fetch, codis: Set<
     }
   >();
   for (const fila of vots) {
-    const codiEns = obligatori(fila, 'codi_ens', VOTS_MUNICIPALS);
-    if (!/^\d{10}$/.test(codiEns)) throw new SourceError(`Codi d'ens inesperat: ${codiEns}.`);
-    const codi = codiEns.slice(0, 6);
+    const codi = codiMunicipi(obligatori(fila, 'codi_ens', VOTS_MUNICIPALS));
     const nom = obligatori(fila, 'municipi', VOTS_MUNICIPALS);
     const municipi = municipis.get(codi) ?? { nom, candidatures: [] };
     if (municipi.nom !== nom)
@@ -67,10 +53,10 @@ export async function construirEleccionsMunicipals(fetchImpl: Fetch, codis: Set<
       throw new SourceError(`${nom} té dues vegades la candidatura ${sigles}.`);
     municipi.candidatures.push({
       sigles,
-      vots: enter(obligatori(fila, 'vots', VOTS_MUNICIPALS), 'Els vots'),
+      vots: numero(obligatori(fila, 'vots', VOTS_MUNICIPALS), 'Els vots'),
       // La font dona el percentatge en centèsimes («2268» és el 22,68 %).
-      percentatge: enter(obligatori(fila, 'vots_1', VOTS_MUNICIPALS), 'El percentatge') / 100,
-      regidors: enter(obligatori(fila, 'regidors', VOTS_MUNICIPALS), 'Els regidors'),
+      percentatge: numero(obligatori(fila, 'vots_1', VOTS_MUNICIPALS), 'El percentatge') / 100,
+      regidors: numero(obligatori(fila, 'regidors', VOTS_MUNICIPALS), 'Els regidors'),
     });
     municipis.set(codi, municipi);
   }
@@ -87,12 +73,12 @@ export async function construirEleccionsMunicipals(fetchImpl: Fetch, codis: Set<
     url: `${SOCRATA}/d/${VOTS_MUNICIPALS}`,
     data_dades: dia(meta),
     any,
-    nota: 'Els vots i els regidors de cada candidatura a les últimes eleccions municipals, tal com els dona la font, de més a menys vots. El percentatge és sobre el total de vots, com el calcula la font. Les sigles són les de la font, que pot escriure el mateix partit de maneres diferents en municipis diferents.',
+    nota: 'Els vots i els regidors de cada candidatura a les últimes eleccions municipals, tal com els dona la font, de més a menys vots. El percentatge és el que calcula la font. Les sigles són les de la font, que pot escriure el mateix partit de maneres diferents en municipis diferents.',
     municipis: [...municipis]
       .map(([codi, { nom, candidatures }]) => ({
         codi,
         nom,
-        // De més a menys vots, i amb els mateixos vots, per les sigles: la mateixa regla per a tothom.
+        // L'ordre de les files de la font no ha de decidir qui surt primer quan dues candidatures empaten.
         candidatures: candidatures.sort(
           (a, b) => b.vots - a.vots || a.sigles.localeCompare(b.sigles, 'ca'),
         ),

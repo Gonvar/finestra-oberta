@@ -19,7 +19,9 @@ const fila = (
   vots: string,
   pct: string,
   reg: string,
+  any = '2023',
 ) => ({
+  any_eleccio: any,
   codi_ens: codi,
   municipi,
   sigles_candidatura: sigles,
@@ -41,9 +43,12 @@ function fake(vots: object[] = VOTS, anys = ['2019', '2023']) {
     const url = String(input);
     crides.push(url);
     if (url.includes('/api/views/')) return Response.json(META);
-    if (new URL(url).searchParams.get('$select') === 'distinct any_eleccio')
+    const params = new URL(url).searchParams;
+    if (params.get('$select') === 'distinct any_eleccio')
       return Response.json(anys.map((any_eleccio) => ({ any_eleccio })));
-    return Response.json(vots);
+    // Com Socrata: només les files de l'any que demana el filtre.
+    const any = /^any_eleccio = '(\d{4})'$/.exec(params.get('$where')!)![1];
+    return Response.json(vots.filter((f) => (f as { any_eleccio: string }).any_eleccio === any));
   };
   return { fetchImpl, crides };
 }
@@ -59,7 +64,6 @@ test('demana l’última elecció i ordena les candidatures de més a menys vots
     { sigles: 'A', vots: 700, percentatge: 70, regidors: 7 },
     { sigles: 'B', vots: 300, percentatge: 30, regidors: 4 },
   ]);
-  // Amb els mateixos vots, l'ordre és el de les sigles, no el de la font.
   assert.deepEqual(
     ager!.candidatures.map((c) => c.sigles),
     ['C', 'D'],
@@ -102,4 +106,24 @@ test('falla si una fila no té les sigles de la candidatura', async () => {
 test('falla si un codi correspon a dos municipis', async () => {
   const { fetchImpl } = fake([...VOTS, fila('0899990001', 'Un altre', 'Z', '1', '1', '0')]);
   await assert.rejects(construirEleccionsMunicipals(fetchImpl, CODIS), /089999 correspon a/);
+});
+
+test('només publica l’última elecció, encara que el conjunt en tingui més', async () => {
+  const antiga = fila('0899990001', 'Vilanova de Prova', 'VELL', '9999', '10000', '9', '2019');
+  const { fetchImpl } = fake([...VOTS, antiga]);
+  const { municipis } = await construirEleccionsMunicipals(fetchImpl, CODIS);
+  assert.ok(municipis.every((m) => m.candidatures.every((c) => c.sigles !== 'VELL')));
+});
+
+test('falla si el conjunt no té cap elecció', async () => {
+  const { fetchImpl } = fake(VOTS, []);
+  await assert.rejects(construirEleccionsMunicipals(fetchImpl, CODIS), /és buit/);
+});
+
+test('falla si les files no caben en una consulta, en lloc de publicar-ne una part', async () => {
+  const moltes = Array.from({ length: 50_000 }, (_, i) =>
+    fila('0899990001', 'Vilanova de Prova', `S${i}`, '1', '1', '0'),
+  );
+  const { fetchImpl } = fake(moltes);
+  await assert.rejects(construirEleccionsMunicipals(fetchImpl, CODIS), /no cap en una pàgina/);
 });
