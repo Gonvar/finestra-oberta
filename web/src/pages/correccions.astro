@@ -17,12 +17,6 @@ const AVIS = `${REPO}/issues/new?template=1-dada-incorrecta.yml`;
 
     <section class="seccio prosa" aria-labelledby="com">
       <h2 class="titol-seccio" id="com">Com avisar</h2>
-      <p>Explica'ns:</p>
-      <ul class="punts">
-        <li>a quina pàgina és;</li>
-        <li>què hi diu;</li>
-        <li>què hauria de dir, i on ho has vist. Si pot ser, a la web de l'organisme que publica la dada.</li>
-      </ul>
       <p><a class="boto" href={AVIS}>Obre l'avís a GitHub</a></p>
       <p>
         Cal un compte de GitHub, que és gratuït. L'avís és públic: no hi posis dades personals.
@@ -38,8 +32,7 @@ const AVIS = `${REPO}/issues/new?template=1-dada-incorrecta.yml`;
           Quan la correcció s'aprova, el web es torna a publicar.
         </li>
         <li>
-          Si l'error és de la font, demanem a l'organisme que el corregeixi. Mentrestant, el web mostra el que diu la
-          font.
+          Si l'error és de la font, demanem a l'organisme que el corregeixi. Mentrestant, el web no canvia la dada.
         </li>
       </ol>
       <p>
@@ -52,7 +45,7 @@ const AVIS = `${REPO}/issues/new?template=1-dada-incorrecta.yml`;
       <h2 class="titol-seccio" id="partit">Si un text pren partit</h2>
       <p>
         També és un error. Avisa'ns de la mateixa manera, amb l'enllaç a la pàgina. Les regles que seguim són a <a
-          href="/metodologia#no-publiquem">Què no publiquem</a
+          href="/metodologia/#no-publiquem">Què no publiquem</a
         >.
       </p>
     </section>
@@ -61,19 +54,16 @@ const AVIS = `${REPO}/issues/new?template=1-dada-incorrecta.yml`;
 
 <style>
   .prosa > p,
-  .prosa > ul,
   .prosa > ol {
     margin-top: 1rem;
     max-width: 40rem;
     color: var(--ink-2);
   }
 
-  .punts,
   .passos {
     padding-left: 1.25rem;
   }
 
-  .punts li + li,
   .passos li + li {
     margin-top: 0.5rem;
   }

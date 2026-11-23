@@ -1,30 +1,30 @@
-name: Dada incorrecta
-description: Una dada del web o d'un servidor és equivocada, antiga, incompleta o mal explicada, o un text pren partit.
+name: Dada o text incorrecte
+description: Una dada és equivocada, antiga, incompleta o mal explicada, o un text pren partit. Al web o en un servidor.
 labels: [dades]
 body:
   - type: markdown
     attributes:
       value: |
         Gràcies per avisar. Aquest avís és públic: no hi posis dades personals. Pots escriure en castellà o en anglès; et respondrem en català.
+
+        Si el que falla és la pàgina (no es veu bé, no funciona), fes servir la plantilla «Web».
   - type: dropdown
-    id: on
+    id: origen
     attributes:
-      label: On l'has vista
+      label: On l'has vist
       options:
-        [
-          Al web finestraoberta.cat,
-          Al servidor idescat,
-          Al servidor dades-obertes,
-          Al servidor barcelona,
-          En un altre lloc,
-        ]
+        - Al web finestraoberta.cat
+        - Al servidor idescat
+        - Al servidor dades-obertes
+        - Al servidor barcelona
+        - En un altre lloc
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: lloc
     attributes:
       label: Pàgina o pregunta
-      description: L'adreça de la pàgina o, si era un assistent, la pregunta que li vas fer.
+      description: L'adreça de la pàgina. Si era un assistent, la pregunta que li vas fer i, si les tens, les crides que va fer (eina i arguments).
     validations:
       required: true
   - type: textarea
@@ -37,6 +37,6 @@ body:
     id: correcte
     attributes:
       label: Què hauria de dir
-      description: La dada correcta i on l'has trobada. Si pot ser, un enllaç a la web de l'organisme que la publica.
+      description: La dada correcta i on l'has trobada. Si pot ser, un enllaç al web de l'organisme que la publica. Si un text pren partit, explica per què.
     validations:
       required: true
