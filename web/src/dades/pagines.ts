@@ -44,7 +44,7 @@ export const pagines: Pagina[] = [
     descripcio: 'Què s’ha aprovat i què s’ha rebutjat a cada sessió del Ple, i les lleis noves.',
     previsualitzacio: {
       titol: 'Què ha decidit el Parlament',
-      frase: `${lleis.length} ${lleis.length === 1 ? 'llei' : 'lleis'} i ${decretsLlei.length} ${decretsLlei.length === 1 ? 'decret llei' : 'decrets llei'} en aquesta legislatura.`,
+      frase: `${lleis.length} ${lleis.length === 1 ? 'llei' : 'lleis'} del Parlament i ${decretsLlei.length} ${decretsLlei.length === 1 ? 'decret llei' : 'decrets llei'} del Govern en aquesta legislatura.`,
       institucio: 'par',
     },
   },

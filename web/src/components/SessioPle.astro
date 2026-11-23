@@ -12,12 +12,11 @@ const mes = s.fetes.length > 0 ? s.altres : tractats.mes;
 ---
 
 <article class="sessio">
-  <h3>{dia(s.data)}</h3>
-  <p class="secundari">Sessió {s.numero}, {s.caracter}</p>
+  <h3>{dia(s.data)} <span class="secundari">· Sessió {s.numero}, {s.caracter}</span></h3>
   {
     s.fetes.length === 0 ? (
       <>
-        <p class="buit">{tractats.mes > 0 ? "Es va tractar, entre altres temes:" : "Es va tractar:"}</p>
+        <p class="buit">Es va tractar:</p>
         <ul class="temes">
           {tractats.mostrats.map((t) => (
             <li>{t}</li>
@@ -54,6 +53,11 @@ const mes = s.fetes.length > 0 ? s.altres : tractats.mes;
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: -0.012em;
+  }
+
+  h3 .secundari {
+    font-weight: 400;
+    letter-spacing: 0;
   }
 
   .verb {

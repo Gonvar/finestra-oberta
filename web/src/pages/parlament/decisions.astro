@@ -3,7 +3,7 @@ import Pagina from '../../layouts/Pagina.astro';
 import '../../styles/subpagines.css';
 import Norma from '../../components/FilaNorma.astro';
 import Sessio from '../../components/SessioPle.astro';
-import { activitat, decisions, decretsLlei, lleis } from '../../dades/activitat.ts';
+import { activitat, COMISSIONS, decisions, decretsLlei, lleis, sigles } from '../../dades/activitat.ts';
 import { dia } from '../../dades/institucions.ts';
 
 const { sessions, normes } = activitat;
@@ -21,6 +21,7 @@ const ambDecisions = sessions.map((s) => {
   const fetes = decisions(s);
   return { ...s, fetes, altres: s.punts.length - fetes.length };
 });
+const comissions = sigles(ambDecisions.flatMap((s) => s.fetes.map((p) => p.acord)));
 ---
 
 <Pagina>
@@ -95,8 +96,8 @@ const ambDecisions = sessions.map((s) => {
   <section class="seccio" aria-labelledby="ple-titol">
     <h2 class="titol-seccio" id="ple-titol">Sessió per sessió</h2>
     <p class="explica">
-      Al Ple hi ha tots els diputats. Aquí surten les iniciatives que s'hi aproven, es convaliden, es deroguen o
-      es rebutgen, amb el text de l'acord. No hi surten els altres acords, per exemple quan el Ple retorna una
+      Al Ple hi ha tots els diputats. Aquí surten els acords del Ple que aproven, convaliden, deroguen o
+      rebutgen alguna cosa, amb el text de l'acord. No hi surten els altres acords, per exemple quan el Ple retorna una
       proposició de llei en el debat de totalitat. Aquests acords són al web del Parlament, a cada sessió.
     </p>
     <dl class="paraules">
@@ -117,8 +118,15 @@ const ambDecisions = sessions.map((s) => {
       <dd>Que el Parlament el doni per bo. Si no el convalida, el decret llei queda derogat, és a dir, deixa de valer.</dd>
       <dt>Sigles després de l'acord</dt>
       <dd>
-        Són la comissió que ha preparat el text. Per exemple, CED és la Comissió de l'Estatut dels Diputats, que
-        revisa si cada diputat pot fer altres feines.
+        Són la comissió del Parlament que s'ocupa de la iniciativa. La de l'Estatut dels Diputats revisa, per
+        exemple, si cada diputat pot fer altres feines.
+        <ul class="sigles">
+          {comissions.map((c) => (
+            <li>
+              <abbr>{c}</abbr>: {COMISSIONS[c]}
+            </li>
+          ))}
+        </ul>
       </dd>
       <dt>Sessió constitutiva, ordinària, específica o extraordinària</dt>
       <dd>
@@ -180,6 +188,16 @@ const ambDecisions = sessions.map((s) => {
 
   .paraules dt {
     margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .sigles {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+  }
+
+  .sigles abbr {
+    text-decoration: none;
     font-weight: 600;
   }
 
