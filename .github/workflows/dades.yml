@@ -17,20 +17,24 @@ on:
   # pot esperar a l'endemà.
   push:
     branches: [main]
-    paths: ['src/**', 'fonts/**']
+    paths: ['src/**', 'fonts/**', '!src/**/*.test.ts']
   workflow_dispatch:
 
 permissions: {}
 
-# Per branca: una prova des d'una altra branca no ha de cancel·lar l'execució de main en cua.
+# Per branca: una prova des d'una altra branca no ha de cancel·lar l'execució de main en cua. A main
+# cada execució espera l'anterior, perquè publiquen per ordre. A una altra branca, que només prova,
+# una execució nova fa inútil l'anterior.
 concurrency:
   group: dades-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   genera:
     name: Llegeix les fonts
     runs-on: ubuntu-latest
+    # El p95 és de 9 minuts. Una font penjada fa fallar la tasca, en lloc d'ocupar el runner 6 hores.
+    timeout-minutes: 20
     permissions:
       contents: read
     outputs:
@@ -98,6 +102,8 @@ jobs:
     needs: genera
     if: needs.genera.outputs.hi-ha && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    # Inclou els resums de les sessions noves amb l'API d'Anthropic.
+    timeout-minutes: 15
     environment: dades
     permissions:
       id-token: write
@@ -204,6 +210,7 @@ jobs:
     name: Torna a compilar la web
     needs: publica
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     environment: dades
     permissions: {}
     steps:

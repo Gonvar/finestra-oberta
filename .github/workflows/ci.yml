@@ -8,10 +8,18 @@ on:
 permissions:
   contents: read
 
+# Un commit nou a una pull request deixa sense sentit l'execució de l'anterior. A main no es cancel·la
+# res: cada commit fusionat hi ha de quedar comprovat.
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   comprovacions:
     name: Proves, tipus i format
     runs-on: ubuntu-latest
+    # El pressupost del job, amb marge sobre el p95 de 24 s. Si el passa, alguna cosa s'ha espatllat.
+    timeout-minutes: 3
     steps:
       - uses: actions/checkout@v7
         with:
@@ -32,48 +40,85 @@ jobs:
             echo "::warning file=$f::És una còpia feta a mà. Abans d'aprovar, cal tornar-la a generar amb el fragment de docs/institucions.md, passar-hi Prettier i comprovar que surt igual, llevat de la data de consulta. Vegeu NEUTRALITAT.md."
           done
       - uses: actions/setup-node@v7
+        id: node
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
-      - run: npm test
-      - run: npm run typecheck
-      - run: npm run format:check
+      # node_modules sencer, no la memòria cau de npm: npm ci se'l salta si el lockfile i Node són els
+      # mateixos. Les pull requests fan servir la que desa main.
+      - uses: actions/cache@v5
+        id: dependencies
+        with:
+          path: node_modules
+          key: node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('package-lock.json') }}
+      - id: install
+        if: steps.dependencies.outputs.cache-hit != 'true'
+        run: npm ci
+      # Cada comprovació s'executa encara que falli l'anterior, perquè el resultat les digui totes.
+      - if: ${{ !cancelled() && steps.install.outcome != 'failure' }}
+        run: npm test
+      - if: ${{ !cancelled() && steps.install.outcome != 'failure' }}
+        run: npm run typecheck
+      - if: ${{ !cancelled() && steps.install.outcome != 'failure' }}
+        run: npm run format:check
 
   web:
     name: Web
     runs-on: ubuntu-latest
+    # Amb les còpies publicades n'hi ha prou amb uns 2 minuts. Consultar les fonts arriba als 14 al p95.
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: web
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
+        id: node
         with:
           node-version-file: .nvmrc
-          cache: npm
-          cache-dependency-path: web/package-lock.json
-      - run: npm ci
+      - uses: actions/cache@v5
+        id: dependencies
+        with:
+          path: web/node_modules
+          key: web-node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('web/package-lock.json') }}
+      - if: steps.dependencies.outputs.cache-hit != 'true'
+        run: npm ci
       # La web es construeix amb les dades que genera el codi d'aquesta pull request, no amb les
-      # publicades a la branca dades, que surten del codi de main i poden tenir una altra forma.
-      - run: node ../src/dades.ts ../dades
+      # publicades a la branca dades, que surten del codi de main i poden tenir una altra forma. El codi
+      # nou es fa passar per les còpies de les fonts publicades, sense consultar-les: dona el mateix en
+      # segons, i no depèn de si una font respon. Només si el codi demana altres URL que les de les
+      # còpies (el codi 3) cal consultar les fonts.
+      - name: Genera les dades amb el codi de la pull request
+        run: |
+          git clone --depth 1 --branch dades "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git" ../publicades
+          node ../src/reprodueix-dades.ts ../publicades ../dades || {
+            estat=$?
+            if [ "$estat" -ne 3 ]; then exit "$estat"; fi
+            echo "::notice::El codi demana altres URL que les còpies publicades: es consulten les fonts."
+            node ../src/dades.ts ../dades
+          }
       - run: npm test
       - run: npm run build
 
   web-publicades:
     name: Web amb les dades publicades
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     defaults:
       run:
         working-directory: web
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
+        id: node
         with:
           node-version-file: .nvmrc
-          cache: npm
-          cache-dependency-path: web/package-lock.json
-      - run: npm ci
+      - uses: actions/cache@v5
+        id: dependencies
+        with:
+          path: web/node_modules
+          key: web-node-modules-${{ runner.os }}-${{ runner.arch }}-${{ steps.node.outputs.node-version }}-${{ hashFiles('web/package-lock.json') }}
+      - if: steps.dependencies.outputs.cache-hit != 'true'
+        run: npm ci
       # Cloudflare construeix la web amb la branca dades tal com està publicada, que el workflow de
       # dades només actualitza després de fusionar. La web ha de funcionar amb aquestes dades, encara
       # que no tinguin els camps nous de la pull request. El prebuild les clona.

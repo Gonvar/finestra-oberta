@@ -170,10 +170,14 @@ export async function genera<T extends Record<string, unknown>>(
 export class DesquadreError extends Error {}
 
 /**
- * Comprova que les còpies tenen l'empremta que diu procedencia.json i que, tornant a construir les
- * dades a partir d'aquestes còpies, els JSON publicats surten idèntics, byte a byte.
+ * Construeix les dades a partir de les còpies de `carpeta` en lloc de les fonts: cada crida rep la
+ * còpia següent, en el mateix ordre en què es va demanar. Falla amb DesquadreError si les còpies no
+ * tenen l'empremta que diu procedencia.json, o si `construeix` no demana exactament aquestes URL.
  */
-export async function verifica(carpeta: string, construeix: Construeix) {
+async function reprodueixCopies<T extends Record<string, unknown>>(
+  carpeta: string,
+  construeix: (fetchImpl: Fetch, data: string) => Promise<T>,
+) {
   const llegeix = async (...cami: string[]) => {
     try {
       return await readFile(join(carpeta, ...cami));
@@ -205,7 +209,6 @@ export async function verifica(carpeta: string, construeix: Construeix) {
     }),
   );
 
-  // Les respostes es tornen a servir en el mateix ordre en què es van demanar.
   let seguent = 0;
   let desquadre: DesquadreError | undefined;
   const reproduit: Fetch = async (input) => {
@@ -220,7 +223,7 @@ export async function verifica(carpeta: string, construeix: Construeix) {
   };
   let fitxers;
   try {
-    fitxers = await construeix(reproduit, procedencia.data_consulta, 0);
+    fitxers = await construeix(reproduit, procedencia.data_consulta);
   } catch (error) {
     // comun.ts converteix qualsevol error de fetch en «la font no respon», que aquí no és la causa.
     if (desquadre) throw desquadre;
@@ -230,7 +233,17 @@ export async function verifica(carpeta: string, construeix: Construeix) {
     throw new DesquadreError(
       `procedencia.json té ${procedencia.captures.length} còpies, però les dades només en fan servir ${seguent}.`,
     );
+  return { procedencia, fitxers, llegeix };
+}
 
+/**
+ * Comprova que les còpies tenen l'empremta que diu procedencia.json i que, tornant a construir les
+ * dades a partir d'aquestes còpies, els JSON publicats surten idèntics, byte a byte.
+ */
+export async function verifica(carpeta: string, construeix: Construeix) {
+  const { procedencia, fitxers, llegeix } = await reprodueixCopies(carpeta, (fetchImpl, data) =>
+    construeix(fetchImpl, data, 0),
+  );
   const noms = Object.keys(fitxers);
   if (JSON.stringify(Object.keys(procedencia.fitxers).sort()) !== JSON.stringify([...noms].sort()))
     throw new DesquadreError(`procedencia.json no dona l'empremta de ${noms.join(' i ')}.`);
@@ -248,4 +261,15 @@ export async function verifica(carpeta: string, construeix: Construeix) {
       throw new DesquadreError(`${nom} no té l'empremta que diu procedencia.json.`);
   }
   return { procedencia, fitxers: Object.keys(fitxers) };
+}
+
+/**
+ * Genera a `desti` les dades que surten de les còpies publicades a `origen`, amb el codi d'ara. La CI
+ * ho fa servir per construir la web amb les dades d'una pull request sense tornar a consultar les
+ * fonts. Falla amb DesquadreError si el codi d'ara no demana les mateixes URL que les còpies.
+ */
+export async function reprodueix(origen: string, desti: string, construeix: Construeix) {
+  await reprodueixCopies(origen, (fetchImpl, data) =>
+    genera(desti, fetchImpl, data, construeix, 0),
+  );
 }

@@ -8,6 +8,7 @@ import { getJson, getText, SourceError, type Fetch } from './comun.ts';
 import {
   DesquadreError,
   genera,
+  reprodueix,
   verifica,
   type Construeix,
   type Procedencia,
@@ -227,4 +228,35 @@ test('genera no torna a provar un 404', async () => {
   await assert.rejects(genera(carpeta, fontSenseA, '2026-11-22', construeix, 0), /404/);
   assert.equal(consultes, 1);
   await rm(carpeta, { recursive: true });
+});
+
+test('reprodueix genera les dades amb el codi nou a partir de les còpies, sense cap font', async () => {
+  const publicada = await carpetaGenerada();
+  const desti = await mkdtemp(join(tmpdir(), 'reproduides-'));
+  const nou: Construeix = async (fetchImpl, data) => ({
+    'resultat.json': { doble: (await getJson<{ valor: number }>(fetchImpl, A)).valor * 2 },
+    'text.json': { text: await getText(fetchImpl, B), data },
+  });
+  await reprodueix(publicada, desti, nou);
+  assert.deepEqual(JSON.parse(await readFile(join(desti, 'resultat.json'), 'utf8')), { doble: 14 });
+  assert.deepEqual(JSON.parse(await readFile(join(desti, 'text.json'), 'utf8')), {
+    text: '<p>Hola</p>',
+    data: '2026-11-22',
+  });
+  await rm(publicada, { recursive: true });
+  await rm(desti, { recursive: true });
+});
+
+test('reprodueix falla si el codi nou demana una URL que no és a les còpies', async () => {
+  const publicada = await carpetaGenerada();
+  const desti = await mkdtemp(join(tmpdir(), 'reproduides-'));
+  const nou: Construeix = async (fetchImpl) => ({
+    'resultat.json': await getJson(fetchImpl, 'https://font.example/c.json'),
+  });
+  await assert.rejects(
+    reprodueix(publicada, desti, nou),
+    /demanen https:\/\/font\.example\/c\.json/,
+  );
+  await rm(publicada, { recursive: true });
+  await rm(desti, { recursive: true });
 });
