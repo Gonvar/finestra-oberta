@@ -1,4 +1,4 @@
-name: Dades del Govern, del Parlament i dels ajuntaments
+name: Dades del Govern, del Parlament, dels ajuntaments, de l'activitat del Parlament, dels ajuts i del pressupost
 
 # Cada dia torna a llegir les fonts oficials i, si la composició ha canviat, la desa a la branca
 # `dades` amb la còpia de cada resposta. Les dades no passen per pull request perquè no les escriu
@@ -13,6 +13,11 @@ name: Dades del Govern, del Parlament i dels ajuntaments
 on:
   schedule:
     - cron: '0 5 * * *'
+  # Quan canvia la manera de llegir les fonts, la web necessita les dades amb la forma nova, i no
+  # pot esperar a l'endemà.
+  push:
+    branches: [main]
+    paths: ['src/**', 'fonts/**']
   workflow_dispatch:
 
 permissions: {}
@@ -70,8 +75,8 @@ jobs:
         run: |
           git add -A
           # data_consulta canvia cada dia. Si és l'únic que ha canviat, no hi ha res de nou per desar.
-          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json parlament.json ajuntaments.json municipis.json; then
-            echo "No ha canviat res."
+          if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json ajuntaments.json activitat.json ajuts.json pressupost.json municipis.json; then
+            echo "Cap composició no ha canviat."
           else
             echo "hi-ha=true" >> "$GITHUB_OUTPUT"
           fi
@@ -148,6 +153,6 @@ jobs:
           git add -A
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'chore(dades): actualitza el Govern, el Parlament i els ajuntaments' \
+          git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments, l'\''activitat del Parlament, els ajuts i el pressupost' \
             -m "Execució: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           git push origin dades

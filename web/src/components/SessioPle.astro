@@ -1,0 +1,95 @@
+---
+import { temes, type Punt, type Resultat, type Sessio } from '../dades/activitat.ts';
+import { dia } from '../dades/institucions.ts';
+
+type Props = {
+  s: Sessio & { fetes: (Punt & { resultat: Resultat })[]; altres: number };
+};
+const { s } = Astro.props;
+// Una sessió sense cap iniciativa aprovada o rebutjada sí que va tractar alguna cosa, com una investidura: se'n diu el tema.
+const tractats = temes(s, 5);
+const mes = s.fetes.length > 0 ? s.altres : tractats.mes;
+---
+
+<article class="sessio">
+  <h3>{dia(s.data)} <span class="secundari">· Sessió {s.numero}, {s.caracter}</span></h3>
+  {
+    s.fetes.length === 0 ? (
+      <>
+        <p class="buit">Es va tractar:</p>
+        <ul class="temes">
+          {tractats.mostrats.map((t) => (
+            <li>{t}</li>
+          ))}
+        </ul>
+      </>
+    ) : (
+      <ol class="files">
+        {s.fetes.map((p) => (
+          <li>
+            <p class="verb">{p.acord}</p>
+            <p class="titol">
+              <a href={p.url_expedient}>{p.titol}</a>
+            </p>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+  <p class="secundari altres">
+    {mes > 0 && `${mes} ${mes === 1 ? 'punt més' : 'punts més'}. `}<a href={s.url}
+      >Tots els punts, al web del Parlament</a
+    >
+  </p>
+</article>
+
+<style>
+  .sessio {
+    margin-top: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.012em;
+  }
+
+  h3 .secundari {
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .verb {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  .titol {
+    margin-top: 0.125rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+  }
+
+  .titol a {
+    color: inherit;
+  }
+
+  .buit {
+    margin-top: 1rem;
+    color: var(--ink-2);
+  }
+
+  .temes {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+  }
+
+  .altres {
+    margin-top: 0.75rem;
+  }
+</style>

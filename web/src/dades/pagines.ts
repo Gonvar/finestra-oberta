@@ -2,6 +2,8 @@
 // La plantilla Pagina.astro i les imatges de /previsualitzacions surten d'aquesta llista, i una
 // pàgina que no hi és no es pot construir.
 import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
+import { decretsLlei, lleis } from './activitat.ts';
+import { govern, membres, parlament, slug } from './institucions.ts';
 
 export type Pagina = {
   /** Comença i acaba amb barra, com les rutes que genera Astro: «/», «/parlament/». */
@@ -26,6 +28,42 @@ export const pagines: Pagina[] = [
       frase: ENTRADETA,
     },
   },
+  {
+    ruta: '/parlament/',
+    titol: 'Parlament · Finestra Oberta',
+    descripcio: 'Els grups, els escons i les persones diputades del Parlament de Catalunya.',
+    previsualitzacio: {
+      titol: 'Qui seu al Parlament',
+      frase: `${parlament.escons} escons en ${parlament.grups.length} grups.`,
+      institucio: 'par',
+    },
+  },
+  {
+    ruta: '/parlament/decisions/',
+    titol: 'Què ha decidit el Parlament · Finestra Oberta',
+    descripcio: 'Què s’ha aprovat i què s’ha rebutjat a cada sessió del Ple, i les lleis noves.',
+    previsualitzacio: {
+      titol: 'Què ha decidit el Parlament',
+      frase: `${lleis.length} ${lleis.length === 1 ? 'llei' : 'lleis'} del Parlament i ${decretsLlei.length} ${decretsLlei.length === 1 ? 'decret llei' : 'decrets llei'} del Govern en aquesta legislatura.`,
+      institucio: 'par',
+    },
+  },
+  {
+    ruta: '/govern/',
+    titol: 'Govern · Finestra Oberta',
+    descripcio: 'Qui forma el Govern de la Generalitat, què cobra cadascú i què declara.',
+    previsualitzacio: {
+      titol: 'Qui forma el Govern',
+      frase: `El president i ${govern.consellers.length} consellers i conselleres, un per departament.`,
+      institucio: 'gov',
+    },
+  },
+  ...membres.map((m) => ({
+    ruta: `/govern/${slug(m.nom)}/`,
+    titol: `${m.nom} · Finestra Oberta`,
+    descripcio: `${m.carrec}: retribució, activitats, agenda i viatges.`,
+    previsualitzacio: { titol: m.nom, frase: m.carrec, institucio: 'gov' as const },
+  })),
 ];
 
 /**

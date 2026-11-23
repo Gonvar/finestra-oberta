@@ -1,11 +1,10 @@
 ---
 import Comparteix from './Comparteix.tsx';
 
-type Props = { url: string; titol: string };
-const { url, titol } = Astro.props;
-
 // El botó de cerca és fora de l'illa de React perquè la barra es pinti sense esperar JavaScript;
-// l'illa del cercador escolta l'esdeveniment que envia.
+// l'illa del cercador escolta l'esdeveniment que envia. Les pàgines sense cercador no el mostren.
+type Props = { url: string; titol: string; cerca: boolean };
+const { url, titol, cerca } = Astro.props;
 ---
 
 <header class="nav">
@@ -21,17 +20,23 @@ const { url, titol } = Astro.props;
     </a>
     <nav aria-label="Seccions">
       <ul>
-        <li class="nomes-ample"><a href="#cronologia">Cronologia</a></li>
-        <li class="nomes-ample"><a href="#ia">Per a la IA</a></li>
-        <li>
-          <button type="button" class="cerca" data-obre-cercador disabled aria-keyshortcuts="Meta+K Control+K">
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
-              <path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
-            </svg>
-            <span class="etiqueta-cerca">Cerca</span>
-          </button>
-        </li>
+        {/* A la portada, en pantalles estretes no hi cabrien; el Govern i el Parlament ja hi tenen el seu bloc. */}
+        <li class:list={{ 'nomes-escriptori': cerca }}><a href="/govern">Govern</a></li>
+        <li class:list={{ 'nomes-escriptori': cerca }}><a href="/parlament">Parlament</a></li>
+        <li class="nomes-ample"><a href="/#ia">Per a la IA</a></li>
+        {
+          cerca && (
+            <li>
+              <button type="button" class="cerca" data-obre-cercador disabled aria-keyshortcuts="Meta+K Control+K">
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6" />
+                  <path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+                <span class="etiqueta-cerca">Cerca</span>
+              </button>
+            </li>
+          )
+        }
         <li>
           <Comparteix client:load url={url} titol={titol} />
         </li>
@@ -136,6 +141,24 @@ const { url, titol } = Astro.props;
 
   .cerca {
     transition: transform var(--t-boto) var(--ease-out);
+  }
+
+  /* A 320 px, a les pàgines de secció no hi cabrien els dos enllaços i els dos botons. */
+  @media (max-width: 359px) {
+    ul {
+      gap: 0;
+    }
+
+    nav a,
+    .cerca {
+      padding: 0 0.375rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .nomes-escriptori {
+      display: none;
+    }
   }
 
   @media (max-width: 479px) {

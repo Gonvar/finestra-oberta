@@ -1,0 +1,116 @@
+---
+import Pagina from '../../layouts/Pagina.astro';
+import '../../styles/subpagines.css';
+import { dia, euros, govern, membres, slug } from '../../dades/institucions.ts';
+---
+
+<Pagina>
+  <main class="contingut">
+  <section class="capcalera" aria-labelledby="titol">
+    <p class="etiqueta entra"><span class="punt gov" aria-hidden="true"></span>Govern de la Generalitat</p>
+    <h1 id="titol" class="entra" style="--ordre: 1">Qui forma el Govern</h1>
+    <p class="entradeta entra" style="--ordre: 2">
+      El president i {govern.consellers.length} consellers i conselleres, un per departament.
+    </p>
+  </section>
+
+  <section class="seccio entra" style="--ordre: 3" aria-labelledby="membres-titol">
+    <h2 class="visualment-amagat" id="membres-titol">Membres del Govern</h2>
+    <ul class="membres">
+      {
+        membres.map((m, i) => (
+          <li class:list={{ president: i === 0 }}>
+            <a href={`/govern/${slug(m.nom)}`}>
+              <img src={m.foto} alt="" loading={i < 4 ? 'eager' : 'lazy'} decoding="async" width="338" height="245" />
+              <span class="nom">{m.nom}</span>
+              <span class="secundari">{m.carrec}</span>
+              <span class="sou">
+                {euros(m.retribucio_anual)} <span class="secundari">l'any</span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="font-dada">
+      Sou anual previst: <a href={govern.url}>relació d'alts càrrecs</a>, actualitzada el {
+        dia(govern.data_dades)
+      }. Fotos: <a href={govern.url_perfils}>govern.cat</a>.
+    </p>
+  </section>
+  </main>
+</Pagina>
+
+<style>
+  .membres {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 2.25rem 1.25rem;
+  }
+
+  @media (min-width: 900px) {
+    .president {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .president .nom {
+      font-size: 1.875rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+  }
+
+  .membres a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 338 / 245;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 22px;
+    background: var(--gov-tint);
+    margin-bottom: 0.625rem;
+    transition: transform var(--t-bloc) var(--ease-out);
+  }
+
+  .president img {
+    flex: 1;
+  }
+
+  .membres a:active img {
+    transform: scale(0.985);
+  }
+
+  .nom {
+    font-size: 1.1875rem;
+    line-height: 1.3;
+    letter-spacing: -0.012em;
+    color: var(--gov);
+  }
+
+  .membres a:hover .nom {
+    text-decoration: underline;
+  }
+
+  .sou {
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .membres + .font-dada {
+    margin-top: 2rem;
+  }
+</style>

@@ -3,12 +3,12 @@
 // La carpeta és dades/ si no se'n diu cap altra: la branca `dades` del repositori.
 import { fileURLToPath } from 'node:url';
 import { SourceError } from './comun.ts';
-import { construirInstitucions } from './institucions.ts';
+import { construirDades } from './construeix.ts';
 import { DesquadreError, verifica } from './procedencia.ts';
 
 const carpeta = process.argv[2] ?? fileURLToPath(new URL('../dades', import.meta.url));
 try {
-  const { procedencia, fitxers } = await verifica(carpeta, construirInstitucions);
+  const { procedencia, fitxers } = await verifica(carpeta, construirDades);
   console.log(
     `${fitxers.join(' i ')} surten de les ${procedencia.captures.length} còpies de les fonts ` +
       `consultades el ${procedencia.data_consulta}, i cada còpia té l'empremta que diu procedencia.json.`,

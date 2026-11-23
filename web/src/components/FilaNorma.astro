@@ -1,0 +1,62 @@
+---
+import type { Norma } from '../dades/activitat.ts';
+import { diaCurt } from '../dades/institucions.ts';
+
+type Props = { n: Norma };
+const { n } = Astro.props;
+---
+
+<li class="fila">
+  <time datetime={n.data_publicacio}>{diaCurt(n.data_publicacio)}</time>
+  <div>
+    <p class="tipus"><span class:list={['punt', n.rang === 'Llei' ? 'par' : 'gov']} aria-hidden="true" />{n.rang}</p>
+    <p class="frase"><a href={n.url}>{n.titol}</a></p>
+    <p class="secundari">
+      DOGC núm. {n.dogc}{n.vigencia !== 'Vigent' && ` · ${n.vigencia}`}
+    </p>
+  </div>
+</li>
+
+<style>
+  .fila {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .fila {
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+    }
+  }
+
+  time {
+    font-size: 0.9375rem;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tipus {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  .frase {
+    margin-top: 0.125rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+  }
+
+  .frase a {
+    color: inherit;
+  }
+
+  .secundari {
+    margin-top: 0.25rem;
+  }
+</style>
