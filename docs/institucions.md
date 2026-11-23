@@ -16,7 +16,8 @@ La tasca [`dades.yml`](../.github/workflows/dades.yml) s'executa cada dia a les 
 - Si la composició ha canviat, o si el que hi ha publicat ja no es pot reproduir, signa `procedencia.json` amb una atestació i en fa un commit a `dades`. El missatge del commit enllaça l'execució de la tasca.
 - Després de desar les dades, crida el deploy hook de Workers Builds perquè Cloudflare torni a compilar la web amb les dades noves. Sense aquest pas, la web només es tornaria a compilar quan canviés `main`. L'URL del hook és el secret `CLOUDFLARE_DEPLOY_HOOK` de l'entorn `dades`. Si Cloudflare falla, es pot tornar a llançar només el job «Torna a compilar la web».
 - Si l'únic canvi és `data_consulta`, no fa cap commit: la composició és la mateixa.
-- Si una font falla o una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
+- Si una font no respon (la connexió no arriba, o respon 429 o 5xx després de tres intents), se'n mantenen les dades de l'última vegada que va respondre, i les altres fonts s'actualitzen igual. Si respon però amb una forma o un contingut que no quadra, la tasca s'atura: aquest cas no s'amaga. Un JSON mantingut conserva les dates que porta (`data_dades`, `data_consulta` o les pròpies del fitxer), i la web mostra aquestes dates i no la de l'execució: les dades d'una font caiguda no semblen d'avui. `procedencia.json` diu de quin dia són les dades de cada font i, si no ha respost, des de quin dia i amb quin error; l'execució ho mostra com un avís. Només es manté el que encara es pot reproduir a partir de les seves còpies amb el codi i la versió de Node d'ara: si s'ha canviat la versió de Node i l'ordre dels noms en surt diferent, una font caiguda atura la tasca.
+- Si una font no respon i no se'n pot mantenir res, si no respon cap font o si una comprovació no quadra, la tasca falla, GitHub ho notifica i `dades` es queda com estava. Aleshores cal mirar-ne el registre i corregir la causa.
 - Llançada des d'una branca que no és `main`, la tasca llegeix les fonts i ho comprova tot, però no signa ni publica res. Serveix per provar un canvi abans de fusionar-lo.
 
 Les dades no passen per pull request perquè no les escriu cap persona. El codi que les genera sí: un ruleset de `main` hi impedeix el push directe, el force push i l'esborrat, i tot canvi hi entra per una pull request pública, també els de qui administra el repositori.
@@ -37,9 +38,9 @@ Per tant, a `dades` només hi pot escriure el workflow de `main`, i el codi de `
 Al costat de cada JSON hi ha:
 
 - `captures/`: la resposta de cada font oficial tal com va arribar, sense cap canvi. Cada fitxer es diu com la seva empremta SHA-256.
-- `procedencia.json`: l'empremta de cada JSON publicat i, de cada resposta, l'URL demanat, l'URL que la va servir després de les redireccions, l'hora de la consulta, el codi HTTP, el tipus de contingut i l'empremta, en l'ordre en què es van demanar.
+- `procedencia.json`: un grup per font (les institucions, l'activitat del Parlament, els ajuts, el pressupost, els contractes i les oposicions). Cada grup diu el dia de la consulta, la versió de Node, l'empremta de cada JSON que en surt i, de cada resposta, l'URL demanat, l'URL que la va servir després de les redireccions, l'hora de la consulta, el codi HTTP, el tipus de contingut i l'empremta, en l'ordre en què es van demanar. Si el dia de l'última execució la font no va respondre, `fallada` en diu des de quin dia i amb quin error, i el grup és el de l'última vegada que sí que va respondre.
 
-L'atestació signa `procedencia.json`. Com que aquest fitxer porta l'empremta dels JSON i de cada còpia, els signa tots alhora: no es poden barrejar fitxers de dues execucions.
+L'atestació signa `procedencia.json`. Com que aquest fitxer porta l'empremta dels JSON i de cada còpia, els signa tots alhora: no es poden barrejar fitxers i còpies de dues execucions dins d'una mateixa font.
 
 Hi ha tres comprovacions, i les pot fer qualsevol persona. Cal [`gh`](https://cli.github.com/), Git i Node.js 24.
 
@@ -65,7 +66,7 @@ git checkout "$CODI"
 npm run verifica-dades
 ```
 
-Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
+Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a cada grup de `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
 **3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/diputats.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/mapa-municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json`, `/tmp/ara/contractes.json`, `/tmp/ara/adjudicataris.json` i `/tmp/ara/oposicions.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
@@ -299,7 +300,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 ## `ajuts.json`
 
 - **Font:** les [convocatòries del RAISC](https://analisi.transparenciacatalunya.cat/d/khxn-nv6a) (`khxn-nv6a`), el Registre de subvencions i ajuts de Catalunya, del Departament d'Economia i Finances, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/). Recull les convocatòries de totes les administracions de Catalunya, no només de la Generalitat.
-- **Data:** `data_dades` és la data de l'última actualització del conjunt, que s'actualitza cada dia.
+- **Data:** `data_dades` és la data de l'última actualització del conjunt, que s'actualitza cada dia. `data_consulta` és el dia de la consulta, del qual depèn quines convocatòries són obertes: si el RAISC deixa de respondre i se'n mantenen les dades anteriors, aquesta data diu de quin dia són.
 - **Contingut:** les convocatòries que el dia de la consulta, a l'hora de Catalunya, encara no han acabat el termini de presentació de sol·licituds (`fi` és avui o més endavant). Hi són també les que encara no l'han obert (`inici` és més endavant). Van ordenades pel final del termini i, després, pel codi RAISC.
 - **Les que queden fora:** les que la font dona sense final de termini, o amb un final que no és una data (el conjunt en té, per exemple, amb «-»), perquè no es pot dir si són obertes. `finals_no_llegibles` diu quins valors tenen i quantes convocatòries n'hi ha de cadascun, perquè es vegi què s'ha deixat fora.
 - **Dates:** el RAISC les escriu com a text, «19/10/2026». `inici` i `fi` són les mateixes dates en la forma `2026-10-19`; les originals són a `inici_font` i `fi_font`. Si l'inici no és una data, `inici` és `null` i el valor de la font és a `inici_font`.
@@ -309,7 +310,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
   - Hi ha d'haver almenys un final de termini d'avui o més endavant. El RAISC sempre té convocatòries obertes: si no en surt cap, la font ha canviat la forma de les dates, i una llista buida diria que no se'n pot demanar cap.
   - Cada convocatòria ha de tenir codi RAISC, i un codi només pot sortir una vegada. L'import ha de ser un nombre.
 - **Cada dia canvia:** com que les convocatòries tanquen i n'obren de noves, `ajuts.json` canvia gairebé cada dia, i la branca `dades` té una actualització signada gairebé cada dia.
-- **Si falla:** com els ajuntaments, atura també l'actualització del Govern i el Parlament fins que es corregeix.
+- **Si falla:** com les altres fonts, si no respon se'n mantenen les dades anteriors, i si en canvia la forma la tasca s'atura.
 
 ## `pressupost.json`
 

@@ -5,7 +5,7 @@
 // alguna còpia (per exemple, perquè la font ha canviat de format i el codi ja llegeix el nou): llavors
 // les dades només es poden generar consultant les fonts, amb src/dades.ts.
 import { SourceError } from './comun.ts';
-import { construirDades } from './construeix.ts';
+import { FONTS } from './construeix.ts';
 import { DesquadreError, reprodueix } from './procedencia.ts';
 
 const [origen, desti] = process.argv.slice(2);
@@ -14,7 +14,7 @@ if (origen === undefined || desti === undefined) {
   process.exit(1);
 }
 try {
-  await reprodueix(origen, desti, construirDades);
+  await reprodueix(origen, desti, FONTS);
   console.log(`Dades generades a ${desti} a partir de les còpies de ${origen}.`);
 } catch (error) {
   if (!(error instanceof DesquadreError || error instanceof SourceError)) throw error;
