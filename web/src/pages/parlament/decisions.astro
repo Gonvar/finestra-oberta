@@ -7,7 +7,9 @@ import { activitat, decisions, decretsLlei, lleis } from '../../dades/activitat.
 import { dia } from '../../dades/institucions.ts';
 
 const { sessions, normes } = activitat;
-const constitutiva = sessions.at(-1)!;
+// Si la font perd la sessió constitutiva, totes les xifres «des del…» serien falses: millor aturar el build.
+const constitutiva = sessions.find((s) => s.caracter === 'constitutiva');
+if (constitutiva === undefined) throw new Error('activitat.json no té la sessió constitutiva.');
 // Les sessions més noves es veuen obertes; la resta, plegades, perquè la pàgina no sigui infinita.
 const OBERTES = 6;
 const NORMES_OBERTES = 8;
@@ -95,7 +97,7 @@ const ambDecisions = sessions.map((s) => {
     <p class="explica">
       Al Ple hi ha tots els diputats. Aquí surten les iniciatives que s'hi aproven, es convaliden, es deroguen o
       es rebutgen, amb el text de l'acord. No hi surten els altres acords, per exemple quan el Ple retorna una
-      proposició de llei a qui l'ha presentada en el debat de totalitat. Són al web del Parlament, a cada sessió.
+      proposició de llei en el debat de totalitat. Aquests acords són al web del Parlament, a cada sessió.
     </p>
     <dl class="paraules">
       <dt>Projecte de llei</dt>
@@ -103,7 +105,7 @@ const ambDecisions = sessions.map((s) => {
       <dt>Proposició de llei</dt>
       <dd>Una llei que proposen els grups parlamentaris, els diputats, la ciutadania o els ajuntaments.</dd>
       <dt>Debat de totalitat</dt>
-      <dd>El primer debat d'una llei al Ple. Es decideix si continua o si es retorna a qui l'ha presentada.</dd>
+      <dd>Un debat al Ple sobre una llei sencera. Es decideix si continua o si es retorna a qui l'ha presentada.</dd>
       <dt>Moció</dt>
       <dd>
         Un text que demana al Govern que faci alguna cosa. Es vota després d'una interpel·lació, que és una
@@ -113,6 +115,11 @@ const ambDecisions = sessions.map((s) => {
       <dd>El que decideix el Parlament sobre un tema, per exemple després d'una comissió d'investigació.</dd>
       <dt>Convalidar un decret llei</dt>
       <dd>Que el Parlament el doni per bo. Si no el convalida, el decret llei queda derogat, és a dir, deixa de valer.</dd>
+      <dt>Sigles després de l'acord</dt>
+      <dd>
+        Són la comissió que ha preparat el text. Per exemple, CED és la Comissió de l'Estatut dels Diputats, que
+        revisa si cada diputat pot fer altres feines.
+      </dd>
       <dt>Sessió constitutiva, ordinària, específica o extraordinària</dt>
       <dd>
         La constitutiva és la primera de la legislatura. L'ordinària és la del calendari habitual. L'específica tracta un sol tema, com el debat de política

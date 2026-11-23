@@ -9,7 +9,7 @@ const { n } = Astro.props;
 <li class="fila">
   <time datetime={n.data_publicacio}>{diaCurt(n.data_publicacio)}</time>
   <div>
-    <p class="tipus">{n.rang}</p>
+    <p class="tipus"><span class:list={['punt', n.rang === 'Llei' ? 'par' : 'gov']} aria-hidden="true" />{n.rang}</p>
     <p class="frase"><a href={n.url}>{n.titol}</a></p>
     <p class="secundari">
       DOGC núm. {n.dogc}{n.vigencia !== 'Vigent' && ` · ${n.vigencia}`}
@@ -37,6 +37,9 @@ const { n } = Astro.props;
   }
 
   .tipus {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--ink-2);
