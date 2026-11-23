@@ -4,12 +4,16 @@ import BlocsDeclaracio from '../../components/BlocsDeclaracio.astro';
 import '../../styles/subpagines.css';
 import { dia, diaCurt, euros, nombre, parlament, slug } from '../../dades/institucions.ts';
 import {
+  actesFets,
+  alDia,
   ambGrupInteres,
   deMes,
+  delDia,
   diputats,
-  medianaRendes,
+  elDia,
   organsActuals,
   perfils,
+  presentacio,
   rendesDarrerAny,
   type Diputat,
 } from '../../dades/diputats.ts';
@@ -28,13 +32,17 @@ const grup = parlament.grups.find((g) => g.nom === c.grup);
 if (grup === undefined) throw new Error(`El grup ${c.grup} no és a parlament.json.`);
 
 const rendes = rendesDarrerAny(f);
-const context = rendes && medianaRendes(rendes.any);
 const organs = organsActuals(f.carrecs);
 const { actes } = f.agenda;
+const fets = actesFets(actes);
 const reunions = ambGrupInteres(actes);
 const mes = deMes(diputats.agenda.mes);
+const consultada = `consultada ${elDia(dia(diputats.data_consulta))}`;
+const majuscula = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 const periode = (r: { alta: string; baixa?: string }) =>
-  r.baixa === undefined ? `Des del ${diaCurt(r.alta)}` : `Del ${diaCurt(r.alta)} al ${diaCurt(r.baixa)}`;
+  r.baixa === undefined
+    ? `Des ${delDia(diaCurt(r.alta))}`
+    : `${majuscula(delDia(diaCurt(r.alta)))} ${alDia(diaCurt(r.baixa))}`;
 ---
 
 <Pagina>
@@ -46,9 +54,9 @@ const periode = (r: { alta: string; baixa?: string }) =>
         <div>
           <h1 id="titol" class="entra" style="--ordre: 1">{c.nom}</h1>
           <p class="entradeta entra" style="--ordre: 2">
-            <span class="color" style={`--color: ${grup.color}`} aria-hidden="true"></span>{c.carrec} per {
-              c.circumscripcio
-            }. {grup.nom}.
+            <span class="color" style={`--color: ${grup.color}`} aria-hidden="true"></span>{presentacio(c)}. {
+              grup.nom
+            }.
           </p>
         </div>
       </div>
@@ -56,17 +64,16 @@ const periode = (r: { alta: string; baixa?: string }) =>
       <div class="xifres entra" style="--ordre: 3">
         <div>
           {
-            rendes && context ? (
+            rendes ? (
               <>
                 <p class="valor">{euros(rendes.total)}</p>
                 <p class="que">Cobrat del Parlament el {rendes.any}</p>
-                <p class="que">La meitat del Parlament va cobrar menys de {euros(context.mediana)}.</p>
               </>
             ) : (
               <p class="que">El Parlament encara no n'ha publicat les rendes.</p>
             )
           }
-          <p class="font-dada"><a href="#rendes-titol">Rendes</a>, Parlament de Catalunya</p>
+          <p class="font-dada"><a href="#rendes-titol">Rendes</a>, {dia(diputats.data_consulta)}</p>
         </div>
         <div>
           <p class="valor">{nombre(organs.length)}</p>
@@ -74,8 +81,8 @@ const periode = (r: { alta: string; baixa?: string }) =>
           <p class="font-dada"><a href="#organs-titol">Fitxa del Parlament</a>, {dia(diputats.data_consulta)}</p>
         </div>
         <div>
-          <p class="valor">{nombre(actes.length)}</p>
-          <p class="que">Actes a la seva agenda {mes}</p>
+          <p class="valor">{nombre(fets.length)}</p>
+          <p class="que">Actes que ha informat a la seva agenda {mes}</p>
           {reunions.length > 0 && <p class="que">{nombre(reunions.length)} amb grups d'interès.</p>}
           <p class="font-dada"><a href="#agenda-titol">Agenda</a>, {dia(diputats.data_consulta)}</p>
         </div>
@@ -83,7 +90,7 @@ const periode = (r: { alta: string; baixa?: string }) =>
     </section>
 
     <section class="seccio" aria-labelledby="organs-titol">
-      <h2 class="titol-seccio" id="organs-titol">On treballa</h2>
+      <h2 class="titol-seccio" id="organs-titol">On treballa i on ha treballat</h2>
       <p class="explica">
         Al Parlament, les lleis es preparen en comissions i ponències: grups petits de persones diputades de tots els
         grups.
@@ -96,22 +103,22 @@ const periode = (r: { alta: string; baixa?: string }) =>
             {f.carrecs.map((o) => (
               <li>
                 <p class="destacat">
-                  {'url' in o ? <a href={o.url}>{o.organ}</a> : o.organ}
+                  {o.url !== undefined ? <a href={o.url}>{o.organ}</a> : o.organ}
                 </p>
                 {'alta' in o && (
                   <p class="secundari">
-                    {'carrec' in o && `${o.carrec}. `}
+                    {o.carrec !== undefined && `${o.carrec}. `}
                     {periode(o)}.
                   </p>
                 )}
-                {'relacionats' in o && (
+                {o.relacionats !== undefined && (
                   <ul class="relacionats">
                     {o.relacionats.map((r) => (
                       <li>
-                        {'url' in r ? <a href={r.url}>{r.organ}</a> : r.organ}
+                        {r.url !== undefined ? <a href={r.url}>{r.organ}</a> : r.organ}
                         <span class="secundari">
                           {' '}
-                          · {'carrec' in r && `${r.carrec}. `}
+                          · {r.carrec !== undefined && `${r.carrec}. `}
                           {periode(r)}
                         </span>
                       </li>
@@ -124,12 +131,19 @@ const periode = (r: { alta: string; baixa?: string }) =>
         )
       }
       <p class="font-dada">
-        Font: <a href={f.fitxa}>fitxa del Parlament</a>, consultada el {dia(diputats.data_consulta)}.
+        Font: <a href={f.fitxa}>fitxa del Parlament</a>, {consultada}.
       </p>
     </section>
 
     <section class="seccio" aria-labelledby="agenda-titol">
       <h2 class="titol-seccio" id="agenda-titol">Agenda {mes}</h2>
+      {
+        reunions.length > 0 && (
+          <p class="explica">
+            Un grup d'interès és una organització o una persona que intenta influir en les decisions del Parlament.
+          </p>
+        )
+      }
       {
         actes.length === 0 ? (
           <p class="buit">No hi ha cap acte a la seva agenda {mes}.</p>
@@ -139,14 +153,14 @@ const periode = (r: { alta: string; baixa?: string }) =>
               <li>
                 <time datetime={a.data}>
                   {diaCurt(a.data)}
-                  {'hora' in a && <span class="hora">{a.hora}{'fins' in a && `–${a.fins}`}</span>}
+                  {a.hora !== undefined && <span class="hora">{a.hora}{a.fins !== undefined && `–${a.fins}`}</span>}
                 </time>
                 <div>
                   <p class="destacat">{a.titol}</p>
                   {a.detalls.map((d) => (
                     <p class="secundari">{d}</p>
                   ))}
-                  {'desconvocat' in a && <p class="secundari">Desconvocat.</p>}
+                  {a.desconvocat !== undefined && <p class="secundari">Desconvocat {elDia(dia(a.desconvocat))}.</p>}
                 </div>
               </li>
             ))}
@@ -154,20 +168,20 @@ const periode = (r: { alta: string; baixa?: string }) =>
         )
       }
       <p class="font-dada">
-        L'agenda la informa cada persona diputada. Font: <a href={f.agenda.url}>agenda al web del Parlament</a>,
-        consultada el {dia(diputats.data_consulta)}.
+        L'agenda la informa cada persona diputada.
+        Font: <a href={f.agenda.url}>agenda al web del Parlament</a>, {consultada}.
       </p>
     </section>
 
     <section class="seccio" aria-labelledby="rendes-titol">
       <h2 class="titol-seccio" id="rendes-titol">Què ha cobrat del Parlament</h2>
       {
-        'rendes' in f ? (
+        f.rendes !== undefined ? (
           <>
             <BlocsDeclaracio blocs={f.rendes.blocs} />
             <p class="font-dada">
               Font: <a href={f.rendes.url}>{f.rendes.titol}</a>
-              {f.rendes.data && `, publicades el ${dia(f.rendes.data)}`}.
+              {f.rendes.data !== undefined && `, publicades ${elDia(dia(f.rendes.data))}`}.
             </p>
           </>
         ) : (
@@ -179,11 +193,16 @@ const periode = (r: { alta: string; baixa?: string }) =>
     <section class="seccio" aria-labelledby="declaracions-titol">
       <h2 class="titol-seccio" id="declaracions-titol">Què declara</h2>
       {
+        f.declaracions.length === 0 && f.compromisos.length === 0 && (
+          <p class="buit">La fitxa no enllaça cap declaració.</p>
+        )
+      }
+      {
         f.declaracions.map((d) => (
           <details>
             <summary>
               {d.titol}
-              {d.data && <span class="secundari">, {diaCurt(d.data)}</span>}
+              {d.data !== undefined && <span class="secundari">, {diaCurt(d.data)}</span>}
             </summary>
             <BlocsDeclaracio blocs={d.blocs} />
             <p class="font-dada">
@@ -205,26 +224,31 @@ const periode = (r: { alta: string; baixa?: string }) =>
       }
     </section>
 
-    {
-      'biografia' in f && (
-        <section class="seccio" aria-labelledby="biografia-titol">
-          <h2 class="titol-seccio" id="biografia-titol">Biografia</h2>
-          <div class="biografia">
-            {f.biografia.apartats.map((a) => (
-              <>
-                <h3 class="titol-bloc">{a.titol}</h3>
-                {a.linies.map((l) => (
-                  <p>{l}</p>
-                ))}
-              </>
-            ))}
-          </div>
-          <p class="font-dada">
-            La presenta la mateixa persona{f.biografia.data.que === 'Actualització' && ', que la va actualitzar'} el {dia(f.biografia.data.dia)}.
-          </p>
-        </section>
-      )
-    }
+    <section class="seccio" aria-labelledby="biografia-titol">
+      <h2 class="titol-seccio" id="biografia-titol">Biografia</h2>
+      {
+        f.biografia === undefined ? (
+          <p class="buit">La fitxa no té biografia.</p>
+        ) : (
+          <>
+            <div class="biografia">
+              {f.biografia.apartats.map((a) => (
+                <>
+                  <h3 class="titol-bloc">{a.titol}</h3>
+                  {a.linies.map((l) => (
+                    <p>{l}</p>
+                  ))}
+                </>
+              ))}
+            </div>
+            <p class="font-dada">
+              L'ha escrita la mateixa persona. {f.biografia.data.que === 'Actualització' ? 'Actualitzada' : 'Presentada'}{' '}
+              {elDia(dia(f.biografia.data.dia))}.
+            </p>
+          </>
+        )
+      }
+    </section>
 
     <section class="seccio" aria-labelledby="falta-titol">
       <h2 class="titol-seccio" id="falta-titol">Què no hi és</h2>

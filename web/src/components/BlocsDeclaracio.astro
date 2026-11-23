@@ -11,7 +11,7 @@ const { blocs } = Astro.props;
   {
     blocs.map((b) =>
       'titol' in b ? (
-        <h4>{b.titol}</h4>
+        <h3>{b.titol}</h3>
       ) : 'pregunta' in b ? (
         <p class="pregunta">{b.pregunta}</p>
       ) : 'text' in b ? (
@@ -55,14 +55,14 @@ const { blocs } = Astro.props;
     margin-top: 0.5rem;
   }
 
-  h4 {
+  h3 {
     margin-top: 1.5rem;
     font-size: 1.0625rem;
     font-weight: 600;
     color: var(--ink);
   }
 
-  .blocs > h4:first-child {
+  .blocs > h3:first-child {
     margin-top: 0;
   }
 

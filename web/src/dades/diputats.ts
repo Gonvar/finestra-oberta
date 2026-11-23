@@ -1,16 +1,36 @@
 // El perfil de cada persona diputada: la composició de parlament.json i el que diu la seva fitxa, de
 // diputats.json. Les xifres es calculen amb la mateixa regla per a tothom, i no ordenen ningú.
 import diputatsJson from '../../../dades/diputats.json' with { type: 'json' };
+import type { ActeParlament } from '../../../src/agenda.ts';
+import type { Biografia, Declaracio, ElementCarrec } from '../../../src/diputats.ts';
 import { parlament, slug } from './institucions.ts';
 
-export const diputats = diputatsJson;
+export type { Bloc } from '../../../src/diputats.ts';
+export type Carrec = ElementCarrec;
+export type Acte = ActeParlament;
 
-export type Fitxa = (typeof diputats.diputats)[number];
+// Els tipus són els de l'scraper i no els que s'inferirien del JSON: un JSON d'un dia concret pot no
+// tenir cap exemple d'un camp opcional, i llavors el tipus el donaria per obligatori o inexistent.
+export type Fitxa = {
+  codi: string;
+  nom: string;
+  fitxa: string;
+  carrecs: Carrec[];
+  biografia?: Biografia;
+  rendes?: Declaracio & { anualitats: { any: number; conceptes: { concepte: string; import: number }[] }[] };
+  declaracions: Declaracio[];
+  compromisos: { titol: string; url: string }[];
+  agenda: { url: string; actes: Acte[] };
+};
+
+// El JSON perd els tipus literals («Presentació» passa a string): el valida l'scraper en escriure'l.
+export const diputats = diputatsJson as {
+  data_consulta: string;
+  agenda: { any: number; mes: number };
+  diputats: Fitxa[];
+};
+
 export type Composicio = (typeof parlament.diputats)[number];
-export type Carrec = Fitxa['carrecs'][number];
-export type Declaracio = Fitxa['declaracions'][number];
-export type Bloc = Declaracio['blocs'][number];
-export type Acte = Fitxa['agenda']['actes'][number];
 
 export const codi = (fitxa: string) => {
   const c = new URL(fitxa).searchParams.get('p_codi');
@@ -18,7 +38,13 @@ export const codi = (fitxa: string) => {
   return c;
 };
 
-/** L'adreça del perfil dins del web. */
+// El càrrec de la composició pot ser «Consellera» o «President del Parlament», que no són per cap
+// circumscripció: només el de diputat o diputada va amb el «per».
+export const presentacio = (c: Composicio) =>
+  c.carrec === 'Diputat' || c.carrec === 'Diputada'
+    ? `${c.carrec} per ${c.circumscripcio}`
+    : `Persona diputada per ${c.circumscripcio}. ${c.carrec}`;
+
 export const rutaDiputat = (nom: string) => `/parlament/${slug(nom)}/`;
 
 export type Diputat = { composicio: Composicio; fitxa: Fitxa; ruta: string };
@@ -38,41 +64,44 @@ if (perfils.length !== diputats.diputats.length)
 if (new Set(perfils.map((p) => p.ruta)).size !== perfils.length)
   throw new Error('Dues persones diputades tenen la mateixa adreça.');
 
-/** Els òrgans on la persona és ara: els que no tenen data de baixa. Un contenidor sense dates no compta. */
+// Un contenidor sense dates és la comissió de qui només és a una ponència: no hi és ell mateix.
 export function organsActuals(carrecs: Carrec[]) {
   return carrecs.flatMap((c) => [
-    ...('alta' in c && !('baixa' in c) ? [c] : []),
-    ...('relacionats' in c ? c.relacionats.filter((r) => !('baixa' in r)) : []),
+    ...('alta' in c && c.baixa === undefined ? [c] : []),
+    ...(c.relacionats === undefined ? [] : c.relacionats.filter((r) => r.baixa === undefined)),
   ]);
 }
 
-/** Les reunions amb grups d'interès: el Parlament les marca amb aquesta línia al detall de l'acte. */
-export const ambGrupInteres = (actes: Acte[]) =>
-  actes.filter((a) => a.detalls.some((d) => d.startsWith("Grup d'interès:")));
+// Un acte desconvocat no s'ha fet: no compta a cap xifra, però la llista el mostra.
+export const actesFets = (actes: Acte[]) => actes.filter((a) => a.desconvocat === undefined);
 
-/** El total de l'última anualitat publicada, sumant-ne tots els conceptes. */
+// El Parlament no marca les reunions amb grups d'interès amb cap camp: només amb aquesta línia.
+export const ambGrupInteres = (actes: Acte[]) =>
+  actesFets(actes).filter((a) => a.detalls.some((d) => d.startsWith("Grup d'interès:")));
+
+// L'any més recent i no l'últim de la llista, perquè l'scraper conserva l'ordre de la pàgina. Una
+// fila de total es comptaria dues vegades, i per això atura el build en lloc de sumar-se.
 export function rendesDarrerAny(fitxa: Fitxa) {
-  if (!('rendes' in fitxa)) return undefined;
-  const darrera = fitxa.rendes.anualitats.at(-1);
-  if (darrera === undefined) return undefined;
+  if (fitxa.rendes === undefined || fitxa.rendes.anualitats.length === 0) return undefined;
+  const darrera = fitxa.rendes.anualitats.reduce((a, b) => (b.any > a.any ? b : a));
+  const total = darrera.conceptes.find((c) => /total/i.test(c.concepte));
+  if (total !== undefined)
+    throw new Error(`Les rendes de ${fitxa.nom} tenen una fila de total: «${total.concepte}».`);
   return { any: darrera.any, total: darrera.conceptes.reduce((s, c) => s + c.import, 0) };
 }
 
-/** La mediana dels totals d'un any: la meitat de les persones van cobrar menys i la meitat, més. */
-export function mediana(xifres: number[]) {
-  if (xifres.length === 0) throw new Error('No es pot calcular la mediana de cap xifra.');
-  const ordenades = [...xifres].sort((a, b) => a - b);
-  const mig = Math.floor(ordenades.length / 2);
-  return ordenades.length % 2 ? ordenades[mig]! : (ordenades[mig - 1]! + ordenades[mig]!) / 2;
-}
-
-export function medianaRendes(any: number) {
-  const totals = perfils.flatMap((p) => {
-    const r = rendesDarrerAny(p.fitxa);
-    return r && r.any === any ? [r.total] : [];
-  });
-  return { mediana: mediana(totals), persones: totals.length };
-}
+// «el 3 de març», però «l'1 de març» i «l'11 de març».
+export const elDia = (data: string) => (/^1?1 /.test(data) ? `l'${data}` : `el ${data}`);
+/** «del 3 de març», «de l'11 de març». */
+export const delDia = (data: string) => {
+  const a = elDia(data);
+  return a.startsWith('el ') ? `d${a}` : `de ${a}`;
+};
+/** «al 3 de març», «a l'11 de març». */
+export const alDia = (data: string) => {
+  const a = elDia(data);
+  return a.startsWith('el ') ? `a${a.slice(1)}` : `a ${a}`;
+};
 
 const MESOS = [
   'gener',
