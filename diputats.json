@@ -6545,6 +6545,60 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-18"
+          },
+          {
+            "data": "2026-11-19",
+            "hora": "12:30",
+            "fins": "14:00",
+            "titol": "Barcelona Tribuna. Cicle d'esmorzars amb els candidats a les eleccions del 29-N. Jordi Hereu",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-20",
+            "hora": "10:30",
+            "titol": "Xerrada. La perspectiva del PSC sobre les properes eleccions, el dret a l'autodeterminació de Catalunya i la pressió de l'extrema dreta.",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-20",
+            "hora": "18:00",
+            "fins": "19:30",
+            "titol": "Acte PSC L'Eixample. 25N Contra les Violències Masclistes",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-21",
+            "hora": "10:00",
+            "fins": "11:00",
+            "titol": "Paradeta del PSC L'Eixample",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "11:00",
+            "fins": "12:00",
+            "titol": "Bustiada i paradeta PSC L'Eixample",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -7197,6 +7251,72 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-18"
+          },
+          {
+            "data": "2026-11-19",
+            "hora": "12:30",
+            "fins": "14:00",
+            "titol": "Barcelona Tribuna. Cicle d'esmorzars amb els candidats a les eleccions del 29-N. Jordi Hereu",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-19",
+            "hora": "18:30",
+            "fins": "20:30",
+            "titol": "Acte PSC. Pensions",
+            "detalls": [
+              "Calella, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-21",
+            "hora": "10:00",
+            "fins": "11:30",
+            "titol": "Paradeta informativa PSC Cabrils",
+            "detalls": [
+              "Cabrils, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-21",
+            "hora": "12:00",
+            "fins": "13:30",
+            "titol": "Paradeta informativa PSC Caldes d'Estrac",
+            "detalls": [
+              "Caldes d'Estrac, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "12:30",
+            "titol": "Reunió amb la directora de Relaciones Institucionals del Govern i amb el Parlament, membres de la mesa i coordinador del Grup Parlamentari",
+            "detalls": [
+              "Barcelona",
+              "Modalitat: Reunió"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "18:00",
+            "fins": "19:30",
+            "titol": "Acte PSC Lleida. Drets de les dones, igualtat i una vida lliure de violències masclistes",
+            "detalls": [
+              "Lleida"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           },
           {
             "data": "2026-11-24",
@@ -11246,12 +11366,12 @@
               "baixa": "2026-06-19"
             },
             {
-              "organ": "Ponència: Projecte de llei del Codi de finances públiques de Catalunya i d'aprovació del llibre primer, relatiu a les disposicions generals",
+              "organ": "Ponència: Proposició de llei de modificació del text refós de la Llei de finances públiques de Catalunya, aprovat pel Decret legislatiu 3/2002, del 24 de desembre",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1313",
               "alta": "2026-04-22"
             },
             {
-              "organ": "Ponència: Proposició de llei de modificació del text refós de la Llei de finances públiques de Catalunya, aprovat pel Decret legislatiu 3/2002, del 24 de desembre",
+              "organ": "Ponència: Projecte de llei del Codi de finances públiques de Catalunya i d'aprovació del llibre primer, relatiu a les disposicions generals",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1313",
               "alta": "2026-04-22"
             },
@@ -46258,12 +46378,12 @@
               "alta": "2025-11-06"
             },
             {
-              "organ": "Ponència: Projecte de llei del Codi de finances públiques de Catalunya i d'aprovació del llibre primer, relatiu a les disposicions generals",
+              "organ": "Ponència: Proposició de llei de modificació del text refós de la Llei de finances públiques de Catalunya, aprovat pel Decret legislatiu 3/2002, del 24 de desembre",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1313",
               "alta": "2026-04-22"
             },
             {
-              "organ": "Ponència: Proposició de llei de modificació del text refós de la Llei de finances públiques de Catalunya, aprovat pel Decret legislatiu 3/2002, del 24 de desembre",
+              "organ": "Ponència: Projecte de llei del Codi de finances públiques de Catalunya i d'aprovació del llibre primer, relatiu a les disposicions generals",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1313",
               "alta": "2026-04-22"
             },
@@ -53340,12 +53460,12 @@
               "alta": "2025-11-26"
             },
             {
-              "organ": "Ponència: Proposició de llei de modificació de la Llei 14/2010, de 27 de maig, dels drets i les oportunitats en la infància i l'adolescència, per a garantir els drets dels menors en acolliment",
+              "organ": "Ponència: Proposta per a presentar a la Mesa del Congrés dels Diputats la Proposició de llei de modificació del Reial decret legislatiu 8/2015, pel qual s'aprova el text refós de la Llei general de la Seguretat Social",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1320",
               "alta": "2025-10-29"
             },
             {
-              "organ": "Ponència: Proposta per a presentar a la Mesa del Congrés dels Diputats la Proposició de llei de modificació del Reial decret legislatiu 8/2015, pel qual s'aprova el text refós de la Llei general de la Seguretat Social",
+              "organ": "Ponència: Proposició de llei de modificació de la Llei 14/2010, de 27 de maig, dels drets i les oportunitats en la infància i l'adolescència, per a garantir els drets dels menors en acolliment",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1320",
               "alta": "2025-10-29"
             },

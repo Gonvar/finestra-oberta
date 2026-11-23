@@ -1,0 +1,4119 @@
+{
+  "id" : "khxn-nv6a",
+  "name" : "Convocatòries del RAISC (Registre de subvencions i ajuts de Catalunya)",
+  "assetType" : "dataset",
+  "attribution" : "Departament d'Economia i Finances",
+  "attributionLink" : "https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/",
+  "averageRating" : 0,
+  "category" : "Economia",
+  "createdAt" : 1542279417,
+  "description" : "El RAISC és el registre únic que engloba la totalitat de les subvencions i ajuts atorgats per les administracions públiques de l’àmbit territorial de Catalunya (Administració de la Generalitat de Catalunya i les entitats públiques en què participi de manera majoritària, directament o indirectament; consorcis i fundacions adscrits a la Generalitat de Catalunya; entitats que integren l’Administració local i les entitats públiques en què participen de manera majoritària, directament o indirectament; consorcis i fundacions adscrits a l’Administració local; Administració pròpia d’Aran i entitats creades per llei del Parlament que no depenen de la Generalitat de Catalunya ni hi estan vinculades, quan exerceixen potestats administratives).\n\nEl RAISC subministra informació sobre la normativa reguladora de la subvenció o ajut, les bases reguladores i la resolució que aprova la convocatòria i les seves modificacions, si escau, així com la informació relativa a altres subvencions i ajuts atorgats sense concurrència.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 4016,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "SEE_TERMS_OF_USE",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 2974177,
+  "provenance" : "official",
+  "publicationAppendEnabled" : true,
+  "publicationDate" : 1731408526,
+  "publicationGroup" : 665007,
+  "publicationStage" : "published",
+  "rowIdentifierColumnId" : 26513077,
+  "rowsUpdatedAt" : 1795406479,
+  "rowsUpdatedBy" : "a4b5-gx6v",
+  "tableId" : 1990285,
+  "totalTimesRated" : 0,
+  "viewCount" : 19535,
+  "viewLastModified" : 1795406427,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1552901177,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 1472457,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1552901177,
+    "targetAudience" : "public",
+    "workflowId" : 182,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "failureCount" : 0,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "a4b5-gx6v",
+      "displayName" : "Dades Obertes Catalunya"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 26513077,
+    "name" : "Codi RAISC",
+    "dataTypeName" : "text",
+    "description" : "Codi que atorga el RAISC quan es dóna d’alta una convocatòria",
+    "fieldName" : "codi_raisc",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253485,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "UR-26-077",
+      "null" : "0",
+      "top" : [ {
+        "item" : "5100-20-002",
+        "count" : "1"
+      }, {
+        "item" : "5100-20-003",
+        "count" : "1"
+      }, {
+        "item" : "5100-20-004",
+        "count" : "1"
+      }, {
+        "item" : "5100-20-007",
+        "count" : "1"
+      }, {
+        "item" : "5100-21-001",
+        "count" : "1"
+      }, {
+        "item" : "5100-21-002",
+        "count" : "1"
+      }, {
+        "item" : "5100-22-001",
+        "count" : "1"
+      }, {
+        "item" : "5100-22-002",
+        "count" : "1"
+      }, {
+        "item" : "5100-22-003",
+        "count" : "1"
+      }, {
+        "item" : "5100-22-004",
+        "count" : "1"
+      }, {
+        "item" : "5100-22-005",
+        "count" : "1"
+      }, {
+        "item" : "5100-22-006",
+        "count" : "1"
+      }, {
+        "item" : "5100-22-008",
+        "count" : "1"
+      }, {
+        "item" : "5100-22-009",
+        "count" : "1"
+      }, {
+        "item" : "5100-23-001",
+        "count" : "1"
+      }, {
+        "item" : "5100-23-002",
+        "count" : "1"
+      }, {
+        "item" : "5100-23-004",
+        "count" : "1"
+      }, {
+        "item" : "5100-24-004",
+        "count" : "1"
+      }, {
+        "item" : "5100-24-006",
+        "count" : "1"
+      }, {
+        "item" : "5100-20-001",
+        "count" : "1"
+      } ],
+      "smallest" : "5100-20-001",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513078,
+    "name" : "Codi BDNS",
+    "dataTypeName" : "text",
+    "description" : "Codi que atorga la BDNS quan es dóna d’alta una convocatòria",
+    "fieldName" : "codi_bdns",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5278385,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "No enviat",
+      "null" : "0",
+      "top" : [ {
+        "item" : "No enviat",
+        "count" : "28"
+      }, {
+        "item" : "614327",
+        "count" : "2"
+      }, {
+        "item" : "818956",
+        "count" : "2"
+      }, {
+        "item" : "488483",
+        "count" : "2"
+      }, {
+        "item" : "545321",
+        "count" : "2"
+      }, {
+        "item" : "681847",
+        "count" : "2"
+      }, {
+        "item" : "327970",
+        "count" : "1"
+      }, {
+        "item" : "322728",
+        "count" : "1"
+      }, {
+        "item" : "309633",
+        "count" : "1"
+      }, {
+        "item" : "348379",
+        "count" : "1"
+      }, {
+        "item" : "353653",
+        "count" : "1"
+      }, {
+        "item" : "354383",
+        "count" : "1"
+      }, {
+        "item" : "358863",
+        "count" : "1"
+      }, {
+        "item" : "358879",
+        "count" : "1"
+      }, {
+        "item" : "347998",
+        "count" : "1"
+      }, {
+        "item" : "319307",
+        "count" : "1"
+      }, {
+        "item" : "380551",
+        "count" : "1"
+      }, {
+        "item" : "380413",
+        "count" : "1"
+      }, {
+        "item" : "380552",
+        "count" : "1"
+      }, {
+        "item" : "334796",
+        "count" : "1"
+      } ],
+      "smallest" : "200720075318111B",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : {
+      "noCommas" : "true"
+    }
+  }, {
+    "id" : 26513079,
+    "name" : "Entitat, OO.AA. o Departament convocant codi",
+    "dataTypeName" : "text",
+    "description" : "Codi de l’òrgan gestor. S’informa el departament en el cas que l’òrgan convocant correspongui a la Generalitat de Catalunya amb les due lletres del centre gestor.  En cas contrari, s’informa el centre gestor",
+    "fieldName" : "entitat_oo_aa_o_departament",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5278379,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "UR",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DPGIR",
+        "count" : "4421"
+      }, {
+        "item" : "DPTGN",
+        "count" : "1450"
+      }, {
+        "item" : "DPLLD",
+        "count" : "1253"
+      }, {
+        "item" : "7495",
+        "count" : "1082"
+      }, {
+        "item" : "AJ357",
+        "count" : "869"
+      }, {
+        "item" : "AJ610",
+        "count" : "854"
+      }, {
+        "item" : "AJ903",
+        "count" : "853"
+      }, {
+        "item" : "AG",
+        "count" : "801"
+      }, {
+        "item" : "AJ341",
+        "count" : "797"
+      }, {
+        "item" : "6760",
+        "count" : "795"
+      }, {
+        "item" : "AJ581",
+        "count" : "694"
+      }, {
+        "item" : "AJ888",
+        "count" : "675"
+      }, {
+        "item" : "IU",
+        "count" : "641"
+      }, {
+        "item" : "AJ227",
+        "count" : "633"
+      }, {
+        "item" : "AJ807",
+        "count" : "621"
+      }, {
+        "item" : "BE",
+        "count" : "609"
+      }, {
+        "item" : "AJ639",
+        "count" : "598"
+      }, {
+        "item" : "AJ431",
+        "count" : "580"
+      }, {
+        "item" : "AJ409",
+        "count" : "578"
+      }, {
+        "item" : "OA173",
+        "count" : "566"
+      } ],
+      "smallest" : "5100",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : {
+      "noCommas" : "true"
+    }
+  }, {
+    "id" : 26513080,
+    "name" : "Entitat, OO.AA. o Departament convocant",
+    "dataTypeName" : "text",
+    "description" : "Nom del departament en el cas que l’òrgan convocant correspongui a la Generalitat de Catalunya. En cas contrari, nom del centre gestor",
+    "fieldName" : "entitat_oo_aa_o_departament_1",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253497,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "Xarxa de Cultura de Valls",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Diputació de Girona",
+        "count" : "4421"
+      }, {
+        "item" : "Diputació de Tarragona",
+        "count" : "1450"
+      }, {
+        "item" : "Diputació de Lleida",
+        "count" : "1253"
+      }, {
+        "item" : "OFICINA DE SUPORT A LA INICIATIVA CULTURAL",
+        "count" : "1082"
+      }, {
+        "item" : "Ajuntament de l'Hospitalet de Llobregat",
+        "count" : "869"
+      }, {
+        "item" : "Ajuntament de Reus",
+        "count" : "854"
+      }, {
+        "item" : "Ajuntament de Vilafranca del Penedès",
+        "count" : "853"
+      }, {
+        "item" : "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
+        "count" : "801"
+      }, {
+        "item" : "Ajuntament de Granollers",
+        "count" : "797"
+      }, {
+        "item" : "INSTITUT CATALÀ DE LES EMPRESES CULTURALS (ICEC)",
+        "count" : "795"
+      }, {
+        "item" : "Ajuntament del Prat de Llobregat",
+        "count" : "694"
+      }, {
+        "item" : "Ajuntament de Vic",
+        "count" : "675"
+      }, {
+        "item" : "DEPARTAMENT D'EMPRESA I TREBALL",
+        "count" : "641"
+      }, {
+        "item" : "Ajuntament de Cerdanyola del Vallès",
+        "count" : "633"
+      }, {
+        "item" : "Ajuntament de Tarragona",
+        "count" : "621"
+      }, {
+        "item" : "Departament de Drets Socials i Inclusió",
+        "count" : "609"
+      }, {
+        "item" : "Ajuntament de Rubí",
+        "count" : "598"
+      }, {
+        "item" : "Ajuntament de Mataró",
+        "count" : "580"
+      }, {
+        "item" : "Ajuntament de Manlleu",
+        "count" : "578"
+      }, {
+        "item" : "Fundació Pública Institut d'Estudis Ilerdencs",
+        "count" : "566"
+      } ],
+      "smallest" : "Aeroports Públics de Catalunya, SLU",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513081,
+    "name" : "Tipus de convocatòria codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador del tipus de convocatòria",
+    "fieldName" : "tipus_de_convocat_ria_codi",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253515,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "O",
+      "null" : "0",
+      "top" : [ {
+        "item" : "I",
+        "count" : "47343"
+      }, {
+        "item" : "O",
+        "count" : "22555"
+      } ],
+      "smallest" : "I",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513082,
+    "name" : "Tipus de convocatòria",
+    "dataTypeName" : "text",
+    "description" : "Tipologia de convocatòria, que es classifica en dos tipus: “Subvenció amb concurrència” o “Subvenció sense concurrència (directa, nominativa)”",
+    "fieldName" : "tipus_de_convocat_ria",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253498,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "Subvenció sense concurrència (directa, nominativa)",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Subvenció sense concurrència (directa, nominativa)",
+        "count" : "47343"
+      }, {
+        "item" : "Subvenció amb concurrència",
+        "count" : "22555"
+      } ],
+      "smallest" : "Subvenció amb concurrència",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513083,
+    "name" : "Any de la convocatòria",
+    "dataTypeName" : "text",
+    "description" : "Anualitat de la convocatòria calculada segons la tipologia: la “subvenció amb concurrència” es calcula a partir de la data de publicació en el diari oficial, i la “subvenció sense concurrència”, mitjançant la data de signatura del document de resolució de concessió. ",
+    "fieldName" : "any_de_la_convocat_ria",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13644699,
+    "cachedContents" : {
+      "non_null" : "69889",
+      "largest" : "2026",
+      "null" : "9",
+      "top" : [ {
+        "item" : "2024",
+        "count" : "11182"
+      }, {
+        "item" : "2023",
+        "count" : "11168"
+      }, {
+        "item" : "2022",
+        "count" : "11057"
+      }, {
+        "item" : "2025",
+        "count" : "10868"
+      }, {
+        "item" : "2021",
+        "count" : "9179"
+      }, {
+        "item" : "2026",
+        "count" : "8948"
+      }, {
+        "item" : "2020",
+        "count" : "3802"
+      }, {
+        "item" : "2019",
+        "count" : "3615"
+      }, {
+        "item" : "2018",
+        "count" : "36"
+      }, {
+        "item" : "2017",
+        "count" : "11"
+      }, {
+        "item" : "2000",
+        "count" : "5"
+      }, {
+        "item" : "2016",
+        "count" : "5"
+      }, {
+        "item" : "2015",
+        "count" : "4"
+      }, {
+        "item" : "2010",
+        "count" : "2"
+      }, {
+        "item" : "2006",
+        "count" : "2"
+      }, {
+        "item" : "2003",
+        "count" : "2"
+      }, {
+        "item" : "2002",
+        "count" : "1"
+      }, {
+        "item" : "2013",
+        "count" : "1"
+      }, {
+        "item" : "2008",
+        "count" : "1"
+      } ],
+      "smallest" : "2000",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513084,
+    "name" : "Títol convocatòria català",
+    "dataTypeName" : "text",
+    "description" : "Descripció de la convocatòria en català",
+    "fieldName" : "t_tol_convocat_ria_catal",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253518,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "XXX SETMANA CULTURAL DEL CENTRO EXTREMENO DE REUS",
+      "null" : "3",
+      "top" : [ {
+        "item" : "ANULADA null",
+        "count" : "181"
+      }, {
+        "item" : "RESOLUCIÓ per la qual s'atorguen els ajuts destinats al finanament per a l'elaboració i l'execució dels plans de reactivació socioeconòmica COVID-19, regulats al Capítol II del Decret Llei 16/2020, de 5 de maig, de mesures urgents complementàries en",
+        "count" : "65"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit del patrimoni cultural",
+        "count" : "49"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit de la cooperació cultural",
+        "count" : "40"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit del foment de la llengua catalana",
+        "count" : "30"
+      }, {
+        "item" : "ANULADA",
+        "count" : "27"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit del foment de la cultura catalana",
+        "count" : "23"
+      }, {
+        "item" : "LLEI 13/2006, del 27 de juliol, de prestacions socials de caracter economic",
+        "count" : "21"
+      }, {
+        "item" : "Atorgament d'una subvencio directa i nominativa del Pla de Millora d'Oportunitats Educatives (PMOE)",
+        "count" : "21"
+      }, {
+        "item" : "Subvencio nominativa a favor del Club Balonmano Granollers",
+        "count" : "18"
+      }, {
+        "item" : "LLEI39/2006, de 14 de desembre, de promocio de l'autonomia personal i atencio a les persones en situacio de dependencia.",
+        "count" : "16"
+      }, {
+        "item" : "Concessio d'una subvencio directa i nominativa de la linia de subvencions promocio de l'oferta de lleure educatiu a la ciutat",
+        "count" : "15"
+      }, {
+        "item" : "Concessio d'una subvencio nominativa a l'Associac",
+        "count" : "14"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública - Cultura popular i patrimoni etnològic",
+        "count" : "13"
+      }, {
+        "item" : "Subvencio AMPA Escola i Conservatori de Musica de",
+        "count" : "12"
+      }, {
+        "item" : "CONVENI ESPECÍFIC DE COOPERACIÓ EDUCATIU ENTRE EL DEPARTAMENT D’ECONOMIA I HISENDA I LA FUNDACIÓ UAB",
+        "count" : "11"
+      }, {
+        "item" : "CONVENIO PALILLO CLUB DE FUTBOL",
+        "count" : "11"
+      }, {
+        "item" : "Atorgament d'una subvencio directa i nominativa per a la participacio en les Festes de Maig 2022",
+        "count" : "11"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit de la cultura popular i el patrimoni etnològic",
+        "count" : "11"
+      }, {
+        "item" : "Subvencio nominativa a favor de l'Associacio Granollers Esportiva",
+        "count" : "10"
+      } ],
+      "smallest" : "04 ORDENANCA REGULADORA DE LES BESES PER A LA CONCESSIO DE SUBVENCIONS PER A PROMORURE DIFERENTS ACTIVITATS",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513085,
+    "name" : "Títol convocatòria castellà",
+    "dataTypeName" : "text",
+    "description" : "Descripció de la convocatòria en castellà",
+    "fieldName" : "t_tol_convocat_ria_castell",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253519,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "XXX SETMANA CULTURAL DEL CENTRO EXTREMENO DE REUS",
+      "null" : "3",
+      "top" : [ {
+        "item" : "RESOLUCIÓN por la cual se otorgan las ayudas destinadas a la financiación para la elaboración y la ejecución de los planes de reactivación socioeconómica COVID-19, regulados en el Capítulo II del Decreto Ley 16/2020, de 5 de mayo, de medidas",
+        "count" : "59"
+      }, {
+        "item" : "Subvenciones excluidas de concurrencia pública en el ámbito del patrimonio cultural",
+        "count" : "49"
+      }, {
+        "item" : "Subvenciones excluidas de concurrencia pública en el ámbito de la cooperación cultural",
+        "count" : "40"
+      }, {
+        "item" : "Subvenciones excluidas de concurrencia pública en el ámbito del fomento de la lengua catalana",
+        "count" : "30"
+      }, {
+        "item" : "Subvenciones excluidas de concurrencia pública en el ámbito de la cultura popular y el patrimonio etnológico",
+        "count" : "24"
+      }, {
+        "item" : "Concesion de una subvencion directa y nominativa del Plan de Mejora de Oportunidades Educativas (PMOE)",
+        "count" : "21"
+      }, {
+        "item" : "Ley 13/2006, de 27 de julio, de prestaciones sociales de caracter economico",
+        "count" : "21"
+      }, {
+        "item" : "Subvencion nominativa a favor del Club Balonmano Granollers",
+        "count" : "18"
+      }, {
+        "item" : "Ley 39/2006, de 14 de diciembre, de Promocion de la Autonomia Personal y Atencion a las personas en situacion de dependencia.",
+        "count" : "16"
+      }, {
+        "item" : "CONVENIO ESPECÍFICO DE COOPERACIÓN EDUCATIVA ENTRE EL DEPARTAMENTO DE ECONOMÍA Y HACIENDA Y LA FUNDACIÓN UAB",
+        "count" : "13"
+      }, {
+        "item" : "Concesion de una subvencion directa y nominativa para la participacion en las Fiestas de Mayo 2022",
+        "count" : "12"
+      }, {
+        "item" : "Financiar prestación servicio orientación jurídica",
+        "count" : "12"
+      }, {
+        "item" : "Subvenciones excluidas de concurrencia pública en el ámbito del fomento de la cultura catalana",
+        "count" : "12"
+      }, {
+        "item" : "CONVENIO PALILLO CLUB DE FUTBOL",
+        "count" : "11"
+      }, {
+        "item" : "Subvenciones excluidas de concurrencia pública en el ámbito del fomanto de la cultura catalana",
+        "count" : "11"
+      }, {
+        "item" : "CONVENIO ESPECÍFICO DE COOPERACIÓN EDUCATIVA ENTRE EL DEPARTAMENTO DE ECONOMIA Y HACIENDA Y LA FUNDACIÓN UAB",
+        "count" : "10"
+      }, {
+        "item" : "Concesion de una subvencion directa y nominativa de la linea de subvenciones promocion de la oferta de ocio educativo en la ciudad",
+        "count" : "9"
+      }, {
+        "item" : "Subvención para la financiación de los gastos relativos a las actividades de deporte universitario correspondientes a los Campeonatos de Cataluña Universitarios del curso 2019-2020",
+        "count" : "9"
+      }, {
+        "item" : "Convocatoria de subvenciones en especie para la adquisicion de novedades editoriales en catalan o en occitano destinadas a las bibliotecas del Sistema de Lectura Publica de Cataluna",
+        "count" : "9"
+      }, {
+        "item" : "RESOLUCIÓN DE UNA SOLICITUD DE SUBVENCIÓN PRESENTADA POR LA NORTH AMERICAN CATALAN SOCIETY",
+        "count" : "8"
+      } ],
+      "smallest" : "1.000 EUR en concepto de subvencion a la Sra. Maria Teresa Prad Bayona con NIF 39637242P para colaborar en la edicion del libro dedicado al Barrio de la Floresta",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513086,
+    "name" : "Diari oficial de publicació de la convocatòria codi",
+    "dataTypeName" : "text",
+    "description" : "Codi del diari oficial de publicació de la convocatòria",
+    "fieldName" : "codi_diari_oficial",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5278388,
+    "cachedContents" : {
+      "non_null" : "11233",
+      "largest" : "101",
+      "null" : "58665",
+      "top" : [ {
+        "item" : "011",
+        "count" : "3457"
+      }, {
+        "item" : "037",
+        "count" : "3027"
+      }, {
+        "item" : "029",
+        "count" : "2990"
+      }, {
+        "item" : "058",
+        "count" : "1016"
+      }, {
+        "item" : "046",
+        "count" : "693"
+      }, {
+        "item" : "001",
+        "count" : "37"
+      }, {
+        "item" : "101",
+        "count" : "13"
+      } ],
+      "smallest" : "001",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513087,
+    "name" : "Diari oficial de publicació de la convocatòria",
+    "dataTypeName" : "text",
+    "description" : "Nom del diari oficial de publicació de la convocatòria",
+    "fieldName" : "diari_oficial_de_publicaci",
+    "position" : 11,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253516,
+    "cachedContents" : {
+      "non_null" : "11233",
+      "largest" : "Otros medios",
+      "null" : "58665",
+      "top" : [ {
+        "item" : "DOGC. D.O. DE LA GENERALITAT DE CATALUNYA",
+        "count" : "3457"
+      }, {
+        "item" : "B.O.P. DE GIRONA",
+        "count" : "3027"
+      }, {
+        "item" : "B.O.P. DE BARCELONA",
+        "count" : "2990"
+      }, {
+        "item" : "B.O.P. DE TARRAGONA",
+        "count" : "1016"
+      }, {
+        "item" : "B.O.P. DE LLEIDA",
+        "count" : "693"
+      }, {
+        "item" : "BOE. BUTLLETÍ OFICIAL DE L'ESTAT",
+        "count" : "37"
+      }, {
+        "item" : "Otros medios",
+        "count" : "13"
+      } ],
+      "smallest" : "BOE. BUTLLETÍ OFICIAL DE L'ESTAT",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513088,
+    "name" : "Diari oficial de publicació de la convocatòria data",
+    "dataTypeName" : "calendar_date",
+    "description" : "Data de publicació de la convocatòria en el diari oficial",
+    "fieldName" : "data_diari_oficial",
+    "position" : 12,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 5253500,
+    "cachedContents" : {
+      "non_null" : "11221",
+      "largest" : "2026-11-25T00:00:00.000",
+      "null" : "58677",
+      "top" : [ {
+        "item" : "2025-01-20T00:00:00.000",
+        "count" : "32"
+      }, {
+        "item" : "2026-02-24T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2026-01-30T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2025-02-17T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2021-02-22T00:00:00.000",
+        "count" : "27"
+      }, {
+        "item" : "2026-02-05T00:00:00.000",
+        "count" : "27"
+      }, {
+        "item" : "2026-02-12T00:00:00.000",
+        "count" : "27"
+      }, {
+        "item" : "2022-02-24T00:00:00.000",
+        "count" : "25"
+      }, {
+        "item" : "2024-01-31T00:00:00.000",
+        "count" : "25"
+      }, {
+        "item" : "2023-05-08T00:00:00.000",
+        "count" : "25"
+      }, {
+        "item" : "2023-04-11T00:00:00.000",
+        "count" : "25"
+      }, {
+        "item" : "2022-06-01T00:00:00.000",
+        "count" : "24"
+      }, {
+        "item" : "2024-04-08T00:00:00.000",
+        "count" : "24"
+      }, {
+        "item" : "2025-06-12T00:00:00.000",
+        "count" : "24"
+      }, {
+        "item" : "2022-06-27T00:00:00.000",
+        "count" : "23"
+      }, {
+        "item" : "2023-02-20T00:00:00.000",
+        "count" : "23"
+      }, {
+        "item" : "2022-02-15T00:00:00.000",
+        "count" : "23"
+      }, {
+        "item" : "2022-02-14T00:00:00.000",
+        "count" : "23"
+      }, {
+        "item" : "2024-03-13T00:00:00.000",
+        "count" : "23"
+      }, {
+        "item" : "2024-04-02T00:00:00.000",
+        "count" : "22"
+      } ],
+      "smallest" : "2003-11-21T00:00:00.000",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : {
+      "view" : "date_dmy"
+    }
+  }, {
+    "id" : 26513089,
+    "name" : "Diari oficial de publicació de la convocatòria URL",
+    "dataTypeName" : "text",
+    "description" : "Enllaç al lloc web de publicació de la convocatòria en el diari oficial",
+    "fieldName" : "url_diari_oficial",
+    "position" : 13,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253517,
+    "cachedContents" : {
+      "non_null" : "10912",
+      "largest" : "ttps://bop.diba.cat/anunci/3902561",
+      "null" : "58986",
+      "top" : [ {
+        "item" : "https://portaljuridic.gencat.cat/ca/document-del-pjur/?documentId=400672",
+        "count" : "21"
+      }, {
+        "item" : "https://www.boe.es/buscar/act.php?id=BOE-A-2006-21990",
+        "count" : "16"
+      }, {
+        "item" : "https://bop.diba.cat/butlleti-del-dia?bopb_dia%5BtipologiaAnunciant%5D=org-477",
+        "count" : "9"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=rcerca&vw=0&ebop_any=2024&dini=&mini=&dfi=&mfi=&index1=157&index2=211&index3=233&index4=&qua1=&n_exp=&num_bop=&cod_af=&order=0&n_rege=&neteja=0&ok=submit",
+        "count" : "8"
+      }, {
+        "item" : "https://bop.diba.cat/anunci/3291415/convocatoria-per-a-la-concessio-de-subvencions-a-projectes-o-activitats-d-utilitat-publica-o-d-interes-social-per-a-l-any-2022-ajuntament-de-canet-de-mar",
+        "count" : "7"
+      }, {
+        "item" : "https://bop.diba.cat/anunci/3409033/convocatoria-per-a-l-atorgament-d-ajuts-economics-individuals-per-a-activitats-socioeducatives-i-de-lleure-en-periode-escolar-de-setembre-a-juny-del-curs-2022-2023-versio-en-catala-i-castella-ajuntament-de-santa-coloma-",
+        "count" : "7"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=rcerca&vw=0&ebop_any=2025&dini=&mini=&dfi=&mfi=&index1=155&index2=209&index3=231&index4=&qua1=&n_exp=&num_bop=&cod_af=&order=0&n_rege=&neteja=0&ok=submit",
+        "count" : "6"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=rcerca&vw=0&ebop_any=2023&dini=&mini=&dfi=&mfi=&index1=&qua1=&n_exp=&num_bop=&cod_af=354&order=0&n_rege=&neteja=0&ok=submit",
+        "count" : "6"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=sumari&ebop_any=2020&pagok=0",
+        "count" : "6"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=dwn&tipus=i&data=20200930&anyp=2020&num=06854&v=i",
+        "count" : "6"
+      }, {
+        "item" : "https://bop.diba.cat/",
+        "count" : "5"
+      }, {
+        "item" : "https://bop.diba.cat/anunci/3136533/convocatoria-de-subvencions-en-regim-de-concurrencia-competitiva-per-a-la-realitzacio-d-activitats-o-serveis-en-l-ambit-de-la-cultura-educacio-esports-benestar-social-i-o-tercer-sector-joventut-medi-ambient-i-salut-publ",
+        "count" : "5"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=sumari&dpub=05/02/2021&ebop_any=2021&pagok=0",
+        "count" : "5"
+      }, {
+        "item" : "https://bop.diba.cat/anunci/3509198",
+        "count" : "5"
+      }, {
+        "item" : "https://dogc.gencat.cat/ca/inici/index.html",
+        "count" : "5"
+      }, {
+        "item" : "https://bop.diba.cat/anunci/3269905/aprovacio-de-les-bases-reguladores-per-a-la-concessio-de-la-subvencio-per-a-la-dinamitzacio-comercial-per-a-l-exercici-2022-ajuntament-de-montcada-i-reixac",
+        "count" : "4"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop",
+        "count" : "4"
+      }, {
+        "item" : "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1027354",
+        "count" : "4"
+      }, {
+        "item" : "https://tramits.gencat.cat/ca/tramits/tramits-temes/Atribucions-de-fons-per-al-financament-del-canon-de-control-dabocaments-meri",
+        "count" : "4"
+      }, {
+        "item" : "https://bop.diputaciolleida.cat/faces/consultaF/servlets/donarEdicte/?id=2021_169_6951",
+        "count" : "4"
+      } ],
+      "smallest" : "---------------------------",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513090,
+    "name" : "Bases reguladores codificació",
+    "dataTypeName" : "text",
+    "description" : "Nomenclatura d’identificació de les bases reguladores. Text lliure d’acord amb la nomenclatura utilitzada per l’Administració corresponent per a la identificació de la seva normativa",
+    "fieldName" : "codificacio_bases_reg",
+    "position" : 14,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253511,
+    "cachedContents" : {
+      "non_null" : "7388",
+      "largest" : "XGO/2699/2021",
+      "null" : "62510",
+      "top" : [ {
+        "item" : "Pla estratègic de subvencions",
+        "count" : "4043"
+      }, {
+        "item" : "LLEI 13/2006, de 27 de juliol",
+        "count" : "21"
+      }, {
+        "item" : "Resolució de 22 de gener de 2025",
+        "count" : "20"
+      }, {
+        "item" : "RESOLUCIÓ de 17 de gener de 2024",
+        "count" : "18"
+      }, {
+        "item" : "ORDRE ACC/201/2023, d'1 d'agost.",
+        "count" : "17"
+      }, {
+        "item" : "ARP/75/2021",
+        "count" : "15"
+      }, {
+        "item" : "LLEI 39/2006, de 14 de desembre",
+        "count" : "15"
+      }, {
+        "item" : "RESOLUCIÓ de 29 de gener de 2021",
+        "count" : "14"
+      }, {
+        "item" : "RESOLUCIÓ d'1 de febrer de 2022",
+        "count" : "13"
+      }, {
+        "item" : "Real Decreto 853/2021, de 5 de octubre",
+        "count" : "13"
+      }, {
+        "item" : "Text refós de les bases reguladores",
+        "count" : "12"
+      }, {
+        "item" : "Ordre EMT/229/2023, de 17 d'octubre",
+        "count" : "12"
+      }, {
+        "item" : "RESOLUCIÓ de 21 de desembre de 2020",
+        "count" : "11"
+      }, {
+        "item" : "RESOLUCIÓ de 4 d’abril de 2023",
+        "count" : "11"
+      }, {
+        "item" : "ORDRE EMT/170/2023, de 27 de juny",
+        "count" : "11"
+      }, {
+        "item" : "CLT/1390/2019",
+        "count" : "11"
+      }, {
+        "item" : "No aplica",
+        "count" : "10"
+      }, {
+        "item" : "No disponible",
+        "count" : "9"
+      }, {
+        "item" : "RESOLUCIÓ de 9 de gener 2023",
+        "count" : "9"
+      }, {
+        "item" : "ORDRE EMT/173/2024, de 18 de juliol",
+        "count" : "8"
+      } ],
+      "smallest" : "1 de juny de 2023",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513091,
+    "name" : "Bases reguladores descripció",
+    "dataTypeName" : "text",
+    "description" : "Descripció de les bases reguladores.  Text del títol de la norma que conté les bases reguladores que regeixen la convocatòria",
+    "fieldName" : "descripcio_bases_reg",
+    "position" : 15,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253503,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "YOUBARI CONVENI 2024",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Pla estrategic de subvencions",
+        "count" : "5500"
+      }, {
+        "item" : "ORDENANCA GENERAL DE SUBVENCIONS",
+        "count" : "2811"
+      }, {
+        "item" : "Bases generales de subvenciones de la Diputacio de Tarragona y de sus Organismos Autonomos",
+        "count" : "951"
+      }, {
+        "item" : "ORDENANZA GENERAL DE SUBVENCIONES",
+        "count" : "556"
+      }, {
+        "item" : "Ordenanza General de Subvenciones",
+        "count" : "429"
+      }, {
+        "item" : "Bases generals de subvencions de la Diputacio de Tarragona i dels seus Organismes Autonoms",
+        "count" : "427"
+      }, {
+        "item" : "ORDENANZA REGULADORA DE LAS SUBVENCIONES DEL AYUNTAMIENTO DE MARTORELL Y DE SUS ORGANISMOS AUTONOMOS",
+        "count" : "402"
+      }, {
+        "item" : "ORDENANZA GENERAL DE SUBVENCIONES DEL AYUNTAMIENTO DE VIC",
+        "count" : "383"
+      }, {
+        "item" : "BASES SUBVENCIONS NOMINATIVES 2023",
+        "count" : "380"
+      }, {
+        "item" : "Subvencions extraordinaries directes i nominatives previstes al pressupost 2012",
+        "count" : "376"
+      }, {
+        "item" : "Bases generals reguladores de l`atorgament de subvencions de la Diputacio de Lleida i dels seus organismes autonoms (2025)",
+        "count" : "373"
+      }, {
+        "item" : "ORDENANZA GENERAL SUBVENCIONES 2018",
+        "count" : "366"
+      }, {
+        "item" : "BASES SUBVENCIONS NOMINATIVES 2022",
+        "count" : "363"
+      }, {
+        "item" : "Bases de ejecucion del presupuesto - acuerdo de otorgamiento de la Junta de Gobierno Local",
+        "count" : "332"
+      }, {
+        "item" : "ORDENANCA GENERAL DE SUBVENCIONS 2019",
+        "count" : "319"
+      }, {
+        "item" : "BASES SUBVENCIONS NOMINATIVES 2021",
+        "count" : "314"
+      }, {
+        "item" : "BASES SUBVENCIONS NOMINATIVES 2024",
+        "count" : "273"
+      }, {
+        "item" : "2017 ORDENANCA GENERAL DE SUBVENCIONS",
+        "count" : "266"
+      }, {
+        "item" : "BASES GENERALS DE SUBVENCIONS DE VALLIRANA",
+        "count" : "256"
+      }, {
+        "item" : "BASES CONCESSIO DIRECTA 2019",
+        "count" : "250"
+      } ],
+      "smallest" : "11944 - AJUNTAMENT DE CASTELL D'ARO, PLATJA D'ARO I S'AGARO - Aprovacio definitiva del pressupost i la plantilla organica per a l'exercici 2026",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513092,
+    "name" : "Bases reguladores diari oficial codi",
+    "dataTypeName" : "text",
+    "description" : "Codi del diari oficial de publicació de les bases reguladores",
+    "fieldName" : "codi_bases_reg",
+    "position" : 16,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5278384,
+    "cachedContents" : {
+      "non_null" : "3479",
+      "largest" : "029",
+      "null" : "66419",
+      "top" : [ {
+        "item" : "011",
+        "count" : "3365"
+      }, {
+        "item" : "001",
+        "count" : "108"
+      }, {
+        "item" : "002",
+        "count" : "4"
+      }, {
+        "item" : "029",
+        "count" : "2"
+      } ],
+      "smallest" : "001",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513093,
+    "name" : "Bases reguladores diari oficial",
+    "dataTypeName" : "text",
+    "description" : "Nom del diari oficial de publicació de les bases reguladores",
+    "fieldName" : "bases_reguladores_diari",
+    "position" : 17,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253488,
+    "cachedContents" : {
+      "non_null" : "3479",
+      "largest" : "DOUE: DIARI OFICIAL DE LA UE",
+      "null" : "66419",
+      "top" : [ {
+        "item" : "DOGC. D.O. DE LA GENERALITAT DE CATALUNYA",
+        "count" : "3365"
+      }, {
+        "item" : "BOE. BUTLLETÍ OFICIAL DE L'ESTAT",
+        "count" : "108"
+      }, {
+        "item" : "DOUE: DIARI OFICIAL DE LA UE",
+        "count" : "4"
+      }, {
+        "item" : "B.O.P. DE BARCELONA",
+        "count" : "2"
+      } ],
+      "smallest" : "BOE. BUTLLETÍ OFICIAL DE L'ESTAT",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513094,
+    "name" : "Bases reguladores URL Català",
+    "dataTypeName" : "text",
+    "description" : "Enllaç al lloc web de publicació de les bases reguladores en el diari oficial en català",
+    "fieldName" : "url_catala_bases_reg",
+    "position" : 18,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253484,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "www.vila-sacra.cat",
+      "null" : "3",
+      "top" : [ {
+        "item" : "https://economia.gencat.cat/ca/ambits-actuacio/ajuts-subvencions/plans-estrategics/",
+        "count" : "5507"
+      }, {
+        "item" : "http://www.ddgi.cat/basescast/2016/ORDENAN%C3%87A%20GENERAL%20DE%20SUBVENCIONS%20CASTELLA.pdf",
+        "count" : "2544"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=anunci&id=1723&ebop_any=2019",
+        "count" : "1552"
+      }, {
+        "item" : "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf",
+        "count" : "1346"
+      }, {
+        "item" : "https://www.boe.es/buscar/act.php?id=BOE-A-2003-20977",
+        "count" : "1118"
+      }, {
+        "item" : "https://tramits.manlleu.cat/siac/PublicacionTabs.aspx?tab=6&id=1160&t=NO&x=UwZ8SQEd4HSCKmwmyfMHLg",
+        "count" : "550"
+      }, {
+        "item" : "http://www.diputaciolleida.cat/wp-content/uploads/2014/07/BEP2015.pdf",
+        "count" : "522"
+      }, {
+        "item" : "https://www.seu-e.cat/es/web/hospitaletdellobregat/govern-obert-i-transparencia/contractes-convenis-i-subvencions",
+        "count" : "510"
+      }, {
+        "item" : "https://seu.reus.cat/seu/documentPublic/download/3723",
+        "count" : "487"
+      }, {
+        "item" : "http://patronatmartorell.eadministracio.cat/transparency/053f0b4a-7d63-4c48-a3d0-cf085d49b620/",
+        "count" : "429"
+      }, {
+        "item" : "https://ebop.diputaciolleida.cat/aplicacions/bop/bopV1/fitxers/pdf/2025/58/20255802322.pdf",
+        "count" : "427"
+      }, {
+        "item" : "http://bop.diba.cat/anunci/3002539/aprovacio-definitiva-de-l-ordenanca-general-de-subvencions-ajuntament-de-vic",
+        "count" : "405"
+      }, {
+        "item" : "http://www.dipsalut.cat/upload/documents/2018/01/08/ordenancageneraldesubvencionscastella.pdf",
+        "count" : "387"
+      }, {
+        "item" : "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-20977-consolidado.pdf#page=26",
+        "count" : "370"
+      }, {
+        "item" : "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2018&04/022018007956.pdf&1",
+        "count" : "357"
+      }, {
+        "item" : "https://bop.diba.cat/temp/12_022019022301.pdf",
+        "count" : "319"
+      }, {
+        "item" : "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2009&07/091629999.pdf&61",
+        "count" : "312"
+      }, {
+        "item" : "https://bop.diba.cat/es",
+        "count" : "299"
+      }, {
+        "item" : "https://pandora4.diputaciolleida.cat/pandora/4/viewer.vm?id=1457087&view=bop&lang=ca",
+        "count" : "280"
+      }, {
+        "item" : "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2013&02/022013002856.pdf&1",
+        "count" : "279"
+      } ],
+      "smallest" : "-",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513095,
+    "name" : "Bases reguladores URL Castellà",
+    "dataTypeName" : "text",
+    "description" : "Enllaç al lloc web de publicació de les bases reguladores en el diari oficial en castellà",
+    "fieldName" : "url_castella_bases_reguladores",
+    "position" : 19,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253513,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "www.vila-sacra.cat",
+      "null" : "3",
+      "top" : [ {
+        "item" : "https://economia.gencat.cat/ca/ambits-actuacio/ajuts-subvencions/plans-estrategics/",
+        "count" : "5507"
+      }, {
+        "item" : "http://www.ddgi.cat/basescast/2016/ORDENAN%C3%87A%20GENERAL%20DE%20SUBVENCIONS%20CASTELLA.pdf",
+        "count" : "2544"
+      }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=anunci&id=1723&ebop_any=2019",
+        "count" : "1552"
+      }, {
+        "item" : "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf",
+        "count" : "1346"
+      }, {
+        "item" : "https://www.boe.es/buscar/act.php?id=BOE-A-2003-20977",
+        "count" : "1118"
+      }, {
+        "item" : "https://tramits.manlleu.cat/siac/PublicacionTabs.aspx?tab=6&id=1160&t=NO&x=UwZ8SQEd4HSCKmwmyfMHLg",
+        "count" : "550"
+      }, {
+        "item" : "http://www.diputaciolleida.cat/wp-content/uploads/2014/07/BEP2015.pdf",
+        "count" : "522"
+      }, {
+        "item" : "https://www.seu-e.cat/es/web/hospitaletdellobregat/govern-obert-i-transparencia/contractes-convenis-i-subvencions",
+        "count" : "510"
+      }, {
+        "item" : "https://seu.reus.cat/seu/documentPublic/download/3723",
+        "count" : "487"
+      }, {
+        "item" : "http://patronatmartorell.eadministracio.cat/transparency/053f0b4a-7d63-4c48-a3d0-cf085d49b620/",
+        "count" : "429"
+      }, {
+        "item" : "https://ebop.diputaciolleida.cat/aplicacions/bop/bopV1/fitxers/pdf/2025/58/20255802322.pdf",
+        "count" : "427"
+      }, {
+        "item" : "http://bop.diba.cat/anunci/3002539/aprovacio-definitiva-de-l-ordenanca-general-de-subvencions-ajuntament-de-vic",
+        "count" : "405"
+      }, {
+        "item" : "http://www.dipsalut.cat/upload/documents/2018/01/08/ordenancageneraldesubvencionscastella.pdf",
+        "count" : "387"
+      }, {
+        "item" : "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-20977-consolidado.pdf#page=26",
+        "count" : "370"
+      }, {
+        "item" : "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2018&04/022018007956.pdf&1",
+        "count" : "357"
+      }, {
+        "item" : "https://bop.diba.cat/temp/12_022019022301.pdf",
+        "count" : "319"
+      }, {
+        "item" : "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2009&07/091629999.pdf&61",
+        "count" : "312"
+      }, {
+        "item" : "https://bop.diba.cat/es",
+        "count" : "299"
+      }, {
+        "item" : "https://pandora4.diputaciolleida.cat/pandora/4/viewer.vm?id=1457087&view=bop&lang=ca",
+        "count" : "280"
+      }, {
+        "item" : "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2013&02/022013002856.pdf&1",
+        "count" : "279"
+      } ],
+      "smallest" : "-",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513096,
+    "name" : "Tipus d'instrument d'ajut / subvenció codi ",
+    "dataTypeName" : "text",
+    "description" : "Identificador del tipus d’instrument",
+    "fieldName" : "codi_tipus_d_instument",
+    "position" : 20,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253494,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "VENTA",
+      "null" : "3",
+      "top" : [ {
+        "item" : "SUBV",
+        "count" : "69497"
+      }, {
+        "item" : "OTROS",
+        "count" : "206"
+      }, {
+        "item" : "PREST; SUBV",
+        "count" : "98"
+      }, {
+        "item" : "PREST",
+        "count" : "49"
+      }, {
+        "item" : "OTROS; SUBV",
+        "count" : "25"
+      }, {
+        "item" : "GARAN",
+        "count" : "14"
+      }, {
+        "item" : "VENTA",
+        "count" : "3"
+      }, {
+        "item" : "GARAN; PREST",
+        "count" : "1"
+      }, {
+        "item" : "SUBV; VENTA",
+        "count" : "1"
+      }, {
+        "item" : "FINAN",
+        "count" : "1"
+      } ],
+      "smallest" : "FINAN",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513097,
+    "name" : "Tipus d'instrument d'ajut / subvenció",
+    "dataTypeName" : "text",
+    "description" : "Tipologia de figures jurídiques o econòmiques en base a les quals es concedeixen les subvencions i ajuts",
+    "fieldName" : "tipus_d_instument_ajut",
+    "position" : 21,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253491,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "Subvenció i lliurament dinerari sense contraprest.; Avantatge fiscal",
+      "null" : "3",
+      "top" : [ {
+        "item" : "Subvenció i lliurament dinerari sense contraprest.",
+        "count" : "69497"
+      }, {
+        "item" : "Altres instruments d'ajuda",
+        "count" : "206"
+      }, {
+        "item" : "Préstecs; Subvenció i lliurament dinerari sense contraprest.",
+        "count" : "98"
+      }, {
+        "item" : "Préstecs",
+        "count" : "49"
+      }, {
+        "item" : "Altres instruments d'ajuda; Subvenció i lliurament dinerari sense contraprest.",
+        "count" : "25"
+      }, {
+        "item" : "Garantia",
+        "count" : "14"
+      }, {
+        "item" : "Avantatge fiscal",
+        "count" : "3"
+      }, {
+        "item" : "Subvenció i lliurament dinerari sense contraprest.; Avantatge fiscal",
+        "count" : "1"
+      }, {
+        "item" : "Aportació de finançament risc",
+        "count" : "1"
+      }, {
+        "item" : "Garantia; Préstecs",
+        "count" : "1"
+      } ],
+      "smallest" : "Altres instruments d'ajuda",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513098,
+    "name" : "Regió d'aplicació codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador de la localització geogràfica",
+    "fieldName" : "codi_regio_apli",
+    "position" : 22,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253487,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "XXXX",
+      "null" : "3",
+      "top" : [ {
+        "item" : "ES511",
+        "count" : "31534"
+      }, {
+        "item" : "ES51",
+        "count" : "14407"
+      }, {
+        "item" : "ES512",
+        "count" : "11185"
+      }, {
+        "item" : "ES514",
+        "count" : "7237"
+      }, {
+        "item" : "ES513",
+        "count" : "3961"
+      }, {
+        "item" : "XXXX",
+        "count" : "626"
+      }, {
+        "item" : "ES",
+        "count" : "345"
+      }, {
+        "item" : "XXX",
+        "count" : "244"
+      }, {
+        "item" : "ES511; ES512",
+        "count" : "50"
+      }, {
+        "item" : "FR",
+        "count" : "27"
+      }, {
+        "item" : "UK",
+        "count" : "22"
+      }, {
+        "item" : "IT",
+        "count" : "18"
+      }, {
+        "item" : "DE",
+        "count" : "16"
+      }, {
+        "item" : "ESZ",
+        "count" : "16"
+      }, {
+        "item" : "ES511; ES514",
+        "count" : "14"
+      }, {
+        "item" : "ES523",
+        "count" : "13"
+      }, {
+        "item" : "HU",
+        "count" : "13"
+      }, {
+        "item" : "ES52",
+        "count" : "12"
+      }, {
+        "item" : "PL",
+        "count" : "12"
+      }, {
+        "item" : "ES51; FR",
+        "count" : "9"
+      } ],
+      "smallest" : "AT; BE; DE; LU",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513099,
+    "name" : "Regió d'aplicació",
+    "dataTypeName" : "text",
+    "description" : "Indica la localització geogràfica d’aplicació material de la convocatòria",
+    "fieldName" : "regio_apli",
+    "position" : 23,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253499,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "Valencia / València",
+      "null" : "3",
+      "top" : [ {
+        "item" : "BARCELONA",
+        "count" : "31534"
+      }, {
+        "item" : "CATALUNYA",
+        "count" : "14407"
+      }, {
+        "item" : "GIRONA",
+        "count" : "11185"
+      }, {
+        "item" : "TARRAGONA",
+        "count" : "7237"
+      }, {
+        "item" : "LLEIDA",
+        "count" : "3961"
+      }, {
+        "item" : "TOT EL MON",
+        "count" : "626"
+      }, {
+        "item" : "ESPANYA",
+        "count" : "345"
+      }, {
+        "item" : "REGIONS O PAÏSOS NO EUROPEUS, NO CONTEMPLATS EN NUTS",
+        "count" : "244"
+      }, {
+        "item" : "BARCELONA; GIRONA",
+        "count" : "50"
+      }, {
+        "item" : "FRANCE",
+        "count" : "27"
+      }, {
+        "item" : "UNITED KINGDOM",
+        "count" : "22"
+      }, {
+        "item" : "ITALIA",
+        "count" : "18"
+      }, {
+        "item" : "EXTRA-REGIÓ NUTS 1",
+        "count" : "16"
+      }, {
+        "item" : "DEUTSCHLAND",
+        "count" : "16"
+      }, {
+        "item" : "BARCELONA; TARRAGONA",
+        "count" : "14"
+      }, {
+        "item" : "MAGYARORSZÁG",
+        "count" : "13"
+      }, {
+        "item" : "Valencia / València",
+        "count" : "13"
+      }, {
+        "item" : "POLSKA",
+        "count" : "12"
+      }, {
+        "item" : "COMUNITAT VALENCIANA",
+        "count" : "12"
+      }, {
+        "item" : "CATALUNYA; FRANCE",
+        "count" : "9"
+      } ],
+      "smallest" : "ANDALUSIA; FRANCE; HRVATSKA",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513100,
+    "name" : "Subfinalitat codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador de la subfinalitat.",
+    "fieldName" : "subfinalitat_codi",
+    "position" : 24,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13031556,
+    "cachedContents" : {
+      "non_null" : "8787",
+      "largest" : "38",
+      "null" : "61111",
+      "top" : [ {
+        "item" : "17",
+        "count" : "1593"
+      }, {
+        "item" : "13",
+        "count" : "672"
+      }, {
+        "item" : "14",
+        "count" : "563"
+      }, {
+        "item" : "30",
+        "count" : "539"
+      }, {
+        "item" : "06",
+        "count" : "500"
+      }, {
+        "item" : "01",
+        "count" : "446"
+      }, {
+        "item" : "26",
+        "count" : "444"
+      }, {
+        "item" : "19",
+        "count" : "443"
+      }, {
+        "item" : "22",
+        "count" : "384"
+      }, {
+        "item" : "02",
+        "count" : "316"
+      }, {
+        "item" : "36",
+        "count" : "287"
+      }, {
+        "item" : "11",
+        "count" : "284"
+      }, {
+        "item" : "09",
+        "count" : "249"
+      }, {
+        "item" : "08",
+        "count" : "246"
+      }, {
+        "item" : "10",
+        "count" : "215"
+      }, {
+        "item" : "20",
+        "count" : "181"
+      }, {
+        "item" : "23",
+        "count" : "175"
+      }, {
+        "item" : "15",
+        "count" : "154"
+      }, {
+        "item" : "28",
+        "count" : "140"
+      }, {
+        "item" : "33",
+        "count" : "131"
+      } ],
+      "smallest" : "01",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513101,
+    "name" : "Subfinalitat",
+    "dataTypeName" : "text",
+    "description" : "Utilitat pública o interès social o de promoció d’una finalitat pública específica perseguits amb l’atorgament de la subvenció.",
+    "fieldName" : "subfinalitat",
+    "position" : 25,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13031555,
+    "cachedContents" : {
+      "non_null" : "8787",
+      "largest" : " EDUCACIÓ",
+      "null" : "61111",
+      "top" : [ {
+        "item" : "FOMENT I INTERNACIONALITZACIÓ DE LA CULTURA",
+        "count" : "1593"
+      }, {
+        "item" : "FOMENT DE L'OCUPACIÓ",
+        "count" : "672"
+      }, {
+        "item" : " EDUCACIÓ",
+        "count" : "563"
+      }, {
+        "item" : "SUPORT  I PROMOCIÓ AG-R-P",
+        "count" : "539"
+      }, {
+        "item" : "COOPERACIÓ INTERNACIONAL",
+        "count" : "500"
+      }, {
+        "item" : "ADMINISTRACIÓ I SERVEIS GENERALS",
+        "count" : "446"
+      }, {
+        "item" : "R+D+i",
+        "count" : "444"
+      }, {
+        "item" : "PATRIMONI CULTURAL",
+        "count" : "443"
+      }, {
+        "item" : " ACTUACIONS AMBIENTALS I CICLE DE L'AIGUA",
+        "count" : "384"
+      }, {
+        "item" : "JUSTÍCIA",
+        "count" : "316"
+      }, {
+        "item" : "INDÚSTRIA",
+        "count" : "287"
+      }, {
+        "item" : "ACCÈS I FOMENT DE L'HABITATGE",
+        "count" : "284"
+      }, {
+        "item" : "PROMOCIÓ AUTONOMIA PERSONAL",
+        "count" : "249"
+      }, {
+        "item" : "IGUALTAT I INCLUSIÓ SOCIAL",
+        "count" : "246"
+      }, {
+        "item" : "PROMOCIÓ SOCIAL",
+        "count" : "215"
+      }, {
+        "item" : "LLENGUA CATALANA",
+        "count" : "181"
+      }, {
+        "item" : "SUPORT  ALS ENS LOCALS",
+        "count" : "175"
+      }, {
+        "item" : "ESPORT",
+        "count" : "154"
+      }, {
+        "item" : "TIC",
+        "count" : "140"
+      }, {
+        "item" : "COMERÇ",
+        "count" : "131"
+      } ],
+      "smallest" : "ACCÈS I FOMENT DE L'HABITATGE",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513102,
+    "name" : "Finalitat RAIS codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador de la finalitat RAIS.",
+    "fieldName" : "finalitat_rais_codi",
+    "position" : 26,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13031554,
+    "cachedContents" : {
+      "non_null" : "8787",
+      "largest" : "19",
+      "null" : "61111",
+      "top" : [ {
+        "item" : "11",
+        "count" : "2311"
+      }, {
+        "item" : "09",
+        "count" : "717"
+      }, {
+        "item" : "08",
+        "count" : "672"
+      }, {
+        "item" : "12",
+        "count" : "644"
+      }, {
+        "item" : "14",
+        "count" : "598"
+      }, {
+        "item" : "05",
+        "count" : "590"
+      }, {
+        "item" : "04",
+        "count" : "581"
+      }, {
+        "item" : "15",
+        "count" : "552"
+      }, {
+        "item" : "01",
+        "count" : "446"
+      }, {
+        "item" : "02",
+        "count" : "316"
+      }, {
+        "item" : "18",
+        "count" : "308"
+      }, {
+        "item" : "17",
+        "count" : "296"
+      }, {
+        "item" : "07",
+        "count" : "288"
+      }, {
+        "item" : "06",
+        "count" : "215"
+      }, {
+        "item" : "10",
+        "count" : "128"
+      }, {
+        "item" : "03",
+        "count" : "34"
+      }, {
+        "item" : "19",
+        "count" : "34"
+      }, {
+        "item" : "13",
+        "count" : "30"
+      }, {
+        "item" : "16",
+        "count" : "27"
+      } ],
+      "smallest" : "01",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513103,
+    "name" : "Finalitat RAIS",
+    "dataTypeName" : "text",
+    "description" : "Utilitat pública o interès social o de promoció d’una finalitat pública concreta perseguits amb l’atorgament de la subvenció.",
+    "fieldName" : "finalitat_rais",
+    "position" : 27,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13031553,
+    "cachedContents" : {
+      "non_null" : "8787",
+      "largest" : "TERRITORI I MEDI AMBIENT",
+      "null" : "61111",
+      "top" : [ {
+        "item" : "CULTURA",
+        "count" : "2311"
+      }, {
+        "item" : "EDUCACIÓ I ESPORT",
+        "count" : "717"
+      }, {
+        "item" : "FOMENT DE L'OCUPACIÓ",
+        "count" : "672"
+      }, {
+        "item" : "TERRITORI I MEDI AMBIENT",
+        "count" : "644"
+      }, {
+        "item" : "CONEIXEMENT I INFORMACIÓ /  R+D+i i informació",
+        "count" : "598"
+      }, {
+        "item" : "PROTECCIÓ SOCIAL",
+        "count" : "590"
+      }, {
+        "item" : "RELACIONS EXTERIORS I COOPERACIÓ",
+        "count" : "581"
+      }, {
+        "item" : "AGRICULTURA, RAMADERIA I PESCA",
+        "count" : "552"
+      }, {
+        "item" : "ADMINISTRACIÓ I SERVEIS GENERALS",
+        "count" : "446"
+      }, {
+        "item" : "JUSTÍCIA",
+        "count" : "316"
+      }, {
+        "item" : "INDÚSTRIA I ENERGIA",
+        "count" : "308"
+      }, {
+        "item" : "DESENVOLUPAMENT EMPRESARIAL, COMERÇ I TURISME",
+        "count" : "296"
+      }, {
+        "item" : "BENESTAR COMUNITARI",
+        "count" : "288"
+      }, {
+        "item" : "PROMOCIÓ SOCIAL",
+        "count" : "215"
+      }, {
+        "item" : "SANITAT",
+        "count" : "128"
+      }, {
+        "item" : "CRÈDIT OFICIAL I SUPORT FINANCER",
+        "count" : "34"
+      }, {
+        "item" : "SEGURETAT CIUTADANA I PROTECCIÓ CIVIL",
+        "count" : "34"
+      }, {
+        "item" : "INFRAESTRUCTURES I TRANSPORT",
+        "count" : "30"
+      }, {
+        "item" : "CONSUM I COMPETENCIA",
+        "count" : "27"
+      } ],
+      "smallest" : "ADMINISTRACIÓ I SERVEIS GENERALS",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513104,
+    "name" : "Finalitat pública codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador de la finalitat pública",
+    "fieldName" : "codi_finalitat_publica",
+    "position" : 28,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5278383,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "19",
+      "null" : "0",
+      "top" : [ {
+        "item" : "11",
+        "count" : "19904"
+      }, {
+        "item" : "10",
+        "count" : "10896"
+      }, {
+        "item" : "05",
+        "count" : "10283"
+      }, {
+        "item" : "18",
+        "count" : "7852"
+      }, {
+        "item" : "04",
+        "count" : "7089"
+      }, {
+        "item" : "14",
+        "count" : "3066"
+      }, {
+        "item" : "09",
+        "count" : "1802"
+      }, {
+        "item" : "19",
+        "count" : "1679"
+      }, {
+        "item" : "06",
+        "count" : "1460"
+      }, {
+        "item" : "12",
+        "count" : "1417"
+      }, {
+        "item" : "17",
+        "count" : "1128"
+      }, {
+        "item" : "08",
+        "count" : "1010"
+      }, {
+        "item" : "16",
+        "count" : "752"
+      }, {
+        "item" : "13",
+        "count" : "471"
+      }, {
+        "item" : "01",
+        "count" : "345"
+      }, {
+        "item" : "03",
+        "count" : "326"
+      }, {
+        "item" : "15",
+        "count" : "222"
+      }, {
+        "item" : "07",
+        "count" : "128"
+      }, {
+        "item" : "02",
+        "count" : "68"
+      } ],
+      "smallest" : "01",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513105,
+    "name" : "Finalitat pública",
+    "dataTypeName" : "text",
+    "description" : "Utilitat pública o interès social o de promoció d’una finalitat pública genèrica perseguits amb l’atorgament de la subvenció.",
+    "fieldName" : "finalitat_publica",
+    "position" : 29,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253483,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "Subvencions al transport",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Cultura",
+        "count" : "19904"
+      }, {
+        "item" : "Educació",
+        "count" : "10896"
+      }, {
+        "item" : "Serveis Socials i Promoció Social",
+        "count" : "10283"
+      }, {
+        "item" : "Altres actuacions de caràcter econòmic",
+        "count" : "7852"
+      }, {
+        "item" : "Altres Prestacions econòmiques",
+        "count" : "7089"
+      }, {
+        "item" : "Comerç, Turisme i Pimes",
+        "count" : "3066"
+      }, {
+        "item" : "Sanitat",
+        "count" : "1802"
+      }, {
+        "item" : "Cooperació internacional per al desenvolupament i cultural",
+        "count" : "1679"
+      }, {
+        "item" : "Foment de l'Ocupació",
+        "count" : "1460"
+      }, {
+        "item" : "Agricultura, Pesca i Alimentació",
+        "count" : "1417"
+      }, {
+        "item" : "Investigació, desenvolupament i innovació",
+        "count" : "1128"
+      }, {
+        "item" : "Accés a l'habitatge i foment de l'edificació",
+        "count" : "1010"
+      }, {
+        "item" : "Infraestructures",
+        "count" : "752"
+      }, {
+        "item" : "Indústria i Energia",
+        "count" : "471"
+      }, {
+        "item" : "Justícia",
+        "count" : "345"
+      }, {
+        "item" : "Seguretat Ciutadana i Institucions Penitenciàries",
+        "count" : "326"
+      }, {
+        "item" : "Subvencions al transport",
+        "count" : "222"
+      }, {
+        "item" : "Atur",
+        "count" : "128"
+      }, {
+        "item" : "Defensa",
+        "count" : "68"
+      } ],
+      "smallest" : "Accés a l'habitatge i foment de l'edificació",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513106,
+    "name" : "Tipus de beneficiaris codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador del tipus de beneficiari",
+    "fieldName" : "codi_tipus_de_beneficiaris",
+    "position" : 30,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253502,
+    "cachedContents" : {
+      "non_null" : "69893",
+      "largest" : "PFA",
+      "null" : "5",
+      "top" : [ {
+        "item" : "JSA",
+        "count" : "44107"
+      }, {
+        "item" : "FSA",
+        "count" : "10211"
+      }, {
+        "item" : "FSA; GRA; JSA; PFA",
+        "count" : "5254"
+      }, {
+        "item" : "PFA",
+        "count" : "3725"
+      }, {
+        "item" : "FSA; JSA",
+        "count" : "2272"
+      }, {
+        "item" : "FSA; JSA; PFA",
+        "count" : "1234"
+      }, {
+        "item" : "JSA; PFA",
+        "count" : "1182"
+      }, {
+        "item" : "GRA; JSA; PFA",
+        "count" : "683"
+      }, {
+        "item" : "GRA; PFA",
+        "count" : "568"
+      }, {
+        "item" : "FSA; PFA",
+        "count" : "468"
+      }, {
+        "item" : "GRA",
+        "count" : "92"
+      }, {
+        "item" : "FSA; GRA; JSA;PFA",
+        "count" : "42"
+      }, {
+        "item" : "GRA; JSA",
+        "count" : "24"
+      }, {
+        "item" : "FSA; GRA",
+        "count" : "18"
+      }, {
+        "item" : "FSA; GRA; PFA",
+        "count" : "10"
+      }, {
+        "item" : "FSA; GRA; JSA",
+        "count" : "3"
+      } ],
+      "smallest" : "FSA",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513107,
+    "name" : "Tipus de beneficiaris",
+    "dataTypeName" : "text",
+    "description" : "Una o diverses de les tipologies de beneficiaris previstos en la convocatòria",
+    "fieldName" : "tipus_de_beneficiaris",
+    "position" : 31,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253520,
+    "cachedContents" : {
+      "non_null" : "69893",
+      "largest" : "PYME i Pers. físiques que desenvolupen activitat econòmica",
+      "null" : "5",
+      "top" : [ {
+        "item" : "Persones jurídiques que no desenvolupen activitat econòmica",
+        "count" : "44107"
+      }, {
+        "item" : "Persones físiques que no desenvolupen activitat econòmica",
+        "count" : "10211"
+      }, {
+        "item" : "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+        "count" : "5296"
+      }, {
+        "item" : "PYME i Pers. físiques que desenvolupen activitat econòmica",
+        "count" : "3725"
+      }, {
+        "item" : "Persones físiques que no desenvolupen activitat econòmica; Persones jurídiques que no desenvolupen activitat econòmica",
+        "count" : "2272"
+      }, {
+        "item" : "Persones físiques que no desenvolupen activitat econòmica; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+        "count" : "1234"
+      }, {
+        "item" : "Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+        "count" : "1182"
+      }, {
+        "item" : "Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+        "count" : "683"
+      }, {
+        "item" : "Gran empresa; PYME i Pers. físiques que desenvolupen activitat econòmica",
+        "count" : "568"
+      }, {
+        "item" : "Persones físiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+        "count" : "468"
+      }, {
+        "item" : "Gran empresa",
+        "count" : "92"
+      }, {
+        "item" : "Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica",
+        "count" : "24"
+      }, {
+        "item" : "Persones físiques que no desenvolupen activitat econòmica; Gran empresa",
+        "count" : "18"
+      }, {
+        "item" : "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; PYME i Pers. físiques que desenvolupen activitat econòmica",
+        "count" : "10"
+      }, {
+        "item" : "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica",
+        "count" : "3"
+      } ],
+      "smallest" : "Gran empresa",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513108,
+    "name" : "Sector econòmic afectat per la subvenció codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador del sector econòmic afectat per la subvenció",
+    "fieldName" : "codi_sector_eco",
+    "position" : 32,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253481,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "V",
+      "null" : "3",
+      "top" : [ {
+        "item" : "H; T",
+        "count" : "10334"
+      }, {
+        "item" : "P; S",
+        "count" : "5638"
+      }, {
+        "item" : "Q; S",
+        "count" : "5019"
+      }, {
+        "item" : "Q; R",
+        "count" : "4509"
+      }, {
+        "item" : "91",
+        "count" : "4187"
+      }, {
+        "item" : "93.1; 93.2",
+        "count" : "3361"
+      }, {
+        "item" : "84.1",
+        "count" : "2731"
+      }, {
+        "item" : "94.9",
+        "count" : "2620"
+      }, {
+        "item" : "94",
+        "count" : "2540"
+      }, {
+        "item" : "90; 91",
+        "count" : "2335"
+      }, {
+        "item" : "85; 93",
+        "count" : "1505"
+      }, {
+        "item" : "S",
+        "count" : "1346"
+      }, {
+        "item" : "84; 93",
+        "count" : "1201"
+      }, {
+        "item" : "A",
+        "count" : "1098"
+      }, {
+        "item" : "84.2; 93.1; 93.2",
+        "count" : "957"
+      }, {
+        "item" : "86.9",
+        "count" : "855"
+      }, {
+        "item" : "85.6",
+        "count" : "817"
+      }, {
+        "item" : "P",
+        "count" : "806"
+      }, {
+        "item" : "85.1; 88.9",
+        "count" : "742"
+      }, {
+        "item" : "85; 88",
+        "count" : "691"
+      } ],
+      "smallest" : "01",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513109,
+    "name" : "Sector econòmic afectat per la subvenció",
+    "dataTypeName" : "text",
+    "description" : "Un o diversos dels sectors de l’economia previstos en la convocatòria",
+    "fieldName" : "sector_eco_afectat",
+    "position" : 33,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253489,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "Valorització de residus; Eliminació de residus sense valorització",
+      "null" : "3",
+      "top" : [ {
+        "item" : "Transport i emmagatzematge; Altres serveis",
+        "count" : "10334"
+      }, {
+        "item" : "Administració públ. i defensa; seguretat social obligatòria; Activitats artístiques, esportives i d'entreteniment",
+        "count" : "5638"
+      }, {
+        "item" : "Educació; Activitats artístiques, esportives i d'entreteniment",
+        "count" : "5021"
+      }, {
+        "item" : "Educació; Activitats sanitàries i de serveis socials",
+        "count" : "4511"
+      }, {
+        "item" : "Act de biblioteques, arxius, museus i altres act. culturals",
+        "count" : "4187"
+      }, {
+        "item" : "Activitats esportives; Activitats recreatives i d'entreteniment",
+        "count" : "3361"
+      }, {
+        "item" : "Adm. públ i de la política econòmica, social i mediambiental",
+        "count" : "2731"
+      }, {
+        "item" : "Altres activitats associatives",
+        "count" : "2620"
+      }, {
+        "item" : "Activitats associatives",
+        "count" : "2540"
+      }, {
+        "item" : "Activitats de creació artística i arts escèniques; Act de biblioteques, arxius, museus i altres act. culturals",
+        "count" : "2335"
+      }, {
+        "item" : "Educació; Activitats esportives, recreatives i d'entreteniment",
+        "count" : "1505"
+      }, {
+        "item" : "Activitats artístiques, esportives i d'entreteniment",
+        "count" : "1346"
+      }, {
+        "item" : "Administrac. pública i defensa; seguretat social obligatòria; Activitats esportives, recreatives i d'entreteniment",
+        "count" : "1201"
+      }, {
+        "item" : "Agricultura, ramaderia, silvicultura i pesca",
+        "count" : "1098"
+      }, {
+        "item" : "Prestació de serveis a la comunitat en general; Activitats esportives; Activitats recreatives i d'entreteniment",
+        "count" : "957"
+      }, {
+        "item" : "Altres activitats sanitàries",
+        "count" : "855"
+      }, {
+        "item" : "Activitats auxiliars a l'educació",
+        "count" : "817"
+      }, {
+        "item" : "Educació",
+        "count" : "812"
+      }, {
+        "item" : "Administració públ. i defensa; seguretat social obligatòria",
+        "count" : "806"
+      }, {
+        "item" : "Educació preprimària; Altres activitats de serveis socials sense allotjament",
+        "count" : "742"
+      } ],
+      "smallest" : "Acabat d'edificis",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513110,
+    "name" : "Origen del finançament codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador de l’origen del finançament.",
+    "fieldName" : "origen_del_finan_ament_codi",
+    "position" : 34,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13644697,
+    "cachedContents" : {
+      "non_null" : "69611",
+      "largest" : "PGE",
+      "null" : "287",
+      "top" : [ {
+        "item" : "PEL",
+        "count" : "58870"
+      }, {
+        "item" : "PCA",
+        "count" : "8179"
+      }, {
+        "item" : "PGE",
+        "count" : "576"
+      }, {
+        "item" : "001; PEL",
+        "count" : "420"
+      }, {
+        "item" : "012",
+        "count" : "300"
+      }, {
+        "item" : "002; PEL",
+        "count" : "228"
+      }, {
+        "item" : "001; OFI",
+        "count" : "187"
+      }, {
+        "item" : "OFI",
+        "count" : "72"
+      }, {
+        "item" : "004; PCA",
+        "count" : "64"
+      }, {
+        "item" : "012; PCA",
+        "count" : "60"
+      }, {
+        "item" : "001",
+        "count" : "59"
+      }, {
+        "item" : "PCA; PGE",
+        "count" : "58"
+      }, {
+        "item" : "002; PCA",
+        "count" : "52"
+      }, {
+        "item" : "002",
+        "count" : "47"
+      }, {
+        "item" : "006",
+        "count" : "42"
+      }, {
+        "item" : "002; OFI",
+        "count" : "36"
+      }, {
+        "item" : "012; PCA; PGE",
+        "count" : "30"
+      }, {
+        "item" : "012; PEL",
+        "count" : "28"
+      }, {
+        "item" : "011",
+        "count" : "26"
+      }, {
+        "item" : "014; PCA",
+        "count" : "25"
+      } ],
+      "smallest" : "001",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513111,
+    "name" : "Origen del finançament",
+    "dataTypeName" : "text",
+    "description" : "Administració d’on prové el finançament.",
+    "fieldName" : "origen_del_finan_ament",
+    "position" : 35,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13644696,
+    "cachedContents" : {
+      "non_null" : "69611",
+      "largest" : "REACT-EU Recovery Assist. for Cohesion & Territories Europe; Pressupostos Generals de l'Estat",
+      "null" : "287",
+      "top" : [ {
+        "item" : "Pressupostos Generals de les Entitats Locals",
+        "count" : "58870"
+      }, {
+        "item" : "Pressupostos Generals de les Comunitats Autònomes",
+        "count" : "8179"
+      }, {
+        "item" : "Pressupostos Generals de l'Estat",
+        "count" : "576"
+      }, {
+        "item" : "FEDER - FONS EUROPEU DE DESENVOLUPAMENT REGIONAL; Pressupostos Generals de les Entitats Locals",
+        "count" : "420"
+      }, {
+        "item" : "MRR - MECANISME DE RECUPERACIÓ I RESILIÈNCIA",
+        "count" : "300"
+      }, {
+        "item" : "FSE - FONS SOCIAL EUROPEU; Pressupostos Generals de les Entitats Locals",
+        "count" : "228"
+      }, {
+        "item" : "FEDER - FONS EUROPEU DE DESENVOLUPAMENT REGIONAL; Altre finançament",
+        "count" : "187"
+      }, {
+        "item" : "Altre finançament",
+        "count" : "72"
+      }, {
+        "item" : "FEADER - FONS EUROPEU AGRÍCOLA DE DESENVOLUPAMENT RURAL; Pressupostos Generals de les Comunitats Autònomes",
+        "count" : "64"
+      }, {
+        "item" : "MRR - MECANISME DE RECUPERACIÓ I RESILIÈNCIA; Pressupostos Generals de les Comunitats Autònomes",
+        "count" : "60"
+      }, {
+        "item" : "FEDER - FONS EUROPEU DE DESENVOLUPAMENT REGIONAL",
+        "count" : "59"
+      }, {
+        "item" : "Pressupostos Generals de les Comunitats Autònomes; Pressupostos Generals de l'Estat",
+        "count" : "58"
+      }, {
+        "item" : "FSE - FONS SOCIAL EUROPEU; Pressupostos Generals de les Comunitats Autònomes",
+        "count" : "52"
+      }, {
+        "item" : "FSE - FONS SOCIAL EUROPEU",
+        "count" : "47"
+      }, {
+        "item" : "FEAGA - FONS EUROPEU AGRÍCOLA DE GARANTIA",
+        "count" : "42"
+      }, {
+        "item" : "FSE - FONS SOCIAL EUROPEU; Altre finançament",
+        "count" : "36"
+      }, {
+        "item" : "MRR - MECANISME DE RECUPERACIÓ I RESILIÈNCIA; Pressupostos Generals de les Comunitats Autònomes; Pressupostos Generals de l'Estat",
+        "count" : "30"
+      }, {
+        "item" : "MRR - MECANISME DE RECUPERACIÓ I RESILIÈNCIA; Pressupostos Generals de les Entitats Locals",
+        "count" : "28"
+      }, {
+        "item" : "FEAG - FONS EUROPEU D'ADAPTACIÓ A LA GLOBALITZACIÓ",
+        "count" : "26"
+      }, {
+        "item" : "FSE+ - FONS SOCIAL EUROPEU PLUS; Pressupostos Generals de les Comunitats Autònomes",
+        "count" : "25"
+      } ],
+      "smallest" : "Altre finançament",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513112,
+    "name" : "Import finançament sector públic",
+    "dataTypeName" : "number",
+    "description" : "Pressupost màxim per finançar les despeses de la convocatòria procedent del sector públic",
+    "fieldName" : "import_finan_ament_sec_pub",
+    "position" : 36,
+    "renderTypeName" : "number",
+    "tableColumnId" : 5253493,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "2665230291.03",
+      "null" : "0",
+      "top" : [ {
+        "item" : "3000",
+        "count" : "2059"
+      }, {
+        "item" : "2000",
+        "count" : "2011"
+      }, {
+        "item" : "1000",
+        "count" : "1963"
+      }, {
+        "item" : "10000",
+        "count" : "1765"
+      }, {
+        "item" : "5000",
+        "count" : "1724"
+      }, {
+        "item" : "6000",
+        "count" : "1435"
+      }, {
+        "item" : "20000",
+        "count" : "1395"
+      }, {
+        "item" : "15000",
+        "count" : "1348"
+      }, {
+        "item" : "1500",
+        "count" : "1317"
+      }, {
+        "item" : "4000",
+        "count" : "1222"
+      }, {
+        "item" : "30000",
+        "count" : "974"
+      }, {
+        "item" : "2500",
+        "count" : "899"
+      }, {
+        "item" : "500",
+        "count" : "883"
+      }, {
+        "item" : "8000",
+        "count" : "851"
+      }, {
+        "item" : "12000",
+        "count" : "817"
+      }, {
+        "item" : "0",
+        "count" : "812"
+      }, {
+        "item" : "50000",
+        "count" : "804"
+      }, {
+        "item" : "25000",
+        "count" : "785"
+      }, {
+        "item" : "40000",
+        "count" : "718"
+      }, {
+        "item" : "7000",
+        "count" : "671"
+      } ],
+      "smallest" : "0",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 26513113,
+    "name" : "Import finançament UE",
+    "dataTypeName" : "number",
+    "description" : "Pressupost màxim per finançar les despeses de la convocatòria procedent dels fons de la Unió Europea",
+    "fieldName" : "import_finan_ament_ue",
+    "position" : 37,
+    "renderTypeName" : "number",
+    "tableColumnId" : 5253525,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "374148757.58",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "68749"
+      }, {
+        "item" : "1",
+        "count" : "28"
+      }, {
+        "item" : "2000000",
+        "count" : "19"
+      }, {
+        "item" : "2000",
+        "count" : "15"
+      }, {
+        "item" : "3000",
+        "count" : "15"
+      }, {
+        "item" : "5000000",
+        "count" : "14"
+      }, {
+        "item" : "20000",
+        "count" : "14"
+      }, {
+        "item" : "30000",
+        "count" : "14"
+      }, {
+        "item" : "4548.56",
+        "count" : "14"
+      }, {
+        "item" : "3482",
+        "count" : "12"
+      }, {
+        "item" : "9000",
+        "count" : "11"
+      }, {
+        "item" : "4000",
+        "count" : "11"
+      }, {
+        "item" : "600",
+        "count" : "11"
+      }, {
+        "item" : "7000",
+        "count" : "10"
+      }, {
+        "item" : "10000",
+        "count" : "9"
+      }, {
+        "item" : "22000",
+        "count" : "7"
+      }, {
+        "item" : "15000",
+        "count" : "7"
+      }, {
+        "item" : "14000",
+        "count" : "7"
+      }, {
+        "item" : "21000",
+        "count" : "7"
+      }, {
+        "item" : "35000",
+        "count" : "7"
+      } ],
+      "smallest" : "0",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 26513114,
+    "name" : "Import total convocatòria",
+    "dataTypeName" : "number",
+    "description" : "Sumatori dels camps “Import finançament sector públic” i “Import finançament UE”",
+    "fieldName" : "import_total_convocat_ria",
+    "position" : 38,
+    "renderTypeName" : "number",
+    "tableColumnId" : 5253505,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "2665230291.03",
+      "null" : "0",
+      "top" : [ {
+        "item" : "3000",
+        "count" : "2047"
+      }, {
+        "item" : "2000",
+        "count" : "2000"
+      }, {
+        "item" : "1000",
+        "count" : "1960"
+      }, {
+        "item" : "10000",
+        "count" : "1761"
+      }, {
+        "item" : "5000",
+        "count" : "1737"
+      }, {
+        "item" : "6000",
+        "count" : "1444"
+      }, {
+        "item" : "20000",
+        "count" : "1406"
+      }, {
+        "item" : "15000",
+        "count" : "1350"
+      }, {
+        "item" : "1500",
+        "count" : "1313"
+      }, {
+        "item" : "4000",
+        "count" : "1228"
+      }, {
+        "item" : "30000",
+        "count" : "987"
+      }, {
+        "item" : "2500",
+        "count" : "896"
+      }, {
+        "item" : "500",
+        "count" : "887"
+      }, {
+        "item" : "8000",
+        "count" : "858"
+      }, {
+        "item" : "12000",
+        "count" : "816"
+      }, {
+        "item" : "50000",
+        "count" : "802"
+      }, {
+        "item" : "25000",
+        "count" : "784"
+      }, {
+        "item" : "40000",
+        "count" : "722"
+      }, {
+        "item" : "7000",
+        "count" : "666"
+      }, {
+        "item" : "100000",
+        "count" : "579"
+      } ],
+      "smallest" : "0",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 26513115,
+    "name" : "Data inici presentació sol·licituds",
+    "dataTypeName" : "text",
+    "description" : "Data o text explicatiu sobre l’inici del període habilitat per admetre les sol·licituds",
+    "fieldName" : "data_inici_presentaci_sol",
+    "position" : 39,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253514,
+    "cachedContents" : {
+      "non_null" : "68164",
+      "largest" : "Votacion de las candidaturas una vez publicadas la relacion de personas",
+      "null" : "1734",
+      "top" : [ {
+        "item" : "01/01/2023",
+        "count" : "6413"
+      }, {
+        "item" : "01/01/2024",
+        "count" : "6346"
+      }, {
+        "item" : "01/01/2022",
+        "count" : "6327"
+      }, {
+        "item" : "01/01/2025",
+        "count" : "6113"
+      }, {
+        "item" : "01/01/2021",
+        "count" : "5405"
+      }, {
+        "item" : "01/01/2026",
+        "count" : "4043"
+      }, {
+        "item" : "01/01/2019",
+        "count" : "2405"
+      }, {
+        "item" : "01/01/2020",
+        "count" : "2251"
+      }, {
+        "item" : "Des de l’endemà de la publicació en el diari oficial de la convocatòria inicial",
+        "count" : "1539"
+      }, {
+        "item" : "Sin plazo de solicitud",
+        "count" : "408"
+      }, {
+        "item" : "SIN PLAZO DE SOLICITUD",
+        "count" : "150"
+      }, {
+        "item" : "No tiene",
+        "count" : "140"
+      }, {
+        "item" : "NO PROCEDE",
+        "count" : "106"
+      }, {
+        "item" : "01/09/2022",
+        "count" : "102"
+      }, {
+        "item" : "17/02/2025",
+        "count" : "97"
+      }, {
+        "item" : "sin plazo de solicitud",
+        "count" : "91"
+      }, {
+        "item" : "03/01/2023",
+        "count" : "88"
+      }, {
+        "item" : "Al dia siguiente de la publicacion de la convocatoria",
+        "count" : "83"
+      }, {
+        "item" : "01/02/2022",
+        "count" : "83"
+      }, {
+        "item" : "03/01/2022",
+        "count" : "82"
+      } ],
+      "smallest" : "-",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513116,
+    "name" : "Data fi presentació sol·licituds",
+    "dataTypeName" : "text",
+    "description" : "Data o text explicatiu sobre el fi del període habilitat per admetre les sol·licituds",
+    "fieldName" : "data_fi_presentaci_sol",
+    "position" : 40,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253510,
+    "cachedContents" : {
+      "non_null" : "68090",
+      "largest" : "y hasta el 29 de febrero de 2024",
+      "null" : "1808",
+      "top" : [ {
+        "item" : "31/12/2023",
+        "count" : "4017"
+      }, {
+        "item" : "31/12/2022",
+        "count" : "3978"
+      }, {
+        "item" : "31/12/2024",
+        "count" : "3904"
+      }, {
+        "item" : "31/12/2025",
+        "count" : "3825"
+      }, {
+        "item" : "31/12/2021",
+        "count" : "3426"
+      }, {
+        "item" : "31/12/2026",
+        "count" : "2591"
+      }, {
+        "item" : "31/12/2019",
+        "count" : "1643"
+      }, {
+        "item" : "31/12/2020",
+        "count" : "1483"
+      }, {
+        "item" : "Sin plazo de solicitud",
+        "count" : "407"
+      }, {
+        "item" : "30/11/2023",
+        "count" : "387"
+      }, {
+        "item" : "30/11/2022",
+        "count" : "376"
+      }, {
+        "item" : "30/11/2021",
+        "count" : "329"
+      }, {
+        "item" : "30/11/2024",
+        "count" : "287"
+      }, {
+        "item" : "31/10/2024",
+        "count" : "265"
+      }, {
+        "item" : "30/09/2025",
+        "count" : "252"
+      }, {
+        "item" : "31/10/2023",
+        "count" : "241"
+      }, {
+        "item" : "30/11/2020",
+        "count" : "239"
+      }, {
+        "item" : "01 Mesos",
+        "count" : "238"
+      }, {
+        "item" : "30/11/2025",
+        "count" : "234"
+      }, {
+        "item" : "15/11/2024",
+        "count" : "222"
+      } ],
+      "smallest" : "-",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513117,
+    "name" : "Data fi termini presentació sol·licitud",
+    "dataTypeName" : "calendar_date",
+    "description" : "Data calculada en funció del format data o text del camp de fi del període habilitat per admetre les sol·licituds.",
+    "fieldName" : "data_fi_termini_presentaci_sol_licitud",
+    "position" : 41,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 13978929,
+    "cachedContents" : {
+      "non_null" : "7892",
+      "largest" : "2033-12-31T00:00:00.000",
+      "null" : "62006",
+      "top" : [ {
+        "item" : "2026-06-17T00:00:00.000",
+        "count" : "115"
+      }, {
+        "item" : "2023-12-11T00:00:00.000",
+        "count" : "106"
+      }, {
+        "item" : "2022-12-21T00:00:00.000",
+        "count" : "60"
+      }, {
+        "item" : "2024-12-31T00:00:00.000",
+        "count" : "48"
+      }, {
+        "item" : "2025-12-31T00:00:00.000",
+        "count" : "48"
+      }, {
+        "item" : "2022-12-31T00:00:00.000",
+        "count" : "46"
+      }, {
+        "item" : "2023-12-31T00:00:00.000",
+        "count" : "45"
+      }, {
+        "item" : "2026-12-31T00:00:00.000",
+        "count" : "40"
+      }, {
+        "item" : "2023-12-22T00:00:00.000",
+        "count" : "34"
+      }, {
+        "item" : "2021-12-31T00:00:00.000",
+        "count" : "33"
+      }, {
+        "item" : "2025-09-30T00:00:00.000",
+        "count" : "31"
+      }, {
+        "item" : "2022-12-20T00:00:00.000",
+        "count" : "31"
+      }, {
+        "item" : "2025-12-19T00:00:00.000",
+        "count" : "29"
+      }, {
+        "item" : "2023-10-23T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2025-06-26T00:00:00.000",
+        "count" : "26"
+      }, {
+        "item" : "2024-10-31T00:00:00.000",
+        "count" : "26"
+      }, {
+        "item" : "2025-10-30T00:00:00.000",
+        "count" : "26"
+      }, {
+        "item" : "2022-06-10T00:00:00.000",
+        "count" : "25"
+      }, {
+        "item" : "2024-09-17T00:00:00.000",
+        "count" : "25"
+      }, {
+        "item" : "2023-10-02T00:00:00.000",
+        "count" : "25"
+      } ],
+      "smallest" : "2000-08-31T00:00:00.000",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : {
+      "view" : "date_dmy"
+    }
+  }, {
+    "id" : 26513118,
+    "name" : "Hora fi presentació sol·licituds",
+    "dataTypeName" : "text",
+    "description" : "Hora concreta a partir de la qual no s’admeten més sol·licituds. ",
+    "fieldName" : "hora_fi_presentaci_sol_licituds",
+    "position" : 42,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13978928,
+    "cachedContents" : {
+      "non_null" : "1191",
+      "largest" : "23:59:59",
+      "null" : "68707",
+      "top" : [ {
+        "item" : "14:00:00",
+        "count" : "829"
+      }, {
+        "item" : "15:00:00",
+        "count" : "141"
+      }, {
+        "item" : "23:59:00",
+        "count" : "112"
+      }, {
+        "item" : "23:59:59",
+        "count" : "74"
+      }, {
+        "item" : "17:00:00",
+        "count" : "15"
+      }, {
+        "item" : "12:00:00",
+        "count" : "5"
+      }, {
+        "item" : "20:00:00",
+        "count" : "5"
+      }, {
+        "item" : "13:00:00",
+        "count" : "4"
+      }, {
+        "item" : "00:00:00",
+        "count" : "3"
+      }, {
+        "item" : "14:30:00",
+        "count" : "2"
+      }, {
+        "item" : "09:00:00",
+        "count" : "1"
+      } ],
+      "smallest" : "00:00:00",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513119,
+    "name" : "Seu electrònica",
+    "dataTypeName" : "text",
+    "description" : "Seu electrònica de l’òrgan concedent.  Adreça del lloc web per a la gestió electrònica de les sol·licituds",
+    "fieldName" : "seu_electr_nica",
+    "position" : 43,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253521,
+    "cachedContents" : {
+      "non_null" : "14858",
+      "largest" : "wwww.ripollet.cat",
+      "null" : "55040",
+      "top" : [ {
+        "item" : "https://seuelectronica.dipta.cat",
+        "count" : "1543"
+      }, {
+        "item" : "https://seuelectronica.l-h.cat/2298028_2.aspx?id=2",
+        "count" : "504"
+      }, {
+        "item" : "www.elvendrell.net",
+        "count" : "372"
+      }, {
+        "item" : "https://seu.tarrega.cat/emiservicio/catala/emiservicio/41E6BF9D755E4825AF8E6B49E85B5079.asp",
+        "count" : "323"
+      }, {
+        "item" : "www.rodadeter.cat",
+        "count" : "298"
+      }, {
+        "item" : "https://www.santperederibes.cat/seuelectronica",
+        "count" : "265"
+      }, {
+        "item" : "https://www.seu-e.cat/ca/web/roses",
+        "count" : "250"
+      }, {
+        "item" : "https://seu.larapita.cat/",
+        "count" : "228"
+      }, {
+        "item" : "www.cassa.cat",
+        "count" : "204"
+      }, {
+        "item" : "https://www.llull.cat/catala/quisom/subvencions_directes.cfm",
+        "count" : "201"
+      }, {
+        "item" : "http://www.lescala.cat/ca/tramits-i-gestions/instancia-generica/_id:19/",
+        "count" : "164"
+      }, {
+        "item" : "https://seuelectronica.granollers.cat/portal/sede/se_contenedor1.jsp?seccion=s_ldoc_d10_v1.jsp&codbusqueda=93&language=ca&codResi=1&codMenuPN=21&codMenu=63&layout=se_contenedor1.jsp&layout=se_contenedor1.jsp.",
+        "count" : "159"
+      }, {
+        "item" : "https://seu.calonge.cat",
+        "count" : "156"
+      }, {
+        "item" : "www.figueres.cat",
+        "count" : "150"
+      }, {
+        "item" : "https://seuelectronica.granollers.cat/portal/sede/se_contenedor1.jsp?seccion=s_ldoc_d10_v1.jsp&codbusqueda=93&language=ca&codResi=1&codMenuPN=21&codMenu=63&layout=se_contenedor1.jsp&layout=se_contenedor1.jsp",
+        "count" : "142"
+      }, {
+        "item" : "https://vila-seca.eadministracio.cat/info.0",
+        "count" : "132"
+      }, {
+        "item" : "https://srvmux.santacolomadecervello.cat:6969/CarpetaCiutadana/ZonaPublica/Tramits/Tramits.aspx?idAccio=1&idMenu=216",
+        "count" : "131"
+      }, {
+        "item" : "https://promocioeconomica.cat",
+        "count" : "114"
+      }, {
+        "item" : "www.labisbal.cat",
+        "count" : "110"
+      }, {
+        "item" : "https://seu.badalona.cat/sta/CarpetaPublic/doEvent?APP_CODE=STA&PAGE_CODE=PTS_CATSERV",
+        "count" : "108"
+      } ],
+      "smallest" : "08.02.2024",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513120,
+    "name" : "Data fi de termini de justificació",
+    "dataTypeName" : "calendar_date",
+    "description" : "Data absoluta de fi del termini de presentació de justificacions de qualsevol concessió.  Data última fixada en la normativa com a venciment del termini per a presentar les justificacions per part dels beneficiaris o de les entitats col·laboradores",
+    "fieldName" : "data_fi_de_termini_de",
+    "position" : 44,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 5253496,
+    "cachedContents" : {
+      "non_null" : "42350",
+      "largest" : "2923-09-29T00:00:00.000",
+      "null" : "27548",
+      "top" : [ {
+        "item" : "2022-12-31T00:00:00.000",
+        "count" : "1442"
+      }, {
+        "item" : "2026-03-31T00:00:00.000",
+        "count" : "1417"
+      }, {
+        "item" : "2024-12-31T00:00:00.000",
+        "count" : "1373"
+      }, {
+        "item" : "2021-12-31T00:00:00.000",
+        "count" : "1360"
+      }, {
+        "item" : "2023-12-31T00:00:00.000",
+        "count" : "1333"
+      }, {
+        "item" : "2025-12-31T00:00:00.000",
+        "count" : "1309"
+      }, {
+        "item" : "2025-03-31T00:00:00.000",
+        "count" : "1307"
+      }, {
+        "item" : "2024-03-31T00:00:00.000",
+        "count" : "1147"
+      }, {
+        "item" : "2026-01-31T00:00:00.000",
+        "count" : "1078"
+      }, {
+        "item" : "2027-03-31T00:00:00.000",
+        "count" : "1025"
+      }, {
+        "item" : "2022-03-31T00:00:00.000",
+        "count" : "1016"
+      }, {
+        "item" : "2023-03-31T00:00:00.000",
+        "count" : "991"
+      }, {
+        "item" : "2023-01-31T00:00:00.000",
+        "count" : "960"
+      }, {
+        "item" : "2024-01-31T00:00:00.000",
+        "count" : "948"
+      }, {
+        "item" : "2025-01-31T00:00:00.000",
+        "count" : "932"
+      }, {
+        "item" : "2026-12-31T00:00:00.000",
+        "count" : "857"
+      }, {
+        "item" : "2022-01-31T00:00:00.000",
+        "count" : "837"
+      }, {
+        "item" : "2027-01-31T00:00:00.000",
+        "count" : "748"
+      }, {
+        "item" : "2022-02-28T00:00:00.000",
+        "count" : "494"
+      }, {
+        "item" : "2025-02-28T00:00:00.000",
+        "count" : "486"
+      } ],
+      "smallest" : "2021-11-21T00:00:00.000",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : {
+      "view" : "date_dmy"
+    }
+  }, {
+    "id" : 26513121,
+    "name" : "Ajut d'estat",
+    "dataTypeName" : "text",
+    "description" : "Condició de la subvenció com a ajut d’estat. Indica si la convocatòria és una ajut d’estat o no",
+    "fieldName" : "ajut_d_estat",
+    "position" : 45,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253508,
+    "cachedContents" : {
+      "non_null" : "1349",
+      "largest" : "SÍ",
+      "null" : "68549",
+      "top" : [ {
+        "item" : "SÍ",
+        "count" : "1349"
+      } ],
+      "smallest" : "SÍ",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513122,
+    "name" : "Ajut d'estat mecanisme d'autorització codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador del tipus de mecanisme d’autorització de l’ajut d’estat",
+    "fieldName" : "codi_ajut_estat_mecanisme",
+    "position" : 46,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253507,
+    "cachedContents" : {
+      "non_null" : "1349",
+      "largest" : "SOLPR",
+      "null" : "68549",
+      "top" : [ {
+        "item" : "MINIM",
+        "count" : "819"
+      }, {
+        "item" : "CATEG",
+        "count" : "466"
+      }, {
+        "item" : "SOLPR",
+        "count" : "54"
+      }, {
+        "item" : "ESIEG",
+        "count" : "10"
+      } ],
+      "smallest" : "CATEG",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513123,
+    "name" : "Ajut d'estat mecanisme d'autorització",
+    "dataTypeName" : "text",
+    "description" : "Tipologia d’autorització de l’ajut d’estat",
+    "fieldName" : "ajut_estat_mecanisme",
+    "position" : 47,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253506,
+    "cachedContents" : {
+      "non_null" : "1349",
+      "largest" : "Per aplic. Reg. UE d'ex. sol·lic. d'aut. per imp. de l'ajuda",
+      "null" : "68549",
+      "top" : [ {
+        "item" : "Per aplic. Reg. UE d'ex. sol·lic. d'aut. per imp. de l'ajuda",
+        "count" : "819"
+      }, {
+        "item" : "Per aplic. Reg. UE d'ex. sol·lic. d'aut. per cat. de l'ajuda",
+        "count" : "466"
+      }, {
+        "item" : "Mitjançant autorització prèvia a l'establiment de l'ajuda",
+        "count" : "54"
+      }, {
+        "item" : "Compatible x SIEG[R(CE)1370/2007, Dec.Com. 20/12/11 o altre]",
+        "count" : "10"
+      } ],
+      "smallest" : "Compatible x SIEG[R(CE)1370/2007, Dec.Com. 20/12/11 o altre]",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513124,
+    "name" : "Ajut d'estat reglament UE codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador del reglament de la UE d’exempció de l’obligació de notificació prèvia a la Comissió",
+    "fieldName" : "codi_ajut_estat_reglament_ue",
+    "position" : 48,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5278386,
+    "cachedContents" : {
+      "non_null" : "1285",
+      "largest" : "9",
+      "null" : "68613",
+      "top" : [ {
+        "item" : "1",
+        "count" : "440"
+      }, {
+        "item" : "3",
+        "count" : "352"
+      }, {
+        "item" : "12",
+        "count" : "311"
+      }, {
+        "item" : "9",
+        "count" : "64"
+      }, {
+        "item" : "2",
+        "count" : "54"
+      }, {
+        "item" : "4",
+        "count" : "27"
+      }, {
+        "item" : "8",
+        "count" : "19"
+      }, {
+        "item" : "6",
+        "count" : "11"
+      }, {
+        "item" : "11",
+        "count" : "3"
+      }, {
+        "item" : "13",
+        "count" : "2"
+      }, {
+        "item" : "5",
+        "count" : "1"
+      }, {
+        "item" : "7",
+        "count" : "1"
+      } ],
+      "smallest" : "1",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513125,
+    "name" : "Ajut d'estat reglament UE",
+    "dataTypeName" : "text",
+    "description" : "Reglament de la UE d’exempció de l’obligació de notificació prèvia a la Comissió",
+    "fieldName" : "ajut_estat_reglament_ue",
+    "position" : 49,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253479,
+    "cachedContents" : {
+      "non_null" : "1285",
+      "largest" : "REG (UE) 717/2014, DE 27 DE JUNY, de minimis",
+      "null" : "68613",
+      "top" : [ {
+        "item" : "REG (UE) 1407/2013, DE 18 DE DESEMBRE, de minimis",
+        "count" : "440"
+      }, {
+        "item" : "REG (UE) 651/2014, DE 17 DE JUNY, d'exemp. notif. categoria",
+        "count" : "352"
+      }, {
+        "item" : "REG (UE) 2023/2831 de minims, General",
+        "count" : "311"
+      }, {
+        "item" : "PROD.AGR.PRIM-REG(UE) 2022/2472, 14 DES., exemp. de notific.",
+        "count" : "64"
+      }, {
+        "item" : "REG (UE) 1408/2013, DE 18 DE DESEMBRE, de minimis",
+        "count" : "54"
+      }, {
+        "item" : "PROD.AGR.PRIM-REG(UE) 702/2014, 1 JUL., d'exemp. de notific.",
+        "count" : "27"
+      }, {
+        "item" : "DIFERENT DE PROD.AGR.PRIM. - REG(UE)702/2014, D'1 DE JULIOL",
+        "count" : "19"
+      }, {
+        "item" : "REG (UE) 717/2014, DE 27 DE JUNY, de minimis",
+        "count" : "11"
+      }, {
+        "item" : "REG (UE) 2022/2473, DE 14 DE DESEMBRE, d'exempció de notif.",
+        "count" : "3"
+      }, {
+        "item" : "REG (UE) 2023/2832 de minims, SIEG",
+        "count" : "2"
+      }, {
+        "item" : "REG (UE) 360/2012, DE 25 DE ABRIL, de minimis",
+        "count" : "1"
+      }, {
+        "item" : "REG (UE) 1388/2014, DE 16 DE DESEMBRE, exemp. notif. categor",
+        "count" : "1"
+      } ],
+      "smallest" : "DIFERENT DE PROD.AGR.PRIM. - REG(UE)702/2014, D'1 DE JULIOL",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513126,
+    "name" : "Ajut d'estat referència UE",
+    "dataTypeName" : "text",
+    "description" : "Referència assignada per la UE com a identificador de l’ajut",
+    "fieldName" : "ajut_estat_referencia_ue",
+    "position" : 50,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253504,
+    "cachedContents" : {
+      "non_null" : "517",
+      "largest" : "SA.99999",
+      "null" : "69381",
+      "top" : [ {
+        "item" : "SA.56851",
+        "count" : "29"
+      }, {
+        "item" : "SA.43021",
+        "count" : "11"
+      }, {
+        "item" : "SA.114392",
+        "count" : "8"
+      }, {
+        "item" : "SA.107187",
+        "count" : "8"
+      }, {
+        "item" : "SA.45217",
+        "count" : "6"
+      }, {
+        "item" : "SA.41294",
+        "count" : "6"
+      }, {
+        "item" : "SA.112965",
+        "count" : "6"
+      }, {
+        "item" : "SA.103081",
+        "count" : "6"
+      }, {
+        "item" : "SA.108220",
+        "count" : "6"
+      }, {
+        "item" : "SA.107147",
+        "count" : "6"
+      }, {
+        "item" : "SA.114912",
+        "count" : "5"
+      }, {
+        "item" : "SA.114917",
+        "count" : "5"
+      }, {
+        "item" : "SA.43509",
+        "count" : "5"
+      }, {
+        "item" : "SA.47175",
+        "count" : "5"
+      }, {
+        "item" : "SA.41542",
+        "count" : "5"
+      }, {
+        "item" : "SA.108972",
+        "count" : "5"
+      }, {
+        "item" : "SA.114901",
+        "count" : "4"
+      }, {
+        "item" : "SA.103677",
+        "count" : "4"
+      }, {
+        "item" : "SA.104060",
+        "count" : "4"
+      }, {
+        "item" : "SA.103080",
+        "count" : "4"
+      } ],
+      "smallest" : "Pendent notificació dins dels 20 dies atorgament",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513127,
+    "name" : "Ajut d'estat objectius del reglament codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador dels objectius del reglament aplicable",
+    "fieldName" : "codi_ajut_estat",
+    "position" : 51,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253482,
+    "cachedContents" : {
+      "non_null" : "475",
+      "largest" : "99",
+      "null" : "69423",
+      "top" : [ {
+        "item" : "84",
+        "count" : "145"
+      }, {
+        "item" : "85",
+        "count" : "71"
+      }, {
+        "item" : "167",
+        "count" : "33"
+      }, {
+        "item" : "51",
+        "count" : "16"
+      }, {
+        "item" : "189",
+        "count" : "15"
+      }, {
+        "item" : "151",
+        "count" : "12"
+      }, {
+        "item" : "87",
+        "count" : "11"
+      }, {
+        "item" : "38",
+        "count" : "11"
+      }, {
+        "item" : "43",
+        "count" : "8"
+      }, {
+        "item" : "34; 38",
+        "count" : "8"
+      }, {
+        "item" : "34",
+        "count" : "8"
+      }, {
+        "item" : "188",
+        "count" : "8"
+      }, {
+        "item" : "101",
+        "count" : "7"
+      }, {
+        "item" : "113",
+        "count" : "7"
+      }, {
+        "item" : "190",
+        "count" : "6"
+      }, {
+        "item" : "167; 60; 61; 71",
+        "count" : "5"
+      }, {
+        "item" : "88",
+        "count" : "4"
+      }, {
+        "item" : "206",
+        "count" : "4"
+      }, {
+        "item" : "91; 93",
+        "count" : "4"
+      }, {
+        "item" : "180; 183; 184; 210",
+        "count" : "3"
+      } ],
+      "smallest" : "1",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513128,
+    "name" : "Ajut d'estat objectius del reglament",
+    "dataTypeName" : "text",
+    "description" : "Un o diversos dels objectius en el reglament aplicable",
+    "fieldName" : "ajut_estat_objectius_del_1",
+    "position" : 52,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253509,
+    "cachedContents" : {
+      "non_null" : "374",
+      "largest" : "ART. 56 AJUTS A LA INVERSIÓ PER A INFRAESTRUCTURES LOCALS",
+      "null" : "69524",
+      "top" : [ {
+        "item" : "ART. 53 AJUTS A LA CULTURA I LA CONSERVACIÓ DEL PATRIMONI",
+        "count" : "145"
+      }, {
+        "item" : "ART. 54 RÈGIMS D'AJUTS PER A OBRES AUDIOVISUALS",
+        "count" : "71"
+      }, {
+        "item" : "ART. 27 AJUTS DE R+D+I. A LES AGR. EMPRESARIALS INNOVADORES,",
+        "count" : "16"
+      }, {
+        "item" : "ART. 37 SERVEIS SILVOAMBIENTALES/CLIMÀTICS I CONSERV. BOSCOS",
+        "count" : "12"
+      }, {
+        "item" : "ART. 17 AJUTS A LES PIME. A LA INVERSIÓ A FAVOR DE LES PIME.",
+        "count" : "11"
+      }, {
+        "item" : "ART. 56 AJUTS A LA INVERSIÓ PER A INFRAESTRUCTURES LOCALS",
+        "count" : "11"
+      }, {
+        "item" : "ART. 14 AJUTS REGIONALS A LA INVERSIÓ; ART. 17 AJUTS A LES PIME. A LA INVERSIÓ A FAVOR DE LES PIME.",
+        "count" : "8"
+      }, {
+        "item" : "ART. 22 PIME. DESTINADES A NOUS PROJECTES EMPRESARIALS.",
+        "count" : "8"
+      }, {
+        "item" : "ART. 14 AJUTS REGIONALS A LA INVERSIÓ",
+        "count" : "8"
+      }, {
+        "item" : "ART. 37 SERVEIS SILVOAMBIENTALS/CLIMÀTICS/CONSERVACIÓ BOSCOS",
+        "count" : "7"
+      }, {
+        "item" : "ART. 17.1. AB AJUTS AL SECTOR RAMADER",
+        "count" : "7"
+      }, {
+        "item" : "ART. 36 PROT MEDIAMB/PERMET A EMPR ANAR + ENLLÀ D NORMES UE; ART. 37 PROT MEDIAMB/ADAPTACIÓ ANTICIPADA FUTURES NORMES UE; ART. 47 PROTEC MEDIAMB/RECICLATGE I LA REUTILITZ. DE RESIDUS",
+        "count" : "6"
+      }, {
+        "item" : "ART. 26 COST PREV/ERAD/REPAR DANY x MALAL ANIM I PLAG VEGET",
+        "count" : "4"
+      }, {
+        "item" : "ART. 14 INV ACTIU MAT/IMMAT EN EXPL AGRÍ VINC A PROD AGRÍ 1ª",
+        "count" : "4"
+      }, {
+        "item" : "ART. 17 INVERS RELAC. AMB TRANSFOR/COMERCIALITZ PRODUC AGRÍC; ART. 19 AGRUPAC I ORGANITZAC DE PRODUCTORS SECTOR AGRÍCOLA",
+        "count" : "4"
+      }, {
+        "item" : "ART. 41 PROTEC MEDIAMB/PROMOC DE ENERGIA DE FONTS RENOVABLES; ART. 47 PROTEC MEDIAMB/RECICLATGE I LA REUTILITZ. DE RESIDUS",
+        "count" : "4"
+      }, {
+        "item" : "ART. 36 PROT MEDIAMB/PERMET A EMPR ANAR + ENLLÀ D NORMES UE; ART. 47 PROTEC MEDIAMB/RECICLATGE I LA REUTILITZ. DE RESIDUS",
+        "count" : "3"
+      }, {
+        "item" : "ART. 52 AJUTS PER A INFRAESTRUCTURES de banda ampla",
+        "count" : "3"
+      }, {
+        "item" : "ART. 38 PROTECCIÓ MEDIAMB / MESURES D'EFICIÈNCIA ENERGÈTICA",
+        "count" : "3"
+      }, {
+        "item" : "ART. 41 PROTEC MEDIAMB/PROMOC DE ENERGIA DE FONTS RENOVABLES",
+        "count" : "3"
+      } ],
+      "smallest" : "ART. 13 AJUTS A LA INNOVACIÓ",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513129,
+    "name" : "Impacte de gènere codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador de l’impacte de gènere",
+    "fieldName" : "codi_impacte_de_genere",
+    "position" : 53,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5278387,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "003",
+      "null" : "0",
+      "top" : [ {
+        "item" : "002",
+        "count" : "60283"
+      }, {
+        "item" : "003",
+        "count" : "6325"
+      }, {
+        "item" : "001",
+        "count" : "3290"
+      } ],
+      "smallest" : "001",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513130,
+    "name" : "Impacte de gènere",
+    "dataTypeName" : "text",
+    "description" : "Qualifica els resultats previstos en relació amb l’eliminació de desigualtats entre dones i homes i el compliment dels objectius de polítiques d’igualtat",
+    "fieldName" : "impacte_de_g_nere",
+    "position" : 54,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253522,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "POSITIU: Quan es prevegi una disminució o eliminació de les desigualtats detectades i contribueixi als objectius de les polítiques d'igualtat",
+      "null" : "0",
+      "top" : [ {
+        "item" : "NUL: Quan no existint desigualtats de partida amb relació a la igualtat d'oportunitats i de tracte entre dones i homes, no es prevegi modificació d'aquesta situació",
+        "count" : "60283"
+      }, {
+        "item" : "POSITIU: Quan es prevegi una disminució o eliminació de les desigualtats detectades i contribueixi als objectius de les polítiques d'igualtat",
+        "count" : "6325"
+      }, {
+        "item" : "NEGATIU: Quan no es preveu una eliminació o disminució de les desigualtats detectades i no contribueixi a les polítiques d'igualtat",
+        "count" : "3290"
+      } ],
+      "smallest" : "NEGATIU: Quan no es preveu una eliminació o disminució de les desigualtats detectades i no contribueixi a les polítiques d'igualtat",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513131,
+    "name" : "Publicitat de les concessions codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador de la publicitat de les concessions",
+    "fieldName" : "codei_publicitat_de_les_concessions",
+    "position" : 55,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5278378,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "1",
+      "null" : "0",
+      "top" : [ {
+        "item" : "1",
+        "count" : "65199"
+      }, {
+        "item" : "0",
+        "count" : "4699"
+      } ],
+      "smallest" : "0",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513132,
+    "name" : "Publicitat de les concessions",
+    "dataTypeName" : "text",
+    "description" : "Condició de publicitat de les concessions. Indica si la publicitat de les concessions de la convocatòria està restringida per ser-li d’aplicació l’art. 20.8.b de la Llei 38/2003, de 17 de novembre, General de Subvencions",
+    "fieldName" : "publicitat_de_les_concessions",
+    "position" : 56,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5253486,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "Sí publicable",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Sí publicable",
+        "count" : "65199"
+      }, {
+        "item" : "No publicable",
+        "count" : "4699"
+      } ],
+      "smallest" : "No publicable",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513133,
+    "name" : "Etiqueta",
+    "dataTypeName" : "text",
+    "description" : "Tipificació de les convocatòries per classificar les seves concessions. ",
+    "fieldName" : "etiqueta",
+    "position" : 57,
+    "renderTypeName" : "text",
+    "tableColumnId" : 10231869,
+    "cachedContents" : {
+      "non_null" : "736",
+      "largest" : "REACT EU 1",
+      "null" : "69162",
+      "top" : [ {
+        "item" : "MRR",
+        "count" : "367"
+      }, {
+        "item" : "COVID 19 - Induït",
+        "count" : "268"
+      }, {
+        "item" : "COVID 19 - Directe",
+        "count" : "59"
+      }, {
+        "item" : "Atenció refugiats Uc",
+        "count" : "21"
+      }, {
+        "item" : "Altres despeses de U",
+        "count" : "18"
+      }, {
+        "item" : "REACT EU 1",
+        "count" : "2"
+      }, {
+        "item" : "Bo Social Tèrmic",
+        "count" : "1"
+      } ],
+      "smallest" : "Altres despeses de U",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513134,
+    "name" : "Objecte de la convocatòria",
+    "dataTypeName" : "text",
+    "description" : "Breu descripció de la convocatòria en català.",
+    "fieldName" : "objecte_de_la_convocat_ria",
+    "position" : 58,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13644698,
+    "cachedContents" : {
+      "non_null" : "69895",
+      "largest" : "XXX SETMANA CULTURAL DEL CENTRO EXTREMENO DE REUS",
+      "null" : "3",
+      "top" : [ {
+        "item" : "ANULADA null",
+        "count" : "181"
+      }, {
+        "item" : "RESOLUCIÓ per la qual s'atorguen els ajuts destinats al finanament per a l'elaboració i l'execució dels plans de reactivació socioeconòmica COVID-19, regulats al Capítol II del Decret Llei 16/2020, de 5 de maig, de mesures urgents complementàries en",
+        "count" : "65"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit del patrimoni cultural",
+        "count" : "49"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit de la cooperació cultural",
+        "count" : "40"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit del foment de la llengua catalana",
+        "count" : "30"
+      }, {
+        "item" : "ANULADA",
+        "count" : "27"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit del foment de la cultura catalana",
+        "count" : "23"
+      }, {
+        "item" : "Atorgament d'una subvencio directa i nominativa del Pla de Millora d'Oportunitats Educatives (PMOE)",
+        "count" : "21"
+      }, {
+        "item" : "Subvencio nominativa a favor del Club Balonmano Granollers",
+        "count" : "18"
+      }, {
+        "item" : "Concessio d'una subvencio directa i nominativa de la linia de subvencions promocio de l'oferta de lleure educatiu a la ciutat",
+        "count" : "15"
+      }, {
+        "item" : "Concessio d'una subvencio nominativa a l'Associac",
+        "count" : "14"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública - Cultura popular i patrimoni etnològic",
+        "count" : "13"
+      }, {
+        "item" : "Subvencio AMPA Escola i Conservatori de Musica de",
+        "count" : "12"
+      }, {
+        "item" : "CONVENI ESPECÍFIC DE COOPERACIÓ EDUCATIU ENTRE EL DEPARTAMENT D’ECONOMIA I HISENDA I LA FUNDACIÓ UAB",
+        "count" : "11"
+      }, {
+        "item" : "CONVENIO PALILLO CLUB DE FUTBOL",
+        "count" : "11"
+      }, {
+        "item" : "Atorgament d'una subvencio directa i nominativa per a la participacio en les Festes de Maig 2022",
+        "count" : "11"
+      }, {
+        "item" : "Subvencions excloses de concurrència pública en l'àmbit de la cultura popular i el patrimoni etnològic",
+        "count" : "11"
+      }, {
+        "item" : "Subvencio nominativa a favor de l'Associacio Granollers Esportiva",
+        "count" : "10"
+      }, {
+        "item" : "AMPA ESCOLA BRESSOL TINET",
+        "count" : "8"
+      }, {
+        "item" : "CONVENI CREU ROJA",
+        "count" : "8"
+      } ],
+      "smallest" : "04 ORDENANCA REGULADORA DE LES BESES PER A LA CONCESSIO DE SUBVENCIONS PER A PROMORURE DIFERENTS ACTIVITATS",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513135,
+    "name" : "Administració codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador del tipus d’administració.",
+    "fieldName" : "administraci_codi",
+    "position" : 59,
+    "renderTypeName" : "text",
+    "tableColumnId" : 14496876,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "010",
+      "null" : "0",
+      "top" : [ {
+        "item" : "004",
+        "count" : "49351"
+      }, {
+        "item" : "002",
+        "count" : "9047"
+      }, {
+        "item" : "001",
+        "count" : "8985"
+      }, {
+        "item" : "003",
+        "count" : "1798"
+      }, {
+        "item" : "006",
+        "count" : "372"
+      }, {
+        "item" : "010",
+        "count" : "236"
+      }, {
+        "item" : "005",
+        "count" : "53"
+      }, {
+        "item" : "007",
+        "count" : "32"
+      }, {
+        "item" : "009",
+        "count" : "18"
+      }, {
+        "item" : "008",
+        "count" : "6"
+      } ],
+      "smallest" : "001",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513136,
+    "name" : "Administració",
+    "dataTypeName" : "text",
+    "description" : "Tipologia d’administració de la qual depèn l’Entitat, OO.AA. o Departament convocant.  Valors possibles: Autonòmica / Local",
+    "fieldName" : "administraci_",
+    "position" : 60,
+    "renderTypeName" : "text",
+    "tableColumnId" : 14496875,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "Local / Universitat",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Local / Municipi",
+        "count" : "49351"
+      }, {
+        "item" : "Local / Província",
+        "count" : "9047"
+      }, {
+        "item" : "Autonòmica",
+        "count" : "8985"
+      }, {
+        "item" : "Local / Comarca",
+        "count" : "1798"
+      }, {
+        "item" : "Local / Entitat Metropolitana",
+        "count" : "372"
+      }, {
+        "item" : "Local / Cambra de Comerç",
+        "count" : "236"
+      }, {
+        "item" : "Local / Mancomunitat",
+        "count" : "53"
+      }, {
+        "item" : "Local / Entitat Municipal Descentralitzada",
+        "count" : "32"
+      }, {
+        "item" : "Local / Universitat",
+        "count" : "18"
+      }, {
+        "item" : "Local / Grup d’Acció Local",
+        "count" : "6"
+      } ],
+      "smallest" : "Autonòmica",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513137,
+    "name" : "Departament o Entitat Local d'adscripció codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador del departament o de l’administració local d’adscripció.",
+    "fieldName" : "departament_o_entitat_local_d_adscripci_codi",
+    "position" : 61,
+    "renderTypeName" : "text",
+    "tableColumnId" : 14496877,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "UR",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DPGIR",
+        "count" : "4936"
+      }, {
+        "item" : "CU",
+        "count" : "2407"
+      }, {
+        "item" : "DPLLD",
+        "count" : "2273"
+      }, {
+        "item" : "DPTGN",
+        "count" : "1585"
+      }, {
+        "item" : "IU",
+        "count" : "1348"
+      }, {
+        "item" : "AJ610",
+        "count" : "1039"
+      }, {
+        "item" : "AJ357",
+        "count" : "869"
+      }, {
+        "item" : "AJ903",
+        "count" : "853"
+      }, {
+        "item" : "AG",
+        "count" : "842"
+      }, {
+        "item" : "AJ341",
+        "count" : "799"
+      }, {
+        "item" : "PO",
+        "count" : "736"
+      }, {
+        "item" : "AJ581",
+        "count" : "694"
+      }, {
+        "item" : "AJ807",
+        "count" : "685"
+      }, {
+        "item" : "UR",
+        "count" : "684"
+      }, {
+        "item" : "AJ888",
+        "count" : "677"
+      }, {
+        "item" : "BE",
+        "count" : "667"
+      }, {
+        "item" : "AJ414",
+        "count" : "640"
+      }, {
+        "item" : "AJ227",
+        "count" : "633"
+      }, {
+        "item" : "AJ639",
+        "count" : "598"
+      }, {
+        "item" : "AJ431",
+        "count" : "580"
+      } ],
+      "smallest" : "AG",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  }, {
+    "id" : 26513138,
+    "name" : "Departament o Entitat Local d'adscripció",
+    "dataTypeName" : "text",
+    "description" : "Nom del departament o de l’administració local de la qual depèn l’Entitat, OO.AA. o Departament convocant.",
+    "fieldName" : "departament_o_entitat_local_d_adscripci_",
+    "position" : 62,
+    "renderTypeName" : "text",
+    "tableColumnId" : 14496878,
+    "cachedContents" : {
+      "non_null" : "69898",
+      "largest" : "Universitat Rovira i Virgili",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Diputació de Girona",
+        "count" : "4936"
+      }, {
+        "item" : "Departament de Cultura",
+        "count" : "2407"
+      }, {
+        "item" : "Diputació de Lleida",
+        "count" : "2273"
+      }, {
+        "item" : "Diputació de Tarragona",
+        "count" : "1585"
+      }, {
+        "item" : "Departament d'Empresa i Treball",
+        "count" : "1348"
+      }, {
+        "item" : "Ajuntament de Reus",
+        "count" : "1039"
+      }, {
+        "item" : "Ajuntament de l'Hospitalet de Llobregat",
+        "count" : "869"
+      }, {
+        "item" : "Ajuntament de Vilafranca del Penedès",
+        "count" : "853"
+      }, {
+        "item" : "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
+        "count" : "842"
+      }, {
+        "item" : "Ajuntament de Granollers",
+        "count" : "799"
+      }, {
+        "item" : "Departament de Territori, Habitatge i Transició Ecològica",
+        "count" : "736"
+      }, {
+        "item" : "Ajuntament del Prat de Llobregat",
+        "count" : "694"
+      }, {
+        "item" : "Ajuntament de Tarragona",
+        "count" : "685"
+      }, {
+        "item" : "Departament de Recerca i Universitats",
+        "count" : "684"
+      }, {
+        "item" : "Ajuntament de Vic",
+        "count" : "677"
+      }, {
+        "item" : "Departament de Drets Socials i Inclusió",
+        "count" : "667"
+      }, {
+        "item" : "Ajuntament de Martorell",
+        "count" : "640"
+      }, {
+        "item" : "Ajuntament de Cerdanyola del Vallès",
+        "count" : "633"
+      }, {
+        "item" : "Ajuntament de Rubí",
+        "count" : "598"
+      }, {
+        "item" : "Ajuntament de Mataró",
+        "count" : "580"
+      } ],
+      "smallest" : "Ajuntament d'Agramunt",
+      "count" : "69898",
+      "cardinality" : "69898"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "See Terms of Use"
+  },
+  "metadata" : {
+    "attachments" : [ {
+      "filename" : "Nota metodològica.pdf",
+      "assetId" : "bf08beb7-d33d-4426-a01f-c34aecfc4bdd",
+      "name" : "Nota metodològica.pdf"
+    } ],
+    "custom_fields" : {
+      "Freqüència d'actualització" : {
+        "Freqüència d'actualització" : "Diària"
+      },
+      "Idioma" : {
+        "Idioma" : "Català",
+        "Dataset name (EN)" : "RAISC's calls (Record of grants and helps of Catalonia)",
+        "Nombre del conjunto de datos (ES)" : "Convocatorias del RAISC (Registro de subvenciones y ayudas de Cataluña)"
+      },
+      "Informació de gènere o sexe" : {
+        "Informació de gènere o sexe" : "No aplicable"
+      },
+      "Actors" : {
+        "Departament" : "Economia i Finances",
+        "Tipus actor" : "Generalitat de Catalunya"
+      },
+      "Àmbit geogràfic" : {
+        "Informació geogràfica" : "Codi d'element",
+        "Àmbit geogràfic" : "Catalunya"
+      }
+    },
+    "rowIdentifier" : 26513077,
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "convocatòria", "bases reguladores", "subvenció", "ajut", "préstec", "prestació", "premi", "beca", "beneficiari", "ajut d'estat", "codi rais", "codi bdns", "ods16_pau justícies i institucions sòlides", "ods10_reducció de les desigualtats" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}
