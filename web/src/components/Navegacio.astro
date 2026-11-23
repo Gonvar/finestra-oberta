@@ -66,21 +66,30 @@ const { url, titol, cerca } = Astro.props;
 </script>
 
 <style>
+  /* Fixa només quan hi cap en una línia: amb el text ampliat, una barra de dues línies taparia la pàgina. */
   .nav {
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 10;
     background: rgba(255, 255, 255, 0.72);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
   }
 
+  @media (min-width: 23.5em) {
+    .nav {
+      position: sticky;
+      top: 0;
+    }
+  }
+
+  /* Si no hi cap tot, les seccions passen a una segona línia en lloc de sortir de la pantalla (WCAG 1.4.10). */
   .nav-interior {
-    height: 52px;
+    min-height: 52px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    column-gap: 0.5rem;
   }
 
   .marca {
@@ -102,6 +111,7 @@ const { url, titol, cerca } = Astro.props;
 
   ul {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.25rem;
     list-style: none;
@@ -146,8 +156,8 @@ const { url, titol, cerca } = Astro.props;
     transition: transform var(--t-boto) var(--ease-out);
   }
 
-  /* A 320 px, a les pàgines de secció no hi cabrien els dos enllaços i els dos botons. */
-  @media (max-width: 359px) {
+  /* Les mides van en em perquè també canviïn amb el text ampliat. A 320 px, a les pàgines de secció no hi cabrien els dos enllaços i els dos botons. */
+  @media (max-width: 22.4375em) {
     ul {
       gap: 0;
     }
@@ -158,19 +168,19 @@ const { url, titol, cerca } = Astro.props;
     }
   }
 
-  @media (max-width: 799px) {
+  @media (max-width: 49.9375em) {
     .nomes-gran {
       display: none;
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375em) {
     .nomes-escriptori {
       display: none;
     }
   }
 
-  @media (max-width: 479px) {
+  @media (max-width: 29.9375em) {
     .nomes-ample {
       display: none;
     }
@@ -187,7 +197,7 @@ const { url, titol, cerca } = Astro.props;
   }
 
   /* Per sota de 380 px, ni amb «Cerca» com a únic botó amb text hi cap la marca en una línia. */
-  @media (max-width: 379px) {
+  @media (max-width: 23.6875em) {
     .etiqueta-cerca {
       position: absolute;
       width: 1px;

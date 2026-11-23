@@ -14,7 +14,7 @@ const llocs = [
 ---
 
 <Pagina cerca>
-  <main class="contingut">
+  <main class="contingut" id="principal">
     <section class="portada" aria-labelledby="portada-titol">
       <h1 id="portada-titol" class="entra">
         Què decideix el Govern.<br /><span class="segona">Ara, a la vista.</span>
@@ -27,7 +27,8 @@ const llocs = [
       </div>
     </section>
 
-    <section class="seccio" aria-label="Institucions">
+    <section class="seccio" aria-labelledby="institucions-titol">
+      <h2 class="visualment-amagat" id="institucions-titol">Institucions</h2>
       <div class="blocs">
         {blocs.map((bloc, i) => <BlocInstitucio bloc={bloc} ordre={3 + i} />)}
       </div>
@@ -75,7 +76,7 @@ const llocs = [
     gap: 1rem;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 56.25em) {
     .blocs {
       grid-template-columns: repeat(2, 1fr);
     }

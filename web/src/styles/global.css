@@ -32,7 +32,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   :root {
     --entre-seccions: 6.5rem;
   }
@@ -102,6 +102,30 @@ section[tabindex='-1']:focus {
 
 .font-dada a {
   color: inherit;
+}
+
+/* L'enllaç per saltar la navegació (WCAG 2.4.1): no es veu fins que rep el focus. */
+.salta {
+  position: absolute;
+  top: 0.5rem;
+  left: var(--marge-e);
+  z-index: 20;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.salta:focus {
+  transform: none;
+}
+
+/* La barra fixa no ha de tapar l'element que rep el focus (WCAG 2.4.11). */
+html {
+  scroll-padding-top: 4.5rem;
 }
 
 .visualment-amagat {

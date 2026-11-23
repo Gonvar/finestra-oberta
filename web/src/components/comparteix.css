@@ -29,7 +29,7 @@
   height: 0.875rem;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 29.9375em) {
   /* Al mòbil només hi cap la icona; el text queda per als lectors de pantalla. */
   .etiqueta-comparteix {
     position: absolute;
