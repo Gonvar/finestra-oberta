@@ -4,6 +4,7 @@
 // val més aturar-se que publicar una composició incompleta.
 import { readFile } from 'node:fs/promises';
 import { construirAjuntaments } from './ajuntaments.ts';
+import { construirEleccionsMunicipals } from './eleccions.ts';
 import { construirMunicipis } from './municipis.ts';
 import {
   dia,
@@ -737,5 +738,6 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
     'parlament.json': parlament,
     'ajuntaments.json': ajuntaments,
     'municipis.json': await construirMunicipis(fetchImpl, codis),
+    'eleccions-municipals.json': await construirEleccionsMunicipals(fetchImpl, codis),
   };
 }
