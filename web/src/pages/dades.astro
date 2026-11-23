@@ -1,0 +1,50 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+import { pagines } from '../dades/pagines.ts';
+import { REPO } from '../dades/portada.ts';
+
+// Les pàgines de primer nivell amb dades, amb el títol de la previsualització i la descripció de
+// pagines.ts: una pàgina nova hi surt sola i la llista no pot dir una altra cosa que la pàgina.
+const visualitzacions = pagines.filter(
+  (p) => p.previsualitzacio.institucio === 'dad' && p.ruta !== '/dades/' && /^\/[^/]+\/$/.test(p.ruta),
+);
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <h1 id="titol" class="entra">Dades</h1>
+    </section>
+
+    <section class="seccio" aria-labelledby="visualitzacions-titol">
+      <h2 class="visualment-amagat" id="visualitzacions-titol">Pàgines</h2>
+      <ul class="files">
+        {
+          visualitzacions.map((p) => (
+            <li>
+              <h3 class="titol-bloc">
+                <a href={p.ruta}>{p.previsualitzacio.titol}</a>
+              </h3>
+              <p class="secundari">{p.descripcio}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="seccio" aria-labelledby="mes-titol">
+      <h2 class="titol-seccio" id="mes-titol">Per anar més a fons</h2>
+      <ul class="files">
+        <li>
+          <h3 class="titol-bloc"><a href="/metodologia/">D'on surten les dades</a></h3>
+          <p class="secundari">Cada quant s'actualitza cada font i com es pot comprovar.</p>
+        </li>
+        <li>
+          <h3 class="titol-bloc"><a href={`${REPO}/blob/main/docs/dades-obertes.md`}>Conjunts de dades oberts</a></h3>
+          <p class="secundari">Els conjunts de dades oberts de la Generalitat, l'Idescat i Barcelona.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+</Pagina>
