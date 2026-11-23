@@ -94,3 +94,34 @@ test('falla si el servei no torna una col·lecció', async () => {
     /no ha tornat una col·lecció/,
   );
 });
+
+test('falla si un element de la col·lecció no té propietats', async () => {
+  const { fetchImpl } = fake([
+    { type: 'Feature', geometry: MUNICIPIS[0]!.geometry },
+    MUNICIPIS[1]!,
+  ]);
+  await assert.rejects(construirMapa(fetchImpl, CODIS, '2026-11-23'), /no té codi o nom/);
+  const { fetchImpl: ambNull } = fake([null as unknown as object, MUNICIPIS[1]!]);
+  await assert.rejects(construirMapa(ambNull, CODIS, '2026-11-23'), /no té codi o nom/);
+});
+
+test('falla si un anell no és tancat', async () => {
+  const obert = municipi('179998', 'Àger de Prova', {
+    type: 'Polygon',
+    coordinates: [
+      quadrat(2.8, 42)
+        .slice(0, 4)
+        .concat([[2.85, 42.05]]),
+    ],
+  });
+  const { fetchImpl } = fake([obert, MUNICIPIS[1]!]);
+  await assert.rejects(
+    construirMapa(fetchImpl, CODIS, '2026-11-23'),
+    /179998 no té la forma esperada/,
+  );
+});
+
+test('falla amb un error de la font si el servei respon en XML', async () => {
+  const fetchImpl: Fetch = async () => new Response('<ows:ExceptionReport/>', { status: 200 });
+  await assert.rejects(construirMapa(fetchImpl, CODIS, '2026-11-23'), /no ha tornat JSON/);
+});

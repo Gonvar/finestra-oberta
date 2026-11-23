@@ -1,6 +1,6 @@
 # El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, el mapa, els ajuts i el pressupost
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi i com s'hi va votar a les últimes municipals, els ajuts i les subvencions que encara es poden demanar i com va el pressupost de la Generalitat. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi, com s'hi va votar a les últimes municipals i els seus límits per al mapa, els ajuts i les subvencions que encara es poden demanar i com va el pressupost de la Generalitat. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -206,10 +206,10 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
 - **Per què l'ICGC:** és l'organisme que fa la cartografia oficial de Catalunya. Cap de les altres fonts de la taula de NEUTRALITAT.md no publica els límits dels municipis.
 - **Capa:** `divisions_administratives_municipis_1000000`, la més simplificada, a escala 1:1.000.000. N'hi ha prou per a un mapa de tot Catalunya, però no serveix per saber per on passa exactament un límit.
 - **Contingut:** de cada municipi, el codi, el nom i la geometria, en graus (EPSG:4326), tal com els dona el servei. El fitxer no simplifica ni arrodoneix res: si la web en dibuixa menys punts, és cosa de la web.
-- **Data:** el servei no diu quan es van actualitzar els límits. `data_consulta` és el dia en què es van llegir.
+- **Data:** el servei no diu quan es van actualitzar els límits. `data_consulta` és el dia en què es van llegir, i és la data que es cita amb la font, perquè no n'hi ha cap altra.
 - **Comprovacions:**
   - Han de ser els mateixos municipis que els de Municat (`ajuntaments.json`), pel mateix codi, i cap no pot sortir dues vegades.
-  - Cada municipi ha de tenir codi de sis xifres, nom i un polígon o multipolígon amb coordenades dins de Catalunya. Si arriben en metres en lloc de graus, la consulta ha canviat i s'atura.
+  - Cada municipi ha de tenir codi de sis xifres, nom i un polígon o multipolígon d'anells tancats, amb coordenades dins de Catalunya. Si arriben en metres en lloc de graus, la consulta ha canviat i s'atura.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## `agenda.json`

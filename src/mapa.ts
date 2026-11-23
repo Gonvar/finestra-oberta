@@ -23,7 +23,12 @@ const esPosicio = (p: unknown): p is Posicio =>
   (p[1] as number) > 40 &&
   (p[1] as number) < 43.5;
 
-const esAnell = (a: unknown) => Array.isArray(a) && a.length >= 4 && a.every(esPosicio);
+// Un anell de GeoJSON és tancat: l'últim punt és el primer.
+function esAnell(a: unknown) {
+  if (!Array.isArray(a) || a.length < 4 || !a.every(esPosicio)) return false;
+  const [primer, darrer] = [a[0] as Posicio, a[a.length - 1] as Posicio];
+  return primer[0] === darrer[0] && primer[1] === darrer[1];
+}
 const esPoligon = (p: unknown) => Array.isArray(p) && p.length >= 1 && p.every(esAnell);
 
 function geometria(g: unknown, codi: string): Geometria {
@@ -60,18 +65,19 @@ export async function construirMapa(fetchImpl: Fetch, codis: Set<string>, avui: 
     throw new SourceError('El servei de l’ICGC no ha tornat una col·lecció de municipis.');
 
   const municipis = new Map<string, { nom: string; geometria: Geometria }>();
-  for (const feature of dades.features as {
-    properties?: Record<string, unknown>;
-    geometry?: unknown;
-  }[]) {
-    const { CODIMUNI: codi, NOMMUNI: nom } = feature.properties ?? {};
+  for (const feature of dades.features as unknown[]) {
+    const { properties, geometry } = (feature ?? {}) as {
+      properties?: unknown;
+      geometry?: unknown;
+    };
+    const { CODIMUNI: codi, NOMMUNI: nom } = (properties ?? {}) as Record<string, unknown>;
     if (typeof codi !== 'string' || !/^\d{6}$/.test(codi) || typeof nom !== 'string' || nom === '')
       throw new SourceError(
-        `Un municipi de l’ICGC no té codi o nom: ${JSON.stringify(feature.properties).slice(0, 200)}.`,
+        `Un municipi de l’ICGC no té codi o nom: ${String(JSON.stringify(properties)).slice(0, 200)}.`,
       );
     if (municipis.has(codi))
       throw new SourceError(`El municipi ${codi} surt dues vegades al mapa.`);
-    municipis.set(codi, { nom, geometria: geometria(feature.geometry, codi) });
+    municipis.set(codi, { nom, geometria: geometria(geometry, codi) });
   }
 
   const falten = [...codis].filter((c) => !municipis.has(c));
