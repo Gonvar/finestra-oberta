@@ -132,6 +132,24 @@ export const pagines: Pagina[] = [
     },
   },
   {
+    ruta: '/privadesa/',
+    titol: 'Privadesa · Finestra Oberta',
+    descripcio: 'No et demanem cap dada ni et seguim. Qui veu la teva visita i per què.',
+    previsualitzacio: {
+      titol: 'Privadesa',
+      frase: 'Sense galetes i sense comptes.',
+    },
+  },
+  {
+    ruta: '/avis-legal/',
+    titol: 'Avís legal · Finestra Oberta',
+    descripcio: 'Qui és responsable del web, d’on surten les dades i amb quina llicència es publica el codi.',
+    previsualitzacio: {
+      titol: 'Avís legal',
+      frase: 'Un projecte independent, amb dades públiques i codi obert.',
+    },
+  },
+  {
     ruta: '/municipis/',
     titol: 'Municipis · Finestra Oberta',
     descripcio: 'Qui hi viu, qui governa l’ajuntament i com s’hi va votar, municipi a municipi.',
