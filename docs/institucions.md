@@ -1,6 +1,6 @@
-# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, el mapa, els ajuts, el pressupost i els contractes
+# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, el mapa, els ajuts, el pressupost, els contractes i les oposicions
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi, com s'hi va votar a les últimes municipals i els seus límits per al mapa, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat i quantes adjudicacions fa cada organisme. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi, com s'hi va votar a les últimes municipals i els seus límits per al mapa, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat, quantes adjudicacions fa cada organisme i quins processos de selecció de personal tenen el termini obert. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -67,7 +67,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/mapa-municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/mapa-municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json`, `/tmp/ara/contractes.json` i `/tmp/ara/oposicions.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -129,6 +129,7 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
   - `nomenament`: la data de nomenament que dona la declaració d'activitats.
   - `activitats`: els apartats de la declaració que no diuen «N/A», amb la llista d'activitats. Cada apartat porta el nom del camp (`camp`) i, a `apartat`, la descripció que en fan les metadades del mateix conjunt, sense resumir-la.
   - `agenda`: quantes files amb grups d'interès té l'agenda des del nomenament (`contactes`), i les cinc últimes. La relació posa una fila per grup i no diu quines són d'una mateixa reunió, i per això es compten les files tal com les dona: una reunió amb tres grups compta tres vegades. No compten les files sense grup («-»), que la relació fa servir per dir que en un trimestre no n'hi ha hagut cap. Si un membre nomenat fa més de dos trimestres no té cap fila, ni tan sols «-», la tasca falla: vol dir que el nom o el càrrec ja no es troben, i un zero seria fals. Si encara no hi surt, la persona no té el camp `agenda`, en lloc d'un zero. La tasca també falla si l'agenda no té cap fila i el primer nomenament ja fa més de dos trimestres.
+  - `agenda.darrera_entrada`: el dia de la fila més recent de la persona, també si és «-». La fitxa de cada membre del Govern diu fins on arriba la seva agenda, amb el mateix text per a tothom.
   - `viatges`: quants viatges a l'estranger hi ha des del nomenament, la suma de les despeses publicades (`despeses`, que no hi és si encara no n'hi ha cap), quants encara no en tenen (`sense_despeses`) i els cinc últims.
 - **Com es troba cada persona:** pel nom oficial de la relació d'alts càrrecs, com amb els noms ben escrits. L'agenda i els viatges inclouen tots els alts càrrecs i els mandats anteriors, i per això només compten les files amb el càrrec de president o de conseller i a partir del nomenament.
 - **Comprovacions:**
@@ -260,7 +261,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 - **Resultat:** `resultat` és `aprovat`, `convalidat`, `derogat` (un decret llei que el Ple no convalida) o `rebutjat` quan l'acord comença per un dels textos de `RESULTATS` a [src/activitat.ts](../src/activitat.ts), i `null` en tots els altres casos. La regla és la mateixa per a totes les iniciatives, les presenti qui les presenti. Un acord sobre una esmena a la totalitat («S'aprova l'esmena a la totalitat…») parla de l'esmena i no de la iniciativa, i queda sense resultat. El text original és sempre a `acord`. La taula es va comprovar el 22 de novembre de 2026 amb el text sencer de tots els acords de les 56 sessions del Ple de la legislatura: cap altra fórmula diu que s'aprova o es rebutja la iniciativa del punt. Els que queden sense resultat diuen, per exemple, que el punt «Se substancia», que s'ajorna o que es retira, o només nomenen la comissió que l'ha de tramitar. També en queden sense els que decideixen sobre la tramitació i no sobre la iniciativa («El Ple acorda de rebutjar la sol·licitud que el decret llei es tramiti com a projecte de llei»), perquè la convalidació del decret llei és un altre punt de la mateixa sessió, i la investidura, que no és cap iniciativa.
 - **Normes:** les que el DOGC classifica amb el rang `Llei` o `Decret llei` i que es van publicar des del dia de la sessió constitutiva, de la més nova a la més antiga. De cadascuna: el títol, el rang, la data, la data i el número del DOGC, la vigència i l'enllaç ELI al Portal Jurídic. `data_dades` és l'última actualització del conjunt.
 - **Vots i assistència:** no n'hi ha. El Parlament no publica qui ha votat què ni l'assistència de cada persona diputada, i el recompte de cada votació només surt al Diari de Sessions, en PDF. No s'endevinen a partir de res més, com la posició de cada grup.
-- **Resums:** si algun dia s'hi afegeixen resums fets amb IA, aniran en un fitxer a part, lligats a cada punt pel número d'expedient o a cada norma per l'enllaç ELI, perquè `activitat.json` continuï dient només el que diu la font.
+- **Resums:** els resums de cada sessió fets amb IA són a `resums.json`, un fitxer a part lligat a cada sessió pel número, perquè `activitat.json` continuï dient només el que diu la font. Vegeu [resums.md](resums.md).
 - **Comprovacions:**
   - La legislatura en curs ha de ser el primer element de la llista de legislatures.
   - Cada fila de la llista de sessions i cada punt d'una pàgina d'acords s'ha de poder llegir. Si la forma de la pàgina canvia, l'script s'atura.
@@ -320,6 +321,24 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
   - Cada fila ha de tenir l'àmbit, el codi i el nom de l'organisme, un recompte que sigui un nombre i un import, i totes les inscripcions del grup han de tenir import: `sum()` se salta les que no en tenen.
   - A partir del 15 de gener, hi ha d'haver inscripcions d'adjudicació i de menors de l'any. Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en donaria només una part.
   - Cada inscripció de l'any, també les liquidacions, ha de tenir la situació, i cada consulta d'àmbit ha de cabre en una pàgina.
+- **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
+
+## `oposicions.json`
+
+- **Font:** els [processos de selecció de personal del CIDO](https://cido.diba.cat/oposicions), el Cercador d'informació i documentació oficials de la Diputació de Barcelona, llegits de la seva [API de dades obertes](https://dadesobertes.diba.cat/sites/default/files/public/documentacio_api_cido.pdf). La [nota legal del CIDO](https://cido.diba.cat/nota-legal) en permet la reutilització si no se n'altera el contingut ni el sentit i se'n cita la font i la data. Recull les convocatòries de tot Catalunya, no només de la província de Barcelona: de la Generalitat, dels ajuntaments de les quatre províncies, dels consells comarcals, de les diputacions i d'altres entitats públiques.
+- **Per què aquesta font:** cap de les altres de NEUTRALITAT.md no publica les oposicions i les borses de treball de les administracions catalanes en una sola llista que es pugui llegir.
+- **Data:** l'API no diu quan es van actualitzar les dades. `data_consulta` és el dia de la consulta, a l'hora de Catalunya, i el fitxer només es torna a publicar quan canvia alguna altra cosa.
+- **Contingut:** els processos que el CIDO marca amb l'estat «Termini obert» (`idEstat` 3) el dia de la consulta. L'estat el posa el CIDO i no es compara amb les dates. El 23/11/2026 n'hi havia 1.572, i cap no tenia una data de finalització passada.
+- **Camps:** l'identificador numèric del CIDO (`id`) i el codi de l'anunci (`identificador`), el títol, la institució, l'àmbit, si és una borsa de treball, el tipus de personal, el grup de titulació, el sistema de selecció, el nombre de places, les dates d'inici i de finalització, l'hora i les observacions del termini, i l'enllaç a la fitxa del CIDO. Tal com els escriu la font; el que no dona és `null`. Les borses de treball solen tenir `places` a 0. Si no hi ha data de finalització, `observacions_termini` sol dir per què (per exemple, que és obert permanentment).
+- **Ordre:** per la data de finalització, els que no en tenen al final, i després per l'identificador del CIDO.
+- **Com es llegeix:** es demanen els processos amb el termini obert ordenats per identificador, en pàgines de 2.000, fins al total que diu la font.
+- **Comprovacions:**
+  - El nombre de processos ha de ser el total que diu la font.
+  - Hi ha d'haver almenys un procés obert. El CIDO sempre en té: una llista buida voldria dir que la consulta ja no filtra com s'espera.
+  - Cada recurs ha de ser un procés de selecció, amb un `id` numèric que no surti dues vegades i l'estat obert.
+  - Cada procés ha de tenir el codi de l'anunci, el títol, la institució, l'àmbit i l'enllaç, i ha de portar tots els camps que es publiquen, encara que siguin `null`. Les dates han de ser dies que existeixin, en la forma `AAAA-MM-DD`; les places, un enter de 0 o més o `null`, i `borsa_treball`, sí o no.
+  - El total no pot canviar entre pàgines. No ho detecta tot: un procés que tanca i un altre que obre entre dues pàgines deixen el total igual. Mentre els processos oberts càpiguen en una pàgina, com el novembre del 2026, no pot passar.
+- **Cada dia canvia:** com els ajuts, `oposicions.json` canvia gairebé cada dia.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## Pendent

@@ -5,6 +5,7 @@ import { construirAjuts } from './ajuts.ts';
 import type { Fetch } from './comun.ts';
 import { construirContractes } from './contractes.ts';
 import { construirInstitucions } from './institucions.ts';
+import { construirOposicions } from './oposicions.ts';
 import { construirPressupost } from './pressupost.ts';
 
 export async function construirDades(fetchImpl: Fetch, avui: string, pausaMs: number) {
@@ -14,5 +15,6 @@ export async function construirDades(fetchImpl: Fetch, avui: string, pausaMs: nu
     'ajuts.json': await construirAjuts(fetchImpl, avui),
     'pressupost.json': await construirPressupost(fetchImpl),
     'contractes.json': await construirContractes(fetchImpl),
+    'oposicions.json': await construirOposicions(fetchImpl, avui),
   };
 }
