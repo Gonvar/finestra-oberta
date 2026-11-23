@@ -38,6 +38,11 @@ const resum = resumDe(s);
       </ol>
     )
   }
+  <p class="secundari altres">
+    {mes > 0 && `${mes} ${mes === 1 ? 'punt més' : 'punts més'}. `}<a href={s.url}
+      >Tots els punts, al web del Parlament</a
+    >
+  </p>
   {
     resum && (
       <details class="resum">
@@ -50,11 +55,6 @@ const resum = resumDe(s);
       </details>
     )
   }
-  <p class="secundari altres">
-    {mes > 0 && `${mes} ${mes === 1 ? 'punt més' : 'punts més'}. `}<a href={s.url}
-      >Tots els punts, al web del Parlament</a
-    >
-  </p>
 </article>
 
 <style>
