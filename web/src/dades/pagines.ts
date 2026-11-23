@@ -3,6 +3,7 @@
 // pàgina que no hi és no es pot construir.
 import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
 import { decretsLlei, lleis } from './activitat.ts';
+import { perfils } from './diputats.ts';
 import { govern, membres, nombre, parlament, slug } from './institucions.ts';
 import { municipis } from './municipis.ts';
 import { despesa, milions, pressupost, seccionsGeneralitat } from './pressupost.ts';
@@ -118,6 +119,16 @@ export const pagines: Pagina[] = [
       titol: m.nom,
       frase: `${m.comarca}, província de ${m.provincia}.`,
       institucio: 'dad' as const,
+    },
+  })),
+  ...perfils.map(({ composicio: d, ruta }) => ({
+    ruta,
+    titol: `${d.nom} · Finestra Oberta`,
+    descripcio: `${d.carrec} per ${d.circumscripcio}: on treballa, què cobra, què declara i la seva agenda.`,
+    previsualitzacio: {
+      titol: d.nom,
+      frase: `${d.carrec} per ${d.circumscripcio}`,
+      institucio: 'par' as const,
     },
   })),
   ...membres.map((m) => ({

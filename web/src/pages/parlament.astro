@@ -2,6 +2,7 @@
 import Pagina from '../layouts/Pagina.astro';
 import '../styles/subpagines.css';
 import { dia, parlament } from '../dades/institucions.ts';
+import { rutaDiputat } from '../dades/diputats.ts';
 
 const grups = parlament.grups.map((g, i) => ({
   ...g,
@@ -127,7 +128,7 @@ const ressalta = grups
             .sort((a, b) => a.nom.localeCompare(b.nom, 'ca'))
             .map((d) => (
               <li id={`diputat-${codi(d.fitxa)}`}>
-                <a href={d.fitxa}>
+                <a href={rutaDiputat(d.nom)}>
                   {'foto' in d ? (
                     <img src={d.foto} alt="" loading="lazy" decoding="async" width="300" height="400" />
                   ) : (
@@ -146,7 +147,7 @@ const ressalta = grups
     ))
   }
   <p class="font-dada credit">
-    Fotos: Parlament de Catalunya. Cada fitxa enllaça a la del <a href={parlament.url}>web del Parlament</a>.
+    Fotos: <a href={parlament.url}>Parlament de Catalunya</a>.
   </p>
   </main>
   <style is:inline set:html={ressalta} />
