@@ -1,0 +1,54 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+import { REPO } from '../dades/portada';
+---
+
+<Pagina>
+  <main class="contingut" id="principal">
+    <section class="capcalera" aria-labelledby="titol">
+      <h1 id="titol" class="entra">Avís legal</h1>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="responsable">
+      <h2 class="titol-seccio" id="responsable">Qui en és responsable</h2>
+      <p>
+        Finestra Oberta és un projecte independent d'Arnau González. No té cap vinculació amb el Govern, el
+        Parlament, els ajuntaments ni cap altra administració.
+      </p>
+      <p>Contacte: <a href="mailto:a@gonvar.me">a@gonvar.me</a>.</p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="dades">
+      <h2 class="titol-seccio" id="dades">Les dades</h2>
+      <p>
+        Totes les dades les publiquen organismes públics, i el web les mostra amb la data i l'enllaç a la font.
+        Cadascuna s'explica a <a href="/metodologia/">D'on surten les dades</a>.
+      </p>
+      <p>
+        La versió que fa fe és la de l'organisme. Si una dada és equivocada o antiga, <a href="/correccions/"
+          >avisa'ns</a
+        >.
+      </p>
+      <p>
+        Les fotos del Govern i del Parlament són dels seus webs, que en tenen els drets. Per reutilitzar una dada,
+        valen les condicions de la font.
+      </p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="codi">
+      <h2 class="titol-seccio" id="codi">El codi</h2>
+      <p>
+        El codi és obert, amb llicència MIT, i és a <a href={REPO}>GitHub</a>. Hi pot contribuir qualsevol persona.
+      </p>
+    </section>
+  </main>
+</Pagina>
+
+<style>
+  .prosa > p {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+</style>

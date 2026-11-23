@@ -133,10 +133,19 @@ export const pagines: Pagina[] = [
   {
     ruta: '/privadesa/',
     titol: 'Privadesa · Finestra Oberta',
-    descripcio: 'Aquest web no recull cap dada teva. Qui veu la teva visita i per què.',
+    descripcio: 'Aquest web no recull cap dada que t’identifiqui. Qui veu la teva visita i per què.',
     previsualitzacio: {
       titol: 'Privadesa',
-      frase: 'Sense galetes, sense analítica, sense formularis.',
+      frase: 'Sense galetes, sense formularis, sense comptes.',
+    },
+  },
+  {
+    ruta: '/avis-legal/',
+    titol: 'Avís legal · Finestra Oberta',
+    descripcio: 'Qui és responsable del web, d’on surten les dades i amb quina llicència es publica el codi.',
+    previsualitzacio: {
+      titol: 'Avís legal',
+      frase: 'Un projecte independent, amb dades públiques i codi obert.',
     },
   },
   {
