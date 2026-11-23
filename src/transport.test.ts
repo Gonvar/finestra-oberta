@@ -4,6 +4,7 @@ import { test } from 'node:test';
 import type { Fetch } from './comun.ts';
 import {
   avisosRodalies,
+  estacionsFgc,
   avisosTmb,
   horarisFgc,
   liniaViatge,
@@ -36,6 +37,20 @@ test('llegeix el nucli i la línia dels identificadors de viatge de Renfe', () =
   assert.deepEqual(liniaViatge('3126L23289C1a'), { nucli: '31', linia: 'C1a' });
   assert.deepEqual(liniaViatge('SPECIAL_10_91025C7'), { nucli: '10', linia: 'C7' });
   assert.throws(() => liniaViatge('XYZ'), /identificador inesperat: XYZ/);
+});
+
+test("un identificador estrany d'un altre nucli no fa fallar Rodalies", async () => {
+  const { fetchImpl } = fake({
+    '/trip_updates.json': {
+      header: { timestamp: '1795420800' },
+      entity: [viatge('EXTRA_10_123C5', 60), viatge('5126L28416R2N', 455)],
+    },
+  });
+  const r = await retardsRodalies(fetchImpl);
+  assert.deepEqual(
+    r.linies.map((l) => [l.linia, l.retard_maxim_min]),
+    [['R2N', 7.6]],
+  );
 });
 
 test('només compta els trens de Rodalies de Catalunya, i els cancel·lats a part', async () => {
@@ -93,6 +108,7 @@ test("ajunta els avisos repetits de Rodalies i deixa fora els d'altres nuclis", 
         avis('INFO_2', [{ stopId: '71801' }], 'Ascensor fuera de servicio.'),
         avis('AVISO_3', [{ routeId: '10T0075C10' }], 'Madrid.'),
         avis('INFO_4', [{ stopId: '51100' }], 'Sevilla.'),
+        avis('AVISO_5', [{ routeId: '10T0075-RARA' }], 'Madrid, amb una ruta estranya.'),
       ],
     },
     '/datastore_search': {
@@ -122,6 +138,25 @@ test("ajunta els avisos repetits de Rodalies i deixa fora els d'altres nuclis", 
   );
 });
 
+test('un avís de Rodalies amb una ruta que no s’entén és un error, no desapareix', async () => {
+  const { fetchImpl } = fake({
+    '/alerts.json': {
+      header: { timestamp: '1795420800' },
+      entity: [
+        {
+          id: 'AVISO_9',
+          alert: {
+            informedEntity: [{ routeId: '51T0025R2-BIS' }],
+            descriptionText: { translation: [{ text: 'Obras.', language: 'es' }] },
+          },
+        },
+      ],
+    },
+    '/datastore_search': { success: true, result: { total: 0, records: [] } },
+  });
+  await assert.rejects(avisosRodalies(fetchImpl), /ruta d'identificador inesperat: 51T0025R2-BIS/);
+});
+
 test("compta els trens d'FGC en hora i falla amb un valor que no coneix", async () => {
   const meta = {
     metas: { default: { data_processed: '2026-11-23T07:56:02+00:00', title: 'Geotren' } },
@@ -148,14 +183,15 @@ test("compta els trens d'FGC en hora i falla amb un valor que no coneix", async 
   await assert.rejects(retardsFgc(dolent), /valor inesperat a en_hora: Potser/);
 });
 
-test("dona els propers trens d'FGC en ordre, també els de després de mitjanit", async () => {
-  const pas = (departure_time: string, route_short_name: string) => ({
-    date: '2026-11-23',
-    route_short_name,
-    trip_headsign: 'Sabadell Parc del Nord',
-    departure_time,
-    platform_code: 1,
-  });
+const pas = (departure_time: string, route_short_name: string) => ({
+  date: '2026-11-23',
+  route_short_name,
+  trip_headsign: 'Sabadell Parc del Nord',
+  departure_time,
+  platform_code: 1,
+});
+
+test("dona els propers trens d'FGC en ordre, amb l'hora escrita sempre igual", async () => {
   const { fetchImpl, urls } = fake({
     '/viajes-de-hoy/exports/json': [
       pas('24:10:00', 'S2'),
@@ -164,20 +200,74 @@ test("dona els propers trens d'FGC en ordre, també els de després de mitjanit"
       pas('09:03:00', 'S2'),
     ],
   });
-  const r = await horarisFgc(fetchImpl, { estacio: "L'Hospitalet", des_de: '09:00', limit: 2 });
+  // Les 9.00 del 23 de novembre a Catalunya.
+  const mati = new Date('2026-11-23T08:00:00Z');
+  const r = await horarisFgc(
+    fetchImpl,
+    { estacio: "L'Hospitalet", des_de: '08:00', limit: 2 },
+    mati,
+  );
   assert.equal(urls[0]!.searchParams.get('where'), "stop_name = 'L''Hospitalet'");
-  assert.equal(r.total, 3);
+  assert.equal(r.total, 4);
   assert.deepEqual(
     r.trens.map((t) => [t.sortida, t.linia]),
     [
+      ['08:59', 'S1'],
       ['09:03', 'S2'],
-      ['23:50', 'S1'],
     ],
   );
   const buit = fake({ '/viajes-de-hoy/exports/json': [] });
   await assert.rejects(
-    horarisFgc(buit.fetchImpl, { estacio: 'Sarria', limit: 5 }),
+    horarisFgc(buit.fetchImpl, { estacio: 'Sarria', limit: 5 }, mati),
     /Cap tren d'FGC passa avui per «Sarria»/,
+  );
+});
+
+test('passada la mitjanit, els propers trens són els del dia de servei anterior', async () => {
+  const { fetchImpl } = fake({
+    '/viajes-de-hoy/exports/json': [
+      pas('05:10:00', 'S1'),
+      pas('23:50:00', 'S1'),
+      pas('24:35:00', 'S2'),
+    ],
+  });
+  // Les 00.20 del 24 de novembre a Catalunya, amb els horaris del 23 encara publicats.
+  const nit = new Date('2026-11-23T23:20:00Z');
+  const r = await horarisFgc(fetchImpl, { estacio: 'Sarrià', limit: 5 }, nit);
+  assert.equal(r.des_de, '00:20');
+  assert.deepEqual(
+    r.trens.map((t) => t.sortida),
+    ['24:35'],
+  );
+});
+
+test("l'accessibilitat d'FGC es llegeix com diu GTFS: 0 és que no se sap", async () => {
+  const parada = (stop_id: string, stop_name: string, wheelchair_boarding: number) => ({
+    stop_id,
+    stop_name,
+    stop_coordinates: { lat: 41.4, lon: 2.1 },
+    wheelchair_boarding,
+  });
+  const { fetchImpl } = fake({
+    '/gtfs_stops/exports/json': [
+      parada('SR', 'Sarrià', 0),
+      parada('SR1', 'Sarrià', 1),
+      parada('PR', 'Provença', 2),
+      parada('GR', 'Gràcia', 0),
+      parada('MN', 'Muntaner', 1),
+      parada('MN1', 'Muntaner', 2),
+    ],
+    '/gtfs_stops': { metas: { default: { data_processed: '2026-11-22T11:30:08+00:00' } } },
+  });
+  const r = await estacionsFgc(fetchImpl, 'a');
+  assert.deepEqual(
+    r.estacions.map((e) => [e.nom, e.accessible]),
+    [
+      ['Sarrià', 'sí'],
+      ['Provença', 'no'],
+      ['Gràcia', 'sense informació'],
+      ['Muntaner', 'segons l’andana'],
+    ],
   );
 });
 
@@ -231,7 +321,6 @@ test('demana els metros de totes les línies de l’estació i en calcula els mi
   assert.equal(urls[1]!.searchParams.get('estacions'), '126,326');
   assert.equal(urls[1]!.searchParams.get('app_key'), 'clau-de-prova');
   assert.deepEqual(r.trens, [{ linia: 'L1', direccio: 'Fondo', arribades_min: [1, 0] }]);
-  await assert.rejects(propersTmb(fetchImpl, {}), /o bé una estació de metro/);
   const err = await propersTmb(fetchImpl, { metro: 'Catalunia' }).catch((e: Error) => e);
   assert.ok(err instanceof Error);
   assert.match(err.message, /cap estació de metro que es digui «Catalunia»/);

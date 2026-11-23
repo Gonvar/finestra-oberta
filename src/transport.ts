@@ -4,8 +4,8 @@
 import { McpServer } from '@modelcontextprotocol/server';
 import { z } from 'zod';
 import {
-  fold,
   getJson,
+  matches,
   text,
   READ_ONLY_EXTERNAL,
   run,
@@ -34,6 +34,10 @@ const OPERADOR = z.enum(['rodalies', 'fgc']).describe('rodalies (Renfe) o fgc.')
 const OPERADOR_TMB = z.enum(['rodalies', 'fgc', 'tmb']).describe('rodalies (Renfe), fgc o tmb.');
 
 const isoDeSegons = (segons: string) => new Date(Number(segons) * 1000).toISOString();
+
+/** El dia a Catalunya, «AAAA-MM-DD». */
+const diaLocal = (ara: Date) =>
+  new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(ara);
 
 /** L'hora local de Catalunya, «HH:MM», com les dels horaris d'FGC. */
 function horaLocal(ara: Date) {
@@ -82,6 +86,9 @@ const NUCLI_RODALIES = '51';
 const VIATGE = /^(?:SPECIAL_(\d{2})_|(\d{2})\d{2}L)\d+([A-Z][A-Za-z0-9]*)$/;
 const RUTA = /^(\d{2})T\d+([A-Z][A-Za-z0-9]*)$/;
 
+/** El nucli, que es mira primer: un identificador estrany d'un altre nucli no afecta Rodalies. */
+export const nucli = (id: string) => /^(?:SPECIAL_)?(\d{2})/.exec(id)?.[1];
+
 export function liniaViatge(tripId: string) {
   const m = VIATGE.exec(tripId);
   if (!m)
@@ -107,8 +114,8 @@ export async function retardsRodalies(fetchImpl: Fetch) {
     { trens: number; cancellats: number; sense_retard_publicat: number; retards: number[] }
   >();
   for (const e of feed.entity) {
-    const { nucli, linia } = liniaViatge(e.tripUpdate.trip.tripId);
-    if (nucli !== NUCLI_RODALIES) continue;
+    if (nucli(e.tripUpdate.trip.tripId) !== NUCLI_RODALIES) continue;
+    const { linia } = liniaViatge(e.tripUpdate.trip.tripId);
     const l = perLinia.get(linia) ?? {
       trens: 0,
       cancellats: 0,
@@ -136,7 +143,7 @@ export async function retardsRodalies(fetchImpl: Fetch) {
         l.retards.length === 0
           ? null
           : Math.round(l.retards.reduce((a, b) => a + b, 0) / l.retards.length / 6) / 10,
-      retard_maxim_min: l.retards.length === 0 ? null : Math.max(...l.retards) / 60,
+      retard_maxim_min: l.retards.length === 0 ? null : Math.round(Math.max(...l.retards) / 6) / 10,
       ...(l.sense_retard_publicat > 0 && { sense_retard_publicat: l.sense_retard_publicat }),
     }));
   return {
@@ -186,6 +193,20 @@ async function estacionsRodalies(fetchImpl: Fetch): Promise<Estacio[]> {
   }));
 }
 
+type Paquet = {
+  notes: string;
+  resources: { id: string; last_modified: string | null; created: string }[];
+};
+const paquetRenfe = async (fetchImpl: Fetch, id: string) =>
+  (await getJson<{ result: Paquet }>(fetchImpl, `${RENFE_CKAN}/package_show?id=${id}`)).result;
+
+/** El dia que Renfe va actualitzar el recurs, de les metadades del portal. */
+async function diaRecurs(fetchImpl: Fetch, paquet: string, recurs: string) {
+  const r = (await paquetRenfe(fetchImpl, paquet)).resources.find((x) => x.id === recurs);
+  if (!r) throw new SourceError(`data.renfe.com ja no publica el recurs ${recurs}.`);
+  return (r.last_modified ?? r.created).slice(0, 10);
+}
+
 const textos = (t: { translation: Traduccio[] } | undefined) =>
   t ? t.translation.map((x) => x.text.trim()) : [];
 
@@ -211,9 +232,13 @@ export async function avisosRodalies(fetchImpl: Fetch) {
     const linies: string[] = [];
     const estacionsAvís: string[] = [];
     for (const ent of alert.informedEntity ?? []) {
-      if (ent.routeId) {
+      if (ent.routeId && nucli(ent.routeId) === NUCLI_RODALIES) {
         const m = RUTA.exec(ent.routeId);
-        if (m && m[1] === NUCLI_RODALIES) linies.push(m[2] as string);
+        if (!m)
+          throw new SourceError(
+            `Renfe ha publicat un avís amb una ruta d'identificador inesperat: ${ent.routeId}.`,
+          );
+        linies.push(m[2] as string);
       }
       // Els codis d'estació no porten el nucli: es reconeixen per la llista d'estacions de Rodalies.
       const nom = ent.stopId && nomEstacio.get(ent.stopId);
@@ -319,16 +344,21 @@ export async function estacions(fetchImpl: Fetch, operador: 'rodalies' | 'fgc' |
   const cerca = words(q);
   if (operador === 'tmb') return estacionsTmb(fetchImpl, cerca);
   if (operador === 'rodalies') {
-    const totes = await estacionsRodalies(fetchImpl);
+    const [totes, dades_de] = await Promise.all([
+      estacionsRodalies(fetchImpl),
+      diaRecurs(fetchImpl, 'estaciones-rodalies-barcelona', ESTACIONS_RODALIES),
+    ]);
     return {
       operador: 'Rodalies de Catalunya (Renfe)',
-      dades_de: '2019-11-20',
-      nota: "La llista d'estacions de Renfe és del 2019: hi poden faltar les estacions obertes després.",
-      estacions: totes.filter((e) =>
-        cerca.every((w) => fold(`${e.nom} ${e.poblacio}`).includes(w)),
-      ),
+      dades_de,
+      nota: "És el dia que Renfe va publicar la llista d'estacions: hi poden faltar les obertes després.",
+      estacions: totes.filter((e) => matches(`${e.nom} ${e.poblacio}`, cerca)),
     };
   }
+  return estacionsFgc(fetchImpl, q);
+}
+
+export async function estacionsFgc(fetchImpl: Fetch, q: string) {
   const [parades, dades_de] = await Promise.all([
     exportFgc<Parada>(fetchImpl, 'gtfs_stops', { where: `search(stop_name, ${cometes(q)})` }),
     dataFgc(fetchImpl, 'gtfs_stops'),
@@ -337,24 +367,41 @@ export async function estacions(fetchImpl: Fetch, operador: 'rodalies' | 'fgc' |
   // estacions, amb les seves andanes al costat.
   const perNom = new Map<
     string,
-    { codis: string[]; latitud?: number; longitud?: number; accessible: boolean | null }
+    { codis: string[]; latitud?: number; longitud?: number; accessibilitat: number[] }
   >();
   for (const p of parades) {
-    const e = perNom.get(p.stop_name) ?? { codis: [], accessible: null };
+    const e = perNom.get(p.stop_name) ?? { codis: [], accessibilitat: [] };
     perNom.set(p.stop_name, e);
     e.codis.push(p.stop_id);
     if (p.stop_coordinates) {
       e.latitud = p.stop_coordinates.lat;
       e.longitud = p.stop_coordinates.lon;
     }
-    if (p.wheelchair_boarding === 1) e.accessible = true;
-    else if (p.wheelchair_boarding === 0 && e.accessible === null) e.accessible = false;
+    if (p.wheelchair_boarding !== null) e.accessibilitat.push(p.wheelchair_boarding);
   }
   return {
     operador: 'Ferrocarrils de la Generalitat de Catalunya',
     dades_de,
-    estacions: [...perNom].map(([nom, e]) => ({ nom, ...e })),
+    estacions: [...perNom].map(([nom, { accessibilitat, ...e }]) => ({
+      nom,
+      ...e,
+      accessible: accessible(accessibilitat),
+    })),
   };
+}
+
+/**
+ * En GTFS, 1 vol dir accessible, 2 no accessible i 0 sense informació. Si les andanes d'una estació
+ * diuen coses diferents, es diu així.
+ */
+function accessible(valors: number[]) {
+  const coneguts = new Set(valors.filter((v) => v !== 0));
+  for (const v of coneguts)
+    if (v !== 1 && v !== 2)
+      throw new SourceError(`FGC ha publicat un wheelchair_boarding inesperat: ${v}.`);
+  if (coneguts.size === 0) return 'sense informació';
+  if (coneguts.size === 2) return 'segons l’andana';
+  return coneguts.has(1) ? 'sí' : 'no';
 }
 
 type Ruta = { route_short_name: string; route_long_name: string; route_color: string | null };
@@ -399,19 +446,26 @@ export async function horarisFgc(
     throw new SourceError(
       `Cap tren d'FGC passa avui per «${args.estacio}». El nom ha de ser exacte, amb accents: busca'l amb estacions.`,
     );
-  const desDe = `${args.des_de ?? horaLocal(ara)}:00`;
+  const dies = [...new Set(passos.map((p) => p.date.slice(0, 10)))];
+  if (dies.length !== 1)
+    throw new SourceError(`FGC barreja els horaris de més d'un dia: ${dies.join(', ')}.`);
+  const dia = dies[0] as string;
+  const desDe = args.des_de ?? horaLocal(ara);
+  // Passada la mitjanit, FGC encara publica els horaris del dia de servei anterior, que escriuen
+  // les 00.35 com a 24:35: l'hora demanada se suma a les 24 per comparar-la.
+  const servei = dia < diaLocal(ara) ? `${Number(desDe.slice(0, 2)) + 24}${desDe.slice(2)}` : desDe;
   const propers = passos
-    .filter((p) => hora(p.departure_time) >= hora(desDe))
+    .filter((p) => hora(p.departure_time) >= hora(`${servei}:00`))
     .sort((a, b) => hora(a.departure_time).localeCompare(hora(b.departure_time)));
   return {
     operador: 'Ferrocarrils de la Generalitat de Catalunya',
-    dia: [...new Set(passos.map((p) => p.date.slice(0, 10)))].join(', '),
+    dia,
     estacio: args.estacio,
-    des_de: desDe.slice(0, 5),
+    des_de: desDe,
     nota: "Horaris previstos d'avui segons FGC, no l'hora real de pas: per saber si un tren va en hora, fes servir retards.",
     total: propers.length,
     trens: propers.slice(0, args.limit).map((p) => ({
-      sortida: p.departure_time.slice(0, 5),
+      sortida: hora(p.departure_time).slice(0, 5),
       linia: p.route_short_name,
       direccio: p.trip_headsign,
       andana: p.platform_code,
@@ -499,9 +553,8 @@ async function estacionsTmb(fetchImpl: Fetch, cerca: string[]) {
     estacionsMetro(fetchImpl),
     tmb<Geo<ParadaBus>>(fetchImpl, 'transit/parades', { propertyName: 'CODI_PARADA,NOM_PARADA' }),
   ]);
-  const coincideix = (nom: string) => cerca.every((w) => fold(nom).includes(w));
   const perNom = agrupa(
-    metro.features.map((f) => f.properties).filter((e) => coincideix(e.NOM_ESTACIO)),
+    metro.features.map((f) => f.properties).filter((e) => matches(e.NOM_ESTACIO, cerca)),
     (e) => e.NOM_ESTACIO,
   );
   return {
@@ -514,7 +567,7 @@ async function estacionsTmb(fetchImpl: Fetch, cerca: string[]) {
     })),
     parades_bus: parades.features
       .map((f) => f.properties)
-      .filter((p) => coincideix(p.NOM_PARADA))
+      .filter((p) => matches(p.NOM_PARADA, cerca))
       .map((p) => ({ codi: p.CODI_PARADA, nom: p.NOM_PARADA })),
   };
 }
@@ -535,14 +588,10 @@ type IBus = { line: string; destination: string; 't-in-s': number; 't-in-min': n
 
 export async function propersTmb(
   fetchImpl: Fetch,
-  args: { metro?: string; parada_bus?: number },
+  args: { metro: string } | { parada_bus: number },
   ara = new Date(),
 ) {
-  if ((args.metro === undefined) === (args.parada_bus === undefined))
-    throw new SourceError(
-      'Indica o bé una estació de metro (metro) o bé una parada de bus (parada_bus).',
-    );
-  if (args.metro !== undefined) {
+  if ('metro' in args) {
     const nom = args.metro;
     const codis = (await estacionsMetro(fetchImpl)).features
       .map((f) => f.properties)
@@ -612,15 +661,18 @@ export async function demanda(
   any?: number,
 ) {
   if (operador === 'rodalies') {
-    const r = await datastore<Franja>(fetchImpl, {
-      resource_id: DEMANDA_RODALIES,
-      q: estacio,
-      limit: '1000',
-    });
+    const [r, paquet] = await Promise.all([
+      datastore<Franja>(fetchImpl, { resource_id: DEMANDA_RODALIES, q: estacio, limit: '1000' }),
+      paquetRenfe(fetchImpl, 'volumen-de-viajeros-por-franja-horaria-barcelona'),
+    ]);
+    // L'any només el diu la descripció del conjunt: «… cercanías Barcelona, año 2018».
+    const anyDades = /\baño (\d{4})\b/.exec(paquet.notes)?.[1];
+    if (anyDades === undefined)
+      throw new SourceError('Renfe no diu de quin any és la demanda de Rodalies.');
     if (r.records.length !== r.total)
       throw new SourceError(`Han arribat ${r.records.length} de les ${r.total} franges.`);
     const cerca = words(estacio);
-    const files = r.records.filter((f) => cerca.every((w) => fold(f.NOMBRE_ESTACION).includes(w)));
+    const files = r.records.filter((f) => matches(f.NOMBRE_ESTACION, cerca));
     if (files.length === 0)
       throw new SourceError(
         `Renfe no publica la demanda de cap estació que es digui «${estacio}».`,
@@ -628,7 +680,7 @@ export async function demanda(
     const perEstacio = agrupa(files, (f) => f.NOMBRE_ESTACION);
     return {
       operador: 'Rodalies de Catalunya (Renfe)',
-      any: 2018,
+      any: Number(anyDades),
       unitat:
         'Viatgers que pugen i baixen en cada franja de mitja hora, segons Renfe. Renfe no diu de quin tipus de dia són.',
       estacions: [...perEstacio].map(([nom, franges]) => ({
@@ -741,36 +793,51 @@ export function createTransportServer(fetchImpl: Fetch = fetch) {
       title: 'Propers metros i busos de TMB',
       description:
         'Els minuts que falten perquè arribin els propers metros a una estació, per línia i direcció, o els propers busos a una parada, segons TMB en temps real.',
-      inputSchema: z.object({
-        metro: z
-          .string()
-          .min(2)
-          .max(80)
-          .optional()
-          .describe("Nom exacte de l'estació de metro, d'estacions."),
-        parada_bus: z
-          .number()
-          .int()
-          .min(1)
-          .max(999999)
-          .optional()
-          .describe("Codi de la parada de bus, d'estacions."),
-      }),
+      inputSchema: z
+        .object({
+          metro: z
+            .string()
+            .min(2)
+            .max(80)
+            .optional()
+            .describe("Nom exacte de l'estació de metro, d'estacions."),
+          parada_bus: z
+            .number()
+            .int()
+            .min(1)
+            .max(999999)
+            .optional()
+            .describe("Codi de la parada de bus, d'estacions."),
+        })
+        .refine((a) => (a.metro === undefined) !== (a.parada_bus === undefined), {
+          message: 'Indica o bé una estació de metro (metro) o bé una parada de bus (parada_bus).',
+        }),
       annotations: READ_ONLY_EXTERNAL,
     },
-    (args) => run(SOURCE, () => propersTmb(fetchImpl, args)),
+    ({ metro, parada_bus }) =>
+      run(SOURCE, () =>
+        propersTmb(
+          fetchImpl,
+          // L'esquema ja ha comprovat que n'hi ha un i només un.
+          metro !== undefined ? { metro } : { parada_bus: parada_bus as number },
+        ),
+      ),
   );
   s.registerTool(
     'demanda',
     {
       title: 'Viatgers per estació',
       description:
-        "Quants viatgers fan servir una estació. De Rodalies: els que pugen i baixen per franja de mitja hora, el 2018. D'FGC: les entrades de cada mes, del 2019 al 2024.",
-      inputSchema: z.object({
-        operador: OPERADOR,
-        estacio: z.string().min(2).max(80),
-        any: z.number().int().min(2019).max(2024).optional().describe("Només FGC: l'any."),
-      }),
+        "Quants viatgers fan servir una estació. De Rodalies: els que pugen i baixen per franja de mitja hora, d'un sol any, que diu la resposta. D'FGC: els de cada mes, del 2019 al 2024.",
+      inputSchema: z
+        .object({
+          operador: OPERADOR,
+          estacio: z.string().min(2).max(80),
+          any: z.number().int().min(2019).max(2024).optional().describe("Només FGC: l'any."),
+        })
+        .refine((a) => a.operador === 'fgc' || a.any === undefined, {
+          message: "Rodalies només publica la demanda d'un any: no se'n pot triar cap.",
+        }),
       annotations: READ_ONLY_EXTERNAL,
     },
     ({ operador, estacio, any }) => run(SOURCE, () => demanda(fetchImpl, operador, estacio, any)),
