@@ -66,7 +66,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json` i `/tmp/ara/ajuntaments.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json` i `/tmp/ara/activitat.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -205,7 +205,33 @@ Els actes públics del Govern i del Parlament del mes passat, l'actual i el seg�
 - **Cada dia:** a diferència de la composició, `agenda.json` es desa encara que l'únic canvi sigui `data_consulta`, perquè la web en treu quins actes ja han passat.
 - **Reutilització:** la mateixa que la de les fotos: l'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) del Parlament en permet la reutilització si se'n cita la font, no se n'altera el sentit i no es presenta com una versió oficial ni avalada pel Parlament.
 
+## `activitat.json`
+
+Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple de la legislatura en curs, i les lleis i els decrets llei publicats al DOGC des que va començar.
+
+- **Fonts:**
+  - Les [sessions tingudes del Ple](https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&p_codi=46) i la pàgina d'acords de cada sessió, al web del Parlament de Catalunya. Com la composició, es llegeixen de les pàgines web, amb les condicions de l'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) del Parlament.
+  - La [normativa del DOGC](https://analisi.transparenciacatalunya.cat/d/n6hn-rmy7) (`n6hn-rmy7`), de l'Entitat Autònoma del Diari Oficial i de Publicacions (EADOP), a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/).
+- **Legislatura:** és la primera de la llista de legislatures del Parlament. Quan en comenci una de nova, el fitxer passarà a ser el de la nova.
+- **Sessions:** totes les del Ple, de la més nova a la més antiga, amb el número, el caràcter (ordinària, específica…), el dia, l'hora i l'enllaç a la pàgina d'acords. La llista del Parlament repeteix algunes sessions en dues files idèntiques: es desen una vegada.
+- **Punts:** de cada sessió, tots els punts de l'ordre del dia, en l'ordre de la font, amb el títol, el número d'expedient i l'enllaç a la tramitació. `acord` és el text de l'acord tal com l'escriu el Parlament («S'aprova la Moció.», «Es rebutja.», «Se substancia.»…), i és buit si el Parlament no n'hi posa cap.
+- **Resultat:** `resultat` és `aprovat`, `convalidat`, `derogat` (un decret llei que el Ple no convalida) o `rebutjat` quan l'acord comença per un dels textos de `RESULTATS` a [src/activitat.ts](../src/activitat.ts), i `null` en tots els altres casos. La regla és la mateixa per a totes les iniciatives, les presenti qui les presenti. Un acord sobre una esmena a la totalitat («S'aprova l'esmena a la totalitat…») parla de l'esmena i no de la iniciativa, i queda sense resultat. El text original és sempre a `acord`. La taula es va comprovar el 22 de novembre de 2026 amb el text sencer de tots els acords de les 56 sessions del Ple de la legislatura: cap altra fórmula diu que s'aprova o es rebutja la iniciativa del punt. Els que queden sense resultat diuen, per exemple, que el punt «Se substancia», que s'ajorna o que es retira, o només nomenen la comissió que l'ha de tramitar. També en queden sense els que decideixen sobre la tramitació i no sobre la iniciativa («El Ple acorda de rebutjar la sol·licitud que el decret llei es tramiti com a projecte de llei»), perquè la convalidació del decret llei és un altre punt de la mateixa sessió, i la investidura, que no és cap iniciativa.
+- **Normes:** les que el DOGC classifica amb el rang `Llei` o `Decret llei` i que es van publicar des del dia de la sessió constitutiva, de la més nova a la més antiga. De cadascuna: el títol, el rang, la data, la data i el número del DOGC, la vigència i l'enllaç ELI al Portal Jurídic. `data_dades` és l'última actualització del conjunt.
+- **Vots i assistència:** no n'hi ha. El Parlament no publica qui ha votat què ni l'assistència de cada persona diputada, i el recompte de cada votació només surt al Diari de Sessions, en PDF. No s'endevinen a partir de res més, com la posició de cada grup.
+- **Resums:** si algun dia s'hi afegeixen resums fets amb IA, aniran en un fitxer a part, lligats a cada punt pel número d'expedient o a cada norma per l'enllaç ELI, perquè `activitat.json` continuï dient només el que diu la font.
+- **Comprovacions:**
+  - La legislatura en curs ha de ser el primer element de la llista de legislatures.
+  - Cada fila de la llista de sessions i cada punt d'una pàgina d'acords s'ha de poder llegir. Si la forma de la pàgina canvia, l'script s'atura.
+  - Dues files de la llista amb el mateix número de sessió han de ser idèntiques.
+  - Els punts d'una sessió, sumant totes les pàgines, han d'anar d'1 fins a l'últim sense salts.
+  - Cada pàgina d'acords ha de tenir almenys un punt, i se n'han de llegir tots els que numera.
+  - Cada norma ha de tenir el títol, el rang, les dates, el número del DOGC, la vigència i l'enllaç.
+  - Les normes han de cabre en una sola consulta.
+- **Si falla:** com que l'activitat es genera amb el Govern, el Parlament i els ajuntaments, una comprovació que falla atura l'actualització de tots els fitxers fins que es corregeix.
+
 ## Pendent
+
+- Qui ha votat què i l'assistència a les votacions. El Parlament diu al seu [portal de transparència](https://www.parlament.cat/web/transparencia/sumari/index.html?p_id=173806) que els resultats individuals es publicaran a la propera legislatura. Mentrestant, només es poden demanar amb el dret d'accés a la informació pública.
 
 - Les declaracions de béns patrimonials dels membres del Govern no són a Dades obertes de Catalunya. Abans d'afegir-les, cal trobar-ne una font oficial que es pugui llegir sense haver de fer servir les pàgines de cada departament.
 

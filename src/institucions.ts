@@ -132,7 +132,7 @@ export function llegirFitxa(html: string, url: string): Fitxa {
   };
 }
 
-const pausa = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+export const pausa = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const POSICIONS_ESCONS = `${PARLAMENT}/js/mapa-escons.js`;
 
