@@ -1,7 +1,7 @@
 // Les regles de CONTRIBUTING.md i NEUTRALITAT.md per a cada font del registre. Una font nova que no
 // les compleixi fa fallar la CI.
 import assert from 'node:assert/strict';
-import { access, readFile } from 'node:fs/promises';
+import { access, readdir, readFile } from 'node:fs/promises';
 import { test } from 'node:test';
 import { createMcpHandler } from '@modelcontextprotocol/server';
 import { esDelDomini, llegeixDominis } from './neutralitat.ts';
@@ -61,6 +61,24 @@ test('cada font té un nom únic, en minúscules i amb guions', () => {
   for (const nom of noms) assert.match(nom, /^[a-z]+(-[a-z]+)*$/);
 });
 
+test('cada servidor de src/ és al registre, i per això la CI el comprova', async () => {
+  const registrades = new Set(servidors.map((s) => s.crea.name));
+  for (const fitxer of await readdir(new URL('src/', arrel))) {
+    if (!fitxer.endsWith('.ts') || fitxer.endsWith('.test.ts')) continue;
+    const codi = await llegeix(`src/${fitxer}`);
+    for (const [, funcio] of codi.matchAll(/export function (create\w+Server)\b/g))
+      assert.ok(
+        registrades.has(funcio as string),
+        `${funcio}, de src/${fitxer}, no és a src/servidors.ts.`,
+      );
+    assert.doesNotMatch(
+      fitxer === 'index.ts' ? '' : codi,
+      /serveStdio/,
+      `src/${fitxer} serveix un servidor pel seu compte: ha de passar per src/index.ts i el registre.`,
+    );
+  }
+});
+
 for (const servidor of servidors) {
   test(`${servidor.nom}: la font és oficial i en diu la llicència`, async () => {
     const dominis = await llegeixDominis();
@@ -102,7 +120,11 @@ for (const servidor of servidors) {
   test(`${servidor.nom}: no queda cap TODO de la plantilla`, async () => {
     const fitxers = [servidor.docs, servidor.proves, servidor.proves.replace(/\.test\.ts$/, '.ts')];
     for (const fitxer of fitxers)
-      assert.doesNotMatch(await llegeix(fitxer), /TODO/, `${fitxer} encara té algun TODO.`);
+      assert.doesNotMatch(
+        await llegeix(fitxer),
+        /TODO|__[A-Z_]+__/,
+        `${fitxer} encara té algun TODO.`,
+      );
     assert.doesNotMatch(JSON.stringify(servidor), /TODO/, 'src/servidors.ts encara té algun TODO.');
     const fila = (await llegeix('README.md'))
       .split('\n')

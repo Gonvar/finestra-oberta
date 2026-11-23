@@ -1,6 +1,6 @@
-# **ORGANISME**
+# __ORGANISME__
 
-Servidor MCP de **QUE_PUBLICA**, que publica **ORGANISME** a [**DOMINI**](https://__DOMINI__). TODO: quina API fa servir i si necessita clau (no n'hauria de necessitar).
+Servidor MCP de __QUE_PUBLICA__, que publica __ORGANISME__ a [__DOMINI__](https://__DOMINI__). TODO: quina API fa servir i si necessita clau (no n'hauria de necessitar).
 
 ```sh
 node src/index.ts __NOM__
@@ -16,9 +16,9 @@ node src/index.ts __NOM__
 
 ## Reutilització
 
-TODO: segons [la llicència o les condicions d'ús](__LLICENCIA__) de **ORGANISME**, què cal fer per reutilitzar les dades.
+TODO: segons [la llicència o les condicions d'ús](__LLICENCIA__) de __ORGANISME__, què cal fer per reutilitzar les dades.
 
 ## Proves
 
-- [src/**NOM**.test.ts](../src/__NOM__.test.ts): proves amb dades sintètiques.
+- [src/__NOM__.test.ts](../src/__NOM__.test.ts): proves amb dades sintètiques.
 - TODO: quan i com l'has comprovat contra l'API real per stdio.

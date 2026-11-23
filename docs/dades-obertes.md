@@ -37,7 +37,7 @@ node src/index.ts dades-obertes
 
 ## Reutilització
 
-Les metadades de cada conjunt (`attributionLink`) remeten a la [Llicència oberta d'ús d'informació - Catalunya](https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes/llicencies). Permet reutilitzar, distribuir i transformar la informació, però no se'n pot alterar el contingut ni desnaturalitzar-ne el sentit, cal citar la font i cal dir la data de l'última actualització. Un conjunt pot tenir una llicència pròpia, que preval. Per això cada resposta porta l'organisme que publica el conjunt i la data de les dades.
+Les metadades de cada conjunt (`attributionLink`) remeten a la [Llicència oberta d'ús d'informació - Catalunya](https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes/llicencies). Permet reutilitzar, distribuir i transformar la informació, però no se'n pot alterar el contingut ni desnaturalitzar-ne el sentit, cal citar la font i cal dir la data de l'última actualització. Un conjunt pot tenir una llicència pròpia, que preval. Per això `cercar_conjunt` i `veure_conjunt` donen l'organisme que publica cada conjunt i la data de les seves dades (`dades_actualitzades`), i les instruccions demanen a l'assistent que les citi.
 
 ## Proves
 

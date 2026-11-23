@@ -84,9 +84,10 @@ Cada font té el seu servidor MCP: un fitxer a `src/`, amb les seves proves i la
 La CI comprova cada font del registre amb [src/servidors.test.ts](src/servidors.test.ts) i no la deixa entrar si:
 
 - El domini no és a la taula de NEUTRALITAT.md, o el codi consulta una adreça d'un altre domini.
-- La llicència no és una pàgina d'un domini de la taula, o la documentació no l'enllaça. Si el portal dona una llicència a cada conjunt (`'per conjunt'`), el servidor l'ha de tornar i la documentació ho ha d'explicar.
+- La llicència no és una pàgina d'un domini de la taula, o la documentació no l'enllaça. Si el portal dona una llicència a cada conjunt (`'per conjunt'`), la documentació ho ha d'explicar, i qui revisa comprova que el servidor la torna.
 - Falten les proves, la documentació, l'ordre de `package.json` o la fila del README.
-- Queda algun `TODO` de la plantilla.
+- Queda algun `TODO` o marcador de la plantilla.
+- Hi ha un servidor a `src/` que no és al registre.
 - Alguna eina no és de només lectura, o no té títol ni descripció, o el servidor no té instruccions.
 
 El que la CI no pot comprovar ho mira qui revisa: que la font es llegeixi bé, que les dades no es canviïn i que cap text afavoreixi ningú.
