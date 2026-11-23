@@ -6960,7 +6960,7 @@
     {
       "id": "22529308",
       "identificador": "20261118O140",
-      "titol": "1 plaça de Tècnic de Grau Mitja a l'Administració d'Economia i Empresa - Departament d'Història Econòmica, Institucions, Política i Economia Mundial",
+      "titol": "1 plaça de Tècnic de Grau Mitjà a l'Administració d'Economia i Empresa - Departament d'Història Econòmica, Institucions, Política i Economia Mundial",
       "institucio": "Universitat de Barcelona (UB)",
       "ambit": "Altres entitats públiques",
       "borsa_treball": false,
@@ -10254,6 +10254,57 @@
       "hora_fi": "15:00",
       "observacions_termini": null,
       "url": "https://cido.diba.cat/oposicions/22539397"
+    },
+    {
+      "id": "22540876",
+      "identificador": "20261121O1",
+      "titol": "1 plaça de Tècnic de camp - Pràctiques de conservació (Lleida)",
+      "institucio": "Empresa de Transformación Agraria, SA, SME, MP (TRAGSA)",
+      "ambit": "Altres entitats públiques",
+      "borsa_treball": false,
+      "tipus_personal": "Laboral temporal",
+      "grup_titulacio": "C1 - Batxillerat, FP 2n grau, cicles formatius grau superior",
+      "sistema_seleccio": "Concurs o valoració de mèrits",
+      "places": 1,
+      "inici": null,
+      "fi": "2026-11-27",
+      "hora_fi": "23:59",
+      "observacions_termini": null,
+      "url": "https://cido.diba.cat/oposicions/22540876"
+    },
+    {
+      "id": "22540923",
+      "identificador": "20261120O105",
+      "titol": "1 plaça d'Investigador postdoctoral amb destinació a l'Institut de Neurociències",
+      "institucio": "Universitat Autònoma de Barcelona (UAB)",
+      "ambit": "Altres entitats públiques",
+      "borsa_treball": false,
+      "tipus_personal": "Laboral temporal",
+      "grup_titulacio": "A1 - Grau universitari (correspondència amb llicenciatures)",
+      "sistema_seleccio": "Concurs o valoració de mèrits",
+      "places": 1,
+      "inici": null,
+      "fi": "2026-11-27",
+      "hora_fi": null,
+      "observacions_termini": null,
+      "url": "https://cido.diba.cat/oposicions/22540923"
+    },
+    {
+      "id": "22540958",
+      "identificador": "20261120O106",
+      "titol": "1 plaça de Tècnic superior de Suport a la Recerca amb destinació al Departament de Geografia",
+      "institucio": "Universitat Autònoma de Barcelona (UAB)",
+      "ambit": "Altres entitats públiques",
+      "borsa_treball": false,
+      "tipus_personal": "Laboral temporal",
+      "grup_titulacio": "A1 - Grau universitari (correspondència amb llicenciatures)",
+      "sistema_seleccio": "Concurs o valoració de mèrits",
+      "places": 1,
+      "inici": null,
+      "fi": "2026-11-27",
+      "hora_fi": null,
+      "observacions_termini": null,
+      "url": "https://cido.diba.cat/oposicions/22540958"
     },
     {
       "id": "22406009",
@@ -16259,7 +16310,7 @@
     {
       "id": "22529236",
       "identificador": "20261118O138",
-      "titol": "1 plaça de Tècnic de Grau Mitja a l'Administració de Centre de Dret - Departament de Ciència Política, Dret Constitucional i Filosofia del Dret",
+      "titol": "1 plaça de Tècnic de Grau Mitjà a l'Administració de Centre de Dret - Departament de Ciència Política, Dret Constitucional i Filosofia del Dret",
       "institucio": "Universitat de Barcelona (UB)",
       "ambit": "Altres entitats públiques",
       "borsa_treball": false,
@@ -18078,7 +18129,7 @@
     {
       "id": "22527300",
       "identificador": "20261119O23",
-      "titol": "1 plaça de Coordinador personal atenció directa per al Servei d'Atenció Domiciliaria de Mataró",
+      "titol": "1 plaça de Coordinador de personal d'atenció directa per al Servei d'Atenció Domiciliaria de Mataró",
       "institucio": "Consorci de Salut i d'Atenció Social de Catalunya - Fundació S21",
       "ambit": "Altres entitats públiques",
       "borsa_treball": false,
@@ -18278,6 +18329,23 @@
       "hora_fi": null,
       "observacions_termini": "Data orientativa; si teniu algun dubte, consulteu l'ens convocant / Obert fins a trobar la persona candidata adequada",
       "url": "https://cido.diba.cat/oposicions/22540415"
+    },
+    {
+      "id": "22541075",
+      "identificador": "20261120O107",
+      "titol": "1 plaça de Coordinador de mobilitat internacional IN i pràctiques",
+      "institucio": "Universitat Internacional de Catalunya (UIC)",
+      "ambit": "Altres entitats públiques",
+      "borsa_treball": false,
+      "tipus_personal": "Laboral temporal",
+      "grup_titulacio": "A1 - Grau universitari (correspondència amb llicenciatures)",
+      "sistema_seleccio": "Concurs o valoració de mèrits",
+      "places": 1,
+      "inici": null,
+      "fi": "2026-12-05",
+      "hora_fi": null,
+      "observacions_termini": "Data orientativa; si teniu algun dubte, consulteu l'ens convocant / Obert fins a trobar la persona candidata adequada",
+      "url": "https://cido.diba.cat/oposicions/22541075"
     },
     {
       "id": "18041139",
@@ -25059,7 +25127,7 @@
       "inici": "2018-06-16",
       "fi": null,
       "hora_fi": null,
-      "observacions_termini": "Es poden presentar instàncies a partir del tancament del termini que seran tingudes en compte si s'esgota la relació de persones seleccionades",
+      "observacions_termini": "Obert permanentment",
       "url": "https://cido.diba.cat/oposicions/7898363"
     },
     {

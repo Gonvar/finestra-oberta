@@ -2137,6 +2137,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "09:00",
+            "titol": "Acompanyament a les Fires de Tàrrega, Mediterrània, Trapezi i Titelles de Lleida a la Jornada dels 20 anys de la Coordinadora de Fires d'arts escèniques",
+            "detalls": [
+              "Palacio de Longoria en Fernando VI, Madrid"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -5089,6 +5099,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-20"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "18:00",
+            "titol": "Jornada dels Economistes 2026",
+            "detalls": [
+              "Auditori Palau de Congressos de Girona - Sala Cambra, Girona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -11159,6 +11179,10 @@
             ],
             "enllacos": [
               {
+                "text": "Video",
+                "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+              },
+              {
                 "text": "Ordre del dia",
                 "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
               }
@@ -11222,12 +11246,12 @@
               "baixa": "2026-06-19"
             },
             {
-              "organ": "Ponència: Proposició de llei de modificació del text refós de la Llei de finances públiques de Catalunya, aprovat pel Decret legislatiu 3/2002, del 24 de desembre",
+              "organ": "Ponència: Projecte de llei del Codi de finances públiques de Catalunya i d'aprovació del llibre primer, relatiu a les disposicions generals",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1313",
               "alta": "2026-04-22"
             },
             {
-              "organ": "Ponència: Projecte de llei del Codi de finances públiques de Catalunya i d'aprovació del llibre primer, relatiu a les disposicions generals",
+              "organ": "Ponència: Proposició de llei de modificació del text refós de la Llei de finances públiques de Catalunya, aprovat pel Decret legislatiu 3/2002, del 24 de desembre",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1313",
               "alta": "2026-04-22"
             },
@@ -14291,6 +14315,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "17:00",
+            "titol": "Commemoració del Dia Internacional per a l'Eliminació de les Violències vers les Dones",
+            "detalls": [
+              "Monestir de Santa Maria de Santa Oliva"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -15207,6 +15241,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "10:00",
+            "titol": "Jornada \"L'impuls de la FP Dual. Oportunitats i sortides professionals\"",
+            "detalls": [
+              "Hotel Carlemany, Girona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -15586,6 +15630,16 @@
               }
             ],
             "publicat": "2026-10-30"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "11:30",
+            "titol": "Tomb dels Avis i Àvies per la Llibertat de Reus amb Lluís Puig",
+            "detalls": [
+              "Plaça del Mercadal, Reus"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -16520,6 +16574,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "19:00",
+            "titol": "Presentació del llibre «Amadeu Hurtado, l'eminència grisa\"",
+            "detalls": [
+              "Llibreria Ona, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -22231,6 +22295,10 @@
             ],
             "enllacos": [
               {
+                "text": "Video",
+                "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+              },
+              {
                 "text": "Ordre del dia",
                 "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
               }
@@ -23520,6 +23588,10 @@
               "Emissió en directe"
             ],
             "enllacos": [
+              {
+                "text": "Video",
+                "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+              },
               {
                 "text": "Ordre del dia",
                 "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
@@ -26781,6 +26853,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "11:30",
+            "titol": "Tomb dels Avis i Àvies per la Llibertat de Reus amb Lluís Puig",
+            "detalls": [
+              "Plaça del Mercadal, Reus"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -28596,6 +28678,10 @@
               "Emissió en directe"
             ],
             "enllacos": [
+              {
+                "text": "Video",
+                "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+              },
               {
                 "text": "Ordre del dia",
                 "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
@@ -45678,6 +45764,10 @@
             ],
             "enllacos": [
               {
+                "text": "Video",
+                "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+              },
+              {
                 "text": "Ordre del dia",
                 "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
               }
@@ -53094,6 +53184,10 @@
             ],
             "enllacos": [
               {
+                "text": "Video",
+                "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+              },
+              {
                 "text": "Ordre del dia",
                 "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
               }
@@ -53816,6 +53910,10 @@
               "Emissió en directe"
             ],
             "enllacos": [
+              {
+                "text": "Video",
+                "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+              },
               {
                 "text": "Ordre del dia",
                 "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
@@ -57185,6 +57283,10 @@
             ],
             "enllacos": [
               {
+                "text": "Video",
+                "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+              },
+              {
                 "text": "Ordre del dia",
                 "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
               }
@@ -58283,6 +58385,36 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-18"
+          },
+          {
+            "data": "2026-11-22",
+            "hora": "10:00",
+            "titol": "Taules informatives L'H 29N",
+            "detalls": [
+              "L'Hospitalet de Llobregat"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "10:30",
+            "titol": "Visita al Parlament de Catalunya amb estudiants d'ECS Barcelona (European Communication School) , Mediaschool",
+            "detalls": [
+              "Parlament de Catalunya"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "12:30",
+            "titol": "Reunió de treball amb la direcció del Grup Parlamentari Socialistes i Units per Avançar",
+            "detalls": [
+              "Parlament de Catalunya"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           },
           {
             "data": "2026-11-24",

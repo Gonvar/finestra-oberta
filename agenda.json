@@ -12710,6 +12710,10 @@
         ],
         "enllacos": [
           {
+            "text": "Video",
+            "url": "https://www.parlament.cat/ext/f?p=CP19:DETALL_VIDEO:0:::15:P15_ID_VIDEO:17863078"
+          },
+          {
             "text": "Ordre del dia",
             "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0139615005"
           }
@@ -12769,6 +12773,18 @@
         ],
         "publicat": "2026-11-12",
         "categoria": "Sessions dels òrgans"
+      },
+      {
+        "data": "2026-11-24",
+        "hora": "12:20",
+        "titol": "Conferència de premsa dels grups d'ERC, Comuns i CUP-DT amb familiars dels vaguistes en presó preventiva detinguts durant la vaga general de l'11 de novembre",
+        "detalls": [
+          "Sala de conferències de premsa",
+          "Emissió en directe"
+        ],
+        "enllacos": [],
+        "publicat": "2026-11-23",
+        "categoria": "Conferències de premsa"
       },
       {
         "data": "2026-11-24",

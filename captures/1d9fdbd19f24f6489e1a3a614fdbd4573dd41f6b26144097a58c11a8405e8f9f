@@ -1,0 +1,1637 @@
+{
+  "id" : "vdss-2ppz",
+  "name" : "Declaracions d'activitats públiques i privades d’alts càrrecs i directius públics de la Generalitat de Catalunya",
+  "assetType" : "dataset",
+  "attribution" : "Secretaria d'Administració i Funció Pública",
+  "attributionLink" : "https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/",
+  "averageRating" : 0,
+  "category" : "Sector Públic",
+  "createdAt" : 1764757029,
+  "description" : "Declaracions d'activitats professionals, mercantils o industrials que podrien conduir a incompatibilitats d’alts càrrecs i directius públics de la Generalitat de Catalunya. Inclou també les declaracions que certifiquen la no realització de cap activitat considerada incompatible i les declaracions sobre les activitats que podrien ser compatibles, presentades pels alts càrrecs i directius públics subjectes a la Llei 13/2005, de 27 de desembre. Aquesta llei regula el règim d'incompatibilitats dels alts càrrecs que serveixen a la Generalitat.\n\nEls alts càrrecs i directius al servei de la Generalitat han d’informar de les seves activitats en el moment del nomenament i del cessament en el seu càrrec, i cada cop que es produeixin variacions respecte de les dades declarades. Disposen d’un termini de 3 mesos per presentar la documentació prevista a la Llei 13/2005.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 481,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "SEE_TERMS_OF_USE",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 3079727,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1764758057,
+  "publicationGroup" : 2069576,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1793260030,
+  "rowsUpdatedBy" : "ae67-24a3",
+  "tableId" : 2069576,
+  "totalTimesRated" : 0,
+  "viewCount" : 2768,
+  "viewLastModified" : 1795417739,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1767879666,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 1539443,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1767879666,
+    "targetAudience" : "public",
+    "workflowId" : 182,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1767879666,
+      "failureCount" : 0,
+      "startedAt" : 1767879666,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "9rf2-9pth",
+      "displayName" : "SGOID"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 27130683,
+    "name" : "Nom",
+    "dataTypeName" : "text",
+    "description" : "Nom de l’alt càrrec o directiu/va",
+    "fieldName" : "nom",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393401,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Yolanda",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Jordi",
+        "count" : "11"
+      }, {
+        "item" : "Jaume",
+        "count" : "10"
+      }, {
+        "item" : "Núria",
+        "count" : "9"
+      }, {
+        "item" : "Xavier",
+        "count" : "9"
+      }, {
+        "item" : "Antoni",
+        "count" : "7"
+      }, {
+        "item" : "Joan",
+        "count" : "7"
+      }, {
+        "item" : "Cristina",
+        "count" : "7"
+      }, {
+        "item" : "Albert",
+        "count" : "6"
+      }, {
+        "item" : "Anna",
+        "count" : "6"
+      }, {
+        "item" : "Daniel",
+        "count" : "6"
+      }, {
+        "item" : "Lluís",
+        "count" : "6"
+      }, {
+        "item" : "David",
+        "count" : "6"
+      }, {
+        "item" : "Miquel",
+        "count" : "6"
+      }, {
+        "item" : "Carme",
+        "count" : "5"
+      }, {
+        "item" : "Francesc",
+        "count" : "5"
+      }, {
+        "item" : "Olga",
+        "count" : "5"
+      }, {
+        "item" : "Marta",
+        "count" : "5"
+      }, {
+        "item" : "Ramon",
+        "count" : "5"
+      }, {
+        "item" : "Josep",
+        "count" : "5"
+      }, {
+        "item" : "Ester",
+        "count" : "4"
+      } ],
+      "smallest" : "Abel",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130682,
+    "name" : "Primer cognom",
+    "dataTypeName" : "text",
+    "description" : "Primer cognom de l’alt càrrec o directiu/va",
+    "fieldName" : "primer_cognom",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393400,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Yuguero",
+      "null" : "0",
+      "top" : [ {
+        "item" : "García",
+        "count" : "8"
+      }, {
+        "item" : "Pérez",
+        "count" : "7"
+      }, {
+        "item" : "Fernández",
+        "count" : "6"
+      }, {
+        "item" : "Garcia",
+        "count" : "5"
+      }, {
+        "item" : "Gil",
+        "count" : "4"
+      }, {
+        "item" : "Ruiz",
+        "count" : "4"
+      }, {
+        "item" : "Martínez",
+        "count" : "4"
+      }, {
+        "item" : "Romero",
+        "count" : "4"
+      }, {
+        "item" : "Roca",
+        "count" : "4"
+      }, {
+        "item" : "Giménez",
+        "count" : "3"
+      }, {
+        "item" : "López",
+        "count" : "3"
+      }, {
+        "item" : "Moreno",
+        "count" : "3"
+      }, {
+        "item" : "Molina",
+        "count" : "3"
+      }, {
+        "item" : "Serra",
+        "count" : "3"
+      }, {
+        "item" : "Vives",
+        "count" : "3"
+      }, {
+        "item" : "Marín",
+        "count" : "2"
+      }, {
+        "item" : "Aguilar",
+        "count" : "2"
+      }, {
+        "item" : "Prat",
+        "count" : "2"
+      }, {
+        "item" : "Guitart",
+        "count" : "2"
+      }, {
+        "item" : "Font",
+        "count" : "2"
+      } ],
+      "smallest" : "Agudo",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130681,
+    "name" : "Segon cognom",
+    "dataTypeName" : "text",
+    "description" : "Segon cognom de l’alt càrrec o directiu/va",
+    "fieldName" : "segon_cognom",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393399,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Zapater",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Rodríguez",
+        "count" : "4"
+      }, {
+        "item" : "López",
+        "count" : "4"
+      }, {
+        "item" : "Torres",
+        "count" : "4"
+      }, {
+        "item" : "González",
+        "count" : "3"
+      }, {
+        "item" : "Moreno",
+        "count" : "3"
+      }, {
+        "item" : "Álvarez",
+        "count" : "3"
+      }, {
+        "item" : "N/A",
+        "count" : "3"
+      }, {
+        "item" : "Muñoz",
+        "count" : "2"
+      }, {
+        "item" : "Meneses",
+        "count" : "2"
+      }, {
+        "item" : "i Font",
+        "count" : "2"
+      }, {
+        "item" : "Gómez",
+        "count" : "2"
+      }, {
+        "item" : "Martí",
+        "count" : "2"
+      }, {
+        "item" : "Pascual",
+        "count" : "2"
+      }, {
+        "item" : "Roca",
+        "count" : "2"
+      }, {
+        "item" : "Marín",
+        "count" : "2"
+      }, {
+        "item" : "Torrent",
+        "count" : "2"
+      }, {
+        "item" : "Hernández",
+        "count" : "2"
+      }, {
+        "item" : "Ferrer",
+        "count" : "2"
+      }, {
+        "item" : "Garriga",
+        "count" : "2"
+      }, {
+        "item" : "Fernández",
+        "count" : "2"
+      } ],
+      "smallest" : "Abella",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130680,
+    "name" : "Departament",
+    "dataTypeName" : "text",
+    "description" : "Departament en el qual és alt càrrec o directiu/va",
+    "fieldName" : "departament",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393398,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Departament d'Unió Europea i Acció Exterior",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Departament de la Presidència",
+        "count" : "71"
+      }, {
+        "item" : "Departament de Salut",
+        "count" : "65"
+      }, {
+        "item" : "Departament de Territori, Habitatge i Transició Ecològica",
+        "count" : "45"
+      }, {
+        "item" : "Departament d'Unió Europea i Acció Exterior",
+        "count" : "32"
+      }, {
+        "item" : "Departament d'Empresa i Treball",
+        "count" : "23"
+      }, {
+        "item" : "Departament d'Economia i Finances",
+        "count" : "22"
+      }, {
+        "item" : "Departament de Drets Socials i Inclusió",
+        "count" : "18"
+      }, {
+        "item" : "Departament d'Educació i Formació Professional",
+        "count" : "18"
+      }, {
+        "item" : "Departament de Cultura",
+        "count" : "15"
+      }, {
+        "item" : "Departament de Justícia i Qualitat Democràtica",
+        "count" : "15"
+      }, {
+        "item" : "Departament d'Igualtat i Feminisme",
+        "count" : "13"
+      }, {
+        "item" : "Departament de Recerca i Universitats",
+        "count" : "12"
+      }, {
+        "item" : "Departament d'Interior i Seguretat Pública",
+        "count" : "12"
+      }, {
+        "item" : "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
+        "count" : "11"
+      }, {
+        "item" : "Departament d'Esports",
+        "count" : "6"
+      }, {
+        "item" : "Departament de Política Lingüística",
+        "count" : "4"
+      } ],
+      "smallest" : "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130679,
+    "name" : "Càrrec",
+    "dataTypeName" : "text",
+    "description" : "Nom del càrrec que exerceix l’alt càrrec o directiu/va",
+    "fieldName" : "carrec",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393397,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Vocal de la Comissió de Garantia del Dret d'Accés a la Informació Pública",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Secretari general",
+        "count" : "11"
+      }, {
+        "item" : "Directora de Serveis",
+        "count" : "10"
+      }, {
+        "item" : "Consellera",
+        "count" : "9"
+      }, {
+        "item" : "Conseller",
+        "count" : "7"
+      }, {
+        "item" : "Secretària general",
+        "count" : "6"
+      }, {
+        "item" : "Director de Serveis",
+        "count" : "6"
+      }, {
+        "item" : "Conseller del Consell de Govern de la Corporació Catalana de Mitjans Audiovisuals (CCMA)",
+        "count" : "3"
+      }, {
+        "item" : "Consellera del Consell de Govern de la Corporació Catalana de Mitjans Audiovisuals (CCMA)",
+        "count" : "2"
+      }, {
+        "item" : "Vocal de la Comissió de Garantia del Dret d'Accés a la Informació Pública",
+        "count" : "2"
+      }, {
+        "item" : "Director general d'Infraestructures de Mobilitat",
+        "count" : "2"
+      }, {
+        "item" : "Directora executiva de l'Institut Català de les Dones",
+        "count" : "2"
+      }, {
+        "item" : "Directora Artística del Teatre Nacional de Catalunya, SA",
+        "count" : "1"
+      }, {
+        "item" : "Directora general del Consorci Sanitari Integral",
+        "count" : "1"
+      }, {
+        "item" : "Directora de Contractació d'Infraestructures de la Generalitat de Catalunya, SAU",
+        "count" : "1"
+      }, {
+        "item" : "Gerent d'Atenció Primària i a la Comunitat de Tarragona. Institut Català de la Salut",
+        "count" : "1"
+      }, {
+        "item" : "Secretària d'Afers Socials i Inclusió",
+        "count" : "1"
+      }, {
+        "item" : "Directora general de Recerca",
+        "count" : "1"
+      }, {
+        "item" : "Delegat del Govern de la Generalitat de Catalunya al Con Sud",
+        "count" : "1"
+      }, {
+        "item" : "Directora general de Polítiques del Litoral",
+        "count" : "1"
+      }, {
+        "item" : "President del Consell d'Administració de Ferrocarrils de la Generalitat",
+        "count" : "1"
+      } ],
+      "smallest" : "Administrador de Logaritme, Serveis Logistics, AIE",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130678,
+    "name" : "Situació del càrrec",
+    "dataTypeName" : "text",
+    "description" : "Estat actual (Actiu / Inactiu) de l’alt càrrec o directiu/va",
+    "fieldName" : "situaci_carrec",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393396,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Inactiu",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Actiu",
+        "count" : "364"
+      }, {
+        "item" : "Inactiu",
+        "count" : "18"
+      } ],
+      "smallest" : "Actiu",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130677,
+    "name" : "Data de nomenament",
+    "dataTypeName" : "text",
+    "description" : "Data de nomenament de l’alt càrrec o directiu/va",
+    "fieldName" : "data_nomenament",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393395,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "9/6/2021",
+      "null" : "0",
+      "top" : [ {
+        "item" : "4/9/2024",
+        "count" : "28"
+      }, {
+        "item" : "28/8/2024",
+        "count" : "28"
+      }, {
+        "item" : "12/8/2024",
+        "count" : "17"
+      }, {
+        "item" : "18/9/2024",
+        "count" : "15"
+      }, {
+        "item" : "12/9/2024",
+        "count" : "14"
+      }, {
+        "item" : "1/7/2024",
+        "count" : "13"
+      }, {
+        "item" : "11/3/2022",
+        "count" : "7"
+      }, {
+        "item" : "9/10/2024",
+        "count" : "7"
+      }, {
+        "item" : "26/9/2024",
+        "count" : "6"
+      }, {
+        "item" : "2/10/2024",
+        "count" : "5"
+      }, {
+        "item" : "16/10/2024",
+        "count" : "5"
+      }, {
+        "item" : "3/11/2022",
+        "count" : "4"
+      }, {
+        "item" : "10/4/2025",
+        "count" : "4"
+      }, {
+        "item" : "2/6/2021",
+        "count" : "3"
+      }, {
+        "item" : "23/10/2024",
+        "count" : "3"
+      }, {
+        "item" : "7/5/2025",
+        "count" : "3"
+      }, {
+        "item" : "19/2/2026",
+        "count" : "3"
+      }, {
+        "item" : "30/10/2024",
+        "count" : "3"
+      }, {
+        "item" : "16/5/2022",
+        "count" : "3"
+      }, {
+        "item" : "19/10/2022",
+        "count" : "3"
+      } ],
+      "smallest" : "10/4/2025",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130676,
+    "name" : "Data de cessament",
+    "dataTypeName" : "text",
+    "description" : "Data en què ha cessat del càrrec",
+    "fieldName" : "data_cessament",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393394,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "364"
+      }, {
+        "item" : "20/7/2026",
+        "count" : "2"
+      }, {
+        "item" : "29/7/2026",
+        "count" : "2"
+      }, {
+        "item" : "4/9/2026",
+        "count" : "2"
+      }, {
+        "item" : "17/9/2026",
+        "count" : "1"
+      }, {
+        "item" : "26/6/2026",
+        "count" : "1"
+      }, {
+        "item" : "10/9/2026",
+        "count" : "1"
+      }, {
+        "item" : "7/5/2026",
+        "count" : "1"
+      }, {
+        "item" : "22/7/2026",
+        "count" : "1"
+      }, {
+        "item" : "15/9/2026",
+        "count" : "1"
+      }, {
+        "item" : "3/8/2026",
+        "count" : "1"
+      }, {
+        "item" : "13/9/2026",
+        "count" : "1"
+      }, {
+        "item" : "2/9/2026",
+        "count" : "1"
+      }, {
+        "item" : "21/10/2026",
+        "count" : "1"
+      }, {
+        "item" : "23/9/2026",
+        "count" : "1"
+      }, {
+        "item" : "3/9/2026",
+        "count" : "1"
+      } ],
+      "smallest" : "10/9/2026",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130675,
+    "name" : "Activitat pública 1 (segon lloc)",
+    "dataTypeName" : "text",
+    "description" : "Activitat pública compatible en un altre lloc en el sector públic sense retribució de caràcter fix i periòdic, autoritzada pel govern",
+    "fieldName" : "activitat_sector_public",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393393,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "371"
+      }, {
+        "item" : "1. Departament de Salut\nGerent\nInstitut d'Assistència Sanitària\nData de l'acord de Govern: 06/08/2024",
+        "count" : "1"
+      }, {
+        "item" : "1. Ajuntament de Barcelona. Responsable per al projecte de remodelació de Fira Montjuïc.\nData de l'acord de Govern: 26/11/2024",
+        "count" : "1"
+      }, {
+        "item" : "1. Departament de Cultura\n Agència Catalana del Patrimoni. Director",
+        "count" : "1"
+      }, {
+        "item" : "Exerceix la presidència dels òrgans de govern superior de les següents entitats:\n1. Consorci del Patronat de la Vall de Núria\n2. Euroregió Pirineus mediterrània\n3. Consorci del Gran Teatre del Liceu\n4. Consorci de la Comunitat de treballs dels Pirineus\n5. Consorci Casa Àsia\n6. Patronat Catalunya Món-Consell de Diplomàcia Pública de Catalunya (PCM-DIPLOCAT)\n7. Consorci Palau de la Música Catalana\n8. Patronat de la Muntanya de Montserrat\n9. Consorci de l'Institut Ramon Llull",
+        "count" : "1"
+      }, {
+        "item" : "1. Departament de Salut:\nGerent\nImatge Mèdica Intercentres, SL\nData de l'acord de Govern:\n18/12/2019",
+        "count" : "1"
+      }, {
+        "item" : "1. Departament d'Empresa i Treball. Agència de Competitivitat de l'Empresa (ACCIÓ). Conseller Delegat\nData de l'acord de Govern: 12/09/2024",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió de Coordinació dels Fons Europeus del Marc Estratègic Comú. President\n2. Comissió Interdepartamental de Programes de la Unió Europea. Vicepresident\n3. Comissió per a la Facilitació de l'Activitat Econòmica. Representant al Grup de Treball per Agilitar Tràmits Administratius\n4. Comitè de Gestió del Mecanisme de Descoberta d'Oportunitats (MDO). Vicepresident\n5. Comitè de Seguiment del Programa operatiu del FEDER de Catalunya 2021-2027. Representant\n6. Conferència Sectorial per a la Millora Regulació i el Clima de Negocis. Representant a la Comissió Sectorial\n7. Consorci Parc de Recerca Biomèdica de Barcelona (PRBB). Vocal del Consell Rector i Vocal de la Comissió Executiva",
+        "count" : "1"
+      }, {
+        "item" : "1. Departament: Departament de la Vicepresidència i d'Economia i Hisenda:\n \n- Centre directiu, organisme o ens públic: Intervenció General\n- Càrrec: director general de la Intervenció. Encàrrec en funcions per a la resolució de 27 de gener de 2020 del Vicepresident del Govern i Conseller d'Economia i Hisenda\n- Data de l'Acord de Govern: 27/01/2020",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració de l'Entitat Autònoma del Diari Oficial i Publicacions (EADOP) (Decret 244/2019, art 3)\n2. Comissió de Seguiment del Contracte Programa entre l'Administració de la Generalitat i l'EADOP per al període 2023-2026 (Acord del Govern de 21.07.2020) Consell de l'Editorial (DA 4a. Decret 105/2025)",
+        "count" : "1"
+      }, {
+        "item" : "1. Departament de Salut\nHospital Clínic Barcelona\nMetge Consultor General (Nefrologia)\nData de l'acord de Govern: 10/05/2016",
+        "count" : "1"
+      }, {
+        "item" : "1. Departament d'Igualtat i Feminisme. \nInstitut Català de les Dones. \nCàrrec:  Presidència\n\nData de l'acord de Govern:\n08/10/2024",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Ajuntament de Barcelona. Responsable per al projecte de remodelació de Fira Montjuïc.\nData de l'acord de Govern: 26/11/2024",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130674,
+    "name" : "Activitat pública 2 (càrrecs)",
+    "dataTypeName" : "text",
+    "description" : "Activitat pública compatible de l’exercici dels càrrecs que corresponen institucionalment o per als quals ha estat designat/ada per la condició com a alt càrrec o directiu/va",
+    "fieldName" : "exercici_carrecs",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393392,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "256"
+      }, {
+        "item" : "1. Consell d'Administració de l'Agència de Ciberseguretat de Catalunya (Acord GOV/87/2025, art.1) \n2. Consell General del Consorci Administració Oberta de Catalunya (AOC) (Acord del Govern de 30.09.2025)\n3. Comissió executiva del Consorci Administració Oberta de Catalunya (AOC) (Acord del Govern de 30.09.2025)\n4. Consell de Direcció de l'Entitat Autònoma del Diari Oficial i de Publicacions (EADOP). Decret 244/2019, article 3\n5. Comissió del Sector Públic Institucional (Decret 228/2019, art. 12)\n6. Comissió Tècnica del CeAC (Decret 228/2019, art. 8)\n7. Comissió Interdepartamental de Govern Obert. (Decret 400/2021, article 3, en la redacció donada pel Decret 49/2024)\n8. Comissió de Coordinació del Funcionament de la Gestió Transversal i Centralitzada de les TIC (Acord GOV/144/2011)\n9. Consell Estratègic d'Administració Digital\n10. Comissió de Protecció Civil de Catalunya\n11. Patronat de la Fundació TIC Social\n12. Comissió Interdepartamental d'Arxius i Gestió Documental",
+        "count" : "1"
+      }, {
+        "item" : "1. Agència Tributària de Catalunya (ATC) Vocal nat i secretari de la Junta de Govern\n2. Loteries de Catalunya, SAU. Vocal del Consell d'Administració\n3. Fundació Privada Catalana per a l'Ensenyament de l'Idioma Anglès i l'Educació en Anglès. Patró i secretari del Patronat\n4. Junta Arbitral de Resolució de Conflictes en matèria de Tributs Cedits. Vocal",
+        "count" : "1"
+      }, {
+        "item" : "1. Presidència de la European Network of Advisory Councils on the Environment and Sustainable Development (EEAC Network)\n2. Membre de l'Steering Committee network of Mediterranean Experts on Climate and environmental Change (MedECC)",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell de Direcció de AGAUR\n2. Consell de Govern de AQU\n3. Patronat de I-CERCA\n4. Patronat de ICREA\n5. Patronat de Agrotecnio\n6. Patronat de CRG\n7. Patronat de CTTC\n8. Patronat de FRCB-IDIBAPS\n9. Patronat de I2CAT\n10. Patronat de I3PT\n11. Patronat de IBEC\n12. Patronat de ICFO\n13. Patronat de ICIQ\n14. Patronat de ICN2\n15. Patronat de ICP\n16. Patronat de ICRA\n17. Patronat de ICRPC\n18. Patronat de IDIBELL\n19. Patronat de IdIBGi\n20. Patronat de IEEC\n21. Patronat de IGTP\n22. Patronat de IISPV\n23. Patronat de IJC\n24. Patronat IMIM\n25. Patronat de IPHES\n26. Patronat de IRB Barcelona\n27. Patronat de IRB Lleida\n28. Patronat de IREC\n29. Patronat de IR-HSCSP\n30. Patronat de VHIO\n31. Patronat de VHIR\n32.  Patronat de b-TEC\n33. Comissió Delegada de b-TEC\n34. Patronat de FCRI\n35. Patronat de FEA\n36. Patronat de FOE\n37. Patronat de IDIAP\n38. Patronat de Marató TV3\n39. Patronat de PCB\n40. Consell d'Administració de IRTA\n41. Consell Rector de BSC\n42. Comissió Executiva de BSC\n43. Consell de Govern de CED\n44. Consell Rector de CELLS-ALBA\n45. Comissió Executiva de CELLS-ALBA\n46. Consell de Govern de CIIRC\n47. Consell de Govern de CIMNE\n48. Consell Rector de CNAG\n49. Comissió Executiva de CNAG\n50. Consell de Govern de CREAF\n51. Consell Rector de CREI\n52. Consell de Direcció de CRM\n53. Consell de Govern de CSUC\n54. Comissió Executiva de CSUC\n55. Junta de CTFC\n56. Consell de Govern de CVC\n57. Consell de Govern de HCB\n58. Consell de Direcció de ICAC\n59. Consell de Govern de IFAE\n60. Consell Rector de PRBB\n61. Comissió Executiva de PRBB\n62. Consell de RI\n63. Comisión de Seguimiento del Acuerdo del Consejo de Política de Ciencia sobre Planes Complementarios\n64. Ple de la Comissió Rectora del Sistema de Formació i Qualificació Professionals\n65. Comissió Interdepartamental del Canvi Climàtic\n66. Consell de les Tecnologies Quàntiques de Catalunya\n67. Ple del Consell Català de Cogestió Marítima\n68. Consell Assessor de l'Institut Català del Vi\n69. Consell Assessor del Centre d'Història Contemporània de Catalunya\n70. Comissió de Recerca d'Arqueologia i Paleontologia\n71. Comissió Interdepartamental de Recerca i Innovació\n72. Comissió de coordinació del Pla d'Acció per al Desenvolupament de la Producció Ecològica de Catalunya 2023-2027\n73. Grup de coordinació interdepartamental en descarbonització de la indústria i la mobilitat i d'impuls de l'hidrogen\n74.  Comissió mixta de seguiment del Conveni de construcció del nou campus del Clínic\n75. Comitè Directiu del Programa de teràpies avançades i emergents en salut de Catalunya\n76. Comitè Executiu del Programa de teràpies avançades i emergents en salut de Catalunya\n77. Consell Interacademic de Catalunya\n78. Comissió Delegada del Consejo de Política Científica, Tecnológica y Innovación",
+        "count" : "1"
+      }, {
+        "item" : "1. Vicepresident primer del CNLGBTI de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Membre del Consejo Escolar del Estado",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell Rector CLILAB",
+        "count" : "1"
+      }, {
+        "item" : "1. Institut d'Estadística de Catalunya. Vocal de la Junta de Govern\n2. Institut d'Estadística de Catalunya. Vicepresident del Consell Rector del Sistema Estadístic de Catalunya\n3. Institut d'Estadística de Catalunya. Vocal del Consell Català d'Estadística\n4. Consorci Institut Català d'Avaluació de Polítiques Públiques (Ivàlua). Vocal del Consell Rector\n5. Comissió Interdepartamental d'Avaluació de Polítiques Públiques (CIAVA). Vocal\n6. Comissió Interdepartamental de govern per a la Recuperació Econòmica i la Governança dels Fons Next Generation EU. Vocal de la Comissió Interdepartamental\n7. Comitè de Gestió del Mecanisme de Descoberta d'Oportunitats (MDO). President\n8. Consell Assessor en Política Econòmica de Catalunya (CAPEC). Vocal\n9. Junta Arbitral de Resolució de Conflictes en matèria de Tributs Cedits. Vocal\n10. Junta Consultiva de Contractació Pública. Vocal del Comitè de Preus de Contractes de la Generalitat de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Agència Catalana de Turisme. Consell de direcció. President\n2. Agència Catalana de Turisme. Consell general de participació. President\n3. Agència Catalana de Consum (ACC). Consell de direcció. President\n4. Agència per a la Competitivitat de l'Empresa (ACCIÓ). Consell d'Administració. President\n5. Consell Assessor de la Generalitat de Catalunya en matèria de Comerç. Consell Assessor. President\n6. Consell Català de l'empresa. Consell. President\n7. Consell de les Persones Consumidores de Catalunya. Ple. President\n8. Consell de Relacions Laborals. Ple. President\n9. Consell del Diàleg Social. Consell. Membre\n10. Consell del Treball Autònom de Catalunya. Consell. President\n12. Consell Superior de la Cooperació. Consell. President\n13. Consorci de Comerç, Artesania i Moda de Catalunya (CCAM). Consell General. President\n14. Consorci de la Inspecció de Treball i Seguretat Social de Catalunya. Consell de Govern. President delegat\n15. Consorci Fira Internacional de Barcelona. Consell General. Vicepresident primer\n16. Empresa de Promoció i Localització Industrial de Catalunya, SA (Avançsa). Consell d'Administració. President\n17. Fundació Barcelona Capital Nàutica AC 24. Patronat. Patró\n18. Fundació Eurecat. Patronat. Membre\n19. Servei Públic d'Ocupació de Catalunya. Consell de Direcció. President",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell de Direcció\n2. Observatori de Dret Privat de Catalunya\n3. Presidència de l'Observatori Català de la Justícia en Violència Masclista\n4. Presidència del Grup de Treball AG 50 anys de la mort del dictador Francisco Franco\n5. Consell Interacadèmic de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Agència de Gestió d'Ajuts Universitaris i de Recerca\n2. Barcelona Supercomputing Center\n3. Consorci per a la Construcció, Equipament i Explotació del Laboratori de Llum Sincontró\n4. Consorci de Serveis Universitaris de Catalunya\n5. Institut Ramon Llull",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració del Laboratori de Referència de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1.Comissió Interdepartamental de Govern Obert. (Decret 400/2021, article 3, en la redacció donada pel Decret 49/2024)",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió de Seguiment del Diàleg Social. Membre\n2. Consell de Relacions Laborals. Membre titular\n3. Institut Català d'Avaluacions Mèdiques. Vocal\n4. Institut Català de la Salut. Vocal",
+        "count" : "1"
+      }, {
+        "item" : "1. Institut d'Estadística de Catalunya. Vocal del Consell Català d'Estadística. Vicepresident del Consell Rector del Sistema estadístic de Catalunya i Vocal de la Junta de Govern.\n2. Centre de Telecomunicacions i Tecnologies de la Informació. Vocal del Consell d'Administració\n3. Infraestructures Ferroviàries de Catalunya. Vocal del Consell d'Administració\n4. Comissió Bilateral d'Infraestructures. Representant\n5. Comissió de Col·laboració Interadministrativa. Representant\n6. Comissió de Coordinació de l'Aplicació de l'U per Cent Cultural. Vicepresident\n7. Comissió de Coordinació per a la Implantació de la Finestreta Única Empresarial (FUE), període 2019-2023. Representant (delegat en la DS)\n8. Comissió de Govern de la Renda Garantida de Ciutadania. Vocal titular\n9. Comissió de Retribucions i Despeses de Personal. President\n10. Comissió de seguiment del Contracte Programa entre la GC i el Consorci Institut Català d'Avaluació de Polítiques, període 2021-2024. Vocal\n11. Comissió de suport a la liquidació del del contracte de \"Gestió del servei d'abastament d'aigua en alta Ter-Llobregat. Vicepresident\n12. Comissió Gestora del Fons de Loteria. President\n13. Comissió Institucional de Fira de Barcelona. Secretari\n14. Comissió Interd. d'Acció exterior i de Relacions amb la Unió Europea. Vocal titular\n15. Comissió Interd. d'Avaluació de Polítiques Públiques. President\n16. Comissió Interd. de Govern Obert. Vocal\n17. Comissió Interd. de govern per a la Recuperació Econòmica i la Governança dels Fons Next Generation EU. Vocal i secretari de la Comissió Interdepartamental\n18. Comissió Interd. de govern per a la Recuperació Econòmica i la Governança dels Fons Next Generation EU. President de la comissió Tècnica de la CI\n19. Comissió Interd. del Pla d'estalvi i eficiència energètica dels edificis i equipaments de la Generalitat de Catalunya. Vicepresident\n20. Comissió Interd. per a la Sostenibilitat Econòmica del Sistema Sanitari de Catalunya. President\n21. Comissió Interd. per a l'elaboració del Pla Nacional per a la Implementació de l'Agenda 2030 a Catalunya. Representant\n22. Comissió Mixta d'Afers Econòmics i Fiscals Estat-Generalitat. Representant\n23. Comissió Mixta de Transferències Estat- Generalitat. Representant\n24. Comissió Mixta Generalitat de Catalunya-Ajuntament de Barcelona per a la revisió i el desplegament de la Carta municipal de Barcelona. Vocal titular\n25. Comissió Tècnica de la Funció Pública. Vocal\n26. Comissió Tècnica de Política Lingüística. Representant\n27. Comitè Estratègic d'Inversions de la Generalitat de Catalunya\n28. Comitè Estratègic d'Operacions de Concentració de Dependències Administratives de la Generalitat a Barcelona. President\n29. Consell Assessor en Política Econòmica de Catalunya. Vocal\n30. Consell Consultiu de l'Assegurança Privada. Vicepresident\n31. Consell Estratègic d'Administració Digital. Vocal titular\n32. Estratègia de lluita contra la corrupció i d'enfortiment de la integritat de l'Administració de la Generalitat i de les entitats del seu sector públic. Vocal del Grup director\n33. Gabinet de coordinació del Programa de coordinació de mesures postemergències en els casos de desastres naturals i altres emergències. Vocal\n34. Junta Consultiva de Contractació Administrativa. Comissió Permanent. President\n35. Junta Consultiva de Contractació Administrativa. Comitè de Preus de Contractes de la Generalitat de Catalunya. President\n36. Junta Consultiva de Contractació Administrativa. Oficina d'Avaluació de Partenariats Públics Privats. President \n37. Junta Consultiva de Contractació Administrativa. President del Ple\n38. Comissió Bilateral Govern de la Generalitat. Consell General d'Aran. Vocal\n39. Comissió mixta de seguiment del Conveni marc per a la construcció del campus de salut de l'Hospital Clínic. Representant\n40. Premis Alfons Ortuño (7a edició). Vocal del Jurat\n41. Consorci Casa Àsia. Vocal suplent\n42. Consorci d'Administració Oberta de Catalunya (AOC). Vocal suplent del Consell General",
+        "count" : "1"
+      }, {
+        "item" : "1. Vocal suplent Comissió de Territori de Catalunya\n2. Vocal suplent Comissió Interdepartamental activació sòl activitat econòmica.\n3. Vocal suplent Comissió Interdepartamental per al seguiment del conflicte a l’Orient Mitjà i les seves conseqüències econòmiques.\n4. Vocal del Consell de Cooperació al Desenvolupament",
+        "count" : "1"
+      }, {
+        "item" : "1. Vicepresidenta. Consell Direcció Agència Catalana de Turisme\n2. Vicepresidenta del Consell General de Participació de l'Agència Catalana de Turisme\n3. Membre. Consell Assessor Pla de Protecció Civil de Catalunya (PROCICAT)\n4. Presidenta. Consell Taula de Turisme de Catalunya\n5. Membre. Taula Estratègica de les Estacions de Muntanya (TEM)",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió Nacional contra Violències Masclistes\n2. Consell de Seguiment del Projecte barris\n3. Consell assessor de l'Habitatge \n4. Xarxa catalana pel Dret al Temps",
+        "count" : "1"
+      }, {
+        "item" : "1. Consorci Casa Àsia (representant de la Generalitat en la Comissió Delegada del Consell Rector)\n2. Consorci Catalunya Internacional. Vocal del Consell Executiu\n3. Fundació Casa Amèrica Catalunya. Representant de la Generalitat en el Patronat de la Fundació\n4. Consorci Institut Ramon LLull. Vocal representant de la Generalitat en el Consell de Direcció del Consorci\n5. IEMed. Vocal representant de la Generalitat en la Junta de Govern. Vocal representant de la Generalitat en la Comissió Delegada",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Aeroports Públics de Catalunya, SLU (APC)\n2. Assemblea Urbana de Catalunya/Agenda Urbana de Catalunya (AUC)\n3. Consorci Autoritat del Transport Metropolità (ATM). Vocal del Consell d'Administració en representació DTER i president del Comitè Executiu i vocal representant al Consell de la Mobilitat\n4. Barcelona Sagrera Alta Velocitat (BSAV). Vocal representant DTER al Consell d'Administració\n5. Central i Infraestructures per a la Mobilitat i les Activitats Logístiques, SA (CIMALSA). Vicepresident i vocal del Consell d'Administració\n6. Consorci de la Zona Franca de Barcelona (ZAL). Vocal al Plenari\n7. Comissió Interdepartamental per a la Implementació i el Seguiment de l'Estratègia Logística per a la internacionalització de l'Economia Catalana (ELIEC)\n8. Ferrocarrils de la Generalitat de Catalunya (FGC). Vicepresident del Consell d'Administració\n9. Ferrocarril Metropolità de Barcelona, SA (FMB). Vocal al Consell d'Administració\n10. Infraestructures Ferroviàries de Catalunya (IFERCAT). Vocal i President del Consell d'Administració\n11. Consell d'Administració de la societat Marina Badalona, SA. Vocal Consell Administració\n12. Ports de la Generalitat (PG). President del Comitè Executiu\n13. Comissió de Seguiment del Conveni de delegació de les competències per a la gestió directa del Port Olímpic de Barcelona\n14. Taula de Mobilitat de les Terres de l'Ebre. Representant Generalitat de Catalunya\n15. Taula de Mobilitat del Penedès. Representant Generalitat de Catalunya\n16. Taula de Mobilitat de la Catalunya Central. Representant Generalitat de Catalunya\n17. Taula estratègica de les estacions de muntanya. Representant Generalitat de Catalunya\n18. Transport de Barcelona, SA (FMB). Vocal al Consell d'Administració",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130673,
+    "name" : "Activitat pública 3 (òrgans col·legiats)",
+    "dataTypeName" : "text",
+    "description" : "Activitat pública compatible de representació de l'Administració de la Generalitat en els òrgans col·legiats",
+    "fieldName" : "representacio_organs_colegiats",
+    "position" : 11,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393391,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Participació en els òrgans col·legiats de les entitats de recerca en salut següents:\n1. Consorcio para Explotación del Centro Nacional de Análisis Genómico (CNAG)\n2. Fundació Privada Centre de Regulació Genòmica (CRG)\n3. Fundació de Recerca Clínic Barcelona - Institut d'Investigacions Biomèdiques August Pi i Sunyer (FRCBIDIBAPS)\n4. Fundació Institut d'Investigació i Innovació Parc Taulí (I3PT)\n5. Fundació Institució dels centres de recerca de Catalunya (I-CERCA)\n6. Fundació Institut Universitari per a la Recerca a l'Atenció Primària de Salut Jordi Gol i Gurina (IDIAP JGol)\n7. Fundació Institut d'Investigació Biomèdica de Bellvitge (IDIBELL)\n8. Fundació Institut d'Investigació Biomèdica de Girona Dr. Josep Trueta (IDIBGI)\n9. Fundació Institut d'Investigació en Ciències de la Salut Germans Trias i Pujol (IGTP)\n10. Fundació Institut d'Investigació Sanitària Pere Virgili (IISPV)\n11. Fundació Institut Hospital del Mar d'Investigacions Mèdiques (IMIM)\n12. Fundació Privada Institut de Bioenginyeria de Catalunya (IBEC)\n13. Institut de Recerca Biomèdica de LLeida Fundació Dr. Pifarré (IRB Lleida)\n14. Fundació Privada Institut de Recerca sobre Immunopatologies - Caixa IrsiCaixa\n15. Fundació La Marató de TV3\n16. Consorci Parc de Recerca Biomèdica (PRBB)\n17. Fundació Privada per a la Recerca i la Docència Sant Joan de Déu\n18. Fundació Institut de recerca de l'Hospital de la Santa Creu i Sant Pau\n19. Fundació Privada Institut d'Investigació Oncològica de Vall-Hebron (VHIO)\n20. Fundació Hospital Universitari Vall d'Hebron - Institut de Recerca (VHIR)\n21. Fundació Catalana per a la Recerca i la Innovació (FCRI)",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "273"
+      }, {
+        "item" : "1. Consell de la Policia\n2. Junta de Seguretat de Catalunya\n3. Consell Català de Cogestió Marítima\n4. Comissió Nacional de Protecció d'Infraestructures Crítiques",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Educació de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Consorci Badalona Sud. Ple. Vocal. Per designació \n2. Consell de Govern del Consorci Sant Gregori, de Girona. Consell de Govern. Presidència. Per designació \n3. Consorci de Serveis Socials de Barcelona. Consell de Govern. Vocal. Per designació\n4. Consorci Badalona Sud. Comissió Executiva Permanent. Vocal. Per designació \n5. Consorci del Barri de la Mina. Consell de Govern. Vocal. Per designació \n6. Comissió de Govern Local de Catalunya. Ple. Vocal. Per designació \n7. Infraestructures de la Generalitat de Catalunya, SAU. Consell d'Administració. Vocal. Per designació \n8. Consorci del Barri de la Mina. Comissió Executiva. Presidència. Per designació \n9. Centre de Telecomunicacions i Tecnologies de la Informació (CTTI). Consell d'Administració. Vocal. Per designació \n10. Comissió de Commemoracions. Vocal. Per designació \n11. Fundació TIC Salut i Social. Patró. Per designació\n12. Consorci de Badalona Sud. Comissió Executiva. Presidència. Per designació \n13. Societat Privada municipal Pla de Besòs, S.A. Consell d'Administració. Vocal. Per designació \n14. Comissió de Cooperació Local de Catalunya. Vocal. Per designació \n15. Consorci de Serveis Socials de Barcelona. Consell de Govern. Vocal. Per designació\n16. Consell de Govern del Consorci Sant Gregori, de Girona. Consell de Govern. Presidència. Per designació \n17. Fundació TIC Salut i Social. Patrons. Per designació",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió de Coordinació Cartogràfica de Catalunya\n2. Consell Català d'Estadística \n3. Comissió delimitació territorial\n4. Comissió de Toponímia\n5. Comissió de Protecció Civil",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió per a la conservació de les espècies aqüícoles\n2. Comissió de coordinació cartogràfica de Catalunya\n3. Comissió Interdepartamental de Transició Energètica",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració del Centre d'Alt Rendiment de Sant Cugat",
+        "count" : "1"
+      }, {
+        "item" : "1. Agència per a la Competitivitat de l'Empresa (ACCIÓ). Vocal del Consell d'Administració \n2. Instruments Financers per a Empreses innovadores, SL (IFEM). Vocal del Consell d'Administració\n3. Consorci de Comerç, Artesania i Moda de Catalunya. Vocal del Consell General",
+        "count" : "1"
+      }, {
+        "item" : "1. Vicepresidenta. Junta Directiva AGI (Assoc. Promoció i Desenvolupament Comarques Gironines)\n2. Representant en matèria de turisme. Comissió d'Espectacles Públics i d'Activitats Recreatives\n3. Vocal en matèria de turisme. Comissió Interdepartamental d'Espectacles Públics i Activitats Recreatives\n4. Vocal titular. Comitè Bilateral del Fons de Foment del Turisme\n5. Membre. Comitè d'Emergència Municipal Pla Especial d'Emergències per Nevades a Catalunya (NEUCAT)\n6. Membre. Consell Assessor Pla Especial d'Emergències per Nevades a Catalunya (NEUCAT)",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Educació de Catalunya (CEC)N. Vocal en representació del Departament d'Educació i Formació Professional\n2. Comissió de Govern de la Renda Garantida de Ciutadania. Com a representant del Departament d'Educació i Formació Professional",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió de Coordinació TIC. Vocal\n2. Comissió de Desplegament de l'Administració Digital. Vocal\n3. Comissió Tècnica del Comitè Executiu de l'Administració Digital. Vocal\n4. Comissió Interdepartamental d'Internet Segura. Vocal\n5. Comitè Ètic de les Dades. Vocal\n6. Comitè Direcció Salut IA. Vocal",
+        "count" : "1"
+      }, {
+        "item" : "1. Grup Interdepartamental de la Comissió Nacional per a una Intervenció Coordinada contra la Violència Masclista. Representant\n2. Comissió Interdepartamental de Recerca i Innovació (CIRI). Representant\n3. Comissió Interdepartamental d'Acció Exterior i de Relacions amb la Unió Europea (CIAERUE). Vocal\n4. Comissió Interdepartamental per a la Igualtat Efectiva de Dones i Homes (CIIEDH). Vocal\n5. Mesa política del Fons del Pacte d’Estat contra la Violència de Gènere. Membre\n6. Comissió bilateral entre el Departament de Justícia, Drets i Memòria i el Departament d'Igualtat i Feminismes per al seguiment de la implementació del programa de les UVFI. Representant\n7. Observatori Català de la Justícia en Violència Masclista. Secretaria Vicepresident\n8. Consell Pedagògic i Científic de l'Institut de Seguretat Pública de Catalunya. Vocal\n9. Comissió Interdepartamental per a l'Impuls i el Seguiment de l'Estratègia Nacional de Drets Sexuals i Reproductius. Vocal\n10. Comissió Interdepartamental per Elaborar el Pla per Combatre la Pressió Estètica. Vocal\n11. Consell Assessor de la Facultat d’Educació de la Universitat de Barcelona. Vocal\n12. Taula permanent del Pacte Nacional per a la Societat del Coneixement (PN@SC). Membre",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió Tècnica en Matèria de Documentació Clínica (vocal)\n2. Consell de Relacions Laborals (vocal)\n3. Comissió Interdepartamental per a l'Impuls i el Seguiment de l'Estratègia Nacional de Drets Sexuals i reproductius (vocal)",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell Rector de l'Institut Català de l'Acolliment i de l'Adopció\n2. Consorci de Serveis Socials de Barcelona\n3. Consorci del Barri de La Mina\n4. Consorci Badalona Sud",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració de l'ACCD\n2. Consell de Direcció del Departament d'Unió Europea i Acció Exterior\n3. Consell de Cooperació al Desenvolupament\n4. Comissió de Coordinació amb els Ens Locals\n5. Consell Català de Foment de la Pau\n6. Comissió Interdepartamental de Cooperació al Desenvolupament\n7. Comitè d'Acollida de les Persones Refugiades\n8. Comissió Interdepartamental d'Acció Exterior i de Relacions amb la Unió Europea\n9. Comissió de Relacions Internacionals del Consell Interuniversitari de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell Rector de l'Institut de Recerca per a la Governança del mar. Representant",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió Jurídica Assessora. Vocal nat\n2. Comissió Codificació Catalunya\n3. Observatori Dret Privat Catalunya\n4. Observatori Català de la Justícia\n5. Consell Rector Institut Estudis d'Autogovern\n6. Comissió Bilateral Generalitat-Estat i Subcomissió Seguiment Normatiu\n7. Prevenció i Solució de Conflictes\n8. Comissió Interdepartamental Govern Obert\n9. Comissió Interdepartamental d'Acció Exterior i Relacions amb Unió Europea\n10. Comissió Interdepartamental Mediació i Resolució Alternativa de Conflictes\n11. Junta Consultiva de Contractació Administrativa (ple i comissió permanent)\n12. Comissió mixta i Subcomissió tècnica Generalitat-Ajuntament de Barcelona\n13. Comissió Control Dispositius Videovigilància Catalunya \n14. Comissió d'Anàlisi i Seguiment Iniciatives Normatives de l'Estat (CASINE). Presidència",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió del Fons Climàtic. Vocal titular\n2. Comissió Interdepartamental de Governança Rural. Vocal titular\n3. Comissió Interdepartamental del Canvi Climàtic. Vocal titular\n4. Junta Consultiva de Contractació Pública. Oficina d'Avaluació de Partenariats Públics Privats. Vocal\n5. Comissió de seguiment i coordinació de la participació de l'Administració de la Generalitat a l'Exposició Universal Osaka 2025. Representant\n6. Comissió del Fons per al Foment del Turisme. Representant de la Comissió del Fons \n7. Comissió del Fons per al Foment del Turisme. Representant del Comitè Bilateral de gestió del Fons foment del turisme\n8. Comissió Interdepartamental de Polítiques de Joventut (CIPJ). Vocal titular\n9. Comissió Interdepartamental de Recerca i Innovació (CIRI). Vocal suplent\n10. Comissió Interdepartamental de Suport a les Famílies. Vocal titular del Ple\n11. Comissió Interdepartamental del Pla Integral del Poble Gitano. Vocal titular\n12. Comissió Interdepartamental d'Immigració. Vocal titular del Ple i de la Comissió Permanent\n13. Comissió Interdepartamental per a la Coordinació i la Gestió de les Actuacions Relacionades amb l'Eclipsi Solar Total de l'Any 2026. Vocal suplent (per delegació de la consellera)\n14. Comitè Interdepartamental de Lluita contra la Pobresa Infantil. Vocal titular\n15. Consell Assessor del Pla director de serveis de suport a les persones amb discapacitat en l'exercici de la seva capacitat jurídica. Vocal\n16. Grup de treball per l'impuls del vehicle elèctric. Vocal titular",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió de Govern Local de Catalunya. Vocal del Ple\n2. Consell Català de Cogestió Marítima. Vocal del Ple i vocal de la Comissió Permanent \n3. Consell de la Mobilitat. Vocal titular del Ple",
+        "count" : "1"
+      }, {
+        "item" : "1. Ple Consell General de Serveis Socials. Vocal\n2. Comissió Funcional Consell General de Serveis Socials. Vocal\n3. Comissió de Protecció Civil de Catalunya. Vocal",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Agència per a la Competitivitat de l'Empresa (ACCIÓ). Vocal del Consell d'Administració \n2. Instruments Financers per a Empreses innovadores, SL (IFEM). Vocal del Consell d'Administració\n3. Consorci de Comerç, Artesania i Moda de Catalunya. Vocal del Consell General",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130672,
+    "name" : "Activitat pública 4 (representació)",
+    "dataTypeName" : "text",
+    "description" : "Activitat pública compatible de representació de l'Administració de la Generalitat en consells d'administració o en els òrgans de govern d'organismes o empreses amb capital públic o d'entitats o organismes de dret públic",
+    "fieldName" : "representacio_consells",
+    "position" : 12,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393390,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Per delegació del director general de l'INCASÒL:\n1. Consell d'administració de l'Agència de l'Habitatge de Catalunya. Membre\n2. Consorci Metropolità de l'Habitatge de Barcelona i del Consorci de l'Habitatge de Barcelona. Membre\n3. Consell d'Administració de l'Institut Català del Sòl. Membre sense dret a vot",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "250"
+      }, {
+        "item" : "1. IFERCAT\n2. L'Energètica",
+        "count" : "1"
+      }, {
+        "item" : "1. Consorci de l'Habitatge de Barcelona. Junta General: Representant de la Generalitat de Catalunya\n2. Consorci de l'Habitatge de l'Àrea Metropolitana de Barcelona - CHAMB. Junta General. Representant de la Generalitat de Catalunya i vicepresident suplent\n3. Agència Catalana del Consum. Consell d'Administració. Representant del Departament de Territori, Habitatge i Transició Ecològica\n4. Pla de Besòs, SA. Consell d'Administració. Representant del Departament de Territori, Habitatge i Transició Ecològica",
+        "count" : "1"
+      }, {
+        "item" : "1. Autoritat del Transport Metropolità ATM. Consell Administració. Representant\n2. Agència de Residus de Catalunya (ARC). Consell de Direcció. Vocal\n3. ACA - Agència Catalana de l'Aigua. Consell Administració. Vocal suplent en representació del departament d'adscripció\n4. Servei Meteorològic de Catalunya (SMC). Consell Administració. Vocal\n5. IRTA - Institut d'Investigació i Tecnologia Agroalimentàries. Consell Administració. Vocal\n6. ICAEN - Institut Català d'Energia. Consell Administració. Vocal",
+        "count" : "1"
+      }, {
+        "item" : "1. Aeroports Públics de Catalunya, SL. Consell d'Administració. Vocal\n2. Infraestructures Ferroviàries de Catalunya IFERCAT. Consell d'Administració. Vocal\n3. ATM Lleida. Consell d'Administració. President (per delegació HC)\n4. ATM Barcelona. Consell d'Administració. Vocal\n5. ATM Barcelona. Comitè Executiu. Membre\n6. ATM Girona. Consell d'Administració. President (per delegació HC)\n7. ATM Camp de Tarragona. Consell d'Administració. Vocal i president per delegació de l'HC\n8. Ports de la Generalitat. Comitè Executiu. Vicepresident\n9.\"Consorci Alta Velocitat Barcelona\". Junta de Govern. Vocal\n10. \"Ferrocarrils de la Generalitat de Catalunya (FGC)\". Consell d'Administració. Vocal\n11. \"Societat Central i Infraestructures per a la Mobilitat i les Activitats Logístiques, S.A. (CIMALSA)\". Consell d'Administració. Vocal\n12. Fundació Centre d'Estudis del Transport per a la Mediterrània Occidental (CETMO). Patronat. Vicepresident\n13. Associació Girona Centre Logístic. Assemblea General. President suplent\n14. Associació Girona Centre Logístic. Comitè Executiu. Vicepresident\n15. Fundació REGO. Patronat. President\n16. Consorci de l'Aeròdrom de la Cerdanya. Consell Rector. President per delegació de HC\n17. Associació per al desenvolupament i la promoció de les comarques gironines (AGI). Assemblea General. President (presidència compartida dels 3 representants de la Generalitat a través d'Aeroports Públics)\n18. Associació per al desenvolupament i la promoció de les comarques gironines (AGI). Junta Directiva. President (presidència compartida dels 3 representants de la Generalitat a través d'Aeroports Públics\n19. Agència Catalana del Consum. Consell d'Administració. Titular en representació DTER. Transports",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració AEDOP\n2. Consell d'Administració INTRACATALONIA",
+        "count" : "1"
+      }, {
+        "item" : "1. Circuits de Catalunya, SL. Consell d'Administració. President\n2. Patronat de la Muntanya de Montserrat. Ple. Representant",
+        "count" : "1"
+      }, {
+        "item" : "1. Vicepresidència Junta de Govern de l'Agència de Salut Pública de Barcelona\n2. Vocal Patronat IrsiCaixa\n3. Vocal Consell de Direcció del CatSalut",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell Català de Municipis Rurals\n2. Consell d'Administració de l'Agència de Ciberseguretat de Catalunya\n3. Consell d'Administració del Centre de Telecomunicacions i tecnologies de la Informació (CTTI)\n4. Consell General del Consorci Administració Oberta de Catalunya (AOC). Comissió executiva\n5. Consell General del Consorci Administració Oberta de Catalunya (AOC). Consell General\n6. Consell Rector de l'Escola d'Administració Pública de Catalunya\n7. Consell Rector de l'Institut d'Estudis de l'Autogovern",
+        "count" : "1"
+      }, {
+        "item" : "1. Institut Català de Finances (ICF). President i vocal dominical de la Junta de Govern i president i vocal de la Comissió Executiva\n2. Fira 2000, SA. Vocal del Consell d'Administració. President de la Comissió executiva \n3. Infraestructures de la Generalitat de Catalunya, SAU. Vocal del Consell d'Administració\n4. Teatre Nacional de Catalunya, SA. Vocal del Consell d'Administració\n5. Consorci Intermunicipal de Vila-Seca i Salou per a la gestió del Centre Recreatiu i Turístic. President (p.d. Consellera) i vocal delegat de la Junta de Direcció\n6. Fira Internacional de Barcelona. Vocal del consell general",
+        "count" : "1"
+      }, {
+        "item" : "1. Institut Català de la Salut. Vocal del Consell d'Administració i vocal de la Comissió Executiva",
+        "count" : "1"
+      }, {
+        "item" : "1. Vocal del consell d'administració de l'Agència de l'Habitatge de Catalunya\n2. Vocal suplent del consell d'administració d'Incasol",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració de Prodeca. Consellera\n2. Consell Rector del Instituto Español de Oceanografía. Representant",
+        "count" : "1"
+      }, {
+        "item" : "1. Institut Català de Finances (ICF). Vocal dominical de la Junta de Govern\n2. Fira 2000, SA. Vocal del Consell d'Administració",
+        "count" : "1"
+      }, {
+        "item" : "1. Membre del Comitè executiu del Departament de Salut\n2. Membre de la Comissió Interdepartamental per a la Sostenibilitat Econòmica del Sistema Sanitari de Catalunya. (Resolució 27/5/2025)\n3. Membre del Comitè de Bones Pràctiques Tributàries. (Resolució 27/5/2025)\n4. Membre del Consell Assessor en Matèria d'Avaluacions Mèdiques. (Resolució 27/5/2025)\n5. Membre suplent del SG de la Comissió Interdepartamental de Govern Obert (CIGO). (Resolució 27/5/2025)\n6. Membre suplent del SG de la Comissió Interdepartamental d'Avaluació de Polítiques Públiques (CIAVA). (Resolució 27/5/2025)\n7. Membre de la Junta de Govern de l'Agència de Salut Pública de Catalunya  (Resolució 2/6/2025)",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell del Taxi. Vicepresident per raó de càrrec\n2. Consell de la Mobilitat. Vicepresident per raó de càrrec",
+        "count" : "1"
+      }, {
+        "item" : "1. Participació al consell rector del CASAP",
+        "count" : "1"
+      }, {
+        "item" : "1. Servei Meteorològic de Catalunya\n2. Associació Girona Centre Logístic",
+        "count" : "1"
+      }, {
+        "item" : "1. OSIC\n2. TNC\n3. ICEC\n4. Institut Ramon Llull\n5. Institució de les Lletres Catalanes",
+        "count" : "1"
+      }, {
+        "item" : "1. Junta de Govern de l'IDESCAT",
+        "count" : "1"
+      } ],
+      "smallest" : "1. ACA. Consell d’Administració. Vicepresident\n2. Ens d’Abastament d’Aigua Ter-Llobregat (ATL). Consell d’Administració. Vocal\n3. Confederació Hidrogràfica de l’Ebre. Junta de Govern. Suplent en representació de la GC\n4. Confederació Hidrogràfica del Xúquer. Junta de Govern. Vocal titular\n5. Consorci d’Aigües de Tarragona – CAT. Assemblea General. Representant de la GC\n6. Consorci per a la Protecció i la Gestió dels Espais Naturals del Delta del Llobregat.  Consell Rector. Vocal titular\n7. Forestal Catalana, SA. Consell d'Administració. Vocal",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130671,
+    "name" : "Activitat pública 5 (missions temporals)",
+    "dataTypeName" : "text",
+    "description" : "Activitat pública compatible de compliment de missions temporals de representació en organitzacions o conferències nacionals i internacionals.",
+    "fieldName" : "missions_temporals",
+    "position" : 13,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393389,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "374"
+      }, {
+        "item" : "1. Participació com a directora artística del TNC en xerrades, col·loquis, debats, etc., sobre qüestions de caràcter general en relació amb el seu càrrec",
+        "count" : "1"
+      }, {
+        "item" : "1. BCL\n2. RailGRUP",
+        "count" : "1"
+      }, {
+        "item" : "1. Membre del Grup Bizot\n2. Assistència a diverses trobades, nacionals, estatals i internacionals de museus",
+        "count" : "1"
+      }, {
+        "item" : "1. CSW",
+        "count" : "1"
+      }, {
+        "item" : "1. Participació Associació de les Regions Europees de les Denominacions d'Origen",
+        "count" : "1"
+      }, {
+        "item" : "1. Revisora a European Research Council (sense remuneració)",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell de Directors d'Euromontana",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió de la Condició Jurídica i Social de la Dona (CSW)",
+        "count" : "1"
+      } ],
+      "smallest" : "1. BCL\n2. RailGRUP",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130670,
+    "name" : "Activitat pública 6 (participació)",
+    "dataTypeName" : "text",
+    "description" : "Activitat pública compatible de participació en òrgans de direcció o de govern d'empreses o entitats privades en representació de les administracions públiques",
+    "fieldName" : "participacio_organs",
+    "position" : 14,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393388,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "347"
+      }, {
+        "item" : "1. Centre Tecnològic Eurecat\n2. Centre Tecnològic Leitat",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració de la Marina de Badalona, SA. Membre",
+        "count" : "1"
+      }, {
+        "item" : "1. Vall Hebron Institut d'Oncologia (VHIO)",
+        "count" : "1"
+      }, {
+        "item" : "1. Comitè Autonòmic de la Creu Roja (vocal)",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió de Seguiment del Contracte Programa entre l'Administració de la Generalitat de Catalunya i ferrocarrils de la Generalitat 2022-2026. Representant DTER",
+        "count" : "1"
+      }, {
+        "item" : "1. Mútua Universal",
+        "count" : "1"
+      }, {
+        "item" : "1. Consorci del Museu de Lleida Diocesà i Comarcal\n2. Fundació Antoni Tàpies\n3. Fundació Joan Miró\n4. Fundació Pau Casals\n5. Fundació Privada Apel·les Fenosa\n6. Fundació Privada Institut Català de Recerca en Patrimoni Cultural\n7. Institut Català d'Arqueologia Clàssica\n8. Institut Ramon Muntaner\n9. Fundació Privada dels Centres d'Estudis de Parla Catalana-IRMU\n10. Museu Episcopal de Vic\n11. Patronat del Museu Diocesà i Comarcal de Solsona",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació privada Catalana per a l'Ensenyament de l'Idioma Anglès i l'Educació en Anglès. Vocal del Patronat\n2. Fundació Privada Institut de Tecnologia de la Construcció de Catalunya (ITeC). Vocal del Patronat",
+        "count" : "1"
+      }, {
+        "item" : "1. Patronat de l'IBEI",
+        "count" : "1"
+      }, {
+        "item" : "1. Institut Català de la Salut (ICS). Vocal del Consell d'Administració i vocal de la Comissió Executiva\n2. Servei Català de la Salut (CatSalut). Vocal titular del Consell de Direcció. Acord de Govern: 08/03/2022",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació Alícia, Alimentació i Ciència\n2. Fundació Universitat Oberta de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell de Direcció d'Educació de Barcelona",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació Mossos d'Esquadra",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació Privada Institut d'Estudis Financers (IEF). Secretari del Patronat",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell de Direcció de l'empresa AIRBUS DS GEO SG. S.A.",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació Privada Barcelona Graduate School of Economics (GSE). Vocal del Patronat\n2. Fundació d'Economia Analítica (FEA). Vocal del Patronat",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació del Gran Teatre del Liceu\n2. Fundació Mediterrània, Fira d'Espectacles d'Arrel Tradicional\n3. Fundació Antoni Tàpies\n4. Fundació Gala-Salvador Dalí\n5. Museu Episcopal de Vic\n6. Patronat del Monestir de Santa Maria de Ripoll\n7. Centre Internacional de Música Antiga Fundació Privada\n8. Fundació Francesc Pujols i Morgades",
+        "count" : "1"
+      }, {
+        "item" : "1. Societat Eòlica de l'Enderrocada, SA \n2. Parc Eòlic Baix Llobregat, SA",
+        "count" : "1"
+      }, {
+        "item" : "1. Gestora de Runes de la Construcció President, en representació de l'ARC",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Catlab",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130669,
+    "name" : "Activitat pública 7 (consells)",
+    "dataTypeName" : "text",
+    "description" : "Activitat pública compatible de pertinença a tres o més consells d'administració d'organismes o òrgans de govern d'empreses o entitats",
+    "fieldName" : "pertinenca_consells_administracio",
+    "position" : 15,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393387,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "374"
+      }, {
+        "item" : "1. Incasòl, ATM Barcelona, ICAEN, ACA, SMC, IRTA, Barcelona Sagrera Alta Velocitat...\n\nData de l'Acord de Govern: 12/08/2024",
+        "count" : "1"
+      }, {
+        "item" : "1. Junta de Govern del Consorci Institut d'Investigacions Biomèdiques August Pi i Sunyer (IDIBAPS)\n2. Junta de Patronat de la Fundació Clínic per a la Recerca Biomèdica (FCRB)\n3. Consell d'Administració de Barnaclínic, SA\n4. Patronat de la Fundació Institut Global de Barcelona (ISGLOBAL)\n5. Patronat de Biocat\nData de l'acord de Govern: 14/02/2017",
+        "count" : "1"
+      }, {
+        "item" : "1. IFERCAT\n2. Consorci ATM\n3. Marina de Badalona\n4. Ferrocarrils de la Generalitat de Catalunya (FGC)\n5. CIMNE Tecnologia, SA\n\nData de l'acord de Govern: 10/02/2022",
+        "count" : "1"
+      }, {
+        "item" : "1. Agència Catalana del Patrimoni Cultural\n2. Biblioteca de Catalunya\n3. Institució de les Lletres Catalanes - ILC\n4. Institut Català de les Empreses Culturals - ICEC\n5. Consorci Institut Ramon Llull - IRLL\n6. Consorci de l'Auditori i l'Orquestra\n7. Consorci del Museu de Ciències Naturals de Barcelona\n8. Consorci del Museu de Lleida Diocesà i Comarcal\n9. Consorci del Palau de la Música Catalana\n10. Consorci del Turó de la Seu Vella de Lleida\n11. Consorci Mercat de les Flors\n12. Consorci Museu Nacional d'Art de Catalunya - MNAC\n13. Consorci Museu d'Art Contemporani de Barcelona - MACBA\n14. Consorci Casa Àsia\n15. Consorci del Patrimoni Mundial de la Vall de Boí\n16. Consorci del Besòs\n17. Consorci del Gran Teatre del Liceu\n18. Patronat de la Muntanya de Montserrat\n19. Consorci Organitzador del Fòrum Universal de les Cultures Barcelona 2004\n20. Fòrum Universal de les Cultures, Barcelona 2004, SA\n21. Patronat Ramon Llull",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració Circuits de Catalunya, SL. Membre\n2. Consell d'Administració Empresa de Promoció i Localització Industrial de Catalunya, SA (Avançsa). Membre\n3. Centre de Telecomunicacions i Tecnologies de la Informació de la Generalitat (CTTI). Vicepresident segon i vocal\n\nData de l'acord de Govern:\n27/08/2024",
+        "count" : "1"
+      }, {
+        "item" : "1. Circuits de Catalunya, SL. Vocal del Consell Adm.\n2. Empresa de Promoció i Localització Industrial de Catalunya, SA (AVANÇSA). Vocal del Consell Adm.\n3. Equacat, SA. Vocal del Consell Adm.\n4. Fira 2000, SA. Vocal del Consell Adm.\n5. Fira 2000, SA. Vocal de la Comissió Executiva",
+        "count" : "1"
+      }, {
+        "item" : "1. AUTOMETRO, S.A.\n2. CARGOMETRO RAILTRANSPORT, S.A.\n3. FGC MOBILITAT, S.A.\n4. ACTIUS DE MUNTANYA, S.A.\n5. VALLTER, S. A.\nData de l'acord de Govern: 08/10/2024",
+        "count" : "1"
+      }, {
+        "item" : "1. Circuit de Catalunya\n2. Equacat\n3. Infraestructures.cat",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Agència Catalana del Patrimoni Cultural\n2. Biblioteca de Catalunya\n3. Institució de les Lletres Catalanes - ILC\n4. Institut Català de les Empreses Culturals - ICEC\n5. Consorci Institut Ramon Llull - IRLL\n6. Consorci de l'Auditori i l'Orquestra\n7. Consorci del Museu de Ciències Naturals de Barcelona\n8. Consorci del Museu de Lleida Diocesà i Comarcal\n9. Consorci del Palau de la Música Catalana\n10. Consorci del Turó de la Seu Vella de Lleida\n11. Consorci Mercat de les Flors\n12. Consorci Museu Nacional d'Art de Catalunya - MNAC\n13. Consorci Museu d'Art Contemporani de Barcelona - MACBA\n14. Consorci Casa Àsia\n15. Consorci del Patrimoni Mundial de la Vall de Boí\n16. Consorci del Besòs\n17. Consorci del Gran Teatre del Liceu\n18. Patronat de la Muntanya de Montserrat\n19. Consorci Organitzador del Fòrum Universal de les Cultures Barcelona 2004\n20. Fòrum Universal de les Cultures, Barcelona 2004, SA\n21. Patronat Ramon Llull",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130668,
+    "name" : "Activitat pública 8 (electius compatibles)",
+    "dataTypeName" : "text",
+    "description" : "Activitat pública compatible de càrrecs electius compatibles",
+    "fieldName" : "carrecs_electius_compatibles",
+    "position" : 16,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393386,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "364"
+      }, {
+        "item" : "1. Diputada al Parlament de Catalunya",
+        "count" : "2"
+      }, {
+        "item" : "1. Diputat del Parlament de Catalunya",
+        "count" : "2"
+      }, {
+        "item" : "1. Alcalde del municipi de Camprodon",
+        "count" : "1"
+      }, {
+        "item" : "1. Regidor de l'Ajuntament de Berga",
+        "count" : "1"
+      }, {
+        "item" : "1. Regidor a l'Ajuntament de Sant Martí Sarroca\n2. Conseller Comarcal de l'Alt Penedès",
+        "count" : "1"
+      }, {
+        "item" : "1. Alcalde de Campdevànol",
+        "count" : "1"
+      }, {
+        "item" : "1. Regidora a l'Ajuntament de Lloret de Mar",
+        "count" : "1"
+      }, {
+        "item" : "1. Membre Junta veïnal EMD BÏTEM",
+        "count" : "1"
+      }, {
+        "item" : "1. Regidora a l'Ajuntament de la Canonja",
+        "count" : "1"
+      }, {
+        "item" : "1. Regidor a l'Ajuntament de Sant Jaume d'Enveja",
+        "count" : "1"
+      }, {
+        "item" : "1. Regidora a l'Ajuntament de Sant Joan de Vilatorrada",
+        "count" : "1"
+      }, {
+        "item" : "1. Membre del Consell Assessor de Programes i Continguts de la Corporació Catalana de Mitjans Audiovisuals",
+        "count" : "1"
+      }, {
+        "item" : "1. Alcalde de l'Ajuntament de Gelida",
+        "count" : "1"
+      }, {
+        "item" : "1. Regidora de cultura, educació i joventut a l'Ajuntament de Soses",
+        "count" : "1"
+      }, {
+        "item" : "1. Regidor a l'Ajuntament de Santa Eulàlia de Ronçana (mandat 2023-2027)",
+        "count" : "1"
+      }, {
+        "item" : "1. Alcaldessa de Tremp",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Alcalde de Campdevànol",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130667,
+    "name" : "Activitat privada 1 (patrimoni)",
+    "dataTypeName" : "text",
+    "description" : "Activitat privada compatible derivada de la simple administració del patrimoni personal o familiar, en empreses o entitats que no subscriuen contractes amb cap administració o entitat del sector públic",
+    "fieldName" : "administracio_patrimoni",
+    "position" : 17,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393385,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "364"
+      }, {
+        "item" : "1. Lloguer pis propietat",
+        "count" : "1"
+      }, {
+        "item" : "1. Administrador de l'empresa familiar VILOPA 56, SA",
+        "count" : "1"
+      }, {
+        "item" : "1. Conreu d'arròs a la finca de patrimoni familiar",
+        "count" : "1"
+      }, {
+        "item" : "1. Tinc un pis amb la meva parella que lloguem a uns llogaters",
+        "count" : "1"
+      }, {
+        "item" : "1. Societat familiar per lloguer d'un local",
+        "count" : "1"
+      }, {
+        "item" : "Grup Mascort",
+        "count" : "1"
+      }, {
+        "item" : "1. Explotació agrària oliveres",
+        "count" : "1"
+      }, {
+        "item" : "1. Comunitat de Béns Farré d'Antist. Amb el meu germà per gestionar l'herència rebuda dels pares",
+        "count" : "1"
+      }, {
+        "item" : "1. Assistència a reunions de consell d'administració en empresa familiar",
+        "count" : "1"
+      }, {
+        "item" : "1. Activitats derivades de l'administració del patrimoni personal (activitat no empresarial): lloguer d'immobles",
+        "count" : "1"
+      }, {
+        "item" : "1. Administració del patrimoni personal sense cap figura jurídica diferent de la meva persona física",
+        "count" : "1"
+      }, {
+        "item" : "1. Titular participacions (no administrador) TICA GIRONA, S.L. i  CATOPLAN, S. L.",
+        "count" : "1"
+      }, {
+        "item" : "1. CB Schreiber Soler per a la gestió de patrimoni familiar",
+        "count" : "1"
+      }, {
+        "item" : "1. Administració de l'empresa familiar LMT4U, SL",
+        "count" : "1"
+      }, {
+        "item" : "1. Dau Works SL\n2. Lanauva Scp\n3. Fitajoc Scp",
+        "count" : "1"
+      }, {
+        "item" : "1. Adenip Project SL",
+        "count" : "1"
+      }, {
+        "item" : "1. Arrendament de béns immobles",
+        "count" : "1"
+      }, {
+        "item" : "1. Participació comunitat de béns (familiars) en 33% sobre immoble",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Activitats derivades de l'administració del patrimoni personal (activitat no empresarial): lloguer d'immobles",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130666,
+    "name" : "Activitat privada 2 (patrimoni amb contractació)",
+    "dataTypeName" : "text",
+    "description" : "Activitat privada compatible derivada de la simple administració del patrimoni personal o familiar, en empreses o entitats que subscriuen contractes amb qualsevol administració o entitat del sector públic, i amb una participació inferior al 10%, tant individualment com conjuntament amb el cònjuge, els convivents o els fills",
+    "fieldName" : "administracio_patrimoni_personal",
+    "position" : 18,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393384,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "377"
+      }, {
+        "item" : "1. Administració del lloguer ocasional del patrimoni immobiliari personal",
+        "count" : "1"
+      }, {
+        "item" : "1. Promotora del Cava SL (actualment sense activitat)",
+        "count" : "1"
+      }, {
+        "item" : "1. Participació 9% Hidrogeologia i Enginyeria del Terreny, SLU",
+        "count" : "1"
+      }, {
+        "item" : "1. Compra-venda d'accions d'empreses cotitzades",
+        "count" : "1"
+      }, {
+        "item" : "1. Soci no professional de FJM Advocats, SLP",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Administració del lloguer ocasional del patrimoni immobiliari personal",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130665,
+    "name" : "Activitat privada 3 (participació ocasional)",
+    "dataTypeName" : "text",
+    "description" : "Activitat privada compatible de participació ocasional en seminaris, cursos, conferències, col·loquis i programes de qualsevol mitjà de comunicació social, sempre que no siguin conseqüència d'una relació de treball o de prestació de serveis",
+    "fieldName" : "participacio_ocasional",
+    "position" : 19,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393383,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "333"
+      }, {
+        "item" : "1. Participació en seminaris i conferències quan em conviden",
+        "count" : "2"
+      }, {
+        "item" : "1. Participació com a directora artística del TNC en xerrades, col·loquis, debats, etc., sobre qüestions de caràcter general en relació amb el seu càrrec",
+        "count" : "1"
+      }, {
+        "item" : "1. Seminaris d'Oficials d'Automobilisme de la FIA, RFEDA i FCA\n2. Seminari Race Directors FIA",
+        "count" : "1"
+      }, {
+        "item" : "1. Col·loquis literaris\n2. Recitals poètics",
+        "count" : "1"
+      }, {
+        "item" : "1. Conferència a l'Aula Universitària de la FUMH \"Les enquestes condicionen el vot?\" (11/2/2025)\n2. Postgrau Anàlisi i Comunicació Política, organitzat per ICPS-UAB (2025-2026). Sessió: \"Enquestes i Mitjans de Comunicació\" (27/11/2025)",
+        "count" : "1"
+      }, {
+        "item" : "1. Conferències relacionades amb la gestió sanitària",
+        "count" : "1"
+      }, {
+        "item" : "1. Formació professional. Fundació Galatea",
+        "count" : "1"
+      }, {
+        "item" : "1. Conferències",
+        "count" : "1"
+      }, {
+        "item" : "1. Articles d'opinió al Diari de Sabadell",
+        "count" : "1"
+      }, {
+        "item" : "1. Participació ocasional en formació universitària no reglada, vinculada a la meva àrea d'expertesa en contractació pública. En concret, imparteixo l'assignatura \"El contenciós de la Contractació Pública\" en el Màster en Contractació Pública Avançada de la universitat de Barcelona (UB)",
+        "count" : "1"
+      }, {
+        "item" : "1. Participació ocasional en el Màster de Direcció Pública d'Esade",
+        "count" : "1"
+      }, {
+        "item" : "1. Sessions esparses a la Universitat de l'Experiència de la Universitat de Barcelona\n2. Conferències puntuals\n3. Participació en jornades científiques",
+        "count" : "1"
+      }, {
+        "item" : "1. Assistència a jornades i conferències organitzades per grups científics",
+        "count" : "1"
+      }, {
+        "item" : "1. Ocasionalment, en alguna taula rodona o similar organitzada per la UPF, el CIDOB o institució similar, per parlar d'economia, en qualitat d'especialista en Macroeconomia i Economia Internacional (sense remuneració)",
+        "count" : "1"
+      }, {
+        "item" : "1. Col·legi d'Economistes de Catalunya\n2. Il·lustre Col·legi de l'Advocacia de Barcelona\n3. Associació Espanyola d'Assessors Fiscals\n4. Associació Professional de Tècnics Tributaris de Catalunya i Balears",
+        "count" : "1"
+      }, {
+        "item" : "1. Consell d'Administració del Laboratori de Referència de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Seminari de dret de la competència / Mitjans de comunicació social divulgació competència",
+        "count" : "1"
+      }, {
+        "item" : "1. Cursos puntuals sobre energia en Màsters, webinars i altres formats",
+        "count" : "1"
+      }, {
+        "item" : "1. Activitats Societat Catalana de Gestió Sanitaria\n2. Activitats Unió Catalana Hospitals\n3. Activitats Consorci de Salut i Social de Catalunya",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Activitat que deriva de la condició de metge consultor general (Nefrologia) i de la Recerca",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130664,
+    "name" : "Activitat privada 4 (formació interna)",
+    "dataTypeName" : "text",
+    "description" : "Activitat privada compatible participació en seminaris, jornades o conferències organitzats per centres oficials destinats a la formació del personal de les administracions públiques catalanes sempre que no tingui caràcter permanent o habitual i que s'hi participi per raó del càrrec, de l'especialitat professional o de la posició que s'ocupa en l'organització administrativa de la Generalitat",
+    "fieldName" : "participacio_seminaris",
+    "position" : 20,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393382,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "356"
+      }, {
+        "item" : "1. Participació en seminaris i conferències quan em conviden",
+        "count" : "2"
+      }, {
+        "item" : "1. Àmbit història, memòria, patrimoni cultural, museologia...",
+        "count" : "1"
+      }, {
+        "item" : "1. Participació ocasional en jornades sectorials",
+        "count" : "1"
+      }, {
+        "item" : "1. Jornades d'àmbit sanitari: Seminaris de gestió hospitalària",
+        "count" : "1"
+      }, {
+        "item" : "1. Escola d'Administració Pública de Catalunya (EAPC)\n2. Universitat de Barcelona",
+        "count" : "1"
+      }, {
+        "item" : "1. EAPC\n2. CEFJE",
+        "count" : "1"
+      }, {
+        "item" : "1. Conferències o col·loquis a l'Escola d'Administració Pública de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Formador EAPC",
+        "count" : "1"
+      }, {
+        "item" : "1. Escola  d'Administració Pública de Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Sessions de caràcter puntual relacionades amb la direcció pública local",
+        "count" : "1"
+      }, {
+        "item" : "1. Formadora interna EAPC",
+        "count" : "1"
+      }, {
+        "item" : "1. Eventualment, en jornades organitzades per administracions i associacions",
+        "count" : "1"
+      }, {
+        "item" : "1. Societats científiques mèdiques",
+        "count" : "1"
+      }, {
+        "item" : "1. Els relacionats amb el càrrec que ocupo",
+        "count" : "1"
+      }, {
+        "item" : "1. Conferències, seminaris que no tenen caràcter permanent",
+        "count" : "1"
+      }, {
+        "item" : "1. Jornada Pla Estratègic per la Direcció CMQ Reus\n2. Jornada Pla Estratègic per la Direcció de l'INCASÒL\n3. Sessió \"EMPA Barcelona - Mòdul Direcció Estratègica\" a ESADE\n4. Sessió \"Postgrau: Visió estratègica, habilitats i valors per al lideratge mèdic\" al COMB",
+        "count" : "1"
+      }, {
+        "item" : "1. Participació ocasional en seminaris, cursos i conferències",
+        "count" : "1"
+      }, {
+        "item" : "1. Postgrau de lideratge mèdic del COMB\n2. Postgrau de desenvolupament directiu UVIC",
+        "count" : "1"
+      }, {
+        "item" : "1. Cursos de Formació Continuada de l'Institut Català de la Salut",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Àmbit història, memòria, patrimoni cultural, museologia...",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130663,
+    "name" : "Activitat privada 5 (producció, creació i col·laboració)",
+    "dataTypeName" : "text",
+    "description" : "Activitat privada compatible de producció i creació literàries, artístiques, científiques o tècniques i col·laboració en les publicacions que se'n derivin",
+    "fieldName" : "produccio_creacio_literaries",
+    "position" : 21,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393381,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "347"
+      }, {
+        "item" : "1. Producció i creació literària, artística, científica o tècnica i col·laboració en les publicacions derivades",
+        "count" : "2"
+      }, {
+        "item" : "1. Articles",
+        "count" : "2"
+      }, {
+        "item" : "1. Observatori la Gestió Importa de la societat catalana de gestió sanitària",
+        "count" : "1"
+      }, {
+        "item" : "1. Publico articles i estic escrivint un llibre",
+        "count" : "1"
+      }, {
+        "item" : "1. Creació musical",
+        "count" : "1"
+      }, {
+        "item" : "1. Articles científics",
+        "count" : "1"
+      }, {
+        "item" : "1. Publicació ocasional de posts al bloc de la Societat Catalana de Gestió Sanitària.",
+        "count" : "1"
+      }, {
+        "item" : "1. Com a membre del col·lectiu docent investigador de l'INEFC, previ al meu nomenament com a director, sóc membre del grup de recerca GISEAFE i director de diverses tesis doctorals que resulten en publicacions en revistes científiques",
+        "count" : "1"
+      }, {
+        "item" : "1. Composició musical i artística",
+        "count" : "1"
+      }, {
+        "item" : "1. Llibres i revistes científiques internacionals i nacionals de caràcter acadèmic sense cap finalitat lucrativa",
+        "count" : "1"
+      }, {
+        "item" : "1. Col·laboració esporàdica amb articles professionals a publicacions del sector bibliotecari",
+        "count" : "1"
+      }, {
+        "item" : "1. Anuario de la competencia. Marcial Pons",
+        "count" : "1"
+      }, {
+        "item" : "1. Producció de publicacions de divulgació i de recerca educativa, que majoritàriament no tenen cap ingrés associat llevat d'alguns casos on l'editorial paga anualment drets d'autor",
+        "count" : "1"
+      }, {
+        "item" : "1. Llibres de poesia",
+        "count" : "1"
+      }, {
+        "item" : "1. Articles de recerca",
+        "count" : "1"
+      }, {
+        "item" : "1. Activitat que deriva de la condició de metge consultor general (Nefrologia) i de la Recerca",
+        "count" : "1"
+      }, {
+        "item" : "1. He escrit un llibre que es publicarà a la tardor sobre energia amb ARPA editores.",
+        "count" : "1"
+      }, {
+        "item" : "1. Articles, ressenyes, capítols de llibre, comissariats vinculats a l'àmbit de la història i a la memòria, museologia, patrimoni",
+        "count" : "1"
+      }, {
+        "item" : "1. Producció en obert de treballs científics relacionades amb l'activitat prèvia com a professora d'investigació ICREA (Nature Biomedical Engineering, Kidney International, Transplant International, entre d'altres)",
+        "count" : "1"
+      } ],
+      "smallest" : "1. Activitat que deriva de la condició de metge consultor general (Nefrologia) i de la Recerca",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  }, {
+    "id" : 27130662,
+    "name" : "Activitat privada 6 (en entitats sense ànim de lucre)",
+    "dataTypeName" : "text",
+    "description" : "Activitat privada compatible de participació en entitats sense ànim de lucre",
+    "fieldName" : "participacio_entitats_sense",
+    "position" : 22,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16393380,
+    "cachedContents" : {
+      "non_null" : "382",
+      "largest" : "Soci d'entitats sense ànim de lucre de la Seu d'Urgell:\n1. Unió Excursionista Urgellenca (soci)\n2. Institut d'Estudis Comarcals de l'Alt Urgell (soci)\n3. Col·legi de Geògrafs de Catalunya (soci)\n4. Societat Catalana de Geografia (soci)\n5. Club Cadí Canoë-Kayak (soci)\n6. Metges Sense Fronteres (soci)\n7. Creu Roja (soci)",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "333"
+      }, {
+        "item" : "1. Associació Espanyola Contra el Càncer",
+        "count" : "1"
+      }, {
+        "item" : "1. Sociedad Española de Investigación en Educación Matemática",
+        "count" : "1"
+      }, {
+        "item" : "Soci d'entitats sense ànim de lucre de la Seu d'Urgell:\n1. Unió Excursionista Urgellenca (soci)\n2. Institut d'Estudis Comarcals de l'Alt Urgell (soci)\n3. Col·legi de Geògrafs de Catalunya (soci)\n4. Societat Catalana de Geografia (soci)\n5. Club Cadí Canoë-Kayak (soci)\n6. Metges Sense Fronteres (soci)\n7. Creu Roja (soci)",
+        "count" : "1"
+      }, {
+        "item" : "1. Membre de la Junta Rectora de la Demarcació de Catalunya del Col·legi d'Enginyers de Camins, Canals i Ports",
+        "count" : "1"
+      }, {
+        "item" : "1. Asociación Phare Territorios Globales",
+        "count" : "1"
+      }, {
+        "item" : "1. Associació d'Amics dels Aiguamolls de l'Empordà",
+        "count" : "1"
+      }, {
+        "item" : "1. Associació de Sant Sebastià de Monistrol de Montserrat",
+        "count" : "1"
+      }, {
+        "item" : "1. Patró Fundació",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació Sagrera\n2. Agrupació PSC Rubí",
+        "count" : "1"
+      }, {
+        "item" : "1. Associació de Caçadors Belpuig-Seana",
+        "count" : "1"
+      }, {
+        "item" : "1. Círculo de Directivos de Habla Alemana\n2. Fòrum Internacional de les Dones\n3. KOEING e.V., associació sense ànim de lucre dedicada a enfortir la presència i el lideratge de les dones en l'àmbit professional, així com a promoure l'intercanvi d'experiències i bones pràctiques entre dones directives de Catalunya i Àustria",
+        "count" : "1"
+      }, {
+        "item" : "1. Comissió Catalana d'Ajuda al Refugiat\n2. Associació Lab38\n3. Ali-huma Asociación por las libertades en Iberoamérica y los Derechos Humanos",
+        "count" : "1"
+      }, {
+        "item" : "1. Patró a la Fundación Renovables",
+        "count" : "1"
+      }, {
+        "item" : "1. Patronat Fundació Alfonso Sese\n2. Fundació Seat/Cupra\n3. Creu Roja Catalunya",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació Josep Irla i a l'ACOM (Associació Catalana d'Observadors Meteorològics)",
+        "count" : "1"
+      }, {
+        "item" : "1. Vocal Junta Club Bàsquet Cabrera de Mar",
+        "count" : "1"
+      }, {
+        "item" : "1. Òmnium Cultural\n2. Oxfam Intermón",
+        "count" : "1"
+      }, {
+        "item" : "1. Fundació Privada DAU\n2. Col·legi d'Economistes de Catalunya\n3.  EFEC",
+        "count" : "1"
+      }, {
+        "item" : "1. Soci de la Xarxa Renda Bàsica\n2. Amnistia Internacional",
+        "count" : "1"
+      } ],
+      "smallest" : "1. AMPA Escola de la Concepció",
+      "count" : "382",
+      "cardinality" : "382"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "See Terms of Use"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Freqüència d'actualització" : {
+        "Freqüència d'actualització" : "Variable"
+      },
+      "Idioma" : {
+        "Idioma" : "Català",
+        "Dataset name (EN)" : "Declarations of activities of senior officials and public managers of the Generalitat de Catalunya of the XV legislature",
+        "Nombre del conjunto de datos (ES)" : "Declaraciones de actividades de altos cargos y directivos públicos de la Generalitat de Catalunya de la XV legislatura"
+      },
+      "Informació de gènere o sexe" : {
+        "Informació de gènere o sexe" : "No"
+      },
+      "Dades d'Alt Valor" : {
+        "Categoria" : "No són dades d’alt valor"
+      },
+      "Actors" : {
+        "Departament" : "Presidència",
+        "Tipus actor" : "Generalitat de Catalunya"
+      },
+      "Àmbit geogràfic" : {
+        "Informació geogràfica" : "Sense informació geogràfica",
+        "Àmbit geogràfic" : "Catalunya"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "declaracions d’activitats", "alts càrrecs", "directius", "incompatibilitats", "transparència", "ods16_pau justícies i institucions sòlides" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}
