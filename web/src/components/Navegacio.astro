@@ -26,6 +26,7 @@ const { url, titol, cerca } = Astro.props;
         <li class:list={{ 'nomes-escriptori': cerca }}><a href="/agenda">Agenda</a></li>
         {/* Per sota de 800 px no hi cap, ni amb el botó de cerca; la portada hi té el seu bloc. */}
         <li class="nomes-gran"><a href="/municipis">Municipis</a></li>
+        <li class="nomes-molt-gran"><a href="/transport">Transport</a></li>
         <li class="nomes-ample"><a href="/#ia">Per a la IA</a></li>
         {
           cerca && (
@@ -165,6 +166,13 @@ const { url, titol, cerca } = Astro.props;
     nav a,
     .cerca {
       padding: 0 0.375rem;
+    }
+  }
+
+  /* Per sota de 980 px, a la portada, que té el botó de cerca, la barra passaria a fer una línia més. A les altres pàgines s'amaga igual, perquè la barra sigui la mateixa a tot arreu. */
+  @media (max-width: 61.1875em) {
+    .nomes-molt-gran {
+      display: none;
     }
   }
 
