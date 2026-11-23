@@ -1,0 +1,145 @@
+---
+import Pagina from '../../layouts/Pagina.astro';
+import '../../styles/subpagines.css';
+import { dia, nombre } from '../../dades/institucions.ts';
+import { ajuntaments, mapa, municipis } from '../../dades/municipis.ts';
+import { cami, marc } from '../../dades/mapa.ts';
+
+const perNom = [...municipis].sort((a, b) => a.nom.localeCompare(b.nom, 'ca'));
+// Les lletres de la llista, com a l'índex d'un llibre: «À» va amb la «A».
+const inicial = (nom: string) => nom.normalize('NFD')[0]!.toUpperCase();
+const lletres = [...new Set(perNom.map((m) => inicial(m.nom)))];
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <p class="etiqueta entra"><span class="punt dad" aria-hidden="true"></span>Municipis</p>
+      <h1 id="titol" class="entra" style="--ordre: 1">Com és el teu municipi</h1>
+      <p class="entradeta entra" style="--ordre: 2">
+        Qui hi viu, qui governa l'ajuntament i com s'hi va votar.
+      </p>
+    </section>
+
+    <section class="seccio entra" style="--ordre: 3" aria-labelledby="mapa-titol">
+      <h2 class="visualment-amagat" id="mapa-titol">Mapa dels municipis</h2>
+      <figure class="mapa">
+        <!-- Amb el teclat i amb un lector de pantalla, la llista de sota fa el mateix que el mapa. -->
+        <svg viewBox={marc(municipis.map((m) => m.geometria))} aria-hidden="true">
+          {
+            municipis.map((m) => (
+              <a href={m.ruta} tabindex="-1">
+                <path d={cami(m.geometria)}>
+                  <title>{m.nom}</title>
+                </path>
+              </a>
+            ))
+          }
+        </svg>
+      </figure>
+      <p class="font-dada">
+        Límits: <a href={mapa.condicions}>Institut Cartogràfic i Geològic de Catalunya</a>, a escala 1:1.000.000,
+        {`consultats el ${dia(mapa.data_consulta)}.`}
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="llista-titol">
+      <h2 class="titol-seccio" id="llista-titol">Tots els municipis</h2>
+      <p class="secundari">{nombre(municipis.length)} municipis.</p>
+      <nav class="lletres" aria-label="Lletres">
+        {lletres.map((l) => <a href={`#lletra-${l}`}>{l}</a>)}
+      </nav>
+      {
+        lletres.map((l) => (
+          <section class="lletra" aria-labelledby={`lletra-${l}`}>
+            <h3 class="titol-bloc" id={`lletra-${l}`}>{l}</h3>
+            <ul class="noms">
+              {perNom
+                .filter((m) => inicial(m.nom) === l)
+                .map((m) => (
+                  <li>
+                    <a href={m.ruta}>{m.nom}</a>
+                  </li>
+                ))}
+            </ul>
+          </section>
+        ))
+      }
+      <p class="font-dada">
+        Font: <a href={ajuntaments.url_municipis}>registre d'ens locals de la Generalitat</a>, {dia(ajuntaments.data_municipis)}.
+      </p>
+    </section>
+  </main>
+</Pagina>
+
+<style>
+  .punt.dad {
+    background: var(--dad);
+  }
+
+  .mapa {
+    margin: 0;
+  }
+
+  .mapa svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+  }
+
+  .mapa path {
+    fill: var(--dad-tint);
+    stroke: var(--dad);
+    stroke-opacity: 0.3;
+    stroke-width: 0.5;
+    stroke-linejoin: round;
+  }
+
+  .mapa a:hover path {
+    fill: var(--dad);
+  }
+
+  .lletres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .lletres a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 999px;
+    background: var(--bg-2);
+    color: var(--ink);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lletra {
+    margin-top: 2rem;
+    scroll-margin-top: 4.5rem;
+  }
+
+  .noms {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    columns: 14rem auto;
+    column-gap: 2rem;
+  }
+
+  .noms a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .seccio > .font-dada {
+    margin-top: 1.5rem;
+  }
+</style>

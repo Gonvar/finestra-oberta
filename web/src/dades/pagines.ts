@@ -3,7 +3,8 @@
 // pàgina que no hi és no es pot construir.
 import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
 import { decretsLlei, lleis } from './activitat.ts';
-import { govern, membres, parlament, slug } from './institucions.ts';
+import { govern, membres, nombre, parlament, slug } from './institucions.ts';
+import { municipis } from './municipis.ts';
 
 export type Pagina = {
   /** Comença i acaba amb barra, com les rutes que genera Astro: «/», «/parlament/». */
@@ -67,6 +68,21 @@ export const pagines: Pagina[] = [
       frase: 'Què fan el Govern i el Parlament, dia a dia.',
     },
   },
+  {
+    ruta: '/municipis/',
+    titol: 'Municipis · Finestra Oberta',
+    descripcio: 'Qui hi viu, qui governa l’ajuntament i com s’hi va votar, municipi a municipi.',
+    previsualitzacio: {
+      titol: 'Com és el teu municipi',
+      frase: `Els ${nombre(municipis.length)} municipis de Catalunya, amb dades oficials.`,
+    },
+  },
+  ...municipis.map((m) => ({
+    ruta: m.ruta,
+    titol: `${m.nom} · Finestra Oberta`,
+    descripcio: `${m.nom}: qui hi viu, qui governa l’ajuntament i com s’hi va votar.`,
+    previsualitzacio: { titol: m.nom, frase: `${m.comarca}, província de ${m.provincia}.` },
+  })),
   ...membres.map((m) => ({
     ruta: `/govern/${slug(m.nom)}/`,
     titol: `${m.nom} · Finestra Oberta`,

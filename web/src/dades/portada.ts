@@ -43,6 +43,12 @@ export const blocs: Bloc[] = [
   },
   {
     institucio: 'dad',
+    titol: 'Municipis',
+    frase: 'Qui hi viu, qui governa l’ajuntament i com s’hi va votar, en un mapa.',
+    href: '/municipis',
+  },
+  {
+    institucio: 'dad',
     titol: 'Dades',
     frase: "Els conjunts de dades oberts de la Generalitat, l'Idescat i Barcelona.",
     href: `${REPO}/blob/main/docs/dades-obertes.md`,
