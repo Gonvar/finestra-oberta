@@ -9,10 +9,25 @@ type Objecte = { [camp: string]: Valor };
 export type Llegeix = (cami: string) => Promise<string>;
 
 export const WEB = 'https://finestraoberta.cat';
+const BRANCA = 'https://raw.githubusercontent.com/Gonvar/finestra-oberta/dades';
 const COM_VERIFICAR =
   'https://github.com/Gonvar/finestra-oberta/blob/main/docs/institucions.md#com-comprovar-que-les-dades-s%C3%B3n-de-la-font';
 
-export type Procedencia = { data_consulta: string; fitxers: Record<string, string> };
+type Grup = { data_consulta: string; fitxers: Record<string, string> };
+
+/**
+ * El que en llegeix la web de procedencia.json: cada font té el seu dia de consulta i els seus
+ * fitxers. La branca `dades` pot tenir encara el format d'abans, amb un sol grup sense nom, fins que
+ * el workflow de dades hi publica amb el codi nou; Cloudflare compila main amb el que hi ha publicat.
+ */
+export type Procedencia = { grups: Record<string, Grup> } | Grup;
+
+/** Cada fitxer signat, amb la seva empremta i el dia en què es va llegir la seva font. */
+export const signats = (procedencia: Procedencia) =>
+  ('grups' in procedencia ? Object.values(procedencia.grups) : [procedencia]).flatMap(
+    ({ data_consulta, fitxers }) =>
+      Object.entries(fitxers).map(([fitxer, sha256]) => ({ fitxer, sha256, data_consulta })),
+  );
 
 const esObjecte = (valor: Valor): valor is Objecte =>
   typeof valor === 'object' && valor !== null && !Array.isArray(valor);
@@ -204,9 +219,10 @@ export function context(nom: string, sha256: string, dades: Valor) {
     conjunt: nom,
     fonts: fonts(dades),
     verificacio: {
-      fitxer: `${WEB}/dades/${nom}.json`,
+      // La branca signada, i no /dades/: Cloudflare no serveix fitxers de més de 25 MiB.
+      fitxer: `${BRANCA}/${nom}.json`,
       sha256,
-      procedencia: `${WEB}/dades/procedencia.json`,
+      procedencia: `${BRANCA}/procedencia.json`,
       com_verificar: COM_VERIFICAR,
     },
   };
@@ -218,10 +234,11 @@ export function context(nom: string, sha256: string, dades: Valor) {
  */
 export function cataleg(procedencia: Procedencia, llegeix: (fitxer: string) => Valor) {
   return {
-    data_consulta: procedencia.data_consulta,
-    conjunts: Object.entries(procedencia.fitxers).map(([fitxer, sha256]) =>
-      context(fitxer.replace(/\.json$/, ''), sha256, llegeix(fitxer)),
-    ),
+    // Cada font es llegeix el seu dia: si una no respon, se'n mantenen les dades d'un dia anterior.
+    conjunts: signats(procedencia).map(({ fitxer, sha256, data_consulta }) => ({
+      ...context(fitxer.replace(/\.json$/, ''), sha256, llegeix(fitxer)),
+      data_consulta,
+    })),
   };
 }
 
@@ -254,7 +271,7 @@ type Arrel = ReturnType<typeof context> & {
 const CLAU = /^[a-z0-9_-]+$/i;
 
 /** Els trossos d'un conjunt, pel camí que tenen a /conjunts/. */
-export function trossos(nom: string, sha256: string, dades: Valor, procedencia: Procedencia) {
+export function trossos(nom: string, sha256: string, dades: Valor, data_consulta: string) {
   if (!esObjecte(dades)) throw new SourceError(`${nom}.json no és un objecte.`);
   const fitxers: Record<string, Valor> = {};
   const claus: Arrel['claus'] = {};
@@ -301,7 +318,7 @@ export function trossos(nom: string, sha256: string, dades: Valor, procedencia: 
   }
   const arrel: Arrel = {
     ...context(nom, sha256, dades),
-    data_consulta: procedencia.data_consulta,
+    data_consulta,
     estructura: estructura(dades),
     claus,
   };

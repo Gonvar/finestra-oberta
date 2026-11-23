@@ -395,18 +395,28 @@ export async function reprodueix(origen: string, desti: string, fonts: Fonts) {
       `Les còpies publicades són de les fonts ${Object.keys(procedencia.grups).join(', ')}, i el codi en té ${Object.keys(fonts).join(', ')}.`,
     );
   // Primer es construeix tot, sense escriure res: una reproducció que no quadra no ha de deixar
-  // `desti` a mitges. No s'hi desa cap procedència: no és la de cap consulta a les fonts.
+  // `desti` a mitges. La web llegeix de procedencia.json el dia de cada font i l'empremta de cada
+  // fitxer: s'hi desa la publicada amb les empremtes dels fitxers nous. Les còpies no s'hi copien.
   const fitxers: Record<string, unknown> = {};
-  for (const [nom, construeix] of Object.entries(fonts))
-    Object.assign(
-      fitxers,
-      (
-        await reprodueixGrup(llegeix, procedencia.grups[nom]!, (fetchImpl, data) =>
-          construeix(fetchImpl, data, 0),
-        )
-      ).fitxers,
-    );
+  const grups: Record<string, Grup> = {};
+  for (const [nom, construeix] of Object.entries(fonts)) {
+    const grup = procedencia.grups[nom]!;
+    const delGrup = (
+      await reprodueixGrup(llegeix, grup, (fetchImpl, data) => construeix(fetchImpl, data, 0))
+    ).fitxers;
+    Object.assign(fitxers, delGrup);
+    grups[nom] = {
+      ...grup,
+      fitxers: Object.fromEntries(
+        Object.entries(delGrup).map(([fitxer, dades]) => [
+          fitxer,
+          empremta(new TextEncoder().encode(serialitza(dades))),
+        ]),
+      ),
+    };
+  }
   await mkdir(desti, { recursive: true });
   for (const [nom, dades] of Object.entries(fitxers))
     await writeFile(join(desti, nom), serialitza(dades));
+  await writeFile(join(desti, 'procedencia.json'), serialitza({ grups }));
 }
