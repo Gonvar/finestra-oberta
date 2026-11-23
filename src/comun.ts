@@ -32,7 +32,13 @@ async function get(fetchImpl: Fetch, url: string, accept: string) {
 }
 
 export async function getJson<T>(fetchImpl: Fetch, url: string) {
-  return (await (await get(fetchImpl, url, 'application/json')).json()) as T;
+  const text = await (await get(fetchImpl, url, 'application/json')).text();
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    // Alguns serveis, com els WFS, responen un error en XML amb un codi 200.
+    throw new SourceError(`La font no ha tornat JSON: ${text.slice(0, 200)}`);
+  }
 }
 
 /** Dades obertes de Catalunya, la plataforma Socrata de la Generalitat. */
