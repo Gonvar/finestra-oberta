@@ -80,7 +80,7 @@ export function creaServidor(dades: Dades) {
           .max(60)
           .optional()
           .describe(
-            'Un camp dels elements, com «nom»: la cerca només hi mira. Sense camp, mira tot l’element.',
+            'Un camp dels elements, com «nom»: la cerca només hi mira. Sense camp, mira tot l’element, llevat de les llistes grans, on cal dir-lo.',
           ),
         desde: z.number().int().min(0).default(0).describe('El primer element de la pàgina.'),
         quants: z.number().int().min(1).max(MAX_ELEMENTS).default(20),

@@ -62,7 +62,7 @@ El pla gratuït de Cloudflare Workers dona 10 ms de CPU per petició, i analitza
 - `/conjunts/<conjunt>/<camp>.json`: cada camp del primer nivell.
 - `/conjunts/<conjunt>/<camp>/<pàgina>.json`: les llistes de més de 200 kB, en pàgines d'uns 100 kB, i a `cerca/<camp>.json` el text de cada element en aquell camp, per cercar-hi.
 
-Una consulta només llegeix els trossos que necessita. Els trossos es fan en el mateix build que comprova les empremtes, i no canvien cap valor ni l'ordre: la verificació es fa sempre sobre els fitxers de `/dades/`.
+Una consulta només llegeix els trossos que necessita. Un camp del primer nivell que no és una llista, i l'índex de cerca d'un camp, es llegeixen sencers: ara el més gran fa uns 430 kB (`agenda/govern.json`). Els trossos es fan en el mateix build que comprova les empremtes, i no canvien cap valor ni l'ordre: la verificació es fa sempre sobre els fitxers de `/dades/`.
 
 ## Límits
 

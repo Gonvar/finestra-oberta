@@ -326,6 +326,9 @@ test('una llista gran no es llegeix si la resposta no hi cabria', async () => {
     dades.consulta('mapa', { cami: '', desde: 0, quants: 20 }),
     /el màxim és 60000/,
   );
+  await assert.rejects(dades.consulta('mapa', { cami: '', cerca: 'vic', desde: 0, quants: 20 }), {
+    message: "El fitxer no és una llista: la cerca no s'hi aplica.",
+  });
   assert.equal(llegits.filter((f) => /municipis\/\d+\.json$/.test(f)).length, 0);
 });
 

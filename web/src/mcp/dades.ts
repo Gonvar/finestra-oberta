@@ -430,6 +430,8 @@ export function creaDades(llegeix: Llegeix) {
     async consulta(nom: string, parametres: Consulta) {
       const { claus, context } = await arrel(nom);
       const { cami } = parametres;
+      if (cami === '' && parametres.cerca !== undefined)
+        throw new SourceError("El fitxer no és una llista: la cerca no s'hi aplica.");
       const partida = Object.hasOwn(claus, cami) ? claus[cami] : null;
       const resposta = partida
         ? await consultaPartida(nom, cami, partida, parametres)
