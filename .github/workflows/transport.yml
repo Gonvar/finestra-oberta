@@ -23,6 +23,8 @@ jobs:
     name: Fa la foto i la publica
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    # Una foto tarda menys d'un minut. La següent arriba al cap de mitja hora.
+    timeout-minutes: 10
     # Les claus de TMB i d'R2 són secrets de l'entorn `dades`, que només s'obre per a main. Cada clau
     # només arriba als passos que la necessiten.
     environment: dades
