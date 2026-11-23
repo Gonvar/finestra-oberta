@@ -105,7 +105,7 @@ for (const servidor of servidors) {
       if (llicencia === 'per conjunt')
         assert.match(
           docs,
-          /llicència/i,
+          /llicència/,
           `${servidor.docs} ha d'explicar d'on surt la llicència de cada conjunt.`,
         );
       else

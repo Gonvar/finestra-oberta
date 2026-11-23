@@ -75,7 +75,11 @@ export const servidors: Servidor[] = [
   {
     nom: 'transport',
     fonts: [
-      { organisme: 'Renfe (Rodalies de Catalunya)', domini: 'renfe.com', llicencia: 'per conjunt' },
+      {
+        organisme: 'Renfe (Rodalies de Catalunya)',
+        domini: 'renfe.com',
+        llicencia: 'https://data.renfe.com/legal',
+      },
       {
         organisme: 'Ferrocarrils de la Generalitat de Catalunya',
         domini: 'fgc.cat',
