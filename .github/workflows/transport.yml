@@ -1,0 +1,133 @@
+name: Històric del transport públic
+
+# Cada mitja hora fa una foto de com van els trens de Rodalies i d'FGC i dels avisos de TMB, i la
+# publica a historic.finestraoberta.cat (un bucket R2 de Cloudflare, de lectura pública) amb la còpia
+# comprimida de cada resposta. La foto, el resum del dia i el resum general se signen amb una
+# atestació de GitHub. Vegeu docs/transport.md.
+# Si una font falla o la foto no surt de les còpies, la tasca falla, GitHub ho notifica i el que hi
+# ha publicat es queda com estava.
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+# D'una en una: cada execució parteix del resum que ha deixat l'anterior.
+concurrency:
+  group: transport
+  cancel-in-progress: false
+
+jobs:
+  foto:
+    name: Fa la foto i la publica
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    # Les claus de TMB i d'R2 són secrets de l'entorn `dades`, que només s'obre per a main. Cada clau
+    # només arriba als passos que la necessiten.
+    environment: dades
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    env:
+      BUCKET: finestra-oberta-transport
+      AWS_DEFAULT_REGION: auto
+      # R2 no accepta les sumes de comprovació que l'aws CLI afegeix per defecte des de la 2.23.
+      AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+      AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+    steps:
+      # Les accions es fixen pel commit: una etiqueta es pot moure.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Sense npm ci: la foto només fa servir src/historic.ts i src/operadors.ts, que no tenen cap
+      # dependència, i així no s'executa cap paquet de tercers en un pas amb claus.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+      # Del bucket i no de l'adreça pública, que passa per la memòria cau de Cloudflare: un resum
+      # antic faria perdre les fotos que s'hi han afegit després.
+      - name: Baixa el que hi ha publicat d'avui
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL: ${{ secrets.R2_ENDPOINT }}
+        run: |
+          # Torna 0 si l'ha baixat i 1 si no hi és. Qualsevol altre error atura la tasca.
+          baixa() {
+            if sortida=$(aws s3api head-object --bucket "$BUCKET" --key "$1" 2>&1); then
+              aws s3 cp --no-progress "s3://$BUCKET/$1" "foto/entrada/$1"
+            elif grep -q 'Not Found\|404' <<< "$sortida"; then
+              return 1
+            else
+              echo "$sortida" >&2
+              exit 1
+            fi
+          }
+          baixa "dies/$(TZ=Europe/Madrid date +%F).json" || echo "Encara no hi ha cap foto d'avui."
+          # Sense resum.json, la foto en començaria un de nou només amb avui. Això només pot passar el
+          # primer cop: si ja hi ha dies publicats, és que s'ha perdut, i no es pot tapar.
+          if ! baixa resum.json; then
+            if [ -n "$(aws s3 ls "s3://$BUCKET/dies/")" ]; then
+              echo "::error::No hi ha resum.json, però sí dies publicats. Cal refer-lo a partir de dies/ abans de continuar."
+              exit 1
+            fi
+            echo "És la primera foto: encara no hi ha resum."
+          fi
+      - name: Fa la foto
+        env:
+          TMB_APP_ID: ${{ secrets.TMB_APP_ID }}
+          TMB_APP_KEY: ${{ secrets.TMB_APP_KEY }}
+        run: |
+          node src/foto-transport.ts foto
+          # La clau de TMB no ha d'anar enlloc del que es publica, tampoc dins d'una resposta.
+          for valor in "$TMB_APP_ID" "$TMB_APP_KEY"; do
+            if grep -rqF -- "$valor" foto/sortida || zgrep -qF -- "$valor" foto/sortida/captures/*/*.gz; then
+              echo "::error::Una clau de TMB surt en un fitxer que s'havia de publicar. No es publica res."
+              exit 1
+            fi
+          done
+      - name: Comprova que la foto surt de les còpies
+        working-directory: foto/sortida
+        run: |
+          for f in fotos/*/*.json; do node ../../src/verifica-foto.ts . "$f"; done
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: |
+            foto/sortida/fotos/*/*.json
+            foto/sortida/dies/*.json
+            foto/sortida/resum.json
+      - name: Publica
+        working-directory: foto/sortida
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL: ${{ secrets.R2_ENDPOINT }}
+        run: |
+          aws s3 cp --no-progress --recursive captures "s3://$BUCKET/captures" \
+            --content-type application/gzip --cache-control 'public, max-age=31536000, immutable'
+          aws s3 cp --no-progress --recursive fotos "s3://$BUCKET/fotos" \
+            --content-type application/json --cache-control 'public, max-age=31536000, immutable'
+          aws s3 cp --no-progress --recursive dies "s3://$BUCKET/dies" \
+            --content-type application/json --cache-control 'public, max-age=300'
+          aws s3 cp --no-progress resum.json "s3://$BUCKET/resum.json" \
+            --content-type application/json --cache-control 'public, max-age=300'
+      # Les còpies i les fotos tren a tren es guarden 30 dies; el resum de cada dia, per sempre. Es
+      # mira cada dia que hi ha, i no només el de fa 31 dies, perquè un dia sense cap execució no
+      # deixi còpies per sempre.
+      - name: Esborra les còpies de fa més de 30 dies
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL: ${{ secrets.R2_ENDPOINT }}
+        run: |
+          LIMIT=$(TZ=Europe/Madrid date -d '30 days ago' +%F)
+          for carpeta in captures fotos; do
+            aws s3 ls "s3://$BUCKET/$carpeta/" | awk '$1 == "PRE" { print $2 }' | while read -r dia; do
+              dia=${dia%/}
+              if [[ "$dia" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ && "$dia" < "$LIMIT" ]]; then
+                aws s3 rm --recursive --only-show-errors "s3://$BUCKET/$carpeta/$dia/"
+              fi
+            done
+          done

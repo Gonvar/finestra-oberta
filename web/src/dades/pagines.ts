@@ -91,6 +91,17 @@ export const pagines: Pagina[] = [
     },
   },
   {
+    ruta: '/transport/',
+    titol: 'Com van els trens · Finestra Oberta',
+    descripcio:
+      'Quants trens de Rodalies i d’FGC van amb retard, línia a línia, i els avisos del metro de TMB.',
+    previsualitzacio: {
+      titol: 'Com van els trens',
+      frase: 'Rodalies, FGC i TMB, línia a línia, amb una foto cada mitja hora.',
+      institucio: 'dad',
+    },
+  },
+  {
     ruta: '/metodologia/',
     titol: 'D’on surten les dades · Finestra Oberta',
     descripcio:

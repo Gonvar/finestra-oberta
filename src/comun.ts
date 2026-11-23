@@ -102,6 +102,7 @@ export async function getText(fetchImpl: Fetch, url: string) {
 
 const ENTITATS: Record<string, string> = {
   nbsp: ' ',
+  euro: '€',
   amp: '&',
   quot: '"',
   lt: '<',
@@ -124,6 +125,15 @@ export function text(html: string) {
     .replace(/\s+/g, ' ')
     .trim();
 }
+
+/** «146.635,82 €» en euros. Una altra forma és un error: no es pot endevinar on van els decimals. */
+export function euros(text: string) {
+  const m = text.match(/^(\d{1,3}(?:\.\d{3})*),(\d{2}) €$/);
+  if (m === null) throw new SourceError(`Import amb una forma inesperada: ${text}.`);
+  return Number(`${m[1]!.replaceAll('.', '')}.${m[2]}`);
+}
+
+export const pausa = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export function comprovaCodificacio(html: string, url: string) {
   if (html.includes('�')) throw new SourceError(`${url} té caràcters mal codificats.`);

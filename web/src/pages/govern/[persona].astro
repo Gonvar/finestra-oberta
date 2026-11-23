@@ -160,7 +160,8 @@ const desDe = `des del ${dia(t.nomenament)}`;
       )
     }
     <p class="font-dada">
-      {agenda && `La seva agenda arriba fins al ${dia(agenda.darrera_entrada)}. `}
+      {/* La branca dades pot no tenir encara aquest camp, i Cloudflare construeix amb la publicada. */}
+      {agenda && 'darrera_entrada' in agenda && `La seva agenda arriba fins al ${dia(agenda.darrera_entrada)}. `}
       {agenda && agenda.contactes > agenda.darrers.length && `Les ${agenda.darrers.length} més recents de ${nombre(agenda.contactes)}. `}
       L'agenda posa una entrada per grup: una reunió amb tres grups hi surt tres vegades. Font: <a
         href={transparencia.agenda.url}>{transparencia.agenda.font}</a
