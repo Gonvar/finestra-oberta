@@ -16,7 +16,7 @@ jobs:
           node-version: 24
       - env:
           GH_TOKEN: ${{ github.token }}
-          ESCRIU: 'no'
+          ESCRIU: 'si'
         run: |
           cat > n.mjs <<'JS'
           const base = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}`;
