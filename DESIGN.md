@@ -114,7 +114,7 @@ Segueix les skills d'Emil Kowalski que hi ha a `.claude/skills/`.
 
 | Component              | Com és                                                                                                                                                                                                                                                                                                                         |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Navegació**          | Barra translúcida de 52 px. A l'esquerra, el logotip (quatre quadrets com els vidres d'una finestra, tres amb els colors de les institucions i un en `--ink`) i el nom en pes 600. A la dreta, les seccions en 13 px.                                                                                                          |
+| **Navegació**          | Barra translúcida de 52 px. A l'esquerra, el logotip (quatre quadrets com els vidres d'una finestra, tres amb els colors de les institucions i un en `--ink`) i el nom en pes 600. A la dreta, les seccions en 13 px. Si no hi caben, passen a una segona línia, i la barra només és fixa quan la pantalla fa més de 23,5 em.  |
 | **Cercador**           | 56 px d'alçada, fons `--bg-2` i radi de 14 px. A dins, una lupa, el camp i el botó «Pregunta» en `--ink`. El _placeholder_ és una pregunta d'exemple, sense «per exemple:» al davant. A sota, tres xips amb preguntes freqüents.                                                                                               |
 | **Bloc d'institució**  | Un bloc sencer de color, amb el títol, una frase i la xifra de la secció amb el seu període. Tot el bloc és un enllaç, amb una fletxa a dalt a la dreta dins d'un cercle blanc al 18 %. En aquesta pàgina és l'únic lloc on hi ha fletxes.                                                                                     |
 | **Fila de cronologia** | Dues columnes: la data (110 px, `--ink-3`) i el contingut. El contingut té l'etiqueta del tipus, amb el punt de color de la institució, la frase en 19 px i, a sota, qui ho fa i d'on ve, en `--ink-3`. Al mòbil, una sola columna.                                                                                            |
@@ -146,6 +146,9 @@ El moviment dels components de Base UI es fa amb [Animate UI](https://animate-ui
 - Els objectius tàctils fan 44 px com a mínim, inclosos els xips (a la portada de mostra encara en fan 32).
 - Cada camp té una etiqueta, encara que no es vegi (`aria-label`). El _placeholder_ no fa d'etiqueta.
 - La pàgina no es desplaça mai en horitzontal, de 320 px en amunt.
+- Les media queries van en `em`, perquè el disseny canviï també quan algú amplia la mida del text.
+- Cada pàgina comença amb l'enllaç «Salta al contingut», que només es veu amb el focus, cap al `main` amb `id="principal"`.
+- La barra fixa no tapa mai l'element amb el focus (`scroll-padding-top`).
 
 ## 6. El que no es fa
 
