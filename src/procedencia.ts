@@ -4,7 +4,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { FontNoRespon, SourceError, TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
+import { esTall, FontNoRespon, SourceError, TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
 
 /**
  * Una resposta d'una font oficial, tal com va arribar. El cos és a captures/<sha256>. `url` és
@@ -84,11 +84,6 @@ const empremta = (cos: Uint8Array) => createHash('sha256').update(cos).digest('h
 export const serialitza = (dades: unknown) => `${JSON.stringify(dades, null, 2)}\n`;
 
 const INTENTS = 3;
-
-/** Una connexió tallada o un temps límit vençut: no hi ha resposta sencera de la font. */
-const esTall = (error: unknown) =>
-  error instanceof TypeError ||
-  (error instanceof DOMException && (error.name === 'AbortError' || error.name === 'TimeoutError'));
 
 /**
  * Les fonts oficials de tant en tant tallen una connexió, o responen 429 o 5xx, quan s'hi fan desenes
@@ -315,7 +310,8 @@ export async function genera<F extends Fonts>(
         anterior !== null && Object.hasOwn(anterior.procedencia.grups, nom)
           ? anterior.procedencia.grups[nom]!
           : null;
-      if (publicat === null) throw error;
+      if (publicat === null)
+        throw new SourceError(`${nom}: ${error.message} I no se'n té cap versió publicada.`);
       let mantingut;
       try {
         mantingut = await verificaGrup(anterior!.llegeix, nom, publicat, construeix);

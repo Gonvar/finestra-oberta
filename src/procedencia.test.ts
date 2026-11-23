@@ -401,3 +401,56 @@ test('una font que respon amb una forma inesperada no es manté: atura la tasca'
   }
   await rm(carpeta, { recursive: true });
 });
+
+test("una connexió tallada i un 429 també mantenen l'última versió", async () => {
+  for (const falla of [
+    async () => {
+      throw new TypeError('fetch failed');
+    },
+    async () => new Response('Massa consultes', { status: 429 }),
+  ]) {
+    const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+    caiguda = false;
+    await genera(carpeta, dues, '2026-11-22', duesFonts, 0);
+    const altraAhir = await readFile(join(carpeta, 'altra.json'), 'utf8');
+    const tallada: Fetch = async (input, init) =>
+      String(input) === C ? falla() : font(input, init);
+    const { fallades } = await genera(carpeta, tallada, '2026-11-23', duesFonts, 0);
+    assert.deepEqual(Object.keys(fallades), ['altra']);
+    assert.equal(await readFile(join(carpeta, 'altra.json'), 'utf8'), altraAhir);
+    await rm(carpeta, { recursive: true });
+  }
+});
+
+test('una URL mal formada és un error del codi, no una font caiguda', async () => {
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  caiguda = false;
+  await genera(carpeta, dues, '2026-11-22', duesFonts, 0);
+  const abans = await readFile(join(carpeta, 'procedencia.json'), 'utf8');
+  const malFormada: Construeix = async (fetchImpl) => ({
+    'altra.json': await getJson<object>(fetchImpl, 'no és una URL'),
+  });
+  await assert.rejects(
+    genera(carpeta, dues, '2026-11-23', { font: construeix, altra: malFormada }, 0),
+    TypeError,
+  );
+  assert.equal(await readFile(join(carpeta, 'procedencia.json'), 'utf8'), abans);
+  await rm(carpeta, { recursive: true });
+});
+
+test('no es manté una font si el codi ja no accepta les seves còpies', async () => {
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  caiguda = false;
+  await genera(carpeta, dues, '2026-11-22', duesFonts, 0);
+  const exigent: Construeix = async (fetchImpl, data) => {
+    const dades = await getJson<object>(fetchImpl, C);
+    if (!Object.hasOwn(dades, 'nou')) throw new SourceError('La font no té el camp nou.');
+    return { 'altra.json': { ...dades, data } };
+  };
+  caiguda = true;
+  await assert.rejects(
+    genera(carpeta, dues, '2026-11-23', { font: construeix, altra: exigent }, 0),
+    /no es pot mantenir: La font no té el camp nou/,
+  );
+  await rm(carpeta, { recursive: true });
+});

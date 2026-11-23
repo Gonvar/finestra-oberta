@@ -22,15 +22,23 @@ export type Fetch = typeof fetch;
 
 export const TEMPS_LIMIT_MS = 20_000;
 
+/** Una connexió tallada o un temps límit vençut: no hi ha resposta sencera de la font. */
+export const esTall = (error: unknown) =>
+  error instanceof TypeError ||
+  (error instanceof DOMException && (error.name === 'AbortError' || error.name === 'TimeoutError'));
+
 /** GET amb temps límit: la resposta si és 2xx; si no, un SourceError amb el codi. */
 async function get(fetchImpl: Fetch, url: string, accept: string) {
+  // fetch també dona TypeError per una URL mal formada, que és un error del codi i no de la font.
+  new URL(url);
   let response: Response;
   try {
     response = await fetchImpl(url, {
       headers: { Accept: accept },
       signal: AbortSignal.timeout(TEMPS_LIMIT_MS),
     });
-  } catch {
+  } catch (error) {
+    if (!esTall(error)) throw error;
     throw new FontNoRespon('La font no respon. Torna-ho a provar més tard.');
   }
   if (response.status === 429 || response.status >= 500)
