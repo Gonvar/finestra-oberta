@@ -4,7 +4,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { SourceError, TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
+import { FontNoRespon, SourceError, TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
 
 /**
  * Una resposta d'una font oficial, tal com va arribar. El cos és a captures/<sha256>. `url` és
@@ -309,7 +309,8 @@ export async function genera<F extends Fonts>(
       };
       for (const [sha256, cos] of delGrup) cossos.set(sha256, cos);
     } catch (error) {
-      if (!(error instanceof SourceError)) throw error;
+      // Només una font que no respon: un canvi de forma o de contingut ha d'aturar la tasca.
+      if (!(error instanceof FontNoRespon)) throw error;
       const publicat =
         anterior !== null && Object.hasOwn(anterior.procedencia.grups, nom)
           ? anterior.procedencia.grups[nom]!
@@ -319,7 +320,8 @@ export async function genera<F extends Fonts>(
       try {
         mantingut = await verificaGrup(anterior!.llegeix, nom, publicat, construeix);
       } catch (desquadre) {
-        if (!(desquadre instanceof DesquadreError)) throw desquadre;
+        if (!(desquadre instanceof DesquadreError || desquadre instanceof SourceError))
+          throw desquadre;
         throw new SourceError(
           `${error.message} I el que se'n va publicar no es pot mantenir: ${desquadre.message}`,
         );

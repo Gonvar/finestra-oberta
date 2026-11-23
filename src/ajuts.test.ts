@@ -68,6 +68,7 @@ test('publica les convocatòries que el dia de la consulta encara no han acabat 
     "data_fi_presentaci_sol in ('01/12/2026', '22/11/2026', '31/01/2030')",
   );
   assert.equal(ajuts.data_dades, '2026-11-22');
+  assert.equal(ajuts.data_consulta, AVUI);
   assert.equal(ajuts.url, `https://analisi.transparenciacatalunya.cat/d/${CONVOCATORIES}`);
   assert.deepEqual(
     ajuts.convocatories.map((c) => c.codi_raisc),

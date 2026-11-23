@@ -155,6 +155,9 @@ export async function construirAjuts(fetchImpl: Fetch, avui: string) {
     font: `Dades obertes de Catalunya: ${meta.name} (${meta.attribution})`,
     url: `${SOCRATA}/d/${CONVOCATORIES}`,
     data_dades: dia(meta),
+    // Quines convocatòries són obertes depèn del dia: si la font no respon i es mantenen les
+    // d'un altre dia, aquest camp ho diu.
+    data_consulta: avui,
     nota: 'Les convocatòries del RAISC que el dia de la consulta encara no han acabat el termini de presentació de sol·licituds, de totes les administracions. Les que la font no dona amb un final de termini que sigui una data no hi són: finals_no_llegibles en diu els valors i quantes convocatòries en tenen cadascun. Les dates es passen a la forma AAAA-MM-DD; les originals són a inici_font i fi_font, i si la font n’escriu una que no és una data, inici és null. Van ordenades per final de termini i, després, pel codi RAISC. Un camp que la font no dona és null, igual per a totes.',
     finals_no_llegibles: noLlegibles,
     convocatories: convocatories.sort(

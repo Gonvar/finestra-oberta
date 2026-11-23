@@ -14,6 +14,11 @@ try {
     `${fitxers.join(' i ')} surten de les ${grups.reduce((n, [, g]) => n + g.captures.length, 0)} còpies de les fonts ` +
       `(${grups.map(([nom, g]) => `${nom}, consultada el ${g.data_consulta}`).join('; ')}), i cada còpia té l'empremta que diu procedencia.json.`,
   );
+  for (const [nom, g] of grups)
+    if (g.fallada !== null)
+      console.log(
+        `${nom} no respon des del ${g.fallada.data} (${g.fallada.missatge}): les seves dades són del ${g.data_consulta}.`,
+      );
 } catch (error) {
   if (!(error instanceof DesquadreError || error instanceof SourceError)) throw error;
   console.error(`Les dades no quadren: ${error.message}`);

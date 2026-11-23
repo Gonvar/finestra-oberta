@@ -384,3 +384,20 @@ test('la verificació falla si procedencia.json no té les fonts del codi', asyn
   await assert.rejects(verifica(carpeta, duesFonts), /té les fonts font, i el codi, font, altra/);
   await rm(carpeta, { recursive: true });
 });
+
+test('una font que respon amb una forma inesperada no es manté: atura la tasca', async () => {
+  const carpeta = await mkdtemp(join(tmpdir(), 'procedencia-'));
+  caiguda = false;
+  await genera(carpeta, dues, '2026-11-22', duesFonts, 0);
+  const abans = await readFile(join(carpeta, 'procedencia.json'), 'utf8');
+  for (const resposta of [
+    () => new Response('<html>'),
+    () => new Response('No hi és', { status: 404 }),
+  ]) {
+    const canviada: Fetch = async (input, init) =>
+      String(input) === C ? resposta() : font(input, init);
+    await assert.rejects(genera(carpeta, canviada, '2026-11-23', duesFonts, 0), SourceError);
+    assert.equal(await readFile(join(carpeta, 'procedencia.json'), 'utf8'), abans);
+  }
+  await rm(carpeta, { recursive: true });
+});

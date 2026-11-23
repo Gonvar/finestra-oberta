@@ -12,6 +12,12 @@ export const READ_ONLY_EXTERNAL = {
 /** Un error de la font que sí que es pot explicar a l'assistent. */
 export class SourceError extends Error {}
 
+/**
+ * La font no ha respost, o ha respost que ara no pot (429 o 5xx). És l'única fallada per la qual
+ * src/dades.ts manté les dades anteriors d'una font: un canvi de forma o de contingut l'ha d'aturar.
+ */
+export class FontNoRespon extends SourceError {}
+
 export type Fetch = typeof fetch;
 
 export const TEMPS_LIMIT_MS = 20_000;
@@ -25,8 +31,10 @@ async function get(fetchImpl: Fetch, url: string, accept: string) {
       signal: AbortSignal.timeout(TEMPS_LIMIT_MS),
     });
   } catch {
-    throw new SourceError('La font no respon. Torna-ho a provar més tard.');
+    throw new FontNoRespon('La font no respon. Torna-ho a provar més tard.');
   }
+  if (response.status === 429 || response.status >= 500)
+    throw new FontNoRespon(`La font ha respost ${response.status}.`);
   if (!response.ok) throw new SourceError(`La font ha respost ${response.status}.`);
   return response;
 }
