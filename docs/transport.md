@@ -75,6 +75,12 @@ gh attestation verify <carpeta>/fotos/2026-11-23/093712.json --repo Gonvar/fines
 
 El primer torna a fer la foto a partir de les còpies i comprova que surt igual, i que cada còpia té la seva empremta. El segon comprova que la foto la va publicar el workflow de `main`.
 
+## Reutilització
+
+- **Renfe**: la [informació legal de data.renfe.com](https://data.renfe.com/legal) permet reutilitzar les dades, també amb finalitats comercials, si se'n cita l'origen (Renfe Operadora) i la data de l'última actualització. Cada conjunt indica, a més, la seva llicència (CC BY 4.0 a [incidencias-avisos](https://data.renfe.com/dataset/incidencias-avisos)).
+- **FGC**: cada conjunt de [dadesobertes.fgc.cat](https://dadesobertes.fgc.cat) indica la seva llicència, CC BY 4.0, que les instruccions del servidor demanen citar.
+- **TMB**: les condicions d'ús de l'API són a [developer.tmb.cat](https://developer.tmb.cat).
+
 ## Proves
 
 - [src/transport.test.ts](../src/transport.test.ts): proves sense xarxa amb dades sintètiques amb la forma de cada API.

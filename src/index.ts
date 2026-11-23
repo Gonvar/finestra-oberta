@@ -1,20 +1,10 @@
 import { serveStdio } from '@modelcontextprotocol/server/stdio';
-import { createBarcelonaServer } from './barcelona.ts';
-import { createDadesObertesServer } from './dadesobertes.ts';
-import { createIdescatServer } from './idescat.ts';
-import { createTransportServer } from './transport.ts';
+import { servidors } from './servidors.ts';
 
-const servers = {
-  idescat: createIdescatServer,
-  'dades-obertes': createDadesObertesServer,
-  barcelona: createBarcelonaServer,
-  transport: createTransportServer,
-};
-const name = process.argv[2];
+const servidor = servidors.find((s) => s.nom === process.argv[2]);
 
-if (!(name && name in servers)) {
-  console.error(`Indica el servidor: node src/index.ts <${Object.keys(servers).join('|')}>`);
+if (!servidor) {
+  console.error(`Indica el servidor: node src/index.ts <${servidors.map((s) => s.nom).join('|')}>`);
   process.exit(1);
 }
-const create = servers[name as keyof typeof servers];
-serveStdio(() => create());
+serveStdio(() => servidor.crea());
