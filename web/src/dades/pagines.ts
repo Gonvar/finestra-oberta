@@ -2,6 +2,7 @@
 // La plantilla Pagina.astro i les imatges de /previsualitzacions surten d'aquesta llista, i una
 // pàgina que no hi és no es pot construir.
 import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
+import { decretsLlei, lleis } from './activitat.ts';
 import { govern, membres, parlament, slug } from './institucions.ts';
 
 export type Pagina = {
@@ -34,6 +35,16 @@ export const pagines: Pagina[] = [
     previsualitzacio: {
       titol: 'Qui seu al Parlament',
       frase: `${parlament.escons} escons en ${parlament.grups.length} grups.`,
+      institucio: 'par',
+    },
+  },
+  {
+    ruta: '/parlament/decisions/',
+    titol: 'Què ha decidit el Parlament · Finestra Oberta',
+    descripcio: 'Què s’ha aprovat i què s’ha rebutjat a cada sessió del Ple, i les lleis noves.',
+    previsualitzacio: {
+      titol: 'Què ha decidit el Parlament',
+      frase: `${lleis.length} lleis i ${decretsLlei.length} decrets llei en aquesta legislatura.`,
       institucio: 'par',
     },
   },

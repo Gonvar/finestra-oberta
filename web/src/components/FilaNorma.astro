@@ -1,0 +1,58 @@
+---
+import type { Norma } from '../dades/activitat.ts';
+import { diaCurt } from '../dades/institucions.ts';
+
+type Props = { n: Norma };
+const { n } = Astro.props;
+---
+
+<li class="fila">
+  <time datetime={n.data_publicacio}>{diaCurt(n.data_publicacio)}</time>
+  <div>
+    <p class="tipus">{n.rang}</p>
+    <p class="frase"><a href={n.url}>{n.titol}</a></p>
+    <p class="secundari">
+      DOGC núm. {n.dogc}{n.vigencia !== 'Vigent' && ` · ${n.vigencia}`}
+    </p>
+  </div>
+</li>
+
+<style>
+  .fila {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .fila {
+      grid-template-columns: 7.5rem 1fr;
+      gap: 1rem;
+    }
+  }
+
+  time {
+    font-size: 0.9375rem;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tipus {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  .frase {
+    margin-top: 0.125rem;
+    font-size: 1.0625rem;
+    line-height: 1.45;
+  }
+
+  .frase a {
+    color: inherit;
+  }
+
+  .secundari {
+    margin-top: 0.25rem;
+  }
+</style>

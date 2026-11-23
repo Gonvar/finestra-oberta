@@ -1,0 +1,153 @@
+---
+import Pagina from '../../layouts/Pagina.astro';
+import '../../styles/subpagines.css';
+import Norma from '../../components/FilaNorma.astro';
+import Sessio from '../../components/SessioPle.astro';
+import { activitat, decisions, decretsLlei, lleis } from '../../dades/activitat.ts';
+import { dia } from '../../dades/institucions.ts';
+
+const { sessions, normes } = activitat;
+const constitutiva = sessions.at(-1)!;
+// Les sessions més noves es veuen obertes; la resta, plegades, perquè la pàgina no sigui infinita.
+const OBERTES = 6;
+const NORMES_OBERTES = 8;
+
+const ambDecisions = sessions.map((s) => {
+  const fetes = decisions(s);
+  return { ...s, fetes, altres: s.punts.length - fetes.length };
+});
+---
+
+<Pagina>
+  <main class="contingut">
+  <section class="capcalera" aria-labelledby="titol">
+    <p class="etiqueta entra"><span class="punt par" aria-hidden="true"></span>Parlament de Catalunya</p>
+    <h1 id="titol" class="entra" style="--ordre: 1">Què ha decidit el Parlament</h1>
+    <p class="entradeta entra" style="--ordre: 2">
+      Què s'ha aprovat i què s'ha rebutjat a cada sessió del Ple, i les lleis noves.
+    </p>
+    <p class="avis entra" style="--ordre: 3">
+      El Parlament no publica qui vota què ni qui assisteix a cada votació. Per això aquí hi ha el resultat
+      de cada decisió, però no els vots.
+    </p>
+  </section>
+
+  <section class="seccio entra" style="--ordre: 4" aria-labelledby="xifres-titol">
+    <h2 class="visualment-amagat" id="xifres-titol">La legislatura en xifres</h2>
+    <div class="xifres">
+      <div>
+        <p class="valor">{sessions.length}</p>
+        <p class="que">sessions del Ple des del {dia(constitutiva.data)}</p>
+      </div>
+      <div>
+        <p class="valor">{lleis.length}</p>
+        <p class="que">lleis publicades al Diari Oficial de la Generalitat (DOGC). Les aprova el Parlament.</p>
+      </div>
+      <div>
+        <p class="valor">{decretsLlei.length}</p>
+        <p class="que">
+          decrets llei. Els aprova el Govern quan és urgent, i el Parlament els ha de convalidar o deixen de valer.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccio" aria-labelledby="normes-titol">
+    <h2 class="titol-seccio" id="normes-titol">Lleis i decrets llei nous</h2>
+    <ol class="files">
+      {normes.normes.slice(0, NORMES_OBERTES).map((n) => <Norma n={n} />)}
+    </ol>
+    <details>
+      <summary>Totes les normes de la legislatura ({normes.normes.length})</summary>
+      <ol class="files">
+        {normes.normes.slice(NORMES_OBERTES).map((n) => <Norma n={n} />)}
+      </ol>
+    </details>
+    <p class="font-dada">
+      Font: <a href={normes.url}>normativa del DOGC</a>, a Dades obertes de Catalunya, actualitzada el {
+        dia(normes.data_dades)
+      }.
+    </p>
+  </section>
+
+  <section class="seccio" aria-labelledby="ple-titol">
+    <h2 class="titol-seccio" id="ple-titol">Sessió per sessió</h2>
+    <p class="explica">
+      Al Ple hi ha tots els diputats. Aquí surten les iniciatives que s'hi han aprovat o rebutjat. La resta de
+      punts són preguntes al Govern, debats o tràmits.
+    </p>
+    {ambDecisions.slice(0, OBERTES).map((s) => <Sessio s={s} />)}
+    <details>
+      <summary>Sessions anteriors ({ambDecisions.length - OBERTES})</summary>
+      {ambDecisions.slice(OBERTES).map((s) => <Sessio s={s} />)}
+    </details>
+    <p class="font-dada">
+      Font: <a href={activitat.url}>acords de les sessions del Ple</a>, al web del Parlament de Catalunya,
+      consultat el {dia(activitat.data_consulta)}.
+    </p>
+  </section>
+
+  <section class="seccio" aria-labelledby="paraules-titol">
+    <h2 class="titol-seccio" id="paraules-titol">Què vol dir</h2>
+    <dl class="paraules">
+      <dt>Moció</dt>
+      <dd>
+        Un text que demana al Govern que faci alguna cosa. Es vota després d'una interpel·lació, que és una
+        pregunta al Govern sobre la seva política.
+      </dd>
+      <dt>Resolució</dt>
+      <dd>El que decideix el Parlament sobre un tema, per exemple després d'una comissió d'investigació.</dd>
+      <dt>Convalidar un decret llei</dt>
+      <dd>Que el Parlament el doni per bo. Si no el convalida, el decret llei queda derogat, és a dir, deixa de valer.</dd>
+    </dl>
+  </section>
+  </main>
+</Pagina>
+
+<style>
+  .avis {
+    margin-top: 1.5rem;
+    max-width: 38rem;
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    background: var(--bg-2);
+    color: var(--ink-2);
+  }
+
+  .explica {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+
+  details {
+    margin-top: 1.5rem;
+  }
+
+  summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--par);
+  }
+
+  .seccio > .font-dada {
+    margin-top: 1.5rem;
+  }
+
+  .paraules {
+    margin: 1.5rem 0 0;
+    max-width: 40rem;
+  }
+
+  .paraules dt {
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .paraules dd {
+    margin: 0.25rem 0 0;
+    color: var(--ink-2);
+  }
+</style>
