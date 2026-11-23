@@ -32,7 +32,7 @@ try {
       `Ajuts: ${ajuts.convocatories.length} convocatòries amb el termini sense acabar (dades del ${ajuts.data_dades}). ` +
       `Pressupost: ${pressupost.despeses.seccions.length} files d’entitat i secció (${pressupost.despeses.mes} ${pressupost.despeses.exercici}) i ` +
       `${pressupost.ingressos.capitols.length} d’entitat i capítol d’ingressos (${pressupost.ingressos.mes} ${pressupost.ingressos.exercici}). ` +
-      `Contractes: ${contractes.files.reduce((n, f) => n + f.contractes, 0)} adjudicats el ${contractes.any} en ${contractes.files.length} files d’organisme i procediment (dades del ${contractes.data_dades}).`,
+      `Contractes: ${contractes.files.reduce((n, f) => n + f.inscripcions, 0)} adjudicacions del ${contractes.any} en ${contractes.files.length} files d’organisme i procediment (dades del ${contractes.data_dades}).`,
   );
 } catch (error) {
   if (!(error instanceof SourceError)) throw error;

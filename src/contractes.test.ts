@@ -5,7 +5,6 @@ import { test } from 'node:test';
 import type { Fetch } from './comun.ts';
 import { construirContractes, REGISTRE } from './contractes.ts';
 
-const AVUI = '2026-11-23';
 const META = {
   name: 'Registre públic de contractes',
   attribution: "Departament d'Economia i Finances",
@@ -18,7 +17,7 @@ const GRUPS = [
     id_agrupacio_organisme: '200',
     agrupacio_organisme: 'Universitat B',
     procediment_adjudicacio: 'Obert',
-    contractes: '3',
+    inscripcions: '3',
     import: '1500.5',
   },
   {
@@ -26,21 +25,21 @@ const GRUPS = [
     id_agrupacio_organisme: '300',
     agrupacio_organisme: 'Ajuntament C',
     procediment_adjudicacio: 'Menor',
-    contractes: '10',
+    inscripcions: '10',
     import: '9000',
   },
   {
     subjecte_ambit: "Entitats de l'Administració Local",
     id_agrupacio_organisme: '300',
     agrupacio_organisme: 'Ajuntament C',
-    contractes: '1',
+    inscripcions: '1',
     import: '20',
   },
 ];
 
 function font({
   grups = GRUPS as unknown[],
-  posteriors = [{ contractes: '7' }] as unknown[],
+  posteriors = [{ inscripcions: '7' }] as unknown[],
 } = {}) {
   const urls: URL[] = [];
   const fetchImpl: Fetch = async (input) => {
@@ -53,30 +52,29 @@ function font({
   return { fetchImpl, urls };
 }
 
-test("publica els contractes d'aquest any per organisme i procediment, sense comptar-ne cap dues vegades", async () => {
+test("publica les adjudicacions d'aquest any per organisme i procediment, fins al dia de les dades", async () => {
   const { fetchImpl, urls } = font();
-  const contractes = await construirContractes(fetchImpl, AVUI);
+  const contractes = await construirContractes(fetchImpl);
   const [, grups, posteriors] = urls;
-  // Només adjudicacions i menors, de l'1 de gener a avui: les liquidacions repetirien contractes.
+  // Només adjudicacions i menors, de l'1 de gener a l'última actualització de la font.
   assert.equal(
     grups!.searchParams.get('$where'),
-    "situaci_contractual in ('adjudicació', 'menor') and data_adjudicacio >= '2026-01-01' and data_adjudicacio <= '2026-11-23'",
+    "situaci_contractual in ('adjudicació', 'menor') and data_adjudicacio >= '2026-01-01' and data_adjudicacio <= '2026-11-16'",
   );
   assert.equal(
     posteriors!.searchParams.get('$where'),
-    "situaci_contractual in ('adjudicació', 'menor') and data_adjudicacio > '2026-11-23'",
+    "situaci_contractual in ('adjudicació', 'menor') and data_adjudicacio > '2026-11-16'",
   );
   assert.equal(contractes.any, 2026);
-  assert.equal(contractes.fins_a, AVUI);
-  assert.equal(contractes.adjudicacions_posteriors, 7);
   assert.equal(contractes.data_dades, '2026-11-16');
+  assert.equal(contractes.adjudicacions_posteriors, 7);
   assert.equal(contractes.url, `https://analisi.transparenciacatalunya.cat/d/${REGISTRE}`);
-  // Per àmbit, codi i procediment; el procediment que falta és null.
+  // Per àmbit, codi i procediment; el procediment que falta és null i va al final.
   assert.deepEqual(
     contractes.files.map((f) => [f.organisme_codi, f.procediment]),
     [
-      ['300', null],
       ['300', 'Menor'],
+      ['300', null],
       ['200', 'Obert'],
     ],
   );
@@ -85,25 +83,33 @@ test("publica els contractes d'aquest any per organisme i procediment, sense com
     organisme_codi: '200',
     organisme: 'Universitat B',
     procediment: 'Obert',
-    contractes: 3,
+    inscripcions: 3,
     import: 1500.5,
   });
 });
 
 test("s'atura si un recompte o un import no és un nombre, o si falta l'organisme", async () => {
-  const recompte = font({ grups: [{ ...GRUPS[0], contractes: '3,0' }] });
-  await assert.rejects(construirContractes(recompte.fetchImpl, AVUI), /no és un nombre/);
+  const recompte = font({ grups: [{ ...GRUPS[0], inscripcions: '3,0' }] });
+  await assert.rejects(construirContractes(recompte.fetchImpl), /no és un nombre/);
   const import_ = font({ grups: [{ ...GRUPS[0], import: '1.500,5' }] });
-  await assert.rejects(construirContractes(import_.fetchImpl, AVUI), /no és un import/);
+  await assert.rejects(construirContractes(import_.fetchImpl), /no és un import/);
   const sense = font({ grups: [{ ...GRUPS[0], agrupacio_organisme: undefined }] });
-  await assert.rejects(construirContractes(sense.fetchImpl, AVUI), /no té agrupacio_organisme/);
+  await assert.rejects(construirContractes(sense.fetchImpl), /no té agrupacio_organisme/);
+  const sensePosteriors = font({ posteriors: [] });
+  await assert.rejects(construirContractes(sensePosteriors.fetchImpl), /recompte/);
 });
 
-test("s'atura si un organisme i un procediment surten dues vegades, o si no hi ha cap fila", async () => {
-  const doble = font({ grups: [GRUPS[0], { ...GRUPS[0], agrupacio_organisme: 'Universitat B2' }] });
-  await assert.rejects(construirContractes(doble.fetchImpl, AVUI), /repeteix 200\/Obert/);
+test('un organisme que canvia de nom surt amb cada nom, i un any sense adjudicacions és buit', async () => {
+  const nou = { ...GRUPS[0], agrupacio_organisme: 'Universitat B nova', inscripcions: '1' };
+  const { fetchImpl } = font({ grups: [nou, GRUPS[0]] });
+  const contractes = await construirContractes(fetchImpl);
+  assert.deepEqual(
+    contractes.files.map((f) => [f.organisme, f.inscripcions]),
+    [
+      ['Universitat B', 3],
+      ['Universitat B nova', 1],
+    ],
+  );
   const buida = font({ grups: [] });
-  await assert.rejects(construirContractes(buida.fetchImpl, AVUI), /cap fila/);
-  const sensePosteriors = font({ posteriors: [] });
-  await assert.rejects(construirContractes(sensePosteriors.fetchImpl, AVUI), /recompte/);
+  assert.deepEqual((await construirContractes(buida.fetchImpl)).files, []);
 });

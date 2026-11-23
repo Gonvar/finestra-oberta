@@ -13,6 +13,6 @@ export async function construirDades(fetchImpl: Fetch, avui: string, pausaMs: nu
     'activitat.json': await construirActivitat(fetchImpl, avui, pausaMs),
     'ajuts.json': await construirAjuts(fetchImpl, avui),
     'pressupost.json': await construirPressupost(fetchImpl),
-    'contractes.json': await construirContractes(fetchImpl, avui),
+    'contractes.json': await construirContractes(fetchImpl),
   };
 }

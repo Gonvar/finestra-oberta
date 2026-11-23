@@ -1,4 +1,4 @@
-// Quants contractes ha adjudicat cada departament o ens aquest any i per quant, del Registre públic
+// Quantes adjudicacions ha fet cada departament o ens aquest any i per quant, del Registre públic
 // de contractes, que recull els de la Generalitat, els ens locals i les universitats. No és un
 // servidor MCP: src/dades.ts ho desa a la branca `dades`. Les sumes les fa l'API de la font, i no
 // es publica cap contracte ni cap adjudicatari un per un.
@@ -32,12 +32,17 @@ function recompte(fila: Fila, nom: string) {
   return Number(valor);
 }
 
-export async function construirContractes(fetchImpl: Fetch, avui: string) {
+export async function construirContractes(fetchImpl: Fetch) {
   const meta = await metadades(fetchImpl, REGISTRE);
-  const any = avui.slice(0, 4);
-  // `avui` el calcula src/dades.ts i `SITUACIONS` és fix: cap valor no pot portar una cometa.
+  // El límit és el dia de l'última actualització de la font, no el de la consulta: així el fitxer
+  // només canvia quan la font canvia, i a principi d'any l'any és el de les últimes dades.
+  const fins = dia(meta);
+  const any = fins.slice(0, 4);
+  // `fins` surt d'una data i `SITUACIONS` és fix: cap valor no pot portar una cometa.
   const situacions = `situaci_contractual in (${SITUACIONS.map((s) => `'${s}'`).join(', ')})`;
 
+  // Agrupar també pel nom i per l'àmbit fa que, si un organisme els canvia durant l'any, surti en
+  // dues files amb el mateix codi, cadascuna amb el nom que dona la font.
   const grups = await getJson<Fila[]>(
     fetchImpl,
     consulta({
@@ -46,25 +51,23 @@ export async function construirContractes(fetchImpl: Fetch, avui: string) {
         'id_agrupacio_organisme',
         'agrupacio_organisme',
         'procediment_adjudicacio',
-        'count(*) as contractes',
+        'count(*) as inscripcions',
         'sum(import_adjudicacio) as import',
       ].join(', '),
-      $where: `${situacions} and data_adjudicacio >= '${any}-01-01' and data_adjudicacio <= '${avui}'`,
+      $where: `${situacions} and data_adjudicacio >= '${any}-01-01' and data_adjudicacio <= '${fins}'`,
       $group:
         'subjecte_ambit, id_agrupacio_organisme, agrupacio_organisme, procediment_adjudicacio',
     }),
   );
   if (grups.length === LIMIT) throw new SourceError(`El conjunt ${REGISTRE} no cap en una pàgina.`);
-  if (grups.length === 0)
-    throw new SourceError(`El conjunt ${REGISTRE} no té cap fila d'aquest any.`);
 
-  // La font té adjudicacions amb una data posterior al dia de la consulta. No es poden posar a cap
-  // dia d'aquest any, i es compten a part perquè no desapareguin sense dir-ho.
+  // La font té adjudicacions amb una data posterior a la de les dades. No es poden posar a cap dia
+  // d'aquest any, i es compten a part perquè no desapareguin sense dir-ho.
   const [posteriors] = await getJson<Fila[]>(
     fetchImpl,
     consulta({
-      $select: 'count(*) as contractes',
-      $where: `${situacions} and data_adjudicacio > '${avui}'`,
+      $select: 'count(*) as inscripcions',
+      $where: `${situacions} and data_adjudicacio > '${fins}'`,
     }),
   );
   if (posteriors === undefined) throw new SourceError(`El recompte de ${REGISTRE} és buit.`);
@@ -75,32 +78,26 @@ export async function construirContractes(fetchImpl: Fetch, avui: string) {
     organisme: obligatori(f, 'agrupacio_organisme', REGISTRE),
     // Unes poques adjudicacions no tenen el procediment: són null.
     procediment: camp(f, 'procediment_adjudicacio'),
-    contractes: recompte(f, 'contractes'),
+    inscripcions: recompte(f, 'inscripcions'),
     import: euros(f, 'import', REGISTRE),
   }));
   files.sort(
     (a, b) =>
       a.ambit.localeCompare(b.ambit, 'ca') ||
       a.organisme_codi.localeCompare(b.organisme_codi, 'ca') ||
+      a.organisme.localeCompare(b.organisme, 'ca') ||
+      // Les files sense procediment van al final del seu organisme.
+      Number(a.procediment === null) - Number(b.procediment === null) ||
       (a.procediment ?? '').localeCompare(b.procediment ?? '', 'ca'),
   );
-  // Dues files amb el mateix codi i procediment voldrien dir que la font dona dos noms o dos àmbits
-  // per a un mateix organisme, i els seus contractes quedarien partits.
-  const vistes = new Set<string>();
-  for (const f of files) {
-    const clau = `${f.organisme_codi}/${f.procediment}`;
-    if (vistes.has(clau)) throw new SourceError(`El registre de contractes repeteix ${clau}.`);
-    vistes.add(clau);
-  }
 
   return {
     font: `Dades obertes de Catalunya: ${meta.name} (${meta.attribution})`,
     url: `${SOCRATA}/d/${REGISTRE}`,
-    data_dades: dia(meta),
-    nota: `Els contractes adjudicats des de l’1 de gener fins al dia de la consulta, inscrits al Registre públic de contractes, sumats per àmbit, departament o ens i procediment d’adjudicació; les sumes les fa l’API de la font. Només es compten les inscripcions d’adjudicació i les de contractes menors: les liquidacions, les pròrrogues i les modificacions són del mateix contracte i el comptarien dues vegades. Cada lot és una inscripció. Els imports són els d’adjudicació, en euros, tal com els dona la font, que no diu si porten IVA. Els noms i els àmbits són tal com els escriu la font, i l’ordre és el de l’àmbit, el codi de l’organisme i el procediment. Les inscripcions amb una data d’adjudicació posterior al dia de la consulta no hi són: es compten a adjudicacions_posteriors.`,
+    data_dades: fins,
+    nota: `Les adjudicacions des de l’1 de gener fins al dia de l’última actualització de la font, inscrites al Registre públic de contractes, comptades i sumades per àmbit, departament o ens i procediment d’adjudicació; les sumes les fa l’API de la font. Cada inscripció és un contracte o un lot d’un contracte. Només es compten les inscripcions d’adjudicació i les de contractes menors: les liquidacions repeteixen el contracte amb el mateix import, i les pròrrogues i les modificacions tenen l’import de la pròrroga o de la modificació. Els imports són els d’adjudicació, en euros, tal com els dona la font, que no diu si porten IVA. Els noms i els àmbits són tal com els escriu la font; si un organisme els canvia durant l’any, surt en una fila per a cada nom. L’ordre és el de l’àmbit, el codi de l’organisme (com a text) i el procediment, i les files sense procediment van al final del seu organisme. Les inscripcions amb una data d’adjudicació posterior a la de les dades no hi són: es compten a adjudicacions_posteriors.`,
     any: Number(any),
-    fins_a: avui,
-    adjudicacions_posteriors: recompte(posteriors, 'contractes'),
+    adjudicacions_posteriors: recompte(posteriors, 'inscripcions'),
     files,
   };
 }
