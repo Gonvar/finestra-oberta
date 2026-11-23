@@ -134,9 +134,15 @@ test("s'atura si un procés no és obert o li falta un camp obligatori o té un 
     [{ numPlaces: '1' }, /places/],
     [{ borsaTreball: null }, /borsa de treball/],
     [{ tipusPersonal: 3 }, /no és text/],
+    [{ tipusPersonal: undefined }, /no porta tipusPersonal/],
+    [{ dataInici: '2026-02-30' }, /no és una data/],
   ];
   for (const [atributs, error] of casos) {
     const { fetchImpl } = font([proces('10', atributs)]);
     await assert.rejects(construirOposicions(fetchImpl, '2026-11-23'), error);
   }
+  const altre = font([{ ...proces('10'), type: 'subvencions' }]);
+  await assert.rejects(construirOposicions(altre.fetchImpl, '2026-11-23'), /recurs subvencions/);
+  const id = font([proces('x10')]);
+  await assert.rejects(construirOposicions(id.fetchImpl, '2026-11-23'), /Identificador/);
 });

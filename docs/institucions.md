@@ -316,13 +316,15 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 - **Per què aquesta font:** cap de les altres de NEUTRALITAT.md no publica les oposicions i les borses de treball de les administracions catalanes en una sola llista que es pugui llegir.
 - **Data:** l'API no diu quan es van actualitzar les dades. `data_consulta` és el dia de la consulta, a l'hora de Catalunya, i el fitxer només es torna a publicar quan canvia alguna altra cosa.
 - **Contingut:** els processos que el CIDO marca amb l'estat «Termini obert» (`idEstat` 3) el dia de la consulta. L'estat el posa el CIDO i no es compara amb les dates. El 23/11/2026 n'hi havia 1.572, i cap no tenia una data de finalització passada.
-- **Camps:** el títol, la institució, l'àmbit, si és una borsa de treball, el tipus de personal, el grup de titulació, el sistema de selecció, el nombre de places, les dates d'inici i de finalització, l'hora i les observacions del termini, i l'enllaç a la fitxa del CIDO. Tal com els escriu la font; el que no dona és `null`. Les borses de treball solen tenir `places` a 0. Si no hi ha data de finalització, `observacions_termini` sol dir per què (per exemple, que és obert permanentment).
+- **Camps:** l'identificador numèric del CIDO (`id`) i el codi de l'anunci (`identificador`), el títol, la institució, l'àmbit, si és una borsa de treball, el tipus de personal, el grup de titulació, el sistema de selecció, el nombre de places, les dates d'inici i de finalització, l'hora i les observacions del termini, i l'enllaç a la fitxa del CIDO. Tal com els escriu la font; el que no dona és `null`. Les borses de treball solen tenir `places` a 0. Si no hi ha data de finalització, `observacions_termini` sol dir per què (per exemple, que és obert permanentment).
 - **Ordre:** per la data de finalització, els que no en tenen al final, i després per l'identificador del CIDO.
 - **Com es llegeix:** es demanen els processos amb el termini obert ordenats per identificador, en pàgines de 2.000, fins al total que diu la font.
 - **Comprovacions:**
-  - El nombre de processos ha de ser el total que diu la font, i el total no pot canviar entre pàgines.
+  - El nombre de processos ha de ser el total que diu la font.
   - Hi ha d'haver almenys un procés obert. El CIDO sempre en té: una llista buida voldria dir que la consulta ja no filtra com s'espera.
-  - Cada procés ha de tenir l'estat obert, un identificador que no surti dues vegades, el títol, la institució, l'àmbit i l'enllaç. Les dates han de tenir la forma `AAAA-MM-DD` i les places han de ser un nombre.
+  - Cada recurs ha de ser un procés de selecció, amb un `id` numèric que no surti dues vegades i l'estat obert.
+  - Cada procés ha de tenir el codi de l'anunci, el títol, la institució, l'àmbit i l'enllaç, i ha de portar tots els camps que es publiquen, encara que siguin `null`. Les dates han de ser dies que existeixin, en la forma `AAAA-MM-DD`; les places, un nombre, i `borsa_treball`, sí o no.
+  - El total no pot canviar entre pàgines. No ho detecta tot: un procés que tanca i un altre que obre entre dues pàgines deixen el total igual. Mentre els processos oberts càpiguen en una pàgina, com el novembre del 2026, no pot passar.
 - **Cada dia canvia:** com els ajuts, `oposicions.json` canvia gairebé cada dia.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 

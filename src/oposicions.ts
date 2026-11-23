@@ -28,6 +28,8 @@ const consulta = (offset: number) =>
 
 function text(a: Atributs, nom: string, id: string): string | null {
   const valor = a[nom];
+  // L'API dona els camps buits com a null: un camp que no hi és vol dir que la font ha canviat.
+  if (valor === undefined) throw new SourceError(`El procés ${id} del CIDO no porta ${nom}.`);
   if (valor === null) return null;
   if (typeof valor !== 'string')
     throw new SourceError(`El camp ${nom} del procés ${id} del CIDO no és text.`);
@@ -43,7 +45,12 @@ function obligatori(a: Atributs, nom: string, id: string) {
 
 function data(a: Atributs, nom: string, id: string) {
   const valor = text(a, nom, id);
-  if (valor !== null && !/^\d{4}-\d{2}-\d{2}$/.test(valor))
+  if (
+    valor !== null &&
+    (!/^\d{4}-\d{2}-\d{2}$/.test(valor) ||
+      Number.isNaN(Date.parse(valor)) ||
+      new Date(`${valor}T00:00:00Z`).toISOString().slice(0, 10) !== valor)
+  )
     throw new SourceError(`El camp ${nom} del procés ${id} del CIDO no és una data: ${valor}.`);
   return valor;
 }
@@ -69,7 +76,8 @@ export async function construirOposicions(fetchImpl: Fetch, avui: string) {
   do {
     const pagina = await getJson<Pagina>(fetchImpl, consulta(processos.length));
     // Si el total canvia entre pàgines, la font s'ha actualitzat a mitja lectura i les pàgines no
-    // lliguen entre elles.
+    // lliguen entre elles. No ho detecta tot: un procés que tanca i un altre que obre entre dues
+    // pàgines deixen el total igual. Mentre els oberts càpiguen en una pàgina, no pot passar.
     if (total !== null && pagina.meta.totalResourceCount !== total)
       throw new SourceError('El CIDO ha canviat mentre es llegia: torna-ho a provar.');
     if (!Number.isInteger(pagina.meta.totalResourceCount))
