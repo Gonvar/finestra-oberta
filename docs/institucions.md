@@ -117,6 +117,17 @@ Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les 
   - Cada municipi ha de tenir nom, comarca i província, i dues persones del mateix ple no poden tenir el mateix ordre.
 - **Si falla:** com que els ajuntaments es generen amb el Govern i el Parlament, una comprovació que falla també atura l'actualització del Govern i el Parlament fins que es corregeix. És el mateix que passa avui entre el Govern i el Parlament.
 
+## `municipis.json`
+
+- **Font:** [El municipi en xifres](https://www.idescat.cat/emex/) de l'Idescat, per la seva [API EMEX](https://www.idescat.cat/dev/api/emex/). Les [condicions d'ús](https://www.idescat.cat/dev/api/#cdu) en permeten la reutilització si se'n cita la font i no s'alteren les dades.
+- **Contingut:** de cada municipi, els mateixos indicadors: la població, la població de nacionalitat estrangera, la nascuda a l'estranger, la que sap parlar català, l'atur registrat, la base imposable de l'IRPF per declarant, l'índex socioeconòmic territorial i la participació a les últimes eleccions municipals i al Parlament. De les taules de població també hi ha el total, perquè se'n pugui calcular el percentatge.
+- **Data:** cada indicador té el seu any (`any`) i la data en què l'Idescat el va actualitzar (`actualitzat`), els mateixos per a tots els municipis. El coneixement del català per municipi és del cens del 2011, l'últim que el dona per a tots.
+- **Valors:** tal com els dona l'Idescat. Un valor que l'Idescat no dona per a un municipi és `null`, no un zero.
+- **Comprovacions:**
+  - Totes les crides han de tornar els mateixos municipis, i només municipis.
+  - Han de ser els mateixos municipis que els de Municat (`ajuntaments.json`), pel mateix codi.
+  - Cada indicador ha de tenir un valor per municipi, i cada valor ha de ser un nombre o «_» (no hi és).
+
 ## Pendent
 
 - Els escons que va obtenir cada candidatura a les eleccions del 12 de maig de 2024 s'han de treure dels resultats oficials, que són una altra font.
