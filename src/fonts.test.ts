@@ -49,9 +49,15 @@ test("accepta els subdominis i rebutja els dominis que només s'hi assemblen", (
   ]);
 });
 
+/** NEUTRALITAT.md §5: l'API del model que escriu els resums, que no és una font, i l'únic fitxer que la crida. */
+const IA = { fitxer: 'resums.ts', adreca: 'https://api.anthropic.com/v1/messages' };
+
 test('el codi de src/ només consulta dominis oficials', async () => {
-  const dominis = dominisOficials(
-    await readFile(new URL('../NEUTRALITAT.md', import.meta.url), 'utf8'),
+  const neutralitat = await readFile(new URL('../NEUTRALITAT.md', import.meta.url), 'utf8');
+  const dominis = dominisOficials(neutralitat);
+  assert.ok(
+    neutralitat.includes(`\`${IA.adreca}\``),
+    `NEUTRALITAT.md no diu que ${IA.fitxer} crida ${IA.adreca}.`,
   );
   assert.ok(dominis.length > 0, 'NEUTRALITAT.md no té la taula de dominis oficials.');
   const dir = new URL('./', import.meta.url);
@@ -60,8 +66,9 @@ test('el codi de src/ només consulta dominis oficials', async () => {
   );
   for (const fitxer of fitxers) {
     const codi = await readFile(new URL(fitxer, dir), 'utf8');
+    const permeses = fitxer === IA.fitxer ? [IA.adreca] : [];
     assert.deepEqual(
-      adrecesNoOficials(codi, dominis),
+      adrecesNoOficials(codi, dominis).filter((a) => !permeses.includes(a)),
       [],
       `${fitxer} conté adreces que no són a la taula de fonts oficials de NEUTRALITAT.md.`,
     );

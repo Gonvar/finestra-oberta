@@ -64,8 +64,22 @@ Tota revisió d'una pull request, també el `/code-review` de Claude Code, busca
 3. Codi que canviï, filtri o substitueixi el que diu la font.
 4. Textos, ordres, colors o resums que afavoreixin o perjudiquin un partit, un grup, una persona o una ideologia.
 5. Canvis a `fonts/perfils-govern.json`: s'ha de poder reproduir amb el fragment documentat.
+6. Canvis a les instruccions dels resums, al model o a l'entrada que llegeix (§5): no poden fer que el model valori, triï o llegeixi res que no sigui de la font.
 
 Qualsevol d'aquests casos **bloqueja la pull request** fins que es corregeix. Si qui revisa no ho pot comprovar, ho diu a la revisió i la pull request espera.
+
+## 5. Resums fets amb IA
+
+La web pot mostrar un resum en llenguatge planer de cada sessió del Ple. No és una dada ni una font: és un text que escriu un model d'IA ([src/resums.ts](src/resums.ts)) a partir de les dades que ja publica el workflow, i per això té regles pròpies.
+
+- **Només llegeix la font.** El model rep els punts de l'ordre del dia i els acords de la sessió tal com són a `activitat.json`, i res més: ni cerques, ni altres webs, ni textos escrits a mà.
+- **Tot és públic.** `resums.json` porta les instruccions i els paràmetres exactes que rep el model, el model que ha respost, el dia i l'empremta del que ha llegit, i enllaça els acords de la sessió al web del Parlament. Qualsevol persona pot comprovar que el resum correspon a la sessió publicada.
+- **Es diu que és d'una IA.** Quan la web mostri un resum, ha de dir que l'ha escrit un model d'IA, quin, i enllaçar les instruccions i el text oficial, que és el que val.
+- **Ningú no el retoca.** Un resum no s'edita a mà. Si està malament, es canvien les instruccions en una pull request i es tornen a fer tots.
+- **No tria.** Les instruccions demanen el mateix per a tots els punts: de què tracten i què se'n va decidir els que l'acord diu que s'aproven, es convaliden, es deroguen o es rebutgen, i només de quin tipus són els altres. El model no ha de triar temes ni afegir-hi definicions.
+- **Si valora, no es publica.** Les instruccions demanen descriure sense valorar i tractar igual tothom (§3). Si el resum fa servir una de les paraules que jutgen de `VALORACIONS` i no surt als punts oficials amb la mateixa paraula al davant, es descarta i la sessió surt a `sense_resum` amb el motiu.
+
+El model és un servei, no una font. L'únic fitxer de `src/` que el pot cridar és [src/resums.ts](src/resums.ts), i l'única adreça és `https://api.anthropic.com/v1/messages`. [src/fonts.test.ts](src/fonts.test.ts) ho comprova. Canviar de model o de servei es fa en una pull request pròpia que ho justifiqui.
 
 ## Si veus un biaix
 
