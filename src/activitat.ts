@@ -6,6 +6,7 @@
 // portal de transparència), i el recompte de vots només és dins el PDF del Diari de Sessions. Per
 // això aquí no hi ha vots: el que no publica la font no s'endevina.
 import {
+  comprovaCodificacio,
   dia,
   getJson,
   getText,
@@ -13,10 +14,11 @@ import {
   obligatori,
   SOCRATA,
   SourceError,
+  text,
   type Fetch,
   type Fila,
 } from './comun.ts';
-import { comprovaCodificacio, pausa, text } from './institucions.ts';
+import { pausa } from './institucions.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
 export const SESSIONS_ORGANS = `${PARLAMENT}/web/activitat-parlamentaria/sessions-organs/index.html`;

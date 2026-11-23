@@ -1,0 +1,294 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+import agenda from '../../../dades/agenda.json' with { type: 'json' };
+import { ordena, type Acte, type Dia } from '../dades/agenda.ts';
+import { dia } from '../dades/institucions.ts';
+
+// El dia de la consulta del Parlament, que és l'única font amb actes futurs.
+const avui = agenda.parlament.data_consulta;
+const { propers, fets } = ordena(agenda, avui);
+
+const nomDia = new Intl.DateTimeFormat('ca', {
+  weekday: 'long',
+  day: 'numeric',
+  month: 'long',
+  timeZone: 'UTC',
+});
+const titolDia = (data: string) => {
+  const text = nomDia.format(new Date(data));
+  return text.charAt(0).toUpperCase() + text.slice(1);
+};
+const NOM: Record<Acte['institucio'], string> = { gov: 'Govern', par: 'Parlament' };
+// El text en què busca el filtre: el mateix que es veu a la fila.
+const cercable = (a: Acte) =>
+  [NOM[a.institucio], a.qui, a.titol, a.text, ...a.detalls].filter((x) => x).join(' ');
+
+const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
+  {
+    id: 'previst',
+    titol: 'Què hi ha previst',
+    dies: propers,
+    buit: 'El Parlament encara no ha publicat cap acte per als propers dies.',
+  },
+  {
+    id: 'fet',
+    titol: 'Què han fet',
+    dies: fets,
+    buit: `No hi ha cap acte des del ${dia(agenda.parlament.des_de)}.`,
+  },
+];
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <p class="etiqueta entra">
+        <span class="punt gov" aria-hidden="true"></span>Govern
+        <span class="punt par" aria-hidden="true"></span>Parlament
+      </p>
+      <h1 id="titol" class="entra" style="--ordre: 1">Agenda</h1>
+      <p class="entradeta entra" style="--ordre: 2">
+        Els actes públics del Govern i del Parlament, dia a dia.
+      </p>
+      <p class="font-dada entra" style="--ordre: 2">
+        Govern: <a href={agenda.govern.url}>Actes del Govern</a>, de Dades obertes de Catalunya, actualitzat el {
+          dia(agenda.govern.data_dades)
+        }. Només hi ha els actes que ja s’han fet. Parlament:
+        <a href={agenda.parlament.url}>agenda parlamentària</a>, consultada el {dia(avui)}.
+      </p>
+    </section>
+
+    <form class="filtre seccio entra" style="--ordre: 3" role="search" data-filtre>
+      <fieldset>
+        <legend class="visualment-amagat">Institució</legend>
+        <label><input type="radio" name="institucio" value="" checked /> Totes dues</label>
+        <label><input type="radio" name="institucio" value="gov" /> Govern</label>
+        <label><input type="radio" name="institucio" value="par" /> Parlament</label>
+      </fieldset>
+      <label class="cerca">
+        <span class="visualment-amagat">Busca a l’agenda</span>
+        <input type="search" name="text" placeholder="Salut, Ple, Girona…" autocomplete="off" />
+      </label>
+      <p class="secundari" data-cap aria-live="polite"></p>
+    </form>
+
+    {
+      seccions.map((s) => (
+        <section class="seccio" aria-labelledby={`${s.id}-titol`} data-seccio>
+          <h2 class="titol-seccio" id={`${s.id}-titol`}>
+            {s.titol}
+          </h2>
+          {s.dies.length === 0 ? (
+            <p class="buit">{s.buit}</p>
+          ) : (
+            s.dies.map((d) => (
+              <div class="dia" data-dia>
+                <h3 class="titol-bloc">
+                  <time datetime={d.data}>{titolDia(d.data)}</time>
+                </h3>
+                <ol class="files">
+                  {d.actes.map((a) => (
+                    <li class="acte" data-institucio={a.institucio} data-text={cercable(a)}>
+                      <p class="hora">{a.hora}</p>
+                      <div>
+                        <p class="etiqueta">
+                          <span class:list={['punt', a.institucio]} aria-hidden="true" />
+                          {NOM[a.institucio]} · {a.qui}
+                        </p>
+                        <p class="titol-acte">{a.titol}</p>
+                        {a.desconvocat && <p class="desconvocat">Desconvocat el {dia(a.desconvocat)}</p>}
+                        {a.text && <p class="text">{a.text}</p>}
+                        {a.detalls.map((d) => (
+                          <p class="secundari">{d}</p>
+                        ))}
+                        {a.enllacos.length > 0 && (
+                          <ul class="enllacos">
+                            {a.enllacos.map((e) => (
+                              <li>
+                                <a href={e.url}>{e.text}</a>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))
+          )}
+        </section>
+      ))
+    }
+  </main>
+</Pagina>
+
+<script>
+  // Sense accents ni majúscules, com src/comun.ts: «salut» troba «Salut» i «emporda», «Empordà».
+  const fold = (text: string) => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+
+  const form = document.querySelector<HTMLFormElement>('[data-filtre]')!;
+  const actes = [...document.querySelectorAll<HTMLElement>('.acte')].map((el) => ({
+    el,
+    institucio: el.dataset.institucio,
+    text: fold(el.dataset.text!),
+  }));
+  const dies = [...document.querySelectorAll<HTMLElement>('[data-dia]')];
+  // Una secció sense cap dia és la de l'estat buit: el filtre no l'amaga.
+  const seccions = [...document.querySelectorAll<HTMLElement>('[data-seccio]')].filter((s) =>
+    s.querySelector('[data-dia]'),
+  );
+  const cap = form.querySelector<HTMLElement>('[data-cap]')!;
+
+  function filtra() {
+    const dades = new FormData(form);
+    const institucio = String(dades.get('institucio'));
+    const paraules = fold(String(dades.get('text'))).split(/\s+/).filter(Boolean);
+    let visibles = 0;
+    for (const a of actes) {
+      const es = (!institucio || a.institucio === institucio) && paraules.every((p) => a.text.includes(p));
+      a.el.hidden = !es;
+      if (es) visibles++;
+    }
+    for (const d of dies) d.hidden = !d.querySelector('.acte:not([hidden])');
+    for (const s of seccions) s.hidden = !s.querySelector('[data-dia]:not([hidden])');
+    // Un missatge que canvia de text, perquè el lector de pantalla l'anunciï.
+    cap.textContent = visibles > 0 ? '' : 'Cap acte no coincideix amb la cerca.';
+  }
+
+  form.addEventListener('input', filtra);
+  form.addEventListener('submit', (e) => e.preventDefault());
+</script>
+
+<style>
+  .filtre {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  fieldset {
+    display: flex;
+    margin: 0;
+    padding: 0.25rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--bg-2);
+  }
+
+  fieldset label {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+    cursor: pointer;
+  }
+
+  fieldset label:has(:checked) {
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  fieldset label:has(:focus-visible) {
+    outline: 2px solid var(--gov);
+    outline-offset: 3px;
+  }
+
+  fieldset input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .cerca {
+    flex: 1 1 14rem;
+  }
+
+  .cerca input {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 14px;
+    background: var(--bg-2);
+    font: inherit;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .filtre .secundari {
+    flex-basis: 100%;
+  }
+
+  .buit {
+    margin-top: 1.5rem;
+    color: var(--ink-2);
+  }
+
+  .dia {
+    margin-top: 2.5rem;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 40rem;
+  }
+
+  .dia .files {
+    margin-top: 0.75rem;
+  }
+
+  .acte {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .acte {
+      grid-template-columns: 110px 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .hora {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.125rem;
+  }
+
+  .titol-acte {
+    margin-top: 0.25rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+  }
+
+  .text {
+    margin-top: 0.25rem;
+    color: var(--ink-2);
+  }
+
+  .desconvocat {
+    margin-top: 0.25rem;
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  .acte .secundari {
+    margin-top: 0.25rem;
+  }
+
+  .enllacos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    list-style: none;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    font-size: 0.9375rem;
+  }
+</style>
