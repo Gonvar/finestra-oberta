@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "finestra-oberta": { "type": "http", "url": "https://finestraoberta.cat/mcp" }
+  }
+}

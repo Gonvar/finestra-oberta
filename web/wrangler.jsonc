@@ -2,8 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "finestra-oberta",
   "compatibility_date": "2026-11-22",
-  // La web és estàtica: Astro la genera a dist i Cloudflare la serveix tal com és, sense codi de servidor.
-  "assets": { "directory": "./dist" },
+  // Astro genera la web a dist i Cloudflare la serveix tal com és. Només /mcp, el servidor MCP de les
+  // dades publicades, passa pel codi del Worker.
+  "main": "src/worker.ts",
+  "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": ["/mcp"] },
   "routes": [{ "pattern": "finestraoberta.cat", "custom_domain": true }],
   "observability": { "enabled": true },
   // Workers Builds publica cada branca i cada pull request com a previsualització amb `wrangler preview`.
