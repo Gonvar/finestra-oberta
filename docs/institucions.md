@@ -67,7 +67,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/mapa-municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json`, `/tmp/ara/contractes.json`, `/tmp/ara/adjudicataris.json` i `/tmp/ara/oposicions.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/diputats.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/mapa-municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json`, `/tmp/ara/contractes.json`, `/tmp/ara/adjudicataris.json` i `/tmp/ara/oposicions.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -156,6 +156,30 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
 - **Posicions:** cada persona porta a `posicio` el punt on la situa el dibuix del mapa d'escons, que surt de `posicionsEscons` a [mapa-escons.js](https://www.parlament.cat/js/mapa-escons.js). La web dibuixa l'hemicicle amb aquests punts, de manera que la disposició dels grups a la sala és la del Parlament. Si un escó no hi té posició, l'script s'atura.
 - **Colors:** cada grup porta el color amb què el pinta el mapa d'escons. Un color que no tingui la forma d'un color CSS atura l'script.
 - **Subgrups:** el mapa mostra els membres d'un subgrup dues vegades, una amb el grup i una altra amb el subgrup. Es comptabilitzen al grup i, a més, al subgrup.
+
+## `diputats.json`
+
+El que el Parlament publica de cada persona diputada a la seva fitxa, a més de la composició de `parlament.json`.
+
+- **Font:** la [fitxa de cada persona diputada](https://www.parlament.cat/web/composicio/diputats-fitxa/index.html?p_codi=2510) al web del Parlament, la mateixa que es llegeix per a `parlament.json`, i les pàgines que enllaça: les rendes, les declaracions i l'agenda. El Parlament no ho publica en cap format de dades.
+- **Data:** com a `parlament.json`, `data_consulta` és el dia en què es va llegir. Cada declaració porta a `data` la que el Parlament posa al títol: la de la declaració o, a les rendes, la de publicació.
+- **Contingut:** de cada persona, en l'ordre de `parlament.json`:
+  - `carrecs`: els òrgans de l'apartat «Càrrecs parlamentaris», amb el càrrec dins de l'òrgan si la fitxa en diu un, l'alta i, si n'hi ha, la baixa. Les ponències, els grups de treball i les reunions de portaveus van a `relacionats`, a sota de la seva comissió. Si la persona és en una ponència sense ser a la comissió, la comissió hi surt només amb el nom.
+  - `biografia`, si la persona n'ha presentat: els apartats tal com surten a la fitxa i la data de presentació o d'actualització que diu la fitxa.
+  - `rendes`: el que el Parlament li va pagar l'any anterior, que publica abans d'acabar el primer trimestre. A `blocs` hi ha la pàgina sencera, en el seu ordre, amb la nota del Parlament, les taules i les observacions. A `anualitats` hi ha els conceptes de les taules de cada any amb l'import en euros. Qui ha entrat fa poc pot no tenir-ne, i llavors la pàgina té un `avis`.
+  - `declaracions`: la de béns, la d'activitats i càrrecs públics i la d'interessos econòmics, com a llista de `blocs` en l'ordre de la pàgina: títols, preguntes del formulari, textos, taules (amb les columnes i les files) i avisos del Parlament.
+  - `compromisos`: els dos compromisos que signa tothom (tolerància zero davant la discriminació i l'assetjament, i polítiques d'igualtat). Com que el text és el mateix per a tothom, només se'n desa l'enllaç.
+  - `agenda`: els actes del mes de `data_consulta` a l'agenda de la persona, amb la mateixa forma que els de l'agenda del Parlament (`agenda.json`) i l'hora d'acabar (`fins`) quan n'hi ha. L'agenda la informa cada persona: el que no hi és pot ser que no s'hagi informat.
+- **Text:** el de la font, sense etiquetes HTML. Res no es resumeix ni es reescriu: un resum podria dir d'una persona el que la declaració no diu.
+- **Què no hi és:** qui ha votat què i l'assistència de cada persona, perquè el Parlament no les publica. Tampoc les iniciatives i les intervencions: el Parlament les dona en un cercador que no es pot llegir amb un script, i la fitxa del Parlament n'enllaça la cerca de cada persona.
+- **Comprovacions:**
+  - Cada element dels càrrecs, de la biografia i dels enllaços a les declaracions s'ha de poder llegir. Si en sobra algun, l'script s'atura.
+  - Cada declaració enllaçada ha de ser d'un tipus conegut. Una de nova atura l'script fins que es decideixi com es llegeix.
+  - Cada pàgina de declaració ha d'enllaçar la fitxa de la mateixa persona, i només pot tenir les etiquetes HTML que es llegeixen. Les files de cada taula han de tenir les columnes de la capçalera.
+  - Cada anualitat de les rendes ha de tenir la seva taula, i cada import la forma «93.852,50 €».
+  - L'agenda ha de ser del mes demanat, amb les mateixes comprovacions que l'agenda del Parlament.
+- **Peticions:** cinc pàgines per persona (les rendes, les tres declaracions i l'agenda), d'una en una i amb una pausa, com les fitxes.
+- **Reutilització:** la mateixa que la de l'agenda del Parlament: l'[avís legal](https://www.parlament.cat/pcat/serveis-parlament/avis-legal) en permet la reutilització si se'n cita la font, no se n'altera el sentit i no es presenta com una versió oficial ni avalada pel Parlament.
 
 ## `ajuntaments.json`
 

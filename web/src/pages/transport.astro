@@ -1,0 +1,320 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import Transport from '../components/Transport.tsx';
+import '../styles/subpagines.css';
+import { HISTORIC } from '../dades/transport.ts';
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <p class="etiqueta entra"><span class="punt dad" aria-hidden="true"></span>Transport públic</p>
+      <h1 id="titol" class="entra" style="--ordre: 1">Com van els trens</h1>
+      <p class="entradeta entra" style="--ordre: 2">
+        Quants trens de Rodalies i d'FGC van amb retard, línia a línia, i els avisos del metro de TMB.
+      </p>
+    </section>
+
+    <Transport client:load />
+
+    <section class="seccio" aria-labelledby="com-titol">
+      <h2 class="titol-seccio" id="com-titol">Com es compta</h2>
+      <dl class="paraules">
+        <dt>Una foto cada mitja hora</dt>
+        <dd>
+          Cada mitja hora llegim quins trens circulen i com van, tal com ho publiquen Renfe i FGC. Un tren
+          compta un sol cop per dia, encara que surti a moltes fotos.
+        </dd>
+        <dt>Amb retard, a Rodalies</dt>
+        <dd>
+          Un tren que en alguna foto portava 5 minuts o més de retard, segons Renfe. Els 5 minuts són una
+          tria d'aquesta web, no de Renfe.
+        </dd>
+        <dt>Fora d'hora, a FGC</dt>
+        <dd>
+          Un tren que en alguna foto no anava en hora, segons FGC. FGC no publica els minuts de retard ni
+          el criteri que fa servir. Per això Rodalies i FGC no es poden comparar.
+        </dd>
+        <dt>Cancel·lat</dt>
+        <dd>Un tren que Renfe marca com a suprimit en alguna foto. Es compta a part.</dd>
+        <dt>Sense dada</dt>
+        <dd>Un tren del qual l'operador no publica el retard. No compta al total, i es diu a part.</dd>
+        <dt>Pocs trens</dt>
+        <dd>
+          Una línia amb menys de 10 trens en el període. Amb tan pocs, un percentatge exagera: 2 de 2 seria
+          un 100 %. Per això només se'n diuen els trens.
+        </dd>
+      </dl>
+      <p class="explica">
+        Cada foto es desa amb una còpia de les respostes dels operadors, i se signa. Les còpies es poden
+        baixar durant 30 dies a <a href={HISTORIC}>historic.finestraoberta.cat</a>, per comprovar que
+        les xifres no s'han tocat. <a
+          href="https://github.com/Gonvar/finestra-oberta/blob/main/docs/transport.md">Com comprovar-ho</a
+        >.
+      </p>
+    </section>
+  </main>
+</Pagina>
+
+<style is:global>
+  .punt.dad {
+    background: var(--dad);
+  }
+
+  .valor {
+    margin-top: 1.5rem;
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .que {
+    margin-top: 0.75rem;
+    max-width: 38rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+
+  .explica {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+
+  .titol-bloc {
+    margin-top: 2.5rem;
+  }
+
+  /* Tres opcions sempre visibles: un control nadiu, que funciona amb el teclat i el lector de pantalla. */
+  .periode {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 0.5rem;
+    padding: 0;
+    border: 0;
+  }
+
+  .periode label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 1rem;
+    border-radius: 999px;
+    background: var(--bg-2);
+    font-size: 0.9375rem;
+    cursor: pointer;
+  }
+
+  .periode label:has(input:checked) {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .periode input {
+    accent-color: var(--ink);
+  }
+
+  .periode label:has(input:focus-visible) {
+    outline: 2px solid var(--gov);
+    outline-offset: 3px;
+  }
+
+  /* Una fila per línia: el codi, la barra i la xifra. Al mòbil, la xifra passa a sota. */
+  .linies {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    max-width: 48rem;
+  }
+
+  .linies > li {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.25rem;
+    padding: 0.625rem 0;
+    box-shadow: inset 0 1px 0 var(--hair);
+  }
+
+  .linies .xifra {
+    grid-column: 2;
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .linies .xifra strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  @media (min-width: 640px) {
+    .linies > li {
+      grid-template-columns: 3.5rem 1fr 15rem;
+    }
+
+    .linies .xifra {
+      grid-column: 3;
+    }
+  }
+
+  .codi-linia {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pocs {
+    font-size: 0.875rem;
+    color: var(--ink-3);
+  }
+
+  /* El fons clar és la part sense retard; el contorn fa que es vegi sobre el blanc (WCAG 1.4.11). */
+  .barra {
+    display: block;
+    height: 0.75rem;
+    border-radius: 999px;
+    background: var(--dad-tint);
+    box-shadow: inset 0 0 0 1px var(--dad);
+    overflow: hidden;
+  }
+
+  .ple {
+    display: block;
+    height: 100%;
+    background: var(--dad);
+  }
+
+  .columnes {
+    margin: 0;
+    max-width: 48rem;
+  }
+
+  .grafic {
+    position: relative;
+    margin-top: 1rem;
+  }
+
+  .referencia {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 1px dashed var(--ink-3);
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    line-height: 1.4;
+  }
+
+  .eix {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 8rem;
+    box-shadow: inset 0 -1px 0 var(--ink-3);
+  }
+
+  .columna {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+  }
+
+  .columna .ple {
+    width: 100%;
+    height: auto;
+    min-height: 1px;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .eix-dates {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.375rem;
+  }
+
+  details summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    color: var(--ink-2);
+  }
+
+  .columnes details {
+    margin-top: 1rem;
+  }
+
+  .avisos {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    max-width: 48rem;
+  }
+
+  .avisos > li {
+    box-shadow: inset 0 1px 0 var(--hair);
+  }
+
+  .avisos ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+  }
+
+  .avisos ul li + li {
+    margin-top: 0.5rem;
+  }
+
+  .taula {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  th,
+  td {
+    padding: 0.625rem 0.75rem 0.625rem 0;
+    box-shadow: inset 0 -1px 0 var(--hair);
+    text-align: right;
+  }
+
+  th:first-child {
+    text-align: left;
+    font-weight: 400;
+  }
+
+  thead th {
+    color: var(--ink-3);
+    font-weight: 400;
+  }
+
+  .paraules {
+    margin: 1.5rem 0 0;
+    max-width: 40rem;
+  }
+
+  .paraules dt {
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .paraules dd {
+    margin: 0.25rem 0 0;
+    color: var(--ink-2);
+  }
+
+  .contingut > .font-dada {
+    margin-top: 2rem;
+  }
+</style>

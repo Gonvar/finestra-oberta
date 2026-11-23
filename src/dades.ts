@@ -1,4 +1,4 @@
-// Regenera govern.json, parlament.json, ajuntaments.json, municipis.json, eleccions-municipals.json, mapa-municipis.json, agenda.json, activitat.json, ajuts.json, pressupost.json, contractes.json, adjudicataris.json i oposicions.json des de les fonts oficials, amb la còpia de cada resposta:
+// Regenera govern.json, parlament.json, diputats.json, ajuntaments.json, municipis.json, eleccions-municipals.json, mapa-municipis.json, agenda.json, activitat.json, ajuts.json, pressupost.json, contractes.json, adjudicataris.json i oposicions.json des de les fonts oficials, amb la còpia de cada resposta:
 //   node src/dades.ts [carpeta]
 // La carpeta és dades/ si no se'n diu cap altra. Primer ho llegeix i ho comprova tot; només escriu
 // si tot quadra. Si una font falla, surt amb un error i deixa la carpeta com estava, perquè es pugui
@@ -16,6 +16,7 @@ try {
   const {
     'govern.json': govern,
     'parlament.json': parlament,
+    'diputats.json': diputats,
     'ajuntaments.json': ajuntaments,
     'municipis.json': municipis,
     'eleccions-municipals.json': eleccions,
@@ -30,7 +31,7 @@ try {
   } = await genera(carpeta, fetch, avui, construirDades);
   console.log(
     `Govern: ${govern.consellers.length} consellers (dades del ${govern.data_dades}). ` +
-      `Parlament: ${parlament.diputats.length} diputats en ${parlament.grups.length} grups. ` +
+      `Parlament: ${parlament.diputats.length} diputats en ${parlament.grups.length} grups, amb ${diputats.diputats.reduce((n, d) => n + d.declaracions.length, 0)} declaracions i ${diputats.diputats.reduce((n, d) => n + d.agenda.actes.length, 0)} actes a les agendes del mes. ` +
       `Ajuntaments: ${ajuntaments.municipis.length} municipis i ` +
       `${ajuntaments.municipis.reduce((n, m) => n + m.ple.length, 0)} persones als plens ` +
       `(dades del ${ajuntaments.data_dades}). ` +

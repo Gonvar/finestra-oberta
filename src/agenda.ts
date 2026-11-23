@@ -178,6 +178,8 @@ export type ActeParlament = {
   data: string;
   /** Sense hora quan l'acte comença en acabar-ne un altre: el Parlament ho diu a `detalls`. */
   hora?: string;
+  /** L'hora d'acabar, que només donen les agendes de les persones diputades, i no sempre. */
+  fins?: string;
   titol: string;
   /** Els paràgrafs de l'acte, en l'ordre del web: el tipus de sessió, la sala, la retransmissió… */
   detalls: string[];
@@ -201,11 +203,13 @@ export function llegirAgendaParlament(
   mes: number,
 ): ActeParlament[] {
   comprovaCodificacio(html, url);
-  const inici = html.indexOf('<h2 class="titol_caixa">');
+  // L'agenda de cada persona diputada té la mateixa llista, però amb altres títols al davant.
+  const columna = '<div class="ccentral">';
+  const inici = html.indexOf(`${columna}<h2 class="titol_caixa">`);
   const final = html.indexOf('<div class="cerca_advan">', inici);
   if (inici === -1 || final === -1)
     throw new SourceError(`${url} no té la llista d'actes on s'esperava.`);
-  const llista = html.slice(inici, final);
+  const llista = html.slice(inici + columna.length, final);
   const titol = llista.match(/^<h2 class="titol_caixa"><span>([^<]*)<\/span><\/h2>/)?.[1];
   if (titol !== `${MESOS[mes - 1]} de ${any}`)
     throw new SourceError(`${url} és l'agenda de «${titol}», no de ${MESOS[mes - 1]} de ${any}.`);
@@ -225,14 +229,14 @@ export function llegirAgendaParlament(
     // l'acte; el vídeo de l'acte, si n'hi ha, és a la llista d'enllaços.
     const files = [
       ...tros.matchAll(
-        /<tr><th rowspan="2" class="hora_lloc" scope="row"><p>([^<]*)<\/p>(?:<a [\s\S]*?<\/a>)?<\/th><td><p><strong>([\s\S]*?)<\/strong><\/p><\/td><\/tr><tr><td class="tema_acte">([\s\S]*?)<\/td><\/tr>/g,
+        /<tr><th rowspan="2" class="hora_lloc" scope="row"><p>([^<]*)<\/p>(?:<p>(\d{2}:\d{2})h<\/p>)?(?:<a [\s\S]*?<\/a>)?<\/th><td><p><strong>([\s\S]*?)<\/strong><\/p><\/td><\/tr><tr><td class="tema_acte">([\s\S]*?)<\/td><\/tr>/g,
       ),
     ];
     // Si alguna fila no té la forma que es llegeix, es perdria un acte sense que ningú ho sabés.
     if (files.length !== (tros.match(/class="hora_lloc"/g) ?? []).length)
       throw new SourceError(`${url} té actes del ${data} amb una forma inesperada.`);
 
-    for (const [, horaWeb, titolWeb, tema] of files as unknown as string[][]) {
+    for (const [, horaWeb, fins, titolWeb, tema] of files as unknown as string[][]) {
       const hora = horaWeb!.match(/^(\d{2}:\d{2})h$/)?.[1];
       if (hora === undefined && horaWeb !== '&nbsp;' && horaWeb !== '')
         throw new SourceError(`${url} té un acte del ${data} amb l'hora «${horaWeb}».`);
@@ -246,6 +250,7 @@ export function llegirAgendaParlament(
       const acte: ActeParlament = {
         data,
         ...(hora && { hora }),
+        ...(fins && { fins }),
         titol: text(titolWeb!),
         detalls: [],
         enllacos,

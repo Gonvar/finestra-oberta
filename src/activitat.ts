@@ -12,13 +12,13 @@ import {
   getText,
   metadades,
   obligatori,
+  pausa,
   SOCRATA,
   SourceError,
   text,
   type Fetch,
   type Fila,
 } from './comun.ts';
-import { pausa } from './institucions.ts';
 
 const PARLAMENT = 'https://www.parlament.cat';
 export const SESSIONS_ORGANS = `${PARLAMENT}/web/activitat-parlamentaria/sessions-organs/index.html`;

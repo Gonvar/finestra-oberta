@@ -18,17 +18,19 @@ La idea i bona part de l'enfocament venen de [Reforma Digital](https://github.co
 
 Un servidor [MCP](https://modelcontextprotocol.io) deixa que un assistent (Claude, ChatGPT, Cursor…) consulti una font de dades oficial. Les eines són només de lectura i cada resposta porta la font.
 
-| Servidor                                 | Font                                                                                              | Què s'hi pot preguntar                                                                                |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [`idescat`](docs/idescat.md)             | [API Taules v2](https://www.idescat.cat/dev/api/taules/) de l'Institut d'Estadística de Catalunya | Població per comarca o municipi, naixements, PIB trimestral, usos lingüístics, afiliació…             |
-| [`dades-obertes`](docs/dades-obertes.md) | [Dades obertes de Catalunya](https://analisi.transparenciacatalunya.cat), de la Generalitat       | Els conjunts dels departaments: accidents, salut, educació, medi ambient, contractació, pressupostos… |
-| [`barcelona`](docs/barcelona.md)         | [Open Data BCN](https://opendata-ajuntament.barcelona.cat), de l'Ajuntament de Barcelona          | Barcelona per barri i districte: padró, qualitat de l'aire, soroll, equipaments, accidents…           |
+| Servidor                                 | Font                                                                                                                         | Què s'hi pot preguntar                                                                                |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [`idescat`](docs/idescat.md)             | [API Taules v2](https://www.idescat.cat/dev/api/taules/) de l'Institut d'Estadística de Catalunya                            | Població per comarca o municipi, naixements, PIB trimestral, usos lingüístics, afiliació…             |
+| [`dades-obertes`](docs/dades-obertes.md) | [Dades obertes de Catalunya](https://analisi.transparenciacatalunya.cat), de la Generalitat                                  | Els conjunts dels departaments: accidents, salut, educació, medi ambient, contractació, pressupostos… |
+| [`barcelona`](docs/barcelona.md)         | [Open Data BCN](https://opendata-ajuntament.barcelona.cat), de l'Ajuntament de Barcelona                                     | Barcelona per barri i districte: padró, qualitat de l'aire, soroll, equipaments, accidents…           |
+| [`transport`](docs/transport.md)         | Les dades obertes de [Renfe](https://data.renfe.com), [FGC](https://dadesobertes.fgc.cat) i [TMB](https://developer.tmb.cat) | Retards de Rodalies i d'FGC ara mateix, avisos, propers trens i busos, estacions i viatgers           |
 
 Exemples de preguntes:
 
 - Quantes dones vivien a Osona l'1 de gener de 2025?
 - Com ha variat el PIB de Catalunya l'últim trimestre?
 - Quina comarca va tenir més morts en accidents de trànsit el 2023?
+- Quines línies de Rodalies van amb retard ara mateix?
 
 A [docs/exemples.md](docs/exemples.md) hi ha aquestes preguntes resoltes amb les crides i les respostes reals dels servidors.
 
@@ -52,7 +54,10 @@ Cada servidor s'executa per stdio amb el seu nom. Per afegir-los a Claude Code:
 claude mcp add idescat -- node "$PWD/src/index.ts" idescat
 claude mcp add dades-obertes -- node "$PWD/src/index.ts" dades-obertes
 claude mcp add barcelona -- node "$PWD/src/index.ts" barcelona
+claude mcp add transport -e TMB_APP_ID=… -e TMB_APP_KEY=… -- node "$PWD/src/index.ts" transport
 ```
+
+El servidor `transport` necessita una clau gratuïta de TMB per a les dades de TMB; Rodalies i FGC funcionen sense. Vegeu [docs/transport.md](docs/transport.md).
 
 En altres clients (Claude Desktop, Cursor…), configura un servidor stdio amb l'ordre `node` i els arguments `/camí/a/finestra-oberta/src/index.ts` i el nom del servidor:
 
