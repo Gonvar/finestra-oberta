@@ -62,6 +62,8 @@ Cada foto ([src/foto-transport.ts](../src/foto-transport.ts)) llegeix les mateix
 - **El workflow no instal·la cap paquet de tercers.** La foto només fa servir `src/historic.ts` i `src/operadors.ts`, que no tenen dependències. Cada clau només arriba als passos que la necessiten. Si la clau de TMB surt en algun fitxer que s'havia de publicar, no es publica res.
 - **Els dies van pel dia a Catalunya**, no pel dia en UTC.
 - **La web no mostra el percentatge d'una línia amb menys de 10 trens** en el període, perquè exageraria: 2 de 2 seria un 100 %.
+- **Qui llança la foto és el cron del Worker de la web** ([`web/wrangler.jsonc`](../web/wrangler.jsonc) i [`web/src/worker.ts`](../web/src/worker.ts)), amb l'API `workflow_dispatch` de GitHub. El `schedule` de GitHub no s'havia disparat mai en aquest repositori: el 23 de novembre de 2026 només hi havia les dues fotos llançades a mà. Si GitHub no accepta la crida, l'error queda als registres del Worker i aquella foto falta.
+- **El token del Worker** és el secret `GITHUB_TOKEN` del Worker (`wrangler secret put GITHUB_TOKEN`): un token _fine-grained_ limitat a aquest repositori amb el permís _Actions: Read and write_ i res més.
 - **Les claus** de TMB (`TMB_APP_ID`, `TMB_APP_KEY`) i d'R2 (`R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_ENDPOINT`) són secrets de l'entorn `dades` de GitHub, que només s'obre per a `main`. L'adreça de TMB es desa sense la clau.
 
 ### Com comprovar una foto
