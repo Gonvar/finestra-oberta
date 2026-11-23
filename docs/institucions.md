@@ -1,6 +1,6 @@
-# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, els ajuts, el pressupost i els contractes
+# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, el mapa, els ajuts, el pressupost i els contractes
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi i com s'hi va votar a les últimes municipals, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat i quantes adjudicacions fa cada organisme. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi, com s'hi va votar a les últimes municipals i els seus límits per al mapa, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat i quantes adjudicacions fa cada organisme. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -67,7 +67,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/mapa-municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -199,6 +199,18 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
   - Cada fila ha de tenir el codi, el municipi, les sigles, els vots, el percentatge i els regidors, i els tres últims han de ser nombres.
   - Un codi només pot correspondre a un municipi, i una candidatura només pot sortir una vegada a cada municipi.
   - Les files de l'elecció han de cabre en una sola consulta.
+- **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
+
+## `mapa-municipis.json`
+
+- **Font:** els límits dels municipis de les [divisions administratives](https://geoserveis.icgc.cat/servei/catalunya/divisions-administratives/wfs?service=WFS&request=GetCapabilities) de l'Institut Cartogràfic i Geològic de Catalunya (ICGC), pel seu servei WFS. Les [condicions d'ús](http://www.icgc.cat/condicions) de l'ICGC en permeten la reutilització si se'n cita la font i la data de l'última actualització.
+- **Per què l'ICGC:** és l'organisme que fa la cartografia oficial de Catalunya. Cap de les altres fonts de la taula de NEUTRALITAT.md no publica els límits dels municipis.
+- **Capa:** `divisions_administratives_municipis_1000000`, la més simplificada, a escala 1:1.000.000. N'hi ha prou per a un mapa de tot Catalunya, però no serveix per saber per on passa exactament un límit.
+- **Contingut:** de cada municipi, el codi, el nom i la geometria, en graus (EPSG:4326), tal com els dona el servei. El fitxer no simplifica ni arrodoneix res: si la web en dibuixa menys punts, és cosa de la web.
+- **Data:** el servei no diu quan es van actualitzar els límits. `data_consulta` és el dia en què es van llegir, i és la data que es cita amb la font, perquè no n'hi ha cap altra.
+- **Comprovacions:**
+  - Han de ser els mateixos municipis que els de Municat (`ajuntaments.json`), pel mateix codi, i cap no pot sortir dues vegades.
+  - Cada municipi ha de tenir codi de sis xifres, nom i un polígon o multipolígon d'anells tancats, amb coordenades dins de Catalunya. Si arriben en metres en lloc de graus, la consulta ha canviat i s'atura.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## `agenda.json`
