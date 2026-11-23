@@ -25,6 +25,7 @@ export type Fitxa = {
 
 // El JSON perd els tipus literals («Presentació» passa a string): el valida l'scraper en escriure'l.
 export const diputats = diputatsJson as {
+  font: string;
   data_consulta: string;
   agenda: { any: number; mes: number };
   diputats: Fitxa[];
@@ -90,14 +91,12 @@ export function rendesDarrerAny(fitxa: Fitxa) {
   return { any: darrera.any, total: darrera.conceptes.reduce((s, c) => s + c.import, 0) };
 }
 
-// «el 3 de març», però «l'1 de març» i «l'11 de març».
-export const elDia = (data: string) => (/^1?1 /.test(data) ? `l'${data}` : `el ${data}`);
-/** «del 3 de març», «de l'11 de març». */
+// «el 3 de març», però «l’1 de març» i «l’11 de març». L’apòstrof és el tipogràfic, com el d’Intl.
+export const elDia = (data: string) => (/^1?1 /.test(data) ? `l’${data}` : `el ${data}`);
 export const delDia = (data: string) => {
   const a = elDia(data);
   return a.startsWith('el ') ? `d${a}` : `de ${a}`;
 };
-/** «al 3 de març», «a l'11 de març». */
 export const alDia = (data: string) => {
   const a = elDia(data);
   return a.startsWith('el ') ? `a${a.slice(1)}` : `a ${a}`;
@@ -118,9 +117,8 @@ const MESOS = [
   'desembre',
 ];
 
-/** «de novembre», «d'abril»: el mes, amb la preposició que li toca. */
 export function deMes(mes: number) {
   const nom = MESOS[mes - 1];
   if (nom === undefined) throw new Error(`El mes ${mes} no existeix.`);
-  return /^[aeiou]/.test(nom) ? `d'${nom}` : `de ${nom}`;
+  return /^[aeiou]/.test(nom) ? `d’${nom}` : `de ${nom}`;
 }

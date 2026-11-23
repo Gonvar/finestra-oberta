@@ -90,10 +90,10 @@ test('sense anualitats no hi ha xifra de rendes', () => {
 
 test('les dates de l’1 i de l’11 fan l’elisió', () => {
   assert.equal(elDia('3 de març del 2025'), 'el 3 de març del 2025');
-  assert.equal(elDia('1 de març del 2025'), "l'1 de març del 2025");
-  assert.equal(delDia('11 de març del 2025'), "de l'11 de març del 2025");
+  assert.equal(elDia('1 de març del 2025'), 'l’1 de març del 2025');
+  assert.equal(delDia('11 de març del 2025'), 'de l’11 de març del 2025');
   assert.equal(delDia('21 de març del 2025'), 'del 21 de març del 2025');
-  assert.equal(alDia('1 de març del 2025'), "a l'1 de març del 2025");
+  assert.equal(alDia('1 de març del 2025'), 'a l’1 de març del 2025');
   assert.equal(alDia('3 de març del 2025'), 'al 3 de març del 2025');
 });
 

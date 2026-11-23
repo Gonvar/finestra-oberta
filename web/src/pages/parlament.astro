@@ -2,7 +2,7 @@
 import Pagina from '../layouts/Pagina.astro';
 import '../styles/subpagines.css';
 import { dia, parlament } from '../dades/institucions.ts';
-import { rutaDiputat } from '../dades/diputats.ts';
+import { codi, rutaDiputat } from '../dades/diputats.ts';
 
 const grups = parlament.grups.map((g, i) => ({
   ...g,
@@ -22,8 +22,6 @@ const marc = [
   Math.max(...xs) - Math.min(...xs) + 2 * RADI + 4,
   Math.max(...ys) - Math.min(...ys) + 2 * RADI + 4,
 ].join(' ');
-
-const codi = (fitxa: string) => new URL(fitxa).searchParams.get('p_codi');
 
 // En passar per sobre d'un grup de la llegenda, la resta d'escons s'apaguen.
 const ressalta = grups

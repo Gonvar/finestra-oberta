@@ -21,9 +21,8 @@ const { blocs } = Astro.props;
           <table>
             <thead>
               <tr>
-                {b.taula.columnes.map((c) => (
-                  <th scope="col">{c}</th>
-                ))}
+                {/* Una capçalera buida, que la font posa sobre la columna dels conceptes, no s'anuncia. */}
+                {b.taula.columnes.map((c) => (c === '' ? <td /> : <th scope="col">{c}</th>))}
               </tr>
             </thead>
             <tbody>

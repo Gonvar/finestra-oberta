@@ -54,10 +54,17 @@ const periode = (r: { alta: string; baixa?: string }) =>
         <div>
           <h1 id="titol" class="entra" style="--ordre: 1">{c.nom}</h1>
           <p class="entradeta entra" style="--ordre: 2">
-            <span class="color" style={`--color: ${grup.color}`} aria-hidden="true"></span>{presentacio(c)}. {
+            {presentacio(c)}. {
               grup.nom
             }.
           </p>
+          {
+            'foto' in c && (
+              <p class="font-dada entra" style="--ordre: 2">
+                Foto: <a href={parlament.url}>Parlament de Catalunya</a>
+              </p>
+            )
+          }
         </div>
       </div>
 
@@ -70,7 +77,9 @@ const periode = (r: { alta: string; baixa?: string }) =>
                 <p class="que">Cobrat del Parlament el {rendes.any}</p>
               </>
             ) : (
-              <p class="que">El Parlament encara no n'ha publicat les rendes.</p>
+              <p class="que">
+                {f.rendes === undefined ? 'La fitxa no enllaça les rendes.' : 'El Parlament encara no hi ha publicat cap import.'}
+              </p>
             )
           }
           <p class="font-dada"><a href="#rendes-titol">Rendes</a>, {dia(diputats.data_consulta)}</p>
@@ -83,8 +92,8 @@ const periode = (r: { alta: string; baixa?: string }) =>
         <div>
           <p class="valor">{nombre(fets.length)}</p>
           <p class="que">Actes que ha informat a la seva agenda {mes}</p>
-          {reunions.length > 0 && <p class="que">{nombre(reunions.length)} amb grups d'interès.</p>}
-          <p class="font-dada"><a href="#agenda-titol">Agenda</a>, {dia(diputats.data_consulta)}</p>
+          <p class="que">{nombre(reunions.length)} amb grups d’interès</p>
+          <p class="font-dada"><a href="#agenda-titol">Agenda</a> que informa la mateixa persona, {dia(diputats.data_consulta)}</p>
         </div>
       </div>
     </section>
@@ -103,7 +112,7 @@ const periode = (r: { alta: string; baixa?: string }) =>
             {f.carrecs.map((o) => (
               <li>
                 <p class="destacat">
-                  {o.url !== undefined ? <a href={o.url}>{o.organ}</a> : o.organ}
+                  {'url' in o && o.url !== undefined ? <a href={o.url}>{o.organ}</a> : o.organ}
                 </p>
                 {'alta' in o && (
                   <p class="secundari">
@@ -137,13 +146,9 @@ const periode = (r: { alta: string; baixa?: string }) =>
 
     <section class="seccio" aria-labelledby="agenda-titol">
       <h2 class="titol-seccio" id="agenda-titol">Agenda {mes}</h2>
-      {
-        reunions.length > 0 && (
-          <p class="explica">
-            Un grup d'interès és una organització o una persona que intenta influir en les decisions del Parlament.
-          </p>
-        )
-      }
+      <p class="explica">
+        Un grup d’interès és una organització o una persona que intenta influir en les decisions del Parlament.
+      </p>
       {
         actes.length === 0 ? (
           <p class="buit">No hi ha cap acte a la seva agenda {mes}.</p>
@@ -153,13 +158,27 @@ const periode = (r: { alta: string; baixa?: string }) =>
               <li>
                 <time datetime={a.data}>
                   {diaCurt(a.data)}
-                  {a.hora !== undefined && <span class="hora">{a.hora}{a.fins !== undefined && `–${a.fins}`}</span>}
+                  {(a.hora !== undefined || a.fins !== undefined) && (
+                    <span class="hora">
+                      {a.hora}
+                      {a.fins !== undefined && `–${a.fins}`}
+                    </span>
+                  )}
                 </time>
                 <div>
                   <p class="destacat">{a.titol}</p>
                   {a.detalls.map((d) => (
                     <p class="secundari">{d}</p>
                   ))}
+                  {a.enllacos.length > 0 && (
+                    <ul class="enllacos">
+                      {a.enllacos.map((e) => (
+                        <li>
+                          <a href={e.url}>{e.text}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   {a.desconvocat !== undefined && <p class="secundari">Desconvocat {elDia(dia(a.desconvocat))}.</p>}
                 </div>
               </li>
@@ -185,7 +204,7 @@ const periode = (r: { alta: string; baixa?: string }) =>
             </p>
           </>
         ) : (
-          <p class="buit">El Parlament encara no n'ha publicat les rendes.</p>
+          <p class="buit">La fitxa no enllaça les rendes.</p>
         )
       }
     </section>
@@ -194,7 +213,7 @@ const periode = (r: { alta: string; baixa?: string }) =>
       <h2 class="titol-seccio" id="declaracions-titol">Què declara</h2>
       {
         f.declaracions.length === 0 && f.compromisos.length === 0 && (
-          <p class="buit">La fitxa no enllaça cap declaració.</p>
+          <p class="buit">La fitxa no enllaça cap declaració de béns, d’activitats ni d’interessos.</p>
         )
       }
       {
@@ -290,13 +309,9 @@ const periode = (r: { alta: string; baixa?: string }) =>
     background: var(--par-tint);
   }
 
-  .color {
-    display: inline-block;
-    width: 0.625rem;
-    height: 0.625rem;
-    margin-right: 0.5rem;
-    border-radius: 999px;
-    background: var(--color);
+  .enllacos {
+    margin: 0.25rem 0 0;
+    padding-left: 1.25rem;
   }
 
   .etiqueta a {
