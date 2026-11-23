@@ -10,12 +10,12 @@ import { BENEFICIARIS, TIPUS, administracio, ajuts, convocatoriesEnText, resum }
 const r = resum(ajuts.convocatories, ajuts.data_dades);
 const fins = dia(ajuts.data_dades);
 const DADES = `${REPO}/blob/dades/ajuts.json`;
+const noLlegibles = ajuts.finals_no_llegibles.reduce((suma, f) => suma + f.convocatories, 0);
 const amplada = (valor: number) => `width: ${valor * 100}%`;
 const seccions = [
   {
     id: 'finalitats',
     titol: 'Per a què són',
-    explica: 'La finalitat que en diu la font.',
     grups: r.finalitats.map((g) => ({ ...g, etiqueta: g.nom })),
   },
   {
@@ -28,7 +28,7 @@ const seccions = [
     id: 'beneficiaris',
     titol: 'Per a qui són',
     explica:
-      'Una convocatòria pot ser per a més d’un tipus de beneficiari, i llavors compta a cadascun. Per això les parts sumen més del 100 %.',
+      'Una convocatòria pot ser per a diversos tipus de beneficiari i compta a cadascun, així que les parts poden sumar més del 100 %.',
     grups: r.beneficiaris.map((g) => ({
       ...g,
       etiqueta: Object.hasOwn(BENEFICIARIS, g.nom) ? BENEFICIARIS[g.nom] : g.nom,
@@ -41,9 +41,9 @@ const seccions = [
   <main class="contingut">
     <section class="capcalera" aria-labelledby="titol">
       <p class="etiqueta entra"><span class="punt dad" aria-hidden="true"></span>Administracions de Catalunya</p>
-      <h1 id="titol" class="entra" style="--ordre: 1">Quins ajuts es poden demanar</h1>
+      <h1 id="titol" class="entra" style="--ordre: 1">Ajuts i subvencions</h1>
       <p class="entradeta entra" style="--ordre: 2">
-        Les convocatòries d'ajuts i subvencions que encara no han tancat el termini, per a què són i a qui van.
+        Les convocatòries d’ajuts i subvencions de les administracions de Catalunya que encara no han tancat el termini: com es donen, per a què són i a qui van.
       </p>
     </section>
 
@@ -51,9 +51,17 @@ const seccions = [
       <h2 class="visualment-amagat" id="total-titol">Quantes convocatòries</h2>
       <p class="valor">{convocatoriesEnText(r.total, nombre)}</p>
       <p class="que">
-        que el {fins} encara no havien tancat el termini, per {milions(r.import)} d'euros en total.
-        {r.perObrir > 0 && <Fragment>{' '}{nombre(r.perObrir)} encara no l'han obert.</Fragment>}
+        que el {fins} encara no havien tancat el termini, per {milions(r.import)} d’euros en total.
+        {r.perObrir > 0 && <Fragment>{' '}En {nombre(r.perObrir)} encara no s’ha obert el termini.</Fragment>}
       </p>
+      {
+        noLlegibles > 0 && (
+          <p class="explica">
+            La font en té {nombre(noLlegibles)} més amb un final de termini que no és una data, com «-». No es compten,
+            perquè no es pot saber si encara són obertes.
+          </p>
+        )
+      }
       <p class="font-dada">
         Font: <a href={ajuts.url}>Registre de subvencions i ajuts de Catalunya (RAISC)</a>, Departament d'Economia i
         Finances, actualitzat el {fins}.
@@ -86,7 +94,7 @@ const seccions = [
           <h2 class="titol-seccio" id={`${s.id}-titol`}>
             {s.titol}
           </h2>
-          <p class="explica">{s.explica}</p>
+          {s.explica !== undefined && <p class="explica">{s.explica}</p>}
           <ol class="grups">
             {s.grups.map((g) => (
               <li>
@@ -110,12 +118,15 @@ const seccions = [
     <section class="seccio" aria-labelledby="detall-titol">
       <h2 class="titol-seccio" id="detall-titol">Cada convocatòria</h2>
       <p class="explica">
-        A les <a href={DADES}>dades completes</a> hi ha cada convocatòria amb el títol, qui la fa, el termini i l'enllaç
-        a les bases i a la seu electrònica on es demana.
+        El <a href={DADES}>fitxer de dades</a> té cada convocatòria amb el títol, qui la fa, el termini i l’enllaç a les
+        bases i a la seu electrònica on es demana.
       </p>
       {
         r.senseImport > 0 && (
-          <p class="explica">{convocatoriesEnText(r.senseImport, nombre)} no tenen import a la font i no se sumen al total.</p>
+          <p class="explica">
+            {convocatoriesEnText(r.senseImport, nombre)} {r.senseImport === 1 ? 'no té' : 'no tenen'} import a la font i
+            no se {r.senseImport === 1 ? 'suma' : 'sumen'} al total.
+          </p>
         )
       }
       <p class="font-dada">

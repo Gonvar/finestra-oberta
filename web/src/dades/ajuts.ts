@@ -29,9 +29,10 @@ export const BENEFICIARIS: Record<string, string> = {
 
 /** Què vol dir cada tipus de convocatòria. El build s'atura si n'apareix un de nou. */
 export const TIPUS: Record<string, string> = {
-  'Subvenció amb concurrència': 'Hi pot optar qualsevol que compleixi les condicions de les bases.',
+  'Subvenció amb concurrència':
+    'S’hi pot presentar qualsevol que compleixi les bases, i l’administració tria a qui la dona segons les regles de la convocatòria.',
   'Subvenció sense concurrència (directa, nominativa)':
-    'Es dona directament, sense comparar sol·licituds. La llei ho permet quan el pressupost ja diu a qui va o en casos concrets.',
+    'L’administració la dona directament, sense comparar sol·licituds: a qui ja surt al pressupost, a qui diu una llei o, en casos excepcionals, per raons d’interès públic.',
 };
 
 export const SENSE_DADA = 'La font no ho diu';

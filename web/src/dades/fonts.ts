@@ -142,7 +142,7 @@ export const seccions: Seccio[] = [
     ],
   },
   {
-    titol: 'Quins ajuts es poden demanar',
+    titol: 'Ajuts i subvencions',
     ruta: '/ajuts/',
     fonts: [
       {

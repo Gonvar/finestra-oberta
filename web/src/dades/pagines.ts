@@ -103,11 +103,11 @@ export const pagines: Pagina[] = [
   },
   {
     ruta: '/ajuts/',
-    titol: 'Quins ajuts es poden demanar · Finestra Oberta',
+    titol: 'Ajuts i subvencions · Finestra Oberta',
     descripcio:
-      'Les convocatòries d’ajuts i subvencions de les administracions de Catalunya que encara no han tancat el termini, per a què són i a qui van.',
+      'Les convocatòries d’ajuts i subvencions de les administracions de Catalunya que encara no han tancat el termini: com es donen, per a què són i a qui van.',
     previsualitzacio: {
-      titol: 'Quins ajuts es poden demanar',
+      titol: 'Ajuts i subvencions',
       frase: `${convocatoriesEnText(resumAjuts(ajuts.convocatories, ajuts.data_dades).total, nombre)} que encara no han tancat el termini.`,
       institucio: 'dad',
     },
