@@ -1,0 +1,208 @@
+---
+import Pagina from '../../layouts/Pagina.astro';
+import '../../styles/subpagines.css';
+import Norma from '../../components/FilaNorma.astro';
+import Sessio from '../../components/SessioPle.astro';
+import { activitat, COMISSIONS, decisions, decretsLlei, lleis, sigles } from '../../dades/activitat.ts';
+import { dia } from '../../dades/institucions.ts';
+
+const { sessions, normes } = activitat;
+// Si la font perd la sessió constitutiva, totes les xifres «des del…» serien falses: millor aturar el build.
+const constitutiva = sessions.find((s) => s.caracter === 'constitutiva');
+if (constitutiva === undefined) throw new Error('activitat.json no té la sessió constitutiva.');
+// Les sessions més noves es veuen obertes; la resta, plegades, perquè la pàgina no sigui infinita.
+const OBERTES = 6;
+const NORMES_OBERTES = 8;
+
+const des = `des del ${dia(constitutiva.data)}`;
+const plural = (n: number, u: string, m: string) => (n === 1 ? u : m);
+
+const ambDecisions = sessions.map((s) => {
+  const fetes = decisions(s);
+  return { ...s, fetes, altres: s.punts.length - fetes.length };
+});
+const comissions = sigles(ambDecisions.flatMap((s) => s.fetes.map((p) => p.acord)));
+---
+
+<Pagina>
+  <main class="contingut">
+  <section class="capcalera" aria-labelledby="titol">
+    <p class="etiqueta entra"><span class="punt par" aria-hidden="true"></span>Parlament de Catalunya</p>
+    <h1 id="titol" class="entra" style="--ordre: 1">Què ha decidit el Parlament</h1>
+    <p class="entradeta entra" style="--ordre: 2">
+      Què s'ha aprovat i què s'ha rebutjat a cada sessió del Ple, i les lleis noves.
+    </p>
+    <p class="avis entra" style="--ordre: 3">
+      El Parlament no publica qui vota què ni qui assisteix a cada votació. Aquí hi ha què es va acordar,
+      sense els vots.
+    </p>
+  </section>
+
+  <section class="seccio entra" style="--ordre: 4" aria-labelledby="xifres-titol">
+    <h2 class="visualment-amagat" id="xifres-titol">La legislatura en xifres</h2>
+    <div class="xifres">
+      <div>
+        <p class="valor">{sessions.length}</p>
+        <p class="que">{plural(sessions.length, 'sessió', 'sessions')} del Ple {des}</p>
+        <p class="font-dada">Font: <a href={activitat.url}>Parlament de Catalunya</a></p>
+      </div>
+      <div>
+        <p class="valor">{lleis.length}</p>
+        <p class="que">
+          {plural(lleis.length, 'llei publicada', 'lleis publicades')} al Diari Oficial de la Generalitat (DOGC) {des}.
+          Les aprova el Parlament.
+        </p>
+        <p class="font-dada">Font: <a href={normes.url}>normativa del DOGC</a></p>
+      </div>
+      <div>
+        <p class="valor">{decretsLlei.length}</p>
+        <p class="que">
+          {plural(decretsLlei.length, 'decret llei', 'decrets llei')} {des}. Els aprova el Govern quan és urgent, i
+          el Parlament els ha de convalidar o deixen de valer.
+        </p>
+        <p class="font-dada">Font: <a href={normes.url}>normativa del DOGC</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccio" aria-labelledby="normes-titol">
+    <h2 class="titol-seccio" id="normes-titol">Lleis i decrets llei nous</h2>
+    {
+      normes.normes.length === 0 ? (
+        <p class="explica">Encara no s'ha publicat cap llei ni cap decret llei en aquesta legislatura.</p>
+      ) : (
+        <ol class="files">
+          {normes.normes.slice(0, NORMES_OBERTES).map((n) => <Norma n={n} />)}
+        </ol>
+      )
+    }
+    {
+      normes.normes.length > NORMES_OBERTES && (
+        <details>
+          <summary>Lleis i decrets llei anteriors ({normes.normes.length - NORMES_OBERTES})</summary>
+          <ol class="files">
+            {normes.normes.slice(NORMES_OBERTES).map((n) => <Norma n={n} />)}
+          </ol>
+        </details>
+      )
+    }
+    <p class="font-dada">
+      Font: <a href={normes.url}>normativa del DOGC</a>, a Dades obertes de Catalunya, actualitzada el {
+        dia(normes.data_dades)
+      }.
+    </p>
+  </section>
+
+  <section class="seccio" aria-labelledby="ple-titol">
+    <h2 class="titol-seccio" id="ple-titol">Sessió per sessió</h2>
+    <p class="explica">
+      Al Ple hi ha tots els diputats. Aquí surten els acords del Ple que aproven, convaliden, deroguen o
+      rebutgen alguna cosa, amb el text de l'acord. No hi surten els altres acords, com els del debat de
+      totalitat, que decideix si una llei continua o es retorna.
+    </p>
+    <dl class="paraules">
+      <dt>Projecte de llei</dt>
+      <dd>Una llei que proposa el Govern.</dd>
+      <dt>Proposició de llei</dt>
+      <dd>Una llei que proposen els grups parlamentaris, els diputats, la ciutadania o els ajuntaments.</dd>
+      <dt>Debat de totalitat</dt>
+      <dd>Un debat al Ple sobre una llei sencera. Es decideix si continua o si es retorna a qui l'ha presentada.</dd>
+      <dt>Moció</dt>
+      <dd>
+        Un text que demana al Govern que faci alguna cosa. Es vota després d'una interpel·lació, que és una
+        pregunta al Govern sobre la seva política.
+      </dd>
+      <dt>Resolució</dt>
+      <dd>El que decideix el Parlament sobre un tema, per exemple després d'una comissió d'investigació.</dd>
+      <dt>Convalidar un decret llei</dt>
+      <dd>Que el Parlament el doni per bo. Si no el convalida, el decret llei queda derogat, és a dir, deixa de valer.</dd>
+      <dt>Sigles després de l'acord</dt>
+      <dd>
+        Són la comissió del Parlament que s'ocupa de la iniciativa. La de l'Estatut dels Diputats revisa, per
+        exemple, si cada diputat pot fer altres feines.
+        <ul class="sigles">
+          {comissions.map((c) => (
+            <li>
+              <abbr>{c}</abbr>: {COMISSIONS[c]}
+            </li>
+          ))}
+        </ul>
+      </dd>
+      <dt>Sessió constitutiva, ordinària, específica o extraordinària</dt>
+      <dd>
+        La constitutiva és la primera de la legislatura. L'ordinària és la del calendari habitual. L'específica tracta un sol tema, com el debat de política
+        general. L'extraordinària es fa fora dels períodes de sessions.
+      </dd>
+    </dl>
+    {ambDecisions.slice(0, OBERTES).map((s) => <Sessio s={s} />)}
+    {
+      ambDecisions.length > OBERTES && (
+        <details>
+          <summary>Sessions anteriors ({ambDecisions.length - OBERTES})</summary>
+          {ambDecisions.slice(OBERTES).map((s) => <Sessio s={s} />)}
+        </details>
+      )
+    }
+    <p class="font-dada">
+      Font: <a href={activitat.url}>acords de les sessions del Ple</a>, al web del Parlament de Catalunya,
+      consultat el {dia(activitat.data_consulta)}.
+    </p>
+  </section>
+  </main>
+</Pagina>
+
+<style>
+  .avis {
+    margin-top: 1.5rem;
+    max-width: 38rem;
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    background: var(--bg-2);
+    color: var(--ink-2);
+  }
+
+  .explica {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+
+  details {
+    margin-top: 1.5rem;
+  }
+
+  summary {
+    padding: 0.625rem 0;
+    cursor: pointer;
+    color: var(--par);
+  }
+
+  .seccio > .font-dada {
+    margin-top: 1.5rem;
+  }
+
+  .paraules {
+    margin: 1.5rem 0 0;
+    max-width: 40rem;
+  }
+
+  .paraules dt {
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .sigles {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+  }
+
+  .sigles abbr {
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .paraules dd {
+    margin: 0.25rem 0 0;
+    color: var(--ink-2);
+  }
+</style>
