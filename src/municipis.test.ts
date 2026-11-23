@@ -139,3 +139,9 @@ test('falla, i diu quin, si l’Idescat repeteix un municipi', async () => {
     /repeteix municipis: 089999/,
   );
 });
+
+test('accepta un any provisional, com el dona l’Idescat', async () => {
+  const valors = (id: string) => ({ ...indicador(id), r: '2024 (p)' });
+  const resultat = await construirMunicipis(fake({ valors }), CODIS);
+  assert.equal(resultat.indicadors[0]!.any, '2024 (p)');
+});

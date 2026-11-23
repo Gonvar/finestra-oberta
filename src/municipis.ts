@@ -49,7 +49,7 @@ function comprovaIndicador(x: Indicador) {
     esText(x.c) &&
     esText(x.v) &&
     esText(x.r) &&
-    /^\d{4}$/.test(x.r) &&
+    /^\d{4}( \(p\))?$/.test(x.r) &&
     (x.u === undefined || esText(x.u)) &&
     esText(x.t?.content) &&
     esText(x.updated) &&
