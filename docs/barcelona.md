@@ -37,6 +37,10 @@ node src/index.ts barcelona
 - **El datastore no suma.** Un total, com la població d'un districte, demana totes les files que compleixen la consulta (n'hi pot haver més de 100 i cal paginar amb `des_de`). Les instruccions demanen a l'assistent que les agafi totes, comparant-les amb `total`, i que digui quantes n'ha sumat.
 - **Les dades són de la data del recurs, no de la del conjunt.** Les instruccions demanen a l'assistent que la doni, i que avisi quan un conjunt té la freqüència «serie_interrompuda».
 
+## Reutilització
+
+Open Data BCN dona una llicència a cada conjunt, i `veure_conjunt` la torna tal com la publica el portal.
+
 ## Proves
 
 - [src/barcelona.test.ts](../src/barcelona.test.ts): proves sense xarxa, adaptades de les de la PR #265, amb respostes retallades de les reals i sense dades personals.

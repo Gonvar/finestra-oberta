@@ -1,35 +1,42 @@
-name: Dada mal presentada
-description: Un servidor ha donat una dada equivocada, antiga, incompleta o mal explicada.
+name: Dada o text incorrecte
+description: Una dada és equivocada, antiga, incompleta o mal explicada, o un text pren partit. Al web o en un servidor.
 labels: [dades]
 body:
   - type: markdown
     attributes:
       value: |
-        Gràcies per avisar. No hi posis dades personals. Pots escriure en castellà o en anglès; et respondrem en català.
+        Gràcies per avisar. Aquest avís és públic: no hi posis dades personals. Pots escriure en castellà o en anglès; et respondrem en català.
+
+        Si el que falla és la pàgina (no es veu bé, no funciona), fes servir la plantilla «Web».
   - type: dropdown
-    id: servidor
+    id: origen
     attributes:
-      label: Servidor
-      options: [idescat, dades-obertes, barcelona, Un altre]
+      label: On l'has vist
+      options:
+        - Al web finestraoberta.cat
+        - Al servidor idescat
+        - Al servidor dades-obertes
+        - Al servidor barcelona
+        - En un altre lloc
     validations:
       required: true
   - type: textarea
-    id: pregunta
+    id: lloc
     attributes:
-      label: Què vas preguntar
-      description: La pregunta que vas fer a l'assistent i, si les tens, les crides que va fer (eina i arguments).
+      label: Pàgina o pregunta
+      description: L'adreça de la pàgina. Si era un assistent, la pregunta que li vas fer i, si les tens, les crides que va fer (eina i arguments).
     validations:
       required: true
   - type: textarea
-    id: resposta
+    id: diu
     attributes:
-      label: Què va respondre
+      label: Què hi diu
     validations:
       required: true
   - type: textarea
     id: correcte
     attributes:
       label: Què hauria de dir
-      description: La dada correcta i on l'has trobada (un enllaç a la font oficial, si pot ser).
+      description: La dada correcta i on l'has trobada. Si pot ser, un enllaç al web de l'organisme que la publica. Si un text pren partit, explica per què.
     validations:
       required: true

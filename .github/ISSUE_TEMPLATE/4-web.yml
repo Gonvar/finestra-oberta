@@ -1,5 +1,5 @@
 name: Web
-description: Alguna cosa de finestraoberta.cat no es veu bé, no s'entén o no funciona.
+description: Alguna cosa de finestraoberta.cat no es veu bé, no s'entén o no funciona. Per a una dada equivocada, fes servir «Dada o text incorrecte».
 labels: [web]
 body:
   - type: markdown

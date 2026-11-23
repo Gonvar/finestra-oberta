@@ -4,6 +4,7 @@ import agenda from '../../../dades/agenda.json' with { type: 'json' };
 import { activitat } from './activitat.ts';
 import { contractes } from './contractes.ts';
 import { govern, parlament, transparencia } from './institucions.ts';
+import { ajuntaments, eleccions, indicadors, mapa } from './municipis.ts';
 import { pressupost } from './pressupost.ts';
 
 /**
@@ -136,6 +137,47 @@ export const seccions: Seccio[] = [
         nom: contractes.font,
         url: contractes.url,
         data: { tipus: 'dades', dia: contractes.data_dades },
+      },
+    ],
+  },
+  {
+    titol: 'Municipis',
+    ruta: '/municipis/',
+    fonts: [
+      {
+        que: 'Les xifres de cada municipi, com la població, i el nom a la llista dels municipis',
+        nom: indicadors.font,
+        url: indicadors.url,
+        // Cada indicador té la seva data; la de la secció és la de l'últim que s'ha actualitzat.
+        data: {
+          tipus: 'dades',
+          dia: indicadors.indicadors.map((i) => i.actualitzat).reduce((a, b) => (a > b ? a : b)),
+        },
+      },
+      {
+        que: 'Qui forma el ple de cada ajuntament',
+        nom: ajuntaments.font,
+        url: ajuntaments.url,
+        data: { tipus: 'dades', dia: ajuntaments.data_dades },
+      },
+      {
+        que: 'La comarca, la província i el web de l’ajuntament',
+        nom: ajuntaments.font_municipis,
+        url: ajuntaments.url_municipis,
+        data: { tipus: 'dades', dia: ajuntaments.data_municipis },
+      },
+      {
+        que: 'Els vots de les últimes eleccions municipals',
+        nom: eleccions.font,
+        url: eleccions.url,
+        data: { tipus: 'dades', dia: eleccions.data_dades },
+      },
+      {
+        que: 'El nom de cada fitxa i els límits del mapa',
+        nom: mapa.font,
+        // L'enllaç és el servei d'on es llegeixen les dades. Les condicions d'ús de l'ICGC són en http.
+        url: mapa.url,
+        data: { tipus: 'consulta', dia: mapa.data_consulta },
       },
     ],
   },

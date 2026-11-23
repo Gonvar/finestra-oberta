@@ -35,6 +35,10 @@ node src/index.ts dades-obertes
 - **`veure_conjunt` només mostra els valors més freqüents.** Per veure'ls tots cal agrupar-los amb `$group`.
 - **Sense `$order`, les pàgines d'`offset` poden repetir o saltar files.**
 
+## Reutilització
+
+Les metadades de cada conjunt (`attributionLink`) remeten a la [Llicència oberta d'ús d'informació - Catalunya](https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes/llicencies). Permet reutilitzar, distribuir i transformar la informació, però no se'n pot alterar el contingut ni desnaturalitzar-ne el sentit, cal citar la font i cal dir la data de l'última actualització. Un conjunt pot tenir una llicència pròpia, que preval. Per això `cercar_conjunt` i `veure_conjunt` donen l'organisme que publica cada conjunt i la data de les seves dades (`dades_actualitzades`), i les instruccions demanen a l'assistent que les citi.
+
 ## Proves
 
 - [src/dadesobertes.test.ts](../src/dadesobertes.test.ts): proves amb dades sintètiques.

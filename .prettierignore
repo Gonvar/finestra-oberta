@@ -4,3 +4,5 @@ web/dist/
 web/.astro/
 web/.wrangler/
 dades/
+# Els marcadors __NOM__ de la plantilla no són negretes: Prettier els canviaria.
+plantilla/docs.md
