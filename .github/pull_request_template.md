@@ -16,6 +16,14 @@
 - [ ] Cap text, ordre, color ni resum afavoreix o perjudica cap partit, grup, persona o ideologia.
 - [ ] Si canvia `fonts/perfils-govern.json`: s'ha generat amb el fragment de docs/institucions.md, sense cap retoc més que Prettier, i dic quan.
 
+## Font nova
+
+<!-- Només si la pull request afegeix una font; si no, esborra aquesta secció. Vegeu CONTRIBUTING.md, «Afegir una font». -->
+
+- [ ] La font és d'un organisme públic, pública i sense clau, i el seu domini és a NEUTRALITAT.md.
+- [ ] L'enllaç a la llicència o les condicions d'ús és la pàgina oficial de la font, i les compleixo.
+- [ ] L'he provat contra l'API real per stdio, amb una crida que funciona i una que ha de fallar. Explico quines a «Verificació».
+
 ## Senzillesa
 
 <!-- Vegeu DESIGN.md §1.1. Només si la pull request toca la web; si no, esborra aquesta secció. -->

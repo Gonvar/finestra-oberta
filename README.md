@@ -32,6 +32,8 @@ Exemples de preguntes:
 
 A [docs/exemples.md](docs/exemples.md) hi ha aquestes preguntes resoltes amb les crides i les respostes reals dels servidors.
 
+Qualsevol persona pot afegir una font oficial amb una pull request: `npm run nova-font` en prepara els fitxers, i la CI comprova que compleix les regles del projecte. Vegeu [CONTRIBUTING.md](CONTRIBUTING.md#afegir-una-font).
+
 ## El Govern i el Parlament
 
 A la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades) hi ha la composició del Govern, la del Parlament i la del ple de cada ajuntament, uns quants indicadors de l'Idescat i els vots de les últimes municipals i els límits de cada municipi, els ajuts que encara es poden demanar, com va el pressupost de la Generalitat i quantes adjudicacions fa cada organisme, en JSON, cadascuna amb la seva font i la data de les dades, i la còpia de cada resposta de les fonts oficials. Una tasca automàtica les actualitza cada dia i les signa. `npm run dades` les torna a generar des de les fonts i `npm run verifica-dades` comprova que no s'han retocat. Vegeu [docs/institucions.md](docs/institucions.md).

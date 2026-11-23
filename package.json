@@ -14,7 +14,8 @@
     "format:check": "prettier --check .",
     "barcelona": "node src/index.ts barcelona",
     "dades": "node src/dades.ts",
-    "verifica-dades": "node src/verifica-dades.ts"
+    "verifica-dades": "node src/verifica-dades.ts",
+    "nova-font": "node plantilla/nova-font.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.4.0",

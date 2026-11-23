@@ -51,6 +51,10 @@ Les dades arriben agrupades en sèries, del període més recent al més antic:
 - **Alguns temes tenen diverses taules per períodes**, com «(2014–)» i «(2000–2013)». Les instruccions diuen a l'assistent que triï la que arriba fins avui.
 - **JSON-stat admet l'índex de les dimensions com a llista o com a objecte.** L'Idescat fa servir la llista, i el servidor accepta totes dues formes.
 
+## Reutilització
+
+Segons les [condicions d'ús de les APIs de l'Idescat](https://www.idescat.cat/dev/api/#cdu), cal citar la font, amb els enllaços que dona l'API o amb un enllaç a idescat.cat, i no es poden alterar les dades ni les metadades. Per això cada resposta porta la font i el servidor no canvia cap valor.
+
 ## Proves
 
 - [src/idescat.test.ts](../src/idescat.test.ts): proves amb dades sintètiques.

@@ -2,11 +2,7 @@
 import assert from 'node:assert/strict';
 import { readdir, readFile } from 'node:fs/promises';
 import { test } from 'node:test';
-
-/** Els dominis de la taula de NEUTRALITAT.md: les files que comencen amb un domini entre accents greus. */
-function dominisOficials(md: string): string[] {
-  return [...md.matchAll(/^\| `([a-z0-9.-]+\.[a-z]+)` +\|/gm)].map((m) => m[1] as string);
-}
+import { dominisOficials } from './neutralitat.ts';
 
 /** Les adreces entre cometes del codi que no són de cap domini oficial, ni d'un subdomini seu. */
 function adrecesNoOficials(codi: string, dominis: string[]): string[] {

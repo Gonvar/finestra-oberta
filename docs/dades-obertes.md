@@ -35,6 +35,10 @@ node src/index.ts dades-obertes
 - **`veure_conjunt` només mostra els valors més freqüents.** Per veure'ls tots cal agrupar-los amb `$group`.
 - **Sense `$order`, les pàgines d'`offset` poden repetir o saltar files.**
 
+## Reutilització
+
+Les metadades de cada conjunt (`attributionLink`) remeten a les [llicències de les dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/). Cada resposta porta l'organisme que publica el conjunt.
+
 ## Proves
 
 - [src/dadesobertes.test.ts](../src/dadesobertes.test.ts): proves amb dades sintètiques.
