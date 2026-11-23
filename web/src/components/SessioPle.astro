@@ -6,6 +6,10 @@ type Props = {
   s: Sessio & { fetes: (Punt & { resultat: Resultat })[]; altres: number };
 };
 const { s } = Astro.props;
+// Una sessió sense cap iniciativa aprovada o rebutjada sí que va tractar alguna cosa, com una investidura: se'n diu el tema.
+const temes = [...new Set(s.punts.map((p) => p.titol))];
+const TEMES = 5;
+const mes = s.fetes.length > 0 ? s.altres : Math.max(temes.length - TEMES, 0);
 ---
 
 <section class="sessio" aria-labelledby={`sessio-${s.numero}`}>
@@ -13,7 +17,14 @@ const { s } = Astro.props;
   <p class="secundari">Sessió {s.numero}, {s.caracter}</p>
   {
     s.fetes.length === 0 ? (
-      <p class="buit">No s'hi va aprovar ni rebutjar cap iniciativa.</p>
+      <>
+        <p class="buit">Es va tractar:</p>
+        <ul class="temes">
+          {temes.slice(0, TEMES).map((t) => (
+            <li>{t}</li>
+          ))}
+        </ul>
+      </>
     ) : (
       <ol class="files">
         {s.fetes.map((p) => (
@@ -28,7 +39,7 @@ const { s } = Astro.props;
     )
   }
   <p class="secundari altres">
-    {s.altres > 0 && `${s.altres} ${s.altres === 1 ? 'punt més' : 'punts més'}. `}<a href={s.url}
+    {mes > 0 && `${mes} ${mes === 1 ? 'punt més' : 'punts més'}. `}<a href={s.url}
       >Tots els punts, al web del Parlament</a
     >
   </p>
@@ -54,8 +65,9 @@ const { s } = Astro.props;
 
   .titol {
     margin-top: 0.125rem;
-    font-size: 1.0625rem;
+    font-size: 1.1875rem;
     line-height: 1.45;
+    letter-spacing: -0.012em;
   }
 
   .titol a {
@@ -65,6 +77,13 @@ const { s } = Astro.props;
   .buit {
     margin-top: 1rem;
     color: var(--ink-2);
+  }
+
+  .temes {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
   }
 
   .altres {

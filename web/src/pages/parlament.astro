@@ -43,7 +43,7 @@ const ressalta = grups
         parlament.legislatura.inici
       }.
     </p>
-    <p class="entra" style="--ordre: 2"><a href="/parlament/decisions">Què ha decidit el Parlament</a></p>
+    <p class="entra decisions" style="--ordre: 3"><a href="/parlament/decisions">Què ha decidit el Parlament</a></p>
   </section>
 
   <section class="seccio parlament entra" style="--ordre: 3" aria-labelledby="grups-titol">
@@ -153,6 +153,16 @@ const ressalta = grups
 </Pagina>
 
 <style>
+  .decisions {
+    margin-top: 1rem;
+  }
+
+  .decisions a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
   .distribucio {
     display: grid;
     gap: 2.5rem;

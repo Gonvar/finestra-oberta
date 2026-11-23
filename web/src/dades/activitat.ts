@@ -8,7 +8,7 @@ export type Punt = Sessio['punts'][number];
 export type Resultat = 'aprovat' | 'convalidat' | 'derogat' | 'rebutjat';
 export type Norma = (typeof activitat.normes.normes)[number];
 
-/** Com es diu cada resultat a la web: el mateix verb que fa servir l'acord del Parlament. */
+/** Com es diu cada resultat a la web: el verb que fa servir la majoria d'acords del Parlament amb aquest resultat. */
 export const VERB: Record<Resultat, string> = {
   aprovat: "S'aprova",
   convalidat: 'Es convalida',
