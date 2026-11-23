@@ -3,6 +3,7 @@
 import agenda from '../../../dades/agenda.json' with { type: 'json' };
 import { activitat } from './activitat.ts';
 import { govern, parlament, transparencia } from './institucions.ts';
+import { pressupost } from './pressupost.ts';
 
 /**
  * - `dades`: la data en què la font va actualitzar les dades, segons la font.
@@ -103,6 +104,24 @@ export const seccions: Seccio[] = [
         nom: agenda.parlament.font,
         url: agenda.parlament.url,
         data: { tipus: 'consulta', dia: agenda.parlament.data_consulta },
+      },
+    ],
+  },
+  {
+    titol: 'On van els diners de la Generalitat',
+    ruta: '/pressupost/',
+    fonts: [
+      {
+        que: 'Quant pot gastar la Generalitat i a què ho dedica',
+        nom: pressupost.font_despeses,
+        url: pressupost.url_despeses,
+        data: { tipus: 'dades', dia: pressupost.data_despeses },
+      },
+      {
+        que: 'D’on surten els diners',
+        nom: pressupost.font_ingressos,
+        url: pressupost.url_ingressos,
+        data: { tipus: 'dades', dia: pressupost.data_ingressos },
       },
     ],
   },
