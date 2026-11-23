@@ -1,0 +1,271 @@
+---
+import Pagina from '../../layouts/Pagina.astro';
+import '../../styles/subpagines.css';
+import { dia, eurosRodons, nombre, slug } from '../../dades/institucions.ts';
+import {
+  ajuntaments,
+  eleccions,
+  enllacWeb,
+  indicador,
+  indicadors,
+  llistesObertes,
+  mapa,
+  municipis,
+  percentatge,
+  type IdIndicador,
+  type Municipi,
+} from '../../dades/municipis.ts';
+
+export function getStaticPaths() {
+  return municipis.map((municipi) => ({ params: { municipi: slug(municipi.nom) }, props: { municipi } }));
+}
+
+type Props = { municipi: Municipi };
+const { municipi: m } = Astro.props;
+const v = m.valors;
+
+const decimal = (n: number) => new Intl.NumberFormat('ca', { maximumFractionDigits: 1 }).format(n);
+const pct = (n: number | null) => (n === null ? null : `${decimal(n)} %`);
+const any = (id: IdIndicador) => indicador(id).any.replace(' (p)', ', provisional');
+
+type Fila = { valor: string | null; que: string; quan: string };
+const qui: Fila[] = [
+  { valor: v.f171 === null ? null : nombre(v.f171), que: 'Habitants', quan: any('f171') },
+  {
+    valor: pct(percentatge(v.f184, v.f263)),
+    que: 'Tenen una nacionalitat estrangera',
+    quan: any('f184'),
+  },
+  { valor: pct(percentatge(v.f73, v.f74)), que: "Van néixer a l'estranger", quan: any('f73') },
+  {
+    valor: pct(percentatge(v.f92, v.f96)),
+    que: 'Saben parlar català, de 2 anys en amunt',
+    quan: `cens del ${any('f92')}, l'últim que ho diu per a cada municipi`,
+  },
+];
+const feina: Fila[] = [
+  {
+    valor: v.f242 === null ? null : nombre(Math.round(v.f242)),
+    que: "Persones a l'atur, de mitjana durant l'any",
+    quan: any('f242'),
+  },
+  {
+    valor: v.f10 === null ? null : eurosRodons(v.f10),
+    que: "Ingressos declarats a l'IRPF, de mitjana per declaració",
+    quan: `base imposable, ${any('f10')}`,
+  },
+  {
+    valor: v.f385 === null ? null : decimal(v.f385),
+    que: 'Índex socioeconòmic: 100 és la mitjana de Catalunya; més de 100, millor situació',
+    quan: any('f385'),
+  },
+];
+const obertes = llistesObertes(m.candidatures);
+const vots = m.candidatures.reduce((n, c) => n + c.vots, 0);
+// Si l'Idescat no dona una participació, es diu, igual per a tots els municipis.
+const participacio = (valor: number | null, eleccions: string) =>
+  valor === null
+    ? `L'Idescat no dona quanta gent hi va votar a ${eleccions}.`
+    : `A ${eleccions}, hi va votar el ${decimal(valor)} % del cens.`;
+const ple = m.ple;
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <p class="etiqueta entra"><a href="/municipis"><span class="punt dad" aria-hidden="true"></span>Municipis</a></p>
+      <h1 id="titol" class="entra" style="--ordre: 1">{m.nom}</h1>
+      <p class="entradeta entra" style="--ordre: 2">{m.comarca}, província de {m.provincia}.</p>
+      <p class="font-dada">
+        Nom: <a href={mapa.condicions}>ICGC</a>. Comarca i província: <a href={ajuntaments.url_municipis}>registre d'ens locals</a>, {dia(ajuntaments.data_municipis)}.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="qui-titol">
+      <h2 class="titol-seccio" id="qui-titol">Qui hi viu</h2>
+      <dl class="xifres">
+        {
+          qui.map((f) => (
+            <div>
+              <dt class="que">{f.que}</dt>
+              <dd class="valor">{f.valor ?? <span class="sense">Sense dada</span>}</dd>
+              <dd class="secundari">{f.quan}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="font-dada">
+        Font: <a href={`${indicadors.url}?id=${m.codi}`}>Idescat, El municipi en xifres</a>. «Sense dada» vol dir que
+        l'Idescat no la publica per a aquest municipi.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="feina-titol">
+      <h2 class="titol-seccio" id="feina-titol">Feina i diners</h2>
+      <dl class="xifres">
+        {
+          feina.map((f) => (
+            <div>
+              <dt class="que">{f.que}</dt>
+              <dd class="valor">{f.valor ?? <span class="sense">Sense dada</span>}</dd>
+              <dd class="secundari">{f.quan}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="font-dada">
+        Font: <a href={`${indicadors.url}?id=${m.codi}`}>Idescat, El municipi en xifres</a>.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="ple-titol">
+      <h2 class="titol-seccio" id="ple-titol">Qui forma l'ajuntament</h2>
+      <p class="secundari">{ple.length} {ple.length === 1 ? 'persona' : 'persones'} al ple, en l'ordre del registre.</p>
+      <ul class="files">
+        {
+          ple.map((p) => (
+            <li class="persona">
+              <span class="titol-bloc">{p.nom ?? 'Sense nom al registre'}</span>
+              <span class="secundari">{[p.carrec, p.partit].filter((x) => x !== null).join(' · ')}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="font-dada">
+        Font: <a href={ajuntaments.url}>composició dels plens</a>, {dia(ajuntaments.data_dades)}.
+        {m.web !== null && <> Web de l'ajuntament: <a href={enllacWeb(m.web)}>{m.web.replace(/^https?:\/\//, '')}</a>.</>}
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="vots-titol">
+      <h2 class="titol-seccio" id="vots-titol">Com es va votar a les municipals del {eleccions.any}</h2>
+      <ol class="files">
+        {
+          m.candidatures.map((c) => (
+            <li class="candidatura">
+              <span class="titol-bloc">{c.sigles}</span>
+              <span class="xifra">{decimal(c.percentatge)} %</span>
+              <span class="barra" style={`--part: ${c.percentatge / 100}`} aria-hidden="true" />
+              <span class="secundari">
+                {nombre(c.vots)} vots · {c.regidors} {c.regidors === 1 ? 'regidor' : 'regidors'}
+              </span>
+            </li>
+          ))
+        }
+      </ol>
+      {
+        obertes && (
+          <p class="secundari participacio">
+            Aquí es vota amb llistes obertes, com a tots els municipis amb 5 regidors o menys: cada persona pot triar
+            candidats de llistes diferents. Per això els vots i els percentatges no sumen el total de votants.
+          </p>
+        )
+      }
+      <p class="secundari participacio">
+        {participacio(v.f149, `aquestes municipals`)}
+        {` ${participacio(v.f254, `les eleccions al Parlament del ${any('f254')}`)}`}
+      </p>
+      <p class="font-dada">
+        Font: <a href={eleccions.url}>vots de les eleccions municipals</a>, Generalitat de Catalunya, {dia(eleccions.data_dades)}.
+        {!obertes && `En total, ${nombre(vots)} vots a candidatures.`} La participació és de l'Idescat.
+      </p>
+    </section>
+  </main>
+</Pagina>
+
+<style>
+  .punt.dad {
+    background: var(--dad);
+  }
+
+  .etiqueta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    color: inherit;
+  }
+
+  .xifres {
+    margin-bottom: 0;
+  }
+
+  .xifres > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .xifres dd {
+    margin: 0;
+  }
+
+  .xifres dt {
+    order: 2;
+    margin-top: 0.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: var(--ink-2);
+  }
+
+  .xifres .valor {
+    order: 1;
+  }
+
+  .xifres .secundari {
+    order: 3;
+    margin-top: 0.25rem;
+  }
+
+  .sense {
+    font-size: 1.1875rem;
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    color: var(--ink-3);
+  }
+
+  .seccio > .font-dada {
+    margin-top: 1.5rem;
+  }
+
+  .persona {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .candidatura {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem 1rem;
+    align-items: baseline;
+  }
+
+  .candidatura .xifra {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+
+  .candidatura .barra {
+    grid-column: 1 / -1;
+    height: 0.375rem;
+    border-radius: 999px;
+    background: var(--bg-2);
+    overflow: hidden;
+  }
+
+  .candidatura .barra::after {
+    content: '';
+    display: block;
+    width: calc(var(--part) * 100%);
+    height: 100%;
+    background: var(--ink-3);
+  }
+
+  .candidatura .secundari {
+    grid-column: 1 / -1;
+  }
+
+  .participacio {
+    margin-top: 1.5rem;
+  }
+</style>
