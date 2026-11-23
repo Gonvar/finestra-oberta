@@ -10,7 +10,7 @@
   "description" : "Conjunt de dades referents als càrrecs electes vigents en els plens d’ajuntaments, consells comarcals i diputacions provincials. Amb indicació de l’àrea de responsabilitat corresponent.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 2107,
+  "downloadCount" : 2108,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",
@@ -27,7 +27,7 @@
   "rowsUpdatedBy" : "a4b5-gx6v",
   "tableId" : 1172771,
   "totalTimesRated" : 0,
-  "viewCount" : 12395,
+  "viewCount" : 12404,
   "viewLastModified" : 1795321807,
   "viewType" : "tabular",
   "approvals" : [ {

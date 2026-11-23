@@ -1,0 +1,3378 @@
+{
+  "id" : "42am-vra2",
+  "name" : "Execució mensual del pressupost de la Generalitat de Catalunya. Ingressos",
+  "assetType" : "dataset",
+  "attribution" : "Departament d'Economia i Finances",
+  "attributionLink" : "https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/",
+  "averageRating" : 0,
+  "category" : "Economia",
+  "createdAt" : 1493829417,
+  "description" : "Imports executats dels ingressos de l'Administració de la Generalitat i de les entitats que formen part del seu sector públic administratiu (SPA: entitats autònomes administratives i CatSalut). Els imports d’execució són els acumulats des de l’1 de gener fins a l’últim dia del mes de referència.\r\nPodeu consultar més informació sobre aquest dataset i les seves metadades a la nota metodològica adjunta. Per obtenir més informació sobre els pressupostos de la Generalitat podeu anar a l'apartat \"Seguiment  i control de les finances\" del web del Departament d'Economia i Coneixement.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 2487,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "indexUpdatedAt" : 1557821796,
+  "licenseId" : "SEE_TERMS_OF_USE",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 791771,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1531206430,
+  "publicationGroup" : 114715,
+  "publicationStage" : "published",
+  "rowClass" : "",
+  "rowsUpdatedAt" : 1795003256,
+  "rowsUpdatedBy" : "exs3-iyf9",
+  "tableId" : 513517,
+  "totalTimesRated" : 0,
+  "viewCount" : 7586,
+  "viewLastModified" : 1795003254,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1668766066,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 1259006,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1668766066,
+    "targetAudience" : "public",
+    "workflowId" : 182,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1668766066,
+      "failureCount" : 0,
+      "startedAt" : 1668766066,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "gx2j-sqch",
+      "displayName" : "Dades obertes Economia"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 7002462,
+    "name" : "Exercici",
+    "dataTypeName" : "number",
+    "description" : "Període anual del pressupost, que correspon a l'any natural",
+    "fieldName" : "exercici",
+    "position" : 1,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140303,
+    "width" : 137,
+    "cachedContents" : {
+      "largest" : "2026",
+      "non_null" : "197338",
+      "average" : "2017.327271615881",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2025",
+        "count" : "27329"
+      }, {
+        "item" : "2023",
+        "count" : "26863"
+      }, {
+        "item" : "2024",
+        "count" : "26037"
+      }, {
+        "item" : "2022",
+        "count" : "24531"
+      }, {
+        "item" : "2021",
+        "count" : "22819"
+      }, {
+        "item" : "2026",
+        "count" : "21049"
+      }, {
+        "item" : "2020",
+        "count" : "18739"
+      }, {
+        "item" : "2018",
+        "count" : "12408"
+      }, {
+        "item" : "2019",
+        "count" : "12167"
+      }, {
+        "item" : "2017",
+        "count" : "1401"
+      }, {
+        "item" : "2016",
+        "count" : "1393"
+      }, {
+        "item" : "2015",
+        "count" : "1343"
+      }, {
+        "item" : "2014",
+        "count" : "1259"
+      } ],
+      "smallest" : "2014",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "66004931",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "true",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002463,
+    "name" : "Mes",
+    "dataTypeName" : "text",
+    "description" : "Període al que s'acumulen les dades d'execució del pressupost, des de l'1 de gener de l'exercici corresponent.",
+    "fieldName" : "mes",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140304,
+    "width" : 136,
+    "cachedContents" : {
+      "largest" : "12 Desembre",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "12 Desembre",
+        "count" : "23972"
+      }, {
+        "item" : "10 Octubre",
+        "count" : "19167"
+      }, {
+        "item" : "09 Setembre",
+        "count" : "18524"
+      }, {
+        "item" : "08 Agost",
+        "count" : "17927"
+      }, {
+        "item" : "07 Juliol",
+        "count" : "17662"
+      }, {
+        "item" : "11 Novembre",
+        "count" : "17402"
+      }, {
+        "item" : "06 Juny",
+        "count" : "16736"
+      }, {
+        "item" : "05 Maig",
+        "count" : "15907"
+      }, {
+        "item" : "04 Abril",
+        "count" : "14491"
+      }, {
+        "item" : "03 Març",
+        "count" : "13488"
+      }, {
+        "item" : "02 Febrer",
+        "count" : "12075"
+      }, {
+        "item" : "01 Gener",
+        "count" : "9987"
+      } ],
+      "smallest" : "01 Gener",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002464,
+    "name" : "Entitat codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador d'entitat",
+    "fieldName" : "entitat_codi",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140305,
+    "width" : 161,
+    "cachedContents" : {
+      "largest" : "A800",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "1000",
+        "count" : "66546"
+      }, {
+        "item" : "5200",
+        "count" : "28250"
+      }, {
+        "item" : "7575",
+        "count" : "12210"
+      }, {
+        "item" : "6204",
+        "count" : "5633"
+      }, {
+        "item" : "7150",
+        "count" : "3959"
+      }, {
+        "item" : "7495",
+        "count" : "3646"
+      }, {
+        "item" : "5100",
+        "count" : "3380"
+      }, {
+        "item" : "6090",
+        "count" : "2846"
+      }, {
+        "item" : "6208",
+        "count" : "2623"
+      }, {
+        "item" : "6210",
+        "count" : "2606"
+      }, {
+        "item" : "A600",
+        "count" : "2504"
+      }, {
+        "item" : "6550",
+        "count" : "2457"
+      }, {
+        "item" : "7490",
+        "count" : "2350"
+      }, {
+        "item" : "6100",
+        "count" : "2122"
+      }, {
+        "item" : "6040",
+        "count" : "2103"
+      }, {
+        "item" : "6000",
+        "count" : "1977"
+      }, {
+        "item" : "6170",
+        "count" : "1892"
+      }, {
+        "item" : "6800",
+        "count" : "1759"
+      }, {
+        "item" : "6010",
+        "count" : "1741"
+      }, {
+        "item" : "7550",
+        "count" : "1669"
+      } ],
+      "smallest" : "1000",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002465,
+    "name" : "Entitat",
+    "dataTypeName" : "text",
+    "description" : "Ens amb personalitat jurídica pròpia, objecte de pressupost i responsable de la seva execució. Cada entitat té assignat un codi de quatre dígits.",
+    "fieldName" : "entitat",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140306,
+    "width" : 184,
+    "cachedContents" : {
+      "largest" : "SOC",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Generalitat",
+        "count" : "66546"
+      }, {
+        "item" : "ICS",
+        "count" : "28250"
+      }, {
+        "item" : "ACPC",
+        "count" : "12210"
+      }, {
+        "item" : "SOC",
+        "count" : "5633"
+      }, {
+        "item" : "Consorci Sant Gregori de Girona",
+        "count" : "3959"
+      }, {
+        "item" : "OSIC",
+        "count" : "3646"
+      }, {
+        "item" : "CatSalut",
+        "count" : "3380"
+      }, {
+        "item" : "INEFC",
+        "count" : "2846"
+      }, {
+        "item" : "Ins.Seguretat Pública Cat",
+        "count" : "2623"
+      }, {
+        "item" : "Ins.Cat. Empre. Culturals",
+        "count" : "2504"
+      }, {
+        "item" : "Entitat Autònoma del Diari Oficial i de Publicacions",
+        "count" : "2466"
+      }, {
+        "item" : "Agència de Residus de Catalunya",
+        "count" : "2457"
+      }, {
+        "item" : "Museu Nacional d'Art de Catalunya",
+        "count" : "2350"
+      }, {
+        "item" : "Cons.Català Esport",
+        "count" : "2122"
+      }, {
+        "item" : "Idescat",
+        "count" : "2103"
+      }, {
+        "item" : "Patr.Munt. Montserrat",
+        "count" : "1977"
+      }, {
+        "item" : "Ag. Catalana Consum",
+        "count" : "1892"
+      }, {
+        "item" : "Agència de Gestió d'Ajuts Universitaris i de Recerca",
+        "count" : "1759"
+      }, {
+        "item" : "ICD",
+        "count" : "1741"
+      }, {
+        "item" : "Consorci Memorial dels Espais de la Batalla de l'Ebre",
+        "count" : "1693"
+      } ],
+      "smallest" : "ACPC",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002466,
+    "name" : "Tipus secció codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador Tipus secció",
+    "fieldName" : "tipus_secci_codi",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140307,
+    "width" : 173,
+    "cachedContents" : {
+      "non_null" : "151286",
+      "largest" : "3",
+      "null" : "46052",
+      "top" : [ {
+        "item" : "0",
+        "count" : "104638"
+      }, {
+        "item" : "2",
+        "count" : "44325"
+      }, {
+        "item" : "3",
+        "count" : "2082"
+      }, {
+        "item" : "1",
+        "count" : "241"
+      } ],
+      "not_null" : "37794",
+      "smallest" : "0",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002467,
+    "name" : "Tipus secció",
+    "dataTypeName" : "text",
+    "description" : "En el cas de l'Administració de la Generalitat correspon a la tipologia de la de secció, que es classifica en tres tipus:  'Parlament i organismes estatutaris i consultius', 'Departament's i 'Fons no departamentals'  En el cas de les entitats autònomes administratives i el Servei Català de la Salut, no hi ha tipologia de secció i aquest camp es mostra en blanc.",
+    "fieldName" : "tipus_secci",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140308,
+    "width" : 190,
+    "cachedContents" : {
+      "non_null" : "46648",
+      "largest" : "ORGANISMES",
+      "null" : "150690",
+      "top" : [ {
+        "item" : "DEPARTAMENTS",
+        "count" : "44325"
+      }, {
+        "item" : "FONS NO DEPARTAMENTALS",
+        "count" : "2082"
+      }, {
+        "item" : "ORGANISMES",
+        "count" : "241"
+      } ],
+      "not_null" : "12738",
+      "smallest" : "DEPARTAMENTS",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002468,
+    "name" : "Ordre protocol secció",
+    "dataTypeName" : "text",
+    "description" : "És l' ordenació protocol·lària de les diferents seccions pressupostàries, als efectes de la seva visualització i presentació en diferents informes.",
+    "fieldName" : "ordre_protocol_secci",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140309,
+    "width" : 206,
+    "cachedContents" : {
+      "non_null" : "151286",
+      "largest" : "9",
+      "null" : "46052",
+      "top" : [ {
+        "item" : "0",
+        "count" : "104638"
+      }, {
+        "item" : "18",
+        "count" : "4156"
+      }, {
+        "item" : "13",
+        "count" : "3992"
+      }, {
+        "item" : "14",
+        "count" : "3949"
+      }, {
+        "item" : "7",
+        "count" : "3933"
+      }, {
+        "item" : "16",
+        "count" : "3828"
+      }, {
+        "item" : "17",
+        "count" : "3657"
+      }, {
+        "item" : "15",
+        "count" : "3352"
+      }, {
+        "item" : "12",
+        "count" : "3099"
+      }, {
+        "item" : "11",
+        "count" : "2956"
+      }, {
+        "item" : "8",
+        "count" : "2898"
+      }, {
+        "item" : "10",
+        "count" : "2783"
+      }, {
+        "item" : "9",
+        "count" : "2155"
+      }, {
+        "item" : "6",
+        "count" : "1818"
+      }, {
+        "item" : "20",
+        "count" : "1233"
+      }, {
+        "item" : "19",
+        "count" : "1176"
+      }, {
+        "item" : "21",
+        "count" : "657"
+      }, {
+        "item" : "23",
+        "count" : "326"
+      }, {
+        "item" : "22",
+        "count" : "242"
+      }, {
+        "item" : "5",
+        "count" : "239"
+      } ],
+      "not_null" : "37794",
+      "smallest" : "0",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002469,
+    "name" : "Secció codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador alfabètic",
+    "fieldName" : "secci_codi",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140312,
+    "width" : 166,
+    "cachedContents" : {
+      "largest" : "PL",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "00",
+        "count" : "40638"
+      }, {
+        "item" : "52",
+        "count" : "28250"
+      }, {
+        "item" : "0",
+        "count" : "25916"
+      }, {
+        "item" : "75",
+        "count" : "18230"
+      }, {
+        "item" : "62",
+        "count" : "12837"
+      }, {
+        "item" : "60",
+        "count" : "12741"
+      }, {
+        "item" : "61",
+        "count" : "8193"
+      }, {
+        "item" : "74",
+        "count" : "7412"
+      }, {
+        "item" : "68",
+        "count" : "5868"
+      }, {
+        "item" : "71",
+        "count" : "4035"
+      }, {
+        "item" : "65",
+        "count" : "3495"
+      }, {
+        "item" : "51",
+        "count" : "3380"
+      }, {
+        "item" : "81",
+        "count" : "3347"
+      }, {
+        "item" : "A6",
+        "count" : "2504"
+      }, {
+        "item" : "89",
+        "count" : "2426"
+      }, {
+        "item" : "69",
+        "count" : "1863"
+      }, {
+        "item" : "79",
+        "count" : "1714"
+      }, {
+        "item" : "92",
+        "count" : "1605"
+      }, {
+        "item" : "70",
+        "count" : "1473"
+      }, {
+        "item" : "77",
+        "count" : "1440"
+      } ],
+      "smallest" : "0",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002470,
+    "name" : "Secció",
+    "dataTypeName" : "text",
+    "description" : "Cadascuna de les unitats en què es distribueix el pressupost i que en representa l'estructura orgànica. Una Secció pot correspondre a un Departament, a un dels òrgans estatutaris o algun fons no departamental. Les seccions es codifiquen amb dos dígits alfabètics.",
+    "fieldName" : "secci",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140313,
+    "width" : 172,
+    "cachedContents" : {
+      "largest" : "Servei Públic d'Ocupació de Catalunya",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Generalitat Ingressos",
+        "count" : "66541"
+      }, {
+        "item" : "Institut Català de la Salut",
+        "count" : "28250"
+      }, {
+        "item" : "Agència Catalana de Patrimoni Cultural",
+        "count" : "12210"
+      }, {
+        "item" : "Servei Públic d'Ocupació de Catalunya",
+        "count" : "5505"
+      }, {
+        "item" : "Consorci Sant Gregori de Girona",
+        "count" : "3959"
+      }, {
+        "item" : "Oficina de Suport a la Iniciativa Cultur",
+        "count" : "3646"
+      }, {
+        "item" : "Servei Català de la Salut",
+        "count" : "3380"
+      }, {
+        "item" : "Inst. Nac. d'Educació Física Catalunya",
+        "count" : "2846"
+      }, {
+        "item" : "Institut Seguretat Pública de Catalunya",
+        "count" : "2623"
+      }, {
+        "item" : "Institut Català Empreses Culturals",
+        "count" : "2504"
+      }, {
+        "item" : "Entitat Autònoma del Diari Oficial i de Publicacions",
+        "count" : "2466"
+      }, {
+        "item" : "Agència de Residus de Catalunya",
+        "count" : "2457"
+      }, {
+        "item" : "Museu Nacional d'Art de Catalunya",
+        "count" : "2350"
+      }, {
+        "item" : "Consell Català de l'Esport",
+        "count" : "2122"
+      }, {
+        "item" : "Institut d'Estadística de Catalunya",
+        "count" : "2103"
+      }, {
+        "item" : "Patronat de la Muntanya de Montserrat",
+        "count" : "1977"
+      }, {
+        "item" : "Agència Catalana del Consum",
+        "count" : "1892"
+      }, {
+        "item" : "Agència de Gestió d'Ajuts Universitaris i de Recerca",
+        "count" : "1759"
+      }, {
+        "item" : "Institut Català de les Dones",
+        "count" : "1741"
+      }, {
+        "item" : "Consorci Memorial dels Espais de la Batalla de l'Ebre",
+        "count" : "1693"
+      } ],
+      "smallest" : "Agència Catalana de Cooperació al Desenvolupament",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002471,
+    "name" : "Servei codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador alfanumèric",
+    "fieldName" : "servei_codi",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140314,
+    "width" : 232,
+    "cachedContents" : {
+      "largest" : "CU12",
+      "non_null" : "130645",
+      "null" : "66693",
+      "top" : [ {
+        "item" : "5200",
+        "count" : "22800"
+      }, {
+        "item" : "00IU",
+        "count" : "6563"
+      }, {
+        "item" : "00AG",
+        "count" : "6310"
+      }, {
+        "item" : "00BE",
+        "count" : "5221"
+      }, {
+        "item" : "00EN",
+        "count" : "4308"
+      }, {
+        "item" : "7503",
+        "count" : "3992"
+      }, {
+        "item" : "7150",
+        "count" : "3959"
+      }, {
+        "item" : "00PO",
+        "count" : "3640"
+      }, {
+        "item" : "00SA",
+        "count" : "3321"
+      }, {
+        "item" : "00EC",
+        "count" : "2939"
+      }, {
+        "item" : "00IT",
+        "count" : "2831"
+      }, {
+        "item" : "6210",
+        "count" : "2606"
+      }, {
+        "item" : "6550",
+        "count" : "2457"
+      }, {
+        "item" : "7490",
+        "count" : "2350"
+      }, {
+        "item" : "00JU",
+        "count" : "2159"
+      }, {
+        "item" : "0050",
+        "count" : "2125"
+      }, {
+        "item" : "00CU",
+        "count" : "1997"
+      }, {
+        "item" : "00PR",
+        "count" : "1847"
+      }, {
+        "item" : "6800",
+        "count" : "1759"
+      }, {
+        "item" : "7550",
+        "count" : "1669"
+      } ],
+      "smallest" : "0",
+      "not_null" : "21644",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002472,
+    "name" : "Servei",
+    "dataTypeName" : "text",
+    "description" : "Nivell inferior al de Secció en base al qual s'estructura el pressupost en funció de l'estructura orgànica de l'ens. Són serveis pressupostaris les secretaries generals i les direccions generals dels departaments. El servei té una codificació alfanumèrica de quatre dígits, els dos primers dels quals corresponen a la secció a la que pertany i els altres dos a la unitat corresponent al servei.",
+    "fieldName" : "servei",
+    "position" : 11,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140315,
+    "width" : 172,
+    "cachedContents" : {
+      "largest" : "Servei Públic d'Ocupació de Catalunya",
+      "non_null" : "130645",
+      "null" : "66693",
+      "top" : [ {
+        "item" : "Generalitat Ingressos",
+        "count" : "51371"
+      }, {
+        "item" : "Institut Català de la Salut",
+        "count" : "22800"
+      }, {
+        "item" : "Agència Catalana de Patrimoni Cultural",
+        "count" : "10574"
+      }, {
+        "item" : "Consorci Sant Gregori de Girona",
+        "count" : "3959"
+      }, {
+        "item" : "Entitat Autònoma del Diari Oficial i de Publicacions",
+        "count" : "2466"
+      }, {
+        "item" : "Agència de Residus de Catalunya",
+        "count" : "2457"
+      }, {
+        "item" : "Museu Nacional d'Art de Catalunya",
+        "count" : "2350"
+      }, {
+        "item" : "Agència de Gestió d'Ajuts Universitaris i de Recerca",
+        "count" : "1759"
+      }, {
+        "item" : "Consorci Memorial dels Espais de la Batalla de l'Ebre",
+        "count" : "1693"
+      }, {
+        "item" : "Consorci Parc de Recerca Biomèdica de Barcelona (PRBB)",
+        "count" : "1641"
+      }, {
+        "item" : "Agència per a la Qualitat del Sistema Universitari de Catalunya",
+        "count" : "1582"
+      }, {
+        "item" : "Autoritat del Transport Metropolità (ATM)",
+        "count" : "1434"
+      }, {
+        "item" : "ATM Camp de Tarragona",
+        "count" : "1385"
+      }, {
+        "item" : "Servei Meteorològic de Catalunya",
+        "count" : "1216"
+      }, {
+        "item" : "Consorci de l'Institut Ramon Llull",
+        "count" : "1109"
+      }, {
+        "item" : "Consorci per a la Normalització Lingüística",
+        "count" : "1053"
+      }, {
+        "item" : "Consorci Institut Català d'Avaluació de Polítiques Públiques",
+        "count" : "1041"
+      }, {
+        "item" : "Museu de Lleida Diocesà i Comarcal",
+        "count" : "959"
+      }, {
+        "item" : "Consorci per a la Protecció i la Gestió dels Espais Naturals del Delta del Llobregat",
+        "count" : "950"
+      }, {
+        "item" : "C.P.d'Interès Natural de Gallecs",
+        "count" : "885"
+      } ],
+      "smallest" : "Agència Catalana de Cooperació al Desenvolupament",
+      "not_null" : "21644",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002473,
+    "name" : "Centre gestor codi",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "centre_gestor_codi",
+    "position" : 12,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140316,
+    "width" : 316,
+    "cachedContents" : {
+      "largest" : "PL",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "62",
+        "count" : "12777"
+      }, {
+        "item" : "60",
+        "count" : "12418"
+      }, {
+        "item" : "61",
+        "count" : "8041"
+      }, {
+        "item" : "0",
+        "count" : "7814"
+      }, {
+        "item" : "75",
+        "count" : "7632"
+      }, {
+        "item" : "00",
+        "count" : "7389"
+      }, {
+        "item" : "74",
+        "count" : "7384"
+      }, {
+        "item" : "00IU",
+        "count" : "6563"
+      }, {
+        "item" : "00AG",
+        "count" : "6310"
+      }, {
+        "item" : "68",
+        "count" : "5868"
+      }, {
+        "item" : "52",
+        "count" : "5537"
+      }, {
+        "item" : "00BE",
+        "count" : "5221"
+      }, {
+        "item" : "00EN",
+        "count" : "4308"
+      }, {
+        "item" : "71",
+        "count" : "4035"
+      }, {
+        "item" : "00PO",
+        "count" : "3640"
+      }, {
+        "item" : "65",
+        "count" : "3495"
+      }, {
+        "item" : "81",
+        "count" : "3347"
+      }, {
+        "item" : "00SA",
+        "count" : "3321"
+      }, {
+        "item" : "51",
+        "count" : "3122"
+      }, {
+        "item" : "00EC",
+        "count" : "2926"
+      } ],
+      "smallest" : "0",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : { }
+  }, {
+    "id" : 7002474,
+    "name" : "Centre gestor",
+    "dataTypeName" : "text",
+    "description" : "És la unitat orgànica amb diferenciació pressupostària i amb responsabilitat en la gestió de l'ingrés i la despesa. Amb caràcter general coincideix amb el Servei, però permet especificar nivells jeràrquics inferiors, si és necessari, com per exemple identificar les cadascuna de les residències de gent gran del departament de Treball, Benestar i Família.  Els centres gestors poden tenir codificació de fins a vuit dígits.",
+    "fieldName" : "centre_gestor",
+    "position" : 13,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140317,
+    "width" : 256,
+    "cachedContents" : {
+      "largest" : "X",
+      "non_null" : "197056",
+      "null" : "282",
+      "top" : [ {
+        "item" : "Generalitat Ingressos",
+        "count" : "15170"
+      }, {
+        "item" : "Agric., Ram., Pesca i Alimentació",
+        "count" : "6106"
+      }, {
+        "item" : "Institut Català de la Salut",
+        "count" : "5659"
+      }, {
+        "item" : "Servei Públic d'Ocupació de Catalunya",
+        "count" : "5505"
+      }, {
+        "item" : "Treball, Afers Socials i Famílies",
+        "count" : "5047"
+      }, {
+        "item" : "Empresa i Coneixement",
+        "count" : "4354"
+      }, {
+        "item" : "Ensenyament",
+        "count" : "4214"
+      }, {
+        "item" : "Consorci Sant Gregori de Girona",
+        "count" : "3959"
+      }, {
+        "item" : "Oficina de Suport a la Iniciativa Cultur",
+        "count" : "3618"
+      }, {
+        "item" : "Territori i Sostenibilitat",
+        "count" : "3557"
+      }, {
+        "item" : "Territorials",
+        "count" : "3403"
+      }, {
+        "item" : "Salut",
+        "count" : "3321"
+      }, {
+        "item" : "Servei Català de la Salut",
+        "count" : "3028"
+      }, {
+        "item" : "Inst. Nac. d'Educació Física Catalunya",
+        "count" : "2846"
+      }, {
+        "item" : "Hospital Universitari Vall d'Hebron",
+        "count" : "2806"
+      }, {
+        "item" : "Vicepresidència i d'Economia i Hisenda",
+        "count" : "2779"
+      }, {
+        "item" : "Interior",
+        "count" : "2761"
+      }, {
+        "item" : "Institut Seguretat Pública de Catalunya",
+        "count" : "2623"
+      }, {
+        "item" : "Hospital Universitari de Bellvitge",
+        "count" : "2506"
+      }, {
+        "item" : "Institut Català Empreses Culturals",
+        "count" : "2504"
+      } ],
+      "smallest" : "Acció Social i Ciutadania",
+      "not_null" : "39092",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002475,
+    "name" : "Capítol codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador numèric",
+    "fieldName" : "cap_tol_codi",
+    "position" : 14,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140318,
+    "width" : 244,
+    "cachedContents" : {
+      "largest" : "9",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "3",
+        "count" : "98024"
+      }, {
+        "item" : "4",
+        "count" : "52100"
+      }, {
+        "item" : "8",
+        "count" : "20600"
+      }, {
+        "item" : "7",
+        "count" : "9743"
+      }, {
+        "item" : "5",
+        "count" : "8490"
+      }, {
+        "item" : "2",
+        "count" : "4920"
+      }, {
+        "item" : "1",
+        "count" : "2080"
+      }, {
+        "item" : "6",
+        "count" : "896"
+      }, {
+        "item" : "9",
+        "count" : "474"
+      }, {
+        "item" : "0",
+        "count" : "11"
+      } ],
+      "smallest" : "0",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002476,
+    "name" : "Capítol",
+    "dataTypeName" : "text",
+    "description" : "És el primer nivell d'agregació de l'estructura econòmica del pressupost, en què aquesta es classifica en funció de la seva naturalesa. El capítol és el primer dígit d'aquesta estructura.  Per exemple el capítol 1 de les despeses correspon a les remuneracions del personal. El capítol 8 dels ingressos correspon a la variació d'actius financers.",
+    "fieldName" : "cap_tol",
+    "position" : 15,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140319,
+    "width" : 184,
+    "cachedContents" : {
+      "largest" : "Variació de passius financers",
+      "non_null" : "197187",
+      "null" : "151",
+      "top" : [ {
+        "item" : "Taxes, venda de béns i serveis i altres ingressos",
+        "count" : "97723"
+      }, {
+        "item" : "Transferències corrents",
+        "count" : "52096"
+      }, {
+        "item" : "Variació d'actius financers",
+        "count" : "15166"
+      }, {
+        "item" : "Transferències de capital",
+        "count" : "9740"
+      }, {
+        "item" : "Ingressos patrimonials",
+        "count" : "8382"
+      }, {
+        "item" : "Variació de passius financers",
+        "count" : "5749"
+      }, {
+        "item" : "Impostos indirectes",
+        "count" : "4920"
+      }, {
+        "item" : "Impostos directes",
+        "count" : "2080"
+      }, {
+        "item" : "Alienació d'inversions reals",
+        "count" : "896"
+      }, {
+        "item" : "TAXES, VENDES DE BÉNS I SERVEIS I ALTRES INGRESSOS",
+        "count" : "298"
+      }, {
+        "item" : "INGRESSOS PATRIMONIALS",
+        "count" : "107"
+      }, {
+        "item" : "VARIACIÓ D'ACTIUS FINANCERS",
+        "count" : "24"
+      }, {
+        "item" : "TRANSFERÈNCIES DE CAPITAL",
+        "count" : "3"
+      }, {
+        "item" : "Variació d'Actius Financers",
+        "count" : "2"
+      }, {
+        "item" : "TRANSFERÈNCIES CORRENTS",
+        "count" : "1"
+      } ],
+      "smallest" : "Alienació d'inversions reals",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : { }
+  }, {
+    "id" : 7002477,
+    "name" : "Article codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador numèric",
+    "fieldName" : "article_codi",
+    "position" : 16,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140320,
+    "width" : 244,
+    "cachedContents" : {
+      "largest" : "92",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "31",
+        "count" : "28601"
+      }, {
+        "item" : "39",
+        "count" : "26273"
+      }, {
+        "item" : "38",
+        "count" : "17905"
+      }, {
+        "item" : "32",
+        "count" : "17709"
+      }, {
+        "item" : "41",
+        "count" : "15407"
+      }, {
+        "item" : "40",
+        "count" : "8602"
+      }, {
+        "item" : "81",
+        "count" : "8256"
+      }, {
+        "item" : "46",
+        "count" : "7993"
+      }, {
+        "item" : "87",
+        "count" : "6773"
+      }, {
+        "item" : "30",
+        "count" : "6680"
+      }, {
+        "item" : "43",
+        "count" : "6139"
+      }, {
+        "item" : "49",
+        "count" : "5632"
+      }, {
+        "item" : "83",
+        "count" : "5124"
+      }, {
+        "item" : "44",
+        "count" : "3975"
+      }, {
+        "item" : "71",
+        "count" : "3770"
+      }, {
+        "item" : "52",
+        "count" : "3729"
+      }, {
+        "item" : "54",
+        "count" : "3627"
+      }, {
+        "item" : "48",
+        "count" : "2776"
+      }, {
+        "item" : "22",
+        "count" : "2065"
+      }, {
+        "item" : "79",
+        "count" : "1913"
+      } ],
+      "smallest" : "00",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002478,
+    "name" : "Article",
+    "dataTypeName" : "text",
+    "description" : "És el segon nivell d'agregació de l'estructura econòmica del pressupost, en què aquesta es classifica en funció de la seva naturalesa. L'article és el conjunt dels dos primers dígits d'aquesta estructura.  Per exemple l'article 13 correspon a les despeses del personal laboral. L'article 81 dels ingressos correspon al reintegrament de préstecs.",
+    "fieldName" : "article",
+    "position" : 17,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140321,
+    "width" : 184,
+    "cachedContents" : {
+      "largest" : "Venda de béns",
+      "non_null" : "197103",
+      "null" : "235",
+      "top" : [ {
+        "item" : "Prestació de serveis",
+        "count" : "28494"
+      }, {
+        "item" : "Altres ingressos",
+        "count" : "26110"
+      }, {
+        "item" : "De l'Administració de la Generalitat",
+        "count" : "19175"
+      }, {
+        "item" : "Reintegraments",
+        "count" : "17862"
+      }, {
+        "item" : "Taxes",
+        "count" : "17682"
+      }, {
+        "item" : "Del sector públic estatal",
+        "count" : "10495"
+      }, {
+        "item" : "D'ens i corporacions locals",
+        "count" : "8907"
+      }, {
+        "item" : "Reintegrament de préstecs i bestretes",
+        "count" : "8256"
+      }, {
+        "item" : "De l'exterior",
+        "count" : "7542"
+      }, {
+        "item" : "Romanents de tresoreria d'exercicis anteriors",
+        "count" : "6731"
+      }, {
+        "item" : "Venda de béns",
+        "count" : "6680"
+      }, {
+        "item" : "D'entitats autònomes de la Generalitat i del SCSServei Català de la Salut",
+        "count" : "4051"
+      }, {
+        "item" : "Interessos de dipòsit",
+        "count" : "3703"
+      }, {
+        "item" : "Ingressos patrimonials no financers",
+        "count" : "3522"
+      }, {
+        "item" : "Aportacions de capital de la Generalitat, d'entitats del sector públic o adscrites i d'altres participades",
+        "count" : "2364"
+      }, {
+        "item" : "Aport. capital de la Generalitat, d'entit. sectorpúblic i d'altres participades",
+        "count" : "2248"
+      }, {
+        "item" : "Sobre consums específics",
+        "count" : "2065"
+      }, {
+        "item" : "De famílies, instit. sense fi de lucre i ens corp.",
+        "count" : "2007"
+      }, {
+        "item" : "D'altres entitats del sp o adscrites,univ. públ. i d'altres entitats",
+        "count" : "1711"
+      }, {
+        "item" : "D'ALTRES ENTITATS DEL SECTOR PÚBLIC O ADSCRITES, D'UNIVERSITATS PÚBLIQUES I D'ALTRES ENTITATS PARTICIPADES",
+        "count" : "1626"
+      } ],
+      "smallest" : "Alienació d'altre immobilitzat material",
+      "not_null" : "39187",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002479,
+    "name" : "Concepte codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador numèric",
+    "fieldName" : "concepte_codi",
+    "position" : 18,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140322,
+    "width" : 256,
+    "cachedContents" : {
+      "largest" : "920",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "399",
+        "count" : "17885"
+      }, {
+        "item" : "320",
+        "count" : "17709"
+      }, {
+        "item" : "410",
+        "count" : "15407"
+      }, {
+        "item" : "317",
+        "count" : "13323"
+      }, {
+        "item" : "319",
+        "count" : "10135"
+      }, {
+        "item" : "380",
+        "count" : "8468"
+      }, {
+        "item" : "390",
+        "count" : "8257"
+      }, {
+        "item" : "870",
+        "count" : "6773"
+      }, {
+        "item" : "381",
+        "count" : "6247"
+      }, {
+        "item" : "430",
+        "count" : "6039"
+      }, {
+        "item" : "402",
+        "count" : "5991"
+      }, {
+        "item" : "814",
+        "count" : "5062"
+      }, {
+        "item" : "493",
+        "count" : "5036"
+      }, {
+        "item" : "460",
+        "count" : "4588"
+      }, {
+        "item" : "830",
+        "count" : "4146"
+      }, {
+        "item" : "710",
+        "count" : "3770"
+      }, {
+        "item" : "301",
+        "count" : "3663"
+      }, {
+        "item" : "520",
+        "count" : "3453"
+      }, {
+        "item" : "311",
+        "count" : "2718"
+      }, {
+        "item" : "382",
+        "count" : "2623"
+      } ],
+      "smallest" : "000",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002480,
+    "name" : "Concepte",
+    "dataTypeName" : "text",
+    "description" : "És el tercer nivell d'agregació de l'estructura econòmica del pressupost, en què aquest es classifica en funció de la seva naturalesa.  El concepte és el conjunt dels tres primers dígits d'aquesta estructura.  Per exemple el concepte 131  correspon a les despeses del personal laboral temporal. El concepte 814 dels ingressos correspon al reintegrament de préstecs al personal.",
+    "fieldName" : "concepte",
+    "position" : 19,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140323,
+    "width" : 196,
+    "cachedContents" : {
+      "largest" : "Venda de reprografia",
+      "non_null" : "196737",
+      "null" : "601",
+      "top" : [ {
+        "item" : "Ingressos diversos",
+        "count" : "17737"
+      }, {
+        "item" : "Taxes",
+        "count" : "17682"
+      }, {
+        "item" : "De la Generalitat, per finançar despeses de funcionament",
+        "count" : "15360"
+      }, {
+        "item" : "Prestació de serveis d'assistència sanitària",
+        "count" : "13206"
+      }, {
+        "item" : "Prestació d'altres serveis",
+        "count" : "10052"
+      }, {
+        "item" : "Recàrrecs i multes",
+        "count" : "8205"
+      }, {
+        "item" : "De l'Administració de l'Estat",
+        "count" : "7404"
+      }, {
+        "item" : "Romanents de tresoreria d'exercicis anteriors",
+        "count" : "6722"
+      }, {
+        "item" : "De la Unió Europea",
+        "count" : "5605"
+      }, {
+        "item" : "D'ajuntaments",
+        "count" : "4998"
+      }, {
+        "item" : "Reintegrament de préstecs al personal",
+        "count" : "4979"
+      }, {
+        "item" : "D'entit. autòn. administratives de la Generalitati Servei Català de la Salut",
+        "count" : "4706"
+      }, {
+        "item" : "Reintegraments d'exercicis tancats",
+        "count" : "4487"
+      }, {
+        "item" : "Aportacions de la Generalitat",
+        "count" : "4014"
+      }, {
+        "item" : "Reintegraments d'exercicis tancats llevat dels provinents d'ajuts i subvencions",
+        "count" : "3938"
+      }, {
+        "item" : "De la Generalitat",
+        "count" : "3758"
+      }, {
+        "item" : "Venda de publicacions",
+        "count" : "3663"
+      }, {
+        "item" : "Interessos de comptes corrents",
+        "count" : "3453"
+      }, {
+        "item" : "Reintegraments de l'exercici corrent llevat dels provinents d'ajuts i subvencions",
+        "count" : "3289"
+      }, {
+        "item" : "Reintegraments de l'exercici corrent",
+        "count" : "2958"
+      } ],
+      "smallest" : "Administraci¢ i cobran‡a",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002481,
+    "name" : "Aplicació codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador numèric",
+    "fieldName" : "aplicaci_codi",
+    "position" : 20,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140324,
+    "width" : 268,
+    "cachedContents" : {
+      "largest" : "9200001",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "3990009",
+        "count" : "17358"
+      }, {
+        "item" : "3170009",
+        "count" : "11618"
+      }, {
+        "item" : "3800001",
+        "count" : "8468"
+      }, {
+        "item" : "8700001",
+        "count" : "6683"
+      }, {
+        "item" : "3810001",
+        "count" : "6247"
+      }, {
+        "item" : "8140001",
+        "count" : "5062"
+      }, {
+        "item" : "3190010",
+        "count" : "4720"
+      }, {
+        "item" : "3190009",
+        "count" : "4505"
+      }, {
+        "item" : "4600009",
+        "count" : "4372"
+      }, {
+        "item" : "4930009",
+        "count" : "3682"
+      }, {
+        "item" : "3010001",
+        "count" : "3663"
+      }, {
+        "item" : "3900003",
+        "count" : "3254"
+      }, {
+        "item" : "3900002",
+        "count" : "3010"
+      }, {
+        "item" : "4100010",
+        "count" : "2913"
+      }, {
+        "item" : "4305100",
+        "count" : "2712"
+      }, {
+        "item" : "3820001",
+        "count" : "2623"
+      }, {
+        "item" : "3110001",
+        "count" : "2613"
+      }, {
+        "item" : "5200001",
+        "count" : "2005"
+      }, {
+        "item" : "4100021",
+        "count" : "1957"
+      }, {
+        "item" : "3170001",
+        "count" : "1623"
+      } ],
+      "smallest" : "000",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002482,
+    "name" : "Aplicació",
+    "dataTypeName" : "text",
+    "description" : "És el conjunt dels set dígits de l'estructura econòmica, en què aquesta es classifica en funció de la seva naturalesa.  La combinació del servei a quatre dígits,  l'aplicació a set dígits i el programa pressupostari a tres dígits conforma la unitat mínima amb dotació pressupostària.",
+    "fieldName" : "aplicaci",
+    "position" : 21,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140325,
+    "width" : 208,
+    "cachedContents" : {
+      "largest" : "Venda de reprografia",
+      "non_null" : "197086",
+      "null" : "252",
+      "top" : [ {
+        "item" : "Altres ingressos diversos",
+        "count" : "17216"
+      }, {
+        "item" : "Altres prestacions de serveis d'assistència sanitària",
+        "count" : "11511"
+      }, {
+        "item" : "Romanents de tresoreria d'exercicis anteriors",
+        "count" : "6683"
+      }, {
+        "item" : "Reintegrament de préstecs al personal",
+        "count" : "5015"
+      }, {
+        "item" : "Del Departament de Cultura",
+        "count" : "4848"
+      }, {
+        "item" : "Reintegraments d'exercicis tancats",
+        "count" : "4522"
+      }, {
+        "item" : "Altres transferències d'ajuntaments",
+        "count" : "4367"
+      }, {
+        "item" : "Prestacions d'altres serveis a entitats de fora del sector públic",
+        "count" : "4353"
+      }, {
+        "item" : "Prestacions d'altres serveis a entitats de dins del sector públic",
+        "count" : "4224"
+      }, {
+        "item" : "Reintegraments d'exercicis tancats llevat dels provinents d'ajuts i subvencions",
+        "count" : "3938"
+      }, {
+        "item" : "Venda de publicacions",
+        "count" : "3663"
+      }, {
+        "item" : "Reintegraments de l'exercici corrent llevat dels provinents d'ajuts i subvencions",
+        "count" : "3289"
+      }, {
+        "item" : "Multes i sancions",
+        "count" : "3254"
+      }, {
+        "item" : "Interessos de demora",
+        "count" : "3010"
+      }, {
+        "item" : "Reintegraments de l'exercici corrent",
+        "count" : "2958"
+      }, {
+        "item" : "Del Servei Català de la Salut",
+        "count" : "2926"
+      }, {
+        "item" : "Altres transferències corrents de la UE",
+        "count" : "2656"
+      }, {
+        "item" : "Drets de matrícula",
+        "count" : "2592"
+      }, {
+        "item" : "Reintegraments d’ajuts i subvencions concedits enels exercicis tancats",
+        "count" : "2011"
+      }, {
+        "item" : "Interessos de comptes corrents",
+        "count" : "2005"
+      } ],
+      "smallest" : "4 Del Departament de la Vicepresidència i de Polítiques Digitals i Territor",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002483,
+    "name" : "Posició pressupostària codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador numèric",
+    "fieldName" : "posici_pressupost_ria_codi",
+    "position" : 22,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140326,
+    "width" : 424,
+    "cachedContents" : {
+      "largest" : "I/920000100/0000",
+      "non_null" : "197338",
+      "null" : "0",
+      "top" : [ {
+        "item" : "I/399000900/0000",
+        "count" : "7277"
+      }, {
+        "item" : "I/380000100/0000",
+        "count" : "6997"
+      }, {
+        "item" : "I/870000100/0000",
+        "count" : "6552"
+      }, {
+        "item" : "I/381000100/0000",
+        "count" : "5515"
+      }, {
+        "item" : "I/814000100/0000",
+        "count" : "4842"
+      }, {
+        "item" : "I/319000900/0000",
+        "count" : "3801"
+      }, {
+        "item" : "I/319001000/0000",
+        "count" : "3725"
+      }, {
+        "item" : "I/301000100/0000",
+        "count" : "3590"
+      }, {
+        "item" : "I/390000200/0000",
+        "count" : "2908"
+      }, {
+        "item" : "I/399000901/0000",
+        "count" : "2733"
+      }, {
+        "item" : "I/493000900/0000",
+        "count" : "2569"
+      }, {
+        "item" : "I/390000300/0000",
+        "count" : "2452"
+      }, {
+        "item" : "I/430510000/0000",
+        "count" : "2328"
+      }, {
+        "item" : "I/317000999/0000",
+        "count" : "2144"
+      }, {
+        "item" : "I/520000100/0000",
+        "count" : "1932"
+      }, {
+        "item" : "I/399000903/0000",
+        "count" : "1765"
+      }, {
+        "item" : "I/410002100/0000",
+        "count" : "1666"
+      }, {
+        "item" : "I/430603000/0000",
+        "count" : "1619"
+      }, {
+        "item" : "I/311000100/0000",
+        "count" : "1527"
+      }, {
+        "item" : "I/460000900/0000",
+        "count" : "1517"
+      } ],
+      "smallest" : "/0000",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002484,
+    "name" : "Posició pressupostària",
+    "dataTypeName" : "text",
+    "description" : "És la combinació de les estructures pressupostàries orgànica, econòmica i funcional, incorporant també el codi que identifica la tipologia de l'origen del crèdit. El desglossament de cada estructura pot ser més ampli que en el pressupost aprovat.",
+    "fieldName" : "posici_pressupost_ria",
+    "position" : 23,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140327,
+    "width" : 364,
+    "cachedContents" : {
+      "largest" : "Visites privades",
+      "non_null" : "197289",
+      "null" : "49",
+      "top" : [ {
+        "item" : "Altres ingressos diversos",
+        "count" : "12403"
+      }, {
+        "item" : "Romanents de tresoreria d'exercicis anteriors",
+        "count" : "6302"
+      }, {
+        "item" : "Reintegrament de préstecs al personal",
+        "count" : "4938"
+      }, {
+        "item" : "Reintegraments d'exercicis tancats",
+        "count" : "4232"
+      }, {
+        "item" : "Venda de publicacions",
+        "count" : "3663"
+      }, {
+        "item" : "Prestacions d'altres serveis a entitats de fora del sector públic",
+        "count" : "3465"
+      }, {
+        "item" : "Prestacions d'altres serveis a entitats de dins del sector públic",
+        "count" : "3262"
+      }, {
+        "item" : "Reintegraments d'exercicis tancats llevat dels provinents d'ajuts i subvencions",
+        "count" : "3067"
+      }, {
+        "item" : "Interessos de demora",
+        "count" : "3008"
+      }, {
+        "item" : "Reintegraments de l'exercici corrent llevat dels provinents d'ajuts i subvencions",
+        "count" : "3004"
+      }, {
+        "item" : "Del Servei Català de la Salut",
+        "count" : "2986"
+      }, {
+        "item" : "Reintegraments de l'exercici corrent",
+        "count" : "2980"
+      }, {
+        "item" : "Multes i sancions",
+        "count" : "2820"
+      }, {
+        "item" : "Del Departament de Cultura",
+        "count" : "2807"
+      }, {
+        "item" : "Altres transferències corrents de la UE",
+        "count" : "2561"
+      }, {
+        "item" : "Drets de matrícula",
+        "count" : "2338"
+      }, {
+        "item" : "De tercers",
+        "count" : "2144"
+      }, {
+        "item" : "Interessos de comptes corrents",
+        "count" : "2005"
+      }, {
+        "item" : "Del Departament de la Presidència",
+        "count" : "1956"
+      }, {
+        "item" : "Del Departament d'Empresa i Treball",
+        "count" : "1784"
+      } ],
+      "smallest" : "1a Exp MRR R.E.C.",
+      "not_null" : "39190",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002485,
+    "name" : "Finançament codi",
+    "dataTypeName" : "text",
+    "description" : "Identificador alfanumèric",
+    "fieldName" : "finan_ament_codi",
+    "position" : 24,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140328,
+    "width" : 292,
+    "cachedContents" : {
+      "non_null" : "33655",
+      "largest" : "PROGFAO",
+      "null" : "163683",
+      "top" : [ {
+        "item" : "FPACTEV_G",
+        "count" : "1792"
+      }, {
+        "item" : "AFORESTALS",
+        "count" : "1220"
+      }, {
+        "item" : "FALTRESUE",
+        "count" : "1011"
+      }, {
+        "item" : "FPAO",
+        "count" : "781"
+      }, {
+        "item" : "FPROGSAN",
+        "count" : "733"
+      }, {
+        "item" : "FFEDER20",
+        "count" : "715"
+      }, {
+        "item" : "FMRRC23I01",
+        "count" : "714"
+      }, {
+        "item" : "FFORM_PA",
+        "count" : "691"
+      }, {
+        "item" : "FPIE",
+        "count" : "690"
+      }, {
+        "item" : "ATURISME",
+        "count" : "620"
+      }, {
+        "item" : "FANF",
+        "count" : "597"
+      }, {
+        "item" : "ACULTURA",
+        "count" : "592"
+      }, {
+        "item" : "FPOCTEFA",
+        "count" : "590"
+      }, {
+        "item" : "FALTRESAGE",
+        "count" : "577"
+      }, {
+        "item" : "FFEADER",
+        "count" : "543"
+      }, {
+        "item" : "AAGRARIS",
+        "count" : "537"
+      }, {
+        "item" : "FFSE20",
+        "count" : "510"
+      }, {
+        "item" : "FPROGSOC",
+        "count" : "506"
+      }, {
+        "item" : "FOCUPJUV",
+        "count" : "399"
+      }, {
+        "item" : "FERASMUS+",
+        "count" : "396"
+      } ],
+      "not_null" : "5156",
+      "smallest" : "153",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002486,
+    "name" : "Finançament",
+    "dataTypeName" : "text",
+    "description" : "És un codi que incorporen a algunes partides per determinar la relació entre els ingressos i les despeses corresponents.  Han de respondre a finançaments d'altres administracions per actuacions concretes cofinançades o no (fons finalistes), o a ingressos de la pròpia Generalitat destinats a una finalitat determinada (fons afectats).",
+    "fieldName" : "finan_ament",
+    "position" : 25,
+    "renderTypeName" : "text",
+    "tableColumnId" : 1140329,
+    "width" : 232,
+    "cachedContents" : {
+      "non_null" : "33616",
+      "largest" : "Zones baixes emis. i transf. transp.urbà",
+      "null" : "163722",
+      "top" : [ {
+        "item" : "Taxes DG Forests",
+        "count" : "1451"
+      }, {
+        "item" : "Pacte d'Estat contra violència gènere",
+        "count" : "1332"
+      }, {
+        "item" : "Altres fons de la UE",
+        "count" : "935"
+      }, {
+        "item" : "Polítiques actives d'ocupació",
+        "count" : "870"
+      }, {
+        "item" : "Part. diputacions ingressos de l'Estat",
+        "count" : "795"
+      }, {
+        "item" : "Ocupació Jove",
+        "count" : "655"
+      }, {
+        "item" : "Altres ingressos de l'estat",
+        "count" : "630"
+      }, {
+        "item" : "Taxes DG Agricultura i Ramaderia",
+        "count" : "617"
+      }, {
+        "item" : "UE - FEADER",
+        "count" : "598"
+      }, {
+        "item" : "Taxes del Departament de Cultura",
+        "count" : "587"
+      }, {
+        "item" : "Prog. Interreg Espanya-França-Andorra",
+        "count" : "586"
+      }, {
+        "item" : "FEDER 2014 2020",
+        "count" : "539"
+      }, {
+        "item" : "Formació personal Administració",
+        "count" : "492"
+      }, {
+        "item" : "Fons addicional no FEDER",
+        "count" : "470"
+      }, {
+        "item" : "Conveni control IT",
+        "count" : "459"
+      }, {
+        "item" : "Fons programes sanitaris",
+        "count" : "442"
+      }, {
+        "item" : "Programes socials",
+        "count" : "439"
+      }, {
+        "item" : "UE - FEAGA",
+        "count" : "436"
+      }, {
+        "item" : "Polítiques Ocupació Formació Professiona",
+        "count" : "380"
+      }, {
+        "item" : "Conveni Erasmus Plus",
+        "count" : "372"
+      } ],
+      "not_null" : "5156",
+      "smallest" : "Accions reforç prevenció promoció salut",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 7002487,
+    "name" : "Previsions pressupostàries",
+    "dataTypeName" : "number",
+    "description" : "Són una previsió dels recursos que s'estima obtenir.  En el pressupost aprovat en la Llei de pressupostos l'import global de les previsions pressupostàries d'ingressos per a cada entitat és equivalent a la dotació de crèdit de les despeses.",
+    "fieldName" : "previsions_pressupost_ries",
+    "position" : 26,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140330,
+    "width" : 412,
+    "cachedContents" : {
+      "largest" : "17502763410.00",
+      "non_null" : "197338",
+      "average" : "43129369.08101256",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "115486"
+      }, {
+        "item" : "10",
+        "count" : "3491"
+      }, {
+        "item" : "100",
+        "count" : "1719"
+      }, {
+        "item" : "10000",
+        "count" : "1568"
+      }, {
+        "item" : "20000",
+        "count" : "1396"
+      }, {
+        "item" : "1500",
+        "count" : "1309"
+      }, {
+        "item" : "1000",
+        "count" : "1032"
+      }, {
+        "item" : "100000",
+        "count" : "985"
+      }, {
+        "item" : "5000",
+        "count" : "946"
+      }, {
+        "item" : "30000",
+        "count" : "855"
+      }, {
+        "item" : "15000",
+        "count" : "840"
+      }, {
+        "item" : "3000",
+        "count" : "708"
+      }, {
+        "item" : "500000",
+        "count" : "624"
+      }, {
+        "item" : "50000",
+        "count" : "623"
+      }, {
+        "item" : "25000",
+        "count" : "613"
+      }, {
+        "item" : "2000",
+        "count" : "609"
+      }, {
+        "item" : "200000",
+        "count" : "583"
+      }, {
+        "item" : "2000000",
+        "count" : "575"
+      }, {
+        "item" : "40000",
+        "count" : "542"
+      }, {
+        "item" : "6000",
+        "count" : "535"
+      } ],
+      "smallest" : "-1956668170.00",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "1411149826961.65",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "financial",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002488,
+    "name" : "Augments de previsió",
+    "dataTypeName" : "number",
+    "description" : "Són imports que s'afegeixen a la previsió inicial d'una partida d'ingrés com a conseqüència d'una major recaptació o per incorporació de romanent de tresoreria de l'exercici anterior.",
+    "fieldName" : "augments_de_previsi",
+    "position" : 27,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140331,
+    "width" : 340,
+    "cachedContents" : {
+      "largest" : "4551515657.71",
+      "non_null" : "197338",
+      "average" : "1270402.792277270",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "171558"
+      }, {
+        "item" : "100000",
+        "count" : "155"
+      }, {
+        "item" : "50000",
+        "count" : "151"
+      }, {
+        "item" : "1700",
+        "count" : "110"
+      }, {
+        "item" : "60000",
+        "count" : "98"
+      }, {
+        "item" : "500000",
+        "count" : "96"
+      }, {
+        "item" : "150000",
+        "count" : "91"
+      }, {
+        "item" : "15000",
+        "count" : "91"
+      }, {
+        "item" : "10000",
+        "count" : "83"
+      }, {
+        "item" : "30000",
+        "count" : "81"
+      }, {
+        "item" : "5000",
+        "count" : "73"
+      }, {
+        "item" : "500",
+        "count" : "64"
+      }, {
+        "item" : "4000",
+        "count" : "61"
+      }, {
+        "item" : "400000",
+        "count" : "59"
+      }, {
+        "item" : "250000",
+        "count" : "57"
+      }, {
+        "item" : "23700",
+        "count" : "56"
+      }, {
+        "item" : "200000",
+        "count" : "52"
+      }, {
+        "item" : "3500",
+        "count" : "52"
+      }, {
+        "item" : "850",
+        "count" : "50"
+      }, {
+        "item" : "45000",
+        "count" : "47"
+      } ],
+      "smallest" : "-6019000",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "41566308960.52",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "financial",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002489,
+    "name" : "Disminucions de previsió",
+    "dataTypeName" : "number",
+    "description" : "Són imports que es rebaixen a la previsió inicial d'una partida d'ingrés, generalment com a conseqüència de la minoració de les transferències inicialment previstes.",
+    "fieldName" : "disminucions_de_previsi",
+    "position" : 28,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140332,
+    "width" : 388,
+    "cachedContents" : {
+      "largest" : "2750000",
+      "non_null" : "197338",
+      "average" : "-3609.442223784345",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "193723"
+      }, {
+        "item" : "-1500",
+        "count" : "60"
+      }, {
+        "item" : "-600",
+        "count" : "51"
+      }, {
+        "item" : "-1000",
+        "count" : "45"
+      }, {
+        "item" : "-210",
+        "count" : "39"
+      }, {
+        "item" : "-51916.32",
+        "count" : "28"
+      }, {
+        "item" : "-53511.22",
+        "count" : "28"
+      }, {
+        "item" : "-12428.91",
+        "count" : "28"
+      }, {
+        "item" : "-3974684.06",
+        "count" : "27"
+      }, {
+        "item" : "-5000",
+        "count" : "26"
+      }, {
+        "item" : "-1700",
+        "count" : "24"
+      }, {
+        "item" : "-4000",
+        "count" : "24"
+      }, {
+        "item" : "-10000",
+        "count" : "23"
+      }, {
+        "item" : "-1286551",
+        "count" : "23"
+      }, {
+        "item" : "-8459706",
+        "count" : "22"
+      }, {
+        "item" : "-4885065.86",
+        "count" : "22"
+      }, {
+        "item" : "-519391.4",
+        "count" : "22"
+      }, {
+        "item" : "-7000",
+        "count" : "22"
+      }, {
+        "item" : "-2000",
+        "count" : "21"
+      }, {
+        "item" : "-530608.7",
+        "count" : "20"
+      } ],
+      "smallest" : "-219646174.89",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "-118097340.12",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "financial",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002490,
+    "name" : "Previsions finals",
+    "dataTypeName" : "number",
+    "description" : "Són el resultat final de les previsions inicials d'una partida d'ingrés més els augments d'aquesta previsió menys les disminucions de la previsió de la mateixa.",
+    "fieldName" : "previsions_finals",
+    "position" : 29,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140333,
+    "width" : 304,
+    "cachedContents" : {
+      "largest" : "17502763410.00",
+      "non_null" : "197338",
+      "average" : "44395532.21620618",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "96181"
+      }, {
+        "item" : "10",
+        "count" : "3452"
+      }, {
+        "item" : "100",
+        "count" : "1747"
+      }, {
+        "item" : "10000",
+        "count" : "1550"
+      }, {
+        "item" : "20000",
+        "count" : "1409"
+      }, {
+        "item" : "1500",
+        "count" : "1242"
+      }, {
+        "item" : "100000",
+        "count" : "1046"
+      }, {
+        "item" : "1000",
+        "count" : "1034"
+      }, {
+        "item" : "5000",
+        "count" : "1000"
+      }, {
+        "item" : "30000",
+        "count" : "867"
+      }, {
+        "item" : "15000",
+        "count" : "851"
+      }, {
+        "item" : "3000",
+        "count" : "730"
+      }, {
+        "item" : "50000",
+        "count" : "674"
+      }, {
+        "item" : "500000",
+        "count" : "623"
+      }, {
+        "item" : "6000",
+        "count" : "586"
+      }, {
+        "item" : "25000",
+        "count" : "576"
+      }, {
+        "item" : "200000",
+        "count" : "558"
+      }, {
+        "item" : "40000",
+        "count" : "556"
+      }, {
+        "item" : "2000000",
+        "count" : "550"
+      }, {
+        "item" : "500",
+        "count" : "542"
+      } ],
+      "smallest" : "-1956668170.00",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "1452577418582.05",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002491,
+    "name" : "Drets contrets",
+    "dataTypeName" : "number",
+    "description" : "Són el reconeixement del dret que es comptabilitza un cop ja ha succeït el fet que genera el dret a l'ingrés. Per exemple la notificació d'una sanció.",
+    "fieldName" : "drets_contrets",
+    "position" : 30,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140334,
+    "width" : 268,
+    "cachedContents" : {
+      "largest" : "16533140321.68",
+      "non_null" : "197338",
+      "average" : "26710592.25190776",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "62123"
+      }, {
+        "item" : "1500",
+        "count" : "497"
+      }, {
+        "item" : "30000",
+        "count" : "374"
+      }, {
+        "item" : "20000",
+        "count" : "325"
+      }, {
+        "item" : "15000",
+        "count" : "303"
+      }, {
+        "item" : "100000",
+        "count" : "278"
+      }, {
+        "item" : "60000",
+        "count" : "248"
+      }, {
+        "item" : "3000",
+        "count" : "245"
+      }, {
+        "item" : "1000",
+        "count" : "218"
+      }, {
+        "item" : "50000",
+        "count" : "200"
+      }, {
+        "item" : "4000",
+        "count" : "141"
+      }, {
+        "item" : "2000",
+        "count" : "138"
+      }, {
+        "item" : "5000",
+        "count" : "133"
+      }, {
+        "item" : "6000",
+        "count" : "131"
+      }, {
+        "item" : "1700",
+        "count" : "122"
+      }, {
+        "item" : "40000",
+        "count" : "120"
+      }, {
+        "item" : "500",
+        "count" : "119"
+      }, {
+        "item" : "10000",
+        "count" : "117"
+      }, {
+        "item" : "150000",
+        "count" : "110"
+      }, {
+        "item" : "1000000",
+        "count" : "104"
+      } ],
+      "smallest" : "-7907050",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "873943867890.17",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002492,
+    "name" : "Drets anul·lats abans d'ingrés",
+    "dataTypeName" : "number",
+    "description" : "Són els imports que s'anul·len sobre els drets contrets comptabilitzats prèviament.",
+    "fieldName" : "drets_anul_lats_abans_d_ingr_s",
+    "position" : 31,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140335,
+    "width" : 460,
+    "cachedContents" : {
+      "largest" : "1487080000",
+      "non_null" : "197338",
+      "average" : "455044.4739399126",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "185482"
+      }, {
+        "item" : "20",
+        "count" : "47"
+      }, {
+        "item" : "8",
+        "count" : "40"
+      }, {
+        "item" : "2",
+        "count" : "35"
+      }, {
+        "item" : "4",
+        "count" : "34"
+      }, {
+        "item" : "10",
+        "count" : "33"
+      }, {
+        "item" : "3000",
+        "count" : "31"
+      }, {
+        "item" : "60",
+        "count" : "31"
+      }, {
+        "item" : "160",
+        "count" : "28"
+      }, {
+        "item" : "124",
+        "count" : "26"
+      }, {
+        "item" : "65",
+        "count" : "25"
+      }, {
+        "item" : "15",
+        "count" : "25"
+      }, {
+        "item" : "500",
+        "count" : "24"
+      }, {
+        "item" : "10000",
+        "count" : "24"
+      }, {
+        "item" : "150",
+        "count" : "24"
+      }, {
+        "item" : "130",
+        "count" : "24"
+      }, {
+        "item" : "4000",
+        "count" : "23"
+      }, {
+        "item" : "28",
+        "count" : "22"
+      }, {
+        "item" : "70000",
+        "count" : "22"
+      }, {
+        "item" : "90",
+        "count" : "22"
+      } ],
+      "smallest" : "-900000",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "14888600142.84",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002493,
+    "name" : "Drets anul·lats per devolucions",
+    "dataTypeName" : "number",
+    "description" : "Són els imports que s'anul·len sobre els drets contrets comptabilitzats prèviament.",
+    "fieldName" : "drets_anul_lats_per_devolucions",
+    "position" : 32,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140336,
+    "width" : 472,
+    "cachedContents" : {
+      "largest" : "197800000000",
+      "non_null" : "197338",
+      "average" : "899605.3492533390",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "178927"
+      }, {
+        "item" : "30000",
+        "count" : "43"
+      }, {
+        "item" : "20",
+        "count" : "39"
+      }, {
+        "item" : "10",
+        "count" : "36"
+      }, {
+        "item" : "100",
+        "count" : "34"
+      }, {
+        "item" : "3000",
+        "count" : "32"
+      }, {
+        "item" : "2185",
+        "count" : "31"
+      }, {
+        "item" : "24",
+        "count" : "28"
+      }, {
+        "item" : "130",
+        "count" : "28"
+      }, {
+        "item" : "9000",
+        "count" : "27"
+      }, {
+        "item" : "450",
+        "count" : "27"
+      }, {
+        "item" : "545",
+        "count" : "25"
+      }, {
+        "item" : "50000",
+        "count" : "25"
+      }, {
+        "item" : "3975",
+        "count" : "23"
+      }, {
+        "item" : "500",
+        "count" : "23"
+      }, {
+        "item" : "50",
+        "count" : "23"
+      }, {
+        "item" : "15000",
+        "count" : "22"
+      }, {
+        "item" : "164",
+        "count" : "21"
+      }, {
+        "item" : "394",
+        "count" : "21"
+      }, {
+        "item" : "617",
+        "count" : "20"
+      } ],
+      "smallest" : "-5525000",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "29434187422.22",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002494,
+    "name" : "Baixes per insolvència",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "baixes_per_insolv_ncia",
+    "position" : 33,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140337,
+    "width" : 364,
+    "cachedContents" : {
+      "largest" : "32871799",
+      "non_null" : "197338",
+      "average" : "162.3112310312051",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "197257"
+      }, {
+        "item" : "71189",
+        "count" : "9"
+      }, {
+        "item" : "41886",
+        "count" : "7"
+      }, {
+        "item" : "397",
+        "count" : "5"
+      }, {
+        "item" : "114",
+        "count" : "4"
+      }, {
+        "item" : "2108",
+        "count" : "3"
+      }, {
+        "item" : "124",
+        "count" : "3"
+      }, {
+        "item" : "4004",
+        "count" : "3"
+      }, {
+        "item" : "57",
+        "count" : "2"
+      }, {
+        "item" : "26",
+        "count" : "2"
+      }, {
+        "item" : "54",
+        "count" : "2"
+      }, {
+        "item" : "6107",
+        "count" : "2"
+      }, {
+        "item" : "29752.84",
+        "count" : "2"
+      }, {
+        "item" : "1963",
+        "count" : "2"
+      }, {
+        "item" : "706",
+        "count" : "1"
+      }, {
+        "item" : "652",
+        "count" : "1"
+      }, {
+        "item" : "322",
+        "count" : "1"
+      }, {
+        "item" : "309.71",
+        "count" : "1"
+      }, {
+        "item" : "2000",
+        "count" : "1"
+      }, {
+        "item" : "211",
+        "count" : "1"
+      } ],
+      "smallest" : "0.00",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "5310661.16811",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002495,
+    "name" : "Total drets anul·lats",
+    "dataTypeName" : "number",
+    "description" : "És el sumatori dels drets anul·lats abans de l'ingrés, per devolucions i per les baixes per insolvència.",
+    "fieldName" : "total_drets_anul_lats",
+    "position" : 34,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140338,
+    "width" : 352,
+    "cachedContents" : {
+      "largest" : "10754411853",
+      "non_null" : "197338",
+      "average" : "1354868.858660717",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "171047"
+      }, {
+        "item" : "20",
+        "count" : "92"
+      }, {
+        "item" : "10",
+        "count" : "75"
+      }, {
+        "item" : "500",
+        "count" : "65"
+      }, {
+        "item" : "150",
+        "count" : "64"
+      }, {
+        "item" : "40",
+        "count" : "63"
+      }, {
+        "item" : "60",
+        "count" : "63"
+      }, {
+        "item" : "130",
+        "count" : "61"
+      }, {
+        "item" : "4",
+        "count" : "58"
+      }, {
+        "item" : "90",
+        "count" : "55"
+      }, {
+        "item" : "100",
+        "count" : "54"
+      }, {
+        "item" : "8",
+        "count" : "54"
+      }, {
+        "item" : "30",
+        "count" : "53"
+      }, {
+        "item" : "2",
+        "count" : "51"
+      }, {
+        "item" : "22",
+        "count" : "51"
+      }, {
+        "item" : "300",
+        "count" : "50"
+      }, {
+        "item" : "15",
+        "count" : "49"
+      }, {
+        "item" : "160",
+        "count" : "47"
+      }, {
+        "item" : "54",
+        "count" : "47"
+      }, {
+        "item" : "124",
+        "count" : "44"
+      } ],
+      "smallest" : "-900000",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "44329954186.52",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002496,
+    "name" : "Drets reconeguts nets",
+    "dataTypeName" : "number",
+    "description" : "Són els drets contrets durant l'exercici menys el total de drets anul·lats.",
+    "fieldName" : "drets_reconeguts_nets",
+    "position" : 35,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140339,
+    "width" : 352,
+    "cachedContents" : {
+      "largest" : "16413722450.85",
+      "non_null" : "197338",
+      "average" : "25355723.39324704",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "59960"
+      }, {
+        "item" : "1500",
+        "count" : "497"
+      }, {
+        "item" : "30000",
+        "count" : "377"
+      }, {
+        "item" : "20000",
+        "count" : "308"
+      }, {
+        "item" : "15000",
+        "count" : "303"
+      }, {
+        "item" : "100000",
+        "count" : "271"
+      }, {
+        "item" : "3000",
+        "count" : "246"
+      }, {
+        "item" : "60000",
+        "count" : "242"
+      }, {
+        "item" : "1000",
+        "count" : "219"
+      }, {
+        "item" : "50000",
+        "count" : "216"
+      }, {
+        "item" : "5000",
+        "count" : "147"
+      }, {
+        "item" : "2000",
+        "count" : "139"
+      }, {
+        "item" : "4000",
+        "count" : "138"
+      }, {
+        "item" : "10000",
+        "count" : "134"
+      }, {
+        "item" : "6000",
+        "count" : "133"
+      }, {
+        "item" : "1700",
+        "count" : "122"
+      }, {
+        "item" : "500",
+        "count" : "119"
+      }, {
+        "item" : "40000",
+        "count" : "118"
+      }, {
+        "item" : "150000",
+        "count" : "110"
+      }, {
+        "item" : "500000",
+        "count" : "106"
+      } ],
+      "smallest" : "-1943844507.54",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "829613913703.65",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002497,
+    "name" : "Recaptat",
+    "dataTypeName" : "number",
+    "description" : "Són els imports cobrats sobre els drets reconeguts en l'exercici.",
+    "fieldName" : "recaptat",
+    "position" : 36,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140340,
+    "width" : 196,
+    "cachedContents" : {
+      "largest" : "16413722450.85",
+      "non_null" : "197338",
+      "average" : "25424313.25923775",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "72544"
+      }, {
+        "item" : "1500",
+        "count" : "479"
+      }, {
+        "item" : "30000",
+        "count" : "307"
+      }, {
+        "item" : "15000",
+        "count" : "240"
+      }, {
+        "item" : "1000",
+        "count" : "219"
+      }, {
+        "item" : "20000",
+        "count" : "214"
+      }, {
+        "item" : "3000",
+        "count" : "210"
+      }, {
+        "item" : "100000",
+        "count" : "157"
+      }, {
+        "item" : "2000",
+        "count" : "148"
+      }, {
+        "item" : "5000",
+        "count" : "143"
+      }, {
+        "item" : "60000",
+        "count" : "125"
+      }, {
+        "item" : "50000",
+        "count" : "122"
+      }, {
+        "item" : "4000",
+        "count" : "119"
+      }, {
+        "item" : "6000",
+        "count" : "114"
+      }, {
+        "item" : "10000",
+        "count" : "109"
+      }, {
+        "item" : "300",
+        "count" : "100"
+      }, {
+        "item" : "500",
+        "count" : "98"
+      }, {
+        "item" : "40000",
+        "count" : "97"
+      }, {
+        "item" : "100",
+        "count" : "97"
+      }, {
+        "item" : "2500",
+        "count" : "80"
+      } ],
+      "smallest" : "-7907050",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "831858105529.00",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002498,
+    "name" : "Devolucions",
+    "dataTypeName" : "number",
+    "description" : "Són els imports pagats durant l'exercici per devolucions d'ingressos indeguts.",
+    "fieldName" : "devolucions",
+    "position" : 37,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140341,
+    "width" : 232,
+    "cachedContents" : {
+      "largest" : "10754411853",
+      "non_null" : "197338",
+      "average" : "899605.3492533390",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "179008"
+      }, {
+        "item" : "300",
+        "count" : "64"
+      }, {
+        "item" : "40",
+        "count" : "59"
+      }, {
+        "item" : "30",
+        "count" : "54"
+      }, {
+        "item" : "20",
+        "count" : "51"
+      }, {
+        "item" : "10",
+        "count" : "50"
+      }, {
+        "item" : "50",
+        "count" : "48"
+      }, {
+        "item" : "54",
+        "count" : "47"
+      }, {
+        "item" : "66",
+        "count" : "45"
+      }, {
+        "item" : "62",
+        "count" : "45"
+      }, {
+        "item" : "90",
+        "count" : "44"
+      }, {
+        "item" : "22",
+        "count" : "43"
+      }, {
+        "item" : "5",
+        "count" : "42"
+      }, {
+        "item" : "100",
+        "count" : "42"
+      }, {
+        "item" : "1",
+        "count" : "42"
+      }, {
+        "item" : "500",
+        "count" : "41"
+      }, {
+        "item" : "150",
+        "count" : "40"
+      }, {
+        "item" : "16",
+        "count" : "39"
+      }, {
+        "item" : "130",
+        "count" : "38"
+      }, {
+        "item" : "44",
+        "count" : "37"
+      } ],
+      "smallest" : "-55250.00",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "29434187422.22",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002499,
+    "name" : "Recaptació neta",
+    "dataTypeName" : "number",
+    "description" : "És el recaptat sobre drets reconeguts en l'exercici corrent menys les devolucions.",
+    "fieldName" : "recaptaci_neta",
+    "position" : 38,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140342,
+    "width" : 280,
+    "cachedContents" : {
+      "largest" : "16413722450.85",
+      "non_null" : "197338",
+      "average" : "24524707.90998441",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "69695"
+      }, {
+        "item" : "1500",
+        "count" : "476"
+      }, {
+        "item" : "30000",
+        "count" : "306"
+      }, {
+        "item" : "15000",
+        "count" : "241"
+      }, {
+        "item" : "1000",
+        "count" : "219"
+      }, {
+        "item" : "20000",
+        "count" : "213"
+      }, {
+        "item" : "3000",
+        "count" : "212"
+      }, {
+        "item" : "100000",
+        "count" : "157"
+      }, {
+        "item" : "2000",
+        "count" : "148"
+      }, {
+        "item" : "5000",
+        "count" : "143"
+      }, {
+        "item" : "60000",
+        "count" : "125"
+      }, {
+        "item" : "50000",
+        "count" : "122"
+      }, {
+        "item" : "4000",
+        "count" : "119"
+      }, {
+        "item" : "10000",
+        "count" : "109"
+      }, {
+        "item" : "6000",
+        "count" : "104"
+      }, {
+        "item" : "40000",
+        "count" : "97"
+      }, {
+        "item" : "100",
+        "count" : "97"
+      }, {
+        "item" : "300",
+        "count" : "96"
+      }, {
+        "item" : "500",
+        "count" : "95"
+      }, {
+        "item" : "75000",
+        "count" : "80"
+      } ],
+      "smallest" : "-1943844507.54",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "802423918106.78",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002500,
+    "name" : "Cancel·lat en espècie",
+    "dataTypeName" : "number",
+    "description" : "Són deutes cancel·lats sobre drets reconeguts nets de manera diferent de la dinerària, per exemple amb una obra d'art.",
+    "fieldName" : "cancel_lat_en_esp_cie",
+    "position" : 39,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140343,
+    "width" : 352,
+    "cachedContents" : {
+      "largest" : "48999999",
+      "non_null" : "197338",
+      "average" : "0",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "197323"
+      }, {
+        "item" : "43254",
+        "count" : "9"
+      }, {
+        "item" : "114332.40",
+        "count" : "2"
+      }, {
+        "item" : "48999999",
+        "count" : "2"
+      }, {
+        "item" : "490",
+        "count" : "1"
+      }, {
+        "item" : "114332",
+        "count" : "1"
+      } ],
+      "smallest" : "0.00",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "0",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002501,
+    "name" : "Drets pend.cobrament a final del període",
+    "dataTypeName" : "number",
+    "description" : "És la diferència entre els drets reconeguts nets i la recaptació neta més els drets cancel·lats en espècie.",
+    "fieldName" : "drets_pend_cobrament_a_final_del_per_ode",
+    "position" : 40,
+    "renderTypeName" : "number",
+    "tableColumnId" : 1140345,
+    "width" : 564,
+    "cachedContents" : {
+      "largest" : "2015850919.23",
+      "non_null" : "197338",
+      "average" : "831015.4832626303",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "151228"
+      }, {
+        "item" : "30000",
+        "count" : "179"
+      }, {
+        "item" : "15000",
+        "count" : "115"
+      }, {
+        "item" : "100000",
+        "count" : "113"
+      }, {
+        "item" : "50000",
+        "count" : "90"
+      }, {
+        "item" : "3000",
+        "count" : "76"
+      }, {
+        "item" : "5000",
+        "count" : "75"
+      }, {
+        "item" : "500",
+        "count" : "67"
+      }, {
+        "item" : "20000",
+        "count" : "66"
+      }, {
+        "item" : "70",
+        "count" : "58"
+      }, {
+        "item" : "20",
+        "count" : "58"
+      }, {
+        "item" : "14",
+        "count" : "56"
+      }, {
+        "item" : "5",
+        "count" : "56"
+      }, {
+        "item" : "3",
+        "count" : "55"
+      }, {
+        "item" : "25000",
+        "count" : "52"
+      }, {
+        "item" : "9",
+        "count" : "52"
+      }, {
+        "item" : "8",
+        "count" : "50"
+      }, {
+        "item" : "30",
+        "count" : "50"
+      }, {
+        "item" : "1",
+        "count" : "49"
+      }, {
+        "item" : "500000",
+        "count" : "48"
+      } ],
+      "smallest" : "-141304225",
+      "not_null" : "39190",
+      "count" : "197338",
+      "sum" : "27189995596.87",
+      "cardinality" : "197338"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "decimalSeparator" : ",",
+      "noCommas" : "false",
+      "precision" : "2",
+      "groupSeparator" : ".",
+      "align" : "right"
+    }
+  }, {
+    "id" : 7002502,
+    "name" : "Provisional/Definitiu",
+    "dataTypeName" : "text",
+    "description" : "Les dades són provisionals fins que es presenta el Compte General de l’exercici,  que passen a ser definitives.\nAquest camp només s’informa per les dades del mes de desembre.\n",
+    "fieldName" : "provisional_definitiu",
+    "position" : 41,
+    "renderTypeName" : "text",
+    "tableColumnId" : 3556356,
+    "width" : 100,
+    "cachedContents" : {
+      "non_null" : "0",
+      "null" : "197338",
+      "not_null" : "0",
+      "count" : "197338",
+      "cardinality" : "197338"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "See Terms of Use"
+  },
+  "metadata" : {
+    "rdfSubject" : "0",
+    "rdfClass" : "",
+    "attachments" : [ {
+      "filename" : "Metadades_ingressos.pdf",
+      "assetId" : "60ee78af-0324-4cad-a720-637c0a19c070",
+      "name" : "Metadades_ingressos.pdf"
+    } ],
+    "custom_fields" : {
+      "Freqüència d'actualització" : {
+        "Freqüència d'actualització" : "Mensual"
+      },
+      "Idioma" : {
+        "Idioma" : "Català",
+        "Dataset name (EN)" : "Monthly execution of the budget of the Government of Catalonia. Revenues",
+        "Nombre del conjunto de datos (ES)" : "Ejecución mensual del presupuesto de la Generalitat de Catalunya. ingresos"
+      },
+      "Informació de gènere o sexe" : {
+        "Informació de gènere o sexe" : "No aplicable"
+      },
+      "Enllaços relacionats" : {
+        "Nom" : "Seguiment i control de finances",
+        "URL" : "http://economia.gencat.cat/ca/70_ambits_actuacio/seguiment-control-finances/"
+      },
+      "Actors" : {
+        "Departament" : "Economia i Finances",
+        "Tipus actor" : "Generalitat de Catalunya"
+      },
+      "Àmbit geogràfic" : {
+        "Informació geogràfica" : "Sense informació geogràfica",
+        "Àmbit geogràfic" : "Catalunya"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+    "renderTypeConfig" : {
+      "visible" : {
+        "table" : true
+      }
+    }
+  },
+  "owner" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "pressupost", "exercici", "ingrés", "despesa", "previsió", "drets", "crèdits", "romanents", "generació", "disposicions", "obligacions", "política", "programa", "capítol", "article", "concepte", "finançament", "autoritzacions", "anul·lacions", "devolucions", "contrets", "partida", "aplicació", "execució", "ods16_pau justícies i institucions sòlides" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}
