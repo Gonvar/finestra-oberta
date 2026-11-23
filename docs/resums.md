@@ -15,7 +15,7 @@ Només els punts de la sessió tal com són a `activitat.json`: el número, el c
 
 ## Què es comprova
 
-Si l'API no respon bé (no hi ha connexió, torna un error o una resposta sense la forma esperada), la sessió es queda sense resum i es torna a provar a l'execució següent, que és l'endemà: l'agenda canvia cada dia i les dades es publiquen cada dia. Si l'API rebutja la petició o la clau (400, 401, 403 o 404) o falta la clau, el registre de la tasca ho marca com a error, perquè no s'arregla sol.
+Si l'API no respon bé (no hi ha connexió, torna un error o una resposta sense la forma esperada), la sessió es queda sense resum i es torna a provar a l'execució següent, que és l'endemà: l'agenda canvia cada dia i les dades es publiquen cada dia. Si l'API rebutja la petició o la clau (400, 401, 403 o 404), el registre de la tasca ho marca com a error, perquè no s'arregla sol. Si falta la clau, el pas no fa cap crida, ho anota i continua.
 
 Si el model respon però el resum no es pot publicar, la sessió surt a `sense_resum` amb el motiu, i no es torna a demanar fins que canviïn els punts, les instruccions o el model, perquè amb la mateixa entrada el resultat seria el mateix. Passa quan:
 

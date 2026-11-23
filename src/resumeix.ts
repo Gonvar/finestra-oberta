@@ -46,9 +46,12 @@ const { fitxer, errors } = await construirResums(
   avui,
 );
 await writeFile(join(carpeta, 'resums.json'), serialitza(fitxer));
-for (const { sessio, missatge, tipus } of errors) {
-  // Una clau que falta o que l'API rebutja no s'arregla sola: surt com a error a la tasca.
-  const nivell = tipus === 'configuracio' || tipus === 'clau' ? 'error' : 'warning';
+// Sense clau, el pas no fa cap crida i no és un error: es publiquen els resums vigents.
+if (clau === undefined && errors.length > 0)
+  console.log(`::notice::Sense ANTHROPIC_API_KEY: ${errors.length} sessions sense resum nou.`);
+for (const { sessio, missatge, tipus } of errors.filter((e) => e.tipus !== 'clau')) {
+  // Una petició o una clau que l'API rebutja no s'arregla sola: surt com a error a la tasca.
+  const nivell = tipus === 'configuracio' ? 'error' : 'warning';
   // Una línia per avís: un salt de línia del missatge de l'API podria començar una ordre del workflow.
   console.log(`::${nivell}::La sessió ${sessio} no té resum: ${missatge.replace(/\s+/g, ' ')}`);
 }
