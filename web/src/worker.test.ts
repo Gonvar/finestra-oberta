@@ -16,7 +16,7 @@ const fitxers: Record<string, unknown> = {
   'dades/govern.json': govern,
   'conjunts.json': cataleg(procedencia, () => govern),
   ...Object.fromEntries(
-    Object.entries(trossos('govern', 'a'.repeat(64), govern, procedencia)).map(([cami, tros]) => [
+    Object.entries(trossos('govern', 'a'.repeat(64), govern, '2026-11-23')).map(([cami, tros]) => [
       `conjunts/${cami}`,
       tros,
     ]),

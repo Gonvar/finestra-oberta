@@ -99,6 +99,14 @@ jobs:
           }
       - run: npm test
       - run: npm run build
+      # Cloudflare no publica cap fitxer de més de 25 MiB, i ho diu en desplegar, després de fusionar.
+      - name: Cap fitxer de la web passa de 20 MiB
+        run: |
+          grans=$(find dist -type f -size +20M)
+          if [ -n "$grans" ]; then
+            echo "::error::Fitxers de més de 20 MiB, que Cloudflare no podrà servir: $grans"
+            exit 1
+          fi
 
   web-publicades:
     name: Web amb les dades publicades
@@ -124,3 +132,11 @@ jobs:
       # dades només actualitza després de fusionar. La web ha de funcionar amb aquestes dades, encara
       # que no tinguin els camps nous de la pull request. El prebuild les clona.
       - run: npm run build
+      # Cloudflare no publica cap fitxer de més de 25 MiB, i ho diu en desplegar, després de fusionar.
+      - name: Cap fitxer de la web passa de 20 MiB
+        run: |
+          grans=$(find dist -type f -size +20M)
+          if [ -n "$grans" ]; then
+            echo "::error::Fitxers de més de 20 MiB, que Cloudflare no podrà servir: $grans"
+            exit 1
+          fi
