@@ -1,12 +1,12 @@
 // Els resums de les sessions del Ple que escriu un model d'IA (vegeu docs/resums.md i NEUTRALITAT.md §5).
-import resums from '../../../dades/resums.json' with { type: 'json' };
+import publicats from '../../../dades/resums.json' with { type: 'json' };
+import type { Resums } from '../../../src/resums.ts';
+import type { Sessio } from './activitat.ts';
 
-export { resums };
-
-export type Resum = (typeof resums.resums)[number];
+export const resums = publicats as Resums;
 
 /**
- * El nom que es mostra de cada model. NEUTRALITAT.md §5 demana dir quin model ha escrit el resum: un model
+ * El nom que es mostra del model demanat. NEUTRALITAT.md §5 demana dir quin model ha escrit el resum: un model
  * nou atura el build, perquè no surti a la web amb l'identificador de l'API.
  */
 const NOMS: Record<string, string> = {
@@ -19,4 +19,6 @@ export function nomDelModel(model: string) {
   return nom;
 }
 
-export const resumDe = (sessio: number) => resums.resums.find((r) => r.sessio === sessio);
+// La data evita posar un resum vell sobre uns punts nous quan la CI genera activitat.json amb el codi d'una PR.
+export const resumDe = (sessio: Sessio) =>
+  resums.resums.find((r) => r.sessio === sessio.numero && r.data === sessio.data);
