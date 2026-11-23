@@ -4,6 +4,7 @@
 import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
 import { decretsLlei, lleis } from './activitat.ts';
 import { govern, membres, nombre, parlament, slug } from './institucions.ts';
+import { ajuts, convocatoriesEnText, resum as resumAjuts } from './ajuts.ts';
 import { contractes, resum } from './contractes.ts';
 import { municipis } from './municipis.ts';
 import { despesa, milions, pressupost, seccionsGeneralitat } from './pressupost.ts';
@@ -73,7 +74,7 @@ export const pagines: Pagina[] = [
   {
     ruta: '/dades/',
     titol: 'Dades · Finestra Oberta',
-    descripcio: 'Els diners de la Generalitat, els contractes públics, els trens i els municipis.',
+    descripcio: 'Els diners de la Generalitat, els contractes públics, els ajuts, els trens i els municipis.',
     previsualitzacio: {
       titol: 'Dades',
       frase: 'Les dades oficials, amb la font de cadascuna.',
@@ -97,6 +98,17 @@ export const pagines: Pagina[] = [
     previsualitzacio: {
       titol: 'Com contracten les administracions',
       frase: `${nombre(resum(contractes.files).total.contractes)} contractes el ${contractes.any}.`,
+      institucio: 'dad',
+    },
+  },
+  {
+    ruta: '/ajuts/',
+    titol: 'Quins ajuts es poden demanar · Finestra Oberta',
+    descripcio:
+      'Les convocatòries d’ajuts i subvencions de les administracions de Catalunya que encara no han tancat el termini, per a què són i a qui van.',
+    previsualitzacio: {
+      titol: 'Quins ajuts es poden demanar',
+      frase: `${convocatoriesEnText(resumAjuts(ajuts.convocatories, ajuts.data_dades).total, nombre)} que encara no han tancat el termini.`,
       institucio: 'dad',
     },
   },
