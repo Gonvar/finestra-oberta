@@ -504,6 +504,8 @@ test('la transparència dona la declaració, l’agenda i els viatges des del no
   ]);
   assert.ok(persona!.agenda);
   assert.equal(persona!.agenda.contactes, 2);
+  // La fila «-» d'un trimestre sense reunions també diu fins on arriba la seva agenda.
+  assert.equal(persona!.agenda.darrera_entrada, '2025-06-01');
   assert.deepEqual(
     persona!.agenda.darrers.map((c) => c.grup),
     ['Entitat U', 'Entitat Quatre'],

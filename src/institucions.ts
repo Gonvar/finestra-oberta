@@ -667,6 +667,12 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
       // que no hagi tingut cap reunió.
       ...(totesSeves.length && {
         agenda: {
+          // La fila més recent, també les «-» de qui no ha tingut cap reunió en un trimestre: diu fins
+          // quan arriba l'agenda d'aquesta persona, encara que la llista de reunions s'aturi abans.
+          darrera_entrada: totesSeves
+            .map((f) => diaDeSocrata(f.data))
+            .sort()
+            .at(-1)!,
           contactes: contactes.length,
           darrers: contactes.slice(0, DARRERES).map((f) => ({
             data: diaDeSocrata(f.data),
@@ -700,7 +706,7 @@ export async function construirTransparencia(fetchImpl: Fetch, membres: Membre[]
     declaracions: font(metaDecl, DECLARACIONS),
     agenda: font(metaAgenda, AGENDA),
     viatges: font(metaViatges, VIATGES),
-    nota: 'L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva. Qui encara no surt a l’agenda, que es publica per trimestres, no té el camp agenda.',
+    nota: 'L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva. Qui encara no surt a l’agenda, que es publica per trimestres, no té el camp agenda. darrera_entrada és el dia de la fila més recent de cada persona, també si és «-».',
     persones,
   };
 }

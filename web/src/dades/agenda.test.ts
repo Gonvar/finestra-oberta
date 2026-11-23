@@ -23,7 +23,13 @@ const parlament = (data: string, titol: string, hora?: string): ActeParlament =>
 });
 const agenda = (g: ActeGovern[], p: ActeParlament[]): Agenda => ({
   govern: { font: 'g', url: 'https://g', data_dades: '2026-11-21', actes: g },
-  parlament: { font: 'p', url: 'https://p', data_consulta: '2026-11-22', des_de: '2026-10-01', actes: p },
+  parlament: {
+    font: 'p',
+    url: 'https://p',
+    data_consulta: '2026-11-22',
+    des_de: '2026-10-01',
+    actes: p,
+  },
 });
 
 test('separa el que és previst del que ja s’ha fet, amb els dies més propers primer', () => {

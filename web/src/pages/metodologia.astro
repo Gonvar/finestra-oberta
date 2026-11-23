@@ -1,0 +1,178 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+import { seccions, type Data } from '../dades/fonts.ts';
+import { dia } from '../dades/institucions.ts';
+import { REPO } from '../dades/portada.ts';
+
+const QUAN: Record<Data['tipus'], string> = {
+  dades: 'Dades actualitzades el',
+  consulta: 'Llegides el',
+  copia: 'Copiades a mà el',
+};
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <h1 id="titol" class="entra">D'on surten les dades</h1>
+      <p class="entradeta entra" style="--ordre: 1">
+        Totes les dades d'aquest web les publiquen el Govern, el Parlament i altres organismes públics.
+        No n'escrivim cap a mà.
+      </p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="cada-dada">
+      <h2 class="titol-seccio" id="cada-dada">D'on surt cada dada</h2>
+      <p>
+        Si la font no publica quan la va actualitzar, hi posem el dia en què la vam
+        consultar.
+      </p>
+      {
+        seccions.map((s) => (
+          <>
+            <h3 class="titol-bloc">
+              <a href={s.ruta}>{s.titol}</a>
+            </h3>
+            <ul class="files">
+              {s.fonts.map((f) => (
+                <li>
+                  <p>{f.que}</p>
+                  <p class="secundari">
+                    <a href={f.url}>{f.nom}</a>. {QUAN[f.data.tipus]} {dia(f.data.dia)}.
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </>
+        ))
+      }
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="quan">
+      <h2 class="titol-seccio" id="quan">Cada quant s'actualitza</h2>
+      <p>
+        Cada dia, a primera hora del matí, un programa torna a llegir totes les fonts. Si alguna ha canviat, el
+        web es torna a publicar amb les dades noves.
+      </p>
+      <p>
+        Cada organisme actualitza les seves dades al seu ritme. Per això cada dada té la seva data.
+      </p>
+      <p>
+        Hi ha una sola excepció. Les fotos i els currículums del Govern es copien a mà des de govern.cat, perquè
+        aquest web no deixa que cap programa els llegeixi.
+      </p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="comprovar">
+      <h2 class="titol-seccio" id="comprovar">Com es pot comprovar</h2>
+      <p>
+        Les dades les publica un programa automàtic, i el seu codi és públic. Cada vegada que les publica, desa
+        també:
+      </p>
+      <ul class="punts">
+        <li>la resposta de cada font, tal com va arribar;</li>
+        <li>
+          una signatura digital que diu quin programa les ha fet. Queda en un registre públic que no controlem i
+          d'on no es pot esborrar.
+        </li>
+      </ul>
+      <p>
+        Amb això, qualsevol persona pot tornar a fer les dades a partir de les respostes de les fonts i veure que
+        surten iguals.
+      </p>
+      <p>
+        Les fotos i els currículums del Govern no es poden comprovar així, perquè es copien a mà i no tenen la
+        resposta de la font.
+      </p>
+      <p>
+        <a href={`${REPO}/blob/main/docs/institucions.md#com-comprovar-que-les-dades-són-de-la-font`}
+          >Com fer la comprovació pas a pas</a
+        >. Cal saber fer servir la línia d'ordres.
+      </p>
+      <p>
+        La comprovació demostra que les dades surten, sense retocs, de les respostes que el programa va rebre de
+        cada font. No demostra que la font tingui raó: si s'equivoca, l'error també surt aquí.
+      </p>
+    </section>
+
+    <section class="seccio prosa" aria-labelledby="no-publiquem">
+      <h2 class="titol-seccio" id="no-publiquem">Què no publiquem, i per què</h2>
+      <dl class="paraules">
+        <dt>Dades que no siguin oficials</dt>
+        <dd>
+          Ni notícies, ni dades de partits, ni enquestes privades.
+        </dd>
+        <dt>Opinions</dt>
+        <dd>
+          Els textos descriuen i no valoren. L'ordre és el de la font o un criteri que s'explica, com els escons, la
+          data o l'ordre alfabètic.
+        </dd>
+        <dt>Correccions fetes a mà</dt>
+        <dd>
+          Si una font s'equivoca, mostrem el que diu i demanem a l'organisme que ho corregeixi. Si corregíssim
+          nosaltres, ningú no podria comprovar d'on surt la dada.
+        </dd>
+        <dt>Qui vota què al Parlament</dt>
+        <dd>
+          El Parlament no publica el vot ni l'assistència de cada persona diputada. Només en publica el resultat.
+        </dd>
+        <dt>Més dades personals de les que calen</dt>
+        <dd>De cada persona, només el que la institució publica sobre el seu càrrec públic.</dd>
+      </dl>
+    </section>
+  </main>
+</Pagina>
+
+<style>
+  .prosa > p,
+  .prosa > ul.punts {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+
+  .prosa > h3 {
+    margin-top: 2.5rem;
+  }
+
+  .prosa > h3 a {
+    color: inherit;
+  }
+
+  .prosa .files {
+    max-width: 40rem;
+    margin-top: 0.75rem;
+  }
+
+  .files .secundari {
+    margin-top: 0.25rem;
+  }
+
+  .files .secundari a {
+    color: inherit;
+  }
+
+  .punts {
+    padding-left: 1.25rem;
+  }
+
+  .punts li + li {
+    margin-top: 0.5rem;
+  }
+
+  .paraules {
+    margin: 1.5rem 0 0;
+    max-width: 40rem;
+  }
+
+  .paraules dt {
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .paraules dd {
+    margin: 0.25rem 0 0;
+    color: var(--ink-2);
+  }
+</style>

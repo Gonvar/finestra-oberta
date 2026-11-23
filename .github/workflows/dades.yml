@@ -76,6 +76,7 @@ jobs:
           git add -A
           # data_consulta canvia cada dia. Si és l'únic que ha canviat a la composició, no hi ha res de
           # nou per desar. L'agenda sí que es desa cada dia: la web en treu quins actes ja han passat.
+          # Per això també es tornen a provar cada dia els resums que no s'han pogut fer.
           if [ "$BONES" = true ] && git diff --cached --quiet -I '"data_consulta"' -- govern.json transparencia.json parlament.json diputats.json ajuntaments.json activitat.json ajuts.json pressupost.json municipis.json eleccions-municipals.json mapa-municipis.json contractes.json oposicions.json \
             && git diff --cached --quiet -- agenda.json; then
             echo "Ni la composició ni l'agenda han canviat."
@@ -102,10 +103,43 @@ jobs:
       id-token: write
       attestations: write
     steps:
+      # El codi de main, per fer els resums. Sense credencials: aquest job ja té la clau de `dades`.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: codi
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: codi/.nvmrc
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: dades
           path: nou
+      # Abans d'escriure la clau de `dades`: aquest pas executa codi del repositori i només ha de veure
+      # la clau de l'API, que és un secret de l'entorn `dades`, com la de desplegament, i només s'obre
+      # per a main. Els resums publicats es llegeixen de la branca pública sense credencials (el
+      # repositori és públic, com suposa la compilació de la web), i es reaprofiten els que encara
+      # corresponen a la seva sessió (vegeu src/resums.ts). Una execució antiga de main no gasta crides:
+      # el pas següent no la deixaria publicar.
+      - name: Resumeix les sessions del Ple
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          REPO="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
+          if [ "$(git ls-remote "$REPO" refs/heads/main | cut -f1)" != "$GITHUB_SHA" ]; then
+            echo "::error::main ja no és a $GITHUB_SHA. Aquesta execució no publica."
+            exit 1
+          fi
+          if git ls-remote --exit-code "$REPO" refs/heads/dades; then
+            git clone --depth=1 --branch dades "$REPO" publicades
+          elif [ $? -ne 2 ]; then
+            exit 1
+          fi
+          if [ -f publicades/resums.json ]; then
+            node codi/src/resumeix.ts nou publicades/resums.json
+          else
+            node codi/src/resumeix.ts nou
+          fi
       - name: Comprova que són les dades més noves
         env:
           CLAU: ${{ secrets.DADES_CLAU_DESPLEGAMENT }}
@@ -143,9 +177,12 @@ jobs:
             exit 1
           fi
       # procedencia.json porta l'empremta dels JSON i de cada còpia. Signar-lo els signa tots junts.
+      # resums.json no surt de les fonts i se signa a part.
       - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
-          subject-path: nou/procedencia.json
+          subject-path: |
+            nou/procedencia.json
+            nou/resums.json
       - name: Desa les dades
         working-directory: dades
         run: |
@@ -155,7 +192,7 @@ jobs:
           git add -A
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments, l’agenda, l’activitat del Parlament, els ajuts, el pressupost, els contractes i les oposicions' \
+          git commit -m 'chore(dades): actualitza el Govern, el Parlament, els ajuntaments, l’agenda, l’activitat i els resums del Parlament, els ajuts, el pressupost, els contractes i les oposicions' \
             -m "Execució: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           git push origin dades
 

@@ -7,16 +7,24 @@ export type Punt = Sessio['punts'][number];
 export type Resultat = 'aprovat' | 'convalidat' | 'derogat' | 'rebutjat';
 export type Norma = (typeof activitat.normes.normes)[number];
 
-const RESULTATS: readonly string[] = ['aprovat', 'convalidat', 'derogat', 'rebutjat'] satisfies Resultat[];
+const RESULTATS: readonly string[] = [
+  'aprovat',
+  'convalidat',
+  'derogat',
+  'rebutjat',
+] satisfies Resultat[];
 
 // Un resultat que la web no coneix atura el build: vol dir que src/activitat.ts ha començat a classificar acords nous.
 function resultat(valor: string): Resultat {
-  if (!RESULTATS.includes(valor)) throw new Error(`activitat.json té un resultat desconegut: ${valor}.`);
+  if (!RESULTATS.includes(valor))
+    throw new Error(`activitat.json té un resultat desconegut: ${valor}.`);
   return valor as Resultat;
 }
 
 export const decisions = (sessio: Sessio) =>
-  sessio.punts.flatMap((p) => (p.resultat === null ? [] : [{ ...p, resultat: resultat(p.resultat) }]));
+  sessio.punts.flatMap((p) =>
+    p.resultat === null ? [] : [{ ...p, resultat: resultat(p.resultat) }],
+  );
 
 // «N punts més» compta punts de l'ordre del dia, no títols: hi ha títols repetits, com les preguntes al president.
 export function temes(sessio: Sessio, quants: number) {
@@ -44,12 +52,14 @@ export const COMISSIONS: Record<string, string> = {
   CESMA: "Comissió d'Estudi sobre la Salut Mental i les Addiccions",
   CET: "Comissió d'Empresa i Treball",
   CI: 'Comissió de la Infància',
-  CIADGAIA: "Comissió d'Investigació sobre l'Activitat de la Direcció General d'Atenció a la Infància i l'Adolescència",
+  CIADGAIA:
+    "Comissió d'Investigació sobre l'Activitat de la Direcció General d'Atenció a la Infància i l'Adolescència",
   CIF: "Comissió d'Igualtat i Feminisme",
   CISP: "Comissió d'Interior i Seguretat Pública",
   CJQD: 'Comissió de Justícia i Qualitat Democràtica',
   CMSR: 'Comissió de Matèries Secretes i Reservades',
-  COSDARC: "Comissió de Seguiment del Desplegament de les Actuacions de l'Agenda Rural de Catalunya",
+  COSDARC:
+    "Comissió de Seguiment del Desplegament de les Actuacions de l'Agenda Rural de Catalunya",
   CP: 'Comissió de Peticions',
   CPJ: 'Comissió de Polítiques de Joventut',
   CPL: 'Comissió de Política Lingüística',
@@ -72,7 +82,8 @@ export function sigles(acords: string[]) {
     }),
   );
   for (const s of trobades)
-    if (!Object.hasOwn(COMISSIONS, s)) throw new Error(`Falta explicar les sigles ${s} a COMISSIONS.`);
+    if (!Object.hasOwn(COMISSIONS, s))
+      throw new Error(`Falta explicar les sigles ${s} a COMISSIONS.`);
   return [...trobades].sort();
 }
 

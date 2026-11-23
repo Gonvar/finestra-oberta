@@ -78,6 +78,16 @@ export const pagines: Pagina[] = [
       institucio: 'dad',
     },
   },
+  {
+    ruta: '/metodologia/',
+    titol: 'D’on surten les dades · Finestra Oberta',
+    descripcio:
+      'D’on surt cada dada, cada quant s’actualitza, com es pot comprovar i què no publiquem.',
+    previsualitzacio: {
+      titol: 'D’on surten les dades',
+      frase: 'Totes les dades les publiquen organismes públics. No n’escrivim cap a mà.',
+    },
+  },
   ...membres.map((m) => ({
     ruta: `/govern/${slug(m.nom)}/`,
     titol: `${m.nom} · Finestra Oberta`,
