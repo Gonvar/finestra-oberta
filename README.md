@@ -34,7 +34,7 @@ A [docs/exemples.md](docs/exemples.md) hi ha aquestes preguntes resoltes amb les
 
 ## El Govern i el Parlament
 
-A la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades) hi ha la composició del Govern, la del Parlament i la del ple de cada ajuntament, els ajuts que encara es poden demanar i com va el pressupost de la Generalitat, en JSON, cadascuna amb la seva font i la data de les dades, i la còpia de cada resposta de les fonts oficials. Una tasca automàtica les actualitza cada dia i les signa. `npm run dades` les torna a generar des de les fonts i `npm run verifica-dades` comprova que no s'han retocat. Vegeu [docs/institucions.md](docs/institucions.md).
+A la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades) hi ha la composició del Govern, la del Parlament i la del ple de cada ajuntament, els ajuts que encara es poden demanar com va el pressupost de la Generalitat i quants contractes adjudica cada organisme, en JSON, cadascuna amb la seva font i la data de les dades, i la còpia de cada resposta de les fonts oficials. Una tasca automàtica les actualitza cada dia i les signa. `npm run dades` les torna a generar des de les fonts i `npm run verifica-dades` comprova que no s'han retocat. Vegeu [docs/institucions.md](docs/institucions.md).
 
 ## Com fer-los servir
 

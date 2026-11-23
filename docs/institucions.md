@@ -1,6 +1,6 @@
-# El Govern, el Parlament, els ajuntaments, els ajuts i el pressupost
+# El Govern, el Parlament, els ajuntaments, els ajuts, el pressupost i els contractes
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, els ajuts i les subvencions que encara es poden demanar i com va el pressupost de la Generalitat. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, els ajuts i les subvencions que encara es poden demanar com va el pressupost de la Generalitat i quants contractes adjudica cada organisme. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -66,7 +66,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json` i `/tmp/ara/pressupost.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -226,6 +226,22 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
   - Cada import, cada ordre de protocol i cada codi de capítol ha de ser un nombre, i cada fila ha de tenir el codi i el nom de l'entitat, i el codi i el nom de la secció o el codi del capítol. L'ordre de protocol i el nom del capítol poden faltar, i llavors són `null`: a l'octubre del 2026, 49 entitats no donaven l'ordre de cap secció.
   - Una entitat i una secció, o una entitat i un capítol, només poden sortir una vegada.
   - Cada consulta ha de tornar alguna fila i cabre en una pàgina.
+- **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
+
+## `contractes.json`
+
+- **Font:** les [inscripcions al Registre públic de contractes](https://analisi.transparenciacatalunya.cat/d/hb6v-jcbf) (`hb6v-jcbf`), del Departament d'Economia i Finances, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/). Hi ha els contractes de la Generalitat i el seu sector públic, dels ens locals i de les universitats.
+- **Període:** les adjudicacions des de l'1 de gener de l'any de la consulta fins al dia de la consulta, a Catalunya.
+- **Contingut:** per àmbit, departament o ens (`agrupacio_organisme`) i procediment d'adjudicació, quants contractes s'han adjudicat i per quin import. Cada lot és una inscripció. No es publica cap contracte ni cap adjudicatari un per un.
+- **Què es compta:** només les inscripcions d'adjudicació i les de contractes menors. Les liquidacions, les pròrrogues i les modificacions són inscripcions del mateix contracte, i el comptarien més d'una vegada.
+- **Imports:** els d'adjudicació, en euros, tal com els dona la font. La font no diu si porten IVA.
+- **Sumes:** les fa l'API de la font, amb `count(*)` i `sum()`. El codi no suma res.
+- **Dates posteriors:** la font té inscripcions amb una data d'adjudicació posterior al dia de la consulta (més de 2.000 el novembre del 2026, algunes del 2029). No hi són, i es compten a `adjudicacions_posteriors`.
+- **Ordre i noms:** per àmbit, codi de l'organisme i procediment. Els noms són tal com els escriu la font. Les adjudicacions sense procediment tenen `procediment` a `null`.
+- **Comprovacions:**
+  - Cada fila ha de tenir l'àmbit, el codi i el nom de l'organisme, un recompte que sigui un nombre i un import.
+  - Un organisme i un procediment només poden sortir una vegada.
+  - La consulta ha de tornar alguna fila i cabre en una pàgina.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## Pendent
