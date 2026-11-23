@@ -140,7 +140,7 @@
             <input type="hidden" value="C" name="p_mode">
             <input type="hidden" value="AGENDA" name="p_hr">
             <input name="p_organ" value="" type="hidden">
-            <input name="p_galeta" value="UTL32O5HvhcvWWEDJPBXqu79uwhpHKV9XRJRVV1RqwfaAOA3XTL7anopp3tj81!" type="hidden">
+            <input name="p_galeta" value="QZRUTK9Z3s5oKJ6P2IY8cd3hn16y80QRS9W5XPUMernlNQN9FO524grd0xs1LZ!" type="hidden">
             <p>
               <label class="label_13" for="titol">El títol conté:
               </label>
