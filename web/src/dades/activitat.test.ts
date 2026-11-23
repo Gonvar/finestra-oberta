@@ -37,5 +37,6 @@ test('una sessió sense decisions diu els primers temes i quants punts queden fo
 
 test('les sigles de comissió al final de l’acord han d’estar explicades', () => {
   assert.deepEqual(sigles(["S'adopta. CED", "S'aprova la Llei. CAI", 'Es rebutja.', "S'adopta. CED"]), ['CAI', 'CED']);
-  assert.throws(() => sigles(["S'aprova la Llei. CXYZ"]), /Falta explicar les sigles CXYZ/);
+  assert.deepEqual(sigles(["S'adopta la Resolució. COSDARC"]), ['COSDARC']);
+  assert.throws(() => sigles(["S'aprova la Llei. CXYZWQ"]), /Falta explicar les sigles CXYZWQ/);
 });

@@ -25,21 +25,49 @@ export function temes(sessio: Sessio, quants: number) {
 }
 
 /**
- * Algunes sigles de comissió que el Parlament posa al final de l'acord. La web les explica al glossari, i el
- * build s'atura si en surt una que no hi és, perquè ningú es trobi unes sigles sense explicar.
+ * Les sigles de comissió que el Parlament posa al final de l'acord, amb el nom de la llista de comissions de la
+ * XV legislatura del web del Parlament (consultada el 23 de novembre de 2026). El build s'atura si en surt una que no hi és, perquè ningú es
+ * trobi unes sigles sense explicar.
  */
 export const COMISSIONS: Record<string, string> = {
   CAI: "Comissió d'Afers Institucionals",
   CARPA: "Comissió d'Agricultura, Ramaderia, Pesca i Alimentació",
   CC: 'Comissió de Cultura',
+  CCMA: "Comissió de Control de l'Actuació de la Corporació Catalana de Mitjans Audiovisuals",
+  CCTN: 'Comissió de Consolidació de Textos Normatius',
+  CDSI: 'Comissió de Drets Socials i Inclusió',
+  CE: "Comissió d'Esports",
   CED: "Comissió de l'Estatut dels Diputats",
+  CEF: "Comissió d'Economia i Finances",
+  CEFERDO: "Comissió d'Estudi sobre el Feixisme, el Racisme i els Discursos d'Odi",
+  CEFP: "Comissió d'Educació i Formació Professional",
+  CESMA: "Comissió d'Estudi sobre la Salut Mental i les Addiccions",
   CET: "Comissió d'Empresa i Treball",
+  CI: 'Comissió de la Infància',
+  CIADGAIA: "Comissió d'Investigació sobre l'Activitat de la Direcció General d'Atenció a la Infància i l'Adolescència",
+  CIF: "Comissió d'Igualtat i Feminisme",
+  CISP: "Comissió d'Interior i Seguretat Pública",
+  CJQD: 'Comissió de Justícia i Qualitat Democràtica',
+  CMSR: 'Comissió de Matèries Secretes i Reservades',
+  COSDARC: "Comissió de Seguiment del Desplegament de les Actuacions de l'Agenda Rural de Catalunya",
+  CP: 'Comissió de Peticions',
+  CPJ: 'Comissió de Polítiques de Joventut',
+  CPL: 'Comissió de Política Lingüística',
+  CR: 'Comissió del Reglament',
+  CRU: 'Comissió de Recerca i Universitats',
+  CS: 'Comissió de Salut',
+  CSC: 'Comissió de la Sindicatura de Comptes',
+  CSG: 'Comissió del Síndic de Greuges',
+  CSPGG: 'Comissió de Seguiment de Polítiques de la Gent Gran',
+  CTE: 'Comissió de Transició Ecològica',
+  CTH: 'Comissió de Territori i Habitatge',
+  CUEAE: "Comissió d'Unió Europea i Acció Exterior",
 };
 
 export function sigles(acords: string[]) {
   const trobades = new Set(
     acords.flatMap((a) => {
-      const m = /\. ([A-Z]{2,6})$/.exec(a);
+      const m = /\. ([A-Z]{2,})$/.exec(a);
       return m === null ? [] : [m[1]];
     }),
   );
