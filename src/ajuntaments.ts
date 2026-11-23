@@ -4,9 +4,11 @@
 // Tots els municipis i totes les persones tenen els mateixos camps: el que la font no dona és null.
 import {
   camp,
+  codiMunicipi,
   dia,
-  getJson,
+  filesSocrata as files,
   metadades,
+  numero,
   obligatori,
   SOCRATA,
   SourceError,
@@ -16,31 +18,6 @@ import {
 
 export const PLENS = 'nm3n-3vbj';
 export const ENS_LOCALS = '6nei-4b44';
-const LIMIT = 50_000;
-
-function numero(text: string, nom: string) {
-  if (!/^\d+$/.test(text)) throw new SourceError(`${nom} no és un nombre: ${text}.`);
-  return Number(text);
-}
-
-/**
- * Els sis primers dígits dels codis de Municat són el codi del municipi de l'INE amb el dígit de
- * control, el mateix que fa servir l'Idescat. És el que lliga les dues fonts.
- */
-function codiMunicipi(codi: string) {
-  if (!/^\d{10}$/.test(codi)) throw new SourceError(`Codi d'ens inesperat: ${codi}.`);
-  return codi.slice(0, 6);
-}
-
-async function files(fetchImpl: Fetch, id: string, params: Record<string, string>) {
-  const resultat = await getJson<Fila[]>(
-    fetchImpl,
-    `${SOCRATA}/resource/${id}.json?${new URLSearchParams({ ...params, $limit: String(LIMIT) })}`,
-  );
-  if (resultat.length === LIMIT) throw new SourceError(`El conjunt ${id} no cap en una pàgina.`);
-  return resultat;
-}
-
 function persona(fila: Fila) {
   const data = camp(fila, 'data_nomenament');
   return {

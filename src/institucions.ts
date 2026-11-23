@@ -5,6 +5,7 @@
 import { readFile } from 'node:fs/promises';
 import { construirAgenda } from './agenda.ts';
 import { construirAjuntaments } from './ajuntaments.ts';
+import { construirEleccionsMunicipals } from './eleccions.ts';
 import { construirMunicipis } from './municipis.ts';
 import {
   comprovaCodificacio,
@@ -716,5 +717,6 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
     'agenda.json': agenda,
     'ajuntaments.json': ajuntaments,
     'municipis.json': await construirMunicipis(fetchImpl, codis),
+    'eleccions-municipals.json': await construirEleccionsMunicipals(fetchImpl, codis),
   };
 }

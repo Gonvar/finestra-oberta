@@ -1,6 +1,6 @@
-# El Govern, el Parlament, els ajuntaments, els municipis, els ajuts, el pressupost i els contractes
+# El Govern, el Parlament, els ajuntaments, els municipis, les eleccions municipals, els ajuts, el pressupost i els contractes
 
-Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat i quantes adjudicacions fa cada organisme. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
+Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, uns quants indicadors de cada municipi i com s'hi va votar a les últimes municipals, els ajuts i les subvencions que encara es poden demanar, com va el pressupost de la Generalitat i quantes adjudicacions fa cada organisme. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
 ```sh
 npm run dades
@@ -66,7 +66,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/eleccions-municipals.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json`, `/tmp/ara/pressupost.json` i `/tmp/ara/contractes.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -183,6 +183,21 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
   - Totes les crides han de tornar els mateixos municipis, en el mateix ordre, només municipis i cap de repetit.
   - Han de ser els mateixos municipis que els de Municat (`ajuntaments.json`), pel mateix codi.
   - Cada indicador ha de tenir un valor per municipi, i cada valor ha de ser un nombre o «_» (no hi és).
+- **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
+
+## `eleccions-municipals.json`
+
+- **Font:** [Eleccions municipals. Vots](https://analisi.transparenciacatalunya.cat/d/vq27-2ky2) (`vq27-2ky2`), de la Secretaria de Governs Locals, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/).
+- **Elecció:** les últimes municipals que té el conjunt (`any`). Es busca l'any més alt cada vegada, i quan la font hi afegeixi unes eleccions noves el fitxer passarà a ser el d'aquestes. El conjunt no diu si unes eleccions són generals o parcials: si algun dia hi surten unes de parcials amb un any nou, faltaran municipis, la comprovació fallarà i caldrà decidir com tractar-les.
+- **Contingut:** de cada municipi, totes les candidatures que la font dona, amb les sigles, els vots, el percentatge (el que calcula la font) i els regidors. Totes tenen els mateixos camps.
+- **Ordre:** de més a menys vots, i, amb els mateixos vots, per les sigles en ordre alfabètic. És la mateixa regla per a totes les candidatures.
+- **Valors:** tal com els dona la font. L'única conversió és el percentatge: la font el dona en centèsimes («2268») i es publica com a percentatge (22,68). Les sigles són les de la font, que pot escriure el mateix partit de maneres diferents en municipis o anys diferents: no s'unifiquen.
+- **Què no hi és:** les eleccions al Parlament per municipi. Aquest conjunt només té les municipals.
+- **Comprovacions:**
+  - Han de ser els mateixos municipis que els de Municat (`ajuntaments.json`), pel mateix codi.
+  - Cada fila ha de tenir el codi, el municipi, les sigles, els vots, el percentatge i els regidors, i els tres últims han de ser nombres.
+  - Un codi només pot correspondre a un municipi, i una candidatura només pot sortir una vegada a cada municipi.
+  - Les files de l'elecció han de cabre en una sola consulta.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## `agenda.json`
