@@ -1,6 +1,7 @@
 ---
 import { temes, type Punt, type Resultat, type Sessio } from '../dades/activitat.ts';
 import { dia } from '../dades/institucions.ts';
+import { nomDelModel, resumDe } from '../dades/resums.ts';
 
 type Props = {
   s: Sessio & { fetes: (Punt & { resultat: Resultat })[]; altres: number };
@@ -9,10 +10,22 @@ const { s } = Astro.props;
 // Una sessió sense cap iniciativa aprovada o rebutjada sí que va tractar alguna cosa, com una investidura: se'n diu el tema.
 const tractats = temes(s, 5);
 const mes = s.fetes.length > 0 ? s.altres : tractats.mes;
+const resum = resumDe(s.numero);
 ---
 
 <article class="sessio">
   <h3>{dia(s.data)} <span class="secundari">· Sessió {s.numero}, {s.caracter}</span></h3>
+  {
+    resum && (
+      <div class="resum">
+        <p>{resum.text}</p>
+        <p class="secundari">
+          L'ha escrit {nomDelModel(resum.model)}, un model d'IA, a partir dels punts oficials de sota.{' '}
+          <a href="/metodologia/#resums">Com es fa</a>
+        </p>
+      </div>
+    )
+  }
   {
     s.fetes.length === 0 ? (
       <>
@@ -58,6 +71,15 @@ const mes = s.fetes.length > 0 ? s.altres : tractats.mes;
   h3 .secundari {
     font-weight: 400;
     letter-spacing: 0;
+  }
+
+  .resum {
+    margin-top: 0.75rem;
+    max-width: 40rem;
+  }
+
+  .resum .secundari {
+    margin-top: 0.5rem;
   }
 
   .verb {
