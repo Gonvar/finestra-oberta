@@ -40,6 +40,27 @@ type Indicador = {
 
 const llista = <T>(x: T | T[]) => (Array.isArray(x) ? x : [x]);
 
+const esText = (x: unknown): x is string => typeof x === 'string';
+
+/** La resta del codi i la nota del fitxer depenen d'aquests camps: si canvien, s'atura. */
+function comprovaIndicador(x: Indicador) {
+  const ok =
+    esText(x.id) &&
+    esText(x.c) &&
+    esText(x.v) &&
+    esText(x.r) &&
+    /^\d{4}$/.test(x.r) &&
+    (x.u === undefined || esText(x.u)) &&
+    esText(x.t?.content) &&
+    esText(x.updated) &&
+    /^\d{4}-\d{2}-\d{2}T/.test(x.updated);
+  if (!ok)
+    throw new SourceError(
+      `Un indicador de l'API EMEX no té la forma esperada: ${JSON.stringify(x).slice(0, 300)}.`,
+    );
+  return x;
+}
+
 function forma(dades: unknown): { cols: Col[]; indicadors: Indicador[] } {
   const fitxes = (dades as { fitxes?: { cols?: { col?: unknown }; indicadors?: { i?: unknown } } })
     .fitxes;
@@ -49,7 +70,7 @@ function forma(dades: unknown): { cols: Col[]; indicadors: Indicador[] } {
     );
   return {
     cols: llista(fitxes.cols.col as Col | Col[]),
-    indicadors: llista(fitxes.indicadors.i as Indicador | Indicador[]),
+    indicadors: llista(fitxes.indicadors.i as Indicador | Indicador[]).map(comprovaIndicador),
   };
 }
 
@@ -88,14 +109,26 @@ export async function construirMunicipis(fetchImpl: Fetch, codis: Set<string>) {
   if (municipis === undefined) throw new SourceError('No hi ha cap indicador.');
 
   const rebuts = indicadors.map((x) => x.id);
-  if (JSON.stringify(rebuts) !== JSON.stringify(INDICADORS))
+  if (
+    rebuts.length !== INDICADORS.length ||
+    !INDICADORS.every((id) => rebuts.filter((r) => r === id).length === 1)
+  )
     throw new SourceError(
       `L’API EMEX ha tornat ${rebuts.join(', ')}, no ${INDICADORS.join(', ')}.`,
     );
+  // Es publiquen en l'ordre d'INDICADORS, el respongui com el respongui l'API.
+  indicadors.sort((a, b) => INDICADORS.indexOf(a.id as never) - INDICADORS.indexOf(b.id as never));
   const idescat = new Set(municipis.map((m) => m.id));
+  if (idescat.size !== municipis.length)
+    throw new SourceError(
+      `L’API EMEX repeteix municipis: ${municipis
+        .map((m) => m.id)
+        .filter((id, i, tots) => tots.indexOf(id) !== i)
+        .join(', ')}.`,
+    );
   const falten = [...codis].filter((c) => !idescat.has(c));
   const sobren = [...idescat].filter((c) => !codis.has(c));
-  if (idescat.size !== municipis.length || falten.length > 0 || sobren.length > 0)
+  if (falten.length > 0 || sobren.length > 0)
     throw new SourceError(
       `Els municipis de l’Idescat i els de Municat no coincideixen (falten ${falten.join(', ') || 'cap'}; sobren ${sobren.join(', ') || 'cap'}).`,
     );

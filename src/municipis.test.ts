@@ -20,7 +20,7 @@ const indicador = (id: string, v = '1200,_') => ({
 });
 
 /** Un `fetch` que respon cada crida amb els indicadors que demana. */
-function fake({ cols = COLS, valors = (id: string) => indicador(id) } = {}) {
+function fake({ cols = COLS, valors = (id: string): object => indicador(id) } = {}) {
   const fetchImpl: Fetch = async (input) => {
     const ids = new URL(String(input)).searchParams.get('i')!.split(',');
     return Response.json({
@@ -80,4 +80,62 @@ test('falla si una crida torna territoris que no són municipis', async () => {
 test('falla si la resposta no té la forma esperada', async () => {
   const fetchImpl: Fetch = async () => Response.json({ error: 'x' });
   await assert.rejects(construirMunicipis(fetchImpl, CODIS), /no té la forma esperada/);
+});
+
+test('els valors van al seu municipi encara que una crida torni els municipis en un altre ordre', async () => {
+  let crida = 0;
+  const fetchImpl: Fetch = async (input) => {
+    const ids = new URL(String(input)).searchParams.get('i')!.split(',');
+    crida++;
+    const cols = crida === 1 ? COLS : [...COLS].reverse();
+    return Response.json({
+      fitxes: { cols: { col: cols }, indicadors: { i: ids.map((id) => indicador(id)) } },
+    });
+  };
+  await assert.rejects(construirMunicipis(fetchImpl, CODIS), /no tornen els mateixos municipis/);
+});
+
+test('els indicadors es publiquen en el mateix ordre encara que l’API els torni en un altre', async () => {
+  const fetchImpl: Fetch = async (input) => {
+    const ids = new URL(String(input)).searchParams.get('i')!.split(',').reverse();
+    return Response.json({
+      fitxes: { cols: { col: COLS }, indicadors: { i: ids.map((id) => indicador(id)) } },
+    });
+  };
+  const resultat = await construirMunicipis(fetchImpl, CODIS);
+  assert.deepEqual(
+    resultat.indicadors.map((i) => i.id),
+    [...INDICADORS],
+  );
+});
+
+test('falla si l’API no torna algun dels indicadors', async () => {
+  const fetchImpl: Fetch = async (input) => {
+    const ids = new URL(String(input)).searchParams.get('i')!.split(',').slice(1);
+    return Response.json({
+      fitxes: { cols: { col: COLS }, indicadors: { i: ids.map((id) => indicador(id)) } },
+    });
+  };
+  await assert.rejects(construirMunicipis(fetchImpl, CODIS), /L’API EMEX ha tornat/);
+});
+
+test('falla si l’any d’un indicador no és un any', async () => {
+  const valors = (id: string) => ({ ...indicador(id), r: '2022,2021' });
+  await assert.rejects(construirMunicipis(fake({ valors }), CODIS), /no té la forma esperada/);
+});
+
+test('falla si un indicador no diu de quina taula és', async () => {
+  const valors = (id: string) => {
+    const { t: _, ...sense } = indicador(id);
+    return sense;
+  };
+  await assert.rejects(construirMunicipis(fake({ valors }), CODIS), /no té la forma esperada/);
+});
+
+test('falla, i diu quin, si l’Idescat repeteix un municipi', async () => {
+  const cols = [...COLS, COLS[0]!];
+  await assert.rejects(
+    construirMunicipis(fake({ cols, valors: (id) => indicador(id, '1,2,3') }), CODIS),
+    /repeteix municipis: 089999/,
+  );
 });

@@ -1,4 +1,4 @@
-# El Govern, el Parlament, els ajuntaments, els ajuts i el pressupost
+# El Govern, el Parlament, els ajuntaments, els municipis, els ajuts i el pressupost
 
 Les dades que es publiquen cada dia: qui forma el Govern, què en publica el Portal de la Transparència, com es reparteixen els 135 escons del Parlament, qui forma el ple de cada ajuntament, els ajuts i les subvencions que encara es poden demanar i com va el pressupost de la Generalitat. Són en JSON a la branca [`dades`](https://github.com/Gonvar/finestra-oberta/tree/dades), perquè la web les pugui mostrar sense consultar les fonts. El codi que les genera és a `main`.
 
@@ -66,7 +66,7 @@ npm run verifica-dades
 
 Cal el codi amb què es van generar, perquè un canvi posterior pot demanar les fonts d'una altra manera. També cal la versió de Node que diu `node` a `procedencia.json`: l'ordre alfabètic dels grups, dels departaments i dels municipis depèn de la versió.
 
-**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json` i `/tmp/ara/pressupost.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
+**3. La font encara diu el mateix.** Executa `npm run dades -- /tmp/ara` pel teu compte i compara `/tmp/ara/govern.json`, `/tmp/ara/parlament.json`, `/tmp/ara/ajuntaments.json`, `/tmp/ara/municipis.json`, `/tmp/ara/activitat.json`, `/tmp/ara/ajuts.json` i `/tmp/ara/pressupost.json` amb els publicats. Si la composició ha canviat des de l'última actualització, la diferència ha de ser la d'aquest canvi. Aquesta comprovació també detecta unes dades antigues tornades a publicar, que passarien les dues primeres.
 
 ### Què no demostra
 
@@ -175,10 +175,12 @@ El que la Generalitat publica de cada membre del Govern a més del càrrec i la 
 
 - **Font:** [El municipi en xifres](https://www.idescat.cat/emex/) de l'Idescat, per la seva [API EMEX](https://www.idescat.cat/dev/api/emex/). Les [condicions d'ús](https://www.idescat.cat/dev/api/#cdu) en permeten la reutilització si se'n cita la font i no s'alteren les dades.
 - **Contingut:** de cada municipi, els mateixos indicadors: la població, la població de nacionalitat estrangera, la nascuda a l'estranger, la que sap parlar català, l'atur registrat, la base imposable de l'IRPF per declarant, l'índex socioeconòmic territorial i la participació a les últimes eleccions municipals i al Parlament. De les taules de població també hi ha el total, perquè se'n pugui calcular el percentatge.
+- **Per què aquests:** són els que l'Idescat dona per a tots els municipis sobre els temes que es van demanar per a la fitxa de cada municipi: la població i el seu origen, la llengua, la feina, la renda i la participació electoral. Tots els municipis tenen els mateixos, i a la llista d'`INDICADORS` de [src/municipis.ts](../src/municipis.ts) no hi ha cap tria per municipi. La renda familiar disponible no hi és perquè l'Idescat només la dona per als municipis de més de 1.000 habitants.
+- **Forma:** cada indicador ha de dir l'any (quatre xifres), la taula i la data d'actualització. Si l'API els torna en un altre ordre, es desen en el d'`INDICADORS`.
 - **Data:** cada indicador té el seu any (`any`) i la data en què l'Idescat el va actualitzar (`actualitzat`), els mateixos per a tots els municipis. El coneixement del català per municipi és del cens del 2011, l'últim que el dona per a tots.
 - **Valors:** tal com els dona l'Idescat. Un valor que l'Idescat no dona per a un municipi és `null`, no un zero.
 - **Comprovacions:**
-  - Totes les crides han de tornar els mateixos municipis, i només municipis.
+  - Totes les crides han de tornar els mateixos municipis, en el mateix ordre, només municipis i cap de repetit.
   - Han de ser els mateixos municipis que els de Municat (`ajuntaments.json`), pel mateix codi.
   - Cada indicador ha de tenir un valor per municipi, i cada valor ha de ser un nombre o «_» (no hi és).
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
