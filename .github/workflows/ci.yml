@@ -97,6 +97,9 @@ jobs:
             echo "::notice::Les còpies publicades no serveixen per al codi d'aquesta pull request: es consulten les fonts."
             node ../src/dades.ts ../dades
           }
+          # Els resums no surten de les fonts sinó del job que publica (vegeu docs/resums.md): la web
+          # mostra els publicats.
+          cp ../publicades/resums.json ../dades/
       - run: npm test
       - run: npm run build
       # Cloudflare no publica cap fitxer de més de 25 MiB, i ho diu en desplegar, després de fusionar.

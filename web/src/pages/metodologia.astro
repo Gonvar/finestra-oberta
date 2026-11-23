@@ -4,6 +4,7 @@ import '../styles/subpagines.css';
 import { seccions, type Data } from '../dades/fonts.ts';
 import { dia } from '../dades/institucions.ts';
 import { REPO } from '../dades/portada.ts';
+import { nomDelModel, resums } from '../dades/resums.ts';
 
 const QUAN: Record<Data['tipus'], string> = {
   dades: 'Dades actualitzades el',
@@ -101,6 +102,26 @@ const QUAN: Record<Data['tipus'], string> = {
       </p>
     </section>
 
+    <section class="seccio prosa" aria-labelledby="resums">
+      <h2 class="titol-seccio" id="resums">Els resums de les sessions del Parlament</h2>
+      <p>
+        Les sessions del Ple tenen un resum en paraules senzilles. L'escriu {nomDelModel(resums.model)}, un model
+        d'IA, només amb els punts i els acords oficials de la sessió. Ningú no el retoca. Si un resum no compleix
+        les normes, no es publica.
+      </p>
+      <p>
+        Un model d'IA es pot equivocar. Si el resum i l'acord oficial no diuen el mateix, val l'acord. Si en
+        trobes un d'equivocat, <a href="/correccions/">avisa'ns</a>.
+      </p>
+      <p>Aquestes són les instruccions exactes que rep el model:</p>
+      <pre class="instruccions">{resums.instruccions}</pre>
+      <p>
+        Els resums, les instruccions i els paràmetres de cada petició són a <a
+          href={`${REPO}/blob/dades/resums.json`}>resums.json</a
+        >.
+      </p>
+    </section>
+
     <section class="seccio prosa" aria-labelledby="no-publiquem">
       <h2 class="titol-seccio" id="no-publiquem">Què no publiquem, i per què</h2>
       <dl class="paraules">
@@ -135,6 +156,20 @@ const QUAN: Record<Data['tipus'], string> = {
     margin-top: 1rem;
     max-width: 40rem;
     color: var(--ink-2);
+  }
+
+  .instruccions {
+    margin-top: 1rem;
+    max-width: 40rem;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    background: var(--bg-2);
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    color: var(--ink);
   }
 
   .prosa > h3 {
