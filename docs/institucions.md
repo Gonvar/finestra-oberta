@@ -285,7 +285,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
   - Les liquidacions repeteixen el contracte. El 23/11/2026 se'n van comparar tres de l'any amb les inscripcions del mateix expedient, organisme i lot, i cadascuna tenia una inscripció de menor amb el mateix import i la mateixa data.
   - Les pròrrogues i les modificacions porten l'import de la pròrroga o de la modificació, no el del contracte.
 - **Imports:** els d'adjudicació, en euros, tal com els dona la font. La font no diu si porten IVA. El 23/11/2026, totes les inscripcions d'adjudicació i de menors de l'any tenien import, cap no era sense data d'adjudicació i cap data no tenia hora.
-- **Sumes:** les fa l'API de la font, amb `count(*)` i `sum()`. El codi no suma res.
+- **Sumes:** les fa l'API de la font, amb `count(*)` i `sum()`. El codi no suma res. Es demana una consulta per àmbit, perquè una de sola per a tot l'any passa del temps límit; cada grup surt sencer d'una sola consulta.
 - **Dates posteriors:** la font té inscripcions amb una data d'adjudicació posterior a la de les dades (més de 2.000 el novembre del 2026, algunes del 2029). No hi són, i es compten a `adjudicacions_posteriors`. Les que no tenen data es compten a `adjudicacions_sense_data`.
 - **Ordre i noms:** per àmbit, codi de l'organisme (com a text), nom i procediment. Els noms són tal com els escriu la font. Si un organisme canvia de nom o d'àmbit durant l'any, surt en una fila per a cada nom. Les adjudicacions sense procediment tenen `procediment` a `null` i van al final del seu organisme.
 - **Comprovacions:**

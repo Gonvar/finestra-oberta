@@ -49,39 +49,18 @@ export async function construirContractes(fetchImpl: Fetch) {
   const endema = new Date(`${fins}T00:00:00Z`);
   endema.setUTCDate(endema.getUTCDate() + 1);
   const limit = endema.toISOString().slice(0, 10);
-  // Les dates surten d'un nombre i `SITUACIONS` és fix: cap valor no pot portar una cometa.
+  // Les dates surten d'un nombre i `SITUACIONS` és fix: cap d'aquests valors no pot portar una cometa.
   const situacions = `situaci_contractual in (${SITUACIONS.map((s) => `'${s}'`).join(', ')})`;
   const periode = `data_adjudicacio >= '${any}-01-01' and data_adjudicacio < '${limit}'`;
-
-  // Agrupar també pel nom i per l'àmbit fa que, si un organisme els canvia durant l'any, surti en
-  // dues files amb el mateix codi, cadascuna amb el nom que dona la font.
-  const grups = await getJson<Fila[]>(
-    fetchImpl,
-    consulta({
-      $select: [
-        'subjecte_ambit',
-        'id_agrupacio_organisme',
-        'agrupacio_organisme',
-        'procediment_adjudicacio',
-        'count(*) as inscripcions',
-        'count(import_adjudicacio) as amb_import',
-        'sum(import_adjudicacio) as import',
-      ].join(', '),
-      $where: `${situacions} and ${periode}`,
-      $group:
-        'subjecte_ambit, id_agrupacio_organisme, agrupacio_organisme, procediment_adjudicacio',
-    }),
-  );
-  if (grups.length === LIMIT) throw new SourceError(`El conjunt ${REGISTRE} no cap en una pàgina.`);
 
   // Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en
   // donaria només una part sense cap error.
   const perSituacio = await getJson<Fila[]>(
     fetchImpl,
     consulta({
-      $select: 'situaci_contractual, count(*) as inscripcions',
+      $select: 'situaci_contractual, subjecte_ambit, count(*) as inscripcions',
       $where: periode,
-      $group: 'situaci_contractual',
+      $group: 'situaci_contractual, subjecte_ambit',
     }),
   );
   if (fins.slice(5) >= PRIMERS_DIES)
@@ -90,6 +69,41 @@ export async function construirContractes(fetchImpl: Fetch) {
         throw new SourceError(
           `El registre de contractes no té cap inscripció «${situacio}» el ${any}.`,
         );
+  const ambits = [
+    ...new Set(
+      perSituacio
+        .filter((f) => SITUACIONS.includes(obligatori(f, 'situaci_contractual', REGISTRE)))
+        .map((f) => obligatori(f, 'subjecte_ambit', REGISTRE)),
+    ),
+  ];
+
+  // Una sola consulta per a tot l'any passa del temps límit de la font; partida per àmbits, cada
+  // grup surt sencer en una sola consulta i el codi no ha de sumar res. Agrupar també pel nom fa
+  // que, si un organisme el canvia durant l'any, surti en dues files amb el mateix codi.
+  const grups: Fila[] = [];
+  for (const ambit of ambits) {
+    const pagina = await getJson<Fila[]>(
+      fetchImpl,
+      consulta({
+        $select: [
+          'subjecte_ambit',
+          'id_agrupacio_organisme',
+          'agrupacio_organisme',
+          'procediment_adjudicacio',
+          'count(*) as inscripcions',
+          'count(import_adjudicacio) as amb_import',
+          'sum(import_adjudicacio) as import',
+        ].join(', '),
+        // SoQL escriu una cometa dins d'un text doblant-la: «l''Administració».
+        $where: `${situacions} and ${periode} and subjecte_ambit = '${ambit.replaceAll("'", "''")}'`,
+        $group:
+          'subjecte_ambit, id_agrupacio_organisme, agrupacio_organisme, procediment_adjudicacio',
+      }),
+    );
+    if (pagina.length === LIMIT)
+      throw new SourceError(`L'àmbit ${ambit} de ${REGISTRE} no cap en una pàgina.`);
+    grups.push(...pagina);
+  }
 
   // La font té adjudicacions amb una data posterior a la de les dades, o sense data. No es poden
   // posar a cap dia de l'any, i es compten a part perquè no desapareguin sense dir-ho.

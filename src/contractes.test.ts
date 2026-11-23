@@ -41,9 +41,13 @@ const GRUPS = [
 ];
 
 const SITUACIONS = [
-  { situaci_contractual: 'adjudicació', inscripcions: '5' },
-  { situaci_contractual: 'menor', inscripcions: '9' },
-  { situaci_contractual: 'liquidació', inscripcions: '4' },
+  { situaci_contractual: 'adjudicació', subjecte_ambit: 'Universitats', inscripcions: '5' },
+  {
+    situaci_contractual: 'menor',
+    subjecte_ambit: "Entitats de l'Administració Local",
+    inscripcions: '9',
+  },
+  { situaci_contractual: 'liquidació', subjecte_ambit: 'Altres', inscripcions: '4' },
 ];
 
 function font({
@@ -59,8 +63,16 @@ function font({
     if (url.pathname === `/api/views/${REGISTRE}.json`)
       return Response.json({ ...META, rowsUpdatedAt });
     const group = url.searchParams.get('$group');
-    if (group === 'situaci_contractual') return Response.json(situacions);
-    if (group !== null) return Response.json(grups);
+    if (group === 'situaci_contractual, subjecte_ambit') return Response.json(situacions);
+    if (group !== null) {
+      // Com la font, només torna els grups de l'àmbit que es demana.
+      const ambit = /subjecte_ambit = '(.*)'$/.exec(url.searchParams.get('$where')!)![1]!;
+      return Response.json(
+        (grups as { subjecte_ambit: string }[]).filter(
+          (g) => g.subjecte_ambit === ambit.replaceAll("''", "'"),
+        ),
+      );
+    }
     if (url.searchParams.get('$where')!.endsWith('IS NULL'))
       return Response.json([{ inscripcions: '0' }]);
     return Response.json(posteriors);
@@ -71,11 +83,16 @@ function font({
 test("publica les adjudicacions d'aquest any per organisme i procediment, fins al dia de les dades", async () => {
   const { fetchImpl, urls } = font();
   const contractes = await construirContractes(fetchImpl);
-  const [, grups, , posteriors] = urls;
-  // Només adjudicacions i menors, de l'1 de gener a l'última actualització de la font.
+  const [, , universitats, local, posteriors] = urls;
+  // Només adjudicacions i menors, de l'1 de gener a l'última actualització de la font, una consulta
+  // per àmbit amb adjudicacions; l'àmbit que només té liquidacions no es demana.
   assert.equal(
-    grups!.searchParams.get('$where'),
-    "situaci_contractual in ('adjudicació', 'menor') and data_adjudicacio >= '2026-01-01' and data_adjudicacio < '2026-11-17'",
+    universitats!.searchParams.get('$where'),
+    "situaci_contractual in ('adjudicació', 'menor') and data_adjudicacio >= '2026-01-01' and data_adjudicacio < '2026-11-17' and subjecte_ambit = 'Universitats'",
+  );
+  assert.match(
+    local!.searchParams.get('$where')!,
+    /subjecte_ambit = 'Entitats de l''Administració Local'$/,
   );
   assert.equal(
     posteriors!.searchParams.get('$where'),
