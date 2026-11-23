@@ -25,6 +25,12 @@ Un servidor [MCP](https://modelcontextprotocol.io) deixa que un assistent (Claud
 | [`barcelona`](docs/barcelona.md)         | [Open Data BCN](https://opendata-ajuntament.barcelona.cat), de l'Ajuntament de Barcelona                                     | Barcelona per barri i districte: padró, qualitat de l'aire, soroll, equipaments, accidents…           |
 | [`transport`](docs/transport.md)         | Les dades obertes de [Renfe](https://data.renfe.com), [FGC](https://dadesobertes.fgc.cat) i [TMB](https://developer.tmb.cat) | Retards de Rodalies i d'FGC ara mateix, avisos, propers trens i busos, estacions i viatgers           |
 
+Les dades que publica Finestra Oberta (el Govern, el Parlament, els ajuntaments, l'agenda, els ajuts, el pressupost i els contractes) es consulten amb un servidor remot, sense instal·lar res: [`finestra-oberta`](docs/dades-publicades.md), a `https://finestraoberta.cat/mcp`. Té les últimes dades que s'han publicat a la web.
+
+```sh
+claude mcp add --transport http finestra-oberta https://finestraoberta.cat/mcp
+```
+
 Exemples de preguntes:
 
 - Quantes dones vivien a Osona l'1 de gener de 2025?

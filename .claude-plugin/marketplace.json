@@ -1,0 +1,11 @@
+{
+  "name": "finestra-oberta",
+  "owner": { "name": "Finestra Oberta" },
+  "plugins": [
+    {
+      "name": "finestra-oberta",
+      "source": "./plugin",
+      "description": "Les dades públiques de Catalunya que publica Finestra Oberta, amb la font oficial i la data de cada dada."
+    }
+  ]
+}
