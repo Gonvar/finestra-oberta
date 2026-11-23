@@ -80,9 +80,9 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
             {s.titol}
           </h2>
           {/* Sense aquesta nota, «Totes dues» sembla que només mostri el Parlament. */}
-          {s.id === 'previst' && (
+          {s.id === 'previst' && !s.dies.some((d) => d.actes.some((a) => a.institucio === 'gov')) && (
             <p class="nota" data-nota-govern>
-              El Govern només publica els seus actes quan ja s’han fet. Són a «Què han fet».
+              Les dades del Govern només tenen els actes que ja s’han fet. Són a «Què han fet».
             </p>
           )}
           {s.dies.length === 0 ? (
@@ -159,7 +159,9 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
       if (es) visibles++;
     }
     for (const d of dies) d.hidden = !d.querySelector('.acte:not([hidden])');
-    for (const n of notes) n.hidden = institucio === 'par';
+    // La nota només té sentit si a «Què han fet» hi ha algun acte del Govern que es vegi.
+    const govern = actes.some((a) => a.institucio === 'gov' && !a.el.hidden);
+    for (const n of notes) n.hidden = !govern;
     for (const s of seccions)
       s.hidden = !s.querySelector('[data-dia]:not([hidden]), [data-nota-govern]:not([hidden])');
     // Un missatge que canvia de text, perquè el lector de pantalla l'anunciï.
