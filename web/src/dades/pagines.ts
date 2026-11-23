@@ -112,6 +112,15 @@ export const pagines: Pagina[] = [
     },
   },
   {
+    ruta: '/correccions/',
+    titol: 'Avisa d’un error · Finestra Oberta',
+    descripcio: 'Com avisar d’una dada equivocada i què en fem.',
+    previsualitzacio: {
+      titol: 'Avisa d’un error',
+      frase: 'Si una dada és equivocada, és antiga o no s’entén, digues-nos-ho.',
+    },
+  },
+  {
     ruta: '/municipis/',
     titol: 'Municipis · Finestra Oberta',
     descripcio: 'Qui hi viu, qui governa l’ajuntament i com s’hi va votar, municipi a municipi.',

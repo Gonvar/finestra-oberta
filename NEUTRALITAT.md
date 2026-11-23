@@ -90,4 +90,4 @@ El model és un servei, no una font. L'únic fitxer de `src/` que el pot cridar 
 
 ## Si veus un biaix
 
-Obre una [issue](https://github.com/Gonvar/finestra-oberta/issues) amb l'enllaç a la pàgina o a la resposta, i a la font oficial que diu una altra cosa. Es tracta com un error.
+Obre un avís amb la plantilla [«Dada o text incorrecte»](https://github.com/Gonvar/finestra-oberta/issues/new?template=1-dada-incorrecta.yml). Hi has de posar l'enllaç a la pàgina o a la resposta i, si n'hi ha, a la font oficial que diu una altra cosa. Es tracta com un error.
