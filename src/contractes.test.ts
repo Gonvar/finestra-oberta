@@ -83,7 +83,12 @@ function font({
 test("publica les adjudicacions d'aquest any per organisme i procediment, fins al dia de les dades", async () => {
   const { fetchImpl, urls } = font();
   const contractes = await construirContractes(fetchImpl);
-  const [, , universitats, local, posteriors] = urls;
+  const [, perSituacio, universitats, local, posteriors] = urls;
+  // Sense el filtre de situació, la font triga més que el temps límit a agrupar tot l'any.
+  assert.equal(
+    perSituacio!.searchParams.get('$where'),
+    "situaci_contractual in ('adjudicació', 'menor') and data_adjudicacio >= '2026-01-01' and data_adjudicacio < '2026-11-17'",
+  );
   // Només adjudicacions i menors, de l'1 de gener a l'última actualització de la font, una consulta
   // per àmbit amb adjudicacions; l'àmbit que només té liquidacions no es demana.
   assert.equal(
