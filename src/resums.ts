@@ -19,7 +19,8 @@ const TEMPS_LIMIT_MS = 120_000;
 /** La resta de la petició al model. Es publica a resums.json i forma part de l'empremta. */
 export const PARAMETRES = {
   anthropic_version: VERSIO_API,
-  max_tokens: 4096,
+  // El raonament del model gasta part del límit: amb 4.096, les sessions amb més punts es tallaven.
+  max_tokens: 16_000,
   output_config: { effort: 'low' },
 } as const;
 
