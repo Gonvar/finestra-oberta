@@ -26,8 +26,8 @@ jobs:
           TITOL: ${{ github.event.pull_request.title }}
           DESCRIPCIO: ${{ github.event.pull_request.body }}
         run: |
-          patro='claude\.ai/(code/)?(session_|project)|^Claude-Session:|claude-projects-attribution'
-          if printf '%s\n%s\n' "$TITOL" "$DESCRIPCIO" | grep -Eq -- "$patro"; then
-            echo "::error::El títol o la descripció enllacen una sessió de Claude Code o un projecte de Claude. Treu-ne la línia: vegeu CONTRIBUTING.md."
+          patro='claude\.ai/(code/)?(session_|project/)|^[[:space:]>]*Claude-Session:|claude-projects-attribution'
+          if printf '%s\n%s\n' "$TITOL" "$DESCRIPCIO" | grep -Eiq -- "$patro"; then
+            echo "::error::El títol o la descripció enllacen una sessió de Claude Code o un projecte de Claude. Treu-ne la línia. Vegeu CONTRIBUTING.md."
             exit 1
           fi
