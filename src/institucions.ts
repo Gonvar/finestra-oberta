@@ -6,15 +6,18 @@ import { readFile } from 'node:fs/promises';
 import { construirAgenda } from './agenda.ts';
 import { construirAjuntaments } from './ajuntaments.ts';
 import { construirEleccionsMunicipals } from './eleccions.ts';
+import { construirDiputats } from './diputats.ts';
 import { construirMapa } from './mapa.ts';
 import { construirMunicipis } from './municipis.ts';
 import {
   comprovaCodificacio,
   dia,
+  euros,
   fold,
   getJson,
   getText,
   metadades,
+  pausa,
   SOCRATA,
   SourceError,
   text,
@@ -135,8 +138,6 @@ export function llegirFitxa(html: string, url: string): Fitxa {
   };
 }
 
-export const pausa = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export const POSICIONS_ESCONS = `${PARLAMENT}/js/mapa-escons.js`;
 
 /**
@@ -158,7 +159,10 @@ export function llegirPosicions(js: string) {
   return posicions;
 }
 
-/** La composició del Parlament: el mapa d'escons i, de cada persona, la seva fitxa. */
+/**
+ * La composició del Parlament: el mapa d'escons i, de cada persona, la seva fitxa. Les fitxes es
+ * tornen tal com s'han llegit perquè construirDiputats no les hagi de tornar a demanar.
+ */
 export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs = 300) {
   const escons = llegirMapa(await getText(fetchImpl, MAPA_ESCONS));
   const posicions = llegirPosicions(await getText(fetchImpl, POSICIONS_ESCONS));
@@ -172,10 +176,11 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
     const url = fitxaUrl(esco.codi);
     // D'una en una i amb pausa: són 135 pàgines del web del Parlament, no una API.
     if (diputats.length) await pausa(pausaMs);
-    const fitxa = llegirFitxa(await getText(fetchImpl, url), url);
+    const html = await getText(fetchImpl, url);
+    const fitxa = llegirFitxa(html, url);
     if (fitxa.grup !== undefined && fitxa.grup !== esco.grup && fitxa.grup !== esco.subgrup)
       throw new SourceError(`La fitxa ${url} diu ${fitxa.grup}, i el mapa, ${esco.grup}.`);
-    diputats.push({ esco, fitxa, url });
+    diputats.push({ esco, fitxa, url, html });
   }
 
   // Si cap fitxa no dona foto, el més probable és que el web n'hagi canviat la forma. Una foto
@@ -215,7 +220,7 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
     grups.set(esco.grup, grup);
   }
 
-  return {
+  const parlament = {
     font: 'Parlament de Catalunya: distribució d’escons i fitxes de les persones diputades',
     url: MAPA_ESCONS,
     data_consulta: avui,
@@ -245,6 +250,15 @@ export async function construirParlament(fetchImpl: Fetch, avui: string, pausaMs
       ...(fitxa.foto && { foto: fitxa.foto }),
     })),
   };
+  return {
+    parlament,
+    fitxes: diputats.map(({ esco, fitxa, url, html }) => ({
+      codi: esco.codi,
+      nom: fitxa.nom,
+      url,
+      html,
+    })),
+  };
 }
 
 type AltCarrec = {
@@ -254,13 +268,6 @@ type AltCarrec = {
   departament: string;
   retribucio_anual_prevista: string;
 };
-
-/** «146.635,82 €» en euros. Una altra forma és un error: no es pot endevinar on van els decimals. */
-export function euros(text: string) {
-  const m = text.match(/^(\d{1,3}(?:\.\d{3})*),(\d{2}) €$/);
-  if (m === null) throw new SourceError(`Import amb una forma inesperada: ${text}.`);
-  return Number(`${m[1]!.replaceAll('.', '')}.${m[2]}`);
-}
 
 const lloc = (fila: AltCarrec) => fila.denominacio_lloc.replace(/\s+/g, ' ').trim();
 
@@ -713,7 +720,8 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
     govern.president,
     ...govern.consellers,
   ]);
-  const parlament = await construirParlament(fetchImpl, avui, pausaMs);
+  const { parlament, fitxes } = await construirParlament(fetchImpl, avui, pausaMs);
+  const diputats = await construirDiputats(fetchImpl, fitxes, avui, pausaMs);
   const agenda = await construirAgenda(fetchImpl, avui, pausaMs);
   const ajuntaments = await construirAjuntaments(fetchImpl);
   const codis = new Set(ajuntaments.municipis.map((m) => m.codi));
@@ -721,6 +729,7 @@ export async function construirInstitucions(fetchImpl: Fetch, avui: string, paus
     'govern.json': govern,
     'transparencia.json': transparencia,
     'parlament.json': parlament,
+    'diputats.json': diputats,
     'agenda.json': agenda,
     'ajuntaments.json': ajuntaments,
     'municipis.json': await construirMunicipis(fetchImpl, codis),

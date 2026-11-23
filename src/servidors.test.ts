@@ -82,15 +82,18 @@ test('cada servidor de src/ és al registre, i per això la CI el comprova', asy
 for (const servidor of servidors) {
   test(`${servidor.nom}: la font és oficial i en diu la llicència`, async () => {
     const dominis = await llegeixDominis();
-    assert.ok(
-      dominis.includes(servidor.domini),
-      `${servidor.domini} no és a la taula de fonts oficials de NEUTRALITAT.md.`,
-    );
-    if (servidor.llicencia !== 'per conjunt')
+    assert.ok(servidor.fonts.length > 0, 'Cal almenys una font.');
+    for (const font of servidor.fonts) {
       assert.ok(
-        dominis.some((d) => esDelDomini(servidor.llicencia, d)),
-        `La llicència (${servidor.llicencia}) ha de ser una pàgina d'un domini de NEUTRALITAT.md.`,
+        dominis.includes(font.domini),
+        `${font.domini} no és a la taula de fonts oficials de NEUTRALITAT.md.`,
       );
+      if (font.llicencia !== 'per conjunt')
+        assert.ok(
+          dominis.some((d) => esDelDomini(font.llicencia, d)),
+          `La llicència (${font.llicencia}) ha de ser una pàgina d'un domini de NEUTRALITAT.md.`,
+        );
+    }
   });
 
   test(`${servidor.nom}: té proves, documentació, ordre i lloc al README`, async () => {
@@ -98,17 +101,18 @@ for (const servidor of servidors) {
     assert.ok(await existeix(servidor.proves), `Falta ${servidor.proves}.`);
     assert.match(servidor.docs, /^docs\/[a-z-]+\.md$/);
     const docs = await llegeix(servidor.docs);
-    if (servidor.llicencia === 'per conjunt')
-      assert.match(
-        docs,
-        /llicència/,
-        `${servidor.docs} ha d'explicar d'on surt la llicència de cada conjunt.`,
-      );
-    else
-      assert.ok(
-        docs.includes(servidor.llicencia),
-        `${servidor.docs} ha d'enllaçar la llicència, ${servidor.llicencia}.`,
-      );
+    for (const { llicencia } of servidor.fonts)
+      if (llicencia === 'per conjunt')
+        assert.match(
+          docs,
+          /llicència/i,
+          `${servidor.docs} ha d'explicar d'on surt la llicència de cada conjunt.`,
+        );
+      else
+        assert.ok(
+          docs.includes(llicencia),
+          `${servidor.docs} ha d'enllaçar la llicència, ${llicencia}.`,
+        );
     const { scripts } = JSON.parse(await llegeix('package.json'));
     assert.equal(scripts[servidor.nom], `node src/index.ts ${servidor.nom}`);
     assert.ok(

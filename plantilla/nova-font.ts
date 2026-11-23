@@ -73,9 +73,13 @@ const registre = await llegeix('src/servidors.ts');
 if (registre.includes(`nom: '${nom}'`)) atura(`src/servidors.ts ja té la font «${nom}».`);
 const entrada = `  {
     nom: '${nom}',
-    organisme: ${JSON.stringify(organisme)},
-    domini: '${domini}',
-    llicencia: '${valors.__LLICENCIA__}',
+    fonts: [
+      {
+        organisme: ${JSON.stringify(organisme)},
+        domini: '${domini}',
+        llicencia: '${valors.__LLICENCIA__}',
+      },
+    ],
     docs: 'docs/${nom}.md',
     proves: 'src/${nom}.test.ts',
     crea: ${funcio},
