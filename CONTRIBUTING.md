@@ -114,6 +114,7 @@ Aquest projecte publica dades públiques. Una dada falsa que sembla real és des
 - Les pull requests de Dependabot són l'excepció: el títol i l'àmbit (`deps`) els genera Dependabot, en anglès («bump … from … to …»).
 - Un objectiu per pull request. Les pull requests s'integren amb _squash_, i el títol de la pull request és el del commit final.
 - Omple la [plantilla](.github/pull_request_template.md): què canvia, com ho has comprovat i si t'ha ajudat un agent d'IA.
+- Cap enllaç a una sessió de Claude Code (`claude.ai/code/session_…` o la línia `Claude-Session:`) ni a un projecte de Claude (`claude.ai/project/…`, `claude.ai/code/project/…`) als commits, a les pull requests, a les issues ni als comentaris. El repositori és públic i aquests enllaços porten a converses privades. L'ajuda d'un agent es diu a la secció «Ajuda d'un agent» de la plantilla, sense enllaços. La CI rebutja una pull request que en tingui al títol o a la descripció.
 - No diguis que has provat una cosa que no has provat. Les proves amb dades sintètiques no substitueixen una prova contra l'API real.
 - Abans de la revisió, qui manté el projecte passa `/code-review` de Claude Code a cada pull request nova, en una sessió independent i mai en la que ha escrit el canvi, també quan la pull request l'obre una sessió de Claude. Se'n revisen les troballes i se'n corregeixen les que siguin correctes. Cada revisió, de persona o d'agent, fa les comprovacions de [NEUTRALITAT.md](NEUTRALITAT.md) §4 i, si toca la web, les de [DESIGN.md](DESIGN.md) §1.1.
 
