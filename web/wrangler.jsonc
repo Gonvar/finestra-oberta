@@ -8,6 +8,9 @@
   "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": ["/mcp"] },
   "routes": [{ "pattern": "finestraoberta.cat", "custom_domain": true }],
   "observability": { "enabled": true },
+  // La foto del transport, als minuts 7 i 37 de cada hora (UTC): el Worker llança el workflow
+  // transport.yml. Necessita el secret GITHUB_TOKEN (wrangler secret put GITHUB_TOKEN).
+  "triggers": { "crons": ["7,37 * * * *"] },
   // Workers Builds publica cada branca i cada pull request com a previsualització amb `wrangler preview`.
   "previews": {},
 }

@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { cataleg, trossos } from './mcp/dades.ts';
-import worker from './worker.ts';
+import worker, { llancaFotoTransport } from './worker.ts';
 
 const procedencia = { data_consulta: '2026-11-23', fitxers: { 'govern.json': 'a'.repeat(64) } };
 const govern = {
@@ -25,6 +25,7 @@ const fitxers: Record<string, unknown> = {
 const demanats: string[] = [];
 let falla = false;
 const env = {
+  GITHUB_TOKEN: 'token-de-prova',
   ASSETS: {
     fetch: async (request: Request) => {
       const { pathname } = new URL(request.url);
@@ -116,4 +117,31 @@ test('la resta de la web no passa pel servidor MCP', async () => {
     env,
   );
   assert.equal((await resposta.json()).font, 'Relació d’alts càrrecs');
+});
+
+test('el cron llança el workflow del transport a main, amb el token', async () => {
+  const crides: { url: string; init: RequestInit }[] = [];
+  await llancaFotoTransport(async (url, init) => {
+    crides.push({ url: String(url), init: init as RequestInit });
+    return new Response(null, { status: 204 });
+  }, 'token-de-prova');
+  assert.equal(crides.length, 1);
+  const [{ url, init }] = crides;
+  assert.equal(
+    url,
+    'https://api.github.com/repos/Gonvar/finestra-oberta/actions/workflows/transport.yml/dispatches',
+  );
+  assert.equal(init.method, 'POST');
+  assert.equal(new Headers(init.headers).get('Authorization'), 'Bearer token-de-prova');
+  assert.deepEqual(JSON.parse(String(init.body)), { ref: 'main' });
+});
+
+test('si GitHub no accepta la crida, el cron falla i no ho amaga', async () => {
+  await assert.rejects(
+    llancaFotoTransport(
+      async () => new Response('{"message":"Bad credentials"}', { status: 401 }),
+      'token-dolent',
+    ),
+    /401 .*Bad credentials/,
+  );
 });
