@@ -3,6 +3,7 @@
 import agenda from '../../../dades/agenda.json' with { type: 'json' };
 import { activitat } from './activitat.ts';
 import { contractes } from './contractes.ts';
+import { diputats } from './diputats.ts';
 import { govern, parlament, transparencia } from './institucions.ts';
 import { ajuntaments, eleccions, indicadors, mapa } from './municipis.ts';
 import { pressupost } from './pressupost.ts';
@@ -71,6 +72,12 @@ export const seccions: Seccio[] = [
         nom: parlament.font,
         url: parlament.url,
         data: { tipus: 'consulta', dia: parlament.data_consulta },
+      },
+      {
+        que: 'El que diu la fitxa de cada persona diputada: on treballa, què ha cobrat, què declara, la biografia i l’agenda',
+        nom: diputats.font,
+        url: parlament.url,
+        data: { tipus: 'consulta', dia: diputats.data_consulta },
       },
     ],
   },
