@@ -231,18 +231,19 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 ## `contractes.json`
 
 - **Font:** les [inscripcions al Registre públic de contractes](https://analisi.transparenciacatalunya.cat/d/hb6v-jcbf) (`hb6v-jcbf`), del Departament d'Economia i Finances, a Dades obertes de Catalunya, amb la [llicència de dades obertes de la Generalitat](https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/). Hi ha els contractes de la Generalitat i el seu sector públic, dels ens locals i de les universitats.
-- **Període:** les adjudicacions des de l'1 de gener fins al dia de l'última actualització de la font (`data_dades`), i no fins al dia de la consulta. Així el fitxer només canvia quan canvia la font, i els primers dies de gener encara és el de l'any anterior.
+- **Període:** les adjudicacions des de l'1 de gener fins al dia de l'última actualització de la font a Catalunya (`data_dades`), i no fins al dia de la consulta. Així el fitxer només canvia quan canvia la font, i els primers dies de gener encara és el de l'any anterior.
 - **Contingut:** per àmbit, departament o ens (`agrupacio_organisme`) i procediment d'adjudicació, quantes inscripcions d'adjudicació hi ha i per quin import. Cada inscripció és un contracte o un lot d'un contracte. No es publica cap contracte ni cap adjudicatari un per un.
 - **Què es compta:** només les inscripcions d'adjudicació i les de contractes menors.
   - Les liquidacions repeteixen el contracte. El 23/11/2026 se'n van comparar tres de l'any amb les inscripcions del mateix expedient, organisme i lot, i cadascuna tenia una inscripció de menor amb el mateix import i la mateixa data.
   - Les pròrrogues i les modificacions porten l'import de la pròrroga o de la modificació, no el del contracte.
-- **Imports:** els d'adjudicació, en euros, tal com els dona la font. La font no diu si porten IVA. El 23/11/2026, totes les inscripcions de l'any tenien import i data d'adjudicació, i cap data no tenia hora.
+- **Imports:** els d'adjudicació, en euros, tal com els dona la font. La font no diu si porten IVA. El 23/11/2026, totes les inscripcions d'adjudicació i de menors de l'any tenien import, cap no era sense data d'adjudicació i cap data no tenia hora.
 - **Sumes:** les fa l'API de la font, amb `count(*)` i `sum()`. El codi no suma res.
-- **Dates posteriors:** la font té inscripcions amb una data d'adjudicació posterior a la de les dades (més de 2.000 el novembre del 2026, algunes del 2029). No hi són, i es compten a `adjudicacions_posteriors`.
-- **Ordre i noms:** per àmbit, codi de l'organisme (com a text) i procediment. Els noms són tal com els escriu la font. Si un organisme canvia de nom o d'àmbit durant l'any, surt en una fila per a cada nom. Les adjudicacions sense procediment tenen `procediment` a `null` i van al final del seu organisme.
+- **Dates posteriors:** la font té inscripcions amb una data d'adjudicació posterior a la de les dades (més de 2.000 el novembre del 2026, algunes del 2029). No hi són, i es compten a `adjudicacions_posteriors`. Les que no tenen data es compten a `adjudicacions_sense_data`.
+- **Ordre i noms:** per àmbit, codi de l'organisme (com a text), nom i procediment. Els noms són tal com els escriu la font. Si un organisme canvia de nom o d'àmbit durant l'any, surt en una fila per a cada nom. Les adjudicacions sense procediment tenen `procediment` a `null` i van al final del seu organisme.
 - **Comprovacions:**
-  - Cada fila ha de tenir l'àmbit, el codi i el nom de l'organisme, un recompte que sigui un nombre i un import.
-  - La consulta ha de cabre en una pàgina. Pot no tornar cap fila si la font s'ha actualitzat l'1 de gener.
+  - Cada fila ha de tenir l'àmbit, el codi i el nom de l'organisme, un recompte que sigui un nombre i un import, i totes les inscripcions del grup han de tenir import: `sum()` se salta les que no en tenen.
+  - A partir del 15 de gener, hi ha d'haver inscripcions d'adjudicació i de menors de l'any. Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en donaria només una part.
+  - La consulta ha de cabre en una pàgina.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.
 
 ## Pendent
