@@ -318,6 +318,7 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 - **Dates posteriors:** la font té inscripcions amb una data d'adjudicació posterior a la de les dades (més de 2.000 el novembre del 2026, algunes del 2029). No hi són, i es compten a `adjudicacions_posteriors`. Les que no tenen data es compten a `adjudicacions_sense_data`.
 - **Ordre i noms:** per àmbit, codi de l'organisme (com a text), nom i procediment. Els noms són tal com els escriu la font. Si un organisme canvia de nom o d'àmbit durant l'any, surt en una fila per a cada nom. Les adjudicacions sense procediment tenen `procediment` a `null` i van al final del seu organisme.
 - **Comprovacions:**
+  - Cap grup no pot sortir dues vegades: voldria dir que les pàgines es trepitgen.
   - Cada fila ha de tenir l'àmbit, el codi i el nom de l'organisme, un recompte que sigui un nombre i un import, i totes les inscripcions del grup han de tenir import: `sum()` se salta les que no en tenen.
   - A partir del 15 de gener, hi ha d'haver inscripcions d'adjudicació i de menors de l'any. Si la font canviés com escriu una situació, la consulta no en trobaria cap i el fitxer en donaria només una part.
   - Cada inscripció de l'any, també les liquidacions, ha de tenir la situació.

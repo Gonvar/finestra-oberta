@@ -223,9 +223,14 @@ test('publica qui guanya a cada organisme, amb les mateixes inscripcions que per
   );
   assert.equal(fitxer.data_dades, fitxers['contractes.json'].data_dades);
   assert.equal(fitxer.adjudicacions_posteriors, 7);
-  // Si les dues agrupacions no sumen el mateix, la font ha canviat entre consultes.
+  // Un grup que surt dues vegades vol dir que les pàgines es trepitgen.
   const repetit = font({ adjudicataris: [adjudicataris[0], ...adjudicataris] });
-  await assert.rejects(construirContractes(repetit.fetchImpl), /repeteix el grup/);
+  await assert.rejects(construirContractes(repetit.fetchImpl), (e: Error) => {
+    assert.match(e.message, /repeteix un grup de l'organisme/);
+    assert.doesNotMatch(e.message, /Empresa/);
+    return true;
+  });
+  // Si les dues agrupacions no sumen el mateix, la font ha canviat entre consultes.
   const menys = font({ adjudicataris: adjudicataris.slice(1) });
   await assert.rejects(
     construirContractes(menys.fetchImpl),

@@ -110,7 +110,10 @@ export async function construirContractes(fetchImpl: Fetch) {
         for (const f of pagina) {
           const k = JSON.stringify(clau.split(', ').map((c) => f[c]));
           if (vistes.has(k))
-            throw new SourceError(`El registre de contractes repeteix el grup ${k}.`);
+            // Sense el nom de l'adjudicatari: pot ser una persona, i els errors van als registres.
+            throw new SourceError(
+              `El registre de contractes repeteix un grup de l'organisme ${String(f.id_agrupacio_organisme)} (${ambit}) a partir de la fila ${delAmbit.length}.`,
+            );
           vistes.add(k);
         }
         delAmbit.push(...pagina);
