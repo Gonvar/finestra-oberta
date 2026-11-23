@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { SourceError } from '../../../src/comun.ts';
 import {
+  signats,
   cataleg,
   consulta,
   creaDades,
@@ -36,8 +37,10 @@ const agenda = {
   parlament: { font: 'Agenda parlamentària', data_consulta: '2026-11-23' },
 };
 const procedencia = {
-  data_consulta: '2026-11-23',
-  fitxers: { 'govern.json': 'a'.repeat(64), 'agenda.json': 'b'.repeat(64) },
+  grups: {
+    govern: { data_consulta: '2026-11-23', fitxers: { 'govern.json': 'a'.repeat(64) } },
+    agenda: { data_consulta: '2026-11-22', fitxers: { 'agenda.json': 'b'.repeat(64) } },
+  },
 };
 const publicats: Record<string, unknown> = { 'govern.json': govern, 'agenda.json': agenda };
 
@@ -46,9 +49,9 @@ function web(procedencia: Procedencia, publicats: Record<string, unknown>) {
   const fitxers: Record<string, unknown> = {
     'conjunts.json': cataleg(procedencia, (fitxer) => publicats[fitxer] as Valor),
   };
-  for (const [fitxer, sha256] of Object.entries(procedencia.fitxers))
+  for (const { fitxer, sha256, data_consulta } of signats(procedencia))
     for (const [cami, tros] of Object.entries(
-      trossos(fitxer.replace(/\.json$/, ''), sha256, publicats[fitxer] as Valor, procedencia),
+      trossos(fitxer.replace(/\.json$/, ''), sha256, publicats[fitxer] as Valor, data_consulta),
     ))
       fitxers[`conjunts/${cami}`] = tros;
   return fitxers;
@@ -66,11 +69,14 @@ function fals(fitxers = web(procedencia, publicats)) {
 
 test('cada conjunt diu la font, la data, la nota i com verificar-lo, tal com els escriu el fitxer', async () => {
   const { dades } = fals();
-  const { data_consulta, conjunts } = await dades.llistar();
-  assert.equal(data_consulta, '2026-11-23');
+  const { conjunts } = await dades.llistar();
+  // Cada conjunt porta el dia de la seva font, que pot ser d'abans si la font no va respondre.
   assert.deepEqual(
-    conjunts.map((c) => c.conjunt),
-    ['govern', 'agenda'],
+    conjunts.map((c) => [c.conjunt, c.data_consulta]),
+    [
+      ['govern', '2026-11-23'],
+      ['agenda', '2026-11-22'],
+    ],
   );
   assert.deepEqual(conjunts[0]!.fonts, {
     font: govern.font,
@@ -84,12 +90,18 @@ test('cada conjunt diu la font, la data, la nota i com verificar-lo, tal com els
     parlament: { font: 'Agenda parlamentària', data_consulta: '2026-11-23' },
   });
   assert.deepEqual(conjunts[0]!.verificacio, {
-    fitxer: 'https://finestraoberta.cat/dades/govern.json',
+    fitxer: 'https://raw.githubusercontent.com/Gonvar/finestra-oberta/dades/govern.json',
     sha256: 'a'.repeat(64),
-    procedencia: 'https://finestraoberta.cat/dades/procedencia.json',
+    procedencia: 'https://raw.githubusercontent.com/Gonvar/finestra-oberta/dades/procedencia.json',
     com_verificar:
       'https://github.com/Gonvar/finestra-oberta/blob/main/docs/institucions.md#com-comprovar-que-les-dades-s%C3%B3n-de-la-font',
   });
+});
+
+test('la procedència d’abans, sense grups, es llegeix com un sol grup', () => {
+  assert.deepEqual(signats({ data_consulta: '2026-11-21', fitxers: { 'govern.json': 'a' } }), [
+    { fitxer: 'govern.json', sha256: 'a', data_consulta: '2026-11-21' },
+  ]);
 });
 
 test('un fitxer sense font és un error, no un conjunt sense font', () => {
@@ -214,7 +226,9 @@ test('una resposta massa gran es mesura tal com arriba a l’assistent, amb el c
   assert.ok(JSON.stringify(consulta(gran, parametres)).length < MAX_CARACTERS);
   const { dades } = fals(
     web(
-      { data_consulta: '2026-11-23', fitxers: { 'gran.json': 'c'.repeat(64) } },
+      {
+        grups: { gran: { data_consulta: '2026-11-23', fitxers: { 'gran.json': 'c'.repeat(64) } } },
+      },
       {
         'gran.json': gran,
       },
@@ -283,7 +297,9 @@ const mapa = {
   data_dades: '2026-01-01',
   municipis: Array.from({ length: 400 }, (_, i) => municipi(i)),
 };
-const procedenciaMapa = { data_consulta: '2026-11-23', fitxers: { 'mapa.json': 'd'.repeat(64) } };
+const procedenciaMapa = {
+  grups: { mapa: { data_consulta: '2026-11-23', fitxers: { 'mapa.json': 'd'.repeat(64) } } },
+};
 const fitxersMapa = web(procedenciaMapa, { 'mapa.json': mapa });
 
 test('una llista gran es llegeix per pàgines, amb els mateixos valors i índexs que sencera', async () => {

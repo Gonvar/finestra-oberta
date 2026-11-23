@@ -1,12 +1,12 @@
 // Els trossos de cada conjunt que llegeix el servidor MCP de /mcp (vegeu trossos a mcp/dades.ts).
 import type { APIRoute, GetStaticPaths } from 'astro';
 import { contingut, procedencia } from '../../dades/publicades.ts';
-import { trossos, type Valor } from '../../mcp/dades.ts';
+import { signats, trossos, type Valor } from '../../mcp/dades.ts';
 
 const tots: Record<string, Valor> = Object.assign(
   {},
-  ...Object.entries(procedencia.fitxers).map(([fitxer, sha256]) =>
-    trossos(fitxer.replace(/\.json$/, ''), sha256, JSON.parse(contingut(fitxer)), procedencia),
+  ...signats(procedencia).map(({ fitxer, sha256, data_consulta }) =>
+    trossos(fitxer.replace(/\.json$/, ''), sha256, JSON.parse(contingut(fitxer)), data_consulta),
   ),
 );
 
