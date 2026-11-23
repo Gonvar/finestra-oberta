@@ -152,9 +152,15 @@ export function llegirBiografia(html: string, url: string): Biografia | undefine
   if (data === null) throw new SourceError(`La biografia de ${url} no diu de quan és.`);
   const apartats = [
     ...tros.matchAll(
-      /<h3 class="sub_titol_caixa"><span>([^<]*)<\/span><\/h3>\s*<p class="text">([\s\S]*?)<\/p>/g,
+      /<h3 class="sub_titol_caixa"><span>([^<]*)<\/span><\/h3>((?:(?!<h3)[\s\S])*)/g,
     ),
-  ].map((m) => ({ titol: text(m[1]!), linies: linies(m[2]!) }));
+  ].map((m) => {
+    const paragrafs = [...m[2]!.matchAll(/<p class="text">([\s\S]*?)<\/p>/g)];
+    // Un text fora dels paràgrafs es perdria sense que ningú ho sabés.
+    if (paragrafs.length === 0 || text(m[2]!.replace(/<p class="text">[\s\S]*?<\/p>/g, '')))
+      throw new SourceError(`La biografia de ${url} té una forma inesperada.`);
+    return { titol: text(m[1]!), linies: paragrafs.flatMap((p) => linies(p[1]!)) };
+  });
   if (apartats.length !== (tros.match(/<h3/g) ?? []).length || apartats.length === 0)
     throw new SourceError(`La biografia de ${url} té una forma inesperada.`);
   return {
@@ -209,7 +215,9 @@ function taula(html: string, url: string) {
   if (capcalera === undefined || cos === undefined)
     throw new SourceError(`${url} té una taula sense capçalera o sense files.`);
   const columnes = celes(capcalera, 'th');
-  const files = [...cos.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((m) => celes(m[1]!, 'td'));
+  const files = [...cos.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)].map((m) => celes(m[1]!, 'td'));
+  if (files.length !== (cos.match(/<tr\b/g) ?? []).length)
+    throw new SourceError(`${url} té una taula amb files que no es llegeixen.`);
   if (files.some((f) => f.length !== columnes.length))
     throw new SourceError(
       `${url} té una taula amb files que no tenen les columnes de la capçalera.`,
@@ -282,7 +290,7 @@ export function llegirDeclaracio(html: string, url: string, codi: string): Decla
   };
   let darrer = 0;
   for (const m of cos.matchAll(
-    /<(h3|h4)\b[^>]*>([\s\S]*?)<\/\1>|<dt>([\s\S]*?)<\/dt>|<p><img [^>]*missatge_info[^>]*>([\s\S]*?)<\/p>|\u0000(\d+)\u0000|(<br\s*\/?>)|<\/?(?:p|dd|li|em)\b[^>]*>/gi,
+    /<(h3|h4)\b[^>]*>([\s\S]*?)<\/\1>|<dt>([\s\S]*?)<\/dt>|<p><img [^>]*missatge_info[^>]*>([\s\S]*?)<\/p>|\u0000(\d+)\u0000|(<br\s*\/?>)|<\/?(?:p|dd|li|div)\b[^>]*>/gi,
   )) {
     linia += cos.slice(darrer, m.index);
     darrer = m.index + m[0].length;
@@ -318,7 +326,12 @@ export function anualitats(rendes: Declaracio) {
     const any = bloc.titol.match(/^Anualitat (\d{4})$/)?.[1];
     if (any === undefined) continue;
     const seguent = rendes.blocs[i + 1];
-    if (seguent === undefined || !('taula' in seguent) || seguent.taula.columnes.length !== 2)
+    if (
+      seguent === undefined ||
+      !('taula' in seguent) ||
+      seguent.taula.columnes.length !== 2 ||
+      seguent.taula.files.length === 0
+    )
       throw new SourceError(`${rendes.url} no té la taula de l'anualitat ${any}.`);
     anys.push({
       any: Number(any),
@@ -356,9 +369,11 @@ export async function construirDiputats(
     let rendes;
     for (const e of enllacos.filter((e) => e.que === 'llegeix')) {
       const declaracio = llegirDeclaracio(await llegeix(e.url), e.url, codi);
-      if (e.tipus === 'rendes-anuals')
+      if (e.tipus === 'rendes-anuals') {
+        if (rendes !== undefined)
+          throw new SourceError(`${url} enllaça més d'una pàgina de rendes.`);
         rendes = { ...declaracio, anualitats: anualitats(declaracio) };
-      else declaracions.push(declaracio);
+      } else declaracions.push(declaracio);
     }
     const urlAgenda = agendaUrl(codi, any, mes);
     const actes = llegirAgendaParlament(await llegeix(urlAgenda), urlAgenda, any, mes);
@@ -377,6 +392,12 @@ export async function construirDiputats(
       agenda: { url: urlAgenda, actes },
     });
   }
+  // Una fitxa sense càrrecs o sense declaracions pot ser la d'algú que acaba d'arribar, però si no
+  // en té ningú és que la fitxa ha canviat de forma i no s'han trobat.
+  if (diputats.every((d) => d.carrecs.length === 0))
+    throw new SourceError('Cap fitxa de persona diputada no té càrrecs.');
+  if (diputats.every((d) => d.rendes === undefined && d.declaracions.length === 0))
+    throw new SourceError('Cap fitxa de persona diputada no té declaracions.');
   return {
     font: 'Parlament de Catalunya: fitxes de les persones diputades',
     data_consulta: avui,

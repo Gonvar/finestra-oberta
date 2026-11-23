@@ -34,16 +34,16 @@ const fitxa = ({
   `<a name="carrecs"></a><h2 class="titol_caixa"><span>Càrrecs parlamentaris</span></h2><div class="fitxa_parlamentari"><ul class="llista_simple">${carrecs}</ul><p class="contingut_breu"><strong><a href="#">Més informació</a></strong></p></div>` +
   `<a name="activitat"></a><h2 class="titol_caixa"><span>Activitat</span></h2>` +
   (biografia
-    ? `<a name="biografia"></a><h2 class="titol_caixa"><span>Dades personals - biografia</span><span class="text_normal text_mida_10"> <em>(Presentació: 24.08.2025)</em></span></h2><div class="fitxa_parlamentari"><p class="text"><h3 class="sub_titol_caixa"><span>Naixement i residència</span></h3> <p class="text">Vila A, 1980<BR>Vila B</p><br><h3 class="sub_titol_caixa"><span>Formació</span></h3> <p class="text">Estudis d&#039;exemple.</p><br></p></div>`
+    ? `<a name="biografia"></a><h2 class="titol_caixa"><span>Dades personals - biografia</span><span class="text_normal text_mida_10"> <em>(Presentació: 24.08.2025)</em></span></h2><div class="fitxa_parlamentari"><p class="text"><h3 class="sub_titol_caixa"><span>Naixement i residència</span></h3> <p class="text">Vila A, 1980<BR>Vila B</p><br><h3 class="sub_titol_caixa"><span>Formació</span></h3> <p class="text">Estudis d&#039;exemple.</p><p class="text">Un altre paràgraf.</p><br></p></div>`
     : '') +
   `<a name="declaracio"></a><h2 class="titol_caixa"><span>Declaracions</span></h2><div><ul class="llista_simple llista_resaltada">${enllacos.map(([t, h]) => `<li><p class="contingut_breu"><strong><a title="${t}" href="${h}">${t}</a></strong></p></li>`).join('')}</ul></div></div> </td> <td valign="top" style="width:1%" id="cs_columna_dreta">`;
 
 const pagina = (codi: string, cos: string) =>
   `<html><p>Tornar a la fitxa d'<a href="/web/composicio/diputats-fitxa/index.html?p_codi=${codi}#declaracio">Persona Exemple</a></span></p></div><a name="amunt"></a>${cos}</div> </td> <td valign="top" style="width:1%" id="cs_columna_dreta" name="cs_columna_dreta"></td></html>`;
 
-const RENDES = `<h2 class="titol_caixa"><span>Rendes anuals íntegres percebudes del Parlament (06/03/2026)</span></h2><em>Abans d'acabar el primer trimestre es publiquen.</em><div class="relacio_elements"> <h3 class="subtitol">Anualitat 2025</h3> <table summary="x"> <thead> <tr> <th class="c">&nbsp; </th> <th class="c">Import </th> </tr> </thead> <tbody> <tr><td>Retribucions</td><td>0,00&nbsp;&euro;&nbsp;</td> </tr> <tr><td>Indemnització</td><td style="x">19.910,04&nbsp;&euro;&nbsp;</td> </tr> </tbody> </table> </div><div class="relacio_elements"><h4>Observacions</h4><dl><dd>Opta només per la indemnització.</dd></dl></div>`;
+const RENDES = `<h2 class="titol_caixa"><span>Rendes anuals íntegres percebudes del Parlament (06/03/2026)</span></h2><em>Abans d'acabar el primer trimestre es publiquen.</em><div class="relacio_elements"> <h3 class="subtitol">Anualitat 2025</h3> <table summary="x"> <thead> <tr> <th class="c">&nbsp; </th> <th class="c">Import </th> </tr> </thead> <tbody> <tr><td>Retribucions</td><td>0,00&nbsp;&euro;&nbsp;</td> </tr> <tr class="par"><td>Indemnització</td><td style="x">19.910,04&nbsp;&euro;&nbsp;</td> </tr> </tbody> </table> </div><div class="relacio_elements"><h4>Observacions</h4><dl><dd>Opta només per la indemnització.</dd></dl></div>`;
 
-const BENS = `<h2 class="titol_caixa"><span>Declaració de béns (07/06/2024)</span></h2><div class="relacio_elements"><h3 class="sub_titol_caixa"><span>Béns immobles</span></h3><table summary="x"><thead><tr><th>Tipus</th><!--th></th--><th>Any d'adquisició <br> (aaaa)</th></tr></thead><tbody><tr><td>Habitatge&nbsp;</td><td>2007&nbsp;</td></tr></tbody></table></div><div class="relacio_elements"><dl><dt>Plans de pensions</dt><dd>Valor Total: 1.251,96&nbsp;&euro;</dd></dl></div><div class="relacio_elements"><h3 class="sub_titol_caixa"><span>Altres</span></h3><dl><dd>Primera línia<br>Segona línia</dd></dl><dl><dd></dd></dl><h4>Llista</h4><ul><li>Un element</li></ul></div>`;
+const BENS = `<h2 class="titol_caixa"><span>Declaració de béns (07/06/2024)</span></h2><div class="relacio_elements"><h3 class="sub_titol_caixa"><span>Béns immobles</span></h3><table summary="x"><thead><tr><th>Tipus</th><!--th></th--><th>Any d'adquisició <br> (aaaa)</th></tr></thead><tbody><tr><td>Habitatge&nbsp;</td><td>2007&nbsp;</td></tr></tbody></table></div><div class="relacio_elements"><dl><dt>Plans de pensions</dt><dd>Valor <em>Total:</em> 1.251,96&nbsp;&euro;</dd></dl></div><div class="relacio_elements"><h3 class="sub_titol_caixa"><span>Altres</span></h3><dl><dd>Primera línia<br>Segona línia</dd></dl><dl><dd></dd></dl><h4>Llista</h4><ul><li>Un element</li></ul></div>`;
 
 test('els càrrecs surten amb el càrrec dins l’òrgan, les dates i el que hi va a sota', () => {
   assert.deepEqual(llegirCarrecs(fitxa(), FITXA), [
@@ -94,10 +94,12 @@ test('la biografia surt per apartats, una línia per salt de línia', () => {
     data: { que: 'Presentació', dia: '2025-08-24' },
     apartats: [
       { titol: 'Naixement i residència', linies: ['Vila A, 1980', 'Vila B'] },
-      { titol: 'Formació', linies: ["Estudis d'exemple."] },
+      { titol: 'Formació', linies: ["Estudis d'exemple.", 'Un altre paràgraf.'] },
     ],
   });
   assert.equal(llegirBiografia(fitxa({ biografia: false }), FITXA), undefined);
+  const solt = fitxa().replace('<p class="text">Un altre paràgraf.</p>', 'Un text solt.');
+  assert.throws(() => llegirBiografia(solt, FITXA), /forma inesperada/);
 });
 
 test('una declaració que no es coneix atura la lectura', () => {
@@ -150,7 +152,13 @@ test('les rendes donen els imports de cada any, també un zero que la font publi
       ],
     },
   ]);
+  assert.deepEqual(rendes.blocs[0], { text: ["Abans d'acabar el primer trimestre es publiquen."] });
   assert.deepEqual(rendes.blocs.at(-1), { text: ['Opta només per la indemnització.'] });
+  const filaRara = RENDES.replace('</td> </tr> </tbody>', '</td> </tbody>');
+  assert.throws(
+    () => llegirDeclaracio(pagina('7', filaRara), 'u', '7'),
+    /files que no es llegeixen/,
+  );
   const senseTaula = RENDES.replace(/<table[\s\S]*<\/table>/, '');
   assert.throws(() => anualitats(llegirDeclaracio(pagina('7', senseTaula), 'u', '7')), /taula/);
 });
@@ -204,4 +212,12 @@ test('l’agenda d’un altre mes atura la lectura', async () => {
     construirDiputats(fetchImpl, [{ codi: '7', nom: 'P', url: FITXA, html }], '2026-11-23', 0),
     /Octubre de 2026/,
   );
+});
+
+test('si cap fitxa no té càrrecs o declaracions, la fitxa ha canviat i s’atura la lectura', async () => {
+  const fetchImpl: Fetch = async () => new Response(agenda('Novembre de 2026'));
+  const llegeix = (html: string) =>
+    construirDiputats(fetchImpl, [{ codi: '7', nom: 'P', url: FITXA, html }], '2026-11-23', 0);
+  await assert.rejects(llegeix(fitxa({ enllacos: [] })), /Cap fitxa .* declaracions/);
+  await assert.rejects(llegeix(fitxa({ carrecs: '', enllacos: [] })), /Cap fitxa .* càrrecs/);
 });
