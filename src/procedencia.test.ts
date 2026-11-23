@@ -282,9 +282,12 @@ test('reprodueix no serveix una còpia a una petició que no és un GET', async 
   const desti = await mkdtemp(join(tmpdir(), 'reproduides-'));
   const nou: Construeix = async (fetchImpl) => {
     const resposta = await fetchImpl(A, { method: 'POST', body: '{}' });
-    return { 'resultat.json': await resposta.json() };
+    return { 'resultat.json': await resposta.json(), 'text.json': await getText(fetchImpl, B) };
   };
-  await assert.rejects(reprodueix(publicada, desti, nou), DesquadreError);
+  await assert.rejects(
+    reprodueix(publicada, desti, nou),
+    (error) => error instanceof DesquadreError && /només són de GET/.test(error.message),
+  );
   await rm(publicada, { recursive: true });
   await rm(desti, { recursive: true });
 });

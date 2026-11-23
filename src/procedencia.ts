@@ -217,7 +217,7 @@ async function reprodueixCopies<T extends Record<string, unknown>>(
     const captura = procedencia.captures[seguent];
     if (init !== undefined && ((init.method !== undefined && init.method !== 'GET') || init.body)) {
       desquadre = new DesquadreError(
-        `Les dades fan un ${init.method} a ${String(input)}, i les còpies només són de GET.`,
+        `Les dades fan una petició ${init.method === undefined ? 'GET amb cos' : init.method} a ${String(input)}, i les còpies només són de GET sense cos.`,
       );
       throw desquadre;
     }
