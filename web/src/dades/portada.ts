@@ -66,8 +66,8 @@ export const blocs: Bloc[] = [
   {
     institucio: 'dad',
     titol: 'Dades',
-    frase: "Els conjunts de dades oberts de la Generalitat, l'Idescat i Barcelona.",
-    href: `${REPO}/blob/main/docs/dades-obertes.md`,
+    frase: 'Els diners de la Generalitat, els contractes públics, els trens i els municipis.',
+    href: '/dades',
   },
 ];
 
