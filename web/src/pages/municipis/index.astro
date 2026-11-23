@@ -12,7 +12,7 @@ const lletres = [...new Set(perNom.map((m) => inicial(m.nomOrdenat)))];
 ---
 
 <Pagina>
-  <main class="contingut">
+  <main class="contingut" id="principal">
     <section class="capcalera" aria-labelledby="titol">
       <p class="etiqueta entra"><span class="punt dad" aria-hidden="true"></span>Municipis</p>
       <h1 id="titol" class="entra" style="--ordre: 1">Com és el teu municipi</h1>
@@ -122,11 +122,6 @@ const lletres = [...new Set(perNom.map((m) => inicial(m.nomOrdenat)))];
 
   .lletra {
     margin-top: 2rem;
-  }
-
-  /* L'enllaç de cada lletra porta al títol, que no ha de quedar sota la barra fixa. */
-  .lletra h3 {
-    scroll-margin-top: 4.5rem;
   }
 
   .noms {

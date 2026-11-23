@@ -32,7 +32,7 @@ const desDe = `des del ${dia(t.nomenament)}`;
 ---
 
 <Pagina>
-  <main class="contingut">
+  <main class="contingut" id="principal">
   <section class="capcalera" aria-labelledby="titol">
     <p class="etiqueta entra"><a href="/govern"><span class="punt gov" aria-hidden="true"></span>Govern</a></p>
     <div class="persona">
@@ -210,7 +210,7 @@ const desDe = `des del ${dia(t.nomenament)}`;
     align-items: end;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     .persona {
       grid-template-columns: minmax(14rem, 22rem) 1fr;
       gap: 2.5rem;
@@ -287,7 +287,7 @@ const desDe = `des del ${dia(t.nomenament)}`;
     gap: 0.25rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 48em) {
     .cronologia li {
       grid-template-columns: 110px 1fr;
       gap: 1.5rem;

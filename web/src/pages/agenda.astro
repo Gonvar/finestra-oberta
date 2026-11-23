@@ -41,7 +41,7 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
 ---
 
 <Pagina>
-  <main class="contingut">
+  <main class="contingut" id="principal">
     <section class="capcalera" aria-labelledby="titol">
       <p class="etiqueta entra">
         <span class="punt gov" aria-hidden="true"></span>Govern
@@ -258,12 +258,19 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
 
   .acte {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.25rem;
   }
 
-  @media (min-width: 640px) {
+  /* Una adreça o una paraula llarga de la font no pot fer sortir la fila de la pantalla. */
+  .acte > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 40em) {
     .acte {
-      grid-template-columns: 110px 1fr;
+      grid-template-columns: 110px minmax(0, 1fr);
       gap: 1.5rem;
     }
   }
@@ -306,5 +313,12 @@ const seccions: { id: string; titol: string; dies: Dia[]; buit: string }[] = [
     margin: 0.25rem 0 0;
     padding: 0;
     font-size: 0.9375rem;
+  }
+
+  /* Objectius tàctils de 44 px (DESIGN.md §5). */
+  .enllacos a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 </style>

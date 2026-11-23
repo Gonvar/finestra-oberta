@@ -5,7 +5,7 @@ import { dia, euros, govern, membres, slug } from '../../dades/institucions.ts';
 ---
 
 <Pagina>
-  <main class="contingut">
+  <main class="contingut" id="principal">
   <section class="capcalera" aria-labelledby="titol">
     <p class="etiqueta entra"><span class="punt gov" aria-hidden="true"></span>Govern de la Generalitat</p>
     <h1 id="titol" class="entra" style="--ordre: 1">Qui forma el Govern</h1>
@@ -51,7 +51,7 @@ import { dia, euros, govern, membres, slug } from '../../dades/institucions.ts';
     gap: 2.25rem 1.25rem;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 56.25em) {
     .president {
       grid-column: span 2;
       grid-row: span 2;
