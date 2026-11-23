@@ -1,0 +1,55 @@
+name: Neteja temporal d'enllaços privats a les PR
+on:
+  push:
+    branches: [claude/project-thread-gts3cq]
+    paths: ['.github/workflows/neteja-enllacos.yml']
+permissions:
+  pull-requests: write
+  issues: write
+jobs:
+  neteja:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          ESCRIU: 'no'
+        run: |
+          cat > n.mjs <<'JS'
+          const base = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}`;
+          const api = async (p, opts = {}) => {
+            const r = await fetch(p.startsWith('http') ? p : base + p, { ...opts, headers: { authorization: `Bearer ${process.env.GH_TOKEN}`, accept: 'application/vnd.github+json', 'content-type': 'application/json' } });
+            if (!r.ok) throw new Error(`${opts.method ?? 'GET'} ${p} ${r.status} ${await r.text()}`);
+            return r.json();
+          };
+          const totes = async (p) => { const out = []; for (let page = 1; ; page++) { const d = await api(`${p}${p.includes('?') ? '&' : '?'}per_page=100&page=${page}`); out.push(...d); if (d.length < 100) return out; } };
+          const privat = /claude\.ai\/(code\/)?(session_|project)|claude-projects-attribution|^Claude-Session:/;
+          const neteja = (text) => text.split('\n').filter((l) => !privat.test(l)).join('\n').replace(/\n{3,}/g, '\n\n').replace(/^\s+/, '').replace(/\s+$/, '\n');
+          const escriu = process.env.ESCRIU === 'si';
+          let canvis = 0;
+          const revisa = async (on, text, patch) => {
+            if (!text || !privat.test(text.split('\n').find((l) => privat.test(l)) ?? '')) return;
+            const nou = neteja(text);
+            canvis++;
+            console.log(`== ${on}`);
+            for (const l of text.split('\n').filter((l) => privat.test(l))) console.log(`  - ${l.replace(/session_[A-Za-z0-9]+/g, 'session_…').replace(/chan_[A-Za-z0-9]+/g, 'chan_…').replace(/cmsg_[A-Za-z0-9]+/g, 'cmsg_…')}`);
+            if (escriu) await patch(nou);
+          };
+          const prs = await totes('/pulls?state=all');
+          console.log(`PR: ${prs.length}`);
+          for (const pr of prs) {
+            const n = pr.number;
+            await revisa(`#${n} descripció`, pr.body, (body) => api(`/pulls/${n}`, { method: 'PATCH', body: JSON.stringify({ body }) }));
+            for (const c of await totes(`/issues/${n}/comments`))
+              await revisa(`#${n} comentari ${c.id}`, c.body, (body) => api(`/issues/comments/${c.id}`, { method: 'PATCH', body: JSON.stringify({ body }) }));
+            for (const c of await totes(`/pulls/${n}/comments`))
+              await revisa(`#${n} comentari de codi ${c.id}`, c.body, (body) => api(`/pulls/comments/${c.id}`, { method: 'PATCH', body: JSON.stringify({ body }) }));
+            for (const r of await totes(`/pulls/${n}/reviews`))
+              await revisa(`#${n} revisió ${r.id}`, r.body, (body) => api(`/pulls/${n}/reviews/${r.id}`, { method: 'PUT', body: JSON.stringify({ body: body.trim() === '' ? '.' : body }) }));
+          }
+          console.log(`${escriu ? 'Netejats' : 'Per netejar'}: ${canvis}`);
+          JS
+          node n.mjs
