@@ -2,6 +2,7 @@
 // quant ha ingressat, de l'execució mensual que publica el Departament d'Economia i Finances. No és
 // un servidor MCP: src/dades.ts ho desa a la branca `dades`. Les sumes les fa l'API de la font.
 import {
+  camp,
   dia,
   getJson,
   metadades,
@@ -93,7 +94,8 @@ export async function construirPressupost(fetchImpl: Fetch) {
     entitat: text(f, 'entitat', DESPESES),
     seccio_codi: text(f, 'secci_codi', DESPESES),
     seccio: text(f, 'secci', DESPESES),
-    ordre_protocol: text(f, 'ordre_protocol_secci', DESPESES),
+    // 49 entitats (11/2026) no donen l'ordre de protocol de cap secció.
+    ordre_protocol: camp(f, 'ordre_protocol_secci'),
     credit_inicial: euros(f, 'inicial', DESPESES),
     pressupost_definitiu: euros(f, 'definitiu', DESPESES),
     obligacions_reconegudes: euros(f, 'reconegut', DESPESES),
@@ -102,14 +104,16 @@ export async function construirPressupost(fetchImpl: Fetch) {
   // L'ordre de protocol i el codi del capítol són text: si els ordenés la consulta, «10» aniria
   // abans que «2».
   for (const d of despeses)
-    if (!/^\d+$/.test(d.ordre_protocol))
+    if (d.ordre_protocol !== null && !/^\d+$/.test(d.ordre_protocol))
       throw new SourceError(
         `L’ordre de protocol de ${d.seccio} no és un nombre: ${d.ordre_protocol}.`,
       );
+  // Les seccions sense ordre de protocol van al final de la seva entitat.
+  const ordre = (o: string | null) => (o === null ? Infinity : Number(o));
   despeses.sort(
     (a, b) =>
       a.entitat_codi.localeCompare(b.entitat_codi, 'ca') ||
-      Number(a.ordre_protocol) - Number(b.ordre_protocol) ||
+      ordre(a.ordre_protocol) - ordre(b.ordre_protocol) ||
       a.seccio_codi.localeCompare(b.seccio_codi, 'ca'),
   );
   unica(
@@ -138,7 +142,8 @@ export async function construirPressupost(fetchImpl: Fetch) {
     entitat_codi: text(f, 'entitat_codi', INGRESSOS),
     entitat: text(f, 'entitat', INGRESSOS),
     capitol_codi: text(f, 'cap_tol_codi', INGRESSOS),
-    capitol: text(f, 'cap_tol', INGRESSOS),
+    // Algunes files (11/2026) tenen el codi del capítol però no el nom.
+    capitol: camp(f, 'cap_tol'),
     previsio_inicial: euros(f, 'inicial', INGRESSOS),
     previsio_final: euros(f, 'finals', INGRESSOS),
     drets_reconeguts_nets: euros(f, 'reconegut', INGRESSOS),
@@ -146,7 +151,7 @@ export async function construirPressupost(fetchImpl: Fetch) {
   }));
   for (const i of ingressos)
     if (!/^\d+$/.test(i.capitol_codi))
-      throw new SourceError(`El codi del capítol ${i.capitol} no és un nombre: ${i.capitol_codi}.`);
+      throw new SourceError(`El codi de capítol ${i.capitol_codi} no és un nombre.`);
   ingressos.sort(
     (a, b) =>
       a.entitat_codi.localeCompare(b.entitat_codi, 'ca') ||
@@ -164,7 +169,7 @@ export async function construirPressupost(fetchImpl: Fetch) {
     font_ingressos: `Dades obertes de Catalunya: ${metaIngressos.name} (${metaIngressos.attribution})`,
     url_ingressos: `${SOCRATA}/d/${INGRESSOS}`,
     data_ingressos: dia(metaIngressos),
-    nota: 'L’execució del pressupost de la Generalitat i del seu sector públic a l’últim mes publicat. Segons la font, els imports són els acumulats des de l’1 de gener fins a l’últim dia del mes. Les despeses se sumen per entitat i secció, i els ingressos per entitat i capítol; les sumes les fa l’API de la font. No hi ha cap total de totes les entitats, perquè les transferències d’una entitat a una altra hi serien dues vegades. Els noms són tal com els escriu la font. L’ordre és el dels seus codis: el de l’entitat i, després, l’ordre de protocol de la secció o el número del capítol. Els imports són en euros.',
+    nota: 'L’execució del pressupost de la Generalitat i del seu sector públic a l’últim mes publicat. Segons la font, els imports són els acumulats des de l’1 de gener fins a l’últim dia del mes. Les despeses se sumen per entitat i secció, i els ingressos per entitat i capítol; les sumes les fa l’API de la font. No hi ha cap total de totes les entitats, perquè les transferències d’una entitat a una altra hi serien dues vegades. Els noms són tal com els escriu la font. L’ordre és el dels seus codis: el de l’entitat i, després, l’ordre de protocol de la secció o el número del capítol. Quan la font no dona l’ordre de protocol o el nom del capítol, són null, i les seccions sense ordre van al final de la seva entitat. Els imports són en euros.',
     despeses: { exercici: Number(mesDespeses.exercici), mes: mesDespeses.mes, seccions: despeses },
     ingressos: {
       exercici: Number(mesIngressos.exercici),

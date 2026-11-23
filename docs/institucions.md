@@ -220,10 +220,10 @@ Què ha decidit el Parlament: el resultat de cada punt de les sessions del Ple d
 - **Ingressos:** per entitat i capítol, la previsió inicial, la previsió final, els drets reconeguts nets i la recaptació neta.
 - **Sumes:** les fa l'API de la font, amb `sum()` sobre totes les files de cada grup. El codi no suma res.
 - **Sense total:** el fitxer no té cap total de totes les entitats. Les transferències d'una entitat a una altra hi comptarien dues vegades, a la que dona i a la que rep.
-- **Ordre i noms:** el dels codis de la font. Primer el codi de l'entitat i després l'ordre de protocol de la secció o el número del capítol, tots dos com a nombres. Els noms són tal com els escriu la font, també quan són abreujats («Territori, Habitatge i Transició Ecol.»).
+- **Ordre i noms:** el dels codis de la font. Primer el codi de l'entitat i després l'ordre de protocol de la secció o el número del capítol, tots dos com a nombres. Les seccions sense ordre de protocol van al final de la seva entitat. Els noms són tal com els escriu la font, també quan són abreujats («Territori, Habitatge i Transició Ecol.»).
 - **Comprovacions:**
   - El període ha de tenir un any de quatre xifres i un mes de la forma «10 Octubre».
-  - Cada import, cada ordre de protocol i cada codi de capítol ha de ser un nombre, i cada fila ha de tenir el codi i el nom de l'entitat i de la secció o el capítol, i l'ordre de protocol de la secció.
+  - Cada import, cada ordre de protocol i cada codi de capítol ha de ser un nombre, i cada fila ha de tenir el codi i el nom de l'entitat, i el codi i el nom de la secció o el codi del capítol. L'ordre de protocol i el nom del capítol poden faltar, i llavors són `null`: a l'octubre del 2026, 49 entitats no donaven l'ordre de cap secció.
   - Una entitat i una secció, o una entitat i un capítol, només poden sortir una vegada.
   - Cada consulta ha de tornar alguna fila i cabre en una pàgina.
 - **Si falla:** com la resta de fitxers, atura l'actualització de tots fins que es corregeix.

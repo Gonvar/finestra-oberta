@@ -122,8 +122,8 @@ test("s'atura si el període no té la forma esperada", async () => {
 test("s'atura si un import no és un nombre o falta un camp", async () => {
   const malament = font({ seccions: [{ ...SECCIONS[0], pagat: '1,5' }] });
   await assert.rejects(construirPressupost(malament.fetchImpl), /no és un import/);
-  const sense = font({ capitols: [{ ...CAPITOLS[0], cap_tol: undefined }] });
-  await assert.rejects(construirPressupost(sense.fetchImpl), /no té cap_tol/);
+  const sense = font({ capitols: [{ ...CAPITOLS[0], cap_tol_codi: undefined }] });
+  await assert.rejects(construirPressupost(sense.fetchImpl), /no té cap_tol_codi/);
 });
 
 test("s'atura si una entitat i una secció surten dues vegades, o si la consulta és buida", async () => {
@@ -149,4 +149,21 @@ test("ordena per l'ordre de protocol i el capítol com a nombres, i s'atura si n
   );
   const lletra = font({ seccions: [{ ...SECCIONS[0], ordre_protocol_secci: 'A' }] });
   await assert.rejects(construirPressupost(lletra.fetchImpl), /no és un nombre/);
+});
+
+test("l'ordre de protocol i el nom del capítol poden faltar, i les seccions sense ordre van al final", async () => {
+  const sense = { ...SECCIONS[1], ordre_protocol_secci: undefined, secci_codi: 'S0' };
+  const { fetchImpl } = font({
+    seccions: [sense, SECCIONS[0]],
+    capitols: [{ ...CAPITOLS[0], cap_tol: undefined }],
+  });
+  const pressupost = await construirPressupost(fetchImpl);
+  assert.deepEqual(
+    pressupost.despeses.seccions.map((s) => [s.seccio_codi, s.ordre_protocol]),
+    [
+      ['SB', '02'],
+      ['S0', null],
+    ],
+  );
+  assert.equal(pressupost.ingressos.capitols[0]!.capitol, null);
 });
