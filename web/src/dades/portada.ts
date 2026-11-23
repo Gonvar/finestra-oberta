@@ -2,11 +2,13 @@
 // Mentre el repo no tingui les dades del Govern i del Parlament, els camps queden buits i la portada
 // ho diu, en lloc d'omplir-los amb exemples.
 
+import { despesa, finsA, milions, percentatge, pressupost, seccionsGeneralitat } from './pressupost.ts';
+
 export type Institucio = 'gov' | 'par' | 'dad';
 
 export type Font = { nom: string; url: string };
 
-export type Xifra = { valor: string; que: string; periode: string; font: Font };
+export type Xifra = { valor: string; que: string; periode: string; font: Font; mes?: { text: string; href: string } };
 
 export type Bloc = {
   institucio: Institucio;
@@ -51,7 +53,15 @@ export const blocs: Bloc[] = [
 
 export const cronologia: Fet[] = [];
 
-export const xifra: Xifra | undefined = undefined;
+const despesaGeneralitat = despesa(seccionsGeneralitat(pressupost.despeses.seccions));
+
+export const xifra: Xifra | undefined = {
+  valor: `${milions(despesaGeneralitat.total)} d’euros`,
+  que: 'és el que pot gastar la Generalitat',
+  periode: `${pressupost.despeses.exercici}, gastat fins al ${finsA(pressupost.despeses.exercici, pressupost.despeses.mes)}: ${percentatge(despesaGeneralitat.partGastada)}`,
+  font: { nom: 'execució mensual del pressupost', url: pressupost.url_despeses },
+  mes: { text: 'On van els diners', href: '/pressupost' },
+};
 
 /** Preguntes amb la resposta real, obtinguda dels servidors, a docs/exemples.md. */
 export const respostes: { nom: string; href: string }[] = [

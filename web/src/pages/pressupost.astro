@@ -1,0 +1,361 @@
+---
+import Pagina from '../layouts/Pagina.astro';
+import '../styles/subpagines.css';
+import { dia, eurosRodons, nombre } from '../dades/institucions.ts';
+import {
+  CAPITOLS,
+  QUE_ES,
+  capitolsGeneralitat,
+  despesa,
+  finsA,
+  ingressos,
+  milions,
+  percentatge,
+  pressupost,
+  seccionsGeneralitat,
+} from '../dades/pressupost.ts';
+
+const { despeses } = pressupost;
+const seccions = seccionsGeneralitat(despeses.seccions);
+const capitols = capitolsGeneralitat(pressupost.ingressos.capitols);
+const d = despesa(seccions);
+const ing = ingressos(capitols);
+const fins = finsA(despeses.exercici, despeses.mes);
+const altresEntitats = new Set(
+  despeses.seccions.filter((s) => s.entitat_codi !== '1000').map((s) => s.entitat_codi),
+).size;
+// L'amplada de cada barra és la seva part del pressupost, comparada amb la secció més gran, perquè les
+// petites es vegin petites sense que la gran ocupi tota la pàgina amb una sola barra.
+const mesGran = d.barres[0]!.pressupost;
+const amplada = (euros: number) => `${(euros / mesGran) * 100}%`;
+const mesGranIngres = ing.barres[0]!.previsio;
+---
+
+<Pagina>
+  <main class="contingut">
+    <section class="capcalera" aria-labelledby="titol">
+      <p class="etiqueta entra"><span class="punt dad" aria-hidden="true"></span>Generalitat de Catalunya</p>
+      <h1 id="titol" class="entra" style="--ordre: 1">On van els diners de la Generalitat</h1>
+      <p class="entradeta entra" style="--ordre: 2">
+        Quant pot gastar la Generalitat el {despeses.exercici}, a què ho dedica i d'on surten els diners.
+      </p>
+    </section>
+
+    <section class="seccio entra" style="--ordre: 3" aria-labelledby="total-titol">
+      <h2 class="visualment-amagat" id="total-titol">Quant se n'ha gastat</h2>
+      <p class="valor">{milions(d.total)} d'euros</p>
+      <p class="que">
+        és el que la Generalitat pot gastar el {despeses.exercici}. Fins al {fins}, n'ha gastat {
+          milions(d.gastat)
+        }, el {percentatge(d.partGastada)}.
+      </p>
+      <div class="barra gran" aria-hidden="true">
+        <span class="ple" style={`width: ${d.partGastada * 100}%`}></span>
+      </div>
+      <p class="font-dada">
+        Font: <a href={pressupost.url_despeses}>execució mensual del pressupost</a>, Departament d'Economia i
+        Finances, actualitzada el {dia(pressupost.data_despeses)}.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="despesa-titol">
+      <h2 class="titol-seccio" id="despesa-titol">A què es dedica</h2>
+      <p class="explica">
+        Cada barra és el que té una secció per gastar aquest any. La part fosca és el que ja n'ha gastat fins al {
+          fins
+        }. Van de més a menys pressupost.
+      </p>
+      <ol class="barres">
+        {
+          d.barres.map((b) => (
+            <li>
+              <p class="nom">
+                {b.nom}
+                {b.codi in QUE_ES && <span class="secundari"> {QUE_ES[b.codi]}</span>}
+              </p>
+              <div class="barra" style={`width: ${amplada(b.pressupost)}`} aria-hidden="true">
+                <span class="ple" style={`width: ${b.partGastada * 100}%`} />
+              </div>
+              <p class="xifra">
+                {milions(b.pressupost)} · gastat el {percentatge(b.partGastada)}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="font-dada">
+        Font: <a href={pressupost.url_despeses}>execució mensual del pressupost</a>, actualitzada el {
+          dia(pressupost.data_despeses)
+        }. Imports en milions d'euros.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="ingressos-titol">
+      <h2 class="titol-seccio" id="ingressos-titol">D'on surten els diners</h2>
+      <p class="explica">
+        El que la Generalitat preveu ingressar el {despeses.exercici}: {milions(ing.total)} d'euros. Van de més a
+        menys.
+      </p>
+      <ol class="barres">
+        {
+          ing.barres.map((b) => (
+            <li>
+              <p class="nom">
+                {b.nom}
+                <span class="secundari"> {CAPITOLS[b.codi]}</span>
+              </p>
+              <div class="barra" style={`width: ${(b.previsio / mesGranIngres) * 100}%`} aria-hidden="true">
+                <span class="ple" style="width: 100%" />
+              </div>
+              <p class="xifra">
+                {milions(b.previsio)} · el {percentatge(b.partDelTotal)} del total
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="font-dada">
+        Font: <a href={pressupost.url_ingressos}>execució mensual del pressupost d'ingressos</a>, actualitzada el {
+          dia(pressupost.data_ingressos)
+        }. Imports en milions d'euros.
+      </p>
+    </section>
+
+    <section class="seccio" aria-labelledby="detall-titol">
+      <h2 class="titol-seccio" id="detall-titol">Totes les xifres</h2>
+      <dl class="paraules">
+        <dt>Pressupost</dt>
+        <dd>El que la secció pot gastar aquest any, amb els canvis que s'hi han fet des de l'1 de gener.</dd>
+        <dt>Gastat</dt>
+        <dd>
+          El que la Generalitat ja ha reconegut que ha de pagar, perquè s'ha fet la feina o s'ha rebut la compra. La
+          font en diu «obligacions reconegudes».
+        </dd>
+        <dt>Pagat</dt>
+        <dd>La part del que s'ha gastat que ja s'ha pagat.</dd>
+      </dl>
+
+      <div class="taula">
+        <table>
+          <caption>Despeses de la Generalitat per secció, fins al {fins}, en euros</caption>
+          <thead>
+            <tr>
+              <th scope="col">Secció</th>
+              <th scope="col">Pressupost</th>
+              <th scope="col">Gastat</th>
+              <th scope="col">Pagat</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              seccions.map((s) => (
+                <tr>
+                  <th scope="row">{s.seccio}</th>
+                  <td>{eurosRodons(s.pressupost_definitiu)}</td>
+                  <td>{eurosRodons(s.obligacions_reconegudes)}</td>
+                  <td>{eurosRodons(s.obligacions_pagades)}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td>{eurosRodons(d.total)}</td>
+              <td>{eurosRodons(d.gastat)}</td>
+              <td>{eurosRodons(d.pagat)}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="taula">
+        <table>
+          <caption>Ingressos de la Generalitat per capítol, fins al {fins}, en euros</caption>
+          <thead>
+            <tr>
+              <th scope="col">Capítol</th>
+              <th scope="col">Previsió de l'any</th>
+              <th scope="col">Reconegut</th>
+              <th scope="col">Cobrat</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              capitols.map((c) => (
+                <tr>
+                  <th scope="row">{c.capitol}</th>
+                  <td>{eurosRodons(c.previsio_final)}</td>
+                  <td>{eurosRodons(c.drets_reconeguts_nets)}</td>
+                  <td>{eurosRodons(c.recaptacio_neta)}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p class="explica">
+        Aquí només hi ha la Generalitat. Té {nombre(altresEntitats)} entitats més amb pressupost propi, com hospitals
+        o agències, que són a les dades de la font. No se sumen, perquè els diners que passen d'una a una altra hi
+        sortirien dues vegades.
+      </p>
+      <p class="font-dada">
+        Fonts: <a href={pressupost.url_despeses}>despeses</a> i <a href={pressupost.url_ingressos}>ingressos</a>, de
+        Dades obertes de Catalunya.
+      </p>
+    </section>
+  </main>
+</Pagina>
+
+<style>
+  .punt.dad {
+    background: var(--dad);
+  }
+
+  .valor {
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    text-wrap: balance;
+  }
+
+  .que {
+    margin-top: 0.75rem;
+    max-width: 38rem;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+    color: var(--ink-2);
+  }
+
+  .explica {
+    margin-top: 1rem;
+    max-width: 40rem;
+    color: var(--ink-2);
+  }
+
+  /* El fons clar és el que queda per gastar; el contorn fa que es vegi sobre el blanc (WCAG 1.4.11). */
+  .barra {
+    display: block;
+    min-width: 3px;
+    height: 0.75rem;
+    margin-top: 0.5rem;
+    border-radius: 999px;
+    background: var(--dad-tint);
+    box-shadow: inset 0 0 0 1px var(--dad);
+    overflow: hidden;
+  }
+
+  .barra.gran {
+    max-width: 38rem;
+    height: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .ple {
+    display: block;
+    height: 100%;
+    background: var(--dad);
+  }
+
+  .barres {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    max-width: 48rem;
+  }
+
+  .barres > li {
+    padding: 1rem 0;
+    box-shadow: inset 0 1px 0 var(--hair);
+  }
+
+  .nom {
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+
+  .nom .secundari {
+    display: block;
+  }
+
+  .xifra {
+    margin-top: 0.375rem;
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .seccio > .font-dada {
+    margin-top: 1.5rem;
+  }
+
+  .paraules {
+    margin: 1.5rem 0 0;
+    max-width: 40rem;
+  }
+
+  .paraules dt {
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .paraules dd {
+    margin: 0.25rem 0 0;
+    color: var(--ink-2);
+  }
+
+  /* Només la taula es desplaça en horitzontal, mai la pàgina (§5). */
+  .taula {
+    margin-top: 2.5rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  caption {
+    text-align: left;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+  }
+
+  th,
+  td {
+    padding: 0.625rem 0.75rem 0.625rem 0;
+    box-shadow: inset 0 -1px 0 var(--hair);
+    vertical-align: top;
+  }
+
+  thead th {
+    color: var(--ink-3);
+    font-weight: 400;
+  }
+
+  th[scope='row'] {
+    font-weight: 400;
+    text-align: left;
+    min-width: 12rem;
+  }
+
+  td,
+  thead th:not(:first-child) {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  thead th:first-child {
+    text-align: left;
+  }
+
+  tfoot th,
+  tfoot td {
+    font-weight: 600;
+  }
+</style>

@@ -4,6 +4,7 @@
 import type { Previsualitzacio } from '../previsualitzacio/pinta.ts';
 import { decretsLlei, lleis } from './activitat.ts';
 import { govern, membres, parlament, slug } from './institucions.ts';
+import { despesa, milions, pressupost, seccionsGeneralitat } from './pressupost.ts';
 
 export type Pagina = {
   /** Comença i acaba amb barra, com les rutes que genera Astro: «/», «/parlament/». */
@@ -65,6 +66,16 @@ export const pagines: Pagina[] = [
     previsualitzacio: {
       titol: 'Agenda',
       frase: 'Què fan el Govern i el Parlament, dia a dia.',
+    },
+  },
+  {
+    ruta: '/pressupost/',
+    titol: 'On van els diners de la Generalitat · Finestra Oberta',
+    descripcio: 'Quant pot gastar la Generalitat aquest any, a què ho dedica i d’on surten els diners.',
+    previsualitzacio: {
+      titol: 'On van els diners de la Generalitat',
+      frase: `${milions(despesa(seccionsGeneralitat(pressupost.despeses.seccions)).total)} d’euros el ${pressupost.despeses.exercici}.`,
+      institucio: 'dad',
     },
   },
   ...membres.map((m) => ({

@@ -13,6 +13,11 @@ const { xifra } = Astro.props;
       <p class="que">
         {xifra.que} · {xifra.periode}
       </p>
+      {xifra.mes && (
+        <p class="mes">
+          <a href={xifra.mes.href}>{xifra.mes.text}</a>
+        </p>
+      )}
       <p class="font-dada">
         Font: <a href={xifra.font.url}>{xifra.font.nom}</a>
       </p>
@@ -33,6 +38,17 @@ const { xifra } = Astro.props;
     margin-top: 0.75rem;
     font-size: 1.0625rem;
     color: var(--ink-2);
+  }
+
+  .mes {
+    margin-top: 0.75rem;
+    font-size: 1.0625rem;
+  }
+
+  .mes a {
+    display: inline-block;
+    padding: 0.625rem 0;
+    color: var(--dad);
   }
 
   .font-dada {
