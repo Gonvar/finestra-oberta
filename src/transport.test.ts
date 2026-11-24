@@ -34,9 +34,11 @@ const viatge = (tripId: string, delay?: number, scheduleRelationship = 'SCHEDULE
 test('llegeix el nucli i la línia dels identificadors de viatge de Renfe', () => {
   assert.deepEqual(liniaViatge('5126L28416R2N'), { nucli: '51', linia: 'R2N' });
   assert.deepEqual(liniaViatge('5126L15004R15'), { nucli: '51', linia: 'R15' });
+  assert.deepEqual(liniaViatge('5127M25614R1'), { nucli: '51', linia: 'R1' });
   assert.deepEqual(liniaViatge('3126L23289C1a'), { nucli: '31', linia: 'C1a' });
   assert.deepEqual(liniaViatge('SPECIAL_10_91025C7'), { nucli: '10', linia: 'C7' });
   assert.throws(() => liniaViatge('XYZ'), /identificador inesperat: XYZ/);
+  assert.throws(() => liniaViatge('5127Q25614R1'), /identificador inesperat: 5127Q25614R1/);
 });
 
 test("un identificador estrany d'un altre nucli no fa fallar Rodalies", async () => {
