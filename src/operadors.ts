@@ -24,10 +24,12 @@ export type TripUpdate = {
  * El feed de Renfe és de tot l'Estat. Els dos primers dígits dels viatges i de les rutes són el
  * nucli de rodalies, i el 51 és el de Barcelona, és a dir, Rodalies de Catalunya: «5126L28416R2N»,
  * «SPECIAL_51_91025R2», «51T0025R2». Després hi ha el número del tren i, al final, la línia: R2N, R2.
+ * La lletra que segueix els quatre primers dígits dels viatges canvia amb el dia de la setmana
+ * (L el dilluns, M el dimarts…): «5126L28416R2N», «5127M25614R1».
  */
 export const NUCLI_RODALIES = '51';
 
-export const VIATGE = /^(?:SPECIAL_(\d{2})_|(\d{2})\d{2}L)\d+([A-Z][A-Za-z0-9]*)$/;
+export const VIATGE = /^(?:SPECIAL_(\d{2})_|(\d{2})\d{2}[LMXJVSD])\d+([A-Z][A-Za-z0-9]*)$/;
 
 export const RUTA = /^(\d{2})T\d+([A-Z][A-Za-z0-9]*)$/;
 
