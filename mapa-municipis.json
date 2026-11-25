@@ -2,7 +2,7 @@
   "font": "Institut Cartogràfic i Geològic de Catalunya (ICGC): divisions administratives, municipis a escala 1:1.000.000",
   "url": "https://geoserveis.icgc.cat/servei/catalunya/divisions-administratives/wfs?service=WFS&request=GetCapabilities",
   "condicions": "http://www.icgc.cat/condicions",
-  "data_consulta": "2026-11-23",
+  "data_consulta": "2026-11-25",
   "nota": "Els límits de cada municipi, en graus (EPSG:4326), tal com els dona el servei WFS de l’ICGC. L’escala 1:1.000.000 és la més simplificada de l’ICGC: serveix per a un mapa de tot Catalunya, no per saber per on passa exactament un límit.",
   "municipis": [
     {

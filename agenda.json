@@ -2,7 +2,7 @@
   "govern": {
     "font": "Dades obertes de Catalunya: Actes del Govern (Direcció General de Comunicació)",
     "url": "https://analisi.transparenciacatalunya.cat/d/wf87-e34n",
-    "data_dades": "2026-11-23",
+    "data_dades": "2026-11-25",
     "des_de": "2026-10-01",
     "fins_a": "2026-12-31",
     "autoritats": [
@@ -8394,13 +8394,464 @@
         "municipi": "Sant Cugat del Vallès",
         "autoritat": "Consellers",
         "departament": "Interior i Seguretat Pública"
+      },
+      {
+        "id": "1017712",
+        "data": "2026-11-23",
+        "hora": "09:00",
+        "titol": "La consellera Montserrat modera una taula de debat del 'Spain-Japan Symposium on Science, Technology and Innovation'",
+        "descripcio": "La consellera de Recerca i Universitats, Núria Montserrat, participarà en el simposi Spain-Japan Symposium on Science, Technology and Innovation i moderarà una taula de debat que, amb el títol Fugaku-MareNostrum alliance for climate, energy and health, comptarà amb la participació de Mateo Valero, director del Barcelona Supercomputing Center; i Satoshi Matsuoka, director del RIKEN Center for Computational Science del Japó. Aquest simposi està organitzat pel Ministeri d'Assumptes Exteriors, Unió Europea i Cooperació.",
+        "adreca": "Fundación Ramón Areces (c. Vitruvio, 5)",
+        "municipi": "Madrid",
+        "autoritat": "Consellers",
+        "departament": "Recerca i Universitats"
+      },
+      {
+        "id": "1016744",
+        "data": "2026-11-23",
+        "hora": "09:30",
+        "titol": "La consellera Hernández inaugura el Fòrum Internacional de Traductors de Literatura Catalana",
+        "descripcio": "La consellera de Cultura, Sònia Hernández, inaugurarà el Fòrum Internacional de Traductors de Literatura Catalana.",
+        "adreca": "Institut d'Estudis Catalans (c. del Carme, 47)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Cultura"
+      },
+      {
+        "id": "1016984",
+        "data": "2026-11-23",
+        "hora": "09:30",
+        "titol": "El conseller Duch intervé en la Conferència d'Alcaldes de la Mediterrània 2026",
+        "descripcio": "El conseller d'Unió Europea i Acció Exterior, Jaume Duch, intervindrà en l'acte inaugural de la Conferència d'Alcaldes de la Mediterrània 2026, Ciutats mediterrànies en un marc regional en evolució, organitzada per l'Institut Europeu de la Mediterrània (IEMed) i la xarxa MedCities, amb el suport de l'Ajuntament de Barcelona i la Diputació de Barcelona. L'acte té lloc en el marc de l'11è Fòrum Regional de la Unió per la Mediterrània (UpM).",
+        "adreca": "Palau de Pedralbes (av. Diagonal, 686)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Unió Europea i Acció Exterior"
+      },
+      {
+        "id": "1017652",
+        "data": "2026-11-23",
+        "hora": "09:30",
+        "titol": "Esmorzar col·loqui de l'Ateneo de Madrid",
+        "descripcio": "El president de la Generalitat, Salvador Illa, participarà al cicle \"Los desayunos del Ateneo\", una trobada d'anàlisi i debat sobre l'actualitat política, que organitza l'Ateneo de Madrid. L'esmorzar informatiu s'iniciarà amb una breu semblança del president que farà el periodista Josep Capella. Tot seguit, s'obrirà l'entrevista i col·loqui, en què les preguntes seran formulades pels periodistes Lola García, Esther Palomera i Javier Casqueiro.Nota: Els mitjans que vulguin cobrir l'acte s'han d'acreditar prèviament enviant un correu a l'adreça comunicación@ateneodemadrid.esL'acte es podrà seguir en directe a https://www.youtube.com/live/3maV8Ev7A_s",
+        "adreca": "Ateneo de Madrid (c. del Prado, 21)",
+        "municipi": "Madrid",
+        "autoritat": "President",
+        "departament": "President"
+      },
+      {
+        "id": "1017224",
+        "data": "2026-11-23",
+        "hora": "10:00",
+        "titol": "El conseller Moreno clou la presentació de l'informe sobre itineraris d'inclusió del Comitè d'Experts per a la Transformació i la Innovació Social",
+        "descripcio": "El conseller de Drets Socials i Inclusió, Raúl Moreno, clourà la presentació de l'informe sobre itineraris d'inclusió elaborat pel Comitè d'Experts per a la Transformació i la Innovació Social. La presentació comptarà amb una taula rodona en què participaran alguns dels experts que han elaborat l'informe. En acabar l'acte, a les 11.15, el conseller Moreno atendrà els mitjans de comunicació amb un dels autors.",
+        "adreca": "Mercat del Born. Museu d'Història de Barcelona. Sala Moragas (pl. Comercial, 12",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Drets Socials"
+      },
+      {
+        "id": "1017476",
+        "data": "2026-11-23",
+        "hora": "10:00",
+        "titol": "La consellera Romero assisteix a la Sessió Plenària de la Comissió del Centenari de l'Exposició de 1929",
+        "descripcio": "La consellera d'Economia i Finances, Alícia Romero, assistirà a la Sessió Plenària de la Comissió del Centenari de l'Exposició de 1929. La reunió es desenvoluparà a porta tancada.",
+        "adreca": "Recinte Firal de Montjuïc (av. de la Reina Maria Cristina, s/n)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Economia i Finances"
+      },
+      {
+        "id": "1017960",
+        "data": "2026-11-23",
+        "hora": "10:00",
+        "titol": "El conseller Ordeig visita una granja ramadera a la Val d'Aran",
+        "descripcio": "El conseller d'Agricultura, Ramaderia, Pesca i Alimentació, Òscar Ordeig i Molist, visitarà una granja ramadera a la Val d'Aran.",
+        "adreca": "42°46'44.3\"N 0°41'29.8\"\"E\"",
+        "municipi": "Bossòst",
+        "autoritat": "Consellers",
+        "departament": "Agricultura, Ramaderia, Pesca i Alimentació"
+      },
+      {
+        "id": "1018196",
+        "data": "2026-11-23",
+        "hora": "10:00",
+        "titol": "La consellera Niubó es reuneix amb l'Ajuntament de Sant Pere de Ribes",
+        "descripcio": "La consellera d'Educació i Formació Professional, Esther Niubó, es reunirà amb representants de l'Ajuntament de Sant Pere de Ribes.",
+        "adreca": "Departament d'Educació i Formació Professional (Via Augusta, 202-226)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Educació i Formació Professional"
+      },
+      {
+        "id": "1016964",
+        "data": "2026-11-23",
+        "hora": "11:00",
+        "titol": "La consellera Parlon assisteix a la prova pilot de les prealertes del sistema Es-Alert a Santa Pau",
+        "descripcio": "La consellera d'Interior i Seguretat Pública, Núria Parlon, assistirà a la prova pilot de les prealertes del sistema Es-Alert que Protecció Civil de la Generalitat farà a Santa Pau (La Garrotxa). La consellera Parlon, acompanyada de l'alcaldessa de Santa Pau, Cristina Capó, assistirà a l'enviament de la prealerta i realitzarà, posteriorment una valoració provisional de com ha anat la prova. També assistiran a la prova el delegat del Govern a Girona, Xavier Guitart, i la directora general de Protecció Civil, Marta Cassany.",
+        "adreca": "Ajuntament de Santa Pau. Carrer Major, 23",
+        "municipi": "Santa Pau",
+        "autoritat": "Consellers",
+        "departament": "Protecció Civil"
+      },
+      {
+        "id": "1017816",
+        "data": "2026-11-23",
+        "hora": "11:00",
+        "titol": "El conseller Álvarez es reuneix amb la Federació Catalana de Basquetbol",
+        "descripcio": "El conseller d'Esports, Berni Álvarez, es reunirà amb la Federació Catalana de Basquetbol. L'acompanyarà el secretari general del Departament d'Esports, Abel García.",
+        "adreca": "Departament d'Esports (av. Països Catalans, 40-48)",
+        "municipi": "Esplugues de Llobregat",
+        "autoritat": "Consellers",
+        "departament": "Esports"
+      },
+      {
+        "id": "1018084",
+        "data": "2026-11-23",
+        "hora": "11:15",
+        "titol": "El conseller Ordeig visita l'Ajuntament de Les",
+        "descripcio": "El conseller d'Agricultura, Ramaderia, Pesca i Alimentació, Òscar Ordeig i Molist, visitarà l'Ajuntament de Les, on signarà el llibre d'honor.",
+        "adreca": "Pl. de l'Ajuntament, 1",
+        "municipi": "-Les",
+        "autoritat": "Consellers",
+        "departament": "Agricultura, Ramaderia, Pesca i Alimentació"
+      },
+      {
+        "id": "1016965",
+        "data": "2026-11-23",
+        "hora": "11:45",
+        "titol": "El conseller Duch intervé en la inauguració de l'EUTOPIA Week Barcelona 2026",
+        "descripcio": "El conseller d'Unió Europea i Acció Exterior, Jaume Duch, intervindrà en la inauguració de l'EUTOPIA Week Barcelona 2026, organitzada per la Universitat Pompeu Fabra. En el marc de la jornada, mantindrà una conversa amb l'exvicepresidenta de la Comissió Europea per als Valors i la Transparència, Věra Jourová, moderada pel periodista Claudi Pérez.",
+        "adreca": "Universitat Pompeu Fabra. Campus Ciutadella",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Unió Europea i Acció Exterior"
+      },
+      {
+        "id": "1018124",
+        "data": "2026-11-23",
+        "hora": "12:00",
+        "titol": "El conseller Ordeig recorre el camí de Canejan",
+        "descripcio": "El conseller d'Agricultura, Ramaderia, Pesca i Alimentació, Òscar Ordeig i Molist, recorrerà el camí de Canejan a peu.",
+        "adreca": "42°49'38.2\"N 0°45'35.4\"\"E\"",
+        "municipi": "Canejan",
+        "autoritat": "Consellers",
+        "departament": "Agricultura, Ramaderia, Pesca i Alimentació"
+      },
+      {
+        "id": "1018559",
+        "data": "2026-11-23",
+        "hora": "12:30",
+        "titol": "El conseller Moreno visita la seu de Qinera Group",
+        "descripcio": "El conseller de Drets Socials i Inclusió, Raúl Moreno Montaña, farà una visita institucional a la seu de Qinera Group. L'acompanyarà la directora dels Serveis Territorials de Drets Socials i Inclusió a Barcelona, Carme Esquirol Jiménez.",
+        "adreca": "Seu de Qinera Group (c. del Pacífic, 51)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Drets Socials"
+      },
+      {
+        "id": "1018032",
+        "data": "2026-11-23",
+        "hora": "13:00",
+        "titol": "La consellera Paneque clou la jornada 'L'art de construir: present i futur de l'arquitectura tècnica'",
+        "descripcio": "La consellera de Territori, Habitatge i Transició Ecològica, Sílvia Paneque, clourà la jornada L'art de construir: present i futur de l'arquitectura tècnica, organitzada per la Cambra de Contractistes d'Obres de Catalunya (CCOC), el Col·legi de l'Arquitectura Tècnica de Barcelona (Cateb) i l'Escola Politècnica Superior d'Edificació de Barcelona (EPSEB).",
+        "adreca": "Escola Politècnica Superior d'Edificació de Barcelona- EPSEB (av. Doctor Marañón, 44-50)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Territori, Habitatge i Transició Ecològica"
+      },
+      {
+        "id": "1018064",
+        "data": "2026-11-23",
+        "hora": "15:00",
+        "titol": "El conseller Duch participa en la formalització del conveni de pràctiques amb el Centre d'Estudis Internacionals (CEI)",
+        "descripcio": "El conseller d'Unió Europea i Acció Exterior, Jaume Duch, participarà en l'acte de formalització i signatura del conveni de pràctiques entre el Departament d'Unió Europea i Acció Exterior i el Centre d'Estudis Internacionals (CEI), que estableix el marc de col·laboració entre ambdues institucions.",
+        "adreca": "C. de la Pietat, 2",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Unió Europea i Acció Exterior"
+      },
+      {
+        "id": "1016864",
+        "data": "2026-11-23",
+        "hora": "16:00",
+        "titol": "El conseller Espadaler presideix la reunió anual del Consell Interacadèmic de Catalunya",
+        "descripcio": "El conseller de Justícia i Qualitat Democràtica, Ramon Espadaler, presidirà la reunió anual del Consell Interacadèmic de Catalunya. Per part del Departament, també hi assistirà la directora general de Dret, Entitats Jurídiques i Gestió Adequada de Conflictes, Imma Barral.",
+        "adreca": "Departament de Justícia i Qualitat Democràtica. Districte Administratiu (c. Foc, 57)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Justícia i Qualitat Democràtica"
+      },
+      {
+        "id": "1018316",
+        "data": "2026-11-23",
+        "hora": "16:00",
+        "titol": "La consellera Pané assisteix a la presentació Central de Resultats",
+        "descripcio": "La consellera de Salut, Olga Pané Mena, assistirà a la presentació Central de Resultats. A la presentació també hi aniran el secretari general, Narcís Pérez de Puig; el director del Servei Català de la Salut, Alfredo García Díaz; el secretari de Salut Pública, Esteve Fernández Muñoz; la secretària d'Atenció Sanitària i Participació, Gloria Gálvez Hernando; la subdirectora del Servei Català de la Salut, Pilar Otermin Vallejo; la directora general d'Ordenació i Regulació Sanitària, Clara Pareja Rossell; el director general de Recerca i Innovació en Salut, Antoni Plasencia Taradach; la gerenta del Consorci Sanitari Barcelona, Mònica Almiñana Rique; i el gerent de la Regió Sanitària Catalunya Central, Antoni Sánchez Laplaza.",
+        "adreca": "Auditori AXA (av. Diagonal, 547)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Salut"
+      },
+      {
+        "id": "1018197",
+        "data": "2026-11-23",
+        "hora": "16:30",
+        "titol": "La consellera Paneque informa sobre les noves expedicions i la nova línia de bus a l'Alt Maresme",
+        "descripcio": "La consellera de Territori, Habitatge i Transició Ecològica, Sílvia Paneque i Sureda, informarà sobre la posada en funcionament de noves expedicions a les línies 618 i 621 i de la nova línia de bus interurbà 619 a l'Alt Maresme. Aquest conjunt d'actuacions s'emmarquen en el segon Pla de Xoc de millora del transport públic per carretera impulsat pel Govern.",
+        "adreca": "Parada d'autobús de Pineda de Mar (https://maps.app.goo.gl/cL87e3kGefrTDfKu9)",
+        "municipi": "Pineda de Mar",
+        "autoritat": "Consellers",
+        "departament": "Territori, Habitatge i Transició Ecològica"
+      },
+      {
+        "id": "1017124",
+        "data": "2026-11-23",
+        "hora": "17:00",
+        "titol": "La consellera Hernández assisteix a la inauguració de l'exposició temporal 'El llibre d'hores de la família Gralla'",
+        "descripcio": "La consellera de Cultura, Sònia Hernández Almodóvar, assistirà a la inauguració de l'exposició temporal El llibre d'hores de la família Gralla, una joia del Renaixement.",
+        "adreca": "Museu del Renaixement (pl. Palau de Requesens, 4)",
+        "municipi": "Molins de Rei",
+        "autoritat": "Consellers",
+        "departament": "Cultura"
+      },
+      {
+        "id": "1017004",
+        "data": "2026-11-23",
+        "hora": "17:30",
+        "titol": "El conseller Duch es reuneix amb el nou cònsol general de Turquia a Barcelona",
+        "descripcio": "El conseller d'Unió Europea i Acció Exterior, Jaume Duch, es reunirà amb el nou cònsol general de Turquia a Barcelona, Ulaş Soylu. A la reunió també hi assistirà l'agregat del Consolat General de Turquia, Yiğit Kırdük.",
+        "adreca": "C. de la Pietat, 2",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Unió Europea i Acció Exterior"
+      },
+      {
+        "id": "1017836",
+        "data": "2026-11-23",
+        "hora": "18:00",
+        "titol": "El conseller Álvarez es reuneix amb la presidenta de la Unió de Consells Esportius de Catalunya",
+        "descripcio": "El conseller d'Esports, Berni Álvarez, es reunirà amb la presidenta de la Unió de Consells Esportius de Catalunya, Gemma Romeu, i altres representants de l'entitat. L'acompanyaran el secretari general del Departament d'Esports, Abel García, i la directora del Consell Català de l'Esport, Carme Bastida.",
+        "adreca": "Departament d'Esports (av. Països Catalans, 40-48)",
+        "municipi": "Esplugues de Llobregat",
+        "autoritat": "Consellers",
+        "departament": "Esports"
+      },
+      {
+        "id": "1016884",
+        "data": "2026-11-23",
+        "hora": "19:00",
+        "titol": "El conseller Espadaler assisteix a la missa de difunts per les víctimes d'accidents de trànsit i pels membres i familiars dels cossos de seguretat i dels bombers",
+        "descripcio": "El conseller de Justícia i Qualitat Democràtica, Ramon Espadaler, acompanyat de la secretària general, Maite Casado, assistirà a la missa de difunts en memòria de les víctimes d'accidents de trànsit i dels membres i familiars dels cossos de seguretat i dels bombers.",
+        "adreca": "Catedral de Barcelona (Pla de la Seu, s/n)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Justícia i Qualitat Democràtica"
+      },
+      {
+        "id": "1017908",
+        "data": "2026-11-23",
+        "hora": "19:10",
+        "titol": "El conseller Vila participa en la 2a Jornada pel català a l'empresa",
+        "descripcio": "El conseller de Política Lingüística, Xavier Vila, clourà la 2a Jornada pel català a l'empresa. Les polítiques lingüístiques públiques en l'àmbit de l'empresa, organitzada per la Fundació Vincle.",
+        "adreca": "Cambra de Comerç de Barcelona. Auditori (av. Diagonal, 452)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Política Lingüística"
+      },
+      {
+        "id": "1017145",
+        "data": "2026-11-23",
+        "hora": "20:00",
+        "titol": "La consellera Hernández assisteix a la gala dels XXXII Premis Butaca",
+        "descripcio": "La consellera de Cultura, Sònia Hernández Almodóvar, assistirià a la gala de la XXXII edició dels Premis Butaca de Teatre de Catalunya.",
+        "adreca": "Pavelló Municipal d'Esports",
+        "municipi": "Premià de Mar",
+        "autoritat": "Consellers",
+        "departament": "Cultura"
+      },
+      {
+        "id": "1018676",
+        "data": "2026-11-23",
+        "hora": "20:00",
+        "titol": "Gala del Català de l'Any",
+        "descripcio": "El president de la Generalitat, Salvador Illa, assistirà a la Gala del Català de l'Any, on farà entrega dels guardons a Emma Vilarasau i els xefs dels restaurant Disfrutar. Acompanyarà el president el conseller de la Presidència, Albert Dalmau. El cap de l'Executiu farà el parlament de cloenda de l'acte.",
+        "adreca": "Palauet Casades (c. Mallorca, 283)",
+        "municipi": "Barcelona",
+        "autoritat": "President",
+        "departament": "President"
+      },
+      {
+        "id": "1019276",
+        "data": "2026-11-24",
+        "hora": "09:15",
+        "titol": "Minut de silenci",
+        "descripcio": "El president de la Generalitat, Salvador Illa, acompanyat de la consellera d'Igualtat i Feminisme, Eva Menor, i d'altres membres del Govern, participarà al minut de silenci per condemnar el feminicidi d'una veïna de Llívia el passat 15 de novembre.",
+        "adreca": "Plaça Sant Jaume",
+        "municipi": "Barcelona",
+        "autoritat": "President",
+        "departament": "President"
+      },
+      {
+        "id": "1018884",
+        "data": "2026-11-24",
+        "hora": "09:30",
+        "titol": "Reunió del Consell Executiu",
+        "descripcio": "El president de la Generalitat, Salvador Illa, encapçalarà la reunió setmanal del Consell Executiu. Els mitjans gràfics en podran prendre imatges a l'inici.Nota: Els mitjans que vulguin cobrir la reunió hauran de presentar l'acreditació de Palau o bé el carnet del mitjà, acompanyat del DNI. En cas de no disposar de cap d'aquests documents, caldrà enviar un correu electrònic a l'adreça premsa.president@gencat.cat indicant nom, cognoms, DNI, mitjà pel qual es treballa i tasca que s'hi realitza.",
+        "adreca": "Palau de la Generalitat (Entrada per c. Sant Sever)",
+        "municipi": "Barcelona",
+        "autoritat": "President",
+        "departament": "President"
+      },
+      {
+        "id": "1017204",
+        "data": "2026-11-24",
+        "hora": "11:00",
+        "titol": "El conseller Ordeig presideix la 2a Gran Trobada de Gastrosàvies",
+        "descripcio": "El conseller d'Agricultura, Ramaderia, Pesca i Alimentació, Òscar Ordeig, presidirà la 2a Gran Trobada de Gastrosàvies, que reunirà més de 160 àvies per preservar i transmetre la cuina tradicional catalana.",
+        "adreca": "Món Sant Benet (camí de Sant Benet)",
+        "municipi": "Sant Fruitós de Bages",
+        "autoritat": "Consellers",
+        "departament": "Agricultura, Ramaderia, Pesca i Alimentació"
+      },
+      {
+        "id": "1018558",
+        "data": "2026-11-24",
+        "hora": "12:30",
+        "titol": "El conseller Moreno visita les obres de la futura llar residència i centre ocupacional Barnola-Vallribera",
+        "descripcio": "El conseller de Drets Socials i Inclusió, Raúl Moreno Montaña, visitarà les obres de la futura llar residència i centre ocupacional que la Fundació Barnola-Vallribera està construint al barri de Can Gambús, per a persones amb discapacitat intel·lectual en procés d'envelliment. Hi assistirà l'alcaldessa de Sabadell, Marta Farrés i Falgueras. L'acompanyarà la directora dels Serveis Territorials de Drets Socials i Inclusió a Barcelona, Carme Esquirol Jiménez. En acabat, el conseller atendrà els mitjans de comunicació.",
+        "adreca": "Futura llar residència i centre ocupacional Barnola-Vallribera (rda. de Jean Monnet, 153)",
+        "municipi": "Sabadell",
+        "autoritat": "Consellers",
+        "departament": "Drets Socials"
+      },
+      {
+        "id": "1019376",
+        "data": "2026-11-24",
+        "hora": "12:30",
+        "titol": "La consellera i portaveu Paneque informa dels acords del Govern",
+        "descripcio": "La consellera de Territori, Habitatge i Transició Ecològica, i portaveu del Govern, Sílvia Paneque, informarà dels acords que ha adoptat el Consell Executiu després de la reunió celebrada al matí. La compareixença es podrà seguir en directe des de la web i les xarxes socials de Govern.",
+        "adreca": "Palau de la Generalitat",
+        "municipi": "Barcelona",
+        "autoritat": "Portaveu del Govern",
+        "departament": "Direcció General de Comunicació"
+      },
+      {
+        "id": "1018832",
+        "data": "2026-11-24",
+        "hora": "14:00",
+        "titol": "La consellera Montserrat participa en la jornada 'The past, present and future of doctoral research' del CRG",
+        "descripcio": "La consellera de Recerca i Universitats, Núria Montserrat, participarà en l'acte The past, present and future of doctoral research, una jornada que commemora els 20 anys de trajectòria del programa internacional de doctorat del Centre de Regulació Genòmica (CRG). La consellera farà la benvinguda institucional juntament amb la directora del CRG, Mónica Bettencourt-Dias.",
+        "adreca": "Auditori del Parc de Recerca Biomèdica de Barcelona (PRBB)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Recerca i Universitats"
+      },
+      {
+        "id": "1019436",
+        "data": "2026-11-24",
+        "hora": "14:10",
+        "titol": "Les conselleres Menor i Parlon clouran la jornada 'Disputar el futur: violències masclistes, negacionisme i defensa de drets'",
+        "descripcio": "La consellera d'Igualtat i Feminisme, Eva Menor Cantador, i la consellera d'Interior i Seguretat Pública, Núria Parlon, faran la cloenda institucional 'Mirades compartides: de les reflexions als compromisos', en la jornada Disputar el futur: violències masclistes, negacionisme i defensa de drets, organitzada amb motiu del Dia Internacional per a l'Eliminació de la Violència contra les Dones. Les acompanyaran altres representants d'ambdós departaments.",
+        "adreca": "Born Centre de Cultura i Memòria (pl. Comercial, 12)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Igualtat i Feminisme"
+      },
+      {
+        "id": "1019116",
+        "data": "2026-11-24",
+        "hora": "15:00",
+        "titol": "El conseller Álvarez es reuneix amb la Blanquerna-Universitat Ramon Llull",
+        "descripcio": "El conseller d'Esports, Berni Álvarez, es reunirà amb la Blanquerna-Universitat Ramon Llull.",
+        "adreca": "Departament d'Esports (av. Països Catalans, 40-48)",
+        "municipi": "Esplugues de Llobregat",
+        "autoritat": "Consellers",
+        "departament": "Esports"
+      },
+      {
+        "id": "1019596",
+        "data": "2026-11-24",
+        "hora": "15:30",
+        "titol": "La consellera Menor clou el 'IX Foro Social de Mujeres con Discapacidad'",
+        "descripcio": "La consellera d'Igualtat i Feminisme, Eva Menor Cantador, clourà el IX Foro Social de Mujeres con Discapacidad, un espai de trobada i reflexió impulsat per la Fundación CERMI Mujeres, que enguany se centra en la lluita contra el tràfic i l'explotació de dones i nenes amb discapacitat.",
+        "adreca": "Hotel ILUNION (c. del Cardenal Reig, 11B)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Igualtat i Feminisme"
+      },
+      {
+        "id": "1019056",
+        "data": "2026-11-24",
+        "hora": "16:00",
+        "titol": "La consellera Paneque obre els tallers interdepartamentals per a la revisió del Pla territorial general de Catalunya",
+        "descripcio": "La consellera de Territori, Habitatge i Transició Ecològica, Sílvia Paneque, obrirà els tallers interdepartamentals que es posaran en marxa dins dels treballs de revisió del Pla territorial general de Catalunya. La delegada del Govern a Barcelona, Pilar Díaz Romero; la secretària d'Afers Socials i Inclusió, Carolina Homar Cruz; la directora general de Serveis Socials i Inclusió, Anna Vila i Rull, i el director general d'Acció Comunitària i Innovació Social, Jaume Romero Periz. hi assistiran.",
+        "adreca": "Palau Robert (pg. de Gràcia, 107)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Territori, Habitatge i Transició Ecològica"
+      },
+      {
+        "id": "1019216",
+        "data": "2026-11-24",
+        "hora": "16:00",
+        "titol": "El conseller Ordeig analitza la situació de la PPA a Catalunya quan es compleix el primer aniversari de l'emergència sanitària",
+        "descripcio": "El conseller d'Agricultura, Ramaderia, Pesca i Alimentació, Òscar Ordeig i Molist, oferirà una roda de premsa per analitzar la situació de la PPA a Catalunya quan es compleix el primer aniversari de l'emergència sanitària.El conseller Ordeig analitza la situació de la PPA a Catalunya quan es compleix el primer aniversari de l'emergència sanitària.",
+        "adreca": "Departament d'Agricultura, Ramaderia, Pesca i Alimentació. Sala d'actes (Gran Via, 612)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Agricultura, Ramaderia, Pesca i Alimentació"
+      },
+      {
+        "id": "1019536",
+        "data": "2026-11-24",
+        "hora": "16:00",
+        "titol": "La consellera Niubó es reuneix amb la presidenta de l'Institut d'Estudis Catalans",
+        "descripcio": "La consellera d'Educació i Formació Professional, Esther Niubó, es reunirà amb la presidenta de l'Institut d'Estudis Catalans, Teresa Cabré. L'acompanyarà el president del Consell d'Educació de Catalunya, Joan Manuel del Pozo.",
+        "adreca": "Departament d'Educació i Formació Professional (Via Augusta, 202-226)",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Educació i Formació Professional"
+      },
+      {
+        "id": "1019016",
+        "data": "2026-11-24",
+        "hora": "16:45",
+        "titol": "El conseller Duch presideix la Comissió Interdepartamental d'Acció Exterior i de Relacions amb la UE",
+        "descripcio": "El conseller d'Unió Europea i Acció Exterior, Jaume Duch, presidirà la reunió de la Comissió Interdepartamental d'Acció Exterior i de Relacions amb la Unió Europea, l'òrgan de coordinació de l'acció exterior del Govern de la Generalitat. També hi participarà el secretari d'Afers Europeus, Multilaterals i de Cooperació al Desenvolupament, Agustí Fernández de Losada.",
+        "adreca": "Via Laietana, 14",
+        "municipi": "Barcelona",
+        "autoritat": "Consellers",
+        "departament": "Unió Europea i Acció Exterior"
+      },
+      {
+        "id": "1019176",
+        "data": "2026-11-24",
+        "hora": "19:00",
+        "titol": "La consellera Paneque assisteix als Premis de la Guineu espavilada: 20 gironins 2026",
+        "descripcio": "La consellera de Territori, Habitatge i Transició Ecològica, Sílvia Paneque i Sureda, assistirà als Premis de la Guineu espavilada: 20 gironins 2026, que organitza el diari Ara.",
+        "adreca": "Antic Teatre Odeon ( Pujada de Sant Domènec, 6)",
+        "municipi": "Girona",
+        "autoritat": "Consellers",
+        "departament": "Territori, Habitatge i Transició Ecològica"
+      },
+      {
+        "id": "1019156",
+        "data": "2026-11-24",
+        "hora": "20:15",
+        "titol": "La consellera Paneque clou la XXVIII Jornada dels Economistes de Girona 2026",
+        "descripcio": "La consellera de Territori, Habitatge i Transició Ecològica, Sílvia Paneque i Sureda, clourà la XXVIII Jornada del Col·legi d'Economistes de Girona 2026, que enguany porta per títol Nou ordre global: l'economia catalana en joc.",
+        "adreca": "Palau de Congressos de Girona. Auditori (pg. de la Devesa, 35)",
+        "municipi": "Girona",
+        "autoritat": "Consellers",
+        "departament": "Territori, Habitatge i Transició Ecològica"
       }
     ]
   },
   "parlament": {
     "font": "Parlament de Catalunya: agenda parlamentària",
     "url": "https://www.parlament.cat/web/actualitat/agenda/index.html",
-    "data_consulta": "2026-11-23",
+    "data_consulta": "2026-11-25",
     "des_de": "2026-10-01",
     "fins_a": "2026-12-31",
     "categories": [
@@ -12748,7 +13199,7 @@
       {
         "data": "2026-11-24",
         "hora": "11:30",
-        "titol": "Conferència de premsa dels grups de Junts, ERC, Comuns i CUP-DT sobre la Proposta de Resolució que demana la titularitat pública de la xarxa elèctrica i la recuperació de les competències de distribució per part de la Generalitat i els municipis",
+        "titol": "Conferència de premsa dels grups de Junts, ERC, els Comuns i la CUP-DT sobre la proposta de resolució que demana la titularitat pública de la xarxa elèctrica i la recuperació de les competències de distribució per part de la Generalitat i els municipis",
         "detalls": [
           "Sala de conferències de premsa",
           "Emissió en directe"
@@ -12777,7 +13228,7 @@
       {
         "data": "2026-11-24",
         "hora": "12:20",
-        "titol": "Conferència de premsa dels grups d'ERC, Comuns i CUP-DT amb familiars dels vaguistes en presó preventiva detinguts durant la vaga general de l'11 de novembre",
+        "titol": "Conferència de premsa dels grups d'ERC, els Comuns i la CUP-DT amb familiars dels vaguistes en presó preventiva detinguts durant la vaga general de l'11 de novembre",
         "detalls": [
           "Sala de conferències de premsa",
           "Emissió en directe"
@@ -12795,6 +13246,62 @@
         ],
         "enllacos": [],
         "publicat": "2026-11-23",
+        "categoria": "Actes institucionals"
+      },
+      {
+        "data": "2026-11-25",
+        "hora": "12:50",
+        "titol": "Conferència de premsa dels grups del PSC-Units, Junts, ERC, els Comuns i la CUP-DT amb l'associació Dones Juristes amb motiu del Dia Internacional per a l'Eliminació de la Violència contra les Dones",
+        "detalls": [
+          "Sala de conferències de premsa",
+          "Emissió en directe"
+        ],
+        "enllacos": [],
+        "publicat": "2026-11-24",
+        "categoria": "Conferències de premsa"
+      },
+      {
+        "data": "2026-11-25",
+        "hora": "19:00",
+        "titol": "El president, Josep Rull, assisteix a la gala dels V Premis Sàpiens",
+        "detalls": [
+          "Barcelona"
+        ],
+        "enllacos": [],
+        "publicat": "2026-11-24",
+        "categoria": "Actes institucionals"
+      },
+      {
+        "data": "2026-11-26",
+        "hora": "10:00",
+        "titol": "El president, Josep Rull, rep en audiència la Federació Internacional de Kungfu Wushu a Catalunya",
+        "detalls": [
+          "Despatx d'audiències"
+        ],
+        "enllacos": [],
+        "publicat": "2026-11-25",
+        "categoria": "Actes institucionals"
+      },
+      {
+        "data": "2026-11-26",
+        "hora": "12:00",
+        "titol": "El president, Josep Rull, clourà el Cicle 'La col·laboració publicoprivada a la Catalunya que volem'",
+        "detalls": [
+          "Barcelona"
+        ],
+        "enllacos": [],
+        "publicat": "2026-11-25",
+        "categoria": "Actes institucionals"
+      },
+      {
+        "data": "2026-11-26",
+        "hora": "19:30",
+        "titol": "El president, Josep Rull, assisteix a la gala de lliurament dels Premis Ondas 2026",
+        "detalls": [
+          "Barcelona"
+        ],
+        "enllacos": [],
+        "publicat": "2026-11-25",
         "categoria": "Actes institucionals"
       },
       {
@@ -12865,6 +13372,23 @@
           }
         ],
         "publicat": "2026-11-10",
+        "categoria": "Sessions dels òrgans"
+      },
+      {
+        "data": "2026-12-09",
+        "hora": "13:00",
+        "titol": "Ponència: Proposició de llei de modificació de la Llei 12/2015, de cooperatives",
+        "detalls": [
+          "Sessió ordinària",
+          "Sala 6"
+        ],
+        "enllacos": [
+          {
+            "text": "Ordre del dia",
+            "url": "https://www.parlament.cat/web/actualitat/ordre-dia/index.html?p_od0=0140415004"
+          }
+        ],
+        "publicat": "2026-11-25",
         "categoria": "Sessions dels òrgans"
       }
     ]

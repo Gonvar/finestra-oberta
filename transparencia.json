@@ -7,12 +7,12 @@
   "agenda": {
     "font": "Dades obertes de Catalunya: Agenda pública amb grups d’interès dels alts càrrecs i personal directiu; subdirectors/es i llocs assimilats de la Generalitat de Catalunya (Direcció General de Govern Obert)",
     "url": "https://analisi.transparenciacatalunya.cat/d/hd8k-y28e",
-    "data_dades": "2026-11-23"
+    "data_dades": "2026-11-25"
   },
   "viatges": {
     "font": "Dades obertes de Catalunya: Viatges a l’estranger dels alts càrrecs i personal directiu de la Generalitat de Catalunya (Direcció General de Govern Obert)",
     "url": "https://analisi.transparenciacatalunya.cat/d/5kte-hque",
-    "data_dades": "2026-11-18"
+    "data_dades": "2026-11-25"
   },
   "nota": "L’agenda i els viatges compten des del nomenament de cada persona en el càrrec actual. Les despeses dels viatges es publiquen quan s’han validat, i sense_despeses diu quants viatges encara no en tenen. Segons la relació, l’import d’un viatge pot incloure el de la comitiva. Qui encara no surt a l’agenda, que es publica per trimestres, no té el camp agenda. darrera_entrada és el dia de la fila més recent de cada persona, també si és «-».",
   "persones": [
@@ -75,38 +75,38 @@
         }
       ],
       "agenda": {
-        "darrera_entrada": "2026-09-10",
-        "contactes": 469,
+        "darrera_entrada": "2026-11-19",
+        "contactes": 502,
         "darrers": [
           {
-            "data": "2026-09-10",
-            "grup": "Col·legi Oficial de Gestors Administratius de Catalunya",
-            "activitat": "Reunió",
-            "tema": "Reunió amb representants del Col·legi Oficial de Gestors Administratius de Catalunya (COGAC) sobre temes d'interès per l'entitat"
-          },
-          {
-            "data": "2026-09-08",
-            "grup": "Comunitat de Sant'Egidio - CSP",
-            "activitat": "Reunió",
-            "tema": "Reunió amb representants de la Comunitat de Sant'Egidio a Barcelona sobre temes d'interès per la entitat"
-          },
-          {
-            "data": "2026-09-07",
-            "grup": "Adetca",
+            "data": "2026-11-19",
+            "grup": "Edició de Premsa Periòdica Ara, SL",
             "activitat": "Acte",
-            "tema": "XXV Gala Catalunya Aixeca el Teló 2026-2027, tret de sortida a la temporada teatral a Catalunya, al Gran Teatre del Liceu de Barcelona"
+            "tema": "Cloenda i intervenció a la Nit de l'ARA 2026, on es lliuraran els premis del diari ARA que reconeixen persones, empreses, institucions i entitats que contribueixen a la millora de la societat catalana."
           },
           {
-            "data": "2026-08-31",
-            "grup": "Circulo de Directivos de Habla Alemana",
-            "activitat": "Reunió",
-            "tema": "Reunió amb el Cercle de Directius de Parla Alemanya sobre temes d'actualitat i d'interès per les empreses alemanyes implantades a Catalunya"
-          },
-          {
-            "data": "2026-08-29",
-            "grup": "Solaria Promoción y Desarrollo Fotovoltaico, S.L,",
+            "data": "2026-11-18",
+            "grup": "Fundació Privada Banc dels Aliments",
             "activitat": "Acte",
-            "tema": "Visita institucional i recorregut a peu pel Parc Fotovoltaic d'Alcarràs amb motiu de la seva entrada en funcionament"
+            "tema": "Visita a la nau de classificació dels aliments recollits pel Gran Recapte 2026 del Banc dels Aliments."
+          },
+          {
+            "data": "2026-11-18",
+            "grup": "Foro de la Economia del Agua",
+            "activitat": "Acte",
+            "tema": "Inauguració del XX Fòrum de l'Economia de l'Aigua, que enguany té com a lema: L'era de l'aigua: el recurs que marcarà l'economia, la tecnologia i la geopolítica del segle XXI."
+          },
+          {
+            "data": "2026-11-16",
+            "grup": "Col·legi d'Arquitectes de Catalunya",
+            "activitat": "Reunió",
+            "tema": "Reunió amb la degana del Col·legi d'Arquitectes de Catalunya per intercanviar impressions sobre la crisi de l'habitatge i traslladar col·laboració i propostes de solució. "
+          },
+          {
+            "data": "2026-11-13",
+            "grup": "Col·legi d'Economistes de Catalunya",
+            "activitat": "Acte",
+            "tema": "Acte d’inauguració de la Jornada dels Economistes que aplega professionals de l’economia, empresaris i representants institucionals. "
           }
         ]
       },
@@ -566,15 +566,15 @@
           },
           {
             "data": "2026-09-14",
-            "grup": "AeroS",
-            "activitat": "Reunió",
-            "tema": "Trobada entre institució i empresa per fer seguiment i intercanvi de projectes amb l’objectiu de trobar solucions a temàtiques actuals que es gestionen des del Departament d’Empresa i Treball.\n"
-          },
-          {
-            "data": "2026-09-14",
             "grup": "AEBALL - Associació Empresarial de L'Hospitalet i Baix Llobregat",
             "activitat": "Acte",
             "tema": "Fòrum empresarial del Llobregat promogut per Aeball ( Associació empresarial de l' Hospitalet i Baix Llobregat), reforçant el compromís amb la innovació i la competitivitat empresarial."
+          },
+          {
+            "data": "2026-09-14",
+            "grup": "AeroS",
+            "activitat": "Reunió",
+            "tema": "Trobada entre institució i empresa per fer seguiment i intercanvi de projectes amb l’objectiu de trobar solucions a temàtiques actuals que es gestionen des del Departament d’Empresa i Treball.\n"
           }
         ]
       },
@@ -1298,38 +1298,38 @@
         }
       ],
       "agenda": {
-        "darrera_entrada": "2026-10-24",
-        "contactes": 206,
+        "darrera_entrada": "2026-11-19",
+        "contactes": 215,
         "darrers": [
           {
-            "data": "2026-10-24",
-            "grup": "Associacio Catalana En Pro de la Justícia",
+            "data": "2026-11-19",
+            "grup": "col.legi de graduats socials barcelona",
             "activitat": "Acte",
-            "tema": "Celebració del Dia de la Justícia de Pau a Catalunya 2026, a Montserrat, amb lliurament de distincions. Al conseller se li atorga la Gran Creu de la Justícia de Pau, en reconeixement de la seva trajectòria i del seu suport a la justícia de pau."
+            "tema": "XI Jornades laboralistes de Dret del treball i la Seguretat Social. El programa combina l'anàlisi de la jurisprudència més recent amb qüestions pràctiques que es plantegen a les administracions, les empreses i les persones treballadores.\n"
           },
           {
-            "data": "2026-10-23",
-            "grup": "Consell dels Il·lustres Col·legis d'Advocats de Catalunya",
+            "data": "2026-11-18",
+            "grup": "Tribuna Catalunya SL",
             "activitat": "Acte",
-            "tema": "Acte de cloenda del IV Congrés de Dret Civil Català, sota el lema \"Més enllà del Codi: del coneixement a la pràctica\", centrat en l'estratègia, el criteri jurídic i les solucions pràctiques per a l'advocacia ctalana."
+            "tema": "Esmorzar informatiu amb la intervenció del Sr. Jordi Hereu, Ministre d'Industria i Turisme. Reuneix representants dels partits polítics i del món econòmic i social per debatre qüestions d’actualitat, amb una atenció especial a la realitat catalana.\n"
           },
           {
-            "data": "2026-10-23",
-            "grup": "Fòrum de síndics, síndiques, defensors i defensores locals de Catalunya",
+            "data": "2026-11-18",
+            "grup": "Fundació Congrés de Cultura Catalana",
             "activitat": "Acte",
-            "tema": "Participació i lliurament de medalles del conseller a l'acte de Cloenda de l'escola de Tardor del Fòrum de Síndic de Greuges de Catalunya i Celebració dels 25 anys de la Sindicatura de Greuges d'Igualada."
+            "tema": "Acte de cloenda de la commemoració dels 50 anys del Congrés de la cultura catalana. L’acte vol retre homenatge a les persones i entitats que van fer possible el Congrés i obrir una reflexió sobre el futur de la cultura catalana."
           },
           {
-            "data": "2026-10-19",
-            "grup": "Unió General de Treballadors de Catalunya",
-            "activitat": "Reunió",
-            "tema": "Tractar la petició d'UGT Justícia Catalunya perquè s'impulsi el traspàs a la Generalitat de les competències sobre el cos de Lletrats de l'Administració de Justícia (LAJ), amb l'objectiu de reforçar la coherència i l'eficàcia de l'Oficina Judicial."
+            "data": "2026-11-13",
+            "grup": "Il·lustre Col·legi de Procuradors dels Tribunals de Lleida",
+            "activitat": "Acte",
+            "tema": "Inauguració II Jornada de Juntes de Govern del Consell de Col·legis de Procuradors dels Tribunals de Catalunya\n\n"
           },
           {
-            "data": "2026-10-15",
-            "grup": "Associació Catalana de Metges Forenses (acmf)",
+            "data": "2026-11-13",
+            "grup": "Consell de Procuradors de Catalunya",
             "activitat": "Acte",
-            "tema": "Acte inaugural \"Jornades Catalanes de Medicina Forense\". Es tracta de la XVII edició de les Jornades Catalanes d'Actualització en Medicina Forense. Aquest any coincideix amb el 40è aniversari de l'Associació Catalana de Metges Forenses (1986-2026)"
+            "tema": "Inauguració II Jornada de Juntes de Govern del Consell de Col·legis de Procuradors dels Tribunals de Catalunya\n\n"
           }
         ]
       },

@@ -1,0 +1,986 @@
+{
+  "id" : "wf87-e34n",
+  "name" : "Actes del Govern",
+  "assetType" : "dataset",
+  "attribution" : "Direcció General de Comunicació",
+  "attributionLink" : "https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/",
+  "averageRating" : 0,
+  "category" : "Sector Públic",
+  "createdAt" : 1684838976,
+  "description" : "Agenda dels actes del Govern de la Generalitat de Catalunya",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 620,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "SEE_TERMS_OF_USE",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 2695613,
+  "provenance" : "official",
+  "publicationAppendEnabled" : true,
+  "publicationDate" : 1686736858,
+  "publicationGroup" : 1800149,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1795577427,
+  "rowsUpdatedBy" : "a4b5-gx6v",
+  "tableId" : 1812106,
+  "totalTimesRated" : 0,
+  "viewCount" : 1989,
+  "viewLastModified" : 1795577423,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1689928516,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 1360900,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1689928516,
+    "targetAudience" : "public",
+    "workflowId" : 182,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1689928516,
+      "failureCount" : 0,
+      "startedAt" : 1689928516,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "a4b5-gx6v",
+      "displayName" : "Dades Obertes Catalunya"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 24739869,
+    "name" : "ID",
+    "dataTypeName" : "text",
+    "description" : "Número d’identificador de l’acte",
+    "fieldName" : "id",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104095,
+    "cachedContents" : {
+      "non_null" : "42828",
+      "largest" : "999992",
+      "null" : "0",
+      "top" : [ {
+        "item" : "786996",
+        "count" : "2"
+      }, {
+        "item" : "803662",
+        "count" : "2"
+      }, {
+        "item" : "999132",
+        "count" : "2"
+      }, {
+        "item" : "998492",
+        "count" : "2"
+      }, {
+        "item" : "803200",
+        "count" : "2"
+      }, {
+        "item" : "853592",
+        "count" : "2"
+      }, {
+        "item" : "800481",
+        "count" : "2"
+      }, {
+        "item" : "998613",
+        "count" : "2"
+      }, {
+        "item" : "999313",
+        "count" : "2"
+      }, {
+        "item" : "999592",
+        "count" : "2"
+      }, {
+        "item" : "802621",
+        "count" : "2"
+      }, {
+        "item" : "846404",
+        "count" : "2"
+      }, {
+        "item" : "794410",
+        "count" : "2"
+      }, {
+        "item" : "802481",
+        "count" : "2"
+      }, {
+        "item" : "831164",
+        "count" : "2"
+      }, {
+        "item" : "999273",
+        "count" : "2"
+      }, {
+        "item" : "798828",
+        "count" : "2"
+      }, {
+        "item" : "830384",
+        "count" : "2"
+      }, {
+        "item" : "803840",
+        "count" : "2"
+      }, {
+        "item" : "994993",
+        "count" : "2"
+      } ],
+      "smallest" : "1000024",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739870,
+    "name" : "TITOL",
+    "dataTypeName" : "text",
+    "description" : "Títol de l'Acte de Govern",
+    "fieldName" : "titol",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104082,
+    "cachedContents" : {
+      "non_null" : "42828",
+      "largest" : "Zoom Marques. Edició titulada &quot;Branded Content amb propòsit&quot;",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Reunió del PROCICAT",
+        "count" : "282"
+      }, {
+        "item" : "Reunió del Consell Executiu",
+        "count" : "182"
+      }, {
+        "item" : "Lliurament de la medalla centenària",
+        "count" : "132"
+      }, {
+        "item" : "Ple del Parlament",
+        "count" : "129"
+      }, {
+        "item" : "La consellera i portaveu Paneque informa dels acords del Govern",
+        "count" : "94"
+      }, {
+        "item" : "Reunió del Consell de Coordinació Territorial de Lleida - Covid-19",
+        "count" : "64"
+      }, {
+        "item" : "Reunió del Govern",
+        "count" : "59"
+      }, {
+        "item" : "Lliurament de medalla centenària",
+        "count" : "48"
+      }, {
+        "item" : "Reunió del Gabinet de coordinació d'emergències de les comarques gironines",
+        "count" : "47"
+      }, {
+        "item" : "La portaveu Plaja informa dels acords del Govern",
+        "count" : "47"
+      }, {
+        "item" : "El Govern respon preguntes orals al Ple del Parlament",
+        "count" : "46"
+      }, {
+        "item" : "Consell de Direcció de l'Administració Territorial de l'Alt Pirineu i Aran",
+        "count" : "34"
+      }, {
+        "item" : "Consell de Coordinació Territorial de la Catalunya Central - Covid-19",
+        "count" : "28"
+      }, {
+        "item" : "El Govern respon preguntes orals al ple del Parlament",
+        "count" : "27"
+      }, {
+        "item" : "Comissió Territorial d'Urbanisme de la Catalunya Central",
+        "count" : "26"
+      }, {
+        "item" : "Consell de Direcció de l'Administració Territorial de la Generalitat a Barcelona",
+        "count" : "26"
+      }, {
+        "item" : "El vicepresident Aragonès presideix la reunió del Comitè Executiu de Crisi per la Covid-19",
+        "count" : "26"
+      }, {
+        "item" : "Consell de Direcció de l'Administració Territorial del Govern a les Terres de l'Ebre",
+        "count" : "23"
+      }, {
+        "item" : "Consell de direcció de l'Administració Territorial de la Generalitat a Girona",
+        "count" : "22"
+      }, {
+        "item" : "Consell de Direcció de l'Administració Territorial de la Generalitat de Catalunya a la Catalunya Central",
+        "count" : "22"
+      } ],
+      "smallest" : "(00:00 hora catalana) Acte de commemoració de l'Any Oró",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739871,
+    "name" : "DESCRIPCIO",
+    "dataTypeName" : "text",
+    "description" : "Descripció de l'Acte de Govern",
+    "fieldName" : "descripcio",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104083,
+    "cachedContents" : {
+      "non_null" : "42828",
+      "largest" : "Visita institucional del president de la Generalitat, Pere Aragon&egrave;s i Garcia, a Palma.",
+      "null" : "0",
+      "top" : [ {
+        "item" : "La consellera de Territori, Habitatge i Transició Ecològica, i portaveu del Govern, Sílvia Paneque, informarà dels acords que ha adoptat el Consell Executiu després de la reunió celebrada al matí. La compareixença es podrà seguir en directe des de la web i les xarxes socials de Govern.",
+        "count" : "96"
+      }, {
+        "item" : "El delegat del Govern a Lleida, Ramon Farr&eacute;, participar&agrave; en la reuni&oacute; telem&agrave;tica del Comit&egrave; t&egrave;cnic del Pla d'Actuaci&oacute; del PROCICAT per emerg&egrave;ncies associades a malalties transmissibles emergents amb potencial alt risc.",
+        "count" : "40"
+      }, {
+        "item" : "El delegat del Govern a Girona, Pere Vila, participar&agrave; en la reuni&oacute; del Comit&egrave; t&egrave;cnic del Pla d&rsquo;Actuaci&oacute; del PROCICAT per emerg&egrave;ncies associades a malalties transmissibles emergents amb potencial alt risc. La sessi&oacute; ser&agrave; virtual.",
+        "count" : "31"
+      }, {
+        "item" : "El delegat del Govern a Lleida, Ramon Farr&eacute;, presidir&agrave; la reuni&oacute; telem&agrave;tica del Consell de Coordinaci&oacute; Territorial de Lleida - Covid-19.",
+        "count" : "31"
+      }, {
+        "item" : "El delegat del Govern a Lleida, Bernat Sol&eacute;, presidir&agrave; la reuni&oacute; telem&agrave;tica del Consell de Coordinaci&oacute; Territorial de Lleida - Covid-19.",
+        "count" : "28"
+      }, {
+        "item" : "La delegada del Govern a Girona, Laia Ca&ntilde;igueral, participar&agrave; en la reuni&oacute; del Comit&egrave; t&egrave;cnic del Pla d&rsquo;Actuaci&oacute; del PROCICAT per emerg&egrave;ncies associades a malalties transmissibles emergents amb potencial alt risc.",
+        "count" : "27"
+      }, {
+        "item" : "La delegada del Govern a la Catalunya Central, Alba Camps, participar&agrave; en la reuni&oacute; telem&agrave;tica del Comit&egrave; t&egrave;cnic del Pla d'Actuaci&oacute; del PROCICAT per emerg&egrave;ncies associades a malalties transmissibles emergents amb potencial alt risc.",
+        "count" : "26"
+      }, {
+        "item" : "La delegada del Govern a Girona, Laia Ca&ntilde;igueral, presidir&agrave; la reuni&oacute; del Comit&egrave; de Coordinaci&oacute; d'Emerg&egrave;ncies de les comarques gironines.",
+        "count" : "25"
+      }, {
+        "item" : "El delegat del Govern a Tarragona, &Ograve;scar Peris, participar&agrave; en la reuni&oacute; telem&agrave;tica del Comit&egrave; t&egrave;cnic del Pla d'Actuaci&oacute; del PROCICAT per emerg&egrave;ncies associades a malalties transmissibles emergents amb potencial alt risc.",
+        "count" : "24"
+      }, {
+        "item" : "La delegada del Govern a la Catalunya Central, Rosa Vestit, participar&agrave; en la reuni&oacute; telem&agrave;tica del Comit&egrave; t&egrave;cnic del Pla d'Actuaci&oacute; del PROCICAT per emerg&egrave;ncies associades a malalties transmissibles emergents amb potencial alt risc.",
+        "count" : "23"
+      }, {
+        "item" : "El vicepresident del Govern i conseller d&rsquo;Economia i Hisenda, Pere Aragon&egrave;s, presidir&agrave; la reuni&oacute; del Comit&egrave; Executiu de Crisi per la Covid-19. En la sessi&oacute; de treball, que es far&agrave; per via telem&agrave;tica, tamb&eacute; hi participaran la consellera de la Presid&egrave;ncia i portaveu del Govern, Meritxell Bud&oacute;; el conseller d'Interior, Miquel S&agrave;mper; la consellera de Salut, Alba Verg&eacute;s; el conseller d'Educaci&oacute;, Josep Bargall&oacute;; el conseller de Territori i Sostenibilitat, Dami&agrave; Calvet; la consellera de Just&iacute;cia, Ester Capella; i el conseller d'Empresa i Coneixement, Ramon Tremosa.",
+        "count" : "23"
+      }, {
+        "item" : "Els membres del Govern respondran preguntes orals al Ple del Parlament.",
+        "count" : "21"
+      }, {
+        "item" : "El delegat del Govern a Lleida, Bernat Sol&eacute;, participar&agrave; en la reuni&oacute; telem&agrave;tica del Comit&egrave; t&egrave;cnic del Pla d'Actuaci&oacute; del PROCICAT per emerg&egrave;ncies associades a malalties transmissibles emergents amb potencial alt risc.",
+        "count" : "19"
+      }, {
+        "item" : "La portaveu del Govern, Patrícia Plaja, informarà en roda de premsa dels acords que ha adoptat el Consell Executiu celebrat al matí. Els mitjans podran seguir la convocatòria i fer preguntes de forma presencial des del Palau de la Generalitat.",
+        "count" : "18"
+      }, {
+        "item" : "El delegat del Govern a Girona, Pere Vila, presidir&agrave; la reuni&oacute; del Comit&egrave; de Coordinaci&oacute; d'Emerg&egrave;ncies de les comarques gironines. La sessi&oacute; ser&agrave; virtual.",
+        "count" : "17"
+      }, {
+        "item" : "El president de la Generalitat, Pere Aragonès i Garcia, assistirà al ple del Parlament.",
+        "count" : "17"
+      }, {
+        "item" : "Els membres del Govern respondran preguntes orals al ple del Parlament.",
+        "count" : "16"
+      }, {
+        "item" : "El delegat del Govern a Tarragona, &Ograve;scar Peris, presidir&agrave; la reuni&oacute; telem&agrave;tica del Consell de Coordinaci&oacute; Territorial de seguiment de la Covid-19 al Camp de Tarragona.",
+        "count" : "15"
+      }, {
+        "item" : "La portaveu del Govern, Patrícia Plaja, informarà dels acords que ha adoptat el Consell Executiu després de la reunió celebrada al matí. La compareixença es podrà seguir en directe des de la web i les xarxes socials de Govern.",
+        "count" : "15"
+      }, {
+        "item" : "La delegada del Govern a Girona, Laia Cañigueral, presidirà la reunió del Consell de direcció de l'Administració Territorial de la Generalitat a Girona.",
+        "count" : "14"
+      } ],
+      "smallest" : "A causa del fort vent s'anul·la l'acte previst per avui, on el director de l'ACA, Samuel Reyes, i l'alcalde de Flix, Francesc Barbero, havien d'explicar, al mirador del meandre de Flix, el detall de les actuacions previstes així com de la comissió que en farà el seguiment.",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739872,
+    "name" : "HORA_ACTE",
+    "dataTypeName" : "text",
+    "description" : "Hora de l’Acte.",
+    "fieldName" : "hora_acte",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104084,
+    "cachedContents" : {
+      "non_null" : "42828",
+      "largest" : "23:55:00",
+      "null" : "0",
+      "top" : [ {
+        "item" : "10:00:00",
+        "count" : "4350"
+      }, {
+        "item" : "12:00:00",
+        "count" : "3679"
+      }, {
+        "item" : "11:00:00",
+        "count" : "3135"
+      }, {
+        "item" : "09:00:00",
+        "count" : "2792"
+      }, {
+        "item" : "09:30:00",
+        "count" : "2473"
+      }, {
+        "item" : "18:00:00",
+        "count" : "2327"
+      }, {
+        "item" : "19:00:00",
+        "count" : "2157"
+      }, {
+        "item" : "16:00:00",
+        "count" : "1865"
+      }, {
+        "item" : "13:00:00",
+        "count" : "1635"
+      }, {
+        "item" : "12:30:00",
+        "count" : "1627"
+      }, {
+        "item" : "10:30:00",
+        "count" : "1571"
+      }, {
+        "item" : "17:00:00",
+        "count" : "1570"
+      }, {
+        "item" : "11:30:00",
+        "count" : "1455"
+      }, {
+        "item" : "18:30:00",
+        "count" : "1021"
+      }, {
+        "item" : "16:30:00",
+        "count" : "917"
+      }, {
+        "item" : "20:00:00",
+        "count" : "902"
+      }, {
+        "item" : "17:30:00",
+        "count" : "735"
+      }, {
+        "item" : "19:30:00",
+        "count" : "664"
+      }, {
+        "item" : "15:00:00",
+        "count" : "599"
+      }, {
+        "item" : "14:00:00",
+        "count" : "581"
+      } ],
+      "smallest" : "00:00:00",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739883,
+    "name" : "DATA_ACTE",
+    "dataTypeName" : "calendar_date",
+    "description" : "Data de l’Acte",
+    "fieldName" : "data_acte",
+    "position" : 5,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 15155007,
+    "cachedContents" : {
+      "non_null" : "42828",
+      "largest" : "2026-11-24T00:00:00.000",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2024-04-18T00:00:00.000",
+        "count" : "66"
+      }, {
+        "item" : "2026-10-14T00:00:00.000",
+        "count" : "66"
+      }, {
+        "item" : "2026-04-23T00:00:00.000",
+        "count" : "66"
+      }, {
+        "item" : "2025-05-16T00:00:00.000",
+        "count" : "63"
+      }, {
+        "item" : "2025-10-16T00:00:00.000",
+        "count" : "63"
+      }, {
+        "item" : "2023-11-30T00:00:00.000",
+        "count" : "61"
+      }, {
+        "item" : "2025-11-26T00:00:00.000",
+        "count" : "61"
+      }, {
+        "item" : "2024-10-24T00:00:00.000",
+        "count" : "61"
+      }, {
+        "item" : "2025-11-12T00:00:00.000",
+        "count" : "59"
+      }, {
+        "item" : "2026-06-11T00:00:00.000",
+        "count" : "58"
+      }, {
+        "item" : "2026-11-19T00:00:00.000",
+        "count" : "58"
+      }, {
+        "item" : "2025-04-22T00:00:00.000",
+        "count" : "58"
+      }, {
+        "item" : "2026-10-15T00:00:00.000",
+        "count" : "58"
+      }, {
+        "item" : "2024-06-19T00:00:00.000",
+        "count" : "57"
+      }, {
+        "item" : "2025-11-14T00:00:00.000",
+        "count" : "57"
+      }, {
+        "item" : "2025-03-05T00:00:00.000",
+        "count" : "57"
+      }, {
+        "item" : "2026-06-19T00:00:00.000",
+        "count" : "56"
+      }, {
+        "item" : "2025-02-18T00:00:00.000",
+        "count" : "56"
+      }, {
+        "item" : "2025-02-05T00:00:00.000",
+        "count" : "56"
+      }, {
+        "item" : "2025-06-11T00:00:00.000",
+        "count" : "56"
+      } ],
+      "smallest" : "2021-02-13T00:00:00.000",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : {
+      "view" : "date_dmy"
+    }
+  }, {
+    "id" : 24739876,
+    "name" : "ADREÇA",
+    "dataTypeName" : "text",
+    "description" : "Adreça de l’Acte",
+    "fieldName" : "adre_a",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104088,
+    "cachedContents" : {
+      "non_null" : "41293",
+      "largest" : "Zoom",
+      "null" : "1535",
+      "top" : [ {
+        "item" : "-",
+        "count" : "2059"
+      }, {
+        "item" : "Palau de la Generalitat",
+        "count" : "857"
+      }, {
+        "item" : "Acte telemàtic",
+        "count" : "727"
+      }, {
+        "item" : "Palau de la Generalitat (entrada pel c. Sant Sever)",
+        "count" : "688"
+      }, {
+        "item" : "Reunió telemàtica",
+        "count" : "432"
+      }, {
+        "item" : "Parlament de Catalunya (Parc de la Ciutadella, s/n)",
+        "count" : "339"
+      }, {
+        "item" : "Parlament de Catalunya",
+        "count" : "233"
+      }, {
+        "item" : "C. Pietat, 2",
+        "count" : "203"
+      }, {
+        "item" : "Palau de la Generalitat (Entrada per c. Sant Sever)",
+        "count" : "125"
+      }, {
+        "item" : "Departament de Salut. Pavelló Ave Maria (trav. de les Corts, 131-159)",
+        "count" : "119"
+      }, {
+        "item" : "C. de la Pietat, 2",
+        "count" : "116"
+      }, {
+        "item" : "Palau Robert ( pg. de Gràcia, 107)",
+        "count" : "105"
+      }, {
+        "item" : "Districte Administratiu ( c. Foc, 57)",
+        "count" : "101"
+      }, {
+        "item" : "Acte virtual",
+        "count" : "89"
+      }, {
+        "item" : "Districte Administratiu ( c. del Foc, 57)",
+        "count" : "87"
+      }, {
+        "item" : "Parlament de Catalunya ( Parc de la Ciutadella, s/n)",
+        "count" : "86"
+      }, {
+        "item" : "Via Laietana, 14",
+        "count" : "86"
+      }, {
+        "item" : "Departament d'Interior ( c. de la Diputació, 355)",
+        "count" : "71"
+      }, {
+        "item" : "Palau de la Generalitat (entrada pel carrer Sant Sever)",
+        "count" : "70"
+      }, {
+        "item" : "Ajuntament",
+        "count" : "67"
+      } ],
+      "smallest" : "-",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739877,
+    "name" : "MUNICIPI",
+    "dataTypeName" : "text",
+    "description" : "Municipi de l’Acte",
+    "fieldName" : "municipi",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104089,
+    "cachedContents" : {
+      "non_null" : "41411",
+      "largest" : "Zurich",
+      "null" : "1417",
+      "top" : [ {
+        "item" : "Barcelona",
+        "count" : "17688"
+      }, {
+        "item" : "Girona",
+        "count" : "1420"
+      }, {
+        "item" : "Lleida",
+        "count" : "1229"
+      }, {
+        "item" : "Tarragona",
+        "count" : "1061"
+      }, {
+        "item" : "Manresa",
+        "count" : "808"
+      }, {
+        "item" : "Tortosa",
+        "count" : "600"
+      }, {
+        "item" : "Madrid",
+        "count" : "566"
+      }, {
+        "item" : "Reus",
+        "count" : "436"
+      }, {
+        "item" : "L'Hospitalet de Llobregat",
+        "count" : "400"
+      }, {
+        "item" : "Vic",
+        "count" : "385"
+      }, {
+        "item" : "Tremp",
+        "count" : "325"
+      }, {
+        "item" : "-",
+        "count" : "317"
+      }, {
+        "item" : "Terrassa",
+        "count" : "293"
+      }, {
+        "item" : "Sabadell",
+        "count" : "290"
+      }, {
+        "item" : "Sant Cugat del Vallès",
+        "count" : "284"
+      }, {
+        "item" : "Telemàtica",
+        "count" : "262"
+      }, {
+        "item" : "En línia",
+        "count" : "228"
+      }, {
+        "item" : "Sant Joan Despí",
+        "count" : "202"
+      }, {
+        "item" : "Mataró",
+        "count" : "196"
+      }, {
+        "item" : "Lisboa",
+        "count" : "191"
+      } ],
+      "smallest" : "_",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739878,
+    "name" : "COMARCA",
+    "dataTypeName" : "text",
+    "description" : "Comarca de l’Acte",
+    "fieldName" : "comarca",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104090,
+    "cachedContents" : {
+      "non_null" : "40583",
+      "largest" : "Zurich",
+      "null" : "2245",
+      "top" : [ {
+        "item" : "Barcelonès",
+        "count" : "18712"
+      }, {
+        "item" : "Gironès",
+        "count" : "1639"
+      }, {
+        "item" : "Segrià",
+        "count" : "1419"
+      }, {
+        "item" : "Tarragonès",
+        "count" : "1365"
+      }, {
+        "item" : "Baix Llobregat",
+        "count" : "1319"
+      }, {
+        "item" : "Vallès Occidental",
+        "count" : "1287"
+      }, {
+        "item" : "Bages",
+        "count" : "1192"
+      }, {
+        "item" : "Baix Ebre",
+        "count" : "809"
+      }, {
+        "item" : "-",
+        "count" : "757"
+      }, {
+        "item" : "Osona",
+        "count" : "673"
+      }, {
+        "item" : "Vallès Oriental",
+        "count" : "618"
+      }, {
+        "item" : "Baix Camp",
+        "count" : "607"
+      }, {
+        "item" : "Maresme",
+        "count" : "515"
+      }, {
+        "item" : "Alt Empordà",
+        "count" : "440"
+      }, {
+        "item" : "Pallars Jussà",
+        "count" : "423"
+      }, {
+        "item" : "Baix Empordà",
+        "count" : "368"
+      }, {
+        "item" : "Montsià",
+        "count" : "323"
+      }, {
+        "item" : "Alt Penedès",
+        "count" : "296"
+      }, {
+        "item" : "Garraf",
+        "count" : "296"
+      }, {
+        "item" : "Portugal",
+        "count" : "281"
+      } ],
+      "smallest" : "-",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739879,
+    "name" : "TERRITORI",
+    "dataTypeName" : "text",
+    "description" : "Territori de l’Acte",
+    "fieldName" : "territori",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104091,
+    "cachedContents" : {
+      "non_null" : "42828",
+      "largest" : "Terres Ebre",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Barcelona",
+        "count" : "23689"
+      }, {
+        "item" : "Girona",
+        "count" : "3356"
+      }, {
+        "item" : "Tarragona",
+        "count" : "2666"
+      }, {
+        "item" : "Catalunya central",
+        "count" : "2445"
+      }, {
+        "item" : "Lleida",
+        "count" : "2404"
+      }, {
+        "item" : "Europa",
+        "count" : "2094"
+      }, {
+        "item" : "Resta Món",
+        "count" : "1860"
+      }, {
+        "item" : "Terres Ebre",
+        "count" : "1520"
+      }, {
+        "item" : "Alt Pirineu i Aran",
+        "count" : "1213"
+      }, {
+        "item" : "Madrid",
+        "count" : "619"
+      }, {
+        "item" : "Espanya",
+        "count" : "481"
+      }, {
+        "item" : "Penedès",
+        "count" : "437"
+      }, {
+        "item" : "Segrià",
+        "count" : "15"
+      }, {
+        "item" : "Gironès",
+        "count" : "4"
+      }, {
+        "item" : "Barcelonès",
+        "count" : "4"
+      }, {
+        "item" : "Pallars Sobirà",
+        "count" : "2"
+      }, {
+        "item" : "Selva",
+        "count" : "2"
+      }, {
+        "item" : "Maresme",
+        "count" : "2"
+      }, {
+        "item" : "Baix Llobregat",
+        "count" : "2"
+      }, {
+        "item" : "Osona",
+        "count" : "2"
+      } ],
+      "smallest" : "-",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739880,
+    "name" : "AUTORITAT",
+    "dataTypeName" : "text",
+    "description" : "Autoritat responsable de l’Acte (president, consellers, delegats...)",
+    "fieldName" : "autoritat",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104092,
+    "cachedContents" : {
+      "non_null" : "42828",
+      "largest" : "Vicepresidenta",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Consellers",
+        "count" : "16216"
+      }, {
+        "item" : "Delegats",
+        "count" : "9310"
+      }, {
+        "item" : "Directors",
+        "count" : "8341"
+      }, {
+        "item" : "Secretaris",
+        "count" : "4900"
+      }, {
+        "item" : "President",
+        "count" : "3337"
+      }, {
+        "item" : "Vicepresidenta",
+        "count" : "400"
+      }, {
+        "item" : "Portaveu del Govern",
+        "count" : "276"
+      }, {
+        "item" : "Lleida",
+        "count" : "16"
+      }, {
+        "item" : "Barcelona",
+        "count" : "8"
+      }, {
+        "item" : "Girona",
+        "count" : "6"
+      }, {
+        "item" : "Catalunya central",
+        "count" : "4"
+      }, {
+        "item" : "Viceconseller",
+        "count" : "4"
+      }, {
+        "item" : "Alt Pirineu i Aran",
+        "count" : "3"
+      }, {
+        "item" : "Terres Ebre",
+        "count" : "2"
+      }, {
+        "item" : "Noguera",
+        "count" : "1"
+      }, {
+        "item" : "Espanya",
+        "count" : "1"
+      }, {
+        "item" : "Tarragona",
+        "count" : "1"
+      }, {
+        "item" : "Europa",
+        "count" : "1"
+      }, {
+        "item" : "Palerm",
+        "count" : "1"
+      } ],
+      "smallest" : "Alt Pirineu i Aran",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  }, {
+    "id" : 24739881,
+    "name" : "DEPARTAMENT",
+    "dataTypeName" : "text",
+    "description" : "Departament responsable de l’Acte ",
+    "fieldName" : "departament",
+    "position" : 11,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15104093,
+    "cachedContents" : {
+      "non_null" : "42828",
+      "largest" : "Vicepresidència, Polítiques Digitals i Territori",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Unió Europea i Acció Exterior",
+        "count" : "4691"
+      }, {
+        "item" : "Drets Socials",
+        "count" : "3764"
+      }, {
+        "item" : "President",
+        "count" : "3345"
+      }, {
+        "item" : "Igualtat i Feminisme",
+        "count" : "3031"
+      }, {
+        "item" : "Justícia i Qualitat Democràtica",
+        "count" : "3030"
+      }, {
+        "item" : "Cultura",
+        "count" : "2315"
+      }, {
+        "item" : "Salut",
+        "count" : "1995"
+      }, {
+        "item" : "Esports",
+        "count" : "1651"
+      }, {
+        "item" : "Territori, Habitatge i Transició Ecològica",
+        "count" : "1543"
+      }, {
+        "item" : "Empresa i Treball",
+        "count" : "1514"
+      }, {
+        "item" : "Direcció General de Comunicació",
+        "count" : "1390"
+      }, {
+        "item" : "Agricultura, Ramaderia, Pesca i Alimentació",
+        "count" : "1258"
+      }, {
+        "item" : "Delegació a Girona",
+        "count" : "1217"
+      }, {
+        "item" : "Delegació a Tarragona",
+        "count" : "1193"
+      }, {
+        "item" : "Economia i Finances",
+        "count" : "1155"
+      }, {
+        "item" : "Delegació a la Catalunya Central",
+        "count" : "1136"
+      }, {
+        "item" : "Interior i Seguretat Pública",
+        "count" : "1060"
+      }, {
+        "item" : "Delegació a Lleida",
+        "count" : "945"
+      }, {
+        "item" : "Recerca i Universitats",
+        "count" : "911"
+      }, {
+        "item" : "Educació i Formació Professional",
+        "count" : "880"
+      } ],
+      "smallest" : "Administració i Funció Pública",
+      "count" : "42828",
+      "cardinality" : "42828"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "See Terms of Use"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Freqüència d'actualització" : {
+        "Freqüència d'actualització" : "Diària"
+      },
+      "Idioma" : {
+        "Idioma" : "Català",
+        "Dataset name (EN)" : "Government Acts",
+        "Nombre del conjunto de datos (ES)" : "Actos del Govierno"
+      },
+      "Informació de gènere o sexe" : {
+        "Informació de gènere o sexe" : "No aplicable"
+      },
+      "Actors" : {
+        "Departament" : "Presidència",
+        "Tipus actor" : "Generalitat de Catalunya"
+      },
+      "Àmbit geogràfic" : {
+        "Informació geogràfica" : "Codi d'element",
+        "Àmbit geogràfic" : "Catalunya"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "actes", "govern", "agenda", "president", "ods16_pau justícies i institucions sòlides" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

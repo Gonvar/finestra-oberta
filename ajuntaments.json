@@ -1,10 +1,10 @@
 {
   "font": "Dades obertes de Catalunya: Composició dels plens d’ajuntaments, consells comarcals i diputacions provincials (Secretaria de Governs Locals i de Relacions amb l'Aran)",
   "url": "https://analisi.transparenciacatalunya.cat/d/nm3n-3vbj",
-  "data_dades": "2026-11-21",
+  "data_dades": "2026-11-25",
   "font_municipis": "Dades obertes de Catalunya: Dades generals dels ens locals de Catalunya (Secretaria de Governs Locals i de Relacions amb l'Aran)",
   "url_municipis": "https://analisi.transparenciacatalunya.cat/d/6nei-4b44",
-  "data_municipis": "2026-11-23",
+  "data_municipis": "2026-11-25",
   "nota": "Qui forma cada ple, amb el càrrec, l’àrea i el partit, surt de la composició dels plens. El nom del municipi, la comarca, la província, els habitants i la web surten del registre d’ens locals (Municat). Els noms, els càrrecs i els partits es publiquen tal com els escriu la font. Un camp que la font no dona és null, igual per a tothom.",
   "municipis": [
     {
@@ -9446,12 +9446,12 @@
       "web": "http://www.ulldecona.cat",
       "ple": [
         {
-          "nom": "NURIA VENTURA BRUSCA",
+          "nom": "MONICA FABRA MIRALLES",
           "carrec": "Alcaldessa Presidenta",
           "area": "Seguretat i Nucli Antic",
           "partit": "SU-CP",
           "ordre": 1,
-          "data_nomenament": "2023-06-17"
+          "data_nomenament": "2026-11-20"
         },
         {
           "nom": "CATERINA BRUSCA CAMPOS",
@@ -9462,7 +9462,7 @@
           "data_nomenament": "2023-06-17"
         },
         {
-          "nom": "MONICA FABRA MIRALLES",
+          "nom": null,
           "carrec": "2a Tinent d'Alcalde",
           "area": "Urbanisme i Obres, Barris, Comerç, Mercats i Fires, Turisme i Acció Exterior, Transformació Digital",
           "partit": "SU-CP",
@@ -60560,7 +60560,7 @@
         {
           "nom": "MARIA TERESA SOLSONA I BELTRI (Ind.)",
           "carrec": "Alcaldessa Presidenta",
-          "area": "Governació, Comunicació, Salut, Territori, Sector Primari",
+          "area": "Comunicació, Salut, Territori, Sector Primari, Personal, Règim Interior",
           "partit": "CM",
           "ordre": 1,
           "data_nomenament": "2024-07-15"
@@ -60568,7 +60568,7 @@
         {
           "nom": "AXEL TOMAS I ESQUERRE (Ind.)",
           "carrec": "1r Tinent d'Alcalde",
-          "area": "Serveis, Obres, Urbanisme, Coordinació econòmica, Personal, Règim Interior, Medi Ambient i Sostenibi",
+          "area": "Governació, Serveis, Obres, Urbanisme, Coordinació econòmica, Medi Ambient i Sostenibilitat",
           "partit": "CM",
           "ordre": 2,
           "data_nomenament": "2024-07-15"
@@ -60584,7 +60584,7 @@
         {
           "nom": "JONATAN SUBIRATS PRATS (ARA PL)",
           "carrec": "3r Tinent d'Alcalde",
-          "area": "Hisenda, Serveis Socials (integració i cohesió social), Habitatge, Relació EMD Muntells",
+          "area": "Hisenda, Serveis Socials (integració i cohesió social), Habitatge, Relació amb EMD Muntells",
           "partit": "ARA PL",
           "ordre": 4,
           "data_nomenament": "2024-07-15"

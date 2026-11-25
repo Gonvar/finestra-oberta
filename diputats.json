@@ -1,6 +1,6 @@
 {
   "font": "Parlament de Catalunya: fitxes de les persones diputades",
-  "data_consulta": "2026-11-23",
+  "data_consulta": "2026-11-25",
   "agenda": {
     "any": 2026,
     "mes": 11
@@ -535,6 +535,26 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "09:30",
+            "titol": "V Congrés TECNIO",
+            "detalls": [
+              "UB, Edifici Històric de la Universitat de Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -965,6 +985,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "12:00",
+            "titol": "Acte institucional amb motiu del 25N, Dia Internacional per a l'Eliminació de la Violència contra les Dones",
+            "detalls": [
+              "Auditori Josep Irla (plaça Pompeu Fabra, Girona)"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -2147,6 +2177,56 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "20:00",
+            "titol": "Acte final de campanya de Junts a Tarragona",
+            "detalls": [
+              "Palau Firal i de Congressos de Tarragona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "10:30",
+            "titol": "Jornada Anual AEQT 2026",
+            "detalls": [
+              "El Celler de Vila-seca"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-28",
+            "hora": "12:30",
+            "titol": "Trobada amb l'Associació de Bibliòfils de Tarragona",
+            "detalls": [
+              "RSAT, C. Major, 35, Tarragona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-28",
+            "hora": "17:30",
+            "titol": "Inauguració de la Llibreria i Espai Cultural Cal Gendre",
+            "detalls": [
+              "Plaça Pau Casals, Esl Monjos"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-28",
+            "hora": "20:30",
+            "titol": "Sopar anual dels Castellers de Vilafranca",
+            "detalls": [
+              "Cal Figarot, Vilafranca del Penedès"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -2607,6 +2687,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -3029,6 +3119,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "18:30",
+            "titol": "30è aniversari de la FEDAIA",
+            "detalls": [
+              "Casa Núria Pla (av. Mare de Déu de Montserrat, 114, Barcelona)"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -3516,6 +3616,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -4118,6 +4228,36 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-20"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "18:00",
+            "titol": "Dia de la Innovació Agroalimentària i lliurament del Premi a la Innovació Tecnològica Agroalimentària (PITA) 2026",
+            "detalls": [
+              "Esfèric Montjuïc de Barcelona, Plaça Dante s/n, Jardins Joan Brossa, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "19:00",
+            "titol": "Acte 25-N Dia Internacional per a l'Eliminació de la Violència contra les Dones",
+            "detalls": [
+              "Isona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -4515,6 +4655,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -5101,11 +5251,21 @@
             "publicat": "2026-11-20"
           },
           {
-            "data": "2026-11-24",
-            "hora": "18:00",
-            "titol": "Jornada dels Economistes 2026",
+            "data": "2026-11-26",
+            "hora": "19:30",
+            "titol": "Premis Ondas",
             "detalls": [
-              "Auditori Palau de Congressos de Girona - Sala Cambra, Girona"
+              "Gran Teatre del Liceu"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
@@ -5539,6 +5699,36 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "20:00",
+            "titol": "Acte final de campanya de Junts a Tarragona",
+            "detalls": [
+              "Palau Firal i de Congressos de Tarragona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "10:30",
+            "titol": "Jornada Anual AEQT 2026",
+            "detalls": [
+              "El Celler de Vila-seca"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -6599,6 +6789,29 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "13:30",
+            "fins": "16:00",
+            "titol": "Reunió amb el secretari d'Estat de Memòria Democràtica, referents parlamentaris i institucionals de Memòria Democràtica",
+            "detalls": [
+              "Barcelona",
+              "Modalitat: Reunió"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "18:00",
+            "fins": "20:30",
+            "titol": "Acte central de campanya del PSC a Barcelona amb Pedro Sánchez",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
           }
         ]
       }
@@ -7328,6 +7541,17 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-20"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "18:00",
+            "fins": "20:30",
+            "titol": "Acte central de campanya del PSC a Barcelona amb Pedro Sánchez",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
           }
         ]
       }
@@ -12511,6 +12735,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-09"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "09:00",
+            "titol": "European Health and Competitiviness Symposium",
+            "detalls": [
+              "CosmoCaixa, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -12996,6 +13230,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-28",
+            "hora": "11:00",
+            "titol": "Inauguració de la 632 Fira de Sant Andreu",
+            "detalls": [
+              "Espai firal de Torroella de Montgrí"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -13476,6 +13720,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "20:00",
+            "titol": "Acte final de campanya de Junts a Tarragona",
+            "detalls": [
+              "Palau Firal i de Congressos de Tarragona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -13932,6 +14186,26 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "12:00",
+            "titol": "Acte commemoratiu dels 25 anys del Centre Tecnològic de Telecomunicacions de Catalunya (CTTC)",
+            "detalls": [
+              "Sala Sygenta, Parc Mediterrani de la Tecnologia, carrer d'Esteve Terradas, 8, Castelldefels"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -14442,6 +14716,46 @@
             "titol": "Commemoració del Dia Internacional per a l'Eliminació de les Violències vers les Dones",
             "detalls": [
               "Monestir de Santa Maria de Santa Oliva"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "20:00",
+            "titol": "Sopar-tertúlia \"El ferrocarril al centre del debat\"",
+            "detalls": [
+              "Restaurant Arrels, Santa Margarida i els Monjos"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "19:00",
+            "titol": "Gala dels Premis LUDI 2026",
+            "detalls": [
+              "L'Aliança del Poblenou, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-28",
+            "hora": "12:00",
+            "titol": "Catalunya-Corea del Sud de futbol femení",
+            "detalls": [
+              "Estadi Narcís Sala, carrer de Santa Coloma, 39, Barcelona"
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
@@ -15371,6 +15685,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -15757,6 +16081,16 @@
             "titol": "Tomb dels Avis i Àvies per la Llibertat de Reus amb Lluís Puig",
             "detalls": [
               "Plaça del Mercadal, Reus"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "20:00",
+            "titol": "Acte final de campanya de Junts a Tarragona",
+            "detalls": [
+              "Palau Firal i de Congressos de Tarragona"
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
@@ -16176,6 +16510,16 @@
               }
             ],
             "publicat": "2026-11-06"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -16704,6 +17048,36 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "18:30",
+            "titol": "Lliurament del Premi Fundació Habitatge Social",
+            "detalls": [
+              "Casa del Mar, carrer d'Albareda, 1-13, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-28",
+            "hora": "10:30",
+            "titol": "70 anys de l'AMEC i de la Comissió de Defensa i 45 anys del Consell Evangèlic de Catalunya",
+            "detalls": [
+              "Església Bíblica Ebenezer, Passatge de Matilde de Gaiolà, 8-12, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -17020,6 +17394,26 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "20:00",
+            "titol": "Acte final de campanya de Junts a Tarragona",
+            "detalls": [
+              "Palau Firal i de Congressos de Tarragona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -17849,6 +18243,28 @@
           },
           {
             "data": "2026-11-23",
+            "hora": "12:00",
+            "fins": "12:15",
+            "titol": "Minut de silencia en rebuig de la Violència de Gènere",
+            "detalls": [
+              "Ajuntament de Reus"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "18:00",
+            "fins": "18:45",
+            "titol": "Trobada amb membres i la junta del Casal de la Gent Gran de la Selva del Camp",
+            "detalls": [
+              "Casal de la Gent Gran, La Selva del Camp"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
+          },
+          {
+            "data": "2026-11-23",
             "hora": "19:00",
             "fins": "20:30",
             "titol": "Acte central de campanya del PSC a la Selva del Camp amb el candidat i diputat, Sr. Andreu Martín",
@@ -17857,6 +18273,39 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-18"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "18:00",
+            "fins": "21:00",
+            "titol": "Acte central de campanya del PSC a Barcelona",
+            "detalls": [
+              "Fira de Barcelona, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "09:00",
+            "fins": "10:00",
+            "titol": "Acte institucional de commemoració del Dia Internacional per a l'Eliminació de la Violència envers les Dones.",
+            "detalls": [
+              "Ajuntament de Reus"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "20:00",
+            "fins": "22:00",
+            "titol": "Premis Cambra de Reus 2026",
+            "detalls": [
+              "Fira de Reus, Reus"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
           }
         ]
       }
@@ -18365,6 +18814,16 @@
           },
           {
             "data": "2026-11-10",
+            "hora": "17:00",
+            "titol": "Exposició d'infància: Pinzellades pels nostres drets",
+            "detalls": [
+              "Casa de Cultura Mas Catarro, Santa Margarida i Els Monjos"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-10",
             "hora": "19:30",
             "titol": "Reunió comunicació agrupació local PSC",
             "detalls": [
@@ -18405,6 +18864,16 @@
             "publicat": "2026-11-05"
           },
           {
+            "data": "2026-11-12",
+            "hora": "21:30",
+            "titol": "Sopar d'inici de campanya electoral amb l'agrupació local PSC",
+            "detalls": [
+              "Santa Margarida i Els Monjos"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
             "data": "2026-11-13",
             "hora": "21:45",
             "titol": "53ena Festa del Most de La Ràpita",
@@ -18413,6 +18882,167 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-05"
+          },
+          {
+            "data": "2026-11-15",
+            "hora": "10:00",
+            "fins": "13:00",
+            "titol": "Acte de campanya electoral: carpa del PSC",
+            "detalls": [
+              "mercat setmanal de Santa Margarida i Els Monjos"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-16",
+            "hora": "12:00",
+            "titol": "Coordinació i seguiment de comunicació de la Federació PSC Alt Penedès Garraf",
+            "detalls": [
+              "Telemàtica"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-16",
+            "hora": "18:00",
+            "titol": "Executiva de Federació PSC Alt Penedès Garraf",
+            "detalls": [
+              "Centre cívic Vilarnau de Sant Sadurní d'Anoia"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-16",
+            "hora": "20:00",
+            "titol": "Acte públic PSC campanya electoral 29N",
+            "detalls": [
+              "Centre cívic Vilarnau de Sant Sadurní d'Anoia"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-17",
+            "hora": "17:00",
+            "titol": "Acte acadèmic: Jaume I i el llibre del Feits, història, llegat i memòria",
+            "detalls": [
+              "Aula Magna de la Universitat de Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-18",
+            "hora": "09:00",
+            "titol": "Forum Europa Tribuna Catalunya",
+            "detalls": [
+              "Hotel Palace de Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-18",
+            "hora": "19:00",
+            "titol": "Acte públic del PSC, campanya electoral 29N",
+            "detalls": [
+              "Societat cultural de Guardiola de Font-Rubí (Barcelona)"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-19",
+            "hora": "19:30",
+            "titol": "Acte públic del PSC, campanya electoral 29N",
+            "detalls": [
+              "Casa de Cultura Mas Catarro, Santa Margarida i Els Monjos"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-20",
+            "hora": "16:00",
+            "titol": "Jornada: Una immersió per guanyar la llengua",
+            "detalls": [
+              "sala d'actes de la facultat d'economia i empresa de la UAB"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-21",
+            "hora": "18:00",
+            "titol": "Acte electoral PSC: passejada amb candidat",
+            "detalls": [
+              "Rambla de Vilanova i La Geltrú"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "09:30",
+            "titol": "Fòrum internacional de traductors de literatura catalana",
+            "detalls": [
+              "Institut d'Estudis Catalans"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-23",
+            "hora": "16:00",
+            "titol": "Jornada anual de presentació de Central de Resultats 2026",
+            "detalls": [
+              "Telemàtica"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "18:00",
+            "titol": "Acte central de PSC de campanya electoral 29N",
+            "detalls": [
+              "Fira Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "12:00",
+            "titol": "Concentració en motiu del dia internacional contra la violència masclista",
+            "detalls": [
+              "Plaça de l'església de Santa Margarida i Els Monjos"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "18:00",
+            "titol": "Acte públic de PSC de campanya electoral 29N",
+            "detalls": [
+              "Societat cultural El Retiro, Sitges"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-29",
+            "hora": "09:00",
+            "titol": "Jornada electoral",
+            "detalls": [
+              "Santa Margarida i Els Monjos"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -22967,6 +23597,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "09:00",
+            "titol": "Jornada «Adaptar-se és competir», organitzada per Ecoembes",
+            "detalls": [
+              "Recinte Modernista de Sant Pau de Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -23718,6 +24358,26 @@
               }
             ],
             "publicat": "2026-11-17"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "12:00",
+            "titol": "Acte institucional del Dia Internacional per a l'Eliminació de la Violència contra les Dones",
+            "detalls": [
+              "Plaça de Sant Jaume, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -24211,6 +24871,46 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "19:00",
+            "titol": "Debat electoral \"Joventut i empresa\"",
+            "detalls": [
+              "Cercle d'Empresa, carrer Provença, 298, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "13:30",
+            "titol": "Dinar: \"El teixit productiu del Baix Llobregat\"",
+            "detalls": [
+              "A Can Colomé, Av. Caldes, 30, El Papiol"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-25",
+            "hora": "18:00",
+            "titol": "Manifestació 25N",
+            "detalls": [
+              "Plaça Universitat, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -24669,6 +25369,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -25531,6 +26241,16 @@
               }
             ],
             "publicat": "2026-11-04"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "12:00",
+            "titol": "Acte institucional de commemoració del 25N, Dia Internacional per a l'Eliminació de la Violència contra les Dones",
+            "detalls": [
+              "Masdenverge"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -25945,6 +26665,16 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -26553,6 +27283,36 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-16"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "19:00",
+            "titol": "Lliurament dels Premis Llegat 2026",
+            "detalls": [
+              "Llotja de Mar, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "16:00",
+            "titol": "Acte de lliurament dels Premis Fet a Catalunya 2026",
+            "detalls": [
+              "Fundació Universitària del Bages. Avinguda Universitat, 4-6, Manresa"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "09:00",
+            "titol": "European Health and Competitiviness Symposium",
+            "detalls": [
+              "CosmoCaixa, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -26980,6 +27740,26 @@
             "titol": "Tomb dels Avis i Àvies per la Llibertat de Reus amb Lluís Puig",
             "detalls": [
               "Plaça del Mercadal, Reus"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-28",
+            "hora": "11:30",
+            "titol": "Presentació de la temporada dels Pastorets de Catalunya",
+            "detalls": [
+              "Teatre Centre Catòlic, l'Hospitalet de Llobregat"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-28",
+            "hora": "19:00",
+            "titol": "Inauguració del 62è Concurs de Pessebres de Banyoles",
+            "detalls": [
+              "Monestir de Sant Esteve de Banyoles"
             ],
             "enllacos": [],
             "publicat": "2026-11-23"
@@ -53460,12 +54240,12 @@
               "alta": "2025-11-26"
             },
             {
-              "organ": "Ponència: Proposta per a presentar a la Mesa del Congrés dels Diputats la Proposició de llei de modificació del Reial decret legislatiu 8/2015, pel qual s'aprova el text refós de la Llei general de la Seguretat Social",
+              "organ": "Ponència: Proposició de llei de modificació de la Llei 14/2010, de 27 de maig, dels drets i les oportunitats en la infància i l'adolescència, per a garantir els drets dels menors en acolliment",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1320",
               "alta": "2025-10-29"
             },
             {
-              "organ": "Ponència: Proposició de llei de modificació de la Llei 14/2010, de 27 de maig, dels drets i les oportunitats en la infància i l'adolescència, per a garantir els drets dels menors en acolliment",
+              "organ": "Ponència: Proposta per a presentar a la Mesa del Congrés dels Diputats la Proposició de llei de modificació del Reial decret legislatiu 8/2015, pel qual s'aprova el text refós de la Llei general de la Seguretat Social",
               "url": "https://www.parlament.cat/web/composicio/comissions/ponencies/index.html?p_tipus=PON&p_codi=1320",
               "alta": "2025-10-29"
             },
@@ -56838,6 +57618,36 @@
               }
             ],
             "publicat": "2026-11-12"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "16:30",
+            "titol": "Reunió amb la Cambra de la Propietat",
+            "detalls": [
+              "Manresa"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-26",
+            "hora": "18:00",
+            "titol": "Reunió amb el Col·legi d'Advocats",
+            "detalls": [
+              "Manresa"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
+          },
+          {
+            "data": "2026-11-27",
+            "hora": "19:00",
+            "titol": "Míting final de campanya de Junts de la campanya del 29N",
+            "detalls": [
+              "Mediapro Barcelona, avinguda Diagonal, 177, Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-23"
           }
         ]
       }
@@ -58557,6 +59367,26 @@
             ],
             "enllacos": [],
             "publicat": "2026-11-20"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "11:30",
+            "titol": "Atenció als mitjans un cop celebrada la Mesa del Parlament i la Junta de Portaveus",
+            "detalls": [
+              "Parlament de Catalunya"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
+          },
+          {
+            "data": "2026-11-24",
+            "hora": "18:30",
+            "titol": "Acte final de campanya de les eleccions generals del 29N",
+            "detalls": [
+              "Barcelona"
+            ],
+            "enllacos": [],
+            "publicat": "2026-11-24"
           }
         ]
       }

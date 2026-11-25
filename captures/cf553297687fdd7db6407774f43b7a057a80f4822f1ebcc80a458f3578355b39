@@ -1,0 +1,754 @@
+{
+  "id" : "7chp-hkce",
+  "name" : "Intervencions del Govern al Parlament",
+  "assetType" : "dataset",
+  "attribution" : "Direcció General de Relacions Institucionals i amb el Parlament",
+  "attributionLink" : "https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/",
+  "averageRating" : 0,
+  "category" : "Legislació-justícia",
+  "createdAt" : 1734601859,
+  "description" : "El dataset inclou informació detallada de les intervencions realitzades pels membres del Govern de la Generalitat de Catalunya al Parlament. S’hi distingeix per tipus d’intervenció i número de sessió parlamentària.\nLes dades s'actualitzen segons el calendari dels plens del Parlament.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 252,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "SEE_TERMS_OF_USE",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 2989912,
+  "provenance" : "official",
+  "publicationAppendEnabled" : true,
+  "publicationDate" : 1734602832,
+  "publicationGroup" : 2001641,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1795208408,
+  "rowsUpdatedBy" : "a4b5-gx6v",
+  "tableId" : 2001641,
+  "totalTimesRated" : 0,
+  "viewCount" : 1766,
+  "viewLastModified" : 1795208402,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1734616677,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 1481814,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1734616677,
+    "targetAudience" : "public",
+    "workflowId" : 182,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1734616677,
+      "failureCount" : 0,
+      "startedAt" : 1734616677,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "3c3u-s965",
+      "displayName" : "SGOID"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 26592457,
+    "name" : "Nom",
+    "dataTypeName" : "text",
+    "description" : "Nom de la persona que ha intervingut",
+    "fieldName" : "nom",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061176,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "Sònia Hernández Almodóvar",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Salvador Illa Roca",
+        "count" : "294"
+      }, {
+        "item" : "Sílvia Paneque i Sureda",
+        "count" : "163"
+      }, {
+        "item" : "Mònica Martínez Bravo",
+        "count" : "99"
+      }, {
+        "item" : "Albert Dalmau Miranda",
+        "count" : "98"
+      }, {
+        "item" : "Núria Parlon i Gil",
+        "count" : "97"
+      }, {
+        "item" : "Esther Niubó Cidoncha",
+        "count" : "92"
+      }, {
+        "item" : "Alícia Romero Llano",
+        "count" : "91"
+      }, {
+        "item" : "Miquel Sàmper i Rodríguez",
+        "count" : "83"
+      }, {
+        "item" : "Òscar Ordeig i Molist",
+        "count" : "63"
+      }, {
+        "item" : "Ramon Espadaler Parcerisas",
+        "count" : "55"
+      }, {
+        "item" : "Olga Pané i Mena",
+        "count" : "53"
+      }, {
+        "item" : "Francesc Xavier Vila i Moreno",
+        "count" : "50"
+      }, {
+        "item" : "Eva Menor Cantador",
+        "count" : "42"
+      }, {
+        "item" : "Núria Montserrat Pulido",
+        "count" : "38"
+      }, {
+        "item" : "Sònia Hernández Almodóvar",
+        "count" : "35"
+      }, {
+        "item" : "Jaume Duch i Guillot",
+        "count" : "33"
+      }, {
+        "item" : "Bernardo Álvarez Merino",
+        "count" : "25"
+      }, {
+        "item" : "Raúl Moreno Montaña",
+        "count" : "12"
+      } ],
+      "smallest" : "Albert Dalmau Miranda",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592456,
+    "name" : "Càrrec",
+    "dataTypeName" : "text",
+    "description" : "Càrrec que ocupa la persona dins del Govern de la Generalitat en el moment de la intervenció.",
+    "fieldName" : "c_rrec",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061175,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "President/a",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Conseller/a",
+        "count" : "1138"
+      }, {
+        "item" : "President/a",
+        "count" : "285"
+      } ],
+      "smallest" : "Conseller/a",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592455,
+    "name" : "Departament",
+    "dataTypeName" : "text",
+    "description" : "Departament al que pertany el/la conseller/a",
+    "fieldName" : "departament",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061174,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "UEX",
+      "null" : "0",
+      "top" : [ {
+        "item" : "N/A",
+        "count" : "294"
+      }, {
+        "item" : "TER",
+        "count" : "164"
+      }, {
+        "item" : "DSI",
+        "count" : "110"
+      }, {
+        "item" : "PRE",
+        "count" : "97"
+      }, {
+        "item" : "ISP",
+        "count" : "97"
+      }, {
+        "item" : "EDF",
+        "count" : "94"
+      }, {
+        "item" : "ECF",
+        "count" : "90"
+      }, {
+        "item" : "EMT",
+        "count" : "83"
+      }, {
+        "item" : "ARP",
+        "count" : "62"
+      }, {
+        "item" : "JUS",
+        "count" : "55"
+      }, {
+        "item" : "SLT",
+        "count" : "54"
+      }, {
+        "item" : "PLG",
+        "count" : "50"
+      }, {
+        "item" : "IFE",
+        "count" : "42"
+      }, {
+        "item" : "REU",
+        "count" : "38"
+      }, {
+        "item" : "CLT",
+        "count" : "35"
+      }, {
+        "item" : "UEX",
+        "count" : "33"
+      }, {
+        "item" : "ESP",
+        "count" : "25"
+      } ],
+      "smallest" : "ARP",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592454,
+    "name" : "Legislatura",
+    "dataTypeName" : "text",
+    "description" : "Número de la legislatura en què s’ha dut a terme la intervenció.",
+    "fieldName" : "legislatura",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061173,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "XV",
+      "null" : "0",
+      "top" : [ {
+        "item" : "XV",
+        "count" : "1423"
+      } ],
+      "smallest" : "XV",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592453,
+    "name" : "Any",
+    "dataTypeName" : "text",
+    "description" : "Any en què s’ha dut a terme la intervenció.",
+    "fieldName" : "any",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061172,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "2026",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2025",
+        "count" : "659"
+      }, {
+        "item" : "2026",
+        "count" : "566"
+      }, {
+        "item" : "2024",
+        "count" : "198"
+      } ],
+      "smallest" : "2024",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : {
+      "decimalSeparator" : ",",
+      "groupSeparator" : "."
+    }
+  }, {
+    "id" : 26592452,
+    "name" : "Sexe",
+    "dataTypeName" : "text",
+    "description" : "Sexe de la persona que ha intervingut",
+    "fieldName" : "sexe",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061171,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "Home",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Home",
+        "count" : "714"
+      }, {
+        "item" : "Dona",
+        "count" : "709"
+      } ],
+      "smallest" : "Dona",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592451,
+    "name" : "Sessió plenària o en comissió",
+    "dataTypeName" : "text",
+    "description" : "Número de sessió plenària en que s’ha dut a terme la intervenció",
+    "fieldName" : "sessi_plen_ria",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061170,
+    "cachedContents" : {
+      "non_null" : "1419",
+      "largest" : "9 i 10",
+      "null" : "4",
+      "top" : [ {
+        "item" : "15",
+        "count" : "50"
+      }, {
+        "item" : "16",
+        "count" : "47"
+      }, {
+        "item" : "19",
+        "count" : "43"
+      }, {
+        "item" : "18",
+        "count" : "42"
+      }, {
+        "item" : "23",
+        "count" : "40"
+      }, {
+        "item" : "22",
+        "count" : "40"
+      }, {
+        "item" : "28",
+        "count" : "37"
+      }, {
+        "item" : "20",
+        "count" : "36"
+      }, {
+        "item" : "17",
+        "count" : "36"
+      }, {
+        "item" : "14",
+        "count" : "36"
+      }, {
+        "item" : "35",
+        "count" : "36"
+      }, {
+        "item" : "27",
+        "count" : "35"
+      }, {
+        "item" : "50",
+        "count" : "35"
+      }, {
+        "item" : "41",
+        "count" : "34"
+      }, {
+        "item" : "24",
+        "count" : "34"
+      }, {
+        "item" : "37",
+        "count" : "34"
+      }, {
+        "item" : "39",
+        "count" : "34"
+      }, {
+        "item" : "33",
+        "count" : "34"
+      }, {
+        "item" : "21",
+        "count" : "34"
+      }, {
+        "item" : "43",
+        "count" : "33"
+      } ],
+      "smallest" : "10",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592450,
+    "name" : "Data",
+    "dataTypeName" : "calendar_date",
+    "description" : "Data en la qual s’ha realitzat la intervenció",
+    "fieldName" : "data",
+    "position" : 8,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 16061169,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "2026-11-04T00:00:00.000",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2025-02-12T00:00:00.000",
+        "count" : "33"
+      }, {
+        "item" : "2025-01-29T00:00:00.000",
+        "count" : "31"
+      }, {
+        "item" : "2025-07-23T00:00:00.000",
+        "count" : "31"
+      }, {
+        "item" : "2025-05-07T00:00:00.000",
+        "count" : "31"
+      }, {
+        "item" : "2025-06-04T00:00:00.000",
+        "count" : "30"
+      }, {
+        "item" : "2026-11-04T00:00:00.000",
+        "count" : "30"
+      }, {
+        "item" : "2025-05-21T00:00:00.000",
+        "count" : "29"
+      }, {
+        "item" : "2025-03-26T00:00:00.000",
+        "count" : "29"
+      }, {
+        "item" : "2025-02-26T00:00:00.000",
+        "count" : "29"
+      }, {
+        "item" : "2024-12-11T00:00:00.000",
+        "count" : "29"
+      }, {
+        "item" : "2025-11-05T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2026-07-08T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2025-07-16T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2026-02-11T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2024-12-18T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2024-10-16T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2026-03-11T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2025-04-09T00:00:00.000",
+        "count" : "28"
+      }, {
+        "item" : "2025-03-12T00:00:00.000",
+        "count" : "27"
+      }, {
+        "item" : "2025-11-19T00:00:00.000",
+        "count" : "27"
+      } ],
+      "smallest" : "2024-08-08T00:00:00.000",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : {
+      "view" : "date_dmy"
+    }
+  }, {
+    "id" : 26592449,
+    "name" : "Tipus d'intervenció",
+    "dataTypeName" : "text",
+    "description" : "Tipus d’intervenció",
+    "fieldName" : "tipus_d_intervenci",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061168,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "Sessio informativa",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Preguntes orals en Ple o en comissió",
+        "count" : "831"
+      }, {
+        "item" : "Interpel·lacions",
+        "count" : "358"
+      }, {
+        "item" : "Compareixences o sessions informatives",
+        "count" : "92"
+      }, {
+        "item" : "Iniciatives legislatives",
+        "count" : "64"
+      }, {
+        "item" : "Sessio informativa",
+        "count" : "61"
+      }, {
+        "item" : "Debat monogràfic",
+        "count" : "6"
+      }, {
+        "item" : "Debat",
+        "count" : "5"
+      }, {
+        "item" : "Debat sobre l'orientació política general del Govern",
+        "count" : "4"
+      }, {
+        "item" : "preguntes orals en Ple o en comissió",
+        "count" : "1"
+      }, {
+        "item" : "Debat d'investidura",
+        "count" : "1"
+      } ],
+      "smallest" : "Compareixences o sessions informatives",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592458,
+    "name" : "Descripció",
+    "dataTypeName" : "text",
+    "description" : "Descripció de la intervenció",
+    "fieldName" : "descripci",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061177,
+    "width" : 356,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "Sol·licitud de sessió informativa de la Comissió de Política Lingüística amb el conseller de Política Lingüística sobre les dades de l'Enquesta d'usos lingüístics de la població del 2023.",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Compareixença del Govern per a informar sobre el contingut del pressupost del Departament i dels organismes i les entitats que en depenen (art. 131.4 RPC)",
+        "count" : "16"
+      }, {
+        "item" : "Projecte de llei de pressupostos de la Generalitat de Catalunya per al 2026",
+        "count" : "16"
+      }, {
+        "item" : "Pregunta al Govern a respondre oralment en el Ple sobre la situació del català.",
+        "count" : "6"
+      }, {
+        "item" : "Pregunta al Govern sobre la situació de l’educació",
+        "count" : "2"
+      }, {
+        "item" : "Pregunta al Govern sobre les polítiques de seguretat",
+        "count" : "2"
+      }, {
+        "item" : "Interpel·lació al Govern sobre les polítiques de joventut",
+        "count" : "2"
+      }, {
+        "item" : "Projecte de llei de l'Estatut de municipis rurals.",
+        "count" : "2"
+      }, {
+        "item" : "Interpel·lació al Govern sobre el mercat de treball.",
+        "count" : "2"
+      }, {
+        "item" : "Pregunta al Govern a respondre oralment en comissió sobre els centres de salut integral de referència que vol impulsar.",
+        "count" : "2"
+      }, {
+        "item" : "Compareixença del president de la Generalitat en el debat sobre l’orientació política general del Govern",
+        "count" : "2"
+      }, {
+        "item" : "Pregunta al Govern a respondre oralment en el Ple sobre la gestió d'emergències.",
+        "count" : "2"
+      }, {
+        "item" : "Pregunta al Govern a respondre oralment en el Ple sobre la situació de la llengua catalana.",
+        "count" : "2"
+      }, {
+        "item" : "Pregunta al Govern a respondre oralment en el Ple sobre les polítiques d’habitatge.",
+        "count" : "2"
+      }, {
+        "item" : "Interpel·lació al Govern sobre les polítiques educatives",
+        "count" : "2"
+      }, {
+        "item" : "Interpel·lació al Govern sobre la situació del català.",
+        "count" : "2"
+      }, {
+        "item" : "Interpel·lació al Govern sobre les polítiques de joventut.",
+        "count" : "2"
+      }, {
+        "item" : "Pregunta al Govern sobre les infraestructures",
+        "count" : "2"
+      }, {
+        "item" : "Interpel·lació al Govern sobre el sistema ferroviari.",
+        "count" : "2"
+      }, {
+        "item" : "Sessió informativa de les comissions d’Interior i Seguretat Pública i de Territori i Habitatge amb les conselleres d’Interior i Seguretat Pública i de Territori, Habitatge i Transició Ecològica sobre la gestió i les mesures amb relació a l’accident de Gelida.",
+        "count" : "2"
+      }, {
+        "item" : "Debat sobre les incidències a la xarxa ferroviària.",
+        "count" : "2"
+      } ],
+      "smallest" : "Compareixença de la consellera de Drets Socials i Inclusió davant la Comissió de la Sindicatura de Comptes per a informar sobre la seva posició amb relació al procediment relatiu a l'Informe de fiscalització 6/2025, sobre les prestacions econòmiques del Departament de Drets Socials, corresponent a l'exercici del 2022.",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592448,
+    "name" : "Tram",
+    "dataTypeName" : "text",
+    "description" : "Moment concret dins de la sessió plenària en què es produeix la intervenció",
+    "fieldName" : "tram",
+    "position" : 11,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16061167,
+    "cachedContents" : {
+      "non_null" : "1423",
+      "largest" : "N/A",
+      "null" : "0",
+      "top" : [ {
+        "item" : "(200-00026/15)",
+        "count" : "17"
+      }, {
+        "item" : "(200-00022/15)",
+        "count" : "16"
+      }, {
+        "item" : "(355-00169/15)",
+        "count" : "4"
+      }, {
+        "item" : "(200-00002/15)",
+        "count" : "4"
+      }, {
+        "item" : "(200-00003/15)",
+        "count" : "3"
+      }, {
+        "item" : "(300-00077/15)",
+        "count" : "2"
+      }, {
+        "item" : "(255-00004/15)",
+        "count" : "2"
+      }, {
+        "item" : "(300-00218/15)",
+        "count" : "2"
+      }, {
+        "item" : "(255-00007/15)",
+        "count" : "2"
+      }, {
+        "item" : "(355-00090/15) (354-00178/15) i (354-00179/15)",
+        "count" : "2"
+      }, {
+        "item" : "(311-00025/15)",
+        "count" : "2"
+      }, {
+        "item" : "(355-00016/15)",
+        "count" : "2"
+      }, {
+        "item" : "N/A",
+        "count" : "2"
+      }, {
+        "item" : "(200-00011/15)",
+        "count" : "2"
+      }, {
+        "item" : "(255-00010/15)",
+        "count" : "2"
+      }, {
+        "item" : "(300-00265/15)",
+        "count" : "2"
+      }, {
+        "item" : "(203-00004/15)",
+        "count" : "2"
+      }, {
+        "item" : "(255-00006/15)",
+        "count" : "2"
+      }, {
+        "item" : "(355-00176/15)",
+        "count" : "2"
+      }, {
+        "item" : "(355-00009/15)",
+        "count" : "2"
+      } ],
+      "smallest" : "(200-00001/15)",
+      "count" : "1423",
+      "cardinality" : "1423"
+    },
+    "format" : { }
+  }, {
+    "id" : 26592447,
+    "name" : "Enllaç Transcripció",
+    "dataTypeName" : "url",
+    "description" : "URL que enllaça amb la transcripció oficial de la intervenció parlamentària.",
+    "fieldName" : "enlla_transcripci",
+    "position" : 12,
+    "renderTypeName" : "url",
+    "tableColumnId" : 16061166,
+    "format" : { },
+    "subColumnTypes" : [ "url", "description" ]
+  }, {
+    "id" : 26592446,
+    "name" : "Enllaç Vídeo",
+    "dataTypeName" : "url",
+    "description" : "URL que enllaça amb l’enregistrament audiovisual de la intervenció.",
+    "fieldName" : "enlla_v_deo",
+    "position" : 13,
+    "renderTypeName" : "url",
+    "tableColumnId" : 16061165,
+    "format" : { },
+    "subColumnTypes" : [ "url", "description" ]
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "See Terms of Use"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Freqüència d'actualització" : {
+        "Freqüència d'actualització" : "Mensual"
+      },
+      "Idioma" : {
+        "Idioma" : "Català",
+        "Dataset name (EN)" : "Interventions by the Government in Parliament",
+        "Nombre del conjunto de datos (ES)" : "Intervenciones del Gobierno en el Parlamento"
+      },
+      "Informació de gènere o sexe" : {
+        "Informació de gènere o sexe" : "Sí"
+      },
+      "Actors" : {
+        "Departament" : "Presidència",
+        "Tipus actor" : "Generalitat de Catalunya"
+      },
+      "Àmbit geogràfic" : {
+        "Informació geogràfica" : "Sense informació geogràfica",
+        "Àmbit geogràfic" : "Catalunya"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "a4b5-gx6v",
+    "displayName" : "Dades Obertes Catalunya",
+    "profileImageUrlLarge" : "/api/users/a4b5-gx6v/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/a4b5-gx6v/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/a4b5-gx6v/profile_images/TINY",
+    "screenName" : "Dades Obertes Catalunya",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "parlament", "govern", "intervencions", "ods16_pau justícies i institucions sòlides" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

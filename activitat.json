@@ -1,7 +1,7 @@
 {
   "font": "Parlament de Catalunya: sessions tingudes i acords del Ple",
   "url": "https://www.parlament.cat/web/activitat-parlamentaria/sessions-organs/sessions-tingudes/index.html?p_legislatura=15&p_codi=46",
-  "data_consulta": "2026-11-23",
+  "data_consulta": "2026-11-25",
   "nota": "El Parlament no publica qui ha votat què ni l’assistència de cada persona diputada, i el recompte de vots només surt al Diari de Sessions, en PDF. Per això aquí hi ha el resultat de cada punt, però no els vots. `acord` és el text del Parlament; `resultat` només hi és quan l’acord diu que la iniciativa s’aprova, es convalida, es deroga o es rebutja (vegeu RESULTATS a src/activitat.ts). Les normes són les lleis i els decrets llei publicats al DOGC des de la sessió constitutiva de la legislatura.",
   "legislatura": 15,
   "sessions": [
@@ -289,7 +289,7 @@
           "titol": "Moció subsegüent a la interpel·lació al Govern sobre el desplegament de la Llei 13/2025, dels drets de les persones LGBTI i l'erradicació de l'LGBTI-fòbia",
           "expedient": "390-00239/15",
           "url_expedient": "https://www.parlament.cat/ext/f?p=siap-cerca:expedient:::::p15_num_expedient:390-00239/15",
-          "acord": "",
+          "acord": "Comissió d'Igualtat i Feminisme",
           "resultat": null
         },
         {
@@ -313,7 +313,7 @@
           "titol": "Moció subsegüent a la interpel·lació al Govern sobre les polítiques d'ocupació",
           "expedient": "390-00240/15",
           "url_expedient": "https://www.parlament.cat/ext/f?p=siap-cerca:expedient:::::p15_num_expedient:390-00240/15",
-          "acord": "",
+          "acord": "CET",
           "resultat": null
         },
         {
@@ -321,7 +321,7 @@
           "titol": "Moció subsegüent a la interpel·lació al Govern sobre sobirania i dret a l'habitatge",
           "expedient": "390-00241/15",
           "url_expedient": "https://www.parlament.cat/ext/f?p=siap-cerca:expedient:::::p15_num_expedient:390-00241/15",
-          "acord": "",
+          "acord": "Comissió de Territori i Habitatge",
           "resultat": null
         },
         {
@@ -345,7 +345,7 @@
           "titol": "Moció subsegüent a la interpel·lació al Govern sobre el dol perinatal",
           "expedient": "390-00242/15",
           "url_expedient": "https://www.parlament.cat/ext/f?p=siap-cerca:expedient:::::p15_num_expedient:390-00242/15",
-          "acord": "",
+          "acord": "CS",
           "resultat": null
         },
         {
@@ -19977,7 +19977,7 @@
   "normes": {
     "font": "Dades obertes de Catalunya: Normativa del DOGC i del Portal Jurídic de Catalunya (Entitat Autònoma del Diari Oficial i de Publicacions de la Generalitat de Catalunya (EADOP))",
     "url": "https://analisi.transparenciacatalunya.cat/d/n6hn-rmy7",
-    "data_dades": "2026-11-23",
+    "data_dades": "2026-11-25",
     "normes": [
       {
         "titol": "Llei 16/2026, de 20 de novembre, de protecció de l'agricultura professional directa",
