@@ -63,6 +63,9 @@ export async function construirMapa(fetchImpl: Fetch, codis: Set<string>, avui: 
   );
   if (dades.type !== 'FeatureCollection' || !Array.isArray(dades.features))
     throw new SourceError('El servei de l’ICGC no ha tornat una col·lecció de municipis.');
+  // Un mapa buit faria llistar tots els municipis de Municat com a absents, i amagaria la causa.
+  if (dades.features.length === 0)
+    throw new SourceError('El servei de l’ICGC ha tornat el mapa sense cap municipi.');
 
   const municipis = new Map<string, { nom: string; geometria: Geometria }>();
   for (const feature of dades.features as unknown[]) {

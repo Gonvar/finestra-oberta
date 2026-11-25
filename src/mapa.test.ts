@@ -59,6 +59,11 @@ test('falla si el mapa i Municat no tenen els mateixos municipis', async () => {
   await assert.rejects(construirMapa(fetchImpl, CODIS, '2026-11-23'), /falten 089999; sobren cap/);
 });
 
+test('falla si l’ICGC torna el mapa sense cap municipi', async () => {
+  const { fetchImpl } = fake([]);
+  await assert.rejects(construirMapa(fetchImpl, CODIS, '2026-11-23'), /sense cap municipi/);
+});
+
 test('falla si un municipi surt dues vegades', async () => {
   const { fetchImpl } = fake([...MUNICIPIS, MUNICIPIS[0]!]);
   await assert.rejects(construirMapa(fetchImpl, CODIS, '2026-11-23'), /179998 surt dues vegades/);
