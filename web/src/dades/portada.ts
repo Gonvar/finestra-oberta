@@ -66,7 +66,7 @@ export const blocs: Bloc[] = [
   {
     institucio: 'dad',
     titol: 'Dades',
-    frase: 'Els diners de la Generalitat, els contractes públics, els trens i els municipis.',
+    frase: 'Els diners de la Generalitat, els contractes públics, els ajuts, els trens i els municipis.',
     href: '/dades',
   },
 ];

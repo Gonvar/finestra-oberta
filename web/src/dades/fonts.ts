@@ -2,6 +2,7 @@
 // que publica el workflow, i així la pàgina no pot dir una font o una data diferent de la que fa servir.
 import agenda from '../../../dades/agenda.json' with { type: 'json' };
 import { activitat } from './activitat.ts';
+import { ajuts } from './ajuts.ts';
 import { contractes } from './contractes.ts';
 import { diputats } from './diputats.ts';
 import { govern, parlament, transparencia } from './institucions.ts';
@@ -144,6 +145,18 @@ export const seccions: Seccio[] = [
         nom: contractes.font,
         url: contractes.url,
         data: { tipus: 'dades', dia: contractes.data_dades },
+      },
+    ],
+  },
+  {
+    titol: 'Ajuts i subvencions',
+    ruta: '/ajuts/',
+    fonts: [
+      {
+        que: 'Les convocatòries d’ajuts i subvencions que encara no han tancat el termini',
+        nom: ajuts.font,
+        url: ajuts.url,
+        data: { tipus: 'dades', dia: ajuts.data_dades },
       },
     ],
   },
