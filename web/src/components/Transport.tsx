@@ -71,7 +71,7 @@ export default function Transport() {
   const periode = estat.resum.dies.slice(0, dies);
   const trentaDies = ultimsDies(estat.resum.dies, 30);
   const rod = totals(Object.entries(ara.rodalies.linies));
-  const fgc = totals(Object.entries(ara.fgc.linies));
+  const fgc = 'linies' in ara.fgc ? totals(Object.entries(ara.fgc.linies)) : null;
   const selector = { dies, setDies, periode };
 
   return (
@@ -122,13 +122,19 @@ export default function Transport() {
         <h2 className="titol-seccio" id="fgc-titol">
           FGC
         </h2>
-        <p className="valor">
-          {fgc.fora_d_hora} de {fgc.trens}
-        </p>
-        <p className="que">
-          trens que circulaven a les {horaDe(ara.consultat)} no anaven en hora, segons FGC.
-          {fgc.sense_dada > 0 && ` De ${trens(fgc.sense_dada)} més, FGC no ho deia.`}
-        </p>
+        {fgc === null ? (
+          <p className="que">A les {horaDe(ara.consultat)}, FGC no donava la posició dels trens.</p>
+        ) : (
+          <>
+            <p className="valor">
+              {fgc.fora_d_hora} de {fgc.trens}
+            </p>
+            <p className="que">
+              trens que circulaven a les {horaDe(ara.consultat)} no anaven en hora, segons FGC.
+              {fgc.sense_dada > 0 && ` De ${trens(fgc.sense_dada)} més, FGC no ho deia.`}
+            </p>
+          </>
+        )}
         <h3 className="titol-bloc">Trens que no han anat en hora, per línia</h3>
         <Periode {...selector} />
         <Linies
