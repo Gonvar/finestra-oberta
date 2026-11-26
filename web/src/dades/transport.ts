@@ -31,7 +31,8 @@ export type Resum = {
   ara: {
     consultat: string;
     rodalies: { dades_de: string; linies: Record<string, LiniaRodalies> };
-    fgc: { dades_de: string; linies: Record<string, LiniaFgc> };
+    // Quan l'API d'FGC no respon, la foto es fa igual i ho diu.
+    fgc: { dades_de: string; linies: Record<string, LiniaFgc> } | { no_ha_respost: string };
     tmb: { metro: AvisMetro[]; bus: AvisBus[] };
   };
   dies: Dia[];

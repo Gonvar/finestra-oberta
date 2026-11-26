@@ -3,7 +3,7 @@
 // van arribar. De les fotos d'un dia en surt el resum del dia, que és el que mostra la web.
 // Vegeu docs/transport.md.
 import { createHash } from 'node:crypto';
-import { SourceError, TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
+import { esTall, FontNoRespon, SourceError, TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
 import {
   enHora,
   FGC,
@@ -31,6 +31,12 @@ export const FONTS = {
   'tmb-bus': `${TMB}/alerts/bus/channels/WEB`,
 } as const;
 export type Font = keyof typeof FONTS;
+
+/**
+ * Les fonts sense les quals encara es fa la foto. L'API d'FGC no respon cada nit durant unes hores,
+ * i Rodalies i TMB no han de perdre aquestes fotos. La foto diu que FGC no ha respost i per què.
+ */
+export const FONTS_FGC = ['fgc', 'fgc-metadades'] as const satisfies Font[];
 
 /** Una resposta desada: d'on surt, l'empremta dels bytes i el fitxer on és, comprimit. */
 export type Captura = { font: Font; url: string; sha256: string; fitxer: string };
@@ -73,8 +79,17 @@ const json = <T>(text: string, font: Font) => {
  * La foto que surt de les respostes. Només depèn dels bytes i de l'hora de la consulta, perquè
  * qualsevol persona la pugui tornar a fer amb les còpies i comprovar que surt igual.
  */
-export function construeixFoto(respostes: Record<Font, string>, consultat: string) {
-  const feed = json<RenfeFeed<TripUpdate>>(respostes.rodalies, 'rodalies');
+export function construeixFoto(
+  respostes: Partial<Record<Font, string>>,
+  consultat: string,
+  fgcNoHaRespost: string | null,
+) {
+  const resposta = (font: Font) => {
+    const r = respostes[font];
+    if (r === undefined) throw new SourceError(`Falta la resposta de ${font}.`);
+    return r;
+  };
+  const feed = json<RenfeFeed<TripUpdate>>(resposta('rodalies'), 'rodalies');
   const rodalies: Record<string, { retards: Record<string, number | null>; cancellats: string[] }> =
     {};
   for (const e of feed.entity) {
@@ -84,12 +99,24 @@ export function construeixFoto(respostes: Record<Font, string>, consultat: strin
     if (e.tripUpdate.trip.scheduleRelationship === 'CANCELED') l.cancellats.push(id);
     else l.retards[id] = retardSegons(e.tripUpdate);
   }
-  const fgc: Record<string, Record<string, boolean | null>> = {};
-  for (const t of json<Tren[]>(respostes.fgc, 'fgc')) (fgc[t.lin] ??= {})[t.id] = enHora(t);
-  const meta = json<{ metas: { default: { data_processed: string } } }>(
-    respostes['fgc-metadades'],
-    'fgc-metadades',
-  );
+  let fgc:
+    | { dades_de: string; linies: Record<string, Record<string, boolean | null>> }
+    | {
+        no_ha_respost: string;
+      };
+  if (fgcNoHaRespost !== null) {
+    if (FONTS_FGC.some((f) => respostes[f] !== undefined))
+      throw new SourceError('La foto diu que FGC no ha respost, però en té la resposta.');
+    fgc = { no_ha_respost: fgcNoHaRespost };
+  } else {
+    const linies: Record<string, Record<string, boolean | null>> = {};
+    for (const t of json<Tren[]>(resposta('fgc'), 'fgc')) (linies[t.lin] ??= {})[t.id] = enHora(t);
+    const meta = json<{ metas: { default: { data_processed: string } } }>(
+      resposta('fgc-metadades'),
+      'fgc-metadades',
+    );
+    fgc = { dades_de: meta.metas.default.data_processed, linies };
+  }
   return {
     consultat,
     ...diaHora(new Date(consultat)),
@@ -97,10 +124,10 @@ export function construeixFoto(respostes: Record<Font, string>, consultat: strin
       dades_de: new Date(Number(feed.header.timestamp) * 1000).toISOString(),
       linies: rodalies,
     },
-    fgc: { dades_de: meta.metas.default.data_processed, linies: fgc },
+    fgc,
     tmb: llegeixAvisosTmb(
-      json<Estat<{ alerts: AlertaMetro[] }>>(respostes['tmb-metro'], 'tmb-metro'),
-      json<Estat<{ alerts: AlertaBus[] }>>(respostes['tmb-bus'], 'tmb-bus'),
+      json<Estat<{ alerts: AlertaMetro[] }>>(resposta('tmb-metro'), 'tmb-metro'),
+      json<Estat<{ alerts: AlertaBus[] }>>(resposta('tmb-bus'), 'tmb-bus'),
     ),
   };
 }
@@ -130,9 +157,12 @@ export async function baixa(fetchImpl: Fetch, url: string, params: Record<string
       headers: { Accept: 'application/json' },
       signal: AbortSignal.timeout(TEMPS_LIMIT_MS),
     });
-  } catch {
-    throw new SourceError(`${url} no respon.`);
+  } catch (error) {
+    if (!esTall(error)) throw error;
+    throw new FontNoRespon(`${url} no respon.`);
   }
+  if (resposta.status === 429 || resposta.status >= 500)
+    throw new FontNoRespon(`${url} ha respost ${resposta.status}.`);
   if (!resposta.ok) throw new SourceError(`${url} ha respost ${resposta.status}.`);
   return new Uint8Array(await resposta.arrayBuffer());
 }
@@ -178,7 +208,9 @@ export function afegeixFoto(anterior: Dia | null, foto: Foto): Dia {
       if (!d.cancellats.includes(id)) d.retards[id] = maxim(d.retards[id], r);
     for (const id of d.cancellats) delete d.retards[id];
   }
-  for (const [linia, trens] of Object.entries(foto.fgc.linies)) {
+  // Una foto en què FGC no ha respost no afegeix cap tren d'FGC al dia.
+  const linies = 'linies' in foto.fgc ? foto.fgc.linies : {};
+  for (const [linia, trens] of Object.entries(linies)) {
     const d = (dia.fgc[linia] ??= {});
     for (const [id, h] of Object.entries(trens)) d[id] = pitjor(d[id], h);
   }
@@ -268,7 +300,10 @@ export function resumFoto(f: Foto) {
   return {
     consultat: f.consultat,
     rodalies: { dades_de: f.rodalies.dades_de, linies: perLinia(f.rodalies.linies, liniaRodalies) },
-    fgc: { dades_de: f.fgc.dades_de, linies: perLinia(f.fgc.linies, liniaFgc) },
+    fgc:
+      'linies' in f.fgc
+        ? { dades_de: f.fgc.dades_de, linies: perLinia(f.fgc.linies, liniaFgc) }
+        : f.fgc,
     tmb: f.tmb,
   };
 }

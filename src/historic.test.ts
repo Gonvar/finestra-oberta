@@ -5,9 +5,11 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
 import { gzipSync } from 'node:zlib';
+import { FontNoRespon, SourceError, type Fetch } from './comun.ts';
 import {
   actualitzaResum,
   afegeixFoto,
+  baixa,
   construeixFoto,
   decodifica,
   diaHora,
@@ -42,7 +44,7 @@ function respostes(
 }
 
 const foto = (r: Record<Font, string>, consultat: string): Foto => ({
-  ...construeixFoto(r, consultat),
+  ...construeixFoto(r, consultat, null),
   captures: [],
 });
 
@@ -204,7 +206,7 @@ test('una foto es pot tornar a fer amb les còpies, i una còpia tocada es detec
   await mkdir(join(carpeta, 'captures'));
   for (const c of captures)
     await writeFile(join(carpeta, c.fitxer), gzipSync(Buffer.from(r[c.font])));
-  const f = { ...construeixFoto(r, '2026-11-23T08:00:00Z'), captures };
+  const f = { ...construeixFoto(r, '2026-11-23T08:00:00Z', null), captures };
   await writeFile(join(carpeta, 'foto.json'), JSON.stringify(f));
   await verificaFoto(carpeta, 'foto.json');
 
@@ -220,4 +222,59 @@ test('una foto es pot tornar a fer amb les còpies, i una còpia tocada es detec
 test('una resposta que no és UTF-8 és un error, no un caràcter canviat', () => {
   assert.equal(decodifica(Buffer.from('{"a":"è"}'), 'fgc'), '{"a":"è"}');
   assert.throws(() => decodifica(new Uint8Array([0x7b, 0xff, 0x7d]), 'fgc'), /no és UTF-8/);
+});
+
+test('si FGC no ha respost, la foto es fa igual, ho diu i es pot tornar a fer', async () => {
+  const totes = respostes([viatge('5126L1R2N', 600)], [{ id: 'a', lin: 'S1', en_hora: 'False' }]);
+  const { fgc, 'fgc-metadades': _, ...sense } = totes;
+  const r: Partial<Record<Font, string>> = sense;
+  const error = `${FONTS.fgc} no respon.`;
+  const f: Foto = { ...construeixFoto(r, '2026-11-26T01:07:00Z', error), captures: [] };
+  assert.deepEqual(f.fgc, { no_ha_respost: error });
+  assert.equal(f.rodalies.linies.R2N!.retards['5126L1R2N'], 600);
+
+  // El dia no perd els trens d'FGC de les fotos d'abans, i el resum diu que ara FGC no respon.
+  const abans = afegeixFoto(null, foto(totes, '2026-11-26T00:37:00Z'));
+  const dia = afegeixFoto(abans, f);
+  assert.deepEqual(dia.fgc, abans.fgc);
+  assert.deepEqual(actualitzaResum(null, dia, f).ara.fgc, { no_ha_respost: error });
+
+  assert.throws(
+    () => construeixFoto({ ...r, fgc }, '2026-11-26T01:07:00Z', error),
+    /en té la resposta/,
+  );
+
+  const carpeta = await mkdtemp(join(tmpdir(), 'foto-sense-fgc-'));
+  await mkdir(join(carpeta, 'captures'));
+  const fonts = Object.keys(r) as Font[];
+  const captures = fonts.map((font) => ({
+    font,
+    url: FONTS[font],
+    sha256: empremta(Buffer.from(r[font]!)),
+    fitxer: `captures/${font}.json.gz`,
+  }));
+  for (const c of captures)
+    await writeFile(join(carpeta, c.fitxer), gzipSync(Buffer.from(r[c.font]!)));
+  await writeFile(join(carpeta, 'foto.json'), JSON.stringify({ ...f, captures }));
+  await verificaFoto(carpeta, 'foto.json');
+});
+
+test('només és «no respon» una connexió que falla o un 429 o 5xx, no una adreça que ja no hi és', async () => {
+  const amb = (f: () => Promise<Response>) => f as unknown as Fetch;
+  const caiguda = amb(() => Promise.reject(new TypeError('fetch failed')));
+  await assert.rejects(baixa(caiguda, FONTS.fgc), FontNoRespon);
+  await assert.rejects(
+    baixa(
+      amb(async () => new Response('', { status: 503 })),
+      FONTS.fgc,
+    ),
+    FontNoRespon,
+  );
+  await assert.rejects(
+    baixa(
+      amb(async () => new Response('', { status: 404 })),
+      FONTS.fgc,
+    ),
+    (e) => e instanceof SourceError && !(e instanceof FontNoRespon),
+  );
 });

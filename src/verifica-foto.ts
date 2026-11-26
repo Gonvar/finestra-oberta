@@ -10,7 +10,7 @@ import { construeixFoto, decodifica, empremta, FONTS, type Font, type Foto } fro
 
 export async function verificaFoto(carpeta: string, fitxer: string) {
   const foto = JSON.parse(await readFile(join(carpeta, fitxer), 'utf8')) as Foto;
-  const respostes = {} as Record<Font, string>;
+  const respostes: Partial<Record<Font, string>> = {};
   for (const c of foto.captures) {
     if (c.url !== FONTS[c.font])
       throw new SourceError(`La còpia de ${c.font} diu una adreça que no és la seva.`);
@@ -21,7 +21,15 @@ export async function verificaFoto(carpeta: string, fitxer: string) {
   }
   const { captures, ...resta } = foto;
   // Es compara tal com quedaria escrita: el JSON no guarda els camps sense valor.
-  const refeta = JSON.parse(JSON.stringify(construeixFoto(respostes, foto.consultat))) as unknown;
+  const refeta = JSON.parse(
+    JSON.stringify(
+      construeixFoto(
+        respostes,
+        foto.consultat,
+        'no_ha_respost' in foto.fgc ? foto.fgc.no_ha_respost : null,
+      ),
+    ),
+  ) as unknown;
   if (!isDeepStrictEqual(refeta, resta))
     throw new SourceError(`${fitxer} no surt de les seves còpies.`);
   return foto;

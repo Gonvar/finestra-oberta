@@ -5,7 +5,7 @@ name: Històric del transport públic
 # comprimida de cada resposta. La foto, el resum del dia i el resum general se signen amb una
 # atestació de GitHub. Vegeu docs/transport.md.
 # Si una font falla o la foto no surt de les còpies, la tasca falla, GitHub ho notifica i el que hi
-# ha publicat es queda com estava.
+# ha publicat es queda com estava. L'excepció és FGC quan no respon: la foto es fa sense FGC i ho diu.
 # El llança el cron del Worker de la web (web/wrangler.jsonc) als minuts 7 i 37 de cada hora: el
 # `schedule` de GitHub no s'ha disparat mai en aquest repositori. Si el cron no el pot llançar (per
 # exemple, perquè el token ha caducat), GitHub no ho sap: l'error només queda als registres del Worker.
