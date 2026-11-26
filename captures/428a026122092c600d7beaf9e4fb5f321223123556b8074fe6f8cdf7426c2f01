@@ -10,7 +10,7 @@
   "description" : "El RAISC és el registre únic que engloba la totalitat de les subvencions i ajuts atorgats per les administracions públiques de l’àmbit territorial de Catalunya (Administració de la Generalitat de Catalunya i les entitats públiques en què participi de manera majoritària, directament o indirectament; consorcis i fundacions adscrits a la Generalitat de Catalunya; entitats que integren l’Administració local i les entitats públiques en què participen de manera majoritària, directament o indirectament; consorcis i fundacions adscrits a l’Administració local; Administració pròpia d’Aran i entitats creades per llei del Parlament que no depenen de la Generalitat de Catalunya ni hi estan vinculades, quan exerceixen potestats administratives).\n\nEl RAISC subministra informació sobre la normativa reguladora de la subvenció o ajut, les bases reguladores i la resolució que aprova la convocatòria i les seves modificacions, si escau, així com la informació relativa a altres subvencions i ajuts atorgats sense concurrència.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 4023,
+  "downloadCount" : 4024,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",
@@ -28,7 +28,7 @@
   "rowsUpdatedBy" : "a4b5-gx6v",
   "tableId" : 2163431,
   "totalTimesRated" : 0,
-  "viewCount" : 19682,
+  "viewCount" : 19693,
   "viewLastModified" : 1795672822,
   "viewType" : "tabular",
   "approvals" : [ {
