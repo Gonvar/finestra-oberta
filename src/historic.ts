@@ -3,7 +3,7 @@
 // van arribar. De les fotos d'un dia en surt el resum del dia, que és el que mostra la web.
 // Vegeu docs/transport.md.
 import { createHash } from 'node:crypto';
-import { SourceError, TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
+import { esTall, FontNoRespon, SourceError, TEMPS_LIMIT_MS, type Fetch } from './comun.ts';
 import {
   enHora,
   FGC,
@@ -157,9 +157,12 @@ export async function baixa(fetchImpl: Fetch, url: string, params: Record<string
       headers: { Accept: 'application/json' },
       signal: AbortSignal.timeout(TEMPS_LIMIT_MS),
     });
-  } catch {
-    throw new SourceError(`${url} no respon.`);
+  } catch (error) {
+    if (!esTall(error)) throw error;
+    throw new FontNoRespon(`${url} no respon.`);
   }
+  if (resposta.status === 429 || resposta.status >= 500)
+    throw new FontNoRespon(`${url} ha respost ${resposta.status}.`);
   if (!resposta.ok) throw new SourceError(`${url} ha respost ${resposta.status}.`);
   return new Uint8Array(await resposta.arrayBuffer());
 }

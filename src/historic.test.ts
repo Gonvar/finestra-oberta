@@ -5,9 +5,11 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
 import { gzipSync } from 'node:zlib';
+import { FontNoRespon, SourceError, type Fetch } from './comun.ts';
 import {
   actualitzaResum,
   afegeixFoto,
+  baixa,
   construeixFoto,
   decodifica,
   diaHora,
@@ -255,4 +257,24 @@ test('si FGC no ha respost, la foto es fa igual, ho diu i es pot tornar a fer', 
     await writeFile(join(carpeta, c.fitxer), gzipSync(Buffer.from(r[c.font]!)));
   await writeFile(join(carpeta, 'foto.json'), JSON.stringify({ ...f, captures }));
   await verificaFoto(carpeta, 'foto.json');
+});
+
+test('només és «no respon» una connexió que falla o un 429 o 5xx, no una adreça que ja no hi és', async () => {
+  const amb = (f: () => Promise<Response>) => f as unknown as Fetch;
+  const caiguda = amb(() => Promise.reject(new TypeError('fetch failed')));
+  await assert.rejects(baixa(caiguda, FONTS.fgc), FontNoRespon);
+  await assert.rejects(
+    baixa(
+      amb(async () => new Response('', { status: 503 })),
+      FONTS.fgc,
+    ),
+    FontNoRespon,
+  );
+  await assert.rejects(
+    baixa(
+      amb(async () => new Response('', { status: 404 })),
+      FONTS.fgc,
+    ),
+    (e) => e instanceof SourceError && !(e instanceof FontNoRespon),
+  );
 });

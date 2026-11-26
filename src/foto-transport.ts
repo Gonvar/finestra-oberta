@@ -7,7 +7,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { gzipSync } from 'node:zlib';
-import { SourceError } from './comun.ts';
+import { FontNoRespon, SourceError } from './comun.ts';
 import {
   actualitzaResum,
   afegeixFoto,
@@ -54,10 +54,11 @@ try {
   const esFgc = (f: Font) => (FONTS_FGC as readonly Font[]).includes(f);
   const [altres, deFgc] = await Promise.all([
     Promise.all(totes.filter((f) => !esFgc(f)).map(async (f) => [f, await baixaFont(f)] as const)),
-    // Només es perdona que FGC no respongui. Una resposta que no s'entén continua sent un error.
+    // Només es perdona que FGC no respongui o digui que ara no pot (429 o 5xx). Un altre estat, com
+    // un 404 per una adreça canviada, o una resposta que no s'entén, continua aturant la foto.
     Promise.all(FONTS_FGC.map(async (f) => [f, await baixaFont(f)] as const)).catch(
       (error: unknown) => {
-        if (!(error instanceof SourceError)) throw error;
+        if (!(error instanceof FontNoRespon)) throw error;
         return error.message;
       },
     ),
