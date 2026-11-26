@@ -1,8 +1,8 @@
 {
   "font": "Dades obertes de Catalunya: Convocatòries del RAISC (Registre de subvencions i ajuts de Catalunya) (Departament d'Economia i Finances)",
   "url": "https://analisi.transparenciacatalunya.cat/d/khxn-nv6a",
-  "data_dades": "2026-11-25",
-  "data_consulta": "2026-11-25",
+  "data_dades": "2026-11-26",
+  "data_consulta": "2026-11-26",
   "nota": "Les convocatòries del RAISC que el dia de la consulta encara no han acabat el termini de presentació de sol·licituds, de totes les administracions. Les que la font no dona amb un final de termini que sigui una data no hi són: finals_no_llegibles en diu els valors i quantes convocatòries en tenen cadascun. Les dates es passen a la forma AAAA-MM-DD; les originals són a inici_font i fi_font, i si la font n’escriu una que no és una data, inici és null. Van ordenades per final de termini i, després, pel codi RAISC. Un camp que la font no dona és null, igual per a totes.",
   "finals_no_llegibles": [
     {
@@ -6327,7 +6327,7 @@
     },
     {
       "valor": "a 30 dias naturales a partir de la publicacion de esta convocatoria en el BOPB",
-      "convocatories": 1
+      "convocatories": 2
     },
     {
       "valor": "A 31 DE DICIEMBRE DE 2019",
@@ -6714,8 +6714,20 @@
       "convocatories": 1
     },
     {
+      "valor": "A LOS 20 DIAS A CONTAR DES DE EL SIGUIENTE A LA PUBLICACION DE LA CONVOCATORIA EN EL DOGC",
+      "convocatories": 1
+    },
+    {
+      "valor": "A LOS 20 DIAS A CONTAR DESDE EL SIGUIENTE DE LA PUBLICACION DE LA CONVOCATORIA EN EL DOGC",
+      "convocatories": 1
+    },
+    {
       "valor": "A los 20 dias desde el dia siguiente de la publicacion de la convocatoria en el DOGC",
       "convocatories": 3
+    },
+    {
+      "valor": "A LOS 20 DIAS DESDE LA PUBLICACION DE LA CONVOCATORIA EN EL DOGC",
+      "convocatories": 1
     },
     {
       "valor": "a los 20 dias desde la publicacion en el BOPB",
@@ -11675,7 +11687,7 @@
     },
     {
       "valor": "Sin plazo de solicitud",
-      "convocatories": 407
+      "convocatories": 408
     },
     {
       "valor": "Sin plazo de solicitud.",
@@ -13099,64 +13111,10 @@
     },
     {
       "valor": null,
-      "convocatories": 1808
+      "convocatories": 1809
     }
   ],
   "convocatories": [
-    {
-      "codi_raisc": "6030-26-004",
-      "codi_bdns": "930722",
-      "titol": "Resolucio PRE//2026, de XXXX, convocatoria anticipada del procediment per a la concessio de subvencions destinades al finanament de plans de formacio per a l'ocupacio dels empleats i empleades publics de les adm. locals per a l'any 2027",
-      "organisme": "ESCOLA D'ADMINISTRACIÓ PÚBLICA DE CATALUNYA (EAPC)",
-      "administracio": "Autonòmica",
-      "tipus": "Subvenció amb concurrència",
-      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
-      "finalitat": "Altres actuacions de caràcter econòmic",
-      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
-      "import_total": 2200000,
-      "inici": "2026-10-15",
-      "fi": "2026-11-25",
-      "inici_font": "15/10/2026",
-      "fi_font": "25/11/2026",
-      "seu_electronica": null,
-      "bases_reguladores": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=911158"
-    },
-    {
-      "codi_raisc": "AJ290-26-064",
-      "codi_bdns": "934814",
-      "titol": "Acord de 13 d'octubre de l'Ajuntament de Figueres, pel qual es convoquen subvencions a determinats establiments de la ciutat com a consequeencia de la utilitzacio dels vals descompte de la campanya Si estimes Figueres, compra a Figueres.",
-      "organisme": "Ajuntament de Figueres",
-      "administracio": "Local / Municipi",
-      "tipus": "Subvenció amb concurrència",
-      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
-      "finalitat": "Comerç, Turisme i Pimes",
-      "beneficiaris": "PYME i Pers. físiques que desenvolupen activitat econòmica",
-      "import_total": 100000,
-      "inici": "2026-10-20",
-      "fi": "2026-11-25",
-      "inici_font": "20/10/2026",
-      "fi_font": "25/11/2026",
-      "seu_electronica": null,
-      "bases_reguladores": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2003-20977"
-    },
-    {
-      "codi_raisc": "AJ743-26-058",
-      "codi_bdns": "941363",
-      "titol": "Convocatoria para la concesion de subvenciones para movilizar el parque privado de viviendas para su alquiler durante el ano 2026",
-      "organisme": "Ajuntament de Santa Coloma de Gramenet",
-      "administracio": "Local / Municipi",
-      "tipus": "Subvenció amb concurrència",
-      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
-      "finalitat": "Accés a l'habitatge i foment de l'edificació",
-      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica",
-      "import_total": 4000,
-      "inici": "2026-11-16",
-      "fi": "2026-11-25",
-      "inici_font": "16/11/2026",
-      "fi_font": "25/11/2026",
-      "seu_electronica": null,
-      "bases_reguladores": "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2018&12/022018023845.pdf&1"
-    },
     {
       "codi_raisc": "AJ431-26-073",
       "codi_bdns": "943156",
@@ -13192,6 +13150,24 @@
       "fi_font": "26/11/2026",
       "seu_electronica": null,
       "bases_reguladores": "https://ssl4.ddgi.cat/bopV1/pdf/2026/152/202615207000.pdf"
+    },
+    {
+      "codi_raisc": "AJ807-26-100",
+      "codi_bdns": "944223",
+      "titol": "Sol.licitud de subvencio nominativa 2026-AV. CALA ROMANA",
+      "organisme": "Ajuntament de Tarragona",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres Prestacions econòmiques",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 3179,
+      "inici": "2026-01-02",
+      "fi": "2026-11-26",
+      "inici_font": "02/01/2026",
+      "fi_font": "26/11/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-20977"
     },
     {
       "codi_raisc": "AJ870-26-001",
@@ -14662,6 +14638,24 @@
       "finalitat": "Altres actuacions de caràcter econòmic",
       "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
       "import_total": 105500,
+      "inici": "2026-01-01",
+      "fi": "2026-11-30",
+      "inici_font": "01/01/2026",
+      "fi_font": "30/11/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2008&02/080509999.pdf&46"
+    },
+    {
+      "codi_raisc": "AJ430-26-019",
+      "codi_bdns": "944480",
+      "titol": "CONVOCATORIA INSTUMENTAL SUBVENCION NOMINATIVA ASSOCIACIO VEA?NS DE LES PEDRITXES 2026",
+      "organisme": "Ajuntament de Matadepera",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres actuacions de caràcter econòmic",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 2500,
       "inici": "2026-01-01",
       "fi": "2026-11-30",
       "inici_font": "01/01/2026",
@@ -16956,6 +16950,60 @@
       "bases_reguladores": "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf"
     },
     {
+      "codi_raisc": "DPGIR-26-556",
+      "codi_bdns": "944202",
+      "titol": "Subvencio per a la creacio d?una Seu electronica per a la gestio dels usos de l?embassament Darnius Boadella",
+      "organisme": "Diputació de Girona",
+      "administracio": "Local / Província",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres actuacions de caràcter econòmic",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 5000,
+      "inici": "2026-01-01",
+      "fi": "2026-11-30",
+      "inici_font": "01/01/2026",
+      "fi_font": "30/11/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf"
+    },
+    {
+      "codi_raisc": "DPGIR-26-557",
+      "codi_bdns": "944495",
+      "titol": "Associacio de Dones Periodistes de Catalunya (2026/7104)",
+      "organisme": "Diputació de Girona",
+      "administracio": "Local / Província",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres actuacions de caràcter econòmic",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 3000,
+      "inici": "2026-01-01",
+      "fi": "2026-11-30",
+      "inici_font": "01/01/2026",
+      "fi_font": "30/11/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf"
+    },
+    {
+      "codi_raisc": "DPGIR-26-558",
+      "codi_bdns": "944499",
+      "titol": "Associacio La Garrotxa Terra d?Acolliment Turistic (Turisme Garrotxa) (2026/11695)",
+      "organisme": "Diputació de Girona",
+      "administracio": "Local / Província",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres actuacions de caràcter econòmic",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 12000,
+      "inici": "2026-01-01",
+      "fi": "2026-11-30",
+      "inici_font": "01/01/2026",
+      "fi_font": "30/11/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf"
+    },
+    {
       "codi_raisc": "DPLLD-26-048",
       "codi_bdns": "895666",
       "titol": "Club Tennis Taula Borges - Despeses activitat esportiva temporada 2025 i 2026",
@@ -18450,6 +18498,24 @@
       "bases_reguladores": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9792/2179532.pdf"
     },
     {
+      "codi_raisc": "7495-26-204",
+      "codi_bdns": "939196",
+      "titol": "Convocatoria de subvencions per a l'organitzacio de festivals i cicles de cultura popular i tradicional",
+      "organisme": "OFICINA DE SUPORT A LA INICIATIVA CULTURAL",
+      "administracio": "Autonòmica",
+      "tipus": "Subvenció amb concurrència",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Cultura",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 1557500,
+      "inici": "2026-11-26",
+      "fi": "2026-12-15",
+      "inici_font": "26/11/2026",
+      "fi_font": "15/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9684/2155610.pdf"
+    },
+    {
       "codi_raisc": "7495-26-205",
       "codi_bdns": "942053",
       "titol": "Convocatoria de subvencions per a programes dincubacio de projectes en lambit de la creativitat digital",
@@ -18681,6 +18747,24 @@
       "inici_font": "15/12/2025",
       "fi_font": "15/12/2026",
       "seu_electronica": "www.campllong.cat",
+      "bases_reguladores": "www.campllong.cat"
+    },
+    {
+      "codi_raisc": "AJ173-26-007",
+      "codi_bdns": "944289",
+      "titol": "CONVOCATORIA PUBLICA PER A L'ATORGAMENT D'AJUTS ECONOMICS PER A FAMILIES AMB INFANTS QUE ASSISTEIXEN AL MENJADOR DE L'ESCOLA DE CAMPLLONG",
+      "organisme": "Ajuntament de Campllong",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció amb concurrència",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Educació",
+      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica",
+      "import_total": 2810,
+      "inici": "2026-12-01",
+      "fi": "2026-12-15",
+      "inici_font": "01/12/2026",
+      "fi_font": "15/12/2026",
+      "seu_electronica": null,
       "bases_reguladores": "www.campllong.cat"
     },
     {
@@ -19098,6 +19182,24 @@
       "bases_reguladores": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9788/2178655.pdf"
     },
     {
+      "codi_raisc": "7495-26-207",
+      "codi_bdns": "943016",
+      "titol": "Convocatoria de subvencions per a l'organitzacio d'esdeveniments de contingut cultural digital a Catalunya",
+      "organisme": "OFICINA DE SUPORT A LA INICIATIVA CULTURAL",
+      "administracio": "Autonòmica",
+      "tipus": "Subvenció amb concurrència",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Cultura",
+      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+      "import_total": 1750000,
+      "inici": "2026-11-26",
+      "fi": "2026-12-17",
+      "inici_font": "26/11/2026",
+      "fi_font": "17/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://portaldogc.gencat.cat/utilsEADOP/PDF/9793/2179769.pdf"
+    },
+    {
       "codi_raisc": "AJ474-26-048",
       "codi_bdns": "938561",
       "titol": "Ajuts individuals a estudiants del municipi del Morell curs 2026-2027 (Linia 1 Ajuts per matricules i adquisicio de llibres)",
@@ -19132,6 +19234,24 @@
       "fi_font": "17/12/2026",
       "seu_electronica": null,
       "bases_reguladores": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1028836"
+    },
+    {
+      "codi_raisc": "6800-26-025",
+      "codi_bdns": "943723",
+      "titol": "Resolucio REU/ /2026, de 20 de novembre, per la qual s'aprova la convocatoria derivada de les bases reguladores dels ajuts Joan Oro per a la contractacio de personal investigador predoctoral en formacio (FI) per a l'any 2027",
+      "organisme": "AGÈNCIA DE GESTIÓ D'AJUTS UNIVERSITARIS I DE RECERCA (AGAUR)",
+      "administracio": "Autonòmica",
+      "tipus": "Subvenció amb concurrència",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Investigació, desenvolupament i innovació",
+      "beneficiaris": "Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+      "import_total": 23127236.93,
+      "inici": null,
+      "fi": "2026-12-18",
+      "inici_font": "Des de l’endemà de la publicació en el diari oficial de la convocatòria inicial",
+      "fi_font": "18/12/2026",
+      "seu_electronica": "https://tramits.gencat.cat/ca/tramits/tramits-temes/Ajuts-per-a-la-contractacio-de-personal-investigador-predoctoral-en-formacio-FI-2022",
+      "bases_reguladores": "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1058811"
     },
     {
       "codi_raisc": "AJ448-26-017",
@@ -38484,6 +38604,24 @@
       "bases_reguladores": "https://cido.diba.cat/subvencions/19180513/subvencions-a-entitats-any-2025-ajuntament-de-la-roca-del-valles"
     },
     {
+      "codi_raisc": "AJ630-26-019",
+      "codi_bdns": "944229",
+      "titol": "SUBVENCIO CLUB HANDBOL LA ROCA ANY 2026",
+      "organisme": "Ajuntament de la Roca del Vallès",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Cultura",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 38400,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://cido.diba.cat/subvencions/19180513/subvencions-a-entitats-any-2025-ajuntament-de-la-roca-del-valles"
+    },
+    {
       "codi_raisc": "AJ633-26-002",
       "codi_bdns": "890557",
       "titol": "SUBVENCIO NOMINATIVA CLUB BADMINTON RODA",
@@ -39850,6 +39988,24 @@
       "fi_font": "31/12/2026",
       "seu_electronica": null,
       "bases_reguladores": "https://www.seu-e.cat/ca/web/rubi/govern-obert-i-transparencia/contractes-convenis-i-subvencions/convenis-i-subvencions/convocatories-de-subvencions-i-ajuts"
+    },
+    {
+      "codi_raisc": "AJ639-26-083",
+      "codi_bdns": "944206",
+      "titol": "SUBVENCIO ADF-RUBI 2026",
+      "organisme": "Ajuntament de Rubí",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Seguretat Ciutadana i Institucions Penitenciàries",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 3000,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "HTTPS://SEU.RUBI.CAT/"
     },
     {
       "codi_raisc": "AJ648-26-001",
@@ -46854,6 +47010,42 @@
       "bases_reguladores": "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2009&07/091629999.pdf&61"
     },
     {
+      "codi_raisc": "AJ757-26-050",
+      "codi_bdns": "944478",
+      "titol": "SUBVENCION A SHOREIKAN 2026",
+      "organisme": "Ajuntament de Santa Maria de Palautordera",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres actuacions de caràcter econòmic",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 150,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2009&07/091629999.pdf&61"
+    },
+    {
+      "codi_raisc": "AJ757-26-051",
+      "codi_bdns": "944479",
+      "titol": "SUBVENCION A CLUB EXCURSIONIOSTA PALAUTORDERA 2026",
+      "organisme": "Ajuntament de Santa Maria de Palautordera",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres actuacions de caràcter econòmic",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 10000,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://bop.diba.cat/scripts/ftpisa.aspx?fnew?bop2009&07/091629999.pdf&61"
+    },
+    {
       "codi_raisc": "AJ758-26-001",
       "codi_bdns": "890497",
       "titol": "CONVOCATORIA PRESTACIONS ECONOMIQUES DE CARACTER SOCIAL 2026",
@@ -47047,6 +47239,42 @@
       "inici": "2026-01-01",
       "fi": "2026-12-31",
       "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://bop.diba.cat/default.asp?C=recerca.avancada"
+    },
+    {
+      "codi_raisc": "AJ761-26-033",
+      "codi_bdns": "944348",
+      "titol": "FONDO CATALAN DE COOPERACION-SANTA PERPETUA SOLIDARIA-MEJORA DE LAS CONDICIONES EDUCATIVAS EN LAS ESCUELAS DE DAFORT",
+      "organisme": "Ajuntament de Santa Perpètua de Mogoda",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Cooperació internacional per al desenvolupament i cultural",
+      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+      "import_total": 21144.4,
+      "inici": "2026-11-24",
+      "fi": "2026-12-31",
+      "inici_font": "24/11/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://bop.diba.cat/default.asp?C=recerca.avancada"
+    },
+    {
+      "codi_raisc": "AJ761-26-034",
+      "codi_bdns": "944349",
+      "titol": "FONDO CATALAN DE COOPERACION-ASPERPOL-PREVENCION Y RESPUESTA A LA MUTILACION GENITAL FEMENINA EN GAMBIA",
+      "organisme": "Ajuntament de Santa Perpètua de Mogoda",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Cooperació internacional per al desenvolupament i cultural",
+      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+      "import_total": 500,
+      "inici": "2026-11-24",
+      "fi": "2026-12-31",
+      "inici_font": "24/11/2026",
       "fi_font": "31/12/2026",
       "seu_electronica": null,
       "bases_reguladores": "https://bop.diba.cat/default.asp?C=recerca.avancada"
@@ -59814,6 +60042,60 @@
       "bases_reguladores": "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf"
     },
     {
+      "codi_raisc": "DPGIR-26-559",
+      "codi_bdns": "944173",
+      "titol": "SUBVENCIO DIRECTA A FUNDACIO FC BARCELONA - PROJECTE BARCA ACTIVA`T",
+      "organisme": "Diputació de Girona",
+      "administracio": "Local / Província",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres actuacions de caràcter econòmic",
+      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+      "import_total": 75000,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf"
+    },
+    {
+      "codi_raisc": "DPGIR-26-560",
+      "codi_bdns": "944504",
+      "titol": "Associacio de la Pagesia de la Vall de Camprodon (2026/11568)",
+      "organisme": "Diputació de Girona",
+      "administracio": "Local / Província",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Agricultura, Pesca i Alimentació",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 20000,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf"
+    },
+    {
+      "codi_raisc": "DPGIR-26-561",
+      "codi_bdns": "944507",
+      "titol": "Fundacio Silvia Castello (2026/11993)",
+      "organisme": "Diputació de Girona",
+      "administracio": "Local / Província",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Educació",
+      "beneficiaris": "Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 100000,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf"
+    },
+    {
       "codi_raisc": "DPLLD-23-782",
       "codi_bdns": "717764",
       "titol": "Conveni per al funcionament de l`Espai Macia (Les Borges Blanques), 2023-2026",
@@ -63918,6 +64200,42 @@
       "bases_reguladores": "https://ebop.diputaciolleida.cat/aplicacions/bop/bopV1/fitxers/pdf/2025/58/20255802322.pdf"
     },
     {
+      "codi_raisc": "DPLLD-26-341",
+      "codi_bdns": "944177",
+      "titol": "FEFIC, Federacio de Fires de Catalunya, anualitat 2026",
+      "organisme": "Diputació de Lleida",
+      "administracio": "Local / Província",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Altres actuacions de caràcter econòmic",
+      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+      "import_total": 7000,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://ebop.diputaciolleida.cat/aplicacions/bop/bopV1/fitxers/pdf/2025/58/20255802322.pdf"
+    },
+    {
+      "codi_raisc": "DPLLD-26-342",
+      "codi_bdns": "944382",
+      "titol": "Ajut directe Aj. Vielha e Mijaran - Millora de la carretera d`acces a Mont i Montcorbau",
+      "organisme": "Diputació de Lleida",
+      "administracio": "Local / Província",
+      "tipus": "Subvenció sense concurrència (directa, nominativa)",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Infraestructures",
+      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
+      "import_total": 550000,
+      "inici": "2026-01-01",
+      "fi": "2026-12-31",
+      "inici_font": "01/01/2026",
+      "fi_font": "31/12/2026",
+      "seu_electronica": null,
+      "bases_reguladores": "https://ebop.diputaciolleida.cat/aplicacions/bop/bopV1/fitxers/pdf/2025/58/20255802322.pdf"
+    },
+    {
       "codi_raisc": "IF-25-009",
       "codi_bdns": "839122",
       "titol": "DECRET 80/2015, de 26 de maig, de les indemnitzacions i ajuts per a dones victimes de violencia masclista que estableixen l'arti i l'article 27 de la Llei organica 1/2004, de 28 de desembre, de mesures de proteccio integral contra la violencia de genere.",
@@ -66994,6 +67312,24 @@
       "fi_font": "06/01/2027",
       "seu_electronica": null,
       "bases_reguladores": "http://bop.diba.cat/anunci/3260185/aprovacio-definitiva-de-l-ordenanca-reguladora-de-la-concessio-de-subvencions-i-de-les-bases-especifiques-reguladores-ajuntament-de-montornes-del-valles"
+    },
+    {
+      "codi_raisc": "AJ898-26-052",
+      "codi_bdns": "944187",
+      "titol": "CONVOCATORIA PUBLICA PER A LA CONCESSIO DE PREMIS A LA PARTICIPACIO EN LA RUA DE CARNESTOLTES 2027 DE L'AJUNTAMENT DE VILADECANS. LINIA 36/30000 - PREMIS RUA CARNESTOLTES",
+      "organisme": "Ajuntament de Viladecans",
+      "administracio": "Local / Municipi",
+      "tipus": "Subvenció amb concurrència",
+      "instrument": "Subvenció i lliurament dinerari sense contraprest.",
+      "finalitat": "Cultura",
+      "beneficiaris": "Persones físiques que no desenvolupen activitat econòmica; Persones jurídiques que no desenvolupen activitat econòmica",
+      "import_total": 23000,
+      "inici": "2026-12-08",
+      "fi": "2027-01-07",
+      "inici_font": "08/12/2026",
+      "fi_font": "07/01/2027",
+      "seu_electronica": "https://seuelectronica.viladecans.cat/",
+      "bases_reguladores": "http://bop.diba.cat/anunci/3714938/aprovacio-de-les-bases-reguladores-per-a-la-concessio-de-premis-per-la-participacio-a-la-rua-de-carnestoltes-versio-en-catala-i-castella-ajuntament-de-viladecans"
     },
     {
       "codi_raisc": "AJ262-26-027",

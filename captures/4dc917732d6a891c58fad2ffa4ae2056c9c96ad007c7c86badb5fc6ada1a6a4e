@@ -49,7 +49,7 @@
 ,{"data_fi_presentaci_sol":"01/06/2026","n":"23"}
 ,{"data_fi_presentaci_sol":"01/07/2019","n":"3"}
 ,{"data_fi_presentaci_sol":"01/07/2020","n":"3"}
-,{"data_fi_presentaci_sol":"01/07/2021","n":"13"}
+,{"data_fi_presentaci_sol":"01/07/2021","n":"11"}
 ,{"data_fi_presentaci_sol":"01/07/2022","n":"22"}
 ,{"data_fi_presentaci_sol":"01/07/2023","n":"6"}
 ,{"data_fi_presentaci_sol":"01/07/2024","n":"17"}
@@ -436,7 +436,7 @@
 ,{"data_fi_presentaci_sol":"05/11/2023","n":"3"}
 ,{"data_fi_presentaci_sol":"05/11/2024","n":"27"}
 ,{"data_fi_presentaci_sol":"05/11/2025","n":"25"}
-,{"data_fi_presentaci_sol":"05/11/2026","n":"7"}
+,{"data_fi_presentaci_sol":"05/11/2026","n":"8"}
 ,{"data_fi_presentaci_sol":"05/11/2027","n":"1"}
 ,{"data_fi_presentaci_sol":"05/12/2018","n":"1"}
 ,{"data_fi_presentaci_sol":"05/12/2019","n":"4"}
@@ -527,7 +527,7 @@
 ,{"data_fi_presentaci_sol":"06/11/2023","n":"13"}
 ,{"data_fi_presentaci_sol":"06/11/2024","n":"22"}
 ,{"data_fi_presentaci_sol":"06/11/2025","n":"7"}
-,{"data_fi_presentaci_sol":"06/11/2026","n":"61"}
+,{"data_fi_presentaci_sol":"06/11/2026","n":"62"}
 ,{"data_fi_presentaci_sol":"06/12/2019","n":"1"}
 ,{"data_fi_presentaci_sol":"06/12/2020","n":"5"}
 ,{"data_fi_presentaci_sol":"06/12/2023","n":"3"}
@@ -540,6 +540,7 @@
 ,{"data_fi_presentaci_sol":"07/01/2021","n":"1"}
 ,{"data_fi_presentaci_sol":"07/01/2025","n":"10"}
 ,{"data_fi_presentaci_sol":"07/01/2026","n":"1"}
+,{"data_fi_presentaci_sol":"07/01/2027","n":"1"}
 ,{"data_fi_presentaci_sol":"07/02/2019","n":"1"}
 ,{"data_fi_presentaci_sol":"07/02/2020","n":"4"}
 ,{"data_fi_presentaci_sol":"07/02/2022","n":"4"}
@@ -1218,7 +1219,7 @@
 ,{"data_fi_presentaci_sol":"12/11/2023","n":"10"}
 ,{"data_fi_presentaci_sol":"12/11/2024","n":"22"}
 ,{"data_fi_presentaci_sol":"12/11/2025","n":"11"}
-,{"data_fi_presentaci_sol":"12/11/2026","n":"15"}
+,{"data_fi_presentaci_sol":"12/11/2026","n":"16"}
 ,{"data_fi_presentaci_sol":"12/11/2027","n":"2"}
 ,{"data_fi_presentaci_sol":"12/12/2019","n":"3"}
 ,{"data_fi_presentaci_sol":"12/12/2020","n":"1"}
@@ -1399,7 +1400,7 @@
 ,{"data_fi_presentaci_sol":"14/10/2023","n":"1"}
 ,{"data_fi_presentaci_sol":"14/10/2024","n":"15"}
 ,{"data_fi_presentaci_sol":"14/10/2025","n":"18"}
-,{"data_fi_presentaci_sol":"14/10/2026","n":"8"}
+,{"data_fi_presentaci_sol":"14/10/2026","n":"9"}
 ,{"data_fi_presentaci_sol":"14/11/2019","n":"3"}
 ,{"data_fi_presentaci_sol":"14/11/2020","n":"4"}
 ,{"data_fi_presentaci_sol":"14/11/2021","n":"8"}
@@ -1545,7 +1546,7 @@
 ,{"data_fi_presentaci_sol":"15/12/2024","n":"48"}
 ,{"data_fi_presentaci_sol":"15/12/2025","n":"57"}
 ,{"data_fi_presentaci_sol":"15/12/2025 a las 14 horas","n":"1"}
-,{"data_fi_presentaci_sol":"15/12/2026","n":"30"}
+,{"data_fi_presentaci_sol":"15/12/2026","n":"32"}
 ,{"data_fi_presentaci_sol":"15 d`abril de 2024","n":"1"}
 ,{"data_fi_presentaci_sol":"15 de diciembre de 2021","n":"1"}
 ,{"data_fi_presentaci_sol":"15 de diciembre de 2024","n":"2"}
@@ -1862,7 +1863,7 @@
 ,{"data_fi_presentaci_sol":"16/11/2022","n":"6"}
 ,{"data_fi_presentaci_sol":"16/11/2023","n":"19"}
 ,{"data_fi_presentaci_sol":"16/11/2025","n":"2"}
-,{"data_fi_presentaci_sol":"16/11/2026","n":"15"}
+,{"data_fi_presentaci_sol":"16/11/2026","n":"16"}
 ,{"data_fi_presentaci_sol":"16/12/2019","n":"6"}
 ,{"data_fi_presentaci_sol":"16/12/2020","n":"6"}
 ,{"data_fi_presentaci_sol":"16/12/2021","n":"27"}
@@ -1933,7 +1934,7 @@
 ,{"data_fi_presentaci_sol":"17/08/2023","n":"3"}
 ,{"data_fi_presentaci_sol":"17/08/2024","n":"1"}
 ,{"data_fi_presentaci_sol":"17/08/2025","n":"1"}
-,{"data_fi_presentaci_sol":"17/08/2026","n":"2"}
+,{"data_fi_presentaci_sol":"17/08/2026","n":"3"}
 ,{"data_fi_presentaci_sol":"17/09/2019","n":"2"}
 ,{"data_fi_presentaci_sol":"17/09/2020","n":"2"}
 ,{"data_fi_presentaci_sol":"17/09/2021","n":"11"}
@@ -1968,7 +1969,7 @@
 ,{"data_fi_presentaci_sol":"17/12/2023","n":"1"}
 ,{"data_fi_presentaci_sol":"17/12/2024","n":"23"}
 ,{"data_fi_presentaci_sol":"17/12/2025","n":"23"}
-,{"data_fi_presentaci_sol":"17/12/2026","n":"5"}
+,{"data_fi_presentaci_sol":"17/12/2026","n":"6"}
 ,{"data_fi_presentaci_sol":"17 de febrero de 2022","n":"1"}
 ,{"data_fi_presentaci_sol":"17 de julio del 2024","n":"3"}
 ,{"data_fi_presentaci_sol":"17 de junio de 2022","n":"1"}
@@ -2055,7 +2056,7 @@
 ,{"data_fi_presentaci_sol":"18/12/2023","n":"13"}
 ,{"data_fi_presentaci_sol":"18/12/2024","n":"22"}
 ,{"data_fi_presentaci_sol":"18/12/2025","n":"17"}
-,{"data_fi_presentaci_sol":"18/12/2026","n":"5"}
+,{"data_fi_presentaci_sol":"18/12/2026","n":"6"}
 ,{"data_fi_presentaci_sol":"18/12/2029","n":"2"}
 ,{"data_fi_presentaci_sol":"18 de octubre de 2024","n":"2"}
 ,{"data_fi_presentaci_sol":"19/01/2022","n":"3"}
@@ -2128,7 +2129,7 @@
 ,{"data_fi_presentaci_sol":"19/11/2023","n":"4"}
 ,{"data_fi_presentaci_sol":"19/11/2024","n":"17"}
 ,{"data_fi_presentaci_sol":"19/11/2025","n":"17"}
-,{"data_fi_presentaci_sol":"19/11/2026","n":"5"}
+,{"data_fi_presentaci_sol":"19/11/2026","n":"6"}
 ,{"data_fi_presentaci_sol":"19/12/2020","n":"4"}
 ,{"data_fi_presentaci_sol":"19/12/2021","n":"4"}
 ,{"data_fi_presentaci_sol":"19/12/2022","n":"21"}
@@ -2284,7 +2285,7 @@
 ,{"data_fi_presentaci_sol":"20/11/2023","n":"15"}
 ,{"data_fi_presentaci_sol":"20/11/2024","n":"21"}
 ,{"data_fi_presentaci_sol":"20/11/2025","n":"23"}
-,{"data_fi_presentaci_sol":"20/11/2026","n":"27"}
+,{"data_fi_presentaci_sol":"20/11/2026","n":"29"}
 ,{"data_fi_presentaci_sol":"20/12/2019","n":"12"}
 ,{"data_fi_presentaci_sol":"20/12/2020","n":"7"}
 ,{"data_fi_presentaci_sol":"20/12/2021","n":"36"}
@@ -3013,7 +3014,7 @@
 ,{"data_fi_presentaci_sol":"23/09/2022","n":"30"}
 ,{"data_fi_presentaci_sol":"23/09/2024","n":"9"}
 ,{"data_fi_presentaci_sol":"23/09/2025","n":"10"}
-,{"data_fi_presentaci_sol":"23/09/2026","n":"27"}
+,{"data_fi_presentaci_sol":"23/09/2026","n":"28"}
 ,{"data_fi_presentaci_sol":"23/10/2019","n":"2"}
 ,{"data_fi_presentaci_sol":"23/10/2020","n":"5"}
 ,{"data_fi_presentaci_sol":"23/10/2021","n":"1"}
@@ -3119,7 +3120,7 @@
 ,{"data_fi_presentaci_sol":"24/11/2023","n":"17"}
 ,{"data_fi_presentaci_sol":"24/11/2024","n":"3"}
 ,{"data_fi_presentaci_sol":"24/11/2025","n":"18"}
-,{"data_fi_presentaci_sol":"24/11/2026","n":"7"}
+,{"data_fi_presentaci_sol":"24/11/2026","n":"8"}
 ,{"data_fi_presentaci_sol":"24/12/2019","n":"1"}
 ,{"data_fi_presentaci_sol":"24/12/2020","n":"3"}
 ,{"data_fi_presentaci_sol":"24/12/2021","n":"5"}
@@ -3306,7 +3307,7 @@
 ,{"data_fi_presentaci_sol":"26/11/2023","n":"7"}
 ,{"data_fi_presentaci_sol":"26/11/2024","n":"12"}
 ,{"data_fi_presentaci_sol":"26/11/2025","n":"13"}
-,{"data_fi_presentaci_sol":"26/11/2026","n":"4"}
+,{"data_fi_presentaci_sol":"26/11/2026","n":"5"}
 ,{"data_fi_presentaci_sol":"26/12/2022","n":"2"}
 ,{"data_fi_presentaci_sol":"26/12/2023","n":"1"}
 ,{"data_fi_presentaci_sol":"26/12/2024","n":"7"}
@@ -3732,7 +3733,7 @@
 ,{"data_fi_presentaci_sol":"30/11/2023, excepte per a nous empadronaments i matricules.","n":"2"}
 ,{"data_fi_presentaci_sol":"30/11/2024","n":"287"}
 ,{"data_fi_presentaci_sol":"30/11/2025","n":"234"}
-,{"data_fi_presentaci_sol":"30/11/2026","n":"196"}
+,{"data_fi_presentaci_sol":"30/11/2026","n":"200"}
 ,{"data_fi_presentaci_sol":"30/11/2027","n":"1"}
 ,{"data_fi_presentaci_sol":"30/11/2028","n":"2"}
 ,{"data_fi_presentaci_sol":"30/11/23","n":"1"}
@@ -4017,7 +4018,7 @@
 ,{"data_fi_presentaci_sol":"31/12/2025","n":"3826"}
 ,{"data_fi_presentaci_sol":"31122026","n":"1"}
 ,{"data_fi_presentaci_sol":"31-12-2026","n":"19"}
-,{"data_fi_presentaci_sol":"31/12/2026","n":"2618"}
+,{"data_fi_presentaci_sol":"31/12/2026","n":"2629"}
 ,{"data_fi_presentaci_sol":"31/12/2027","n":"57"}
 ,{"data_fi_presentaci_sol":"31/12/2028","n":"13"}
 ,{"data_fi_presentaci_sol":"31/12/2029","n":"2"}
@@ -4185,7 +4186,7 @@
 ,{"data_fi_presentaci_sol":"9 de noviembre 2020","n":"1"}
 ,{"data_fi_presentaci_sol":"A 20 dias de la publicacion en el BOP","n":"9"}
 ,{"data_fi_presentaci_sol":"A 20 dias de la publicacion en el BOP.","n":"2"}
-,{"data_fi_presentaci_sol":"a 30 dias naturales a partir de la publicacion de esta convocatoria en el BOPB","n":"1"}
+,{"data_fi_presentaci_sol":"a 30 dias naturales a partir de la publicacion de esta convocatoria en el BOPB","n":"2"}
 ,{"data_fi_presentaci_sol":"A 31 DE DICIEMBRE DE 2019","n":"1"}
 ,{"data_fi_presentaci_sol":"abans de l'aprovacio del pressupost d'enguany","n":"1"}
 ,{"data_fi_presentaci_sol":"Abans de l'aprovacio de pressupost d'enguany","n":"2"}
@@ -4282,7 +4283,10 @@
 ,{"data_fi_presentaci_sol":"a los 15 dias naturales posteriores","n":"1"}
 ,{"data_fi_presentaci_sol":"A los 15 dias naturales posteriores","n":"1"}
 ,{"data_fi_presentaci_sol":"A los 15 dias naturales siguientes a la publicacion","n":"1"}
+,{"data_fi_presentaci_sol":"A LOS 20 DIAS A CONTAR DES DE EL SIGUIENTE A LA PUBLICACION DE LA CONVOCATORIA EN EL DOGC","n":"1"}
+,{"data_fi_presentaci_sol":"A LOS 20 DIAS A CONTAR DESDE EL SIGUIENTE DE LA PUBLICACION DE LA CONVOCATORIA EN EL DOGC","n":"1"}
 ,{"data_fi_presentaci_sol":"A los 20 dias desde el dia siguiente de la publicacion de la convocatoria en el DOGC","n":"3"}
+,{"data_fi_presentaci_sol":"A LOS 20 DIAS DESDE LA PUBLICACION DE LA CONVOCATORIA EN EL DOGC","n":"1"}
 ,{"data_fi_presentaci_sol":"a los 20 dias desde la publicacion en el BOPB","n":"1"}
 ,{"data_fi_presentaci_sol":"A los 20 dias habiles","n":"2"}
 ,{"data_fi_presentaci_sol":"a los 20 dias habiles a contar desde el dia siguiente a la publicacion de la convocatoria en el DOGC","n":"1"}
@@ -5522,7 +5526,7 @@
 ,{"data_fi_presentaci_sol":"SIN PLAZO","n":"28"}
 ,{"data_fi_presentaci_sol":"Sin plazo definido","n":"33"}
 ,{"data_fi_presentaci_sol":"sin plazo de solicitud","n":"83"}
-,{"data_fi_presentaci_sol":"Sin plazo de solicitud","n":"407"}
+,{"data_fi_presentaci_sol":"Sin plazo de solicitud","n":"408"}
 ,{"data_fi_presentaci_sol":"Sin plazo de solicitud.","n":"3"}
 ,{"data_fi_presentaci_sol":"SIN PLAZO DE SOLICITUD","n":"159"}
 ,{"data_fi_presentaci_sol":"SIN PLAZO DE SOLIC ITUD","n":"1"}
@@ -5878,4 +5882,4 @@
 ,{"data_fi_presentaci_sol":"y finalizara en los quinze dias habiles siguientes","n":"1"}
 ,{"data_fi_presentaci_sol":"y hasta al 16 de marzo de 2023, este incluido,","n":"1"}
 ,{"data_fi_presentaci_sol":"y hasta el 29 de febrero de 2024","n":"1"}
-,{"n":"1808"}]
+,{"n":"1809"}]
