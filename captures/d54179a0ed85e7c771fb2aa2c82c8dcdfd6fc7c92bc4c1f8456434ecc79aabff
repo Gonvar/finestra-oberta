@@ -10,7 +10,7 @@
   "description" : "Imports executats dels ingressos de l'Administració de la Generalitat i de les entitats que formen part del seu sector públic administratiu (SPA: entitats autònomes administratives i CatSalut). Els imports d’execució són els acumulats des de l’1 de gener fins a l’últim dia del mes de referència.\r\nPodeu consultar més informació sobre aquest dataset i les seves metadades a la nota metodològica adjunta. Per obtenir més informació sobre els pressupostos de la Generalitat podeu anar a l'apartat \"Seguiment  i control de les finances\" del web del Departament d'Economia i Coneixement.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 2490,
+  "downloadCount" : 2492,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "indexUpdatedAt" : 1557821796,
@@ -29,7 +29,7 @@
   "rowsUpdatedBy" : "exs3-iyf9",
   "tableId" : 513517,
   "totalTimesRated" : 0,
-  "viewCount" : 7606,
+  "viewCount" : 7616,
   "viewLastModified" : 1795003254,
   "viewType" : "tabular",
   "approvals" : [ {

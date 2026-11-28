@@ -10,7 +10,7 @@
   "description" : "El RAISC és el registre únic que engloba la totalitat de les subvencions i ajuts atorgats per les administracions públiques de l’àmbit territorial de Catalunya (Administració de la Generalitat de Catalunya i les entitats públiques en què participi de manera majoritària, directament o indirectament; consorcis i fundacions adscrits a la Generalitat de Catalunya; entitats que integren l’Administració local i les entitats públiques en què participen de manera majoritària, directament o indirectament; consorcis i fundacions adscrits a l’Administració local; Administració pròpia d’Aran i entitats creades per llei del Parlament que no depenen de la Generalitat de Catalunya ni hi estan vinculades, quan exerceixen potestats administratives).\n\nEl RAISC subministra informació sobre la normativa reguladora de la subvenció o ajut, les bases reguladores i la resolució que aprova la convocatòria i les seves modificacions, si escau, així com la informació relativa a altres subvencions i ajuts atorgats sense concurrència.",
   "diciBackend" : false,
   "displayType" : "table",
-  "downloadCount" : 4024,
+  "downloadCount" : 4027,
   "hideFromCatalog" : false,
   "hideFromDataJson" : false,
   "licenseId" : "SEE_TERMS_OF_USE",
@@ -24,12 +24,12 @@
   "publicationGroup" : 665007,
   "publicationStage" : "published",
   "rowIdentifierColumnId" : 27579170,
-  "rowsUpdatedAt" : 1795672890,
+  "rowsUpdatedAt" : 1795845699,
   "rowsUpdatedBy" : "a4b5-gx6v",
   "tableId" : 2163431,
   "totalTimesRated" : 0,
-  "viewCount" : 19693,
-  "viewLastModified" : 1795672822,
+  "viewCount" : 19730,
+  "viewLastModified" : 1795845632,
   "viewType" : "tabular",
   "approvals" : [ {
     "reviewedAt" : 1552901177,
@@ -67,7 +67,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253485,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "UR-26-077",
       "null" : "0",
       "top" : [ {
@@ -132,8 +132,8 @@
         "count" : "1"
       } ],
       "smallest" : "5100-20-001",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -146,7 +146,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5278385,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "No enviat",
       "null" : "0",
       "top" : [ {
@@ -211,8 +211,8 @@
         "count" : "1"
       } ],
       "smallest" : "200720075318111B",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : {
       "noCommas" : "true"
@@ -227,39 +227,39 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5278379,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "UR",
       "null" : "0",
       "top" : [ {
         "item" : "DPGIR",
-        "count" : "4430"
+        "count" : "4436"
       }, {
         "item" : "DPTGN",
-        "count" : "1450"
+        "count" : "1470"
       }, {
         "item" : "DPLLD",
-        "count" : "1258"
+        "count" : "1262"
       }, {
         "item" : "7495",
         "count" : "1085"
       }, {
         "item" : "AJ357",
-        "count" : "870"
+        "count" : "874"
       }, {
         "item" : "AJ610",
-        "count" : "854"
+        "count" : "857"
       }, {
         "item" : "AJ903",
         "count" : "854"
       }, {
         "item" : "AG",
-        "count" : "800"
+        "count" : "802"
       }, {
         "item" : "AJ341",
-        "count" : "797"
+        "count" : "798"
       }, {
         "item" : "6760",
-        "count" : "796"
+        "count" : "797"
       }, {
         "item" : "AJ581",
         "count" : "694"
@@ -292,8 +292,8 @@
         "count" : "566"
       } ],
       "smallest" : "5100",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : {
       "noCommas" : "true"
@@ -308,39 +308,39 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253497,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "Xarxa de Cultura de Valls",
       "null" : "0",
       "top" : [ {
         "item" : "Diputació de Girona",
-        "count" : "4430"
+        "count" : "4436"
       }, {
         "item" : "Diputació de Tarragona",
-        "count" : "1450"
+        "count" : "1470"
       }, {
         "item" : "Diputació de Lleida",
-        "count" : "1258"
+        "count" : "1262"
       }, {
         "item" : "OFICINA DE SUPORT A LA INICIATIVA CULTURAL",
         "count" : "1085"
       }, {
         "item" : "Ajuntament de l'Hospitalet de Llobregat",
-        "count" : "870"
+        "count" : "874"
+      }, {
+        "item" : "Ajuntament de Reus",
+        "count" : "857"
       }, {
         "item" : "Ajuntament de Vilafranca del Penedès",
         "count" : "854"
       }, {
-        "item" : "Ajuntament de Reus",
-        "count" : "854"
-      }, {
         "item" : "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
-        "count" : "800"
+        "count" : "802"
       }, {
         "item" : "Ajuntament de Granollers",
-        "count" : "797"
+        "count" : "798"
       }, {
         "item" : "INSTITUT CATALÀ DE LES EMPRESES CULTURALS (ICEC)",
-        "count" : "796"
+        "count" : "797"
       }, {
         "item" : "Ajuntament del Prat de Llobregat",
         "count" : "694"
@@ -373,8 +373,8 @@
         "count" : "566"
       } ],
       "smallest" : "Aeroports Públics de Catalunya, SLU",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -387,19 +387,19 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253515,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "O",
       "null" : "0",
       "top" : [ {
         "item" : "I",
-        "count" : "47433"
+        "count" : "47499"
       }, {
         "item" : "O",
-        "count" : "22576"
+        "count" : "22587"
       } ],
       "smallest" : "I",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -412,19 +412,19 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253498,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "Subvenció sense concurrència (directa, nominativa)",
       "null" : "0",
       "top" : [ {
         "item" : "Subvenció sense concurrència (directa, nominativa)",
-        "count" : "47433"
+        "count" : "47499"
       }, {
         "item" : "Subvenció amb concurrència",
-        "count" : "22576"
+        "count" : "22587"
       } ],
       "smallest" : "Subvenció amb concurrència",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -437,7 +437,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13644699,
     "cachedContents" : {
-      "non_null" : "70000",
+      "non_null" : "70077",
       "largest" : "2026",
       "null" : "9",
       "top" : [ {
@@ -445,19 +445,19 @@
         "count" : "11183"
       }, {
         "item" : "2023",
-        "count" : "11168"
+        "count" : "11167"
       }, {
         "item" : "2022",
         "count" : "11057"
       }, {
         "item" : "2025",
-        "count" : "10869"
-      }, {
-        "item" : "2021",
-        "count" : "9167"
+        "count" : "10870"
       }, {
         "item" : "2026",
-        "count" : "9069"
+        "count" : "9160"
+      }, {
+        "item" : "2021",
+        "count" : "9153"
       }, {
         "item" : "2020",
         "count" : "3802"
@@ -499,8 +499,8 @@
         "count" : "1"
       } ],
       "smallest" : "2000",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -513,7 +513,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253518,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "XXX SETMANA CULTURAL DEL CENTRO EXTREMENO DE REUS",
       "null" : "3",
       "top" : [ {
@@ -578,8 +578,8 @@
         "count" : "10"
       } ],
       "smallest" : "04 ORDENANCA REGULADORA DE LES BESES PER A LA CONCESSIO DE SUBVENCIONS PER A PROMORURE DIFERENTS ACTIVITATS",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -592,7 +592,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253519,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "XXX SETMANA CULTURAL DEL CENTRO EXTREMENO DE REUS",
       "null" : "3",
       "top" : [ {
@@ -657,8 +657,8 @@
         "count" : "8"
       } ],
       "smallest" : "1.000 EUR en concepto de subvencion a la Sra. Maria Teresa Prad Bayona con NIF 39637242P para colaborar en la edicion del libro dedicado al Barrio de la Floresta",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -671,21 +671,21 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5278388,
     "cachedContents" : {
-      "non_null" : "11245",
+      "non_null" : "11249",
       "largest" : "101",
-      "null" : "58764",
+      "null" : "58837",
       "top" : [ {
         "item" : "011",
         "count" : "3463"
       }, {
         "item" : "037",
-        "count" : "3026"
+        "count" : "3028"
       }, {
         "item" : "029",
-        "count" : "2997"
+        "count" : "2998"
       }, {
         "item" : "058",
-        "count" : "1016"
+        "count" : "1017"
       }, {
         "item" : "046",
         "count" : "693"
@@ -697,8 +697,8 @@
         "count" : "13"
       } ],
       "smallest" : "001",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -711,21 +711,21 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253516,
     "cachedContents" : {
-      "non_null" : "11245",
+      "non_null" : "11249",
       "largest" : "Otros medios",
-      "null" : "58764",
+      "null" : "58837",
       "top" : [ {
         "item" : "DOGC. D.O. DE LA GENERALITAT DE CATALUNYA",
         "count" : "3463"
       }, {
         "item" : "B.O.P. DE GIRONA",
-        "count" : "3026"
+        "count" : "3028"
       }, {
         "item" : "B.O.P. DE BARCELONA",
-        "count" : "2997"
+        "count" : "2998"
       }, {
         "item" : "B.O.P. DE TARRAGONA",
-        "count" : "1016"
+        "count" : "1017"
       }, {
         "item" : "B.O.P. DE LLEIDA",
         "count" : "693"
@@ -737,8 +737,8 @@
         "count" : "13"
       } ],
       "smallest" : "BOE. BUTLLETÍ OFICIAL DE L'ESTAT",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -751,9 +751,9 @@
     "renderTypeName" : "text",
     "tableColumnId" : 16769928,
     "cachedContents" : {
-      "non_null" : "11233",
-      "largest" : "2026-11-27",
-      "null" : "58776",
+      "non_null" : "11237",
+      "largest" : "2026-11-30",
+      "null" : "58849",
       "top" : [ {
         "item" : "2025-01-20",
         "count" : "32"
@@ -816,8 +816,8 @@
         "count" : "22"
       } ],
       "smallest" : "2003-11-21",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : {
       "view" : "date_dmy"
@@ -832,9 +832,9 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253517,
     "cachedContents" : {
-      "non_null" : "10923",
+      "non_null" : "10927",
       "largest" : "ttps://bop.diba.cat/anunci/3902561",
-      "null" : "59086",
+      "null" : "59159",
       "top" : [ {
         "item" : "https://portaljuridic.gencat.cat/ca/document-del-pjur/?documentId=400672",
         "count" : "21"
@@ -854,51 +854,51 @@
         "item" : "https://bop.diba.cat/anunci/3409033/convocatoria-per-a-l-atorgament-d-ajuts-economics-individuals-per-a-activitats-socioeducatives-i-de-lleure-en-periode-escolar-de-setembre-a-juny-del-curs-2022-2023-versio-en-catala-i-castella-ajuntament-de-santa-coloma-",
         "count" : "7"
       }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=rcerca&vw=0&ebop_any=2023&dini=&mini=&dfi=&mfi=&index1=&qua1=&n_exp=&num_bop=&cod_af=354&order=0&n_rege=&neteja=0&ok=submit",
+        "count" : "6"
+      }, {
         "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=dwn&tipus=i&data=20200930&anyp=2020&num=06854&v=i",
         "count" : "6"
       }, {
         "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=rcerca&vw=0&ebop_any=2025&dini=&mini=&dfi=&mfi=&index1=155&index2=209&index3=231&index4=&qua1=&n_exp=&num_bop=&cod_af=&order=0&n_rege=&neteja=0&ok=submit",
         "count" : "6"
       }, {
-        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=rcerca&vw=0&ebop_any=2023&dini=&mini=&dfi=&mfi=&index1=&qua1=&n_exp=&num_bop=&cod_af=354&order=0&n_rege=&neteja=0&ok=submit",
-        "count" : "6"
-      }, {
         "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=sumari&ebop_any=2020&pagok=0",
         "count" : "6"
       }, {
-        "item" : "https://bop.diba.cat/anunci/3509198",
+        "item" : "https://bop.diba.cat/anunci/3136533/convocatoria-de-subvencions-en-regim-de-concurrencia-competitiva-per-a-la-realitzacio-d-activitats-o-serveis-en-l-ambit-de-la-cultura-educacio-esports-benestar-social-i-o-tercer-sector-joventut-medi-ambient-i-salut-publ",
         "count" : "5"
       }, {
         "item" : "https://bop.diba.cat/",
         "count" : "5"
       }, {
+        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=sumari&dpub=05/02/2021&ebop_any=2021&pagok=0",
+        "count" : "5"
+      }, {
         "item" : "https://dogc.gencat.cat/ca/inici/index.html",
         "count" : "5"
       }, {
-        "item" : "https://bop.diba.cat/anunci/3136533/convocatoria-de-subvencions-en-regim-de-concurrencia-competitiva-per-a-la-realitzacio-d-activitats-o-serveis-en-l-ambit-de-la-cultura-educacio-esports-benestar-social-i-o-tercer-sector-joventut-medi-ambient-i-salut-publ",
-        "count" : "5"
-      }, {
-        "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=sumari&dpub=05/02/2021&ebop_any=2021&pagok=0",
+        "item" : "https://bop.diba.cat/anunci/3509198",
         "count" : "5"
       }, {
         "item" : "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1027354",
         "count" : "4"
       }, {
-        "item" : "https://www.diputaciodetarragona.cat/ebop",
+        "item" : "https://bop.diba.cat/anunci/3269905/aprovacio-de-les-bases-reguladores-per-a-la-concessio-de-la-subvencio-per-a-la-dinamitzacio-comercial-per-a-l-exercici-2022-ajuntament-de-montcada-i-reixac",
         "count" : "4"
       }, {
-        "item" : "https://bop.diba.cat/anunci/3269905/aprovacio-de-les-bases-reguladores-per-a-la-concessio-de-la-subvencio-per-a-la-dinamitzacio-comercial-per-a-l-exercici-2022-ajuntament-de-montcada-i-reixac",
+        "item" : "https://www.diputaciodetarragona.cat/ebop",
         "count" : "4"
       }, {
         "item" : "https://dogc.gencat.cat/ca/document-del-dogc/?documentId=1027327",
         "count" : "4"
       }, {
-        "item" : "https://tramits.gencat.cat/ca/tramits/tramits-temes/Atribucions-de-fons-per-al-financament-del-canon-de-control-dabocaments-meri",
+        "item" : "https://bop.diputaciolleida.cat/faces/consultaF/servlets/donarEdicte/?id=2021_169_6951",
         "count" : "4"
       } ],
       "smallest" : "---------------------------",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -911,12 +911,12 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253511,
     "cachedContents" : {
-      "non_null" : "7391",
+      "non_null" : "7381",
       "largest" : "XGO/2699/2021",
-      "null" : "62618",
+      "null" : "62705",
       "top" : [ {
         "item" : "Pla estratègic de subvencions",
-        "count" : "4041"
+        "count" : "4031"
       }, {
         "item" : "LLEI 13/2006, de 27 de juliol",
         "count" : "21"
@@ -976,8 +976,8 @@
         "count" : "8"
       } ],
       "smallest" : "1 de juny de 2023",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -990,27 +990,27 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253503,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "YOUBARI CONVENI 2024",
       "null" : "0",
       "top" : [ {
         "item" : "Pla estrategic de subvencions",
-        "count" : "5538"
+        "count" : "5534"
       }, {
         "item" : "ORDENANCA GENERAL DE SUBVENCIONS",
-        "count" : "2827"
+        "count" : "2833"
       }, {
         "item" : "Bases generales de subvenciones de la Diputacio de Tarragona y de sus Organismos Autonomos",
-        "count" : "951"
+        "count" : "964"
       }, {
         "item" : "ORDENANZA GENERAL DE SUBVENCIONES",
-        "count" : "561"
+        "count" : "563"
+      }, {
+        "item" : "Bases generals de subvencions de la Diputacio de Tarragona i dels seus Organismes Autonoms",
+        "count" : "434"
       }, {
         "item" : "Ordenanza General de Subvenciones",
         "count" : "429"
-      }, {
-        "item" : "Bases generals de subvencions de la Diputacio de Tarragona i dels seus Organismes Autonoms",
-        "count" : "427"
       }, {
         "item" : "ORDENANZA REGULADORA DE LAS SUBVENCIONES DEL AYUNTAMIENTO DE MARTORELL Y DE SUS ORGANISMOS AUTONOMOS",
         "count" : "402"
@@ -1033,11 +1033,11 @@
         "item" : "Bases de ejecucion del presupuesto - acuerdo de otorgamiento de la Junta de Gobierno Local",
         "count" : "332"
       }, {
-        "item" : "Bases generals reguladores de l`atorgament de subvencions de la Diputacio de Lleida i dels seus organismes autonoms (2025)",
-        "count" : "320"
-      }, {
         "item" : "ORDENANCA GENERAL DE SUBVENCIONS 2019",
         "count" : "319"
+      }, {
+        "item" : "Bases generals reguladores de l`atorgament de subvencions de la Diputacio de Lleida i dels seus organismes autonoms (2025)",
+        "count" : "317"
       }, {
         "item" : "BASES SUBVENCIONS NOMINATIVES 2021",
         "count" : "314"
@@ -1049,14 +1049,14 @@
         "count" : "266"
       }, {
         "item" : "BASES GENERALS DE SUBVENCIONS DE VALLIRANA",
-        "count" : "256"
+        "count" : "257"
       }, {
         "item" : "BASES CONCESSIO DIRECTA 2019",
         "count" : "250"
       } ],
       "smallest" : "11944 - AJUNTAMENT DE CASTELL D'ARO, PLATJA D'ARO I S'AGARO - Aprovacio definitiva del pressupost i la plantilla organica per a l'exercici 2026",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1071,7 +1071,7 @@
     "cachedContents" : {
       "non_null" : "3485",
       "largest" : "029",
-      "null" : "66524",
+      "null" : "66601",
       "top" : [ {
         "item" : "011",
         "count" : "3371"
@@ -1086,8 +1086,8 @@
         "count" : "2"
       } ],
       "smallest" : "001",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1102,7 +1102,7 @@
     "cachedContents" : {
       "non_null" : "3485",
       "largest" : "DOUE: DIARI OFICIAL DE LA UE",
-      "null" : "66524",
+      "null" : "66601",
       "top" : [ {
         "item" : "DOGC. D.O. DE LA GENERALITAT DE CATALUNYA",
         "count" : "3371"
@@ -1117,8 +1117,8 @@
         "count" : "2"
       } ],
       "smallest" : "BOE. BUTLLETÍ OFICIAL DE L'ESTAT",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1131,24 +1131,24 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253484,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "www.vila-sacra.cat",
       "null" : "3",
       "top" : [ {
         "item" : "https://economia.gencat.cat/ca/ambits-actuacio/ajuts-subvencions/plans-estrategics/",
-        "count" : "5545"
+        "count" : "5541"
       }, {
         "item" : "http://www.ddgi.cat/basescast/2016/ORDENAN%C3%87A%20GENERAL%20DE%20SUBVENCIONS%20CASTELLA.pdf",
         "count" : "2544"
       }, {
         "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=anunci&id=1723&ebop_any=2019",
-        "count" : "1552"
+        "count" : "1572"
       }, {
         "item" : "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf",
-        "count" : "1355"
+        "count" : "1361"
       }, {
         "item" : "https://www.boe.es/buscar/act.php?id=BOE-A-2003-20977",
-        "count" : "1119"
+        "count" : "1120"
       }, {
         "item" : "https://tramits.manlleu.cat/siac/PublicacionTabs.aspx?tab=6&id=1160&t=NO&x=UwZ8SQEd4HSCKmwmyfMHLg",
         "count" : "550"
@@ -1160,10 +1160,10 @@
         "count" : "510"
       }, {
         "item" : "https://seu.reus.cat/seu/documentPublic/download/3723",
-        "count" : "487"
+        "count" : "488"
       }, {
         "item" : "https://ebop.diputaciolleida.cat/aplicacions/bop/bopV1/fitxers/pdf/2025/58/20255802322.pdf",
-        "count" : "432"
+        "count" : "436"
       }, {
         "item" : "http://patronatmartorell.eadministracio.cat/transparency/053f0b4a-7d63-4c48-a3d0-cf085d49b620/",
         "count" : "429"
@@ -1196,8 +1196,8 @@
         "count" : "279"
       } ],
       "smallest" : "-",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1210,24 +1210,24 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253513,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "www.vila-sacra.cat",
       "null" : "3",
       "top" : [ {
         "item" : "https://economia.gencat.cat/ca/ambits-actuacio/ajuts-subvencions/plans-estrategics/",
-        "count" : "5545"
+        "count" : "5541"
       }, {
         "item" : "http://www.ddgi.cat/basescast/2016/ORDENAN%C3%87A%20GENERAL%20DE%20SUBVENCIONS%20CASTELLA.pdf",
         "count" : "2544"
       }, {
         "item" : "https://www.diputaciodetarragona.cat/ebop/index.php?op=anunci&id=1723&ebop_any=2019",
-        "count" : "1552"
+        "count" : "1572"
       }, {
         "item" : "https://www.ddgi.cat/basescast/2023/ordenanza_general_subvenciones_SL_16_1scc.pdf",
-        "count" : "1355"
+        "count" : "1361"
       }, {
         "item" : "https://www.boe.es/buscar/act.php?id=BOE-A-2003-20977",
-        "count" : "1119"
+        "count" : "1120"
       }, {
         "item" : "https://tramits.manlleu.cat/siac/PublicacionTabs.aspx?tab=6&id=1160&t=NO&x=UwZ8SQEd4HSCKmwmyfMHLg",
         "count" : "550"
@@ -1239,10 +1239,10 @@
         "count" : "510"
       }, {
         "item" : "https://seu.reus.cat/seu/documentPublic/download/3723",
-        "count" : "487"
+        "count" : "488"
       }, {
         "item" : "https://ebop.diputaciolleida.cat/aplicacions/bop/bopV1/fitxers/pdf/2025/58/20255802322.pdf",
-        "count" : "432"
+        "count" : "436"
       }, {
         "item" : "http://patronatmartorell.eadministracio.cat/transparency/053f0b4a-7d63-4c48-a3d0-cf085d49b620/",
         "count" : "429"
@@ -1275,8 +1275,8 @@
         "count" : "279"
       } ],
       "smallest" : "-",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1289,15 +1289,15 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253494,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "VENTA",
       "null" : "3",
       "top" : [ {
         "item" : "SUBV",
-        "count" : "69609"
+        "count" : "69688"
       }, {
         "item" : "OTROS",
-        "count" : "205"
+        "count" : "203"
       }, {
         "item" : "PREST; SUBV",
         "count" : "98"
@@ -1324,8 +1324,8 @@
         "count" : "1"
       } ],
       "smallest" : "FINAN",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1338,15 +1338,15 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253491,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "Subvenció i lliurament dinerari sense contraprest.; Avantatge fiscal",
       "null" : "3",
       "top" : [ {
         "item" : "Subvenció i lliurament dinerari sense contraprest.",
-        "count" : "69609"
+        "count" : "69688"
       }, {
         "item" : "Altres instruments d'ajuda",
-        "count" : "205"
+        "count" : "203"
       }, {
         "item" : "Préstecs; Subvenció i lliurament dinerari sense contraprest.",
         "count" : "98"
@@ -1373,8 +1373,8 @@
         "count" : "1"
       } ],
       "smallest" : "Altres instruments d'ajuda",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1387,30 +1387,30 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253487,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "XXXX",
       "null" : "3",
       "top" : [ {
         "item" : "ES511",
-        "count" : "31579"
+        "count" : "31607"
       }, {
         "item" : "ES51",
-        "count" : "14443"
+        "count" : "14458"
       }, {
         "item" : "ES512",
-        "count" : "11199"
+        "count" : "11214"
       }, {
         "item" : "ES514",
-        "count" : "7242"
+        "count" : "7252"
       }, {
         "item" : "ES513",
-        "count" : "3968"
+        "count" : "3974"
       }, {
         "item" : "XXXX",
-        "count" : "627"
+        "count" : "628"
       }, {
         "item" : "ES",
-        "count" : "345"
+        "count" : "346"
       }, {
         "item" : "XXX",
         "count" : "245"
@@ -1427,10 +1427,10 @@
         "item" : "IT",
         "count" : "18"
       }, {
-        "item" : "DE",
-        "count" : "16"
-      }, {
         "item" : "ESZ",
+        "count" : "17"
+      }, {
+        "item" : "DE",
         "count" : "16"
       }, {
         "item" : "ES511; ES514",
@@ -1452,8 +1452,8 @@
         "count" : "9"
       } ],
       "smallest" : "AT; BE; BG; DE",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1466,30 +1466,30 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253499,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "Valencia / València",
       "null" : "3",
       "top" : [ {
         "item" : "BARCELONA",
-        "count" : "31579"
+        "count" : "31607"
       }, {
         "item" : "CATALUNYA",
-        "count" : "14443"
+        "count" : "14458"
       }, {
         "item" : "GIRONA",
-        "count" : "11199"
+        "count" : "11214"
       }, {
         "item" : "TARRAGONA",
-        "count" : "7242"
+        "count" : "7252"
       }, {
         "item" : "LLEIDA",
-        "count" : "3968"
+        "count" : "3974"
       }, {
         "item" : "TOT EL MON",
-        "count" : "627"
+        "count" : "628"
       }, {
         "item" : "ESPANYA",
-        "count" : "345"
+        "count" : "346"
       }, {
         "item" : "REGIONS O PAÏSOS NO EUROPEUS, NO CONTEMPLATS EN NUTS",
         "count" : "245"
@@ -1506,10 +1506,10 @@
         "item" : "ITALIA",
         "count" : "18"
       }, {
-        "item" : "DEUTSCHLAND",
-        "count" : "16"
-      }, {
         "item" : "EXTRA-REGIÓ NUTS 1",
+        "count" : "17"
+      }, {
+        "item" : "DEUTSCHLAND",
         "count" : "16"
       }, {
         "item" : "BARCELONA; TARRAGONA",
@@ -1531,8 +1531,8 @@
         "count" : "9"
       } ],
       "smallest" : "ANDALUSIA; FRANCE; HRVATSKA",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1545,12 +1545,12 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13031556,
     "cachedContents" : {
-      "non_null" : "8831",
+      "non_null" : "8827",
       "largest" : "38",
-      "null" : "61178",
+      "null" : "61259",
       "top" : [ {
         "item" : "17",
-        "count" : "1598"
+        "count" : "1600"
       }, {
         "item" : "13",
         "count" : "674"
@@ -1559,10 +1559,10 @@
         "count" : "573"
       }, {
         "item" : "30",
-        "count" : "539"
+        "count" : "541"
       }, {
         "item" : "06",
-        "count" : "502"
+        "count" : "503"
       }, {
         "item" : "01",
         "count" : "450"
@@ -1583,7 +1583,7 @@
         "count" : "287"
       }, {
         "item" : "11",
-        "count" : "284"
+        "count" : "285"
       }, {
         "item" : "09",
         "count" : "249"
@@ -1592,7 +1592,7 @@
         "count" : "246"
       }, {
         "item" : "10",
-        "count" : "215"
+        "count" : "205"
       }, {
         "item" : "20",
         "count" : "181"
@@ -1610,8 +1610,8 @@
         "count" : "133"
       } ],
       "smallest" : "01",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1624,12 +1624,12 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13031555,
     "cachedContents" : {
-      "non_null" : "8831",
+      "non_null" : "8827",
       "largest" : " EDUCACIÓ",
-      "null" : "61178",
+      "null" : "61259",
       "top" : [ {
         "item" : "FOMENT I INTERNACIONALITZACIÓ DE LA CULTURA",
-        "count" : "1598"
+        "count" : "1600"
       }, {
         "item" : "FOMENT DE L'OCUPACIÓ",
         "count" : "674"
@@ -1638,10 +1638,10 @@
         "count" : "573"
       }, {
         "item" : "SUPORT  I PROMOCIÓ AG-R-P",
-        "count" : "539"
+        "count" : "541"
       }, {
         "item" : "COOPERACIÓ INTERNACIONAL",
-        "count" : "502"
+        "count" : "503"
       }, {
         "item" : "ADMINISTRACIÓ I SERVEIS GENERALS",
         "count" : "450"
@@ -1662,7 +1662,7 @@
         "count" : "287"
       }, {
         "item" : "ACCÈS I FOMENT DE L'HABITATGE",
-        "count" : "284"
+        "count" : "285"
       }, {
         "item" : "PROMOCIÓ AUTONOMIA PERSONAL",
         "count" : "249"
@@ -1671,7 +1671,7 @@
         "count" : "246"
       }, {
         "item" : "PROMOCIÓ SOCIAL",
-        "count" : "215"
+        "count" : "205"
       }, {
         "item" : "LLENGUA CATALANA",
         "count" : "181"
@@ -1689,8 +1689,8 @@
         "count" : "133"
       } ],
       "smallest" : "ACCÈS I FOMENT DE L'HABITATGE",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1703,12 +1703,12 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13031554,
     "cachedContents" : {
-      "non_null" : "8831",
+      "non_null" : "8827",
       "largest" : "19",
-      "null" : "61178",
+      "null" : "61259",
       "top" : [ {
         "item" : "11",
-        "count" : "2316"
+        "count" : "2318"
       }, {
         "item" : "09",
         "count" : "727"
@@ -1726,10 +1726,10 @@
         "count" : "590"
       }, {
         "item" : "04",
-        "count" : "584"
+        "count" : "585"
       }, {
         "item" : "15",
-        "count" : "552"
+        "count" : "554"
       }, {
         "item" : "01",
         "count" : "450"
@@ -1744,10 +1744,10 @@
         "count" : "297"
       }, {
         "item" : "07",
-        "count" : "288"
+        "count" : "289"
       }, {
         "item" : "06",
-        "count" : "215"
+        "count" : "205"
       }, {
         "item" : "10",
         "count" : "132"
@@ -1765,8 +1765,8 @@
         "count" : "27"
       } ],
       "smallest" : "01",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1779,12 +1779,12 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13031553,
     "cachedContents" : {
-      "non_null" : "8831",
+      "non_null" : "8827",
       "largest" : "TERRITORI I MEDI AMBIENT",
-      "null" : "61178",
+      "null" : "61259",
       "top" : [ {
         "item" : "CULTURA",
-        "count" : "2316"
+        "count" : "2318"
       }, {
         "item" : "EDUCACIÓ I ESPORT",
         "count" : "727"
@@ -1802,10 +1802,10 @@
         "count" : "590"
       }, {
         "item" : "RELACIONS EXTERIORS I COOPERACIÓ",
-        "count" : "584"
+        "count" : "585"
       }, {
         "item" : "AGRICULTURA, RAMADERIA I PESCA",
-        "count" : "552"
+        "count" : "554"
       }, {
         "item" : "ADMINISTRACIÓ I SERVEIS GENERALS",
         "count" : "450"
@@ -1820,10 +1820,10 @@
         "count" : "297"
       }, {
         "item" : "BENESTAR COMUNITARI",
-        "count" : "288"
+        "count" : "289"
       }, {
         "item" : "PROMOCIÓ SOCIAL",
-        "count" : "215"
+        "count" : "205"
       }, {
         "item" : "SANITAT",
         "count" : "132"
@@ -1841,8 +1841,8 @@
         "count" : "27"
       } ],
       "smallest" : "ADMINISTRACIÓ I SERVEIS GENERALS",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1855,57 +1855,57 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5278383,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "19",
       "null" : "0",
       "top" : [ {
         "item" : "11",
-        "count" : "19942"
+        "count" : "19968"
       }, {
         "item" : "10",
-        "count" : "10909"
+        "count" : "10917"
       }, {
         "item" : "05",
-        "count" : "10287"
+        "count" : "10291"
       }, {
         "item" : "18",
-        "count" : "7878"
+        "count" : "7882"
       }, {
         "item" : "04",
-        "count" : "7097"
+        "count" : "7107"
       }, {
         "item" : "14",
-        "count" : "3066"
+        "count" : "3069"
       }, {
         "item" : "09",
-        "count" : "1809"
+        "count" : "1812"
       }, {
         "item" : "19",
-        "count" : "1685"
+        "count" : "1686"
       }, {
         "item" : "06",
         "count" : "1461"
       }, {
         "item" : "12",
-        "count" : "1418"
+        "count" : "1420"
       }, {
         "item" : "17",
         "count" : "1132"
       }, {
         "item" : "08",
-        "count" : "1010"
+        "count" : "1011"
       }, {
         "item" : "16",
-        "count" : "754"
+        "count" : "767"
       }, {
         "item" : "13",
         "count" : "471"
       }, {
         "item" : "01",
-        "count" : "345"
+        "count" : "346"
       }, {
         "item" : "03",
-        "count" : "327"
+        "count" : "328"
       }, {
         "item" : "15",
         "count" : "222"
@@ -1917,8 +1917,8 @@
         "count" : "68"
       } ],
       "smallest" : "01",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -1931,57 +1931,57 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253483,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "Subvencions al transport",
       "null" : "0",
       "top" : [ {
         "item" : "Cultura",
-        "count" : "19942"
+        "count" : "19968"
       }, {
         "item" : "Educació",
-        "count" : "10909"
+        "count" : "10917"
       }, {
         "item" : "Serveis Socials i Promoció Social",
-        "count" : "10287"
+        "count" : "10291"
       }, {
         "item" : "Altres actuacions de caràcter econòmic",
-        "count" : "7878"
+        "count" : "7882"
       }, {
         "item" : "Altres Prestacions econòmiques",
-        "count" : "7097"
+        "count" : "7107"
       }, {
         "item" : "Comerç, Turisme i Pimes",
-        "count" : "3066"
+        "count" : "3069"
       }, {
         "item" : "Sanitat",
-        "count" : "1809"
+        "count" : "1812"
       }, {
         "item" : "Cooperació internacional per al desenvolupament i cultural",
-        "count" : "1685"
+        "count" : "1686"
       }, {
         "item" : "Foment de l'Ocupació",
         "count" : "1461"
       }, {
         "item" : "Agricultura, Pesca i Alimentació",
-        "count" : "1418"
+        "count" : "1420"
       }, {
         "item" : "Investigació, desenvolupament i innovació",
         "count" : "1132"
       }, {
         "item" : "Accés a l'habitatge i foment de l'edificació",
-        "count" : "1010"
+        "count" : "1011"
       }, {
         "item" : "Infraestructures",
-        "count" : "754"
+        "count" : "767"
       }, {
         "item" : "Indústria i Energia",
         "count" : "471"
       }, {
         "item" : "Justícia",
-        "count" : "345"
+        "count" : "346"
       }, {
         "item" : "Seguretat Ciutadana i Institucions Penitenciàries",
-        "count" : "327"
+        "count" : "328"
       }, {
         "item" : "Subvencions al transport",
         "count" : "222"
@@ -1993,8 +1993,8 @@
         "count" : "68"
       } ],
       "smallest" : "Accés a l'habitatge i foment de l'edificació",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2007,30 +2007,30 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253502,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "PFA",
       "null" : "3",
       "top" : [ {
         "item" : "JSA",
-        "count" : "44190"
+        "count" : "44243"
       }, {
         "item" : "FSA",
-        "count" : "10219"
+        "count" : "10232"
       }, {
         "item" : "FSA; GRA; JSA; PFA",
-        "count" : "5264"
+        "count" : "5271"
       }, {
         "item" : "PFA",
-        "count" : "3727"
+        "count" : "3729"
       }, {
         "item" : "FSA; JSA",
-        "count" : "2279"
+        "count" : "2280"
       }, {
         "item" : "FSA; JSA; PFA",
         "count" : "1235"
       }, {
         "item" : "JSA; PFA",
-        "count" : "1182"
+        "count" : "1183"
       }, {
         "item" : "GRA; JSA; PFA",
         "count" : "683"
@@ -2060,8 +2060,8 @@
         "count" : "3"
       } ],
       "smallest" : "FSA",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2074,30 +2074,30 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253520,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "PYME i Pers. físiques que desenvolupen activitat econòmica",
       "null" : "3",
       "top" : [ {
         "item" : "Persones jurídiques que no desenvolupen activitat econòmica",
-        "count" : "44190"
+        "count" : "44243"
       }, {
         "item" : "Persones físiques que no desenvolupen activitat econòmica",
-        "count" : "10219"
+        "count" : "10232"
       }, {
         "item" : "Persones físiques que no desenvolupen activitat econòmica; Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
-        "count" : "5306"
+        "count" : "5313"
       }, {
         "item" : "PYME i Pers. físiques que desenvolupen activitat econòmica",
-        "count" : "3727"
+        "count" : "3729"
       }, {
         "item" : "Persones físiques que no desenvolupen activitat econòmica; Persones jurídiques que no desenvolupen activitat econòmica",
-        "count" : "2279"
+        "count" : "2280"
       }, {
         "item" : "Persones físiques que no desenvolupen activitat econòmica; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
         "count" : "1235"
       }, {
         "item" : "Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
-        "count" : "1182"
+        "count" : "1183"
       }, {
         "item" : "Gran empresa; Persones jurídiques que no desenvolupen activitat econòmica; PYME i Pers. físiques que desenvolupen activitat econòmica",
         "count" : "683"
@@ -2124,8 +2124,8 @@
         "count" : "3"
       } ],
       "smallest" : "Gran empresa",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2138,45 +2138,45 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253481,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "V",
       "null" : "3",
       "top" : [ {
         "item" : "H; T",
-        "count" : "10320"
+        "count" : "10319"
       }, {
         "item" : "P; S",
         "count" : "5638"
       }, {
         "item" : "Q; S",
-        "count" : "5014"
+        "count" : "5015"
       }, {
         "item" : "Q; R",
-        "count" : "4509"
+        "count" : "4507"
       }, {
         "item" : "91",
-        "count" : "4197"
+        "count" : "4191"
       }, {
         "item" : "93.1; 93.2",
         "count" : "3342"
       }, {
         "item" : "84.1",
-        "count" : "2737"
+        "count" : "2746"
       }, {
         "item" : "94.9",
-        "count" : "2622"
+        "count" : "2624"
       }, {
         "item" : "94",
-        "count" : "2551"
+        "count" : "2556"
       }, {
         "item" : "90; 91",
         "count" : "2331"
       }, {
         "item" : "85; 93",
-        "count" : "1500"
+        "count" : "1499"
       }, {
         "item" : "S",
-        "count" : "1370"
+        "count" : "1383"
       }, {
         "item" : "84; 93",
         "count" : "1196"
@@ -2185,13 +2185,13 @@
         "count" : "1098"
       }, {
         "item" : "84.2; 93.1; 93.2",
-        "count" : "954"
+        "count" : "953"
       }, {
         "item" : "86.9",
         "count" : "859"
       }, {
         "item" : "85.6",
-        "count" : "817"
+        "count" : "819"
       }, {
         "item" : "P",
         "count" : "807"
@@ -2203,8 +2203,8 @@
         "count" : "691"
       } ],
       "smallest" : "01",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2217,45 +2217,45 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253489,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "Valorització de residus; Eliminació de residus sense valorització",
       "null" : "3",
       "top" : [ {
         "item" : "Transport i emmagatzematge; Altres serveis",
-        "count" : "10320"
+        "count" : "10319"
       }, {
         "item" : "Administració públ. i defensa; seguretat social obligatòria; Activitats artístiques, esportives i d'entreteniment",
         "count" : "5638"
       }, {
         "item" : "Educació; Activitats artístiques, esportives i d'entreteniment",
-        "count" : "5016"
+        "count" : "5017"
       }, {
         "item" : "Educació; Activitats sanitàries i de serveis socials",
-        "count" : "4511"
+        "count" : "4509"
       }, {
         "item" : "Act de biblioteques, arxius, museus i altres act. culturals",
-        "count" : "4197"
+        "count" : "4191"
       }, {
         "item" : "Activitats esportives; Activitats recreatives i d'entreteniment",
         "count" : "3342"
       }, {
         "item" : "Adm. públ i de la política econòmica, social i mediambiental",
-        "count" : "2737"
+        "count" : "2746"
       }, {
         "item" : "Altres activitats associatives",
-        "count" : "2622"
+        "count" : "2624"
       }, {
         "item" : "Activitats associatives",
-        "count" : "2551"
+        "count" : "2556"
       }, {
         "item" : "Activitats de creació artística i arts escèniques; Act de biblioteques, arxius, museus i altres act. culturals",
         "count" : "2331"
       }, {
         "item" : "Educació; Activitats esportives, recreatives i d'entreteniment",
-        "count" : "1500"
+        "count" : "1499"
       }, {
         "item" : "Activitats artístiques, esportives i d'entreteniment",
-        "count" : "1370"
+        "count" : "1383"
       }, {
         "item" : "Administrac. pública i defensa; seguretat social obligatòria; Activitats esportives, recreatives i d'entreteniment",
         "count" : "1196"
@@ -2264,16 +2264,16 @@
         "count" : "1098"
       }, {
         "item" : "Prestació de serveis a la comunitat en general; Activitats esportives; Activitats recreatives i d'entreteniment",
-        "count" : "954"
+        "count" : "953"
       }, {
         "item" : "Altres activitats sanitàries",
         "count" : "859"
       }, {
         "item" : "Educació",
-        "count" : "833"
+        "count" : "841"
       }, {
         "item" : "Activitats auxiliars a l'educació",
-        "count" : "817"
+        "count" : "819"
       }, {
         "item" : "Administració públ. i defensa; seguretat social obligatòria",
         "count" : "807"
@@ -2282,8 +2282,8 @@
         "count" : "742"
       } ],
       "smallest" : "Acabat d'edificis",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2296,15 +2296,15 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13644697,
     "cachedContents" : {
-      "non_null" : "69722",
+      "non_null" : "69799",
       "largest" : "PGE",
       "null" : "287",
       "top" : [ {
         "item" : "PEL",
-        "count" : "58938"
+        "count" : "59018"
       }, {
         "item" : "PCA",
-        "count" : "8222"
+        "count" : "8218"
       }, {
         "item" : "PGE",
         "count" : "576"
@@ -2316,13 +2316,13 @@
         "count" : "300"
       }, {
         "item" : "002; PEL",
-        "count" : "228"
+        "count" : "227"
       }, {
         "item" : "001; OFI",
         "count" : "187"
       }, {
         "item" : "OFI",
-        "count" : "73"
+        "count" : "74"
       }, {
         "item" : "004; PCA",
         "count" : "64"
@@ -2361,8 +2361,8 @@
         "count" : "25"
       } ],
       "smallest" : "001",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2375,15 +2375,15 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13644696,
     "cachedContents" : {
-      "non_null" : "69722",
+      "non_null" : "69799",
       "largest" : "REACT-EU Recovery Assist. for Cohesion & Territories Europe; Pressupostos Generals de l'Estat",
       "null" : "287",
       "top" : [ {
         "item" : "Pressupostos Generals de les Entitats Locals",
-        "count" : "58938"
+        "count" : "59018"
       }, {
         "item" : "Pressupostos Generals de les Comunitats Autònomes",
-        "count" : "8222"
+        "count" : "8218"
       }, {
         "item" : "Pressupostos Generals de l'Estat",
         "count" : "576"
@@ -2395,13 +2395,13 @@
         "count" : "300"
       }, {
         "item" : "FSE - FONS SOCIAL EUROPEU; Pressupostos Generals de les Entitats Locals",
-        "count" : "228"
+        "count" : "227"
       }, {
         "item" : "FEDER - FONS EUROPEU DE DESENVOLUPAMENT REGIONAL; Altre finançament",
         "count" : "187"
       }, {
         "item" : "Altre finançament",
-        "count" : "73"
+        "count" : "74"
       }, {
         "item" : "FEADER - FONS EUROPEU AGRÍCOLA DE DESENVOLUPAMENT RURAL; Pressupostos Generals de les Comunitats Autònomes",
         "count" : "64"
@@ -2440,8 +2440,8 @@
         "count" : "25"
       } ],
       "smallest" : "Altre finançament",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2454,73 +2454,73 @@
     "renderTypeName" : "number",
     "tableColumnId" : 5253493,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "2665230291.03",
       "null" : "0",
       "top" : [ {
         "item" : "3000",
-        "count" : "2061"
+        "count" : "2063"
       }, {
         "item" : "2000",
-        "count" : "2014"
+        "count" : "2015"
       }, {
         "item" : "1000",
         "count" : "1966"
       }, {
         "item" : "10000",
-        "count" : "1773"
+        "count" : "1770"
       }, {
         "item" : "5000",
-        "count" : "1728"
+        "count" : "1730"
       }, {
         "item" : "6000",
-        "count" : "1434"
+        "count" : "1435"
       }, {
         "item" : "20000",
-        "count" : "1399"
+        "count" : "1398"
       }, {
         "item" : "15000",
-        "count" : "1345"
+        "count" : "1347"
       }, {
         "item" : "1500",
-        "count" : "1321"
+        "count" : "1322"
       }, {
         "item" : "4000",
         "count" : "1224"
       }, {
         "item" : "30000",
-        "count" : "977"
+        "count" : "980"
       }, {
         "item" : "2500",
         "count" : "901"
       }, {
         "item" : "500",
-        "count" : "884"
+        "count" : "888"
       }, {
         "item" : "8000",
-        "count" : "852"
+        "count" : "853"
       }, {
         "item" : "12000",
-        "count" : "819"
+        "count" : "822"
       }, {
         "item" : "0",
         "count" : "812"
       }, {
         "item" : "50000",
-        "count" : "804"
+        "count" : "805"
       }, {
         "item" : "25000",
-        "count" : "785"
+        "count" : "786"
       }, {
         "item" : "40000",
-        "count" : "718"
+        "count" : "720"
       }, {
         "item" : "7000",
-        "count" : "671"
+        "count" : "670"
       } ],
       "smallest" : "0",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : {
       "decimalSeparator" : ",",
@@ -2536,12 +2536,12 @@
     "renderTypeName" : "number",
     "tableColumnId" : 5253525,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "374148757.58",
       "null" : "0",
       "top" : [ {
         "item" : "0",
-        "count" : "68860"
+        "count" : "68937"
       }, {
         "item" : "1",
         "count" : "28"
@@ -2601,8 +2601,8 @@
         "count" : "7"
       } ],
       "smallest" : "0",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : {
       "decimalSeparator" : ",",
@@ -2618,73 +2618,73 @@
     "renderTypeName" : "number",
     "tableColumnId" : 5253505,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "2665230291.03",
       "null" : "0",
       "top" : [ {
         "item" : "3000",
-        "count" : "2049"
+        "count" : "2051"
       }, {
         "item" : "2000",
-        "count" : "2003"
+        "count" : "2004"
       }, {
         "item" : "1000",
         "count" : "1963"
       }, {
         "item" : "10000",
-        "count" : "1769"
+        "count" : "1766"
       }, {
         "item" : "5000",
-        "count" : "1741"
+        "count" : "1743"
       }, {
         "item" : "6000",
         "count" : "1443"
       }, {
         "item" : "20000",
-        "count" : "1410"
+        "count" : "1409"
       }, {
         "item" : "15000",
-        "count" : "1347"
+        "count" : "1349"
       }, {
         "item" : "1500",
-        "count" : "1317"
+        "count" : "1318"
       }, {
         "item" : "4000",
         "count" : "1230"
       }, {
         "item" : "30000",
-        "count" : "990"
+        "count" : "993"
       }, {
         "item" : "2500",
         "count" : "898"
       }, {
         "item" : "500",
-        "count" : "888"
+        "count" : "892"
       }, {
         "item" : "8000",
-        "count" : "859"
+        "count" : "860"
       }, {
         "item" : "12000",
-        "count" : "818"
+        "count" : "821"
       }, {
         "item" : "50000",
-        "count" : "802"
+        "count" : "804"
       }, {
         "item" : "25000",
-        "count" : "784"
+        "count" : "785"
       }, {
         "item" : "40000",
-        "count" : "722"
+        "count" : "724"
       }, {
         "item" : "7000",
-        "count" : "666"
+        "count" : "665"
       }, {
         "item" : "100000",
-        "count" : "577"
+        "count" : "578"
       } ],
       "smallest" : "0",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : {
       "decimalSeparator" : ",",
@@ -2700,9 +2700,9 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253514,
     "cachedContents" : {
-      "non_null" : "68274",
+      "non_null" : "68345",
       "largest" : "Votacion de las candidaturas una vez publicadas la relacion de personas",
-      "null" : "1735",
+      "null" : "1741",
       "top" : [ {
         "item" : "01/01/2023",
         "count" : "6413"
@@ -2714,13 +2714,13 @@
         "count" : "6327"
       }, {
         "item" : "01/01/2025",
-        "count" : "6113"
+        "count" : "6114"
       }, {
         "item" : "01/01/2021",
-        "count" : "5404"
+        "count" : "5394"
       }, {
         "item" : "01/01/2026",
-        "count" : "4123"
+        "count" : "4176"
       }, {
         "item" : "01/01/2019",
         "count" : "2405"
@@ -2732,10 +2732,10 @@
         "count" : "1544"
       }, {
         "item" : "Sin plazo de solicitud",
-        "count" : "410"
+        "count" : "422"
       }, {
         "item" : "SIN PLAZO DE SOLICITUD",
-        "count" : "150"
+        "count" : "151"
       }, {
         "item" : "No tiene",
         "count" : "140"
@@ -2765,8 +2765,8 @@
         "count" : "82"
       } ],
       "smallest" : "-",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2779,9 +2779,9 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253510,
     "cachedContents" : {
-      "non_null" : "68200",
+      "non_null" : "68271",
       "largest" : "y hasta el 29 de febrero de 2024",
-      "null" : "1809",
+      "null" : "1815",
       "top" : [ {
         "item" : "31/12/2023",
         "count" : "4017"
@@ -2799,7 +2799,7 @@
         "count" : "3426"
       }, {
         "item" : "31/12/2026",
-        "count" : "2629"
+        "count" : "2660"
       }, {
         "item" : "31/12/2019",
         "count" : "1643"
@@ -2808,7 +2808,7 @@
         "count" : "1483"
       }, {
         "item" : "Sin plazo de solicitud",
-        "count" : "408"
+        "count" : "423"
       }, {
         "item" : "30/11/2023",
         "count" : "387"
@@ -2844,8 +2844,8 @@
         "count" : "222"
       } ],
       "smallest" : "-",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2858,9 +2858,9 @@
     "renderTypeName" : "text",
     "tableColumnId" : 16769927,
     "cachedContents" : {
-      "non_null" : "7938",
+      "non_null" : "7942",
       "largest" : "2033-12-31",
-      "null" : "62071",
+      "null" : "62144",
       "top" : [ {
         "item" : "2026-06-17",
         "count" : "115"
@@ -2871,10 +2871,10 @@
         "item" : "2022-12-21",
         "count" : "60"
       }, {
-        "item" : "2024-12-31",
+        "item" : "2025-12-31",
         "count" : "48"
       }, {
-        "item" : "2025-12-31",
+        "item" : "2024-12-31",
         "count" : "48"
       }, {
         "item" : "2022-12-31",
@@ -2904,13 +2904,13 @@
         "item" : "2023-10-23",
         "count" : "28"
       }, {
-        "item" : "2025-06-26",
+        "item" : "2025-10-30",
         "count" : "26"
       }, {
         "item" : "2024-10-31",
         "count" : "26"
       }, {
-        "item" : "2025-10-30",
+        "item" : "2025-06-26",
         "count" : "26"
       }, {
         "item" : "2022-06-10",
@@ -2923,8 +2923,8 @@
         "count" : "25"
       } ],
       "smallest" : "2000-08-31",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : {
       "view" : "date_dmy"
@@ -2939,12 +2939,12 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13978928,
     "cachedContents" : {
-      "non_null" : "1194",
+      "non_null" : "1195",
       "largest" : "23:59:59",
-      "null" : "68815",
+      "null" : "68891",
       "top" : [ {
         "item" : "14:00:00",
-        "count" : "832"
+        "count" : "833"
       }, {
         "item" : "15:00:00",
         "count" : "141"
@@ -2977,8 +2977,8 @@
         "count" : "1"
       } ],
       "smallest" : "00:00:00",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -2991,24 +2991,24 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253521,
     "cachedContents" : {
-      "non_null" : "14867",
+      "non_null" : "14900",
       "largest" : "wwww.ripollet.cat",
-      "null" : "55142",
+      "null" : "55186",
       "top" : [ {
         "item" : "https://seuelectronica.dipta.cat",
-        "count" : "1543"
+        "count" : "1563"
       }, {
         "item" : "https://seuelectronica.l-h.cat/2298028_2.aspx?id=2",
         "count" : "504"
       }, {
         "item" : "www.elvendrell.net",
-        "count" : "373"
+        "count" : "374"
       }, {
         "item" : "https://seu.tarrega.cat/emiservicio/catala/emiservicio/41E6BF9D755E4825AF8E6B49E85B5079.asp",
         "count" : "323"
       }, {
         "item" : "www.rodadeter.cat",
-        "count" : "298"
+        "count" : "300"
       }, {
         "item" : "https://www.santperederibes.cat/seuelectronica",
         "count" : "265"
@@ -3038,7 +3038,7 @@
         "count" : "151"
       }, {
         "item" : "https://seuelectronica.granollers.cat/portal/sede/se_contenedor1.jsp?seccion=s_ldoc_d10_v1.jsp&codbusqueda=93&language=ca&codResi=1&codMenuPN=21&codMenu=63&layout=se_contenedor1.jsp&layout=se_contenedor1.jsp",
-        "count" : "142"
+        "count" : "143"
       }, {
         "item" : "https://vila-seca.eadministracio.cat/info.0",
         "count" : "132"
@@ -3056,8 +3056,8 @@
         "count" : "107"
       } ],
       "smallest" : "08.02.2024",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3070,9 +3070,9 @@
     "renderTypeName" : "text",
     "tableColumnId" : 16769926,
     "cachedContents" : {
-      "non_null" : "42429",
+      "non_null" : "42462",
       "largest" : "2923-09-29",
-      "null" : "27580",
+      "null" : "27624",
       "top" : [ {
         "item" : "2022-12-31",
         "count" : "1442"
@@ -3102,7 +3102,7 @@
         "count" : "1078"
       }, {
         "item" : "2027-03-31",
-        "count" : "1039"
+        "count" : "1046"
       }, {
         "item" : "2022-03-31",
         "count" : "1016"
@@ -3120,13 +3120,13 @@
         "count" : "932"
       }, {
         "item" : "2026-12-31",
-        "count" : "868"
+        "count" : "872"
       }, {
         "item" : "2022-01-31",
         "count" : "837"
       }, {
         "item" : "2027-01-31",
-        "count" : "757"
+        "count" : "766"
       }, {
         "item" : "2022-02-28",
         "count" : "494"
@@ -3134,9 +3134,9 @@
         "item" : "2025-02-28",
         "count" : "486"
       } ],
-      "smallest" : "2021-11-25",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "smallest" : "2021-11-28",
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : {
       "view" : "date_dmy"
@@ -3153,14 +3153,14 @@
     "cachedContents" : {
       "non_null" : "1349",
       "largest" : "SÍ",
-      "null" : "68660",
+      "null" : "68737",
       "top" : [ {
         "item" : "SÍ",
         "count" : "1349"
       } ],
       "smallest" : "SÍ",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3175,7 +3175,7 @@
     "cachedContents" : {
       "non_null" : "1349",
       "largest" : "SOLPR",
-      "null" : "68660",
+      "null" : "68737",
       "top" : [ {
         "item" : "MINIM",
         "count" : "819"
@@ -3190,8 +3190,8 @@
         "count" : "10"
       } ],
       "smallest" : "CATEG",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3206,7 +3206,7 @@
     "cachedContents" : {
       "non_null" : "1349",
       "largest" : "Per aplic. Reg. UE d'ex. sol·lic. d'aut. per imp. de l'ajuda",
-      "null" : "68660",
+      "null" : "68737",
       "top" : [ {
         "item" : "Per aplic. Reg. UE d'ex. sol·lic. d'aut. per imp. de l'ajuda",
         "count" : "819"
@@ -3221,8 +3221,8 @@
         "count" : "10"
       } ],
       "smallest" : "Compatible x SIEG[R(CE)1370/2007, Dec.Com. 20/12/11 o altre]",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3237,7 +3237,7 @@
     "cachedContents" : {
       "non_null" : "1286",
       "largest" : "9",
-      "null" : "68723",
+      "null" : "68800",
       "top" : [ {
         "item" : "1",
         "count" : "440"
@@ -3276,8 +3276,8 @@
         "count" : "1"
       } ],
       "smallest" : "1",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3292,7 +3292,7 @@
     "cachedContents" : {
       "non_null" : "1286",
       "largest" : "REG (UE) 717/2014, DE 27 DE JUNY, de minimis",
-      "null" : "68723",
+      "null" : "68800",
       "top" : [ {
         "item" : "REG (UE) 1407/2013, DE 18 DE DESEMBRE, de minimis",
         "count" : "440"
@@ -3331,8 +3331,8 @@
         "count" : "1"
       } ],
       "smallest" : "DIFERENT DE PROD.AGR.PRIM. - REG(UE)702/2014, D'1 DE JULIOL",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3347,7 +3347,7 @@
     "cachedContents" : {
       "non_null" : "517",
       "largest" : "SA.99999",
-      "null" : "69492",
+      "null" : "69569",
       "top" : [ {
         "item" : "SA.56851",
         "count" : "28"
@@ -3410,8 +3410,8 @@
         "count" : "4"
       } ],
       "smallest" : "Pendent notificació dins dels 20 dies atorgament",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3426,7 +3426,7 @@
     "cachedContents" : {
       "non_null" : "476",
       "largest" : "99",
-      "null" : "69533",
+      "null" : "69610",
       "top" : [ {
         "item" : "84",
         "count" : "145"
@@ -3489,8 +3489,8 @@
         "count" : "3"
       } ],
       "smallest" : "1",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3505,7 +3505,7 @@
     "cachedContents" : {
       "non_null" : "373",
       "largest" : "ART. 56 AJUTS A LA INVERSIÓ PER A INFRAESTRUCTURES LOCALS",
-      "null" : "69636",
+      "null" : "69713",
       "top" : [ {
         "item" : "ART. 53 AJUTS A LA CULTURA I LA CONSERVACIÓ DEL PATRIMONI",
         "count" : "145"
@@ -3568,8 +3568,8 @@
         "count" : "3"
       } ],
       "smallest" : "ART. 13 AJUTS A LA INNOVACIÓ",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3582,22 +3582,22 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5278387,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "003",
       "null" : "0",
       "top" : [ {
         "item" : "002",
-        "count" : "60384"
+        "count" : "60459"
       }, {
         "item" : "003",
-        "count" : "6329"
+        "count" : "6322"
       }, {
         "item" : "001",
-        "count" : "3296"
+        "count" : "3305"
       } ],
       "smallest" : "001",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3610,22 +3610,22 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253522,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "POSITIU: Quan es prevegi una disminució o eliminació de les desigualtats detectades i contribueixi als objectius de les polítiques d'igualtat",
       "null" : "0",
       "top" : [ {
         "item" : "NUL: Quan no existint desigualtats de partida amb relació a la igualtat d'oportunitats i de tracte entre dones i homes, no es prevegi modificació d'aquesta situació",
-        "count" : "60384"
+        "count" : "60459"
       }, {
         "item" : "POSITIU: Quan es prevegi una disminució o eliminació de les desigualtats detectades i contribueixi als objectius de les polítiques d'igualtat",
-        "count" : "6329"
+        "count" : "6322"
       }, {
         "item" : "NEGATIU: Quan no es preveu una eliminació o disminució de les desigualtats detectades i no contribueixi a les polítiques d'igualtat",
-        "count" : "3296"
+        "count" : "3305"
       } ],
       "smallest" : "NEGATIU: Quan no es preveu una eliminació o disminució de les desigualtats detectades i no contribueixi a les polítiques d'igualtat",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3638,19 +3638,19 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5278378,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "1",
       "null" : "0",
       "top" : [ {
         "item" : "1",
-        "count" : "65297"
+        "count" : "65353"
       }, {
         "item" : "0",
-        "count" : "4712"
+        "count" : "4733"
       } ],
       "smallest" : "0",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3663,19 +3663,19 @@
     "renderTypeName" : "text",
     "tableColumnId" : 5253486,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "Sí publicable",
       "null" : "0",
       "top" : [ {
         "item" : "Sí publicable",
-        "count" : "65297"
+        "count" : "65353"
       }, {
         "item" : "No publicable",
-        "count" : "4712"
+        "count" : "4733"
       } ],
       "smallest" : "No publicable",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3690,7 +3690,7 @@
     "cachedContents" : {
       "non_null" : "735",
       "largest" : "REACT EU 1",
-      "null" : "69274",
+      "null" : "69351",
       "top" : [ {
         "item" : "MRR",
         "count" : "367"
@@ -3714,8 +3714,8 @@
         "count" : "1"
       } ],
       "smallest" : "Altres despeses de U",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3728,7 +3728,7 @@
     "renderTypeName" : "text",
     "tableColumnId" : 13644698,
     "cachedContents" : {
-      "non_null" : "70006",
+      "non_null" : "70083",
       "largest" : "XXX SETMANA CULTURAL DEL CENTRO EXTREMENO DE REUS",
       "null" : "3",
       "top" : [ {
@@ -3793,8 +3793,8 @@
         "count" : "8"
       } ],
       "smallest" : "04 ORDENANCA REGULADORA DE LES BESES PER A LA CONCESSIO DE SUBVENCIONS PER A PROMORURE DIFERENTS ACTIVITATS",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3807,21 +3807,21 @@
     "renderTypeName" : "text",
     "tableColumnId" : 14496876,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "010",
       "null" : "0",
       "top" : [ {
         "item" : "004",
-        "count" : "49404"
+        "count" : "49456"
       }, {
         "item" : "002",
-        "count" : "9060"
+        "count" : "9090"
       }, {
         "item" : "001",
-        "count" : "9029"
+        "count" : "9025"
       }, {
         "item" : "003",
-        "count" : "1799"
+        "count" : "1798"
       }, {
         "item" : "006",
         "count" : "372"
@@ -3842,8 +3842,8 @@
         "count" : "6"
       } ],
       "smallest" : "001",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3856,21 +3856,21 @@
     "renderTypeName" : "text",
     "tableColumnId" : 14496875,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "Local / Universitat",
       "null" : "0",
       "top" : [ {
         "item" : "Local / Municipi",
-        "count" : "49404"
+        "count" : "49456"
       }, {
         "item" : "Local / Província",
-        "count" : "9060"
+        "count" : "9090"
       }, {
         "item" : "Autonòmica",
-        "count" : "9029"
+        "count" : "9025"
       }, {
         "item" : "Local / Comarca",
-        "count" : "1799"
+        "count" : "1798"
       }, {
         "item" : "Local / Entitat Metropolitana",
         "count" : "372"
@@ -3891,8 +3891,8 @@
         "count" : "6"
       } ],
       "smallest" : "Autonòmica",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3905,42 +3905,42 @@
     "renderTypeName" : "text",
     "tableColumnId" : 14496877,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "UR",
       "null" : "0",
       "top" : [ {
         "item" : "DPGIR",
-        "count" : "4945"
+        "count" : "4951"
       }, {
         "item" : "CU",
-        "count" : "2414"
+        "count" : "2416"
       }, {
         "item" : "DPLLD",
-        "count" : "2278"
+        "count" : "2282"
       }, {
         "item" : "DPTGN",
-        "count" : "1585"
+        "count" : "1605"
       }, {
         "item" : "IU",
         "count" : "1352"
       }, {
         "item" : "AJ610",
-        "count" : "1039"
+        "count" : "1042"
       }, {
         "item" : "AJ357",
-        "count" : "870"
+        "count" : "874"
       }, {
         "item" : "AJ903",
         "count" : "854"
       }, {
         "item" : "AG",
-        "count" : "841"
+        "count" : "843"
       }, {
         "item" : "AJ341",
-        "count" : "799"
+        "count" : "800"
       }, {
         "item" : "PO",
-        "count" : "746"
+        "count" : "747"
       }, {
         "item" : "UR",
         "count" : "697"
@@ -3970,8 +3970,8 @@
         "count" : "580"
       } ],
       "smallest" : "AG",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   }, {
@@ -3984,42 +3984,42 @@
     "renderTypeName" : "text",
     "tableColumnId" : 14496878,
     "cachedContents" : {
-      "non_null" : "70009",
+      "non_null" : "70086",
       "largest" : "Universitat Rovira i Virgili",
       "null" : "0",
       "top" : [ {
         "item" : "Diputació de Girona",
-        "count" : "4945"
+        "count" : "4951"
       }, {
         "item" : "Departament de Cultura",
-        "count" : "2414"
+        "count" : "2416"
       }, {
         "item" : "Diputació de Lleida",
-        "count" : "2278"
+        "count" : "2282"
       }, {
         "item" : "Diputació de Tarragona",
-        "count" : "1585"
+        "count" : "1605"
       }, {
         "item" : "Departament d'Empresa i Treball",
         "count" : "1352"
       }, {
         "item" : "Ajuntament de Reus",
-        "count" : "1039"
+        "count" : "1042"
       }, {
         "item" : "Ajuntament de l'Hospitalet de Llobregat",
-        "count" : "870"
+        "count" : "874"
       }, {
         "item" : "Ajuntament de Vilafranca del Penedès",
         "count" : "854"
       }, {
         "item" : "Departament d'Agricultura, Ramaderia, Pesca i Alimentació",
-        "count" : "841"
+        "count" : "843"
       }, {
         "item" : "Ajuntament de Granollers",
-        "count" : "799"
+        "count" : "800"
       }, {
         "item" : "Departament de Territori, Habitatge i Transició Ecològica",
-        "count" : "746"
+        "count" : "747"
       }, {
         "item" : "Departament de Recerca i Universitats",
         "count" : "697"
@@ -4049,8 +4049,8 @@
         "count" : "580"
       } ],
       "smallest" : "Ajuntament d'Agramunt",
-      "count" : "70009",
-      "cardinality" : "70009"
+      "count" : "70086",
+      "cardinality" : "70086"
     },
     "format" : { }
   } ],

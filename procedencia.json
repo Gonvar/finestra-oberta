@@ -7323,49 +7323,49 @@
       }
     },
     "ajuts": {
-      "data_consulta": "2026-11-26",
+      "data_consulta": "2026-11-28",
       "node": "v24.22.3",
       "fitxers": {
-        "ajuts.json": "5d64f21ca15a18e5a6f7b4069a4822d629793c332e569fc2307e1f0f294b4bec"
+        "ajuts.json": "bc755d6ececcf9fdbb5afb77cf55a8323eadf22bdffc7ef10f206b7cf88474eb"
       },
       "captures": [
         {
           "url": "https://analisi.transparenciacatalunya.cat/api/views/khxn-nv6a.json",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/khxn-nv6a.json",
-          "consultat": "2026-11-26T14:37:02.575Z",
+          "consultat": "2026-11-28T13:46:34.799Z",
           "estat": 200,
           "tipus": "application/json; charset=utf-8",
-          "sha256": "428a026122092c600d7beaf9e4fb5f321223123556b8074fe6f8cdf7426c2f01"
+          "sha256": "8e4c544c00e36ace2eed2b036d61905fe48b8fa785ad54016c05f7bad0d8a1ec"
         },
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=data_fi_presentaci_sol%2C+count%28*%29+as+n&%24group=data_fi_presentaci_sol&%24order=data_fi_presentaci_sol&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=data_fi_presentaci_sol%2C+count%28*%29+as+n&%24group=data_fi_presentaci_sol&%24order=data_fi_presentaci_sol&%24limit=50000",
-          "consultat": "2026-11-26T14:37:03.023Z",
+          "consultat": "2026-11-28T13:46:35.198Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
-          "sha256": "4dc917732d6a891c58fad2ffa4ae2056c9c96ad007c7c86badb5fc6ada1a6a4e"
+          "sha256": "8c815c304329aaa8c269302966c9ff33eb3426fd31a299c6a7d01c6c06f7e6f6"
         },
         {
-          "url": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2701%2F01%2F2027%27%2C+%2701%2F03%2F2027%27%2C+%2701%2F04%2F2027%27%2C+%2701%2F09%2F2027%27%2C+%2701%2F12%2F2026%27%2C+%2702%2F03%2F2027%27%2C+%2702%2F12%2F2026%27%2C+%2703%2F07%2F2029%27%2C+%2703%2F12%2F2026%27%2C+%2704%2F12%2F2026%27%2C+%2705%2F01%2F2027%27%2C+%2705%2F02%2F2027%27%2C+%2705%2F06%2F2027%27%2C+%2705%2F11%2F2027%27%2C+%2705%2F12%2F2026%27%2C+%2706%2F01%2F2027%27%2C+%2707%2F01%2F2027%27%2C+%2707%2F07%2F2029%27%2C+%2707%2F10%2F2027%27%2C+%2707%2F12%2F2026%27%2C+%2708%2F01%2F2027%27%2C+%2708%2F12%2F2026%27%2C+%2709%2F12%2F2026%27%2C+%2710%2F01%2F2027%27%2C+%2710%2F03%2F2027%27%2C+%2710%2F12%2F2026%27%2C+%2710%2F12%2F2027%27%2C+%2711%2F12%2F2026%27%2C+%2712%2F01%2F2027%27%2C+%2712%2F02%2F2027%27%2C+%2712%2F03%2F2027%27%2C+%2712%2F11%2F2027%27%2C+%2713%2F02%2F2027%27%2C+%2713%2F06%2F2029%27%2C+%2713%2F12%2F2026%27%2C+%2714%2F08%2F2027%27%2C+%2714%2F12%2F2026%27%2C+%2715%2F01%2F2027%27%2C+%2715%2F02%2F2027%27%2C+%2715%2F04%2F2027%27%2C+%2715%2F05%2F2027%27%2C+%2715%2F06%2F2027%27%2C+%2715%2F10%2F2027%27%2C+%2715%2F11%2F2027%27%2C+%2715%2F12%2F2026%27%2C+%2716%2F05%2F2027%27%2C+%2716%2F12%2F2026%27%2C+%2717%2F06%2F2027%27%2C+%2717%2F10%2F2029%27%2C+%2717%2F12%2F2026%27%2C+%2718%2F06%2F2027%27%2C+%2718%2F12%2F2026%27%2C+%2718%2F12%2F2029%27%2C+%2719%2F02%2F2027%27%2C+%2719%2F03%2F2027%27%2C+%2719%2F12%2F2026%27%2C+%2720%2F12%2F2026%27%2C+%2721%2F06%2F2027%27%2C+%2721%2F12%2F2026%27%2C+%2722%2F01%2F2027%27%2C+%2722%2F06%2F2027%27%2C+%2722%2F11%2F2027%27%2C+%2722%2F12%2F2026%27%2C+%2723%2F01%2F2027%27%2C+%2723%2F12%2F2026%27%2C+%2724%2F02%2F2028%27%2C+%2724%2F12%2F2026%27%2C+%2725%2F03%2F2028%27%2C+%2726%2F02%2F2027%27%2C+%2726%2F11%2F2026%27%2C+%2727%2F02%2F2027%27%2C+%2727%2F11%2F2026%27%2C+%2728%2F01%2F2027%27%2C+%2728%2F02%2F2027%27%2C+%2728%2F05%2F2027%27%2C+%2728%2F10%2F2027%27%2C+%2728%2F10%2F2028%27%2C+%2728%2F12%2F2026%27%2C+%2729%2F01%2F2027%27%2C+%2729%2F07%2F2027%27%2C+%2729%2F11%2F2026%27%2C+%2729%2F12%2F2026%27%2C+%2730%2F04%2F2027%27%2C+%2730%2F06%2F2027%27%2C+%2730%2F09%2F2027%27%2C+%2730%2F09%2F2028%27%2C+%2730%2F11%2F2026%27%2C+%2730%2F11%2F2027%27%2C+%2730%2F11%2F2028%27%2C+%2730%2F12%2F2026%27%2C+%2730%2F12%2F2027%27%2C+%2731%2F01%2F2027%27%2C+%2731%2F01%2F2028%27%2C+%2731%2F03%2F2027%27%2C+%2731%2F05%2F2027%27%2C+%2731%2F07%2F2027%27%2C+%2731%2F08%2F2027%27%2C+%2731%2F10%2F2027%27%2C+%2731%2F12%2F2026%27%2C+%2731%2F12%2F2027%27%29&%24order=codi_raisc&%24limit=50000",
-          "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2701%2F01%2F2027%27%2C+%2701%2F03%2F2027%27%2C+%2701%2F04%2F2027%27%2C+%2701%2F09%2F2027%27%2C+%2701%2F12%2F2026%27%2C+%2702%2F03%2F2027%27%2C+%2702%2F12%2F2026%27%2C+%2703%2F07%2F2029%27%2C+%2703%2F12%2F2026%27%2C+%2704%2F12%2F2026%27%2C+%2705%2F01%2F2027%27%2C+%2705%2F02%2F2027%27%2C+%2705%2F06%2F2027%27%2C+%2705%2F11%2F2027%27%2C+%2705%2F12%2F2026%27%2C+%2706%2F01%2F2027%27%2C+%2707%2F01%2F2027%27%2C+%2707%2F07%2F2029%27%2C+%2707%2F10%2F2027%27%2C+%2707%2F12%2F2026%27%2C+%2708%2F01%2F2027%27%2C+%2708%2F12%2F2026%27%2C+%2709%2F12%2F2026%27%2C+%2710%2F01%2F2027%27%2C+%2710%2F03%2F2027%27%2C+%2710%2F12%2F2026%27%2C+%2710%2F12%2F2027%27%2C+%2711%2F12%2F2026%27%2C+%2712%2F01%2F2027%27%2C+%2712%2F02%2F2027%27%2C+%2712%2F03%2F2027%27%2C+%2712%2F11%2F2027%27%2C+%2713%2F02%2F2027%27%2C+%2713%2F06%2F2029%27%2C+%2713%2F12%2F2026%27%2C+%2714%2F08%2F2027%27%2C+%2714%2F12%2F2026%27%2C+%2715%2F01%2F2027%27%2C+%2715%2F02%2F2027%27%2C+%2715%2F04%2F2027%27%2C+%2715%2F05%2F2027%27%2C+%2715%2F06%2F2027%27%2C+%2715%2F10%2F2027%27%2C+%2715%2F11%2F2027%27%2C+%2715%2F12%2F2026%27%2C+%2716%2F05%2F2027%27%2C+%2716%2F12%2F2026%27%2C+%2717%2F06%2F2027%27%2C+%2717%2F10%2F2029%27%2C+%2717%2F12%2F2026%27%2C+%2718%2F06%2F2027%27%2C+%2718%2F12%2F2026%27%2C+%2718%2F12%2F2029%27%2C+%2719%2F02%2F2027%27%2C+%2719%2F03%2F2027%27%2C+%2719%2F12%2F2026%27%2C+%2720%2F12%2F2026%27%2C+%2721%2F06%2F2027%27%2C+%2721%2F12%2F2026%27%2C+%2722%2F01%2F2027%27%2C+%2722%2F06%2F2027%27%2C+%2722%2F11%2F2027%27%2C+%2722%2F12%2F2026%27%2C+%2723%2F01%2F2027%27%2C+%2723%2F12%2F2026%27%2C+%2724%2F02%2F2028%27%2C+%2724%2F12%2F2026%27%2C+%2725%2F03%2F2028%27%2C+%2726%2F02%2F2027%27%2C+%2726%2F11%2F2026%27%2C+%2727%2F02%2F2027%27%2C+%2727%2F11%2F2026%27%2C+%2728%2F01%2F2027%27%2C+%2728%2F02%2F2027%27%2C+%2728%2F05%2F2027%27%2C+%2728%2F10%2F2027%27%2C+%2728%2F10%2F2028%27%2C+%2728%2F12%2F2026%27%2C+%2729%2F01%2F2027%27%2C+%2729%2F07%2F2027%27%2C+%2729%2F11%2F2026%27%2C+%2729%2F12%2F2026%27%2C+%2730%2F04%2F2027%27%2C+%2730%2F06%2F2027%27%2C+%2730%2F09%2F2027%27%2C+%2730%2F09%2F2028%27%2C+%2730%2F11%2F2026%27%2C+%2730%2F11%2F2027%27%2C+%2730%2F11%2F2028%27%2C+%2730%2F12%2F2026%27%2C+%2730%2F12%2F2027%27%2C+%2731%2F01%2F2027%27%2C+%2731%2F01%2F2028%27%2C+%2731%2F03%2F2027%27%2C+%2731%2F05%2F2027%27%2C+%2731%2F07%2F2027%27%2C+%2731%2F08%2F2027%27%2C+%2731%2F10%2F2027%27%2C+%2731%2F12%2F2026%27%2C+%2731%2F12%2F2027%27%29&%24order=codi_raisc&%24limit=50000",
-          "consultat": "2026-11-26T14:37:04.290Z",
+          "url": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2701%2F01%2F2027%27%2C+%2701%2F03%2F2027%27%2C+%2701%2F04%2F2027%27%2C+%2701%2F09%2F2027%27%2C+%2701%2F12%2F2026%27%2C+%2702%2F03%2F2027%27%2C+%2702%2F12%2F2026%27%2C+%2703%2F07%2F2029%27%2C+%2703%2F12%2F2026%27%2C+%2704%2F12%2F2026%27%2C+%2705%2F01%2F2027%27%2C+%2705%2F02%2F2027%27%2C+%2705%2F06%2F2027%27%2C+%2705%2F11%2F2027%27%2C+%2705%2F12%2F2026%27%2C+%2706%2F01%2F2027%27%2C+%2707%2F01%2F2027%27%2C+%2707%2F07%2F2029%27%2C+%2707%2F10%2F2027%27%2C+%2707%2F12%2F2026%27%2C+%2708%2F01%2F2027%27%2C+%2708%2F12%2F2026%27%2C+%2709%2F12%2F2026%27%2C+%2710%2F01%2F2027%27%2C+%2710%2F03%2F2027%27%2C+%2710%2F12%2F2026%27%2C+%2710%2F12%2F2027%27%2C+%2711%2F12%2F2026%27%2C+%2712%2F01%2F2027%27%2C+%2712%2F02%2F2027%27%2C+%2712%2F03%2F2027%27%2C+%2712%2F11%2F2027%27%2C+%2713%2F02%2F2027%27%2C+%2713%2F06%2F2029%27%2C+%2713%2F12%2F2026%27%2C+%2714%2F08%2F2027%27%2C+%2714%2F12%2F2026%27%2C+%2715%2F01%2F2027%27%2C+%2715%2F02%2F2027%27%2C+%2715%2F04%2F2027%27%2C+%2715%2F05%2F2027%27%2C+%2715%2F06%2F2027%27%2C+%2715%2F10%2F2027%27%2C+%2715%2F11%2F2027%27%2C+%2715%2F12%2F2026%27%2C+%2716%2F05%2F2027%27%2C+%2716%2F12%2F2026%27%2C+%2717%2F06%2F2027%27%2C+%2717%2F10%2F2029%27%2C+%2717%2F12%2F2026%27%2C+%2718%2F06%2F2027%27%2C+%2718%2F11%2F2027%27%2C+%2718%2F12%2F2026%27%2C+%2718%2F12%2F2029%27%2C+%2719%2F02%2F2027%27%2C+%2719%2F03%2F2027%27%2C+%2719%2F12%2F2026%27%2C+%2720%2F12%2F2026%27%2C+%2721%2F06%2F2027%27%2C+%2721%2F12%2F2026%27%2C+%2722%2F01%2F2027%27%2C+%2722%2F06%2F2027%27%2C+%2722%2F11%2F2027%27%2C+%2722%2F12%2F2026%27%2C+%2723%2F01%2F2027%27%2C+%2723%2F12%2F2026%27%2C+%2724%2F02%2F2028%27%2C+%2724%2F12%2F2026%27%2C+%2725%2F03%2F2028%27%2C+%2726%2F02%2F2027%27%2C+%2727%2F02%2F2027%27%2C+%2728%2F01%2F2027%27%2C+%2728%2F02%2F2027%27%2C+%2728%2F05%2F2027%27%2C+%2728%2F10%2F2027%27%2C+%2728%2F10%2F2028%27%2C+%2728%2F12%2F2026%27%2C+%2729%2F01%2F2027%27%2C+%2729%2F07%2F2027%27%2C+%2729%2F11%2F2026%27%2C+%2729%2F12%2F2026%27%2C+%2730%2F04%2F2027%27%2C+%2730%2F06%2F2027%27%2C+%2730%2F09%2F2027%27%2C+%2730%2F09%2F2028%27%2C+%2730%2F11%2F2026%27%2C+%2730%2F11%2F2027%27%2C+%2730%2F11%2F2028%27%2C+%2730%2F12%2F2026%27%2C+%2730%2F12%2F2027%27%2C+%2731%2F01%2F2027%27%2C+%2731%2F01%2F2028%27%2C+%2731%2F03%2F2027%27%2C+%2731%2F05%2F2027%27%2C+%2731%2F07%2F2027%27%2C+%2731%2F08%2F2027%27%2C+%2731%2F10%2F2027%27%2C+%2731%2F12%2F2026%27%2C+%2731%2F12%2F2027%27%2C+%2731%2F12%2F2028%27%29&%24order=codi_raisc&%24limit=50000",
+          "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2701%2F01%2F2027%27%2C+%2701%2F03%2F2027%27%2C+%2701%2F04%2F2027%27%2C+%2701%2F09%2F2027%27%2C+%2701%2F12%2F2026%27%2C+%2702%2F03%2F2027%27%2C+%2702%2F12%2F2026%27%2C+%2703%2F07%2F2029%27%2C+%2703%2F12%2F2026%27%2C+%2704%2F12%2F2026%27%2C+%2705%2F01%2F2027%27%2C+%2705%2F02%2F2027%27%2C+%2705%2F06%2F2027%27%2C+%2705%2F11%2F2027%27%2C+%2705%2F12%2F2026%27%2C+%2706%2F01%2F2027%27%2C+%2707%2F01%2F2027%27%2C+%2707%2F07%2F2029%27%2C+%2707%2F10%2F2027%27%2C+%2707%2F12%2F2026%27%2C+%2708%2F01%2F2027%27%2C+%2708%2F12%2F2026%27%2C+%2709%2F12%2F2026%27%2C+%2710%2F01%2F2027%27%2C+%2710%2F03%2F2027%27%2C+%2710%2F12%2F2026%27%2C+%2710%2F12%2F2027%27%2C+%2711%2F12%2F2026%27%2C+%2712%2F01%2F2027%27%2C+%2712%2F02%2F2027%27%2C+%2712%2F03%2F2027%27%2C+%2712%2F11%2F2027%27%2C+%2713%2F02%2F2027%27%2C+%2713%2F06%2F2029%27%2C+%2713%2F12%2F2026%27%2C+%2714%2F08%2F2027%27%2C+%2714%2F12%2F2026%27%2C+%2715%2F01%2F2027%27%2C+%2715%2F02%2F2027%27%2C+%2715%2F04%2F2027%27%2C+%2715%2F05%2F2027%27%2C+%2715%2F06%2F2027%27%2C+%2715%2F10%2F2027%27%2C+%2715%2F11%2F2027%27%2C+%2715%2F12%2F2026%27%2C+%2716%2F05%2F2027%27%2C+%2716%2F12%2F2026%27%2C+%2717%2F06%2F2027%27%2C+%2717%2F10%2F2029%27%2C+%2717%2F12%2F2026%27%2C+%2718%2F06%2F2027%27%2C+%2718%2F11%2F2027%27%2C+%2718%2F12%2F2026%27%2C+%2718%2F12%2F2029%27%2C+%2719%2F02%2F2027%27%2C+%2719%2F03%2F2027%27%2C+%2719%2F12%2F2026%27%2C+%2720%2F12%2F2026%27%2C+%2721%2F06%2F2027%27%2C+%2721%2F12%2F2026%27%2C+%2722%2F01%2F2027%27%2C+%2722%2F06%2F2027%27%2C+%2722%2F11%2F2027%27%2C+%2722%2F12%2F2026%27%2C+%2723%2F01%2F2027%27%2C+%2723%2F12%2F2026%27%2C+%2724%2F02%2F2028%27%2C+%2724%2F12%2F2026%27%2C+%2725%2F03%2F2028%27%2C+%2726%2F02%2F2027%27%2C+%2727%2F02%2F2027%27%2C+%2728%2F01%2F2027%27%2C+%2728%2F02%2F2027%27%2C+%2728%2F05%2F2027%27%2C+%2728%2F10%2F2027%27%2C+%2728%2F10%2F2028%27%2C+%2728%2F12%2F2026%27%2C+%2729%2F01%2F2027%27%2C+%2729%2F07%2F2027%27%2C+%2729%2F11%2F2026%27%2C+%2729%2F12%2F2026%27%2C+%2730%2F04%2F2027%27%2C+%2730%2F06%2F2027%27%2C+%2730%2F09%2F2027%27%2C+%2730%2F09%2F2028%27%2C+%2730%2F11%2F2026%27%2C+%2730%2F11%2F2027%27%2C+%2730%2F11%2F2028%27%2C+%2730%2F12%2F2026%27%2C+%2730%2F12%2F2027%27%2C+%2731%2F01%2F2027%27%2C+%2731%2F01%2F2028%27%2C+%2731%2F03%2F2027%27%2C+%2731%2F05%2F2027%27%2C+%2731%2F07%2F2027%27%2C+%2731%2F08%2F2027%27%2C+%2731%2F10%2F2027%27%2C+%2731%2F12%2F2026%27%2C+%2731%2F12%2F2027%27%2C+%2731%2F12%2F2028%27%29&%24order=codi_raisc&%24limit=50000",
+          "consultat": "2026-11-28T13:46:35.747Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
-          "sha256": "9d780fa907d6cc3f6331ec1235e1cdc736826a4b3d223a800b452977d72de5da"
+          "sha256": "ec81ba5b6c2f9e1665d2ada570fb744ca9558e4b009d33404468e15e4db4ada8"
         },
         {
-          "url": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2731%2F12%2F2028%27%2C+%2731%2F12%2F2029%27%2C+%2731%2F12%2F2032%27%2C+%2731%2F12%2F2033%27%29&%24order=codi_raisc&%24limit=50000",
-          "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2731%2F12%2F2028%27%2C+%2731%2F12%2F2029%27%2C+%2731%2F12%2F2032%27%2C+%2731%2F12%2F2033%27%29&%24order=codi_raisc&%24limit=50000",
-          "consultat": "2026-11-26T14:37:04.887Z",
+          "url": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2731%2F12%2F2029%27%2C+%2731%2F12%2F2032%27%2C+%2731%2F12%2F2033%27%29&%24order=codi_raisc&%24limit=50000",
+          "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/khxn-nv6a.json?%24select=codi_raisc%2C+codi_bdns%2C+t_tol_convocat_ria_catal%2C+entitat_oo_aa_o_departament_1%2C+administraci_%2C+tipus_de_convocat_ria%2C+tipus_d_instument_ajut%2C+finalitat_publica%2C+tipus_de_beneficiaris%2C+import_total_convocat_ria%2C+data_inici_presentaci_sol%2C+data_fi_presentaci_sol%2C+seu_electr_nica%2C+url_catala_bases_reg&%24where=data_fi_presentaci_sol+in+%28%2731%2F12%2F2029%27%2C+%2731%2F12%2F2032%27%2C+%2731%2F12%2F2033%27%29&%24order=codi_raisc&%24limit=50000",
+          "consultat": "2026-11-28T13:46:35.915Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
-          "sha256": "2ff5d7c3386db25893490ba842e459dee58bb769782d78d19c88db115339f1dd"
+          "sha256": "67bb66316e0c5fce4f2dc5862233fc205f1378371c12b84a2e2d088b59ece86e"
         }
       ],
       "fallada": null
     },
     "pressupost": {
-      "data_consulta": "2026-11-26",
+      "data_consulta": "2026-11-28",
       "node": "v24.22.3",
       "fitxers": {
         "pressupost.json": "66c5384c0c4672653a1fa62502317fa410f307ff4c157a8c9a230cc05f24f9bb"
@@ -7374,15 +7374,15 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/api/views/ajns-4mi7.json",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/ajns-4mi7.json",
-          "consultat": "2026-11-26T14:37:05.072Z",
+          "consultat": "2026-11-28T13:46:36.108Z",
           "estat": 200,
           "tipus": "application/json; charset=utf-8",
-          "sha256": "68762864887816267fc3082938d8dea6f3c060e8feb4405c91badbdd8daf3820"
+          "sha256": "9b28c6b9c460d6f7e56294a48a6794a98d321f15887ea3a2bafc4cf677c3d9e4"
         },
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/ajns-4mi7.json?%24select=exercici%2C+mes&%24where=exercici+IS+NOT+NULL+AND+mes+IS+NOT+NULL&%24group=exercici%2C+mes&%24order=exercici+DESC%2C+mes+DESC&%24limit=1",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/ajns-4mi7.json?%24select=exercici%2C+mes&%24where=exercici+IS+NOT+NULL+AND+mes+IS+NOT+NULL&%24group=exercici%2C+mes&%24order=exercici+DESC%2C+mes+DESC&%24limit=1",
-          "consultat": "2026-11-26T14:37:07.939Z",
+          "consultat": "2026-11-28T13:46:46.654Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "ad6358c49b44ce30595c3878559bdd283e4de36b4af3aad3b6d498c8bd6f9348"
@@ -7390,7 +7390,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/ajns-4mi7.json?%24select=entitat_codi%2C+entitat%2C+ordre_protocol_secci%2C+secci_codi%2C+secci%2C+sum%28cr_dits_inicials%29+as+inicial%2C+sum%28pressupost_definitiu%29+as+definitiu%2C+sum%28obligacions_reconegudes%29+as+reconegut%2C+sum%28obligacions_pagades%29+as+pagat&%24where=exercici+%3D+2026+and+mes+%3D+%2710+Octubre%27&%24group=entitat_codi%2C+entitat%2C+ordre_protocol_secci%2C+secci_codi%2C+secci&%24order=entitat_codi%2C+secci_codi&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/ajns-4mi7.json?%24select=entitat_codi%2C+entitat%2C+ordre_protocol_secci%2C+secci_codi%2C+secci%2C+sum%28cr_dits_inicials%29+as+inicial%2C+sum%28pressupost_definitiu%29+as+definitiu%2C+sum%28obligacions_reconegudes%29+as+reconegut%2C+sum%28obligacions_pagades%29+as+pagat&%24where=exercici+%3D+2026+and+mes+%3D+%2710+Octubre%27&%24group=entitat_codi%2C+entitat%2C+ordre_protocol_secci%2C+secci_codi%2C+secci&%24order=entitat_codi%2C+secci_codi&%24limit=50000",
-          "consultat": "2026-11-26T14:37:08.182Z",
+          "consultat": "2026-11-28T13:46:46.887Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "55601ec4609ada1bb3394efd4681a49b3a362463d27dee8accf7c4713d2cfa7e"
@@ -7398,15 +7398,15 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/api/views/42am-vra2.json",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/42am-vra2.json",
-          "consultat": "2026-11-26T14:37:08.319Z",
+          "consultat": "2026-11-28T13:46:47.036Z",
           "estat": 200,
           "tipus": "application/json; charset=utf-8",
-          "sha256": "76e55a7a3e305fc2bcd51c4557a117c964037cb251a1b370fd2253227d87cf23"
+          "sha256": "d54179a0ed85e7c771fb2aa2c82c8dcdfd6fc7c92bc4c1f8456434ecc79aabff"
         },
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/42am-vra2.json?%24select=exercici%2C+mes&%24where=exercici+IS+NOT+NULL+AND+mes+IS+NOT+NULL&%24group=exercici%2C+mes&%24order=exercici+DESC%2C+mes+DESC&%24limit=1",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/42am-vra2.json?%24select=exercici%2C+mes&%24where=exercici+IS+NOT+NULL+AND+mes+IS+NOT+NULL&%24group=exercici%2C+mes&%24order=exercici+DESC%2C+mes+DESC&%24limit=1",
-          "consultat": "2026-11-26T14:37:09.610Z",
+          "consultat": "2026-11-28T13:46:48.256Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "ad6358c49b44ce30595c3878559bdd283e4de36b4af3aad3b6d498c8bd6f9348"
@@ -7414,7 +7414,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/42am-vra2.json?%24select=entitat_codi%2C+entitat%2C+cap_tol_codi%2C+cap_tol%2C+sum%28previsions_pressupost_ries%29+as+inicial%2C+sum%28previsions_finals%29+as+finals%2C+sum%28drets_reconeguts_nets%29+as+reconegut%2C+sum%28recaptaci_neta%29+as+recaptat&%24where=exercici+%3D+2026+and+mes+%3D+%2710+Octubre%27&%24group=entitat_codi%2C+entitat%2C+cap_tol_codi%2C+cap_tol&%24order=entitat_codi%2C+cap_tol_codi&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/42am-vra2.json?%24select=entitat_codi%2C+entitat%2C+cap_tol_codi%2C+cap_tol%2C+sum%28previsions_pressupost_ries%29+as+inicial%2C+sum%28previsions_finals%29+as+finals%2C+sum%28drets_reconeguts_nets%29+as+reconegut%2C+sum%28recaptaci_neta%29+as+recaptat&%24where=exercici+%3D+2026+and+mes+%3D+%2710+Octubre%27&%24group=entitat_codi%2C+entitat%2C+cap_tol_codi%2C+cap_tol&%24order=entitat_codi%2C+cap_tol_codi&%24limit=50000",
-          "consultat": "2026-11-26T14:37:09.791Z",
+          "consultat": "2026-11-28T13:46:48.441Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "afb2d60e6ba785fd95715a76b96c24927e45299e1a653bb085f75fb0582791c3"
@@ -7423,7 +7423,7 @@
       "fallada": null
     },
     "contractes": {
-      "data_consulta": "2026-11-26",
+      "data_consulta": "2026-11-28",
       "node": "v24.22.3",
       "fitxers": {
         "contractes.json": "44911792c5bd20f66a509f4618fd786edf12ddab7cd57c643a25e7fc7cbf8f9f",
@@ -7433,15 +7433,15 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/api/views/hb6v-jcbf.json",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/api/views/hb6v-jcbf.json",
-          "consultat": "2026-11-26T14:37:09.939Z",
+          "consultat": "2026-11-28T13:46:48.590Z",
           "estat": 200,
           "tipus": "application/json; charset=utf-8",
-          "sha256": "7586924443e702366bf318895cd0eb417304f5d9333a6396bab07b73480b62eb"
+          "sha256": "4dfc81ab234ab19bb0eb562405686fb8d9dd7105a266c1128081a1d269743aaa"
         },
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=situaci_contractual%2C+subjecte_ambit%2C+count%28*%29+as+inscripcions&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27&%24group=situaci_contractual%2C+subjecte_ambit&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=situaci_contractual%2C+subjecte_ambit%2C+count%28*%29+as+inscripcions&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27&%24group=situaci_contractual%2C+subjecte_ambit&%24limit=50000",
-          "consultat": "2026-11-26T14:37:12.290Z",
+          "consultat": "2026-11-28T13:46:50.998Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "16d8f8f8310a341d7e237f6d0efd955cfbb36c090d07bd5846542702174f591b"
@@ -7449,7 +7449,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Departaments+i+Sector+P%C3%BAblic+de+la+Generalitat+de+Catalunya%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24offset=0&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Departaments+i+Sector+P%C3%BAblic+de+la+Generalitat+de+Catalunya%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24offset=0&%24limit=50000",
-          "consultat": "2026-11-26T14:37:13.136Z",
+          "consultat": "2026-11-28T13:46:51.859Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "7346b589eab29fc3f06fbece40cd542f9b2c0357808f42d70cda2b6109b71467"
@@ -7457,7 +7457,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Entitats+de+l%27%27Administraci%C3%B3+Local%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24offset=0&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Entitats+de+l%27%27Administraci%C3%B3+Local%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24offset=0&%24limit=50000",
-          "consultat": "2026-11-26T14:37:15.412Z",
+          "consultat": "2026-11-28T13:46:52.651Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "af02880e56c661632f893654d6e0b9756fc91edd77fc13319a79b841c1215bf4"
@@ -7465,7 +7465,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Universitats%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24offset=0&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Universitats%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+procediment_adjudicacio&%24offset=0&%24limit=50000",
-          "consultat": "2026-11-26T14:37:17.104Z",
+          "consultat": "2026-11-28T13:46:54.067Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "f390dc98ccc2492c8b3e4a9a4e287a5df02814ecaf1daf76ddbd316a2f395e7b"
@@ -7473,7 +7473,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Departaments+i+Sector+P%C3%BAblic+de+la+Generalitat+de+Catalunya%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24offset=0&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Departaments+i+Sector+P%C3%BAblic+de+la+Generalitat+de+Catalunya%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24offset=0&%24limit=50000",
-          "consultat": "2026-11-26T14:37:18.167Z",
+          "consultat": "2026-11-28T13:46:56.739Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "0f54cbbfef742105017bf45c4538cc6627313aa0bf1349c41040ad58e46a9b17"
@@ -7481,7 +7481,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Entitats+de+l%27%27Administraci%C3%B3+Local%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24offset=0&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Entitats+de+l%27%27Administraci%C3%B3+Local%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24offset=0&%24limit=50000",
-          "consultat": "2026-11-26T14:37:22.576Z",
+          "consultat": "2026-11-28T13:46:58.526Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "96f3075d245a245158116b0bef55a571c9d92627405ff8173d5d29c41e3f1ef2"
@@ -7489,7 +7489,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Entitats+de+l%27%27Administraci%C3%B3+Local%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24offset=50000&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Entitats+de+l%27%27Administraci%C3%B3+Local%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24offset=50000&%24limit=50000",
-          "consultat": "2026-11-26T14:37:25.072Z",
+          "consultat": "2026-11-28T13:46:59.712Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "f4bfecd3024152bc7c71f5441598dcb27c9a8d37b2145f744eede900be6cb51e"
@@ -7497,7 +7497,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Universitats%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24offset=0&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari%2C+count%28*%29+as+inscripcions%2C+count%28import_adjudicacio%29+as+amb_import%2C+sum%28import_adjudicacio%29+as+import&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-01-01%27+and+data_adjudicacio+%3C+%272026-11-11%27+and+subjecte_ambit+%3D+%27Universitats%27&%24group=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24order=subjecte_ambit%2C+id_agrupacio_organisme%2C+agrupacio_organisme%2C+adjudicatari&%24offset=0&%24limit=50000",
-          "consultat": "2026-11-26T14:37:26.206Z",
+          "consultat": "2026-11-28T13:47:00.443Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "1e710de56adde3f5068a31e2a64ee9c8d6589bcb65b3f3e7dc1314e091c8e974"
@@ -7505,7 +7505,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=count%28*%29+as+inscripcions&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-11-11%27&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=count%28*%29+as+inscripcions&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+%3E%3D+%272026-11-11%27&%24limit=50000",
-          "consultat": "2026-11-26T14:37:27.215Z",
+          "consultat": "2026-11-28T13:47:01.220Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "0478fda1a77e12fbc6515509bbc1d826f5733238b501f03f606f70421ef0a679"
@@ -7513,7 +7513,7 @@
         {
           "url": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=count%28*%29+as+inscripcions&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+IS+NULL&%24limit=50000",
           "url_resposta": "https://analisi.transparenciacatalunya.cat/resource/hb6v-jcbf.json?%24select=count%28*%29+as+inscripcions&%24where=situaci_contractual+in+%28%27adjudicaci%C3%B3%27%2C+%27menor%27%29+and+data_adjudicacio+IS+NULL&%24limit=50000",
-          "consultat": "2026-11-26T14:37:27.351Z",
+          "consultat": "2026-11-28T13:47:01.404Z",
           "estat": 200,
           "tipus": "application/json;charset=utf-8",
           "sha256": "9c6db56fa53f6bcab465b7edc3d10e48f538465cbae6a0cf6ab0da4fa7336bea"
@@ -7522,19 +7522,19 @@
       "fallada": null
     },
     "oposicions": {
-      "data_consulta": "2026-11-26",
+      "data_consulta": "2026-11-28",
       "node": "v24.22.3",
       "fitxers": {
-        "oposicions.json": "1897aae744dcefce9227b198ef15a5936e137a29f3c2dbf708d8944a0ec23325"
+        "oposicions.json": "ff8b6199e1c64ca3aa14e6e05ac6546896aa80b84d48413f157213deb2c8fe22"
       },
       "captures": [
         {
           "url": "https://api.diba.cat/dadesobertes/cido/v1/oposicions?filter%5BidEstat%5D=3&sort=id&page%5Blimit%5D=2000&page%5Boffset%5D=0",
           "url_resposta": "https://api.diba.cat/dadesobertes/cido/v1/oposicions?filter%5BidEstat%5D=3&sort=id&page%5Blimit%5D=2000&page%5Boffset%5D=0",
-          "consultat": "2026-11-26T14:37:33.068Z",
+          "consultat": "2026-11-28T13:47:07.359Z",
           "estat": 200,
           "tipus": "application/vnd.api+json;charset=utf-8",
-          "sha256": "a41a5c4f82c2cc77be7d0228eaae2d62f27effaea7eeb7a0567730d5c8df9e04"
+          "sha256": "208566fc33f4b435a106ebf3f0e9e4c3d3aa414786947f9b3dfeb7b5a1f4e960"
         }
       ],
       "fallada": null
